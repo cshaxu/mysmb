@@ -2085,3 +2085,15 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 - Current-equivalence audit M2 T62 S8 closed `InitPiranhaPlant -> EndOfEnemyInitCode`: historical migration remains **1,992 / 1,992**; current exact registry is **974 / 1,992** nodes and **1,829 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
 
 - Current-equivalence audit M2 T62 S9 closed `RunEnemyObjectsCore -> RunBowserFlame`: historical migration remains **1,992 / 1,992**; current exact registry is **983 / 1,992** nodes and **1,922 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+
+
+## M2 T63 S5 current-equivalence closure
+
+The `MoveNormalEnemy -> NKGmba` chain records its 11 labels, 28 feasible
+controls and four material handoffs as current-exact. Static source audit and
+controlled original-ROM/current x86/x64 replay agree for 264 comparisons; the
+focused normal-movement contract covers 1,253,376 footprints per width. No
+product source changed. Historical node mapping remains **1,992 / 1,992**;
+current-equivalence totals are **1,015 / 1,992 exact nodes**, **2,013 / 4,324
+exact feasible controls**, **4,342 raw controls**, and **18 infeasible
+controls**.

@@ -2078,3 +2078,15 @@ original-ROM/x86/x64 route comparisons, focused state contracts, purity and
 DOS16 link agree. The registry is **1,004 / 1,992** exact nodes and **1,985 /
 4,324** exact feasible controls, from **4,342** raw controls with **18**
 infeasible; historical mapping remains **1,992 / 1,992**.
+
+
+### T63 S5 normal and defeated enemy movement result
+
+`MoveNormalEnemy -> NKGmba` is current-exact. Static `$CA77-$CAF8` and shared
+`enemy/movement.c` agree on state priority, vertical-child post-state dispatch,
+temporary speed adjustment/restoration, revived speed selection and Goomba erase.
+Controlled original-ROM/current replay passes 132 direct records per x86 and
+x64; the focused contract spans 1,253,376 footprints per width. The registry
+now records **1,015 exact nodes** and **2,013 exact feasible control edges**;
+historical mapping remains **1,992 / 1,992**, raw control count **4,342** and
+infeasible count **18**.

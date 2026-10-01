@@ -236,3 +236,52 @@ exact. `MoveNormalEnemy` and `MoveDefeatedEnemy` interiors remain the following
 source-order S5 obligation. Historical mapping remains **1,992 / 1,992**;
 current exact status is **1,004 / 1,992 nodes** and **1,985 / 4,324 feasible
 controls** (raw **4,342**, infeasible **18**).
+
+## S5 admission — normal and defeated enemy movement chain
+
+S5 admits the contiguous `MoveNormalEnemy -> NKGmba` chain (lines
+9318–9392, `$CA77-$CAF8`): `MoveNormalEnemy`, `FallE`, `MEHor`, `SlowM`,
+`SteadM`, `AddHS`, `ReviveStunned`, `SetRSpd`, `MoveDefeatedEnemy`,
+`ChkKillGoomba`, and `NKGmba`. The shared C owner is
+`src/game/enemy/movement.c`. Its predecessor is S4's `SetShim` handoff;
+its child boundaries are the already-owned gravity, horizontal-movement and
+lifecycle routines. S6 begins at `MoveJumpingEnemy`.
+
+S5 owns 28 feasible direct controls: state-priority branches, vertical-child
+call and post-child dispatch, temporary horizontal-speed adjustment and
+restore, revive timer and hard-mode table selection, defeated movement tail,
+and Goomba erase gate. It owns four material handoffs: normal-state to fall,
+post-gravity state to horizontal dispatch, revive timer/ID to the Goomba gate,
+and Goomba-ID/timer to erase. The ROM-logic track compares the source control
+order and table/RAM contracts at `$CA77-$CAF8`, then replays 132 controlled
+original-ROM direct normal-movement records through current x86 and x64. The
+operational track runs the exhaustive normal-enemy movement contract, platform
+purity and shared DOS16 link. A feasible difference remains in S5 for repair
+and repeat audit.
+
+### S5 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,004 / 1,992**.
+- Current exact feasible control edges: **1,985 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **11** unique labels; expected current promotions: **11**; maximum
+  current exact node count on successful closure: **1,015 / 1,992**.
+
+## S5 closure — normal and defeated enemy movement chain
+
+All 11 scoped labels are current-exact. Static `$CA77-$CAF8` comparison
+confirms the state-bit priority, source child ordering, post-gravity state
+reread, power-up exception, temporary speed table/index and restoration,
+revive timer/Goomba gate, frame/hard-mode revived-speed selection, and
+defeated vertical/horizontal tail. The 28 feasible direct controls and four
+material handoffs are exact. Fresh current-source original-ROM caller replay
+passes **264 / 264** comparisons (132 per x86 and x64). The exhaustive normal
+movement contract covers **1,253,376** state/speed/slot/ID/timer/hard-mode
+footprints per width. Platform purity passes, and OpenNT DOS16 shared-source
+link produces the local MZ output with its known `OLDNAMES.LIB` warning. No
+product source changed, so the three local EXE artifacts were not refreshed.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,015 / 1,992 nodes** and **2,013 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**). S6 begins with `MoveJumpingEnemy`.

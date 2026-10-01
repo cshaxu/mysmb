@@ -4111,13 +4111,16 @@
       "consumer": "FallE",
       "storage": "Enemy_State state-bit predicate",
       "feasiblePath": "d6, egg and selected low-state paths enter downward movement in source order.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_move_normal fall",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4130,13 +4133,16 @@
       "consumer": "MEHor",
       "storage": "post-gravity Enemy_State",
       "feasiblePath": "State two enters direct horizontal movement after gravity returns.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_move_normal state==2 path",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4149,13 +4155,16 @@
       "consumer": "ChkKillGoomba",
       "storage": "EnemyIntervalTimer comparison value and Enemy_ID",
       "feasiblePath": "Only nonzero timer path tests Goomba expiry threshold.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_move_normal timer path",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4168,13 +4177,16 @@
       "consumer": "EraseEnemyObject",
       "storage": "timer==$0e and Enemy_ID==Goomba",
       "feasiblePath": "Both source predicates must hold before lifecycle erasure.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_erase_enemy",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -30070,13 +30082,16 @@
       "label": "MoveNormalEnemy",
       "asmLine": 9318,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Orders state handling as d6 fall, d7 steady, d5 defeated, low state normal/egg/fall/revive; preserves source vertical/horizontal and temporary-speed restore behavior.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30086,13 +30101,16 @@
       "label": "FallE",
       "asmLine": 9336,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Calls downward vertical movement, then selects direct horizontal, steady, or slowed horizontal path from post-gravity state and object ID.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30102,13 +30120,16 @@
       "label": "MEHor",
       "asmLine": 9347,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Tail-jumps to horizontal movement for state two after vertical movement.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30118,13 +30139,16 @@
       "label": "SlowM",
       "asmLine": 9349,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects slow-horizontal addend index one before falling through steady movement.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30134,13 +30158,16 @@
       "label": "SteadM",
       "asmLine": 9350,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Saves X speed, selects signed speed addend, moves horizontally, then restores the saved speed.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30150,13 +30177,16 @@
       "label": "AddHS",
       "asmLine": 9355,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Adds selected temporary X-speed addend, calls horizontal movement and restores the pre-addition speed on return.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30166,13 +30196,16 @@
       "label": "ReviveStunned",
       "asmLine": 9363,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "If interval timer is nonzero delegates Goomba expiry check; otherwise clears state, selects direction and hard-mode-aware revived speed, then returns.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30182,13 +30215,16 @@
       "label": "SetRSpd",
       "asmLine": 9377,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores selected revived X speed and returns.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30198,13 +30234,16 @@
       "label": "MoveDefeatedEnemy",
       "asmLine": 9381,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Calls downward vertical movement then tail-jumps to horizontal movement.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30214,13 +30253,16 @@
       "label": "ChkKillGoomba",
       "asmLine": 9385,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Erases only a Goomba whose incoming interval timer comparison equals $0e; otherwise falls through terminal return.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -30230,13 +30272,16 @@
       "label": "NKGmba",
       "asmLine": 9392,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/movement.c",
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns without further state change.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82645,12 +82690,15 @@
       "instruction": "bne",
       "id": "control-01740",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveNormalEnemy -> FallE with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82664,12 +82712,15 @@
       "instruction": "bcs",
       "id": "control-01741",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveNormalEnemy -> SteadM with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82683,12 +82734,15 @@
       "instruction": "bne",
       "id": "control-01742",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveNormalEnemy -> MoveDefeatedEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82702,12 +82756,15 @@
       "instruction": "beq",
       "id": "control-01743",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveNormalEnemy -> SteadM with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82721,12 +82778,15 @@
       "instruction": "beq",
       "id": "control-01744",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveNormalEnemy -> FallE with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82740,12 +82800,15 @@
       "instruction": "bcs",
       "id": "control-01745",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveNormalEnemy -> ReviveStunned with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82759,12 +82822,15 @@
       "instruction": "bcs",
       "id": "control-01746",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveNormalEnemy -> FallE with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82778,12 +82844,15 @@
       "instruction": "jsr",
       "id": "control-01747",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation FallE -> MoveD_EnemyVertically with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82797,12 +82866,15 @@
       "instruction": "beq",
       "id": "control-01748",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FallE -> MEHor with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82816,12 +82888,15 @@
       "instruction": "beq",
       "id": "control-01749",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FallE -> SteadM with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82835,12 +82910,15 @@
       "instruction": "beq",
       "id": "control-01750",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FallE -> SteadM with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82854,12 +82932,15 @@
       "instruction": "bne",
       "id": "control-01751",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FallE -> SlowM with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82873,12 +82954,15 @@
       "instruction": "bne",
       "id": "control-01752",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FallE -> MEHor with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82892,12 +82976,15 @@
       "instruction": "jmp",
       "id": "control-01753",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation MEHor -> MoveEnemyHorizontally with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c",
@@ -82912,12 +82999,15 @@
       "instruction": "ldy",
       "id": "control-01754",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SlowM -> SteadM with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82931,12 +83021,15 @@
       "instruction": "bpl",
       "id": "control-01755",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SteadM -> AddHS with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82950,12 +83043,15 @@
       "instruction": "iny",
       "id": "control-01756",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SteadM -> AddHS with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -82969,12 +83065,15 @@
       "instruction": "jsr",
       "id": "control-01757",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation AddHS -> MoveEnemyHorizontally with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c",
@@ -82989,12 +83088,15 @@
       "instruction": "bne",
       "id": "control-01758",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ReviveStunned -> ChkKillGoomba with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -83008,12 +83110,15 @@
       "instruction": "beq",
       "id": "control-01759",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ReviveStunned -> SetRSpd with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -83027,12 +83132,15 @@
       "instruction": "iny",
       "id": "control-01760",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ReviveStunned -> SetRSpd with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -83046,12 +83154,15 @@
       "instruction": "jsr",
       "id": "control-01761",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation MoveDefeatedEnemy -> MoveD_EnemyVertically with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -83065,12 +83176,15 @@
       "instruction": "jmp",
       "id": "control-01762",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation MoveDefeatedEnemy -> MoveEnemyHorizontally with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c",
@@ -83085,12 +83199,15 @@
       "instruction": "bne",
       "id": "control-01763",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkKillGoomba -> NKGmba with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -83104,12 +83221,15 @@
       "instruction": "bne",
       "id": "control-01764",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkKillGoomba -> NKGmba with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -83123,12 +83243,15 @@
       "instruction": "jsr",
       "id": "control-01765",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkKillGoomba -> EraseEnemyObject with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -83147,12 +83270,15 @@
       "instruction": "jsr",
       "id": "control-01766",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkKillGoomba -> NKGmba with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -121722,12 +121848,15 @@
       "instruction": "rts/rti",
       "id": "control-03728",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation MoveNormalEnemy -> ShroomM with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"

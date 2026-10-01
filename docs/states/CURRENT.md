@@ -2,31 +2,31 @@
 
 ## Current Work
 
-## M2 T63 S4 Packet
+## M2 T63 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S4 audit — Cohort J Hammer Bro throw, jump and horizontal bridge. |
-| Admission And Approval | S4 admitted after S3 closure under the owner-approved source-order program. |
-| Objective | Prove `HammerThrowTmrData -> SetShim` and its owned relations current-exact before normal-enemy movement. |
-| Non-goals | No normal/defeated movement child interior, Hammer sprite/OAM, terrain/collision logic, or platform adapter change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 991 / 1,992 nodes and 1,961 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S5 audit — Cohort J normal and defeated enemy movement chain. |
+| Admission And Approval | S5 admitted after S4 closure under the owner-approved source-order program. |
+| Objective | Prove `MoveNormalEnemy -> NKGmba` and its owned relations current-exact before jumping-enemy movement. |
+| Non-goals | No jumping-enemy child interior, gravity/horizontal/lifecycle child implementation, sprite/OAM, terrain/collision or platform adapter change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,004 / 1,992 nodes and 1,985 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | `src/game/enemy/hammer_bro.c`; shared game C90 only; no platform logic. |
+| Files And ABI Surface | `src/game/enemy/movement.c`; shared game C90 only; no platform logic. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | `$C9CE-$CA76` audit; original-ROM/current x86/x64 Hammer Bro route; focused checks; purity and DOS16 link. |
-| Expected Markers | 13 nodes, 24 feasible controls and eight material handoffs promoted only if both tracks agree. |
+| Verification | `$CA77-$CAF8` audit; original-ROM/current x86/x64 normal-movement route; focused checks; purity and DOS16 link. |
+| Expected Markers | 11 nodes, 28 feasible controls and four material handoffs promoted only if both tracks agree. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh three artifacts only if product source changes. |
-| Reporting Requirements | Report historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | A source, route or boundary difference keeps S4 open for shared-owner repair and re-audit. |
-| Exit Criteria | All 13 labels, 24 feasible controls and eight material handoffs are current-exact with current source and route evidence. |
+| Reporting Requirements | Report historical 1,992 / 1,992, current exact nodes / 1,992, current exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
+| Stop Conditions | A source, route or boundary difference keeps S5 open for shared-owner repair and re-audit. |
+| Exit Criteria | All 11 labels, 28 feasible controls and four material handoffs are current-exact with current source and route evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Hammer Bro tables, defeated precedence, timer gates, spawn result, PRNG jump selection, shimmy, direction and normal-move handoff. |
+| Similar-Issue Sweep | State-bit priority, child-result reread, temporary speed restoration, revive timers/tables, defeated tail and Goomba timer erase gate. |
 
 ## Current Technical Baseline
 
 One shared C90 game implementation serves DOS16 and Win32 x86/x64. T62 Cohort I
-is closed. T63 S1/S2/S3/S4 are closed; the next source-order chain is normal/defeated enemy movement.
+is closed. T63 S1/S2/S3/S4 are closed; S5 has closed normal/defeated enemy movement. The next source-order chain is jumping-enemy movement.
 
 
 ## T63 S1 Closure
@@ -96,3 +96,14 @@ purity and DOS16 link agree. No product source changed, so no artifact refresh
 applies. Historical mapping is **1,992 / 1,992**; current exact status is
 **1,004 / 1,992 nodes** and **1,985 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+
+## T63 S5 Closure
+
+`MoveNormalEnemy -> NKGmba` closes 11 labels, 28 feasible controls and four
+material handoffs exact. Static `$CA77-$CAF8`, 264 fresh original-ROM/current
+x86/x64 comparisons and 1,253,376 focused movement footprints per width agree.
+Platform purity passes and DOS16 links with its known `OLDNAMES.LIB` warning.
+No product source changed, so no artifact refresh applies. Historical mapping
+is **1,992 / 1,992**; current exact status is **1,015 / 1,992 nodes** and
+**2,013 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
