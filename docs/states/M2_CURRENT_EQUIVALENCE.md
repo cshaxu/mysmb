@@ -2262,3 +2262,7 @@ StarFlagExit2 is current-exact through static `$D3A2-$D3AF` and the reused 1,024
 ### T63 S24 piranha movement result
 
 Six labels are current-exact; the live registry is **1,179 exact nodes** and **2,349 exact feasible control relations** after static and 512-record ROM route proof.
+
+### T63 S25 Firebar angular primitive result
+
+Both labels exact; registry **1,181** nodes and **2,351** controls.

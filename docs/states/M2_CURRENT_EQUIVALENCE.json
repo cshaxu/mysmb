@@ -33767,13 +33767,16 @@
       "label": "FirebarSpin",
       "asmLine": 10664,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/firebar_children.c",
       "currentCounterpart": "src/game/enemy/firebar_children.c:mysmb_firebar_spin",
       "semanticEvidence": [
-        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores incoming speed in scratch $07; clockwise direction zero adds low phase and propagates carry into high phase, returning the resulting high byte.",
       "currentSourcePaths": [
         "src/game/enemy/firebar_children.c"
@@ -33783,13 +33786,16 @@
       "label": "SpinCounterClockwise",
       "asmLine": 10677,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/firebar_children.c",
       "currentCounterpart": "src/game/enemy/firebar_children.c:mysmb_firebar_spin",
       "semanticEvidence": [
-        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass."
+      ],
       "semanticContract": "Counterclockwise direction nonzero subtracts low phase and propagates borrow through SBC #0 into high phase, returning the resulting high byte.",
       "currentSourcePaths": [
         "src/game/enemy/firebar_children.c"
@@ -91193,12 +91199,15 @@
       "instruction": "bne",
       "id": "control-02082",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/firebar_children.c:mysmb_firebar_spin and ProcFirebar caller",
       "semanticEvidence": [
-        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FirebarSpin -> SpinCounterClockwise with direction predicate, low/high carry-or-borrow handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar_children.c"
@@ -126029,12 +126038,15 @@
       "instruction": "rts/rti",
       "id": "control-03838",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/firebar_children.c:mysmb_firebar_spin and ProcFirebar caller",
       "semanticEvidence": [
-        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation FirebarSpin -> ProcFirebar with direction predicate, low/high carry-or-borrow handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",

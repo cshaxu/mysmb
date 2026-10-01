@@ -1005,3 +1005,15 @@ FirebarSpin. ROM route: 512 controlled fixtures once per x86/x64 width.
 All six labels are current-exact. Static `$D3B0-$D40F`, 512 original-ROM x86/x64 manifest replays with zero differences, focused 1,282-case C90 test, platform purity and DOS16 link confirm state/timer exits, signed distance, reversal, endpoints, gates and priority write. All 16 feasible controls and four material handoffs are exact. No product source changed.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,179 / 1,992 nodes** and **2,349 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S25 admission — Firebar angular primitive
+
+S25 admits `FirebarSpin -> SpinCounterClockwise` (lines 10664–10687,
+`$D410-$D431`): both labels, shared owner `src/game/enemy/firebar_children.c`.
+S24 is closed; S26 begins at BalancePlatform. The ROM track batches eight
+controlled child-record files once per x86/x64 width; C90, purity and DOS16
+form the operational track.
+
+## S25 closure � Firebar angular primitive
+
+Both labels current-exact; static `$D410-$D431`, eight-file x86/x64 batch replay zero differences, 1,572,864 C90 cases, purity and DOS16 link pass. Two feasible controls exact. Totals: **1,181 / 1,992** nodes, **2,351 / 4,324** controls.
