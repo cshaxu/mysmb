@@ -9,17 +9,7 @@ and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
 ## M2: current-equivalence work
 
-M2 T53 is active. The following unnumbered repair candidate was discovered by
-its current audit and cannot receive a numeric T until a later admission:
-
-1. **NMI display-mask / VRAM transaction order** — `ScreenOff` and
-   `control-00018`, `control-00019`, `control-03487`, `control-03488` require
-   the shared `frame_root.c` order to match the ROM: display mask, InitScroll,
-   OAM DMA, UpdateScreen, then buffer initialization and display restore.
-   T53 must first preserve a controlled order trace; no adapter changes are
-   involved.
-
-The [T53–T70 current-equivalence proof program](../proposals/m2/current-equivalence-proof-program.md)
+M2 T53 has no unresolved corrective candidate. The [T53–T70 current-equivalence proof program](../proposals/m2/current-equivalence-proof-program.md)
 continues in source order. Each later task stays unadmitted until its exact S
 packet, node/edge scope and original-ROM route are recorded.
 

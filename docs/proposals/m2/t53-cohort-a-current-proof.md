@@ -11,7 +11,7 @@ Scope: **97 labels** (46 currently `exact`, 51 `needs-evidence`), **185 internal
 | S4 | 1137–1286 | `VictoryMode` -> `EndExitTwo`, including automatic player, messages and world exit; `src/game/terminal_modes.c` plus `frame_root.c` victory tail | 22 (0 exact, 22 pending) | 44 (0 exact, 44 pending) / 0 (0 exact, 0 pending) | Owner-ROM victory task matrix for tasks 0-4, message counters and end-world B-button branches. Operational: mysmb.endgame-objects-smoke; mysmb.bowser-smoke; mysmb.core-smoke. |
 | S5 | 1287–1385 | `FloateyNumTileData` -> `SetupNumSpr`; `src/game/objects.c` | 10 (3 exact, 7 pending) | 18 (3 exact, 15 pending) / 2 (1 exact, 1 pending) | Owner-ROM floatey-number timer, score-table, tall-enemy and two-sprite output matrix. Operational: mysmb.floatey-oam-smoke; mysmb.core-smoke. |
 
-S1's mismatch blocks source-order progression. S3 is its active corrective receipt; S4 and S5 remain planned only. Each S preserves individual label/edge disposition despite using one chain route and one artifact pass.
+S1's mismatch was resolved by S3 at zero scoped differences. S4 is now the active victory-chain audit; S5 remains planned only. Each S preserves individual label/edge disposition despite using one chain route and one artifact pass.
 ## T53 S1 admission: reset/NMI through operating-mode dispatch
 S1 enters at `Start` and exits after the `OperModeExecutionTree` selection boundary / `SkipMainOper` RTI tail, retaining the OAM loop label at the source-order end. It includes reset, pause, timer, LFSR, sprite-zero, OAM-offscreen, sprite-shuffle and dispatcher labels because they form the source reset/NMI root. Its direct callees `InitScroll`, `UpdateScreen`, `SoundEngine`, `ReadJoypads`, `UpdateTopScore`, `JumpEngine`, and the four mode leaves remain external dependency boundaries and are not promoted by this S.
 The ROM-logic track performs a static label and edge review, then uses controlled owner-local ROM reset/NMI captures for cold/warm boot, both display-mask branches, both buffer offsets, timer paths, pause gate, sprite-zero off/on and every mode selector. It compares call order, branch predicates, RAM writes, OAM effects, scroll/control phase and selector outcome against fresh x86/x64 records. The operational track runs the named focused checks, both Win32 builds/self-tests, the common-source OpenNT DOS16 link, platform-purity audit and refreshes the three ignored local artifacts once for the completed P. Raw ROM traces stay under `build/m2-t53-s1/`.
@@ -85,41 +85,41 @@ Historical completion is already 1,992, so `expectedMatches` is intentionally em
 | 1119 | `DemoEngine` | S2 | exact | mysmb_game_step_title_demo |
 | 1129 | `DoAction` | S2 | exact | mysmb_game_step_title_demo |
 | 1133 | `DemoOver` | S2 | exact | mysmb_game_step_title_demo |
-| 1137 | `VictoryMode` | S3 | needs-evidence | src/game/frame_root.c:mysmb_frame_root_step victory branch plus src/game/terminal_modes.c:mysmb_game_step_victory |
-| 1144 | `AutoPlayer` | S3 | needs-evidence | src/game/frame_root.c:mysmb_frame_root_step victory tail |
-| 1147 | `VictoryModeSubroutines` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory OperMode_Task selector |
-| 1159 | `SetupVictoryMode` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 1 branch |
-| 1169 | `PlayerVictoryWalk` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 branch |
-| 1178 | `PerformWalk` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 walk predicate |
-| 1180 | `DontWalk` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 AutoControlPlayer/scroll continuation |
-| 1195 | `ExitVWalk` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 terminal condition |
-| 1201 | `PrintVictoryMessages` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1215 | `MRetainerMsg` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1217 | `ThankPlayer` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1223 | `SecondPartMsg` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1232 | `EvalForMusic` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1236 | `PrintMsg` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1240 | `IncMsgCounter` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1248 | `SetEndTimer` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1251 | `IncModeTask_A` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1252 | `ExitMsgs` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
-| 1256 | `PlayerEndWorld` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
-| 1271 | `EndExitOne` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
-| 1272 | `EndChkBButton` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
-| 1281 | `EndExitTwo` | S3 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
-| 1287 | `FloateyNumTileData` | S4 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1303 | `ScoreUpdateData` | S4 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1308 | `FloateyNumbersRoutine` | S4 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1315 | `ChkNumTimer` | S4 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1320 | `DecNumTimer` | S4 | exact | src/game/objects.c:mysmb_objects_step_floatey_number timer/score section |
-| 1328 | `LoadNumTiles` | S4 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1338 | `ChkTallEnemy` | S4 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1355 | `GetAltOffset` | S4 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1358 | `FloateyPart` | S4 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
-| 1363 | `SetupNumSpr` | S4 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1137 | `VictoryMode` | S4 | needs-evidence | src/game/frame_root.c:mysmb_frame_root_step victory branch plus src/game/terminal_modes.c:mysmb_game_step_victory |
+| 1144 | `AutoPlayer` | S4 | needs-evidence | src/game/frame_root.c:mysmb_frame_root_step victory tail |
+| 1147 | `VictoryModeSubroutines` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory OperMode_Task selector |
+| 1159 | `SetupVictoryMode` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 1 branch |
+| 1169 | `PlayerVictoryWalk` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 branch |
+| 1178 | `PerformWalk` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 walk predicate |
+| 1180 | `DontWalk` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 AutoControlPlayer/scroll continuation |
+| 1195 | `ExitVWalk` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory task == 2 terminal condition |
+| 1201 | `PrintVictoryMessages` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1215 | `MRetainerMsg` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1217 | `ThankPlayer` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1223 | `SecondPartMsg` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1232 | `EvalForMusic` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1236 | `PrintMsg` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1240 | `IncMsgCounter` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1248 | `SetEndTimer` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1251 | `IncModeTask_A` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1252 | `ExitMsgs` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_print_victory_messages |
+| 1256 | `PlayerEndWorld` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
+| 1271 | `EndExitOne` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
+| 1272 | `EndChkBButton` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
+| 1281 | `EndExitTwo` | S4 | needs-evidence | src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch |
+| 1287 | `FloateyNumTileData` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1303 | `ScoreUpdateData` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1308 | `FloateyNumbersRoutine` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1315 | `ChkNumTimer` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1320 | `DecNumTimer` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number timer/score section |
+| 1328 | `LoadNumTiles` | S5 | exact | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1338 | `ChkTallEnemy` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1355 | `GetAltOffset` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1358 | `FloateyPart` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
+| 1363 | `SetupNumSpr` | S5 | needs-evidence | src/game/objects.c:mysmb_objects_step_floatey_number |
 
 ## Relation allocation
-T53 owns the 185 internal Cohort-A relations. S1 owns 75 reset/NMI/dispatcher interior relations; S2 owns 45 title/demo relations; S3 owns 44 victory relations; S4 owns 18 floatey relations. The three inter-S relations are checked at their receiving-chain entry and recorded once in the T53 cross-chain matrix. Cross-cohort relations stay for T69.
+T53 owns the 185 internal Cohort-A relations. S1 owns 75 reset/NMI/dispatcher interior relations; S2 owns 45 title/demo relations; S4 owns 44 victory relations; S5 owns 18 floatey relations. S3 owns the separately recorded four-relation `ScreenOff` corrective transaction. The three inter-S relations are checked at their receiving-chain entry and recorded once in the T53 cross-chain matrix. Cross-cohort relations stay for T69.
 ## Closure standard
 T53 closes only after every 97 label and 185 internal control relation has a current disposition, every required material relation is disposed, S closures list each label as exact/mismatch/deferred, and the task-level matrix proves the four handoffs. A mismatch becomes a later unnumbered queue candidate grouped by its smallest shared-owner chain; no repair is smuggled into this audit.
 
@@ -152,3 +152,11 @@ also links into the DOS16 executable. Refreshed local artifacts are
 `mysmb16.exe` `43A24D06A260C6E9B88B6E6E2E007B8DB3896F0E5E5381C75957A04EB16639DE`,
 `mysmb32.exe` `D2A45B26EF817484B50F806011301FE39FD6ACE1CB0DC807EB7F513093AA5FBB`,
 and `mysmb64.exe` `E8ED41F9E2E370E6DF7A602839599020AE80B7A7EEF0ABAC31BC78E5240EA222`.
+
+## S3 closure — `ScreenOff` corrective transaction
+
+S3 closed with no historical-credit change: historical progress remains 1,992 / 1,992. The shared frame root now applies the temporary display mask before the scroll/OAM/VRAM transaction, matching ROM NMI lines 764–814. `ScreenOff` and `control-00018`, `control-00019`, `control-03487`, and `control-03488` are current-exact after static source-order review and controlled owner-local NMI evidence. Focused x86/x64 NMI-parent checks pass; the same C90 source links for DOS16; all three ignored local executable artifacts were refreshed. No current mismatch remains, so the next source-order chain may be admitted separately.
+
+## S4 admission — victory chain
+
+S4 enters at `VictoryMode` and exits at `EndExitTwo`. Its 22 exact inventory labels are audited in source order with a zero historical-credit forecast. It first compares each ROM branch, selector, RAM/table access, call/return edge and output ordering to `terminal_modes.c` and the frame-root tail. It then runs the controlled victory task, message-counter and end-world B-button route matrix against current x86/x64. Any feasible discrepancy remains in S4, is repaired in the shared owner, and is re-audited before S5 can be admitted.
