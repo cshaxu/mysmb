@@ -3723,13 +3723,16 @@
       "consumer": "MoveSmallPlatform",
       "storage": "offscreen/relative coordinates, small bounding box, collision state and OAM",
       "feasiblePath": "Small platform draws before movement and bounds consumption.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_run_small_platform",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3743,13 +3746,16 @@
       "consumer": "LargePlatformSubroutines",
       "storage": "TimerControl, large collision state and current slot",
       "feasiblePath": "Large platform movement vector is entered only when TimerControl is zero.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_run_large_platform",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3762,13 +3768,16 @@
       "consumer": "BalancePlatform",
       "storage": "Enemy_ID-$24, seven-entry target table and JumpEngine scratch $0004-$0007",
       "feasiblePath": "Large-platform IDs $24-$2a select their original movement vector target.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_platform_movement_dispatch targets",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3782,13 +3791,16 @@
       "consumer": "DrawLargePlatform",
       "storage": "relative position state",
       "feasiblePath": "The post-movement relative coordinate is what the large-platform renderer consumes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_run_large_platform",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3801,13 +3813,16 @@
       "consumer": "OffscreenBoundsCheck",
       "storage": "post-movement position and offscreen bits",
       "feasiblePath": "Terminal bounds executes after rendering on both timer branches.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_run_large_platform",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -29638,13 +29653,16 @@
       "label": "RunSmallPlatform",
       "asmLine": 9156,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Executes offscreen, relative position, small box, small collision, relative position, drawing, small-platform movement and terminal bounds in source order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -29654,13 +29672,16 @@
       "label": "RunLargePlatform",
       "asmLine": 9168,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Executes offscreen, relative position, large box, large collision, timer-gated movement dispatch, relative position, drawing and terminal bounds in source order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -29670,13 +29691,16 @@
       "label": "SkipPT",
       "asmLine": 9176,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "After either timer path, calls relative position then large-platform drawing and tail-jumps to terminal bounds.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -29686,13 +29710,16 @@
       "label": "LargePlatformSubroutines",
       "asmLine": 9182,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Computes Enemy_ID-$24, preserves JumpEngine scratch and selects the seven-entry large-platform movement vector.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81450,12 +81477,15 @@
       "instruction": "jsr",
       "id": "control-01692",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunSmallPlatform -> GetEnemyOffscreenBits with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81469,12 +81499,15 @@
       "instruction": "jsr",
       "id": "control-01693",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunSmallPlatform -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81488,12 +81521,15 @@
       "instruction": "jsr",
       "id": "control-01694",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -81508,12 +81544,15 @@
       "instruction": "jsr",
       "id": "control-01695",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunSmallPlatform -> SmallPlatformCollision with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -81528,12 +81567,15 @@
       "instruction": "jsr",
       "id": "control-01696",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunSmallPlatform -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81547,12 +81589,15 @@
       "instruction": "jsr",
       "id": "control-01697",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves ROM call relation RunSmallPlatform -> DrawSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81566,12 +81611,15 @@
       "instruction": "jsr",
       "id": "control-01698",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunSmallPlatform -> MoveSmallPlatform with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -81586,12 +81634,15 @@
       "instruction": "jmp",
       "id": "control-01699",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation RunSmallPlatform -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c",
@@ -81606,12 +81657,15 @@
       "instruction": "jsr",
       "id": "control-01700",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunLargePlatform -> GetEnemyOffscreenBits with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81625,12 +81679,15 @@
       "instruction": "jsr",
       "id": "control-01701",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunLargePlatform -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81644,12 +81701,15 @@
       "instruction": "jsr",
       "id": "control-01702",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -81664,12 +81724,15 @@
       "instruction": "jsr",
       "id": "control-01703",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformCollision with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -81684,12 +81747,15 @@
       "instruction": "bne",
       "id": "control-01704",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RunLargePlatform -> SkipPT with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81703,12 +81769,15 @@
       "instruction": "jsr",
       "id": "control-01705",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation RunLargePlatform -> LargePlatformSubroutines with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81722,12 +81791,15 @@
       "instruction": "jsr",
       "id": "control-01706",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunLargePlatform -> SkipPT with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81741,12 +81813,15 @@
       "instruction": "jsr",
       "id": "control-01707",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SkipPT -> RelativeEnemyPosition with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81760,12 +81835,15 @@
       "instruction": "jsr",
       "id": "control-01708",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves ROM call relation SkipPT -> DrawLargePlatform with source branch condition, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -81779,12 +81857,15 @@
       "instruction": "jmp",
       "id": "control-01709",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation SkipPT -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c",
@@ -81802,10 +81883,12 @@
       "status": "exact",
       "currentCounterpart": "shared platform/screen C dispatch and direct return continuation",
       "semanticEvidence": [
-        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision."
+        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass."
+        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass.",
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation LargePlatformSubroutines -> JumpEngine with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
@@ -123455,12 +123538,15 @@
       "instruction": "rts/rti",
       "id": "control-03820",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation LargePlatformSubroutines -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -134437,12 +134523,15 @@
       "selector": 0,
       "id": "control-04331",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> BalancePlatform with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -134458,12 +134547,15 @@
       "selector": 1,
       "id": "control-04332",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> YMovingPlatform with speed/force/position/collision predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -134479,12 +134571,15 @@
       "selector": 2,
       "id": "control-04333",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -134500,12 +134595,15 @@
       "selector": 3,
       "id": "control-04334",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c large/small lift sequence",
       "semanticEvidence": [
-        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> MoveLargeLiftPlat with TimerControl/collision predicate, fractional carry handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -134521,12 +134619,15 @@
       "selector": 4,
       "id": "control-04335",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> XMovingPlatform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -134542,12 +134643,15 @@
       "selector": 5,
       "id": "control-04336",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> DropPlatform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
@@ -134563,12 +134667,15 @@
       "selector": 6,
       "id": "control-04337",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> RightPlatform with collision/delta/carry predicate and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",

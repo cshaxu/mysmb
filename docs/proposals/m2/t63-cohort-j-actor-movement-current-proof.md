@@ -103,3 +103,50 @@ source-order nodes; no child semantics were inferred from the caller proof.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **984 / 1,992 nodes** and **1,924 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+## S2 admission — small/large platform caller and movement-vector bridge
+
+S2 admits `RunSmallPlatform`, `RunLargePlatform`, `SkipPT`, and
+`LargePlatformSubroutines` (lines 9156–9194). It owns 27 feasible direct
+control relations: both ordered runner paths, TimerControl branch/fall-through,
+the seven-entry movement dispatch and all direct return/tail boundaries. The
+extractor's `LargePlatformSubroutines -> EraseEnemyObject` fall-through is
+source-infeasible and remains excluded. It owns five material handoffs: small
+caller state; large collision/timer; seven-entry vector/scratch; post-movement
+relative state; and bounds state.
+
+Children (`GetEnemyOffscreenBits`, relative/box/collision/OAM/bounds and seven
+movement-vector targets) remain later source-order boundaries. The ROM-logic
+track compares child order, master-timer skip, `Enemy_ID - $24` vector index,
+duplicated lift target and JumpEngine scratch. The operational route uses ROM
+large IDs `$24-$2a` and small IDs `$2b-$2c`, both slots, timer values and
+child-mutated state against fresh x86/x64 caller records; it runs
+`mysmb.platform-caller`, purity and the DOS16 link. A feasible difference
+remains in S2 for repair and re-audit.
+
+### S2 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **984 / 1,992**.
+- Current exact feasible control edges: **1,924 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **4** labels; expected promotions: **4**; maximum current exact
+  node count on successful closure: **988 / 1,992**.
+
+## S2 closure — small/large platform caller and movement-vector bridge
+
+All four scoped labels are current-exact. Static `$C5BB-$C5E9` comparison
+confirms the complete small/large caller order, both TimerControl outcomes,
+`Enemy_ID-$24` selection, the seven target words including the duplicated
+large-lift entry, and JumpEngine scratch protocol. All 27 feasible direct
+controls and five material handoffs are exact; the extracted fall-through to
+`EraseEnemyObject` remains ROM-infeasible. Fresh current-source ROM/x86/x64
+caller replay matches 36 platform fixtures per width (**72 / 72**). The
+focused caller contract covers 3,240 footprints per width, platform purity
+passes and DOS16 links with its known `OLDNAMES.LIB` warning. No product source
+changed, so artifacts were not refreshed. Platform children remain explicit
+later source-order obligations.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**988 / 1,992 nodes** and **1,950 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).

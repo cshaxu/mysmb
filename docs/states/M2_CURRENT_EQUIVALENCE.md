@@ -2045,3 +2045,15 @@ DOS16 link agree. Child interiors remain separate source-order obligations.
 The registry is **984 / 1,992** exact nodes and **1,924 / 4,324** exact
 feasible control relations, from **4,342** raw controls with **18**
 infeasible; historical mapping remains **1,992 / 1,992**.
+
+
+### T63 S2 platform caller/vector bridge result
+
+`RunSmallPlatform -> LargePlatformSubroutines` is current-exact: four nodes,
+27 feasible direct controls and five material handoffs. Static source,
+controlled original-ROM/current x86/x64 caller replay, focused caller
+footprints, purity and DOS16 link agree. The raw fall-through to
+`EraseEnemyObject` is source-infeasible. Child implementations remain separate
+source-order obligations. The registry is **988 / 1,992** exact nodes and
+**1,950 / 4,324** exact feasible controls, from **4,342** raw controls with
+**18** infeasible; historical mapping remains **1,992 / 1,992**.
