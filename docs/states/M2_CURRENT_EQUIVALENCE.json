@@ -17490,13 +17490,16 @@
       "label": "FlagpoleObject",
       "asmLine": 3991,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c plus src/game/oam/flagpole_gfx.c",
       "currentCounterpart": "mysmb_area_apply_parser_object -> mysmb_objects_start_flagpole",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Writes ball, shaft and base metatiles, then initializes slot five as the flag using object X minus eight with source borrow into page.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -17507,13 +17510,16 @@
       "label": "EndlessRope",
       "asmLine": 4018,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Tail-enters the common rope renderer at row zero with fifteen-row extent.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17523,13 +17529,16 @@
       "label": "BalancePlatRope",
       "asmLine": 4023,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Clears rows one through fifteen, restores parser slot, decodes low-nibble extent and tail-enters rope at row one.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17539,13 +17548,16 @@
       "label": "DrawRope",
       "asmLine": 4034,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Tail-enters RenderUnderPart with rope metatile $40 and caller-selected row and extent.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17555,13 +17567,16 @@
       "label": "CoinMetatileData",
       "asmLine": 4039,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Supplies $c3 for water and $c2 for the other three area types.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17571,13 +17586,16 @@
       "label": "RowOfCoins",
       "asmLine": 4042,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Selects the area-type coin metatile and tail-enters the shared horizontal row renderer.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17587,13 +17605,16 @@
       "label": "C_ObjectRow",
       "asmLine": 4049,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Maps row-13 selector values two through four to rows six through eight.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17603,13 +17624,16 @@
       "label": "C_ObjectMetatile",
       "asmLine": 4052,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Maps the paired row-13 selector values to $c5, $0c and $89.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17619,13 +17643,16 @@
       "label": "CastleBridgeObj",
       "asmLine": 4055,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Installs fixed length twelve, then tail-enters the chained row-13 column renderer.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17635,13 +17662,16 @@
       "label": "AxeObj",
       "asmLine": 4060,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Sets VRAM address selector eight and falls through to the chained column renderer.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17651,13 +17681,16 @@
       "label": "ChainObj",
       "asmLine": 4064,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Uses decoder selector minus two to select the paired chain row and metatile before tail-entering one-column rendering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17667,13 +17700,16 @@
       "label": "EmptyBlock",
       "asmLine": 4070,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Decodes object row, selects $c4 and falls through to one-column rendering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17683,13 +17719,16 @@
       "label": "ColObj",
       "asmLine": 4074,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Tail-enters RenderUnderPart with zero vertical extent for exactly one selected column metatile.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17699,13 +17738,16 @@
       "label": "SolidBlockMetatiles",
       "asmLine": 4079,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Maps the four area types to $69, $61, $61 and $62.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17715,13 +17757,16 @@
       "label": "BrickMetatiles",
       "asmLine": 4082,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Maps area types to brick values and retains $88 solely for the cloud row override.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17731,13 +17776,16 @@
       "label": "RowOfBricks",
       "asmLine": 4086,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Selects BrickMetatiles by area type except CloudTypeOverride forces index four, then enters DrawBricks.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17747,13 +17795,16 @@
       "label": "DrawBricks",
       "asmLine": 4091,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Loads the caller-selected brick metatile and tail-enters the shared horizontal row path.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17763,13 +17814,16 @@
       "label": "RowOfSolidBlocks",
       "asmLine": 4094,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Loads SolidBlockMetatiles by area type and falls through to the horizontal row path.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17779,13 +17833,16 @@
       "label": "GetRow",
       "asmLine": 4097,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves metatile across low-nibble length decode and falls through to one-row rendering at RAM $07.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17795,13 +17852,16 @@
       "label": "DrawRow",
       "asmLine": 4099,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Reloads decoded row, uses zero extent and tail-enters RenderUnderPart with the preserved metatile.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17811,13 +17871,16 @@
       "label": "ColumnOfBricks",
       "asmLine": 4104,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Selects BrickMetatiles by area type without cloud override and tail-enters vertical rendering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17827,13 +17890,16 @@
       "label": "ColumnOfSolidBlocks",
       "asmLine": 4109,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Selects SolidBlockMetatiles by area type and falls through to vertical rendering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17843,13 +17909,16 @@
       "label": "GetRow2",
       "asmLine": 4112,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves metatile across attribute decode, reloads RAM $07 and tail-enters RenderUnderPart with decoded vertical extent.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17859,13 +17928,16 @@
       "label": "BulletBillCannon",
       "asmLine": 4120,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Decodes row and height, writes top $64 and optional middle $65, fills base $66 only when height remains, then registers cannon.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17875,13 +17947,16 @@
       "label": "SetupCannon",
       "asmLine": 4135,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Stores object Y, current page and object X in the six-entry cannon ring before increment/wrap.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17891,13 +17966,16 @@
       "label": "StrCOffset",
       "asmLine": 4146,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Stores the post-increment cannon ring offset and returns.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57506,12 +57584,15 @@
       "instruction": "jsr",
       "id": "control-00684",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation FlagpoleObject -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -57526,12 +57607,15 @@
       "instruction": "jsr",
       "id": "control-00685",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation FlagpoleObject -> GetAreaObjXPosition.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -57546,12 +57630,15 @@
       "instruction": "jmp",
       "id": "control-00686",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation EndlessRope -> DrawRope.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57565,12 +57652,15 @@
       "instruction": "jsr",
       "id": "control-00687",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation BalancePlatRope -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57584,12 +57674,15 @@
       "instruction": "jsr",
       "id": "control-00688",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation BalancePlatRope -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57603,12 +57696,15 @@
       "instruction": "ldx",
       "id": "control-00689",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source fallthrough relation BalancePlatRope -> DrawRope.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57622,12 +57718,15 @@
       "instruction": "jmp",
       "id": "control-00690",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation DrawRope -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57641,12 +57740,15 @@
       "instruction": "jmp",
       "id": "control-00691",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation RowOfCoins -> GetRow.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57660,12 +57762,15 @@
       "instruction": "jsr",
       "id": "control-00692",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation CastleBridgeObj -> ChkLrgObjFixedLength.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57679,12 +57784,15 @@
       "instruction": "jmp",
       "id": "control-00693",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation CastleBridgeObj -> ChainObj.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57698,12 +57806,15 @@
       "instruction": "sta",
       "id": "control-00694",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source fallthrough relation AxeObj -> ChainObj.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57717,12 +57828,15 @@
       "instruction": "jmp",
       "id": "control-00695",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation ChainObj -> ColObj.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57736,12 +57850,15 @@
       "instruction": "jsr",
       "id": "control-00696",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation EmptyBlock -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57755,12 +57872,15 @@
       "instruction": "lda",
       "id": "control-00697",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source fallthrough relation EmptyBlock -> ColObj.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57774,12 +57894,15 @@
       "instruction": "jmp",
       "id": "control-00698",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation ColObj -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57793,12 +57916,15 @@
       "instruction": "beq",
       "id": "control-00699",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source branch relation RowOfBricks -> DrawBricks.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source branch handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57812,12 +57938,15 @@
       "instruction": "ldy",
       "id": "control-00700",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source fallthrough relation RowOfBricks -> DrawBricks.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57831,12 +57960,15 @@
       "instruction": "jmp",
       "id": "control-00701",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation DrawBricks -> GetRow.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57850,12 +57982,15 @@
       "instruction": "lda",
       "id": "control-00702",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source fallthrough relation RowOfSolidBlocks -> GetRow.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57869,12 +58004,15 @@
       "instruction": "jsr",
       "id": "control-00703",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation GetRow -> ChkLrgObjLength.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57888,12 +58026,15 @@
       "instruction": "jsr",
       "id": "control-00704",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source fallthrough relation GetRow -> DrawRow.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57907,12 +58048,15 @@
       "instruction": "jmp",
       "id": "control-00705",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation DrawRow -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57926,12 +58070,15 @@
       "instruction": "jmp",
       "id": "control-00706",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation ColumnOfBricks -> GetRow2.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57945,12 +58092,15 @@
       "instruction": "lda",
       "id": "control-00707",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source fallthrough relation ColumnOfSolidBlocks -> GetRow2.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57964,12 +58114,15 @@
       "instruction": "jsr",
       "id": "control-00708",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source call relation GetRow2 -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57983,12 +58136,15 @@
       "instruction": "jmp",
       "id": "control-00709",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source jump relation GetRow2 -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58002,12 +58158,15 @@
       "instruction": "jsr",
       "id": "control-00710",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation BulletBillCannon -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58021,12 +58180,15 @@
       "instruction": "bmi",
       "id": "control-00711",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source branch relation BulletBillCannon -> SetupCannon.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58040,12 +58202,15 @@
       "instruction": "bmi",
       "id": "control-00712",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source branch relation BulletBillCannon -> SetupCannon.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58059,12 +58224,15 @@
       "instruction": "jsr",
       "id": "control-00713",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation BulletBillCannon -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58078,12 +58246,15 @@
       "instruction": "jsr",
       "id": "control-00714",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source fallthrough relation BulletBillCannon -> SetupCannon.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58097,12 +58268,15 @@
       "instruction": "jsr",
       "id": "control-00715",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation SetupCannon -> GetAreaObjYPosition.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58116,12 +58290,15 @@
       "instruction": "jsr",
       "id": "control-00716",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation SetupCannon -> GetAreaObjXPosition.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58135,12 +58312,15 @@
       "instruction": "bcc",
       "id": "control-00717",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source branch relation SetupCannon -> StrCOffset.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58154,12 +58334,15 @@
       "instruction": "ldx",
       "id": "control-00718",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source fallthrough relation SetupCannon -> StrCOffset.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58515,13 +58698,16 @@
       "instruction": "jmp",
       "id": "control-00737",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source jump relation DrawQBlk -> DrawRow.",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114124,12 +114310,15 @@
       "instruction": "rts/rti",
       "id": "control-03591",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation RenderUnderPart -> FlagpoleObject.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -114144,12 +114333,15 @@
       "instruction": "rts/rti",
       "id": "control-03592",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation GetAreaObjXPosition -> FlagpoleObject.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -114164,12 +114356,15 @@
       "instruction": "rts/rti",
       "id": "control-03593",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation RenderUnderPart -> BalancePlatRope.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114183,12 +114378,15 @@
       "instruction": "rts/rti",
       "id": "control-03594",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation GetLrgObjAttrib -> BalancePlatRope.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114202,12 +114400,15 @@
       "instruction": "rts/rti",
       "id": "control-03595",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation ChkLrgObjFixedLength -> CastleBridgeObj.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114221,12 +114422,15 @@
       "instruction": "rts/rti",
       "id": "control-03596",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation GetLrgObjAttrib -> EmptyBlock.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114240,12 +114444,15 @@
       "instruction": "rts/rti",
       "id": "control-03597",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation ChkLrgObjLength -> GetRow.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114259,12 +114466,15 @@
       "instruction": "rts/rti",
       "id": "control-03598",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "Shared game C preserves source return relation GetLrgObjAttrib -> GetRow2.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114278,12 +114488,15 @@
       "instruction": "rts/rti",
       "id": "control-03599",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetLrgObjAttrib -> BulletBillCannon.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114297,12 +114510,15 @@
       "instruction": "rts/rti",
       "id": "control-03600",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation RenderUnderPart -> BulletBillCannon.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114316,12 +114532,15 @@
       "instruction": "rts/rti",
       "id": "control-03601",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjYPosition -> SetupCannon.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114335,12 +114554,15 @@
       "instruction": "rts/rti",
       "id": "control-03602",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjXPosition -> SetupCannon.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -125097,10 +125319,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> RowOfBricks selector 2.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> RowOfBricks selector 2.",
       "currentSourcePaths": [
@@ -125120,10 +125344,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> RowOfSolidBlocks selector 3.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> RowOfSolidBlocks selector 3.",
       "currentSourcePaths": [
@@ -125143,10 +125369,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> RowOfCoins selector 4.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> RowOfCoins selector 4.",
       "currentSourcePaths": [
@@ -125166,10 +125394,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> ColumnOfBricks selector 5.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> ColumnOfBricks selector 5.",
       "currentSourcePaths": [
@@ -125189,10 +125419,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> ColumnOfSolidBlocks selector 6.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> ColumnOfSolidBlocks selector 6.",
       "currentSourcePaths": [
@@ -125419,10 +125651,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> EndlessRope selector 16.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> EndlessRope selector 16.",
       "currentSourcePaths": [
@@ -125442,10 +125676,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BalancePlatRope selector 17.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BalancePlatRope selector 17.",
       "currentSourcePaths": [
@@ -125787,10 +126023,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> EmptyBlock selector 32.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> EmptyBlock selector 32.",
       "currentSourcePaths": [
@@ -125856,10 +126094,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> FlagpoleObject selector 35.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> FlagpoleObject selector 35.",
       "currentSourcePaths": [
@@ -125880,10 +126120,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> AxeObj selector 36.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> AxeObj selector 36.",
       "currentSourcePaths": [
@@ -125903,10 +126145,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> ChainObj selector 37.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> ChainObj selector 37.",
       "currentSourcePaths": [
@@ -125926,10 +126170,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> CastleBridgeObj selector 38.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> CastleBridgeObj selector 38.",
       "currentSourcePaths": [
@@ -126179,10 +126425,12 @@
       "currentCounterpart": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> BulletBillCannon selector 2.",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
       ],
       "semanticContract": "area.c preserves source jump-engine-dispatch relation AreaStyleObject -> BulletBillCannon selector 2.",
       "currentSourcePaths": [

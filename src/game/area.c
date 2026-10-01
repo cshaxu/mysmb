@@ -1559,8 +1559,10 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         }
         else if (value == 1U) {
             game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x24U;
-            for (row = 1U; row < 10U; ++row)
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x25U;
+            /* FlagpoleObject calls RenderUnderPart for the shaft.  Its
+             * overlay policy and final ObjectHeight write are observable by
+             * subsequent parser objects, so this cannot be a direct fill. */
+            mysmb_area_render_under_part(game, 1U, 8U, 0x25U);
             game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x61U;
             mysmb_objects_start_flagpole(game,
                 game->ram[MYSMB_AREA_CURRENT_PAGE],

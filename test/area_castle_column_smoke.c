@@ -74,5 +74,24 @@ int main(void)
     game.ram[0x06a6U] = 0xc0U;
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a6U] != 0xc4U) return 8;
+
+    /* FlagpoleObject only directly stores its ball and base.  Its shaft
+     * tail-calls RenderUnderPart, so an existing protected foreground tile
+     * survives while $c0 is replaced and the helper leaves height zero. */
+    mysmb_set_object(&game, prg, 0x0dU, 0x41U);
+    game.ram[0x06a2U] = 0xc1U;
+    game.ram[0x06a3U] = 0xc0U;
+    if (mysmb_area_process_object_state(&game) == 0U) return 9;
+    if (game.ram[0x06a1U] != 0x24U) return 10;
+    if (game.ram[0x06a2U] != 0xc1U) return 11;
+    if (game.ram[0x06a3U] != 0x25U) return 12;
+    if (game.ram[0x06abU] != 0x61U) return 13;
+    if (game.ram[0x0735U] != 0U) return 14;
+    if (game.ram[0x001bU] != 48U) return 15;
+    if (game.ram[0x008cU] != 0xf8U) return 16;
+    if (game.ram[0x0073U] != 0xffU) return 17;
+    if (game.ram[0x00d4U] != 0x30U) return 18;
+    if (game.ram[0x010dU] != 0xb0U) return 19;
+    if (game.ram[0x0014U] != 1U) return 20;
     return 0;
 }

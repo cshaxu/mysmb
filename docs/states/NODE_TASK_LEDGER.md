@@ -3273,4 +3273,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T56 S4 | 27 | 1992 | none / 0 | none / 0 | closed-warp-scroll-frenzy-style-pulley-castle-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
 | M2 T56 S5 | 22 | 1992 | none / 0 | none / 0 | closed-castle-pipe-allocation-question-row-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
 | M2 T56 S6 | 5 | 1992 | none / 0 | none / 0 | closed-low-question-bridge-flag-balls-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
-| M2 T57 S1 | 26 | 1992 | none / 0 | none / 0 | admitted-flagpole-object-row-cannon-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |
+| M2 T57 S1 | 26 | 1992 | none / 0 | none / 0 | closed-flagpole-object-row-cannon-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |
+| M2 T57 S2 | 13 | 1992 | none / 0 | none / 0 | admitted-staircase-jumpspring-question-block-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |

@@ -180,3 +180,52 @@ All 26 labels are historically ROM-match complete and currently need fresh evide
 ## S1 closure
 
 Pending. No T57 label is promoted merely by admission. Any mismatch is repaired in S1 and the same ROM-logic and operational routes are repeated before S2 is admitted.
+
+## S1 P1 and closure — flagpole, object-row and cannon chain
+
+S1 closes all 26 scoped labels current-exact: `FlagpoleObject`, `EndlessRope`,
+`BalancePlatRope`, `DrawRope`, `CoinMetatileData`, `RowOfCoins`,
+`C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`, `AxeObj`, `ChainObj`,
+`EmptyBlock`, `ColObj`, `SolidBlockMetatiles`, `BrickMetatiles`,
+`RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`,
+`ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2`, `BulletBillCannon`,
+`SetupCannon` and `StrCOffset`. The source audit covers all 61 incident
+control relations; 50 newly become exact and the 11 already-exact dispatch
+relations remain confirmed. This chain has no material-relation entry.
+
+P1 repaired the one feasible difference. Original `FlagpoleObject` calls
+`RenderUnderPart` for rows 1--9, so it uses the shared protected-tile overlay
+rule and leaves the final object-height value. The C loop had written those
+rows directly. It now calls the same shared rendering primitive; ball/base
+stores and flag object initialization remain in their original order. The new
+flagpole regression sets both a protected foreground tile and a replaceable
+`$c0` tile, and proves the ROM result, final height and flag object state.
+
+The controlled original-ROM/current x86/x64 routes `t22-flagpole`,
+`t29-special-object` and `t29-geometry-castle` agree for enemy flag state,
+cannon ring, staging and parser RAM; x86/x64 records are byte-identical. Four
+focused object tests pass on both widths, the same shared source links as
+DOS16, and platform-purity passes. The rebuilt artifacts are `mysmb16.exe`
+SHA-256 `1366D2D9BB535A129C0E3AFE2D4B90C5121CE21F0E8FB525AEF29E5984AB1A92`,
+`mysmb32.exe` SHA-256 `D082F788987AA6D8F84DC68976B0D10D8F099A6D2CD677309E0626F72C9FC16E`,
+and `mysmb64.exe` SHA-256 `2F74E41FA6F2A73E6E0EB9B9941D52B026ABD62F415D2519C84F8137B0FD7DB4`.
+Historical conformance remains 1,992 / 1,992.
+
+## S2 admission — staircase, jumpspring and question/brick chain
+
+S2 admits the contiguous 13-label chain `StaircaseHeightData -> ExitDecBlock`:
+`StaircaseHeightData`, `StaircaseRowData`, `StaircaseObject`, `NextStair`,
+`Jumpspring`, `Hidden1UpBlock`, `QuestionBlock`, `BrickWithCoins`,
+`BrickWithItem`, `BWithL`, `DrawQBlk`, `GetAreaObjectID` and `ExitDecBlock`.
+S1 is its predecessor; S3 receives hole and block-buffer handling. The shared
+owner is `src/game/area.c`. All labels are historically complete and need
+current evidence, so expected historical credit remains zero.
+
+The ROM-logic track compares staircase decrement/table indexing, jumpspring
+slot and coordinate initialization, hidden-block gate, question/brick selector
+and shared draw/return tails. The operational track uses a controlled
+original-ROM/current x86/x64 staircase, jumpspring and question/brick matrix,
+focused staircase/jumpspring/item-block tests and platform-purity. A product
+repair must use shared C, rebuild the DOS16 link and refresh all three target
+artifacts. A feasible difference remains in S2 until repair and repeated audit
+close it.
