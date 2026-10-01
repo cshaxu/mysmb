@@ -84,6 +84,25 @@ int main(void)
     }
 
     mysmb_game_initialize(&game);
+    /* ROM ChkSelect checks the expired DemoTimer before ChkWorldSel.  B
+     * therefore starts the demo even with world selection enabled. */
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0772U] = 3U;
+    game.ram[0x07a2U] = 0U;
+    game.ram[0x07fcU] = 1U;
+    game.ram[0x076bU] = 4U;
+    game.ram[0x075fU] = 4U;
+    game.ram[0x0780U] = 0U;
+    game.ram[0x06fcU] = MYSMB_BUTTON_B;
+    mysmb_game_title_step(&game, &input);
+    if (game.ram[0x076bU] != 4U || game.ram[0x075fU] != 4U ||
+        game.ram[0x0780U] != MYSMB_BUTTON_B ||
+        game.ram[0x06fcU] != MYSMB_BUTTON_RIGHT ||
+        game.ram[0x0717U] != 1U || game.ram[0x0718U] != 0x9aU) {
+        return 18;
+    }
+
+    mysmb_game_initialize(&game);
     game.ram[0x0770U] = 0U;
     game.ram[0x0772U] = 3U;
     game.ram[0x07a2U] = 0x55U;

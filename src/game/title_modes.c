@@ -321,26 +321,35 @@ mysmb_u8 mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input
             mysmb_game_draw_mushroom_icon(game);
         }
     }
-    else if (game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE] != 0U &&
-             buttons == MYSMB_BUTTON_B) {
+    else {
+        /* ROM ChkSelect checks DemoTimer before it reaches ChkWorldSel.
+         * An expired title demo therefore consumes every non-Select input,
+         * including B while world selection is enabled. */
         if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
-            mysmb_game_reset_title(game);
-            return 0U;
-        }
-        game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
-        if (game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
-            game->ram[MYSMB_RAM_SELECT_TIMER] = 0x10U;
-            index = (mysmb_u8)((game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] +
-                                 1U) & 7U);
-            game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] = index;
-            index = mysmb_game_go_continue(game, index);
-            while (index < 6U) {
-                game->ram[(mysmb_u16)(MYSMB_RAM_VRAM_BUFFER1_OFFSET + index)] =
-                    world_select_template[index];
-                index++;
+            game->ram[MYSMB_RAM_SELECT_TIMER] = buttons;
+            if (mysmb_game_step_title_demo(game) != 0U) {
+                mysmb_game_reset_title(game);
+                return 0U;
             }
-            world = (mysmb_u8)(game->ram[MYSMB_RAM_WORLD] + 1U);
-            game->ram[0x0304U] = world;
+            return 1U;
+        }
+        if (game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE] != 0U &&
+            buttons == MYSMB_BUTTON_B) {
+            game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
+            if (game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
+                game->ram[MYSMB_RAM_SELECT_TIMER] = 0x10U;
+                index = (mysmb_u8)((game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] +
+                                     1U) & 7U);
+                game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] = index;
+                index = mysmb_game_go_continue(game, index);
+                while (index < 6U) {
+                    game->ram[(mysmb_u16)(MYSMB_RAM_VRAM_BUFFER1_OFFSET + index)] =
+                        world_select_template[index];
+                    index++;
+                }
+                world = (mysmb_u8)(game->ram[MYSMB_RAM_WORLD] + 1U);
+                game->ram[0x0304U] = world;
+            }
         }
     }
     if (game->ram[MYSMB_RAM_DEMO_TIMER] != 0U) {

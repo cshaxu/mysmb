@@ -54,6 +54,43 @@ target artifacts.  The repair must write the source scratch bit and preserve
 d7-clear PPU control through dispatch, restoring d7 only at the RTI-equivalent
 tail.  No platform source may own either decision.
 
+## T52 S2 admission: A6 title-demo/world-select order
+
+S2 enters at `ChkSelect`, follows its non-Select path through the `DemoTimer`
+gate and ends at the `ChkWorldSel` successor. The received labels are
+`ChkSelect` (source line 1005) and `ChkWorldSel` (line 1013), in source order.
+`GameMenuRoutine` is the caller; `SelectBLogic`, `NullJoypad`, `DemoEngine`
+and `RunDemo` are the successor boundaries. The two labels move under this
+corrective receipt from T25 S10 and T25 S11. They were historically complete,
+so S2 has a zero-credit forecast and preserves the **1,992 / 1,992** historical
+numerator.
+
+The ROM-logic track proves both sides of the conditional source relation: with
+`DemoTimer=0`, `WorldSelectEnableFlag=1` and B input, `ChkSelect` must enter
+the demo path before `ChkWorldSel`; with a nonzero timer, the same B input may
+reach `ChkWorldSel`, then its shared `SelectBLogic` tail. It compares the
+first post-menu state boundary, including `OperMode_Task`, controller byte,
+world-select fields and timer writes. The operational track adds this boundary
+case to `mysmb.title-demo-smoke`, runs it against ROM-configured Win32 x86/x64
+routes, runs platform purity and the existing OpenNT DOS16 link, then refreshes
+all three local artifacts. No platform source may make the menu decision.
+
+## T52 S2 closure: A6 title-demo/world-select order
+
+S2 closes both received labels without changing historical conformance credit:
+`ChkSelect` and `ChkWorldSel` are now current-equivalence `exact`, and
+`control-00087` is exact. The historical fraction remains **1,992 / 1,992**.
+
+The ROM fixture applies its state only at a normal NMI return. With expired
+`DemoTimer`, enabled world selection and B, coverage follows `$8245-$8269`
+and enters `DemoEngine` at `$836b`; it does not enter `ChkWorldSel`. With a
+nonzero timer and the same B condition, it reaches `$826c-$8273` and does not
+enter `DemoEngine`. The shared C regression asserts the matching fields and
+both ROM-configured Win32 widths pass it with platform-purity and host
+self-tests. The existing OpenNT DOS16 pipeline recompiled the shared title
+unit and linked the DOS executable; the linker has its longstanding optional
+`OLDNAMES.LIB` warning but produced the refreshed executable with exit code 0.
+
 ## T52 closure
 
 T52 closes only when all six runtime chains have ROM logic-equivalence and

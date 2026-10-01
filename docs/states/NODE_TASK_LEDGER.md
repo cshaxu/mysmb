@@ -26,8 +26,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
 | M2 T22 S9 | 1 | `ScreenOff` |
-| M2 T25 S10 | 1 | `ChkSelect` |
-| M2 T25 S11 | 1 | `ChkWorldSel` |
 | M2 T25 S12 | 1 | `SelectBLogic` |
 | M2 T25 S13 | 1 | `IncWorldSel` |
 | M2 T25 S14 | 1 | `UpdateShroom` |
@@ -225,6 +223,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T51 S3 | 1 | `KillEnemies` |
 | M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
 | M2 T52 S1 | 3 | `NonMaskableInterrupt`, `RotPRandomBit`, `SkipSprite0` |
+| M2 T52 S2 | 2 | `ChkSelect`, `ChkWorldSel` |
 
 ## Future admission packages and queued plans
 
@@ -288,8 +287,8 @@ transfer existing ownership or allocate a numeric T.
 | 993 | `WSelectBufferTemplate` | M2 T25 S20 | existing closure backlog; S20 retained title receipt after GoContinue closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 996 | `GameMenuRoutine` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1004 | `StartGame` | M2 T25 S9 | existing closure backlog; T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this start leaf. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4; M2 T25 S9 |
-| 1005 | `ChkSelect` | M2 T25 S10 | existing closure backlog; M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S10; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1013 | `ChkWorldSel` | M2 T25 S11 | existing closure backlog; M2 T25 S11 retains the title/menu/demo receipt after S10. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1005 | `ChkSelect` | M2 T52 S2 | existing closure backlog; T52 S2 accepted current-equivalence corrective transfer for the A6 title-menu branch chain. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S10; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1013 | `ChkWorldSel` | M2 T52 S2 | existing closure backlog; T52 S2 accepted current-equivalence corrective transfer for the A6 title-menu branch chain. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1018 | `SelectBLogic` | M2 T25 S12 | existing closure backlog; M2 T25 S12 retains title/menu/demo receipt after S11. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1033 | `IncWorldSel` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1039 | `UpdateShroom` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
@@ -2352,8 +2351,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T25 S7 | 0 | 4 | source-order-title-idle-credit; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S8 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S9 | 1 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S10 | 1 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S11 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S10 | 1 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S11 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S12 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S13 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S14 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
@@ -2588,6 +2587,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T51 S5 | 0 | 0 | cross-route-integration-certification; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T52 | 0 | - | [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S1 | 0 | 3 | owner-approved-current-equivalence-remediation, a2-nmi-prefix-state-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S2 | 0 | 2 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2918,6 +2918,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | t52-s1-nmi-parent | M2 T51 S1 | M2 T52 S1 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | t52-s1-random-prefix | M2 T22 S25 | M2 T52 S1 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | t52-s1-sprite-prefix | M2 T22 S26 | M2 T52 S1 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| t52-s2-chkselect | M2 T25 S10 | M2 T52 S2 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| t52-s2-chkworldsel | M2 T25 S11 | M2 T52 S2 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3186,3 +3188,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T51 S5 | 0 | 1992 | none / 0 | none / 0 | closed-historical-certification-handoff; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 Td S9 | 0 | 1992 | none / 0 | none / 0 | closed-current-equivalence-governance; [record](../../docs/proposals/m2/current-equivalence-reaudit.md) |
 | M2 T52 S1 | 3 | 1992 | none / 0 | none / 0 | closed-a2-current-equivalence-remediation; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S2 | 2 | 1992 | none / 0 | none / 0 | closed-a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |

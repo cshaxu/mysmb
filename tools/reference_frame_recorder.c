@@ -999,6 +999,25 @@ static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
     ram[0x073cu] = 14u;
 }
 
+/* T52/S2 sets only the ordinary title-menu RAM state at an NMI return.  The
+ * next ROM NMI reaches GameMenuRoutine through TitleScreenMode; no PC or
+ * stack is redirected.  This distinguishes ChkSelect's expired-demo path
+ * from the nonzero-DemoTimer ChkWorldSel path. */
+static void mysmb_reference_apply_t52_title_menu_fixture(lib_u8 *ram,
+                                                          lib_u8 demo_timer)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 0u;
+    ram[0x0772u] = 3u;
+    ram[0x07a2u] = demo_timer;
+    ram[0x07fcu] = 1u;
+    ram[0x076bu] = 4u;
+    ram[0x075fu] = 4u;
+    ram[0x0780u] = 0u;
+    ram[0x06fcu] = 0x02u;
+    ram[0x06fdu] = 0u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -3043,6 +3062,16 @@ int main(int argument_count, char **arguments)
             t26_fixture = 57u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t52-title-demo-expired-b") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 101u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t52-title-demo-active-b") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 102u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -3298,6 +3327,12 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 57u)
                     mysmb_reference_apply_t28_title_score_fixture(
                         driver->machine->ram);
+                else if (t26_fixture == 101u)
+                    mysmb_reference_apply_t52_title_menu_fixture(
+                        driver->machine->ram, 0u);
+                else if (t26_fixture == 102u)
+                    mysmb_reference_apply_t52_title_menu_fixture(
+                        driver->machine->ram, 1u);
                 else if (t26_fixture == 58u)
                     mysmb_reference_apply_t28_area_entry_fixture(
                         driver->machine->ram);
