@@ -175,6 +175,17 @@ every record.  This closes the source-resolvability metadata gap only; it does
 not change any semantic disposition or satisfy any pending ROM-route
 obligation.
 
+### T63 S8 Bloober movement result
+
+`BlooberBitmasks -> ChkNearPlayer` is current-exact: all 16 nodes, 28 feasible
+control relations and six material handoffs match the shared C owner. Static
+`$CB87-$CC35` comparison and 512 original-ROM/current x86/x64 records pass
+for **1,024 / 1,024** comparisons; the focused contract, purity audit and
+DOS16 shared-source link also pass. The live registry is **1,046 exact nodes**
+and **2,070 exact feasible control relations**. Historical mapping remains
+**1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible and
+**4,324** feasible.
+
 ## Current evidence boundary
 
 The retired baseline tables below the static checkpoint have been removed:

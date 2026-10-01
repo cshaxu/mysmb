@@ -2112,3 +2112,11 @@ controls**.
 ## M2 T63 S7 current-equivalence closure
 
 The green Paratroopa/X-counter chain closes ten labels, 19 feasible controls and five material handoffs exact. ROM/current x86/x64 replay passes 576 comparisons and counter contracts pass per width. Historical **1,992 / 1,992**; exact nodes **1,030 / 1,992**; exact feasible controls **2,042 / 4,324**; raw **4,342**, infeasible **18**.
+
+## M2 T63 S8 current-equivalence closure
+
+The Bloober swim/float-state chain closes 16 labels, 28 feasible controls and
+six material handoffs exact. ROM/current x86/x64 replay passes 1,024
+comparisons and the focused C90 contract passes. Historical **1,992 / 1,992**;
+exact nodes **1,046 / 1,992**; exact feasible controls **2,070 / 4,324**; raw
+**4,342**, infeasible **18**.

@@ -361,3 +361,45 @@ so no three-EXE refresh applies.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,030 / 1,992 nodes** and **2,042 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+## S8 admission — Bloober swim and float-state chain
+
+S8 admits the contiguous `BlooberBitmasks -> ChkNearPlayer` chain (lines
+9490–9592, `$CB87-$CC35`): `BlooberBitmasks`, `MoveBloober`, `FBLeft`,
+`SBMDir`, `BlooberSwim`, `SwimX`, `LeftSwim`, `MoveDefeatedBloober`,
+`ProcSwimmingB`, `BSwimE`, `SlowSwim`, `NoSSw`, `ChkForFloatdown`,
+`Floatdown`, `NoFD`, and `ChkNearPlayer`. The shared owner is
+`src/game/enemy/bloober.c`. S7 is the predecessor; S9 begins at
+`MoveBulletBill`. The gravity and player-difference callees are explicit
+boundaries, not inferred child proof.
+
+The logic track audits the mask bytes, defeated tail, slot-direction/carry
+path, swim acceleration/deceleration phases, interval timer, float-down and
+page-aware horizontal movement. It replays the controlled 512-case
+original-ROM route on current x86/x64. The independent operational track runs
+the focused Bloober contract, platform-purity and shared DOS16 link.
+
+### S8 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,030 / 1,992**.
+- Current exact feasible control edges: **2,042 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **16** labels; expected current promotions: **16**; maximum exact
+  node count: **1,046 / 1,992**.
+
+## S8 closure — Bloober swim and float-state chain
+
+All 16 scoped labels are current-exact. Static `$CB87-$CC35` comparison
+confirms both mask bytes, defeated precedence, odd/even slot direction and
+inherited carry, eight-frame force/speed updates, endpoint counter/timer
+writes, float-down carry and page-aware horizontal movement. The 28 feasible
+control relations and six material handoffs are exact. The controlled 512-case
+original-ROM route matches current x86/x64 for **1,024 / 1,024** comparisons;
+the focused C90 contract, platform purity and OpenNT DOS16 shared-source link
+pass. No product source changed, so the three local executable artifacts were
+not refreshed.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,046 / 1,992 nodes** and **2,070 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**). S9 begins with `MoveBulletBill`.

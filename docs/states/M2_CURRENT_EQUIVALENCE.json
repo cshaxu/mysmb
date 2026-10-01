@@ -4405,13 +4405,16 @@
       "consumer": "MoveBloober",
       "storage": "SecondaryHardMode-indexed random mask",
       "feasiblePath": "Random LFSR mask controls whether direction is reconsidered before swimming.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "masks[SecondaryHardMode]",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4424,13 +4427,16 @@
       "consumer": "SBMDir",
       "storage": "PlayerEnemyDiff sign and carry",
       "feasiblePath": "Even-slot player difference selects direction while preserving page-comparison carry.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_player_difference and local carry",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4443,13 +4449,16 @@
       "consumer": "BlooberSwim",
       "storage": "Enemy moving direction and inherited carry",
       "feasiblePath": "Swimming consumes stored direction and source carry semantics.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_bloobers_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4462,13 +4471,16 @@
       "consumer": "ChkForFloatdown",
       "storage": "movement counter bit one and interval timer",
       "feasiblePath": "Float-state branch uses interval timer before near-player comparison.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "swim helper",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4481,13 +4493,16 @@
       "consumer": "Floatdown",
       "storage": "Y+16 plus inherited carry and player Y",
       "feasiblePath": "Near-player test preserves source carry into the vertical threshold calculation.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "swim helper near_y",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4500,13 +4515,16 @@
       "consumer": "LeftSwim",
       "storage": "X speed, direction and page carry/borrow",
       "feasiblePath": "Each direction updates X and page with the original carry or borrow rule.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_bloobers_slot",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -30603,13 +30621,16 @@
       "label": "BlooberBitmasks",
       "asmLine": 9490,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds random masks {$3f,$03} indexed by SecondaryHardMode.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30619,13 +30640,16 @@
       "label": "MoveBloober",
       "asmLine": 9493,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Routes defeated state to slow vertical movement; otherwise applies difficulty mask and chooses direction from odd-slot player direction or even-slot player difference before swimming.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30635,13 +30659,16 @@
       "label": "FBLeft",
       "asmLine": 9506,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses player/enemy difference to choose left by default or right when enemy is left of player, while preserving source carry for downstream swim logic.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30651,13 +30678,16 @@
       "label": "SBMDir",
       "asmLine": 9510,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores selected Bloober direction then falls through swimming.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30667,13 +30697,16 @@
       "label": "BlooberSwim",
       "asmLine": 9512,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Calls swimming state progression, applies upward movement-force subtraction only if result stays at or below Y=$20 boundary, then chooses horizontal direction.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30683,13 +30716,16 @@
       "label": "SwimX",
       "asmLine": 9520,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "For direction right, adds BlooberMoveSpeed to X and propagates carry to page before return.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30699,13 +30735,16 @@
       "label": "LeftSwim",
       "asmLine": 9532,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "For direction left, subtracts BlooberMoveSpeed from X and propagates borrow to page before return.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30715,13 +30754,16 @@
       "label": "MoveDefeatedBloober",
       "asmLine": 9542,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Tail-jumps to slow vertical downward movement.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30731,13 +30773,16 @@
       "label": "ProcSwimmingB",
       "asmLine": 9545,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects acceleration, deceleration, floating or near-player branches from movement counter and timer state.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30747,13 +30792,16 @@
       "label": "BSwimE",
       "asmLine": 9565,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns after acceleration branch work or its every-eighth-frame gate.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30763,13 +30811,16 @@
       "label": "SlowSwim",
       "asmLine": 9567,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Every eighth frame decrements swim force/speed; when reaching zero advances movement state and assigns interval timer two.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30779,13 +30830,16 @@
       "label": "NoSSw",
       "asmLine": 9579,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns after slow-swim frame gate or state update.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30795,13 +30849,16 @@
       "label": "ChkForFloatdown",
       "asmLine": 9581,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects near-player test when interval timer is zero; otherwise falls through alternating float-down.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30811,13 +30868,16 @@
       "label": "Floatdown",
       "asmLine": 9585,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "On alternate frames increments Y; otherwise returns.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30827,13 +30887,16 @@
       "label": "NoFD",
       "asmLine": 9590,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns after float-down cadence decision.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -30843,13 +30906,16 @@
       "label": "ChkNearPlayer",
       "asmLine": 9592,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/bloober.c",
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Adds sixteen plus inherited carry to Y; if still above player returns to float-down, otherwise clears movement counter and returns.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -83898,12 +83964,15 @@
       "instruction": "bne",
       "id": "control-01791",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveBloober -> MoveDefeatedBloober with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -83917,12 +83986,15 @@
       "instruction": "bne",
       "id": "control-01792",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveBloober -> BlooberSwim with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -83936,12 +84008,15 @@
       "instruction": "bcc",
       "id": "control-01793",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveBloober -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -83955,12 +84030,15 @@
       "instruction": "bcs",
       "id": "control-01794",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveBloober -> SBMDir with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -83974,12 +84052,15 @@
       "instruction": "bcs",
       "id": "control-01795",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveBloober -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -83993,12 +84074,15 @@
       "instruction": "jsr",
       "id": "control-01796",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation FBLeft -> PlayerEnemyDiff with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -84016,12 +84100,15 @@
       "instruction": "bpl",
       "id": "control-01797",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FBLeft -> SBMDir with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84035,12 +84122,15 @@
       "instruction": "dey",
       "id": "control-01798",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FBLeft -> SBMDir with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84054,12 +84144,15 @@
       "instruction": "sty",
       "id": "control-01799",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SBMDir -> BlooberSwim with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84073,12 +84166,15 @@
       "instruction": "jsr",
       "id": "control-01800",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation BlooberSwim -> ProcSwimmingB with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84092,12 +84188,15 @@
       "instruction": "bcc",
       "id": "control-01801",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation BlooberSwim -> SwimX with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84111,12 +84210,15 @@
       "instruction": "sta",
       "id": "control-01802",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation BlooberSwim -> SwimX with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84130,12 +84232,15 @@
       "instruction": "bne",
       "id": "control-01803",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SwimX -> LeftSwim with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84149,12 +84254,15 @@
       "instruction": "jmp",
       "id": "control-01804",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation MoveDefeatedBloober -> MoveEnemySlowVert with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c",
@@ -84169,12 +84277,15 @@
       "instruction": "bne",
       "id": "control-01805",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcSwimmingB -> ChkForFloatdown with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84188,12 +84299,15 @@
       "instruction": "bcs",
       "id": "control-01806",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcSwimmingB -> SlowSwim with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84207,12 +84321,15 @@
       "instruction": "bne",
       "id": "control-01807",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcSwimmingB -> BSwimE with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84226,12 +84343,15 @@
       "instruction": "bne",
       "id": "control-01808",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcSwimmingB -> BSwimE with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84245,12 +84365,15 @@
       "instruction": "inc",
       "id": "control-01809",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcSwimmingB -> BSwimE with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84264,12 +84387,15 @@
       "instruction": "bne",
       "id": "control-01810",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SlowSwim -> NoSSw with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84283,12 +84409,15 @@
       "instruction": "bne",
       "id": "control-01811",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SlowSwim -> NoSSw with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84302,12 +84431,15 @@
       "instruction": "sta",
       "id": "control-01812",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SlowSwim -> NoSSw with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84321,12 +84453,15 @@
       "instruction": "beq",
       "id": "control-01813",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForFloatdown -> ChkNearPlayer with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84340,12 +84475,15 @@
       "instruction": "beq",
       "id": "control-01814",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkForFloatdown -> Floatdown with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84359,12 +84497,15 @@
       "instruction": "bcs",
       "id": "control-01815",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation Floatdown -> NoFD with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84378,12 +84519,15 @@
       "instruction": "inc",
       "id": "control-01816",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation Floatdown -> NoFD with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -84397,12 +84541,15 @@
       "instruction": "bcc",
       "id": "control-01817",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkNearPlayer -> Floatdown with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
@@ -124325,12 +124472,15 @@
       "instruction": "rts/rti",
       "id": "control-03836",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation ProcSwimmingB -> BlooberSwim with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"

@@ -2,31 +2,31 @@
 
 ## Current Work
 
-## M2 T63 S7 Packet
+## M2 T63 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S7 audit — Cohort J green Paratroopa and X-counter movement. |
-| Admission And Approval | S7 admitted after S6 closure under the owner-approved source-order program. |
-| Objective | Prove `MoveFlyGreenPTroopa -> XMRight` and owned relations current-exact. |
-| Non-goals | No green-child gravity/horizontal interior, platform caller interior, collision, OAM or platform adapter change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,020 / 1,992 nodes and 2,023 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S8 audit — Cohort J Bloober movement chain. |
+| Admission And Approval | S8 admitted after S7 closure under the owner-approved source-order program. |
+| Objective | Prove `BlooberBitmasks -> ChkNearPlayer` and owned relations current-exact. |
+| Non-goals | No Bullet Bill/Cheep-Cheep successor, generic gravity interior, actor-dispatch caller, OAM or platform adapter change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,030 / 1,992 nodes and 2,042 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | Shared game `enemy/green_paratroopa.c`, `enemy/x_counter.c`; C90 only. |
+| Files And ABI Surface | Shared game `enemy/bloober.c`; C90 only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | `$CB25-$CB59` audit; original-ROM/current x86/x64 green-counter route; focused checks, purity and DOS16 link. |
-| Expected Markers | 10 nodes, 19 feasible controls and five material handoffs. |
+| Verification | `$CB87-$CC35` audit; original-ROM/current x86/x64 Bloober route; focused checks, purity and DOS16 link. |
+| Expected Markers | 16 nodes, all feasible outgoing controls and six material handoffs. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh artifacts only if product source changes. |
 | Reporting Requirements | Historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | Any source, route or boundary difference remains S7 repair work. |
-| Exit Criteria | All 10 labels, 19 feasible controls and five material handoffs exact with both tracks. |
+| Stop Conditions | Any source, route or boundary difference remains S8 repair work. |
+| Exit Criteria | All 16 labels, owned feasible controls and six material handoffs exact with both tracks. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Four-frame counter gate, primary/secondary rollover, horizontal sign/direction, child return and vertical sway. |
+| Similar-Issue Sweep | Defeated precedence, PRNG mask/table selection, entry carry, player-direction path, swim force/timer phases, signed page movement and float-down carry. |
 
 ## Current Technical Baseline
 
 One shared C90 game implementation serves DOS16 and Win32 x86/x64. T62 Cohort I
-is closed. T63 S1/S2/S3/S4 are closed; S5 has closed normal/defeated enemy movement; S6 has closed jumping/red-Paratroopa movement; S7 has closed green-Paratroopa/X-counter movement. The next source-order chain is Bloober movement.
+is closed. T63 S1/S2/S3/S4 are closed; S5 has closed normal/defeated enemy movement; S6 has closed jumping/red-Paratroopa movement; S7 has closed green-Paratroopa/X-counter movement; S8 has closed Bloober movement. The next source-order chain is Bullet Bill and swimming Cheep-Cheep movement.
 
 
 ## T63 S1 Closure
@@ -129,3 +129,14 @@ purity passes and DOS16 links with its known `OLDNAMES.LIB` warning. No source
 changed, so no artifact refresh applies. Historical mapping is **1,992 / 1,992**;
 current exact status is **1,030 / 1,992 nodes** and **2,042 / 4,324 feasible
 controls** (raw **4,342**, infeasible **18**).
+
+## T63 S8 Closure
+
+`BlooberBitmasks -> ChkNearPlayer` closes 16 labels, 28 feasible controls and
+six material handoffs exact. Static `$CB87-$CC35` comparison and 512 fresh
+original-ROM/current x86 plus x64 records (1,024 comparisons) agree; the
+focused C90 contract, platform-purity and the OpenNT DOS16 shared-source link
+also pass. No product source changed, so no local executable artifact refresh
+applies. Historical mapping is **1,992 / 1,992**; current exact status is
+**1,046 / 1,992 nodes** and **2,070 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).
