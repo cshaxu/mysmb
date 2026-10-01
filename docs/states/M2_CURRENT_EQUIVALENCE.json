@@ -3555,13 +3555,16 @@
       "consumer": "JmpEO",
       "storage": "ObjectOffset, Enemy_ID and selector/JumpEngine scratch $0004-$0007",
       "feasiblePath": "Actor ID chooses selector zero below $15, otherwise ID-$14, before vector dispatch.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_run_objects actor_targets and scratch stores",
       "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3575,13 +3578,16 @@
       "consumer": "RunNormalEnemies",
       "storage": "actor target vector selector zero",
       "feasiblePath": "IDs $00-$14 select the normal-enemy entry through the original vector.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_run_objects id<0x15 path",
       "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3600,13 +3606,16 @@
       "consumer": "EnemyMovementSubs",
       "storage": "TimerControl and current slot state",
       "feasiblePath": "Movement dispatch runs only after all collision calls when TimerControl is zero.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "run_normal timer-gated mysmb_enemy_movement_dispatch",
       "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3624,13 +3633,16 @@
       "consumer": "MoveNormalEnemy",
       "storage": "movement vector target and JumpEngine scratch $0004-$0007",
       "feasiblePath": "Movement selector maps IDs to the original target vector before native child selection.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_movement_dispatch movement_targets",
       "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3643,13 +3655,16 @@
       "consumer": "EnemyGfxHandler",
       "storage": "offscreen bits and relative position RAM",
       "feasiblePath": "Retainer graphics consumes position state produced by the preceding two calls.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_draw_retainer",
       "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3663,13 +3678,16 @@
       "consumer": "OffscreenBoundsCheck",
       "storage": "flame movement/collision state and offscreen bits",
       "feasiblePath": "Bowser flame terminal bounds sees all prior caller updates.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_bowser_flames_slot",
       "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -29420,13 +29438,16 @@
       "label": "RunEnemyObjectsCore",
       "asmLine": 9030,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Reloads ObjectOffset, derives selector zero for IDs below $15 or ID-$14 otherwise, preserves JumpEngine scratch, then dispatches the original actor vector.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -29437,13 +29458,16 @@
       "label": "JmpEO",
       "asmLine": 9038,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Invokes JumpEngine on the actor target vector; selector and target scratch are already established by the source predecessor.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -29453,13 +29477,16 @@
       "label": "NoRunCode",
       "asmLine": 9080,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Returns with no actor work for each vector alias that selects this terminal entry.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -29469,13 +29496,16 @@
       "label": "RunRetainerObj",
       "asmLine": 9085,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Calls enemy offscreen calculation, relative position, then tail-jumps to the retainer graphics handler in that order.",
       "currentSourcePaths": [
         "src/game/enemy/dispatch_targets.c",
@@ -29486,13 +29516,16 @@
       "label": "RunNormalEnemies",
       "asmLine": 9092,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Clears sprite attributes, then executes offscreen, relative position, graphics, box, terrain, enemy collision, player collision, timer-gated movement and terminal bounds in source order.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -29507,13 +29540,16 @@
       "label": "SkipMove",
       "asmLine": 9105,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Tail-jumps to terminal enemy offscreen bounds after the timer-gated movement decision.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -29523,13 +29559,16 @@
       "label": "EnemyMovementSubs",
       "asmLine": 9107,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Dispatches IDs $00-$14 through the original movement vector and preserves JumpEngine scratch before the selected movement child.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -29539,13 +29578,16 @@
       "label": "NoMoveCode",
       "asmLine": 9135,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Returns with no movement for the original dummy movement-vector entries.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -29555,13 +29597,16 @@
       "label": "RunBowserFlame",
       "asmLine": 9140,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Runs Bowser flame processing before offscreen, relative position, box, player collision and terminal bounds in source order.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -80721,12 +80766,15 @@
       "instruction": "bcc",
       "id": "control-01664",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation RunEnemyObjectsCore -> JmpEO with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -80741,12 +80789,15 @@
       "instruction": "sbc",
       "id": "control-01665",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunEnemyObjectsCore -> JmpEO with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -80764,10 +80815,12 @@
       "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical.",
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
       ],
       "semanticContract": "Preserves original call relation JmpEO -> JumpEngine with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
@@ -80783,12 +80836,15 @@
       "instruction": "jsr",
       "id": "control-01667",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -80802,12 +80858,15 @@
       "instruction": "jsr",
       "id": "control-01668",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunRetainerObj -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/dispatch_targets.c",
@@ -80822,12 +80881,15 @@
       "instruction": "jsr",
       "id": "control-01669",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunRetainerObj -> RelativeEnemyPosition with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/dispatch_targets.c",
@@ -80842,12 +80904,15 @@
       "instruction": "jmp",
       "id": "control-01670",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves ROM jump relation RunRetainerObj -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/dispatch_targets.c",
@@ -80862,12 +80927,15 @@
       "instruction": "jsr",
       "id": "control-01671",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -80886,12 +80954,15 @@
       "instruction": "jsr",
       "id": "control-01672",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> RelativeEnemyPosition with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -80910,12 +80981,15 @@
       "instruction": "jsr",
       "id": "control-01673",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves ROM call relation RunNormalEnemies -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -80934,12 +81008,15 @@
       "instruction": "jsr",
       "id": "control-01674",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -80958,12 +81035,15 @@
       "instruction": "jsr",
       "id": "control-01675",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemyToBGCollisionDet with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -80982,12 +81062,15 @@
       "instruction": "jsr",
       "id": "control-01676",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
       "semanticEvidence": [
-        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemiesCollision with source slot/mask/state predicate and pair collision handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -81006,12 +81089,15 @@
       "instruction": "jsr",
       "id": "control-01677",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -81030,12 +81116,15 @@
       "instruction": "bne",
       "id": "control-01678",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original branch relation RunNormalEnemies -> SkipMove with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -81054,12 +81143,15 @@
       "instruction": "jsr",
       "id": "control-01679",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemyMovementSubs with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -81078,12 +81170,15 @@
       "instruction": "jsr",
       "id": "control-01680",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunNormalEnemies -> SkipMove with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -81102,12 +81197,15 @@
       "instruction": "jmp",
       "id": "control-01681",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation SkipMove -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -81124,10 +81222,12 @@
       "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical.",
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
       ],
       "semanticContract": "Preserves original call relation EnemyMovementSubs -> JumpEngine with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
@@ -81143,12 +81243,15 @@
       "instruction": "jsr",
       "id": "control-01683",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original fallthrough relation EnemyMovementSubs -> NoMoveCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -81162,12 +81265,15 @@
       "instruction": "jsr",
       "id": "control-01684",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
       "semanticEvidence": [
-        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunBowserFlame -> ProcBowserFlame with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -81181,12 +81287,15 @@
       "instruction": "jsr",
       "id": "control-01685",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunBowserFlame -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -81200,12 +81309,15 @@
       "instruction": "jsr",
       "id": "control-01686",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunBowserFlame -> RelativeEnemyPosition with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -81219,12 +81331,15 @@
       "instruction": "jsr",
       "id": "control-01687",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunBowserFlame -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -81238,12 +81353,15 @@
       "instruction": "jsr",
       "id": "control-01688",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original call relation RunBowserFlame -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -81257,12 +81375,15 @@
       "instruction": "jmp",
       "id": "control-01689",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump relation RunBowserFlame -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -122670,10 +122791,12 @@
       "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical.",
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
       ],
       "semanticContract": "Preserves original return relation JumpEngine -> JmpEO with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
@@ -122689,12 +122812,15 @@
       "instruction": "rts/rti",
       "id": "control-03792",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits Ã¢â€ â€™ RunRetainerObj exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/dispatch_targets.c",
@@ -122709,12 +122835,15 @@
       "instruction": "rts/rti",
       "id": "control-03793",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition Ã¢â€ â€™ RunRetainerObj restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/enemy/dispatch_targets.c",
@@ -122729,12 +122858,15 @@
       "instruction": "rts/rti",
       "id": "control-03794",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits Ã¢â€ â€™ RunNormalEnemies exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122753,12 +122885,15 @@
       "instruction": "rts/rti",
       "id": "control-03795",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition Ã¢â€ â€™ RunNormalEnemies restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122777,12 +122912,15 @@
       "instruction": "rts/rti",
       "id": "control-03796",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves ROM return relation EnemyGfxHandler -> RunNormalEnemies with the source actor predicate, scratch-state handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122801,12 +122939,15 @@
       "instruction": "rts/rti",
       "id": "control-03797",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunNormalEnemies with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122825,12 +122966,15 @@
       "instruction": "rts/rti",
       "id": "control-03798",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation EnemyToBGCollisionDet -> RunNormalEnemies with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122849,12 +122993,15 @@
       "instruction": "rts/rti",
       "id": "control-03799",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
       "semanticEvidence": [
-        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation EnemiesCollision -> RunNormalEnemies with source slot/mask/state predicate and pair collision handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122873,12 +123020,15 @@
       "instruction": "rts/rti",
       "id": "control-03800",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunNormalEnemies with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122897,12 +123047,15 @@
       "instruction": "rts/rti",
       "id": "control-03801",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation EnemyMovementSubs -> RunNormalEnemies with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -122924,10 +123077,12 @@
       "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner."
+        "M2 T55 S6 P6: source map and current S6 static audit pair the ROM relation with this shared-C owner.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical."
+        "M2 T55 S6 P6: current original-ROM/current x86/x64 600-frame Start route observes this relation; persistent work RAM and recorded output agree and x86/x64 recordings are byte-identical.",
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
       ],
       "semanticContract": "Preserves original return relation JumpEngine -> EnemyMovementSubs with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
@@ -122943,12 +123098,15 @@
       "instruction": "rts/rti",
       "id": "control-03803",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/bowser_flame.c motion front with OAM tail",
       "semanticEvidence": [
-        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation ProcBowserFlame -> RunBowserFlame with TimerControl/hard-mode/Y-target predicate, carry/borrow state handoff and tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -122962,12 +123120,15 @@
       "instruction": "rts/rti",
       "id": "control-03804",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits Ã¢â€ â€™ RunBowserFlame exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -122981,12 +123142,15 @@
       "instruction": "rts/rti",
       "id": "control-03805",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition Ã¢â€ â€™ RunBowserFlame restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -123000,12 +123164,15 @@
       "instruction": "rts/rti",
       "id": "control-03806",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBowserFlame with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -123019,12 +123186,15 @@
       "instruction": "rts/rti",
       "id": "control-03807",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBowserFlame with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/special_callers.c"
@@ -132976,12 +133146,15 @@
       "selector": 0,
       "id": "control-04276",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunNormalEnemies with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -133002,12 +133175,15 @@
       "selector": 1,
       "id": "control-04277",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunBowserFlame with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -133023,12 +133199,15 @@
       "selector": 2,
       "id": "control-04278",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFireworks with timer/frame predicate, relative/OAM handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133043,12 +133222,15 @@
       "selector": 3,
       "id": "control-04279",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133063,12 +133245,15 @@
       "selector": 4,
       "id": "control-04280",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133083,12 +133268,15 @@
       "selector": 5,
       "id": "control-04281",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133103,12 +133291,15 @@
       "selector": 6,
       "id": "control-04282",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133123,12 +133314,15 @@
       "selector": 7,
       "id": "control-04283",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133143,12 +133337,15 @@
       "selector": 8,
       "id": "control-04284",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133163,12 +133360,15 @@
       "selector": 9,
       "id": "control-04285",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133183,12 +133383,15 @@
       "selector": 10,
       "id": "control-04286",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133203,12 +133406,15 @@
       "selector": 11,
       "id": "control-04287",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133223,12 +133429,15 @@
       "selector": 12,
       "id": "control-04288",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133243,12 +133452,15 @@
       "selector": 13,
       "id": "control-04289",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133263,12 +133475,15 @@
       "selector": 14,
       "id": "control-04290",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133283,12 +133498,15 @@
       "selector": 15,
       "id": "control-04291",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133303,12 +133521,15 @@
       "selector": 16,
       "id": "control-04292",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133323,12 +133544,15 @@
       "selector": 17,
       "id": "control-04293",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133343,12 +133567,15 @@
       "selector": 18,
       "id": "control-04294",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133363,12 +133590,15 @@
       "selector": 19,
       "id": "control-04295",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133383,12 +133613,15 @@
       "selector": 20,
       "id": "control-04296",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133403,12 +133636,15 @@
       "selector": 21,
       "id": "control-04297",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133423,12 +133659,15 @@
       "selector": 22,
       "id": "control-04298",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133443,12 +133682,15 @@
       "selector": 23,
       "id": "control-04299",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133463,12 +133705,15 @@
       "selector": 24,
       "id": "control-04300",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133483,12 +133728,15 @@
       "selector": 25,
       "id": "control-04301",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bowser dispatch front in enemy/bowser.c with named bridge/loop child",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunBowser with defeated-state predicate, slot handoff and source dispatch/tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133503,12 +133751,15 @@
       "selector": 26,
       "id": "control-04302",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> PowerUpObjHandler with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -133524,12 +133775,15 @@
       "selector": 27,
       "id": "control-04303",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> VineObjectHandler with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -133545,12 +133799,15 @@
       "selector": 28,
       "id": "control-04304",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133565,12 +133822,15 @@
       "selector": 29,
       "id": "control-04305",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunStarFlagObj with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133585,12 +133845,15 @@
       "selector": 30,
       "id": "control-04306",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> JumpspringHandler with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -133606,12 +133869,15 @@
       "selector": 31,
       "id": "control-04307",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -133630,10 +133896,12 @@
       "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
       "operationalEvidence": [
-        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed.",
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
       ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> WarpZoneObject with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
@@ -133649,12 +133917,15 @@
       "selector": 33,
       "id": "control-04309",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunRetainerObj with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -133671,12 +133942,15 @@
       "selector": 0,
       "id": "control-04310",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133691,12 +133965,15 @@
       "selector": 1,
       "id": "control-04311",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133711,12 +133988,15 @@
       "selector": 2,
       "id": "control-04312",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133731,12 +134011,15 @@
       "selector": 3,
       "id": "control-04313",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133751,12 +134034,15 @@
       "selector": 4,
       "id": "control-04314",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133771,12 +134057,15 @@
       "selector": 5,
       "id": "control-04315",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcHammerBro with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133791,12 +134080,15 @@
       "selector": 6,
       "id": "control-04316",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133811,12 +134103,15 @@
       "selector": 7,
       "id": "control-04317",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBloober with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133831,12 +134126,15 @@
       "selector": 8,
       "id": "control-04318",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBulletBill with state, force, borrow/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133851,12 +134149,15 @@
       "selector": 9,
       "id": "control-04319",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> NoMoveCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133871,12 +134172,15 @@
       "selector": 10,
       "id": "control-04320",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with state, force, borrow/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133891,12 +134195,15 @@
       "selector": 11,
       "id": "control-04321",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Bullet Bill/Cheep branch, table, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with state, force, borrow/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133911,12 +134218,15 @@
       "selector": 12,
       "id": "control-04322",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePodoboo with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133931,12 +134241,15 @@
       "selector": 13,
       "id": "control-04323",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133951,12 +134264,15 @@
       "selector": 14,
       "id": "control-04324",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveJumpingEnemy with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133971,12 +134287,15 @@
       "selector": 15,
       "id": "control-04325",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcMoveRedPTroopa with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -133991,12 +134310,15 @@
       "selector": 16,
       "id": "control-04326",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyGreenPTroopa with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -134011,12 +134333,15 @@
       "selector": 17,
       "id": "control-04327",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveLakitu with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -134031,12 +134356,15 @@
       "selector": 18,
       "id": "control-04328",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -134051,12 +134379,15 @@
       "selector": 19,
       "id": "control-04329",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> NoMoveCode with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"
@@ -134071,12 +134402,15 @@
       "selector": 20,
       "id": "control-04330",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyingCheepCheep with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
       "currentSourcePaths": [
         "src/game/enemy/normal.c"

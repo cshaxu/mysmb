@@ -2083,3 +2083,5 @@ Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1
 - Current-equivalence audit M2 T62 S7 closed `HandleGroupEnemies -> EndFrenzy`: historical migration remains **1,992 / 1,992**; current exact registry is **949 / 1,992** nodes and **1,792 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
 
 - Current-equivalence audit M2 T62 S8 closed `InitPiranhaPlant -> EndOfEnemyInitCode`: historical migration remains **1,992 / 1,992**; current exact registry is **974 / 1,992** nodes and **1,829 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+
+- Current-equivalence audit M2 T62 S9 closed `RunEnemyObjectsCore -> RunBowserFlame`: historical migration remains **1,992 / 1,992**; current exact registry is **983 / 1,992** nodes and **1,922 / 4,324** feasible controls (raw **4,342**, infeasible **18**).

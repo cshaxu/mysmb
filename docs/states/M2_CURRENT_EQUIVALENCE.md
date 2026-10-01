@@ -2016,3 +2016,7 @@ The source-order chain `PutAtRightExtent -> FireBulletBill` is current-exact: 23
 ### T62 S8 Piranha and platform initializer result
 
 `InitPiranhaPlant -> EndOfEnemyInitCode` adds 25 current-exact labels, 37 feasible controls and 11 material handoffs. Static `$C4AF-$C541`, 96 Piranha/jump-green, 64 frenzy-loop and 240 platform-initializer original-ROM/current x86/x64 routes, focused C90 full-RAM contracts, platform purity and DOS16-link evidence agree. The registry is **974 / 1,992** nodes and **1,829 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical mapping remains **1,992 / 1,992**.
+
+### T62 S9 actor dispatcher result
+
+`RunEnemyObjectsCore -> RunBowserFlame` adds nine current-exact labels and closes 98 scoped feasible controls plus six material handoffs. Static `$C546-$C5B4`, 192 original-ROM/current x86/x64 actor routes with documented direct-entry scratch exclusion, and minimal-owner C90 contracts agree. The registry is **983 / 1,992** nodes and **1,922 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
