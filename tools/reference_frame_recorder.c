@@ -3154,6 +3154,16 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t54-alternate-mushroom") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 118u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t54-title-draw") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 119u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t54-title-clear") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 120u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-top-mario") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 121u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-top-luigi") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 122u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-lives-crown") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 123u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-warp4") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 124u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-warp5") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 125u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-warp6") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 126u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-timeup-luigi") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 127u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-timeup-mario") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 128u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-gameover-luigi") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 129u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t54-text-gameover-mario") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 130u; continue; }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -3445,6 +3455,35 @@ int main(int argument_count, char **arguments)
                     mysmb_reference_apply_t54_title_task_fixture(
                         driver->machine->ram,
                         t26_fixture == 119u ? 12u : 13u);
+                else if (t26_fixture >= 121u && t26_fixture <= 130u) {
+                    driver->machine->ram[0x0300u] = 0u;
+                    if (t26_fixture == 122u) {
+                        driver->machine->ram[0x077au] = 1u;
+                        driver->machine->ram[0x0753u] = 1u;
+                    }
+                    if (t26_fixture == 123u) {
+                        driver->machine->ram[0x075au] = 9u;
+                        driver->machine->ram[0x075fu] = 1u;
+                        driver->machine->ram[0x075cu] = 3u;
+                    }
+                    if (t26_fixture >= 127u) {
+                        driver->machine->ram[0x077au] = 1u;
+                        driver->machine->ram[0x0753u] =
+                            (t26_fixture == 127u || t26_fixture == 130u) ? 0u : 1u;
+                        if (t26_fixture >= 129u) driver->machine->ram[0x0770u] = 3u;
+                    }
+                    /* This controlled leaf route returns straight to the
+                     * recorder sentinel.  Unlike the older parser-owned
+                     * Warp fixtures, it has no caller continuation to model. */
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->a = t26_fixture == 123u ? 1u :
+                        (t26_fixture >= 127u ? (lib_u8)(t26_fixture - 125u) :
+                        (t26_fixture >= 124u ? (lib_u8)(t26_fixture - 120u) : 0u));
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = 0x8808u;
+                    direct_warp_text = LIB_TRUE;
+                }
                 else if (t26_fixture == 108u) {
                     mysmb_reference_apply_t27_screen_fixture(
                         driver->machine->ram, 0u);

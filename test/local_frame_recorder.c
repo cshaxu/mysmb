@@ -1375,6 +1375,16 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-alternate-mushroom") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 118U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-title-draw") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 119U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-title-clear") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 120U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-top-mario") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 121U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-top-luigi") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 122U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-lives-crown") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 123U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-warp4") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 124U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-warp5") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 125U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-warp6") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 126U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-timeup-luigi") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 127U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-timeup-mario") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 128U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-gameover-luigi") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 129U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t54-text-gameover-mario") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 130U; }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -1500,6 +1510,38 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture == 119U || t26_fixture == 120U)
                 mysmb_recorder_apply_t54_title_task_fixture(&game,
                     t26_fixture == 119U ? 12U : 13U);
+            else if (t26_fixture >= 121U && t26_fixture <= 130U) {
+                game.ram[0x0300U] = 0U;
+                if (t26_fixture == 122U) {
+                    game.ram[0x077aU] = 1U;
+                    game.ram[0x0753U] = 1U;
+                }
+                if (t26_fixture == 123U) {
+                    game.ram[0x075aU] = 9U;
+                    game.ram[0x075fU] = 1U;
+                    game.ram[0x075cU] = 3U;
+                }
+                if (t26_fixture >= 127U) {
+                    game.ram[0x077aU] = 1U;
+                    game.ram[0x0753U] = (t26_fixture == 127U ||
+                        t26_fixture == 130U) ? 0U : 1U;
+                    if (t26_fixture >= 129U) game.ram[0x0770U] = 3U;
+                }
+                if (mysmb_area_queue_game_text(&game,
+                    t26_fixture == 123U ? 1U :
+                    (t26_fixture >= 127U ? (mysmb_u8)(t26_fixture - 125U) :
+                    (t26_fixture >= 124U ? (mysmb_u8)(t26_fixture - 120U) : 0U))) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                fclose(output);
+                return 0;
+            }
             else if (t26_fixture >= 103U && t26_fixture <= 107U)
                 mysmb_recorder_apply_t52_background_palette_fixture(&game,
                     t26_fixture == 103U ? 0U : (mysmb_u8)(t26_fixture - 100U));

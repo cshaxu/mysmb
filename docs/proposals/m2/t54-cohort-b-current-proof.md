@@ -202,3 +202,30 @@ and `mysmb64.exe` SHA-256
 Historical conformance remains 1,992 / 1,992. The current-equivalence
 registry advances from 128 to 136 exact nodes and from 277 to 293 exact
 feasible control relations.
+
+## S4 closure — GameText selector and patch chain
+
+S4 closes with zero feasible ROM/C differences across its 23 labels: `GameText`,
+all five source data families, `GameTextOffsets`, `WriteGameText`, the
+player-count and stream-copy branch family, lives/name post-processing, and
+the Warp-number tail. Static comparison of SMB1 lines 1661–1800 with the
+shared `area.c` owner found the current selector multiplication, one-player
+offset adjustment, `$ff`-bounded byte copy, zero terminator, life/crown and
+one-based world/level patches, TIME UP player inversion, five-byte Luigi
+replacement, selector-minus-four Warp indexing, stride-four number writes and
+`$2c` VRAM offset handoff all preserve the ROM order and values. No production
+C repair was required.
+
+The controlled matrix enters original `WriteGameText` and the same shared C
+owner with matching selector/state preconditions. It covers top status for
+Mario and Luigi, lives with crown, all three Warp rows, TIME UP for Mario and
+Luigi, and GAME OVER for Mario and Luigi. In all ten cases original ROM, x86
+and x64 have identical Buffer1 bytes `$0300–$033f`. The existing real W1-2
+warp-object route independently proves `WarpNum → WriteGameText` before the
+Piranha clear and scroll-lock handoff. x86/x64 local-area smoke and
+platform-purity checks pass. The recorder additions only close missing
+controlled-evidence coverage; shared product code did not change, so the
+three product executables were not refreshed.
+
+The registry advances from 136 to 159 exact nodes and from 293 to 319 exact
+feasible control relations. Historical conformance remains 1,992 / 1,992.
