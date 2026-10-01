@@ -329,3 +329,13 @@ have unrelated physical CIRAM/palette initialization differences. They are
 excluded from this control-edge assertion and remain visible in the local
 report; they are not treated as a game-logic match or hidden by the registry.
 No product source changed and artifacts are not refreshed.
+
+## S6 P9 ? current AreaStyle control-edge replay
+
+Four controlled AreaStyle routes (tree start/end and mushroom start/middle)
+all execute `$9740` (`AreaStyleObject`) and `$8E04` (`JumpEngine`) in the
+original ROM. The current x86/x64 records match all persistent work RAM and
+each other. This promotes only the `AreaStyleObject -> JumpEngine` call and
+the observed return continuation. As with the direct-NMI GameOver fixtures,
+physical CIRAM/palette initialization is outside the narrow edge contract and
+remains reported rather than being used as a node-equivalence claim.

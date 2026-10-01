@@ -54896,12 +54896,14 @@
       "instruction": "jsr",
       "id": "control-00606",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation AreaStyleObject -> JumpEngine.",
       "semanticEvidence": [
-        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required."
+        "M2 T55 S6 P9: source map pairs AreaStyleObject's ROM JumpEngine call and child return with mysmb_area_process_object_state in the shared game layer."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P9: four current original-ROM/current x86/x64 controlled AreaStyle routes observe $9740 -> $8E04 and the return continuation; all persistent work RAM agrees. Direct-NMI fixtures exclude pre-existing physical PPU state from this control-edge claim."
+      ],
       "semanticContract": "area.c preserves source call relation AreaStyleObject -> JumpEngine.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -112397,12 +112399,14 @@
       "instruction": "rts/rti",
       "id": "control-03566",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "C switch dispatch owners -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T55 S6 P9: source map pairs AreaStyleObject's ROM JumpEngine call and child return with mysmb_area_process_object_state in the shared game layer."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P9: four current original-ROM/current x86/x64 controlled AreaStyle routes observe $9740 -> $8E04 and the return continuation; all persistent work RAM agrees. Direct-NMI fixtures exclude pre-existing physical PPU state from this control-edge claim."
+      ],
       "semanticContract": "Preserves the original return continuation JumpEngine → AreaStyleObject: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c",
