@@ -229,3 +229,15 @@ three product executables were not refreshed.
 
 The registry advances from 136 to 159 exact nodes and from 293 to 319 exact
 feasible control relations. Historical conformance remains 1,992 / 1,992.
+
+## S5 admission — reset-screen timer chain
+
+S5 receives the next contiguous source-order chain: `ResetSpritesAndScreenTimer`,
+`ResetScreenTimer` and `NoReset` at lines 1804–1813. Its shared owner is the
+ScreenRoutines task-five/task-seven portion of `game.c`; it depends on the
+already exact `OutputInter` caller boundary and precedes the parser handoff.
+The audit compares the nonzero early return and the zero-timer sequence:
+MoveAllSpritesOffscreen, timer reload to seven, then task increment. The
+controlled route matrix uses source task 5 and task 7 with timer zero and
+nonzero alternatives on original ROM, x86 and x64. Historical credit remains
+unchanged; all three labels enter as current `needs-evidence`.

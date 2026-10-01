@@ -3232,3 +3232,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T54 S2 | 9 | 1992 | none / 0 | none / 0 | closed-status-intermediate-current-equivalence-audit; [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
 | M2 T54 S3 | 8 | 1992 | none / 0 | none / 0 | closed-title-screen-current-equivalence-audit; [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
 | M2 T54 S4 | 23 | 1992 | none / 0 | none / 0 | closed-game-text-current-equivalence-audit; [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
+| M2 T54 S5 | 3 | 1992 | none / 0 | none / 0 | admitted-reset-screen-timer-current-equivalence-audit; [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
