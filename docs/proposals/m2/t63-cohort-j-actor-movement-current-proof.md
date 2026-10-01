@@ -895,3 +895,45 @@ begins at `RunFireworks`.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,150 / 1,992 nodes** and **2,290 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+## S21 admission — fireworks lifetime, render and score chain
+
+S21 admits `RunFireworks -> FireworksSoundScore` (lines 10438–10457,
+`$D246-$D267`): `RunFireworks`, `SetupExpl` and `FireworksSoundScore`. Its
+shared portable owner is `src/game/enemy/fireworks.c`. `RelativeEnemyPosition`,
+`DrawExplosion_Fireworks` and `EndAreaPoints` are explicit child boundaries.
+S20 is closed; S22 begins at `StarFlagYPosAdder`.
+
+The ROM-logic track compares decrement/zero branches, timer and graphics
+updates, terminal score/sound writes, relative-coordinate transfer and ordered
+draw/score child calls. The operational track batches all 512 controlled
+original-ROM fireworks records once per x86/x64 process, then runs focused C90
+lifetime coverage, purity and DOS16 link. Any feasible difference remains S21
+repair work.
+
+### S21 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,150 / 1,992**.
+- Current exact feasible controls: **2,290 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **3** labels; expected current promotions: **3**; maximum exact nodes:
+  **1,153 / 1,992**.
+
+
+## S21 closure — fireworks lifetime, render and score chain
+
+All three labels are current-exact: `RunFireworks`, `SetupExpl` and
+`FireworksSoundScore`. Static `$D246-$D267` comparison binds the timer
+expiry/nonexpiry branches, graphics terminal, relative-coordinate transfer,
+terminal sound/score writes and ordered child calls. All six owned feasible
+controls and four material handoffs are exact. One current-source manifest
+process per x86/x64 width replays 512 original-ROM fireworks-lifetime fixtures
+with full RAM and recorded child calls, all with zero differences. The focused
+C90 lifetime contract, platform-purity check and OpenNT DOS16 shared-source
+link pass. Only an audit harness changed, so no three-EXE artifact refresh is
+due. No labels are deferred; S22 begins at `StarFlagYPosAdder`.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,153 / 1,992 nodes** and **2,296 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).

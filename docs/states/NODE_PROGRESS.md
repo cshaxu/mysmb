@@ -2237,3 +2237,16 @@ Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 
   were not refreshed.
 - Totals: historical **1,992 / 1,992**; current exact **1,150 / 1,992** nodes,
   **2,290 / 4,324** feasible controls; raw **4,342**, infeasible **18**.
+
+## M2 T63 S21 closure — fireworks lifetime, render and score chain
+
+- Scope: `RunFireworks`, `SetupExpl`, `FireworksSoundScore`; all current-exact.
+- Exact controls: `control-02028` through `control-02033`; exact materials:
+  `material-00280` through `material-00283`.
+- ROM logic: static `$D246-$D267`; x86/x64 batch replay of 512 original-ROM
+  lifetime records with full RAM and recorded child calls, zero differences.
+- Operational: focused C90 lifetime contract, platform purity and OpenNT DOS16
+  shared-source link passed. Test evidence only; product code unchanged, so
+  three executable artifacts were not refreshed.
+- Totals: historical **1,992 / 1,992**; current exact **1,153 / 1,992** nodes,
+  **2,296 / 4,324** feasible controls; raw **4,342**, infeasible **18**.

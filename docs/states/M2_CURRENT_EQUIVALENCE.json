@@ -6092,13 +6092,16 @@
       "consumer": "SetupExpl",
       "storage": "ExplosionTimerCounter and ExplosionGfxCounter to visible explosion path",
       "feasiblePath": "Every nonterminal decrement result leaves the current frame counter for drawing.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/fireworks.c timer/frame block",
       "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6111,13 +6114,16 @@
       "consumer": "DrawExplosion_Fireworks",
       "storage": "relative enemy Y/X copied to fireball scratch plus frame/OAM selector",
       "feasiblePath": "Relative coordinates are copied Y then X before the draw child uses the current frame.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/fireworks.c -> oam/fireworks_gfx.c",
       "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6130,13 +6136,16 @@
       "consumer": "FireworksSoundScore",
       "storage": "graphics frame threshold to terminal clear/sound/score tail",
       "feasiblePath": "Only frame three or higher clears the actor and awards the source 500-point modifier.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/fireworks.c terminal branch",
       "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6149,13 +6158,16 @@
       "consumer": "EndAreaPoints",
       "storage": "enemy flag, Square2 sound and DigitModifier+4 to area-point routine",
       "feasiblePath": "Terminal tail preserves the three source writes before the score routine.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/fireworks.c -> enemy/star_flag.c:mysmb_objects_end_area_points",
       "semanticContract": "Preserves source producer-to-consumer state handoff, threshold and ordering.",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -33153,13 +33165,16 @@
       "label": "RunFireworks",
       "asmLine": 10438,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/fireworks.c",
       "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Decrements the per-slot explosion timer; zero reloads $08 and increments graphics frame, and frame >=3 takes the terminal sound/score path while all other cases set up the current explosion.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -33169,13 +33184,16 @@
       "label": "SetupExpl",
       "asmLine": 10447,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/fireworks.c",
       "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Computes relative enemy position, copies relative Y then X to the fireball scratch pair, selects current OAM and graphics frame, invokes exactly one explosion draw child and returns.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -33185,13 +33203,16 @@
       "label": "FireworksSoundScore",
       "asmLine": 10457,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/fireworks.c",
       "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Clears the enemy flag, queues Sfx_Blast, writes the 500-point digit modifier at +4, then tails to EndAreaPoints.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -89846,12 +89867,15 @@
       "instruction": "bne",
       "id": "control-02028",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RunFireworks -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -89865,12 +89889,15 @@
       "instruction": "bcs",
       "id": "control-02029",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation RunFireworks -> FireworksSoundScore with timer/frame predicate, relative/OAM handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -89884,12 +89911,15 @@
       "instruction": "bcs",
       "id": "control-02030",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunFireworks -> SetupExpl with timer/frame predicate, relative/OAM handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -89903,12 +89933,15 @@
       "instruction": "jsr",
       "id": "control-02031",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/fireworks.c actor chain with named OAM/score children",
       "semanticEvidence": [
-        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SetupExpl -> RelativeEnemyPosition with timer/frame predicate, relative/OAM handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -89922,12 +89955,15 @@
       "instruction": "jsr",
       "id": "control-02032",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves ROM call relation SetupExpl -> DrawExplosion_Fireworks with source frame/state predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
@@ -89941,12 +89977,15 @@
       "instruction": "jmp",
       "id": "control-02033",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation FireworksSoundScore -> EndAreaPoints with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c",

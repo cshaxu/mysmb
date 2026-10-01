@@ -2238,3 +2238,15 @@ zero differences. Platform purity and DOS16 link pass. The live registry is
 **1,150 exact nodes** and **2,290 exact feasible control relations**.
 Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with
 **18** infeasible and **4,324** feasible.
+
+### T63 S21 fireworks lifetime, render and score result
+
+RunFireworks through FireworksSoundScore is current-exact: three labels, six
+feasible control relations and four material handoffs. Static `$D246-$D267`
+review confirms timer/graphics paths, coordinate transfer, draw/score child
+order and terminal writes. x86 and x64 manifest runners each replay 512
+original-ROM lifetime fixtures with full RAM and child calls, zero differences.
+Focused C90, platform purity and DOS16 link pass. The live registry is
+**1,153 exact nodes** and **2,296 exact feasible control relations**.
+Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with
+**18** infeasible and **4,324** feasible.
