@@ -13,8 +13,11 @@ static void mysmb_large_platform_fixture(struct mysmb_game *game)
      * Enemy arrays this still selects the current platform slot. */
     game->ram[0x006eU] = 0U;
     game->ram[0x0087U] = 0x30U;
+    game->ram[0x00cfU] = 0x40U;
     game->ram[0x03aeU] = 0x30U;
-    game->ram[0x03b9U] = 0x40U;
+    /* Keep the relative coordinate distinct: DrawLargePlatform must use
+     * Enemy_Y_Position for its first four OAM rows. */
+    game->ram[0x03b9U] = 0x70U;
     game->ram[0x03d1U] = 0U;
     game->ram[0x074eU] = 0U;
     game->ram[0x06ccU] = 0U;

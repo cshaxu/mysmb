@@ -45,6 +45,18 @@ disable-screen and screen-buffer state. This raises the live registry to **53
 exact nodes** and **87 exact control edges**; historical conformance remains
 **1,992 / 1,992**.
 
+### T52 S6 H9 large-platform Y-source result
+
+`DrawLargePlatform` is now current-equivalence exact.  The original route uses
+relative X for its six-sprite stack, then reads `Enemy_Y_Position,x` for the
+first four OAM Y records.  The shared owner now does the same.  A focused
+differential fixture keeps `$00cf+x=$40` and `$03b9=$70`; both x86 and x64
+write `$40` to those rows while preserving castle, secondary-hard, cloud and
+offscreen behavior.  Twelve retained original-ROM parent records replay with
+zero non-stack RAM differences on both widths.  The live registry is now
+**54 exact nodes**, **0 node mismatches**, **1,938 nodes needing evidence**;
+historical conformance remains **1,992 / 1,992**.
+
 ## Source-anchor resolvability finding
 
 Td S9's independent counterpart-resolvability pass found that the existing

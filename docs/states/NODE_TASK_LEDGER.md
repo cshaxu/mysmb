@@ -183,7 +183,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T44 S2 | 6 | `VineYPosAdder`, `DrawVine`, `VineTL`, `SkpVTop`, `ChkFTop`, `NextVSp` |
 | M2 T44 S3 | 14 | `SixSpriteStacker`, `StkLp`, `FirstSprXPos`, `FirstSprYPos`, `SecondSprXPos`, `SecondSprYPos`, `FirstSprTilenum`, `SecondSprTilenum`, `HammerSprAttrib`, `DrawHammer`, `ForceHPose`, `GetHPose`, `RenderH`, `NoHOffscr` |
 | M2 T44 S4 | 9 | `FlagpoleScoreNumTiles`, `FlagpoleGfxHandler`, `ChkFlagOffscreen`, `MoveSixSpritesOffscreen`, `DumpSixSpr`, `DumpFourSpr`, `DumpThreeSpr`, `DumpTwoSpr`, `ExitDumpSpr` |
-| M2 T44 S5 | 11 | `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl` |
+| M2 T44 S5 | 10 | `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl` |
 | M2 T44 S6 | 5 | `DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`, `JCoinGfxHandler`, `ExJCGfx` |
 | M2 T44 S7 | 6 | `PowerUpGfxTable`, `PowerUpAttributes`, `DrawPowerUp`, `PUpDrawLoop`, `FlipPUpRightSide`, `PUpOfs` |
 | M2 T44 S8 | 44 | `EnemyGraphicsTable`, `EnemyGfxTableOffsets`, `EnemyAttributeData`, `EnemyAnimTimingBMask`, `JumpspringFrameOffsets`, `EnemyGfxHandler`, `CheckForRetainerObj`, `CheckForBulletBillCV`, `SBBAt`, `CheckForJumpspring`, `CheckForPodoboo`, `CheckBowserGfxFlag`, `SBwsrGfxOfs`, `CheckForGoomba`, `GmbaAnim`, `CheckBowserFront`, `ChkFrontSte`, `FlipBowserOver`, `DrawBowser`, `CheckBowserRear`, `ChkRearSte`, `CheckForSpiny`, `NotEgg`, `CheckForLakitu`, `NoLAFr`, `CheckUpsideDownShell`, `CheckRightSideUpShell`, `CheckForDefdGoomba`, `CheckForHammerBro`, `CheckForBloober`, `CheckToAnimateEnemy`, `CheckForSecondFrame`, `CheckAnimationStop`, `CheckDefeatedState`, `DrawEnemyObject`, `SkipToOffScrChk`, `CheckForVerticalFlip`, `FlipEnemyVertically`, `CheckForESymmetry`, `ContES`, `ESRtnr`, `SpnySC`, `MirrorEnemyGfx`, `EggExc` |
@@ -227,6 +227,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T52 S3 | 4 | `FloateyNumbersRoutine`, `DecNumTimer`, `LoadNumTiles`, `AddToScore` |
 | M2 T52 S4 | 3 | `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors` |
 | M2 T52 S5 | 3 | `DisplayTimeUp`, `NoTimeUp`, `OutputInter` |
+| M2 T52 S6 | 1 | `DrawLargePlatform` |
 
 ## Future admission packages and queued plans
 
@@ -1842,7 +1843,7 @@ transfer existing ownership or allocate a numeric T.
 | 13345 | `DumpThreeSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
 | 13348 | `DumpTwoSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T17 S6; M2 T21 S3; M2 T24 S1 |
 | 13352 | `ExitDumpSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13357 | `DrawLargePlatform` | M2 T44 S5 | existing closure backlog; M2 T44 S5 admitted contiguous source-order large-platform graphics chain | M2 T21 S3; M2 T24 S1 |
+| 13357 | `DrawLargePlatform` | M2 T52 S6 | existing closure backlog; Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate. | M2 T21 S3; M2 T24 S1 |
 | 13374 | `ShrinkPlatform` | M2 T44 S5 | existing closure backlog; M2 T44 S5 admitted contiguous source-order large-platform graphics chain | M2 T21 S3; M2 T24 S1 |
 | 13377 | `SetLast2Platform` | M2 T44 S5 | existing closure backlog; M2 T44 S5 admitted contiguous source-order large-platform graphics chain | M2 T21 S3; M2 T24 S1 |
 | 13386 | `SetPlatformTilenum` | M2 T44 S5 | existing closure backlog; M2 T44 S5 admitted contiguous source-order large-platform graphics chain | M2 T21 S3; M2 T24 S1 |
@@ -2539,7 +2540,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T44 S2 | 0 | 6 | owner-approved-source-order, vine-object-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
 | M2 T44 S3 | 0 | 14 | owner-approved-source-order, six-sprite-hammer-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
 | M2 T44 S4 | 0 | 9 | owner-approved-source-order, flagpole-oam-dump-helpers; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S5 | 0 | 11 | owner-approved-source-order, large-platform-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S5 | 0 | 10 | owner-approved-source-order, large-platform-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
 | M2 T44 S6 | 0 | 5 | owner-approved-source-order, floatey-jumping-coin-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
 | M2 T44 S7 | 0 | 6 | owner-approved-source-order, power-up-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
 | M2 T44 S8 | 0 | 44 | owner-approved-source-order, enemy-graphics-animation; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
@@ -2594,6 +2595,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T52 S3 | 0 | 4 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 0 | 3 | owner-approved-current-equivalence-remediation, b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S5 | 0 | 3 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S6 | 0 | 1 | owner-approved-current-equivalence-remediation, h9-large-platform-y-source; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2930,6 +2932,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | t52-s3-score | M2 T36 S5 | M2 T52 S3 | 1 | Owner-approved T52 corrective admission under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | t52-s4-background-palette | M2 T27 S1 | M2 T52 S4 | 3 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | transfer-m2-t27-s2-to-t52-s5-b3-timeup | M2 T27 S2 | M2 T52 S5 | 3 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| transfer-m2-t44-s5-to-t52-s6-h9-platform-y | M2 T44 S5 | M2 T52 S6 | 1 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3202,3 +3205,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T52 S3 | 4 | 1992 | none / 0 | none / 0 | closed-a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 3 | 1992 | none / 0 | none / 0 | closed-b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S5 | 3 | 1992 | none / 0 | none / 0 | closed-b3-timeup-candidate-rejected; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S6 | 1 | 1992 | none / 0 | none / 0 | closed-h9-large-platform-y-source; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |

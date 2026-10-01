@@ -65,7 +65,10 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
      * Y to the X-coordinate byte.  Later code may observe that ROM scratch. */
     game->ram[2U] = oam;
     x = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
-    y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y];
+    /* ROM DrawLargePlatform restores ObjectOffset after stacking relative X,
+     * then loads Enemy_Y_Position,x for DumpFourSpr.  Relative Y belongs to
+     * the positioning phase and is not this OAM producer's source. */
+    y = game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
     tile = game->ram[0x0743U] != 0U ? 0x75U : 0x5bU;
     mysmb_oam_stack_six_sprite_data(game, x, (mysmb_u8)(oam + 3U));
     mysmb_oam_dump_four_sprites(game, y, oam);

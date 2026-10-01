@@ -207,6 +207,20 @@ identified this defect class as a missing callee in a static audit: all later
 screen-task candidate reviews must include nested shared game calls before
 they propose a source change.
 
+## T52 S6 admission: H9 large-platform Y source
+
+S6 owns `DrawLargePlatform` in `small_platform_gfx.c`, received from M2 T44
+S5. The predecessor supplies `Enemy_Rel_XPos` and `Enemy_Y_Position`; the
+successor is the six-column offscreen mask. The single historical-complete
+label has a zero-credit forecast, retaining **1,992 / 1,992**.
+
+The ROM-logic track uses a controlled child record where world Y and relative
+Y differ, then covers the castle, secondary-hard, cloud and full-offscreen
+branches. It compares the six OAM records and source scratch `$02`. The
+operational track updates the focused graphics smoke test, runs x86/x64 route
+checks, platform purity and the OpenNT DOS16 build, and refreshes the three
+local artifacts. No adapter owns this coordinate choice.
+
 ## T52 S1 closure: A2 NMI-prefix state handoff
 
 S1 closes its three current-equivalence labels without changing the historical
@@ -227,3 +241,24 @@ platform-purity in ROM-configured x86 and x64 builds. The focused test now
 also proves the RTI-equivalent d7 restore. The existing OpenNT DOS16 build
 links the same `src/game/frame_root.c`; all three local executable artifacts
 were refreshed under the ignored build tree. No platform adapter changed.
+
+## T52 S6 closure: H9 large-platform Y source
+
+S6 closes `DrawLargePlatform` as current-equivalence `exact`; the historical
+conformance numerator remains **1,992 / 1,992** because the received label was
+already historically complete.  No adjacent large-platform label is promoted:
+`ShrinkPlatform` through `ExDLPl` remain in their source-order evidence cohort.
+
+The source requires `Enemy_Rel_XPos` for `SixSpriteStacker`, then restores the
+object slot and loads `Enemy_Y_Position,x` for `DumpFourSpr`.  Shared C now
+uses `$00cf + slot` for those first four OAM Y bytes.  The focused fixture sets
+that byte to `$40` and the distinct relative-Y byte `$03b9` to `$70`, proving
+the selected source independently of coincidental equal coordinates.  It also
+retains castle, secondary-hard, cloud, per-column and full-offscreen coverage.
+
+The separate original-ROM route check replays twelve retained
+`RunLargePlatform -> DrawLargePlatform` parent records (normal, castle, and
+variants 0 through 9) against fresh x64 and x86 shared-C builds, with zero
+non-stack RAM differences.  Focused differential smoke tests and platform
+purity pass on both widths.  The owner-ROM records, recorder experiment and
+build products remain ignored below `build/m2-t52-s6/`; they are not committed.

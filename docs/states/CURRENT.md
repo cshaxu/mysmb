@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M2 T52 S5 Packet
+## M2 T52 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T52 S5 — B3 time-up task-handoff remediation. |
-| Admission And Approval | Owner-directed continuation of T52 after closed S4. |
-| Objective | Audit the complete `DisplayTimeUp -> OutputInter -> ResetScreenTimer` task handoff against the admitted ROM. |
-| Non-goals | No platform-owned screen logic, no redesign of `ResetSpritesAndScreenTimer`, and no historical-credit increase. |
-| Reference Baseline | 1,992 / 1,992 historical; three received historical-complete labels, expected delta zero. |
+| Identifier Mode | M2 T52 S6 — H9 DrawLargePlatform Y-source remediation. |
+| Admission And Approval | Owner-directed continuation of T52 after closed S5. |
+| Objective | Bind DrawLargePlatform's first four OAM Y records to `Enemy_Y_Position + slot`. |
+| Non-goals | No platform-owned OAM logic, no change to final-two-row, tile, attribute or offscreen branches, and no historical-credit increase. |
+| Reference Baseline | 1,992 / 1,992 historical; one received historical-complete label, expected delta zero. |
 | Candidate Proposal | docs/proposals/m2/t52-current-audit-mismatch-remediation.md. |
-| Files And ABI Surface | Shared src/game/game.c; focused screen-status test plus validation-only local/reference recorder fixtures. |
+| Files And ABI Surface | Shared src/game/oam/small_platform_gfx.c; focused large-platform tests and owner-local route records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | Controlled ROM ScreenRoutines task-4 route with an expired frame and its next cleared-flag invocation, plus task-5/task-7 reset controls; focused test; x86/x64/DOS16 and purity. |
-| Expected Markers | The expired visit clears `$0759`, writes Time Up, resets `$07a0` and `$0774`, and reaches task 5 through `ResetScreenTimer`'s source increment. |
+| Verification | Controlled ROM DrawLargePlatform route with distinct `$00cf+slot` and `$03b9`, plus castle, hard, cloud and offscreen controls; x86/x64/DOS16 and purity. |
+| Expected Markers | The first four platform OAM Y bytes equal `Enemy_Y_Position + slot`, independent of relative Y; final two rows retain their existing source branches. |
 | Asset Needs | Owner-local ROM and ignored local three-EXE outputs. |
-| Reporting Requirements | Three labels, control-00225, both verification tracks and unchanged numerator. |
-| Stop Conditions | Any task-5/task-7 reset behavior or platform source changes outside the received chain. |
-| Exit Criteria | `DisplayTimeUp` and control-00225 are current-equivalence exact; `OutputInter` and `NoTimeUp` have route and source-context evidence. |
+| Reporting Requirements | DrawLargePlatform, both verification tracks and unchanged numerator. |
+| Stop Conditions | Any Y-source change outside the first-four-row producer or platform-adapter change. |
+| Exit Criteria | DrawLargePlatform is current-equivalence exact with all neighboring graphics branches preserved. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | All shared screen-routine cases that pass through `OutputInter` or wait in task 5/task 7. |
+| Similar-Issue Sweep | All platform drawing functions that distinguish world and relative coordinates. |
 
 ## Current Technical Baseline
 
