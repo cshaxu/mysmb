@@ -43631,13 +43631,14 @@
       "instruction": "jsr",
       "id": "control-00081",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
+      "status": "infeasible",
+      "currentCounterpart": "none: no feasible C relation; the shared frame root directly selects the task owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T53 S2 source audit: SMB1 TitleScreenMode line 984 invokes JumpEngine; JumpEngine lines 2395-2408 removes the JSR return address with two PLA instructions and executes JMP ($0006), so neither a sequential entry into its inline vector words nor a return to TitleScreenMode can execute."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original sequential fall-through TitleScreenMode \u2192 WSelectBufferTemplate: prior source writes and flags reach the successor in instruction order.",
+      "semanticContract": "Raw extractor fall-through is impossible: the words after JSR JumpEngine are dispatch vectors, and JumpEngine consumes the return address before its indirect jump.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
         "src/game/title_modes.c"
@@ -109756,13 +109757,14 @@
       "instruction": "rts/rti",
       "id": "control-03497",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "C switch dispatch owners -> mysmb_frame_root_step title mode/task dispatch",
+      "status": "infeasible",
+      "currentCounterpart": "none: no feasible C return; the selected shared-C owner returns to the frame-root continuation",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T53 S2 source audit: SMB1 TitleScreenMode line 984 invokes JumpEngine; JumpEngine lines 2395-2408 removes the JSR return address with two PLA instructions and executes JMP ($0006), so neither a sequential entry into its inline vector words nor a return to TitleScreenMode can execute."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation JumpEngine \u2192 TitleScreenMode: child completion restores the caller\u2019s next source phase without an extra dispatch.",
+      "semanticContract": "Raw extractor return is impossible: JumpEngine consumes TitleScreenMode's JSR return address and indirect-jumps to a selected child; it never RTS to TitleScreenMode.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
         "src/game/frame_root.c"
@@ -126727,6 +126729,7 @@
   "rawControlEdgeTotal": 4342,
   "infeasibleControlEdgeIds": [
     "control-00076",
+    "control-00081",
     "control-01339",
     "control-01405",
     "control-01408",
@@ -126738,11 +126741,12 @@
     "control-01632",
     "control-01711",
     "control-02036",
+    "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 16,
-  "feasibleControlEdgeTotal": 4326
+  "infeasibleControlEdgeTotal": 18,
+  "feasibleControlEdgeTotal": 4324
 }

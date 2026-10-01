@@ -92,6 +92,19 @@ vectors to `MoveAllSpritesOffscreen`.  The raw graph remains 4,342 relations,
 with **16** infeasible records and **4,326** feasible control relations.
 Historical conformance remains **1,992 / 1,992**.
 
+### T53 S2 title-dispatch extractor correction
+
+Two more Cohort A raw control records are `infeasible`: `control-00081`
+(`TitleScreenMode` to `WSelectBufferTemplate`) and `control-03497`
+(`JumpEngine` return to `TitleScreenMode`).  `TitleScreenMode` calls
+`JumpEngine` immediately before its inline vector words.  The ROM's
+`JumpEngine` consumes that return address with two `PLA` instructions and
+uses `JMP ($0006)` to select the vector target.  It neither falls into those
+words nor returns to `TitleScreenMode`.  The raw graph remains 4,342 records;
+18 are now explicitly infeasible, leaving **4,324** feasible control
+relations.  This is graph correction only; title-mode node and executable
+route evidence remain in T53 S2.
+
 ## Source-anchor resolvability finding
 
 Td S9's independent counterpart-resolvability pass found that the existing

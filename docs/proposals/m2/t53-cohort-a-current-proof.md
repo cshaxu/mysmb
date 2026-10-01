@@ -125,3 +125,7 @@ T53 closes only after every 97 label and 185 internal control relation has a cur
 ## S1 closure ? reset/NMI through operating-mode dispatch
 
 S1 closed with no historical-credit change: historical progress remains 1,992 / 1,992. Its 39 current nodes are individually disposed as 38 exact and one mismatch (`ScreenOff`). All 75 internal control relations are disposed as 74 exact and `control-00076` infeasible. The four display-transaction mismatch relations are external to the S1 interior and remain the unnumbered shared-frame-root repair candidate. Owner-ROM four-vector and 600-frame pause/sprite routes, focused root tests, registry validation and platform-purity validation supplied the two evidence tracks. Raw traces were deleted after neutral summaries were recorded.
+
+## S2 initial graph finding
+
+`control-00081` and `control-03497` are raw extractor relations, not executable title paths. The source at line 984 calls `JumpEngine`; lines 2395-2408 remove that call's return address and indirect-jump through the inline vector words. The ROM therefore cannot fall into `WSelectBufferTemplate` or return from `JumpEngine` to `TitleScreenMode`. Both records remain in the raw ledger with an `infeasible` disposition. The executable title dispatch and menu routes remain open until controlled original-ROM/native route records establish their state and output contracts.
