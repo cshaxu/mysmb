@@ -9,8 +9,8 @@ and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
 ## M2: current-equivalence work
 
-M2 T53 has no unresolved corrective candidate. The [T53–T70 current-equivalence proof program](../proposals/m2/current-equivalence-proof-program.md)
-continues in source order. Each later task stays unadmitted until its exact S
+The [T53–T70 current-equivalence proof program](../proposals/m2/current-equivalence-proof-program.md)
+continues at unadmitted T58 in source order. Each later task stays unadmitted until its exact S
 packet, node/edge scope and original-ROM route are recorded.
 
 ## M3: presentation adapters

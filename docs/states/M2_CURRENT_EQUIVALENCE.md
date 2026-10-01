@@ -1844,3 +1844,17 @@ stream byte over 3,955 samples and matches persistent state plus visible output;
 x86 and x64 records are byte-identical. The registry is **499 exact nodes**,
 **1,493 nodes needing evidence**, **888 exact feasible controls**, 18 infeasible
 raw controls and zero mismatches; historical conformance remains **1,992 / 1,992**.
+
+### T57 Cohort-D cross-chain closure
+
+All 146 Cohort-D labels are current-exact. The cross-chain matrix combines the
+object-rendering, block-buffer, pointer/header, enemy-stream and area-stream
+owners. Per native width it executes 36 original-ROM/current scene routes,
+consumes every one of the 3,372 level-stream bytes and compares 4,772 samples
+of persistent state plus full visible output. It also executes 71
+pointer/terminal routes against their valid persistent-RAM oracle. The 107
+native records produced by x86 and x64 are byte-identical. Focused tests,
+platform-purity and the shared DOS16 link pass. The registry remains **499
+exact nodes**, **1,493 needing evidence**, **888 exact feasible controls**,
+18 infeasible raw controls and zero mismatches; historical conformance remains
+**1,992 / 1,992**.

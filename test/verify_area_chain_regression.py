@@ -74,25 +74,23 @@ def main():
                         '--warmup=1', '--fixture=t30-area-pointer=%d' % case],
                        check=True, timeout=20, stdout=subprocess.DEVNULL)
         original = source/('rom-%d.msfr' % case)
-        prior = source/('native-%d.msfn' % case)
         rom = read_frames(original, b'MSFR', count)
         current = read_frames(native_path, b'MSFN', count)
-        accepted = read_frames(prior, b'MSFN', count)
-        # Preserve the exact previously accepted output baseline; independently
-        # compare persistent RAM to the original, not only to previous C.
-        assert current == accepted, (case, 'prior accepted pointer route changed')
+        # This fixture starts at the pointer/header boundary and deliberately
+        # does not recreate the renderer's complete caller state.  Its ROM
+        # oracle therefore covers persistent pointer/header RAM only; scene
+        # routes above own visible-output equivalence.
         for frame, (a, b) in enumerate(zip(rom, current)):
             delta = {j for j in range(2048) if a[j+4] != b[j+4]}
             assert delta <= excluded, (case, frame, sorted(delta-excluded))
         fingerprints[str(original.relative_to(args.references))] = hashlib.sha256(original.read_bytes()).hexdigest()
-        fingerprints[str(prior.relative_to(args.references))] = hashlib.sha256(prior.read_bytes()).hexdigest()
     size = sum(p.stat().st_size for p in output.rglob('*.msf*'))
     assert size < 45000000, size
     summary = dict(sceneFamilies=scene_results, sceneSamples=sum(x['samples'] for x in scene_results),
                    pointerRoutes=71, pointerSamples=141, rawBytes=size,
                    recorderSha256=hashlib.sha256(recorder.read_bytes()).hexdigest(),
                    referenceHashes=fingerprints,
-                   limits='Scenes: original persistent RAM and full output. Pointers: original persistent RAM plus accepted C output baseline.')
+                   limits='Scenes: original persistent RAM and full output. Pointers: original persistent RAM only; the fixture does not establish renderer caller state.')
     (output/'summary.json').write_text(json.dumps(summary, indent=2)+'\n')
     print('Area integration: 36 scene routes, 71 pointer/terminal routes passed')
 

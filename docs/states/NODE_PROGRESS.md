@@ -23,7 +23,7 @@ all 1,992 labels. The separate current-equivalence baseline and its
 source-order cohort results are authoritative in
 [M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
-Latest task review: [T51 S5 P17](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p17-block-replacement-vram-high-row-repair) repairs the shared block-replacement high-row VRAM route. It grants no additional node credit and preserves the independently recorded ROM-route discrepancies that remain under review.
+Latest task review: [T57 Cohort D](../proposals/m2/t57-cohort-d-renderer-current-proof.md#t57-closure---cohort-d-renderer-metatiles-and-block-buffer) closes its 146-label current-equivalence audit. It grants no historical node credit: historical conformance remains 1,992 / 1,992, while the separate current registry records 499 labels and 888 feasible control relations with fresh exact evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

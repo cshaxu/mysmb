@@ -468,3 +468,29 @@ and 3,955 samples across castle, ground, underground and water areas; persistent
 state and visible output match, while x86/x64 records are byte-identical. Focused
 parser tests and platform purity pass in both widths; OpenNT relinked the
 unchanged shared DOS16 core. No product source mismatch was found.
+
+## T57 closure — Cohort D renderer, metatiles and block buffer
+
+T57 closes all seven source-order chains and its 146 planned labels. The
+current-equivalence registry advances from 353 to **499 exact labels** and
+from 767 to **888 exact feasible control relations**; historical accounting
+remains **1,992 / 1,992**. Every shared-game owner remains below `src/game`;
+no platform adapter owns an object, parser, pointer or rendering decision.
+
+The T-level matrix joins the S1 object-renderer rows, S2 staircase/question
+objects, S3 block-buffer helpers, S4/S5 loopback and pointer tables, S6 enemy
+streams and S7 area streams. It runs 36 original-ROM/current scene routes per
+width: seven castle, 23 ground, three underground and three water routes. The
+routes consume all 3,372 area-stream bytes and compare 4,772 samples of
+persistent RAM plus full recorded CIRAM, palette, OAM, audio and PPU output.
+It also runs 71 pointer/terminal routes (141 samples) per width against their
+source-reachable persistent-RAM oracle. The pointer fixture begins after the
+renderer caller state, so it cannot establish visible-output equivalence; that
+contract remains exclusively with the scene routes. The test now encodes this
+boundary instead of comparing an obsolete native-output baseline.
+
+All 107 resulting native trace files are byte-identical between x86 and x64.
+The focused object, parser and enemy-stream tests pass in both widths;
+platform-purity passes; and OpenNT relinks the unchanged DOS16 shared core.
+No shared product source changed during the closure repair, so no target
+artifact refresh is due. T58 remains unadmitted.
