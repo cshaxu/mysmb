@@ -144,3 +144,8 @@ S6 admits `ImposeFriction -> SetAbsSpd`: ImposeFriction, JoypFrict, LeftFrict, R
 ## S6 closure - friction and signed-speed chain
 
 All six labels from `ImposeFriction` through `SetAbsSpd` are current-equivalence exact. Static comparison of original ROM lines 6252-6291 found no shared-owner difference: collision filtering, released-input sign split, right-bit priority, carry/borrow propagation, wrapped clamp branch semantics and two-complement absolute conversion are preserved. Fresh C90 x86/x64 replay passes all 64 original friction child-call streams, for 128 entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform purity pass. No product source changed, so no three-EXE refresh is due. All 13 feasible internal controls receive fresh S6 evidence; compatible caller and return controls retain S2 proof.
+
+
+## S7 admission - Cohort F cross-chain closure
+
+S7 has explicit zero node credit. It is the required T59 integration proof joining the closed S1-S6 routes from `PlayerMovementSubs` through `SetAbsSpd`: movement dispatcher, movement state, climb, physics, animation and friction. It will run an original-ROM/current x86/x64 route matrix, focused chain smokes, DOS16 link and platform purity. Registry baseline is 641 exact labels and 1,238 exact feasible controls. Any composition difference remains within T59 until repaired and re-audited.

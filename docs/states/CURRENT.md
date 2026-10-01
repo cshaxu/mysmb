@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M2 T59 S6 Packet
+## M2 T59 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T59 S6 audit - friction and signed-speed chain. |
-| Admission And Approval | Owner-approved source-order program; S5 is closed and S6 is admitted. |
-| Objective | Audit and repair ImposeFriction through SetAbsSpd against original ROM semantics. |
-| Non-goals | No unadmitted fireball, terrain, platform or next-cohort logic beyond declared handoffs. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 635 exact labels and 1,225 exact feasible relations. Scope has 6 labels. |
+| Identifier Mode | M2 T59 S7 audit - Cohort F cross-chain closure. |
+| Admission And Approval | Owner-approved source-order program; S1-S6 are closed and S7 is admitted for the required T-level integration proof. |
+| Objective | Verify the composed PlayerMovementSubs through SetAbsSpd route against original ROM boundaries before T59 closure. |
+| Non-goals | No new node scope, no unrelated gameplay change, and no platform logic. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 641 exact labels and 1,238 exact feasible relations. Scope is explicit zero-credit integration. |
 | Candidate Proposal | docs/proposals/m2/t59-cohort-f-player-motion-current-proof.md. |
-| Files And ABI Surface | Shared player owner plus project-owned tests; platform adapters are consumers only. |
+| Files And ABI Surface | Shared player and movement owners plus project-owned integration tests; platform adapters remain consumers. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | Original friction snapshots, x86/x64 C90 replays, focused tests, DOS16 link and purity. |
-| Expected Markers | Collision-filtered direction, released-input sign split, right-bit precedence, fractional carry/borrow, wrapped clamp tests and absolute-speed store. |
+| Verification | Original ROM route matrix, fresh x86/x64 C90 integration, focused chain smokes, DOS16 link and purity. |
+| Expected Markers | S1-S6 call order, child entry/return state, byte-identical native widths and no platform-owned game logic. |
 | Asset Needs | Audit only initially; any product repair refreshes all three artifacts. |
-| Reporting Requirements | Report every scoped label/relation and both verification tracks before S closure. |
-| Stop Conditions | Any unresolved source/C difference, route mismatch or platform game logic. |
-| Exit Criteria | Scoped labels and feasible relations current-exact. |
+| Reporting Requirements | Report integration routes, relation status and both verification tracks before T closure. |
+| Stop Conditions | Any unresolved cross-chain route difference or platform game logic. |
+| Exit Criteria | All T59 chains compose with no unclassified feasible relation in their declared route matrix. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | All collision-filtered friction callers, signed-speed consumers and clamp paths. |
+| Similar-Issue Sweep | All movement callers, animation/friction ordering and movement-state child joins. |
 
 ## Current Technical Baseline
 
