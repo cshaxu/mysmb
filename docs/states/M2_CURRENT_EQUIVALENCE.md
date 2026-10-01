@@ -1986,3 +1986,13 @@ Eight newly exact nodes and seven internal controls in the score/tally chain; ca
 ### T62 S2 enemy stream result
 
 `ProcessEnemyData -> Inc2B` adds nineteen current-exact labels, thirty-eight feasible controls and three material handoffs. Static `$C0D7-$C175`, 80 original-ROM/current caller routes per width, 66,562 boundary cases per width, full stream smoke, platform-purity and DOS16-link evidence agree. The registry is **853 / 1,992** nodes and **1,653 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
+
+### T62 S3 initializer-vector result
+
+`CheckpointEnemyID -> InitVStf` adds 21 current-exact labels, 46 feasible
+controls and three material handoffs. Static `$C180-$C22C`, 110 controlled
+original-ROM/current caller routes per width, 84,480 vector-handoff cases per
+width, 23,046 common initializer footprints per width, platform purity and
+DOS16-link evidence agree. The registry is **874 / 1,992** nodes and
+**1,699 / 4,324** feasible controls, from **4,342 raw** controls with **18
+infeasible**; historical migration remains **1,992 / 1,992**.

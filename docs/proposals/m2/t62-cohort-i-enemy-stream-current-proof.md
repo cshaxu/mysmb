@@ -77,3 +77,48 @@ The route covers ordinary/end/group/frenzy stream records, screen-right page bou
 All nineteen scoped labels are current-exact. Static `$C0D7-$C175` comparison found no feasible difference in end marker handling, sixth-slot exception, screen-right and extended-right arithmetic, page-select and row-$0f control, position-before-bound order, hard-mode Buzzy mutation, group/frenzy handoffs, two/three-byte cursor advance, or the initializer call/return boundary. All 38 internal feasible controls and three material handoffs are exact.
 
 Fresh x86/x64 caller checks match 80 controlled original-ROM stream snapshots per width (160 comparisons). The focused boundary model passes 66,562 cases per width and complete stream smoke passes per width. Platform purity passes and the OpenNT DOS16 link completes with its known OLDNAMES warning. Initializer and group interiors remain named S3/S7 boundaries and receive no S2 credit. No product source changed, so local executable artifacts were not refreshed. Historical migration remains **1,992 / 1,992**; current exact progress is **853 / 1,992 nodes** and **1,653 / 4,324 feasible controls** from **4,342 raw controls** with **18 infeasible**.
+
+## S3 admission — initializer vector and ordinary actor setup
+
+S3 admits `$C180-$C22C`, `CheckpointEnemyID -> InitVStf`: `CheckpointEnemyID`,
+`InitEnemyRoutines`, `NoInitCode`, `InitGoomba`, `InitPodoboo`,
+`InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`,
+`InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`,
+`InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`,
+`GetCent`, `TallBBox`, `SetBBox`, and `InitVStf`. All 21 labels are
+`needs-evidence`; this current audit earns no historical-node credit. It owns
+46 internal feasible controls, two explicitly infeasible raw fallthroughs
+(`InitEnemyRoutines -> NoInitCode` and `SmallBBox -> InitRedPTroopa`), and
+three material handoffs.
+
+The ROM-logic route covers the `< $15` Y-plus-eight/masked-offscreen setup,
+the full 55-entry `JumpEngine` vector and scratch return address, no-init
+returns, and the ordinary normal/Goomba/Koopa/Hammer/Bloober/Podoboo/Paratroopa
+initializers through the shared bounding-box and vertical-state tails. It
+excludes vector targets beginning at `InitBulletBill`, which belong to S4,
+and all child actor interiors outside this address range. The operational track
+uses controlled original-ROM/current x86/x64 vector snapshots, exhaustive
+initializer-vector and common-initializer C90 smoke, platform purity and the
+shared DOS16 link. Any feasible difference remains in S3 until repaired and
+re-audited.
+
+## S3 closure — initializer vector and ordinary actor setup
+
+All 21 scoped labels are current-exact. Static `$C180-$C22C` comparison found
+no feasible difference in the ID-$15 threshold/carry path, 55-entry initializer
+vector and scratch return address, no-init aliases, Goomba/Podoboo/retainer
+writes, normal and Hammer hard-mode tables, signed red-Paratroopa center, or
+the shared box and vertical-state tail order. All 46 internal feasible controls
+and material vector/normal-speed/Hammer-timer handoffs are exact; the two raw
+fallthrough relations remain correctly infeasible.
+
+Current x86/x64 caller checks match 110 controlled original-ROM snapshots per
+width (220 comparisons). Exhaustive vector handoff passes 84,480 cases per
+width, and ordinary initializer footprints pass 23,046 cases per width.
+Platform purity passes and the OpenNT DOS16 link completes with the known
+OLDNAMES warning. Special initializer interiors remain S4/S5/S8 scope, and
+actor-consumer material edges remain their later source-order owner. No product
+source changed, so local executable artifacts were not refreshed. Historical
+migration remains **1,992 / 1,992**; current exact progress is **874 / 1,992
+nodes** and **1,699 / 4,324 feasible controls** from **4,342 raw controls**
+with **18 infeasible**.
