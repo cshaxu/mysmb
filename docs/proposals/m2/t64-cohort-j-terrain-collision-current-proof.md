@@ -80,3 +80,19 @@ Current totals after S1: historical mapping **1,992 / 1,992**; current exact
 nodes **1,232 / 1,992**; current exact feasible controls **2,476 / 4,324**
 (4,342 raw, 18 infeasible). The two returns to unadmitted Cohort-H callers
 remain `needs-evidence`; S1 does not claim cross-cohort caller proof.
+
+## S2 admission — fireball enemy scan
+
+S2 admits `FireballEnemyCollision -> ExitFBallEnemy` at `$D6D9-$D735`:
+`FireballEnemyCollision`, `FireballEnemyCDLoop`, `GoombaDie`, `NotGoomba`,
+`NoFToECol`, and `ExitFBallEnemy`. Its shared owner is
+`src/game/world/fireball_enemy.c`; S1 is the predecessor and S3 owns the hit
+handler called after a positive collision.
+
+The ROM-logic track verifies early returns for zero/high-bit fireball state and
+odd frame parity, every descending enemy slot, state/flag/ID eligibility gate,
+Goomba defeated-state gate, masked offscreen gate, bounds-box offsets, hit d7
+write, ordered hit-child call, and saved fireball-box restoration. The
+operational track batches the controlled original-ROM family per width, then
+runs the scan and collision regression tests, platform-purity gate and DOS16
+shared-source link.
