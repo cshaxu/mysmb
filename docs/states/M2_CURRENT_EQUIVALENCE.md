@@ -2266,3 +2266,7 @@ Six labels are current-exact; the live registry is **1,179 exact nodes** and **2
 ### T63 S25 Firebar angular primitive result
 
 Both labels exact; registry **1,181** nodes and **2,351** controls.
+
+### T63 S26 balance-platform movement, rope and fall result
+
+BalancePlatform through ExPF is current-exact: 26 labels, 67 newly proven feasible control relations and 16 material handoffs. Static `$D432-$D5D2`, one 1,024-record original-ROM batch per x86/x64 width, focused C90, platform purity and DOS16 link pass with zero route differences. The live registry is **1,207 exact nodes** and **2,418 exact feasible control relations**. Historical mapping remains **1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible and **4,324** feasible.

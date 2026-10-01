@@ -2266,3 +2266,9 @@ All six scoped labels, 16 feasible controls and four materials exact. ROM batch,
 ## M2 T63 S25 closure
 
 FirebarSpin and SpinCounterClockwise exact; totals **1,181 / 1,992**, **2,351 / 4,324**.
+
+## S26 closure — balance-platform movement, rope and fall chain
+
+All 26 scoped labels are current-exact: `BalancePlatform` through `ExPF`. Static `$D432-$D5D2` comparison covers the paired-platform entry and threshold gates, coupled movement and old-minus-new Y transfer, both rope-address calculations and complementary command tiles, fall setup, dual falling moves and conditional player placement. The 1,024-record original-ROM batch replays once per x86 and x64 process with full RAM and recorded child calls, zero differences. The focused C90 contract, platform-purity check and OpenNT DOS16 shared-source link pass. All 67 newly pending feasible controls and 16 material handoffs are exact. Test harness and evidence changed only; no product code changed, so no three-EXE refresh is due.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,207 / 1,992 nodes** and **2,418 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).

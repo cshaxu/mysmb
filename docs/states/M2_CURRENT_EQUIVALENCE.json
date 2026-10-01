@@ -6594,13 +6594,16 @@
       "consumer": "DoBPl",
       "storage": "Enemy Y high byte to erase/continue gate",
       "feasiblePath": "Only high byte equal three erases immediately.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c entry gate",
       "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6613,13 +6616,16 @@
       "consumer": "CheckBalPlatform",
       "storage": "nonnegative Enemy_State paired-slot offset",
       "feasiblePath": "Signed state chooses balance peer versus immediate return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c peer assignment",
       "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6632,13 +6638,16 @@
       "consumer": "ChkForFall",
       "storage": "PlatformCollisionFlag and moving direction",
       "feasiblePath": "Direction zero checks height threshold; nonzero takes existing paired fall.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c entry state machine",
       "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6651,13 +6660,16 @@
       "consumer": "ChkOtherForFall",
       "storage": "current/peer Y and collision selector",
       "feasiblePath": "Both current and peer threshold checks use the same selector to choose fall or clamp/stop.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c threshold paths",
       "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6670,13 +6682,16 @@
       "consumer": "ColFlg",
       "storage": "collision flag and force/speed-derived motion state",
       "feasiblePath": "No-collision force/speed cases select up/down/stop; collision equality selects direction.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c coupled motion",
       "semanticContract": "Preserves source paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6689,13 +6704,16 @@
       "consumer": "DoOtherPlatform",
       "storage": "new current Y after upward movement",
       "feasiblePath": "Counterpart uses old-minus-new displacement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c paired Y adjustment",
       "semanticContract": "Preserves source paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6708,13 +6726,16 @@
       "consumer": "DoOtherPlatform",
       "storage": "new current Y after downward movement",
       "feasiblePath": "Counterpart uses old-minus-new displacement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c paired Y adjustment",
       "semanticContract": "Preserves source paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6727,13 +6748,16 @@
       "consumer": "DrawEraseRope",
       "storage": "peer Y, collision state and current platform motion",
       "feasiblePath": "Player positioning precedes rope update only when collision is present.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c post-motion tail",
       "semanticContract": "Preserves source paired-platform state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6746,13 +6770,16 @@
       "consumer": "SetupPlatformRope",
       "storage": "two saved speed copies and peer slot to first/second address calculation",
       "feasiblePath": "Both commands derive addresses before complementary tile selection.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c draw_erase_rope/setup_rope",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6765,13 +6792,16 @@
       "consumer": "GetLRp",
       "storage": "X/page carry and difficulty selector to rope address",
       "feasiblePath": "Second normal-mode add explicitly replaces source carry.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c setup_rope",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6784,13 +6814,16 @@
       "consumer": "ExPRp",
       "storage": "rotated Y/page address fields to final name-table address",
       "feasiblePath": "Y bits 7/6 and page LSB form high address then low address combines horizontal field.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c setup_rope",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6803,13 +6836,16 @@
       "consumer": "OtherRope",
       "storage": "first rope tile selection and inverted speed to second command",
       "feasiblePath": "Source uses inverted second copy before peer setup.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c draw_erase_rope",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6822,13 +6858,16 @@
       "consumer": "EraseR2",
       "storage": "peer address and original speed sign to complementary second tile pair",
       "feasiblePath": "Second command mirrors first rope erase/draw choice.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c draw_erase_rope",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6841,13 +6880,16 @@
       "consumer": "ExitRp",
       "storage": "ten-byte command completion to buffer offset and slot restoration",
       "feasiblePath": "Only completed pair increments buffer by ten.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c draw_erase_rope",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6860,13 +6902,16 @@
       "consumer": "StopPlatforms",
       "storage": "floatey/result state to falling flag and zeroed peer speed/force",
       "feasiblePath": "Fall setup writes player-relative number then initializes both motion fields.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c init_platform_fall",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -6879,13 +6924,16 @@
       "consumer": "ExPF",
       "storage": "ordered two-platform falling positions and collision slot to player placement",
       "feasiblePath": "Player follows only a present collision after both platform moves.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "balance_platform.c platform_fall",
       "semanticContract": "Preserves source producer-to-consumer paired-platform/VRAM state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10261,13 +10309,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 853,
-    "needs-evidence": 1139
+    "exact": 1207,
+    "needs-evidence": 785
   },
   "controlEdgeCounts": {
-    "exact": 1653,
-    "needs-evidence": 2671,
-    "infeasible": 18
+    "exact": 2418,
+    "infeasible": 18,
+    "needs-evidence": 1906
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -33805,13 +33853,16 @@
       "label": "BalancePlatform",
       "asmLine": 10692,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Erases only when Y high equals three; otherwise enters balance handling.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33821,13 +33872,16 @@
       "label": "DoBPl",
       "asmLine": 10697,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Treats negative Enemy_State as non-balance and returns; nonnegative state is the paired platform offset.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33837,13 +33891,16 @@
       "label": "CheckBalPlatform",
       "asmLine": 10701,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Saves peer offset, collision flag and falling direction; falling direction enters paired fall, otherwise tests current platform threshold.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33853,13 +33910,16 @@
       "label": "ChkForFall",
       "asmLine": 10709,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "For current Y <=$2d, matching peer/collision selector initializes fall; otherwise clamps current Y to $2f and stops both.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33869,13 +33929,16 @@
       "label": "MakePlatformFall",
       "asmLine": 10720,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Is the no-extra-write tail jump to paired fall initialization.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33885,13 +33948,16 @@
       "label": "ChkOtherForFall",
       "asmLine": 10723,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Applies the same <=$2d matching-selector fall/clamp-stop logic to peer Y, otherwise joins coupled movement.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33901,13 +33967,16 @@
       "label": "ChkToMoveBalPlat",
       "asmLine": 10733,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Saves old current Y, distinguishes collision from no-collision, and selects down/up/stop from force+five carry and signed speed exactly as source.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33917,13 +33986,16 @@
       "label": "ColFlg",
       "asmLine": 10750,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Uses collision slot equality with ObjectOffset to select down versus up movement.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33933,13 +34005,16 @@
       "label": "PlatUp",
       "asmLine": 10752,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Calls upward platform gravity then tails to counterpart displacement.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33949,13 +34024,16 @@
       "label": "PlatSt",
       "asmLine": 10754,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Calls two-platform stop initialization then tails to counterpart displacement.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33965,13 +34043,16 @@
       "label": "PlatDn",
       "asmLine": 10756,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Calls downward platform gravity then falls through to counterpart displacement.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33981,13 +34062,16 @@
       "label": "DoOtherPlatform",
       "asmLine": 10758,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Moves peer by old-current minus new-current Y difference, repositions player only for nonnegative collision flag, then joins rope update.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -33997,13 +34081,16 @@
       "label": "DrawEraseRope",
       "asmLine": 10771,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Skips stationary platforms and VRAM offsets >=$20; otherwise emits two two-tile rope commands using two saved speed copies and then advances Buffer1 offset by ten.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34013,13 +34100,16 @@
       "label": "EraseR1",
       "asmLine": 10796,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Selects blank $24,$24 for first rope when current speed is negative; nonnegative selects $a2,$a3.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34029,13 +34119,16 @@
       "label": "OtherRope",
       "asmLine": 10800,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Uses peer state as slot and inverted second speed to derive peer address before its complementary tile selection.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34045,13 +34138,16 @@
       "label": "EraseR2",
       "asmLine": 10819,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Selects blank $24,$24 for second rope when first speed is nonnegative; negative selects $a2,$a3.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34061,13 +34157,16 @@
       "label": "EndRp",
       "asmLine": 10822,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Writes command terminator and advances VRAM buffer offset by ten.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34077,13 +34176,16 @@
       "label": "ExitRp",
       "asmLine": 10828,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Restores ObjectOffset before return.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34093,13 +34195,16 @@
       "label": "SetupPlatformRope",
       "asmLine": 10831,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Computes name-table low/high address from peer X/page/Y, difficulty adjustment, speed sign and bottom-screen correction while preserving source stack speed copies.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34109,13 +34214,16 @@
       "label": "GetLRp",
       "asmLine": 10840,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Applies X+8 and, only outside secondary hard mode, a second X+16 whose carry supersedes the first source carry.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34125,13 +34233,16 @@
       "label": "GetHRp",
       "asmLine": 10857,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Builds high byte from rotated Y bits and page LSB, then combines vertical/horizontal low fields.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34141,13 +34252,16 @@
       "label": "ExPRp",
       "asmLine": 10883,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Returns prepared address, including Y>= $e8 low-address bit-six clear.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34157,13 +34271,16 @@
       "label": "InitPlatformFall",
       "asmLine": 10885,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Uses peer offscreen bits and floatey setup, copies player relative/X-Y values, marks falling direction then stops both platforms.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34173,13 +34290,16 @@
       "label": "StopPlatforms",
       "asmLine": 10898,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Initializes source vertical state and writes zero speed/force to peer.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34189,13 +34309,16 @@
       "label": "PlatformFall",
       "asmLine": 10904,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Moves current then peer falling platforms, then positions player only for nonnegative collision flag.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -34205,13 +34328,16 @@
       "label": "ExPF",
       "asmLine": 10916,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Restores ObjectOffset and returns.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91221,12 +91347,15 @@
       "instruction": "bne",
       "id": "control-02083",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation BalancePlatform -> DoBPl with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91240,12 +91369,15 @@
       "instruction": "jmp",
       "id": "control-02084",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation BalancePlatform -> EraseEnemyObject with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -91264,12 +91396,15 @@
       "instruction": "bpl",
       "id": "control-02085",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation DoBPl -> CheckBalPlatform with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91283,12 +91418,15 @@
       "instruction": "beq",
       "id": "control-02086",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation CheckBalPlatform -> ChkForFall with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91302,12 +91440,15 @@
       "instruction": "jmp",
       "id": "control-02087",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation CheckBalPlatform -> PlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91321,12 +91462,15 @@
       "instruction": "bcc",
       "id": "control-02088",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkForFall -> ChkOtherForFall with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91340,12 +91484,15 @@
       "instruction": "beq",
       "id": "control-02089",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkForFall -> MakePlatformFall with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91359,12 +91506,15 @@
       "instruction": "jmp",
       "id": "control-02090",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation ChkForFall -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91378,12 +91528,15 @@
       "instruction": "jmp",
       "id": "control-02091",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation MakePlatformFall -> InitPlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91397,12 +91550,15 @@
       "instruction": "bcc",
       "id": "control-02092",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkOtherForFall -> ChkToMoveBalPlat with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91416,12 +91572,15 @@
       "instruction": "beq",
       "id": "control-02093",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkOtherForFall -> MakePlatformFall with high-Y/state/peer/collision predicate and tail ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91435,12 +91594,15 @@
       "instruction": "jmp",
       "id": "control-02094",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation ChkOtherForFall -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91454,12 +91616,15 @@
       "instruction": "bpl",
       "id": "control-02095",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> ColFlg with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91473,12 +91638,15 @@
       "instruction": "bmi",
       "id": "control-02096",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatDn with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91492,12 +91660,15 @@
       "instruction": "bne",
       "id": "control-02097",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91511,12 +91682,15 @@
       "instruction": "bcc",
       "id": "control-02098",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatSt with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91530,12 +91704,15 @@
       "instruction": "bcs",
       "id": "control-02099",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ChkToMoveBalPlat -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91549,12 +91726,15 @@
       "instruction": "bcs",
       "id": "control-02100",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkToMoveBalPlat -> ColFlg with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91568,12 +91748,15 @@
       "instruction": "beq",
       "id": "control-02101",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation ColFlg -> PlatDn with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91587,12 +91770,15 @@
       "instruction": "beq",
       "id": "control-02102",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation ColFlg -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91606,12 +91792,15 @@
       "instruction": "jsr",
       "id": "control-02103",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation PlatUp -> MovePlatformUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -91626,12 +91815,15 @@
       "instruction": "jmp",
       "id": "control-02104",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation PlatUp -> DoOtherPlatform with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91645,12 +91837,15 @@
       "instruction": "jsr",
       "id": "control-02105",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation PlatSt -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91664,12 +91859,15 @@
       "instruction": "jmp",
       "id": "control-02106",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation PlatSt -> DoOtherPlatform with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91683,12 +91881,15 @@
       "instruction": "jsr",
       "id": "control-02107",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation PlatDn -> MovePlatformDown with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -91703,12 +91904,15 @@
       "instruction": "jsr",
       "id": "control-02108",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation PlatDn -> DoOtherPlatform with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91722,12 +91926,15 @@
       "instruction": "bmi",
       "id": "control-02109",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation DoOtherPlatform -> DrawEraseRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91741,12 +91948,15 @@
       "instruction": "jsr",
       "id": "control-02110",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation DoOtherPlatform -> PositionPlayerOnVPlat with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -91761,12 +91971,15 @@
       "instruction": "jsr",
       "id": "control-02111",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation DoOtherPlatform -> DrawEraseRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91780,12 +91993,15 @@
       "instruction": "beq",
       "id": "control-02112",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation DrawEraseRope -> ExitRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91799,12 +92015,15 @@
       "instruction": "bcs",
       "id": "control-02113",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation DrawEraseRope -> ExitRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91818,12 +92037,15 @@
       "instruction": "jsr",
       "id": "control-02114",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation DrawEraseRope -> SetupPlatformRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91837,12 +92059,15 @@
       "instruction": "bmi",
       "id": "control-02115",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation DrawEraseRope -> EraseR1 with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91856,12 +92081,15 @@
       "instruction": "jmp",
       "id": "control-02116",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation DrawEraseRope -> OtherRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91875,12 +92103,15 @@
       "instruction": "sta",
       "id": "control-02117",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation EraseR1 -> OtherRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91894,12 +92125,15 @@
       "instruction": "jsr",
       "id": "control-02118",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation OtherRope -> SetupPlatformRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91913,12 +92147,15 @@
       "instruction": "bpl",
       "id": "control-02119",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation OtherRope -> EraseR2 with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91932,12 +92169,15 @@
       "instruction": "jmp",
       "id": "control-02120",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original jump relation OtherRope -> EndRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91951,12 +92191,15 @@
       "instruction": "sta",
       "id": "control-02121",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation EraseR2 -> EndRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91970,12 +92213,15 @@
       "instruction": "sta",
       "id": "control-02122",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation EndRp -> ExitRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -91989,12 +92235,15 @@
       "instruction": "bne",
       "id": "control-02123",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation SetupPlatformRope -> GetLRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92008,12 +92257,15 @@
       "instruction": "adc",
       "id": "control-02124",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetupPlatformRope -> GetLRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92027,12 +92279,15 @@
       "instruction": "bpl",
       "id": "control-02125",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation GetLRp -> GetHRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92046,12 +92301,15 @@
       "instruction": "tax",
       "id": "control-02126",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetLRp -> GetHRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92065,12 +92323,15 @@
       "instruction": "bcc",
       "id": "control-02127",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation GetHRp -> ExPRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92084,12 +92345,15 @@
       "instruction": "sta",
       "id": "control-02128",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetHRp -> ExPRp with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92103,12 +92367,15 @@
       "instruction": "jsr",
       "id": "control-02129",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation InitPlatformFall -> GetEnemyOffscreenBits with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92122,12 +92389,15 @@
       "instruction": "jsr",
       "id": "control-02130",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation InitPlatformFall -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -92142,12 +92412,15 @@
       "instruction": "sta",
       "id": "control-02131",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitPlatformFall -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92161,12 +92434,15 @@
       "instruction": "jsr",
       "id": "control-02132",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation StopPlatforms -> InitVStf with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -92182,12 +92458,15 @@
       "instruction": "jsr",
       "id": "control-02133",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation PlatformFall -> MoveFallingPlatform with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -92202,12 +92481,15 @@
       "instruction": "jsr",
       "id": "control-02134",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation PlatformFall -> MoveFallingPlatform with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -92222,12 +92504,15 @@
       "instruction": "bmi",
       "id": "control-02135",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original branch relation PlatformFall -> ExPF with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -92241,12 +92526,15 @@
       "instruction": "jsr",
       "id": "control-02136",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original call relation PlatformFall -> PositionPlayerOnVPlat with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -92261,12 +92549,15 @@
       "instruction": "jsr",
       "id": "control-02137",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original fallthrough relation PlatformFall -> ExPF with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -126826,12 +127117,15 @@
       "instruction": "rts/rti",
       "id": "control-03875",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation MovePlatformUp -> PlatUp with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -126846,12 +127140,15 @@
       "instruction": "rts/rti",
       "id": "control-03876",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation StopPlatforms -> PlatSt with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -126865,12 +127162,15 @@
       "instruction": "rts/rti",
       "id": "control-03877",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
       "semanticEvidence": [
-        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation MovePlatformDown -> PlatDn with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -126885,12 +127185,15 @@
       "instruction": "rts/rti",
       "id": "control-03878",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> DoOtherPlatform with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -126905,12 +127208,15 @@
       "instruction": "rts/rti",
       "id": "control-03879",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation SetupPlatformRope -> DrawEraseRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -126924,12 +127230,15 @@
       "instruction": "rts/rti",
       "id": "control-03880",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation SetupPlatformRope -> OtherRope with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -126943,12 +127252,15 @@
       "instruction": "rts/rti",
       "id": "control-03881",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InitPlatformFall exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
@@ -126962,12 +127274,15 @@
       "instruction": "rts/rti",
       "id": "control-03882",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation SetupFloateyNumber -> InitPlatformFall with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -126982,12 +127297,15 @@
       "instruction": "rts/rti",
       "id": "control-03883",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation InitVStf -> StopPlatforms with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -127003,12 +127321,15 @@
       "instruction": "rts/rti",
       "id": "control-03884",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -127023,12 +127344,15 @@
       "instruction": "rts/rti",
       "id": "control-03885",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
-        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation MoveFallingPlatform -> PlatformFall with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -127043,12 +127367,15 @@
       "instruction": "rts/rti",
       "id": "control-03886",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+      ],
       "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> PlatformFall with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",

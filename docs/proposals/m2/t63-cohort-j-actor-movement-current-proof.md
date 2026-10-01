@@ -1014,6 +1014,19 @@ S24 is closed; S26 begins at BalancePlatform. The ROM track batches eight
 controlled child-record files once per x86/x64 width; C90, purity and DOS16
 form the operational track.
 
-## S25 closure � Firebar angular primitive
+## S25 closure — Firebar angular primitive
 
 Both labels current-exact; static `$D410-$D431`, eight-file x86/x64 batch replay zero differences, 1,572,864 C90 cases, purity and DOS16 link pass. Two feasible controls exact. Totals: **1,181 / 1,992** nodes, **2,351 / 4,324** controls.
+
+## S26 admission — balance platform chain
+
+S26 admits BalancePlatform through ExPF: 26 source-order labels in
+`src/game/enemy/balance_platform.c`. It replays 1,024 controlled original-ROM
+fixtures once per x86/x64 manifest process and covers pair movement, rope,
+fall and player paths.
+
+## S26 closure — balance-platform movement, rope and fall chain
+
+All 26 scoped labels are current-exact: `BalancePlatform` through `ExPF`. Static `$D432-$D5D2` comparison covers the paired-platform entry and threshold gates, coupled movement and old-minus-new Y transfer, both rope-address calculations and complementary command tiles, fall setup, dual falling moves and conditional player placement. The 1,024-record original-ROM batch replays once per x86 and x64 process with full RAM and recorded child calls, zero differences. The focused C90 contract, platform-purity check and OpenNT DOS16 shared-source link pass. All 67 newly pending feasible controls and 16 material handoffs are exact. Test harness and evidence changed only; no product code changed, so no three-EXE refresh is due.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is **1,207 / 1,992 nodes** and **2,418 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
