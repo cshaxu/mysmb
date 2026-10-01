@@ -1931,3 +1931,7 @@ All six labels from `FireballXSpdData` through `FireballExplosion` are current-e
 ### T60 S3 bubble state and movement result
 
 `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData` and `BubbleTimerData` are current-equivalence exact, together with 11 feasible caller, branch, fall-through and return relations. Static ROM comparison covers `$B6F9-$B74E`; 30 original-NMI water-area routes cover both entries, three slots, both random values and both outcomes at the four executable branch sites. Their 60 x86/x64 actual shared-C replays match all compared persistent RAM, and the entry smoke covers 18,432 cases per width. The live registry is now **660 exact nodes** and **1,298 exact feasible control relations**. Historical conformance remains **1,992 / 1,992**.
+
+### T60 S4 game timer and warp result
+
+`RunGameTimer`, `ResGTCtrl`, `TimeUpOn`, `ExGTimer` and `WarpZoneObject` are current-equivalence exact, together with 19 feasible relations. The timer chain has 16 original-NMI routes with both outcomes of eight branches and 32 matching x86/x64 shared-C executions. Warp Zone has ten original-NMI routes, both source branches, all active slots and 20 matching native frames. The live registry is **665 exact nodes** and **1,317 exact feasible control relations**. Historical conformance remains **1,992 / 1,992**.

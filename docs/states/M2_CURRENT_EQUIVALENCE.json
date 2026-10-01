@@ -23183,13 +23183,16 @@
       "label": "RunGameTimer",
       "asmLine": 6461,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game timer/enemy core",
+      "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves title/engine/death/Y/timer gates, 100 music gate, BCD decrement, status update and zero-time death order.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -23199,13 +23202,16 @@
       "label": "ResGTCtrl",
       "asmLine": 6486,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game timer/enemy core",
+      "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Reloads control timer, writes final-digit modifier, performs BCD math then queues timer status.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -23215,13 +23221,16 @@
       "label": "TimeUpOn",
       "asmLine": 6494,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game timer/enemy core",
+      "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Uses zero accumulator to reset PlayerStatus, forces injury, then increments expiration flag.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -23231,13 +23240,16 @@
       "label": "ExGTimer",
       "asmLine": 6497,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game timer/enemy core",
+      "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Returns without timer mutation on every source gate.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -23247,13 +23259,16 @@
       "label": "WarpZoneObject",
       "asmLine": 6501,
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
+      "status": "exact",
+      "currentOwner": "shared game timer/enemy core",
+      "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves ScrollLock and bitwise player Y/high gate before incrementing WarpZoneControl and erasing the source object.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -67331,12 +67346,15 @@
       "instruction": "beq",
       "id": "control-01103",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67350,12 +67368,15 @@
       "instruction": "bcc",
       "id": "control-01104",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67369,12 +67390,15 @@
       "instruction": "beq",
       "id": "control-01105",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67388,12 +67412,15 @@
       "instruction": "bcs",
       "id": "control-01106",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67407,12 +67434,15 @@
       "instruction": "bne",
       "id": "control-01107",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67426,12 +67456,15 @@
       "instruction": "beq",
       "id": "control-01108",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> TimeUpOn with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67445,12 +67478,15 @@
       "instruction": "bne",
       "id": "control-01109",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67464,12 +67500,15 @@
       "instruction": "bne",
       "id": "control-01110",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67483,12 +67522,15 @@
       "instruction": "sta",
       "id": "control-01111",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation RunGameTimer -> ResGTCtrl with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67502,12 +67544,15 @@
       "instruction": "jsr",
       "id": "control-01112",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original call relation ResGTCtrl -> DigitsMathRoutine with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/status.c",
@@ -67522,12 +67567,15 @@
       "instruction": "jmp",
       "id": "control-01113",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original jump relation ResGTCtrl -> PrintStatusBarNumbers with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/status.c",
@@ -67542,12 +67590,15 @@
       "instruction": "jsr",
       "id": "control-01114",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original call relation TimeUpOn -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67561,12 +67612,15 @@
       "instruction": "inc",
       "id": "control-01115",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original fallthrough relation TimeUpOn -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -67580,12 +67634,15 @@
       "instruction": "beq",
       "id": "control-01116",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -67600,12 +67657,15 @@
       "instruction": "bne",
       "id": "control-01117",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original branch relation WarpZoneObject -> ExGTimer with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -67620,12 +67680,15 @@
       "instruction": "jmp",
       "id": "control-01118",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original jump relation WarpZoneObject -> EraseEnemyObject with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
@@ -117955,12 +118018,15 @@
       "instruction": "rts/rti",
       "id": "control-03681",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original return relation DigitsMathRoutine -> ResGTCtrl with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/status.c",
@@ -117975,12 +118041,15 @@
       "instruction": "rts/rti",
       "id": "control-03682",
       "cohort": "G",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original return relation ForceInjury -> TimeUpOn with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/timer.c"
@@ -130980,12 +131049,15 @@
       "selector": 32,
       "id": "control-04308",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared timer/enemy core branch, child boundary, dispatch and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> WarpZoneObject with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c"
