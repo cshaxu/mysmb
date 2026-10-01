@@ -444,3 +444,50 @@ link pass. No product source changed, so no three-EXE artifact refresh applies.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,055 / 1,992 nodes** and **2,083 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**). S10 begins with `FirebarPosLookupTbl`.
+
+
+## S10 admission — Firebar position, rendering and collision chain
+
+S10 admits `FirebarPosLookupTbl -> GetVAdder` (lines 9703–9922,
+`$CCC7-$CED4`): `FirebarPosLookupTbl`, `FirebarMirrorData`, `FirebarTblOffsets`, `FirebarYPos`, `ProcFirebar`, `SusFbar`, `SkpFSte`, `SetupGFB`, `SetMFbar`, `DrawFbar`, `NextFbar`, `SkipFBar`, `DrawFirebar_Collision`, `AddHA`, `SubtR1`, `ChkFOfs`, `VAHandl`, `AddVA`, `SetVFbr`, `FirebarCollision`, `AdjSm`, `BigJp`, `FBCLoop`, `ChkVFBD`, `ChkFBCl`, `Chk2Ofs`, `ChgSDir`, `SetSDir`, `NoColFB`, `GetFirebarPosition`, `GetHAdder`, `GetVAdder`. The shared
+owner is `src/game/enemy/firebar.c`. S9 is the predecessor; S11 begins at
+`PRandomSubtracter`. Its child seams (offscreen position, spin, relative
+position, OAM tile draw and player injury) are audited as explicit boundaries;
+their bodies receive no inferred credit.
+
+The logic track compares every table byte, phase reflection, byte-offset wrap,
+spin update, short/long firebar loop, OAM coordinate and offscreen branch,
+collision probes, direction result, injury call preservation and return path.
+The operational track uses a single-process manifest runner for the controlled
+original-ROM/current x86/x64 Firebar snapshots, then runs focused contracts,
+platform purity and the shared DOS16 link. Any feasible difference remains S10
+repair work and is rerun before S11 admission.
+
+### S10 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,055 / 1,992**.
+- Current exact feasible control edges: **2,083 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **32** labels; current-evidence candidates: **32**; historical
+  expected promotions: **0**; maximum historical completion: **1,992 / 1,992**.
+
+
+## S10 closure — Firebar position, rendering and collision chain
+
+All 32 scoped labels are current-exact. Static `$CCC7-$CED4` comparison confirms
+the 117-byte table binding, phase reflection, byte-offset wrap, spin/timer
+ordering, short/long part-loop bounds, OAM coordinate/offscreen paths, both
+collision probe passes, movement-direction selection, injury call preservation
+and return. All 66 feasible controls and 14 material handoffs are exact.
+
+The new manifest runner preserves the prior single-snapshot interface and runs
+all 512 controlled original-ROM Firebar snapshots in one process per width;
+current x86 and x64 both pass **512 / 512** with zero differences. Focused
+Firebar and spin C90 contracts, platform purity, and the OpenNT DOS16
+shared-source link pass. Only an audit harness changed, so product code did not
+change and no three-EXE artifact refresh is due.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,087 / 1,992 nodes** and **2,149 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**). S11 begins with `PRandomSubtracter`.

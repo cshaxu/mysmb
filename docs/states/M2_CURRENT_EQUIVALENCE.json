@@ -4669,13 +4669,16 @@
       "consumer": "GetFirebarPosition",
       "storage": "phase row/column lookup",
       "feasiblePath": "Position child consumes original phase-derived lookup bytes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_get_position",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4688,13 +4691,16 @@
       "consumer": "GetFirebarPosition",
       "storage": "phase-derived table row offset",
       "feasiblePath": "Phase selects one of twelve position rows before column lookup.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_get_position",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4707,13 +4713,16 @@
       "consumer": "SusFbar",
       "storage": "offscreen bits, TimerControl and spin state",
       "feasiblePath": "Only visible unpaused firebars advance high phase before axis selection.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_proc_firebar",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4727,13 +4736,16 @@
       "consumer": "SetupGFB",
       "storage": "Enemy_ID and high spin phase",
       "feasiblePath": "Short-firebar axis skip produces effective phase consumed by setup.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_proc_firebar",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4746,13 +4758,16 @@
       "consumer": "SetMFbar",
       "storage": "Enemy_ID selects short/long max parts",
       "feasiblePath": "Setup chooses five versus eleven segment loop bound.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_proc_firebar",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4765,13 +4780,16 @@
       "consumer": "DrawFbar",
       "storage": "loop counter and max part count",
       "feasiblePath": "Part loop starts at zero with selected maximum.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_proc_firebar",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4784,13 +4802,16 @@
       "consumer": "NextFbar",
       "storage": "part index, OAM position and collision result",
       "feasiblePath": "Each part completes position/draw/collision before loop advance.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_proc_firebar",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4803,13 +4824,16 @@
       "consumer": "DrawFirebar_Collision",
       "storage": "phase-derived horizontal/vertical adders and mirror byte",
       "feasiblePath": "Segment positioning consumes the full position/mirror output of the phase lookup.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_get_position then mysmb_firebar_draw_collision",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4822,13 +4846,16 @@
       "consumer": "FirebarCollision",
       "storage": "segment OAM X/Y and collision scratch $06/$07",
       "feasiblePath": "Collision consumes coordinates after visibility/mirror processing.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_draw_collision",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4841,13 +4868,16 @@
       "consumer": "FBCLoop",
       "storage": "star/timer, player page/size/crouch and OAM anchor state",
       "feasiblePath": "Collision probe loop is entered only when all source gating allows it.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_collision",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4861,13 +4891,16 @@
       "consumer": "FBCLoop",
       "storage": "probe count and player Y+$18",
       "feasiblePath": "Small/crouching path performs exactly the source probe configuration.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_collision",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4881,13 +4914,16 @@
       "consumer": "FBCLoop",
       "storage": "FirebarYPos table and current probe counter",
       "feasiblePath": "Big player path advances to source Y offsets before rechecking.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_collision",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4901,13 +4937,16 @@
       "consumer": "SetSDir",
       "storage": "player/firebar X comparison direction and loop counter",
       "feasiblePath": "Injury uses original direction and preserves current firebar part counter.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_collision",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -4921,13 +4960,16 @@
       "consumer": "NoColFB",
       "storage": "OAM stream offset and current ObjectOffset",
       "feasiblePath": "Segment finish advances OAM offset by four and returns to original object slot.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_firebar_collision",
       "semanticContract": "Preserves source table/state producer-to-consumer handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -31114,13 +31156,16 @@
       "label": "FirebarPosLookupTbl",
       "asmLine": 9703,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Binds the 11x9 firebar position magnitude table used by horizontal/vertical phase lookup.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31130,13 +31175,16 @@
       "label": "FirebarMirrorData",
       "asmLine": 9716,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Binds firebar mirror selector bytes {$01,$03,$02,$00}.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31146,13 +31194,16 @@
       "label": "FirebarTblOffsets",
       "asmLine": 9719,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Binds twelve row offsets {$00,$09,...,$63} into position lookup table.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31162,13 +31213,16 @@
       "label": "FirebarYPos",
       "asmLine": 9723,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Binds firebar anchor Y offsets {$0c,$18}.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31178,13 +31232,16 @@
       "label": "ProcFirebar",
       "asmLine": 9726,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Gets offscreen bits; returns on bit three; otherwise timer-gates spin update, applies short-firebar axis skip, prepares anchor sprite/collision and drives the part loop.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31195,13 +31252,16 @@
       "label": "SusFbar",
       "asmLine": 9737,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Uses stored high spin state and branches by firebar ID/axis-avoidance rule.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31211,13 +31271,16 @@
       "label": "SkpFSte",
       "asmLine": 9745,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Increments short-firebar high phase at 8 or 24 to avoid horizontal state, then falls through setup.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31227,13 +31290,16 @@
       "label": "SetupGFB",
       "asmLine": 9748,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores effective high spin phase, computes relative/initial position, draws/tests anchor, selects max part count and initializes loop counter.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31243,13 +31309,16 @@
       "label": "SetMFbar",
       "asmLine": 9766,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores max five for short or eleven for long firebar, then initializes part index zero.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31259,13 +31328,16 @@
       "label": "DrawFbar",
       "asmLine": 9769,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Loads phase, obtains part position, draws/tests it, switches OAM source after part four, increments and loops while below max.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31275,13 +31347,16 @@
       "label": "NextFbar",
       "asmLine": 9778,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Increments part counter and branches to next part while below max.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31291,13 +31366,16 @@
       "label": "SkipFBar",
       "asmLine": 9782,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Returns for bit-three offscreen path or after complete part loop.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31307,13 +31385,16 @@
       "label": "DrawFirebar_Collision",
       "asmLine": 9784,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Applies mirror-controlled horizontal/vertical adder signs, hides segments outside horizontal range or when anchor Y is $f8, writes OAM coordinates and falls through collision.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31323,13 +31404,16 @@
       "label": "AddHA",
       "asmLine": 9793,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Adds signed horizontal adder to anchor relative X and stores segment X before absolute-distance visibility test.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31340,13 +31424,16 @@
       "label": "SubtR1",
       "asmLine": 9803,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Computes absolute horizontal segment/anchor difference for left-side segment before visibility check.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31357,13 +31444,16 @@
       "label": "ChkFOfs",
       "asmLine": 9805,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Selects visible vertical-adder handling only for horizontal difference below $59; otherwise hides Y at $f8.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31374,13 +31464,16 @@
       "label": "VAHandl",
       "asmLine": 9809,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Skips vertical addition for anchor Y $f8; otherwise applies the second mirror bit to vertical adder.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31391,13 +31484,16 @@
       "label": "AddVA",
       "asmLine": 9817,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Adds signed vertical adder to relative Y before sprite Y write.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31408,13 +31504,16 @@
       "label": "SetVFbr",
       "asmLine": 9819,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores segment Y in OAM and collision scratch.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31425,13 +31524,16 @@
       "label": "FirebarCollision",
       "asmLine": 9822,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Draws tile, skips collision for star/timer/offscreen-page conditions, probes one or three player Y bands by size/crouch, tests 8x8 proximity, injures and restores loop counter.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31441,13 +31543,16 @@
       "label": "AdjSm",
       "asmLine": 9838,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Selects two extra Y probes and shifts player Y by $18 for small or crouching player.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31458,13 +31563,16 @@
       "label": "BigJp",
       "asmLine": 9844,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Uses the selected player Y to enter the collision probe loop.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31475,13 +31583,16 @@
       "label": "FBCLoop",
       "asmLine": 9845,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Computes absolute Y difference, then conditionally absolute X difference and branches to injury on both distances below eight.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31492,13 +31603,16 @@
       "label": "ChkVFBD",
       "asmLine": 9851,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Skips X test when Y difference is at least eight or segment X is far right.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31509,13 +31623,16 @@
       "label": "ChkFBCl",
       "asmLine": 9866,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Branches to injury when absolute X difference is below eight.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31526,13 +31643,16 @@
       "label": "Chk2Ofs",
       "asmLine": 9868,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Advances player Y probe unless small/crouching three-probe sequence is complete.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31543,13 +31663,16 @@
       "label": "ChgSDir",
       "asmLine": 9877,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Chooses player injury direction from player sprite X versus firebar segment X then invokes injury.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31560,13 +31683,16 @@
       "label": "SetSDir",
       "asmLine": 9882,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores selected direction, preserves part loop counter across player injury and resumes collision exit.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31577,13 +31703,16 @@
       "label": "NoColFB",
       "asmLine": 9889,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Restores/increments OAM stream offset by four, reloads ObjectOffset and returns.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -31594,13 +31723,16 @@
       "label": "GetFirebarPosition",
       "asmLine": 9896,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Derives oscillating horizontal and vertical magnitudes from phase/table rows, then selects mirror data from phase>>3.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31610,13 +31742,16 @@
       "label": "GetHAdder",
       "asmLine": 9904,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores folded horizontal phase before row-offset lookup.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -31626,13 +31761,16 @@
       "label": "GetVAdder",
       "asmLine": 9922,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/firebar.c",
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Stores folded vertical phase before row-offset lookup.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -84897,12 +85035,15 @@
       "instruction": "jsr",
       "id": "control-01831",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ProcFirebar -> GetEnemyOffscreenBits with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -84917,12 +85058,15 @@
       "instruction": "bne",
       "id": "control-01832",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcFirebar -> SkipFBar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -84937,12 +85081,15 @@
       "instruction": "bne",
       "id": "control-01833",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcFirebar -> SusFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -84957,12 +85104,15 @@
       "instruction": "jsr",
       "id": "control-01834",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/firebar_children.c:mysmb_firebar_spin and ProcFirebar caller",
       "semanticEvidence": [
-        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ProcFirebar -> FirebarSpin with direction predicate, low/high carry-or-borrow handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -84977,12 +85127,15 @@
       "instruction": "sta",
       "id": "control-01835",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcFirebar -> SusFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -84997,12 +85150,15 @@
       "instruction": "bcc",
       "id": "control-01836",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SusFbar -> SetupGFB with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85016,12 +85172,15 @@
       "instruction": "beq",
       "id": "control-01837",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SusFbar -> SkpFSte with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85035,12 +85194,15 @@
       "instruction": "bne",
       "id": "control-01838",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SusFbar -> SetupGFB with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85054,12 +85216,15 @@
       "instruction": "bne",
       "id": "control-01839",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SusFbar -> SkpFSte with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85073,12 +85238,15 @@
       "instruction": "sta",
       "id": "control-01840",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SkpFSte -> SetupGFB with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85092,12 +85260,15 @@
       "instruction": "jsr",
       "id": "control-01841",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SetupGFB -> RelativeEnemyPosition with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85111,12 +85282,15 @@
       "instruction": "jsr",
       "id": "control-01842",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SetupGFB -> GetFirebarPosition with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85130,12 +85304,15 @@
       "instruction": "jsr",
       "id": "control-01843",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SetupGFB -> FirebarCollision with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85149,12 +85326,15 @@
       "instruction": "bcc",
       "id": "control-01844",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SetupGFB -> SetMFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85168,12 +85348,15 @@
       "instruction": "ldy",
       "id": "control-01845",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetupGFB -> SetMFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85187,12 +85370,15 @@
       "instruction": "sta",
       "id": "control-01846",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetMFbar -> DrawFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85206,12 +85392,15 @@
       "instruction": "jsr",
       "id": "control-01847",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation DrawFbar -> GetFirebarPosition with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85225,12 +85414,15 @@
       "instruction": "jsr",
       "id": "control-01848",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation DrawFbar -> DrawFirebar_Collision with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85244,12 +85436,15 @@
       "instruction": "bne",
       "id": "control-01849",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation DrawFbar -> NextFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85263,12 +85458,15 @@
       "instruction": "sta",
       "id": "control-01850",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation DrawFbar -> NextFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85282,12 +85480,15 @@
       "instruction": "bcc",
       "id": "control-01851",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation NextFbar -> DrawFbar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85301,12 +85502,15 @@
       "instruction": "bcc",
       "id": "control-01852",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation NextFbar -> SkipFBar with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85320,12 +85524,15 @@
       "instruction": "bcs",
       "id": "control-01853",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation DrawFirebar_Collision -> AddHA with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85340,12 +85547,15 @@
       "instruction": "adc",
       "id": "control-01854",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation DrawFirebar_Collision -> AddHA with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85360,12 +85570,15 @@
       "instruction": "bcs",
       "id": "control-01855",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation AddHA -> SubtR1 with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85380,12 +85593,15 @@
       "instruction": "jmp",
       "id": "control-01856",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation AddHA -> ChkFOfs with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85400,12 +85616,15 @@
       "instruction": "sbc",
       "id": "control-01857",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SubtR1 -> ChkFOfs with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85420,12 +85639,15 @@
       "instruction": "bcc",
       "id": "control-01858",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkFOfs -> VAHandl with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85440,12 +85662,15 @@
       "instruction": "bne",
       "id": "control-01859",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkFOfs -> SetVFbr with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85460,12 +85685,15 @@
       "instruction": "bne",
       "id": "control-01860",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkFOfs -> VAHandl with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85480,12 +85708,15 @@
       "instruction": "beq",
       "id": "control-01861",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation VAHandl -> SetVFbr with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85500,12 +85731,15 @@
       "instruction": "bcs",
       "id": "control-01862",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation VAHandl -> AddVA with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85520,12 +85754,15 @@
       "instruction": "adc",
       "id": "control-01863",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation VAHandl -> AddVA with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85540,12 +85777,15 @@
       "instruction": "adc",
       "id": "control-01864",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation AddVA -> SetVFbr with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85560,12 +85800,15 @@
       "instruction": "sta",
       "id": "control-01865",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetVFbr -> FirebarCollision with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85580,12 +85823,15 @@
       "instruction": "jsr",
       "id": "control-01866",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves ROM call relation FirebarCollision -> DrawFirebar with source frame/state predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -85599,12 +85845,15 @@
       "instruction": "bne",
       "id": "control-01867",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FirebarCollision -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85619,12 +85868,15 @@
       "instruction": "bne",
       "id": "control-01868",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FirebarCollision -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85639,12 +85891,15 @@
       "instruction": "bne",
       "id": "control-01869",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FirebarCollision -> AdjSm with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85659,12 +85914,15 @@
       "instruction": "beq",
       "id": "control-01870",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FirebarCollision -> BigJp with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85679,12 +85937,15 @@
       "instruction": "beq",
       "id": "control-01871",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FirebarCollision -> AdjSm with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85699,12 +85960,15 @@
       "instruction": "tay",
       "id": "control-01872",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation AdjSm -> BigJp with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85719,12 +85983,15 @@
       "instruction": "tya",
       "id": "control-01873",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation BigJp -> FBCLoop with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85739,12 +86006,15 @@
       "instruction": "bpl",
       "id": "control-01874",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FBCLoop -> ChkVFBD with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85759,12 +86029,15 @@
       "instruction": "adc",
       "id": "control-01875",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FBCLoop -> ChkVFBD with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85779,12 +86052,15 @@
       "instruction": "bcs",
       "id": "control-01876",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkVFBD -> Chk2Ofs with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85799,12 +86075,15 @@
       "instruction": "bcs",
       "id": "control-01877",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkVFBD -> Chk2Ofs with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85819,12 +86098,15 @@
       "instruction": "bpl",
       "id": "control-01878",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkVFBD -> ChkFBCl with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85839,12 +86121,15 @@
       "instruction": "adc",
       "id": "control-01879",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkVFBD -> ChkFBCl with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85859,12 +86144,15 @@
       "instruction": "bcc",
       "id": "control-01880",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkFBCl -> ChgSDir with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85879,12 +86167,15 @@
       "instruction": "bcc",
       "id": "control-01881",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkFBCl -> Chk2Ofs with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85899,12 +86190,15 @@
       "instruction": "beq",
       "id": "control-01882",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation Chk2Ofs -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85919,12 +86213,15 @@
       "instruction": "jmp",
       "id": "control-01883",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation Chk2Ofs -> FBCLoop with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85939,12 +86236,15 @@
       "instruction": "bcs",
       "id": "control-01884",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChgSDir -> SetSDir with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85959,12 +86259,15 @@
       "instruction": "inx",
       "id": "control-01885",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChgSDir -> SetSDir with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -85979,12 +86282,15 @@
       "instruction": "jsr",
       "id": "control-01886",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SetSDir -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -86000,12 +86306,15 @@
       "instruction": "sta",
       "id": "control-01887",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetSDir -> NoColFB with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -86020,12 +86329,15 @@
       "instruction": "bcc",
       "id": "control-01888",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GetFirebarPosition -> GetHAdder with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -86039,12 +86351,15 @@
       "instruction": "adc",
       "id": "control-01889",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetFirebarPosition -> GetHAdder with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -86058,12 +86373,15 @@
       "instruction": "bcc",
       "id": "control-01890",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation GetHAdder -> GetVAdder with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -86077,12 +86395,15 @@
       "instruction": "adc",
       "id": "control-01891",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetHAdder -> GetVAdder with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -123981,12 +124302,15 @@
       "instruction": "rts/rti",
       "id": "control-03808",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar branch, table, child-call, loop, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation ProcFirebar -> RunFirebarObj with firebar phase, ID, OAM/part state and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
@@ -124637,12 +124961,15 @@
       "instruction": "rts/rti",
       "id": "control-03840",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation GetFirebarPosition -> SetupGFB with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -124656,12 +124983,15 @@
       "instruction": "rts/rti",
       "id": "control-03841",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation FirebarCollision -> SetupGFB with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -124675,12 +125005,15 @@
       "instruction": "rts/rti",
       "id": "control-03842",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation GetFirebarPosition -> DrawFbar with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
@@ -124694,12 +125027,15 @@
       "instruction": "rts/rti",
       "id": "control-03843",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation DrawFirebar_Collision -> DrawFbar with Firebar OAM, mirror, player probe and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"

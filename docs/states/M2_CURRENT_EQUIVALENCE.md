@@ -2126,3 +2126,16 @@ control edges**; historical mapping remains **1,992 / 1,992**, raw controls
 ### T63 S7 green Paratroopa/X-counter result
 
 The ten-node chain is current-exact: 576 ROM/current x86/x64 route comparisons and exhaustive counter contracts agree. The registry is **1,030 / 1,992** exact nodes and **2,042 / 4,324** exact feasible controls; raw **4,342**, infeasible **18**, historical **1,992 / 1,992**.
+
+
+### T63 S10 Firebar position/draw/collision result
+
+`FirebarPosLookupTbl -> GetVAdder` is current-exact: 32 nodes, 66 feasible
+control relations and 14 material handoffs. Static `$CCC7-$CED4` review
+confirms 117/117 local ROM-bound table bytes and the shared C branch/data
+semantics. The current x86 and x64 manifest runners each compare 512
+original-ROM snapshots in one process with zero differences. Focused C90
+contracts, platform purity and DOS16 link pass. The live registry is **1,087
+exact nodes** and **2,149 exact feasible control relations**. Historical
+mapping remains **1,992 / 1,992**; raw controls are **4,342**, with **18**
+infeasible and **4,324** feasible.

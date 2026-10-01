@@ -2128,3 +2128,12 @@ feasible controls and six material handoffs exact. ROM/current x86/x64 replay
 passes 1,280 comparisons and focused C90 contracts pass. Historical **1,992 /
 1,992**; exact nodes **1,055 / 1,992**; exact feasible controls **2,083 /
 4,324**; raw **4,342**, infeasible **18**.
+
+
+## M2 T63 S10 current-equivalence closure
+
+The Firebar position/draw/collision chain closes 32 nodes, 66 feasible controls
+and 14 material handoffs. Static source/table audit and 512 batch
+original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
+1,992**; exact nodes **1,087 / 1,992**; exact feasible controls **2,149 /
+4,324**; raw **4,342**, infeasible **18**.
