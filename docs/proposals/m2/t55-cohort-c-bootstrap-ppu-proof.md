@@ -180,3 +180,12 @@ selector-driven command output before any credit is recorded.
 
 S4 is current-exact with no shared-C repair. The local generated PRG exactly
 matches the original ROM's 32 KiB PRG region (`5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594`). Static audit maps the pointer tables, metatile rows and NMI table selectors to shared `area.c` and `frame_root.c`; x86/x64 `area_data_smoke` verifies all four metatile rows and all eight palette streams. The 14 nodes and eight previously unproven material handoffs are exact. No product code changed, so artifacts are not refreshed.
+
+## S5 admission and closure ? message-stream chain
+
+S5 receives the contiguous seven streams `MarioThanksMessage` through
+`WorldSelectMessage2` at SMB1 lines 2331?2387. Static comparison maps each to
+VRAM address controls 12?18 and the shared NMI/area consumers. The local PRG
+is byte-identical to the original ROM and `area_data_smoke` passes all streams
+on x86 and x64. All seven nodes and their seven NMI material handoffs are
+current-exact; no product source changed, so artifacts remain unchanged.

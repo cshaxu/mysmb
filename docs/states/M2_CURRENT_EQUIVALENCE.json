@@ -631,13 +631,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 12 ROM message stream to NMI consumer",
       "feasiblePath": "VRAM address control 12 selects MarioThanksMessage.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 12",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -651,13 +653,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 13 ROM message stream to NMI consumer",
       "feasiblePath": "VRAM address control 13 selects LuigiThanksMessage.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 13",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -671,13 +675,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 14 ROM message stream to NMI consumer",
       "feasiblePath": "VRAM address control 14 selects MushroomRetainerSaved.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 14",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -691,13 +697,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 15 ROM message stream to NMI consumer",
       "feasiblePath": "VRAM address control 15 selects PrincessSaved1.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 15",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -711,13 +719,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 16 ROM message stream to NMI consumer",
       "feasiblePath": "VRAM address control 16 selects PrincessSaved2.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 16",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -731,13 +741,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 17 ROM message stream to NMI consumer",
       "feasiblePath": "VRAM address control 17 selects WorldSelectMessage1.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 17",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -751,13 +763,15 @@
       "consumer": "NonMaskableInterrupt",
       "storage": "selector 18 ROM message stream to NMI consumer",
       "feasiblePath": "VRAM address control 18 selects WorldSelectMessage2.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 18",
       "semanticContract": "Selected stream bytes match.",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9601,8 +9615,8 @@
     }
   ],
   "nodeCounts": {
-    "exact": 209,
-    "needs-evidence": 1783
+    "exact": 216,
+    "needs-evidence": 1776
   },
   "controlEdgeCounts": {
     "exact": 411,
@@ -13523,13 +13537,15 @@
       "label": "MarioThanksMessage",
       "asmLine": 2331,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_message control 12",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "semanticContract": "ROM $8ce6: Mario victory message stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13539,13 +13555,15 @@
       "label": "LuigiThanksMessage",
       "asmLine": 2339,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_message control 13",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "semanticContract": "ROM $8cfb: Luigi victory message stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13555,13 +13573,15 @@
       "label": "MushroomRetainerSaved",
       "asmLine": 2347,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_message control 14",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "semanticContract": "ROM $8d10: retainer-saved message stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13571,13 +13591,15 @@
       "label": "PrincessSaved1",
       "asmLine": 2358,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_message control 15",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "semanticContract": "ROM $8d35: first princess-saved message stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13587,13 +13609,15 @@
       "label": "PrincessSaved2",
       "asmLine": 2366,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_message control 16",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "semanticContract": "ROM $8d4b: second princess-saved message stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13603,13 +13627,15 @@
       "label": "WorldSelectMessage1",
       "asmLine": 2375,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_message control 17",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "semanticContract": "ROM $8d6b: first world-select message stream.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -13619,13 +13645,15 @@
       "label": "WorldSelectMessage2",
       "asmLine": 2382,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_message control 18",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S5 static audit: SMB1 lines 743-759, 793-800 and 2331-2387 map VRAM address controls 12-18 and every command stream to shared frame_root.c/area.c without copied message data."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S5 evidence: generated local PRG is byte-identical to the original ROM 32 KiB PRG region (SHA-256 5374abb64cfb9b5d961856c60166cedc55859164cf2b8867730e144fa2bdd594); focused area_data_smoke passes on x86 and x64 across all seven message selectors."
+      ],
       "semanticContract": "ROM $8d7d: second world-select message stream.",
       "currentSourcePaths": [
         "src/game/area.c"
