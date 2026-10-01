@@ -1,0 +1,99 @@
+# M2 T54: Cohort B current-equivalence proof
+
+## Task contract
+
+T54 continues the approved source-order re-audit after T53 closure. It covers the ROM screen-task, HUD and game-text cohort at lines 1386–1813. Historical conformance remains **1,992 / 1,992**. Its sole outcome is a current ROM/C disposition for each listed label, feasible control relation and material handoff; any feasible mismatch remains in its admitting S for repair and repeat audit before the next S is admitted. All game decisions remain in shared `src/game`; platform adapters only submit input/time and consume frames.
+
+## Planned bounded S chains
+
+| S | Entry → exit / shared owner | Labels | Route family |
+| --- | --- | ---: | --- |
+| S1 | `InitScreen` → `NoAltPal`; `game.c` plus `area.c` palette queue | 20 | screen task 0/1/9/10/11 and palette selector matrix |
+| S2 | `WriteTopStatusLine` → `NoInter`; `game.c` screen-task branches | 9 | top/bottom status, Time Up and intermediate/Game Over branches |
+| S3 | `DrawTitleScreen` → `IncModeTask_B`; `game.c` title-screen tasks | 8 | tasks 12–14 and title drawing/clear/address variants |
+| S4 | `GameText` → `WarpNumLoop`; `area.c` text owner | 23 | status/lives/two-player/warp text selector and patch matrix |
+| S5 | `ResetSpritesAndScreenTimer` → `NoReset`; `game.c` reset leaves | 3 | task-five/task-seven timer zero and nonzero variants |
+| S6 | `AreaParserTaskControl` → `OutputCol`; `area.c` parser handoff | 3 | parser task loop and VRAM selector output |
+| S7 | `ScreenRoutines`; `game.c` screen-task dispatcher | 1 | all validated task-vector targets and returns after S1–S6 |
+
+S1 is now admitted. Its 20 labels contain three already current-exact labels (`GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`) and 17 `needs-evidence` labels; its historical-credit forecast is zero. S2–S7 are planned boundaries only. S7 is deliberately last because its source dispatch needs its preceding target chains to be proven first.
+
+## Exact node allocation
+
+| ROM line | Label | S | Incoming current state | Shared C counterpart |
+| ---: | --- | --- | --- | --- |
+| 1386 | `ScreenRoutines` | S7 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine ScreenRoutineTask switch |
+| 1408 | `InitScreen` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 0 |
+| 1418 | `SetupIntermediate` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 1 |
+| 1436 | `AreaPalette` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 9 AreaType + 1 selector |
+| 1439 | `GetAreaPalette` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 9 |
+| 1442 | `SetVRAMAddr_A` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine cases 0 and 9 selector write |
+| 1443 | `NextSubtask` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine task handoff |
+| 1448 | `BGColorCtrl_Addr` | S1 | needs-evidence | src/game/game.c:background_controls[4] in case 10 |
+| 1451 | `BackgroundColors` | S1 | needs-evidence | src/game/area.c:mysmb_area_queue_player_palette background-index lookup |
+| 1455 | `PlayerColors` | S1 | needs-evidence | src/game/area.c:mysmb_area_queue_player_palette player color lookup |
+| 1460 | `GetBackgroundColor` | S1 | exact | src/game/game.c:mysmb_game_step_screen_routine case 10 |
+| 1465 | `NoBGColor` | S1 | exact | src/game/game.c:mysmb_game_step_screen_routine case 10 |
+| 1467 | `GetPlayerColors` | S1 | exact | src/game/area.c:mysmb_area_queue_player_palette |
+| 1473 | `ChkFiery` | S1 | needs-evidence | src/game/area.c:mysmb_area_queue_player_palette PlayerStatus color_offset selection |
+| 1477 | `StartClrGet` | S1 | needs-evidence | src/game/area.c:mysmb_area_queue_player_palette four ordered color writes |
+| 1479 | `ClrGetLoop` | S1 | needs-evidence | src/game/area.c:mysmb_area_queue_player_palette ordered palette stores |
+| 1489 | `SetBGColor` | S1 | needs-evidence | src/game/area.c:mysmb_area_queue_player_palette background_index selection |
+| 1502 | `SetVRAMOffset` | S1 | needs-evidence | src/game/area.c:mysmb_area_queue_player_palette offset update |
+| 1507 | `GetAlternatePalette1` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 11 |
+| 1512 | `SetVRAMAddr_B` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 11 address-control write |
+| 1513 | `NoAltPal` | S1 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 11 task increment |
+| 1517 | `WriteTopStatusLine` | S2 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 2 |
+| 1524 | `WriteBottomStatusLine` | S2 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 3 |
+| 1553 | `DisplayTimeUp` | S2 | exact | src/game/game.c:mysmb_game_step_screen_routine case 4 |
+| 1560 | `NoTimeUp` | S2 | exact | src/game/game.c:mysmb_game_step_screen_routine case 4 non-expired path |
+| 1565 | `DisplayIntermediate` | S2 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 6 |
+| 1577 | `PlayerInter` | S2 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 6 player-intermediate path |
+| 1579 | `OutputInter` | S2 | exact | src/game/game.c:mysmb_game_step_screen_routine cases 4 and 6 output sequence |
+| 1584 | `GameOverInter` | S2 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 6 game-over path |
+| 1589 | `NoInter` | S2 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 6 skip path |
+| 1595 | `AreaParserTaskControl` | S6 | needs-evidence | src/game/area.c:mysmb_area_parser_task_control |
+| 1597 | `TaskLoop` | S6 | needs-evidence | src/game/area.c:mysmb_area_parser_task_control parser loop |
+| 1603 | `OutputCol` | S6 | needs-evidence | src/game/area.c:mysmb_area_parser_task_control VRAM selector write |
+| 1612 | `DrawTitleScreen` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 12 |
+| 1624 | `OutputTScr` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 12 title-data copy loop |
+| 1629 | `ChkHiByte` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 12 fixed-size copy bound |
+| 1639 | `ClearBuffersDrawIcon` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 13 |
+| 1643 | `TScrClear` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 13 buffer clear loop |
+| 1648 | `IncSubtask` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine task increments |
+| 1653 | `WriteTopScore` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine case 14 |
+| 1656 | `IncModeTask_B` | S3 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine OperMode_Task handoffs |
+| 1661 | `GameText` | S4 | needs-evidence | mysmb_area_queue_game_text ROM-authored stream base |
+| 1662 | `TopStatusBarLine` | S4 | needs-evidence | mysmb_area_queue_game_text selector 0 |
+| 1671 | `WorldLivesDisplay` | S4 | needs-evidence | mysmb_area_queue_game_text selector 1 |
+| 1680 | `TwoPlayerTimeUp` | S4 | needs-evidence | mysmb_area_queue_game_text selector 2 two-player stream |
+| 1682 | `OnePlayerTimeUp` | S4 | needs-evidence | mysmb_area_queue_game_text selector 2 one-player stream |
+| 1686 | `TwoPlayerGameOver` | S4 | needs-evidence | mysmb_area_queue_game_text selector 3 two-player stream |
+| 1688 | `OnePlayerGameOver` | S4 | needs-evidence | mysmb_area_queue_game_text selector 3 one-player stream |
+| 1693 | `WarpZoneWelcome` | S4 | needs-evidence | mysmb_area_queue_game_text selectors 4-6 |
+| 1704 | `LuigiName` | S4 | needs-evidence | mysmb_area_queue_game_text five-byte replacement copy |
+| 1707 | `WarpZoneNumbers` | S4 | needs-evidence | mysmb_area_queue_game_text warp-number copy |
+| 1712 | `GameTextOffsets` | S4 | needs-evidence | mysmb_area_queue_game_text offset_index selection |
+| 1719 | `WriteGameText` | S4 | needs-evidence | mysmb_area_queue_game_text |
+| 1728 | `Chk2Players` | S4 | needs-evidence | mysmb_area_queue_game_text selector < 4 player-count branch |
+| 1731 | `LdGameText` | S4 | needs-evidence | mysmb_area_queue_game_text stream source selection |
+| 1733 | `GameTextLoop` | S4 | needs-evidence | mysmb_area_queue_game_text terminator copy loop |
+| 1740 | `EndGameText` | S4 | needs-evidence | mysmb_area_queue_game_text post-copy dispatch |
+| 1756 | `PutLives` | S4 | needs-evidence | mysmb_area_queue_game_text selector 1 patch |
+| 1765 | `CheckPlayerName` | S4 | needs-evidence | mysmb_area_queue_game_text player-name branch |
+| 1775 | `ChkLuigi` | S4 | needs-evidence | mysmb_area_queue_game_text name_player branch |
+| 1778 | `NameLoop` | S4 | needs-evidence | mysmb_area_queue_game_text Luigi replacement loop |
+| 1782 | `ExitChkName` | S4 | needs-evidence | mysmb_area_queue_game_text completion |
+| 1784 | `PrintWarpZoneNumbers` | S4 | needs-evidence | mysmb_area_queue_game_text selector >= 4 patch |
+| 1790 | `WarpNumLoop` | S4 | needs-evidence | mysmb_area_queue_game_text warp number loop |
+| 1804 | `ResetSpritesAndScreenTimer` | S5 | needs-evidence | src/game/game.c:mysmb_game_step_screen_routine cases 5 and 7 |
+| 1809 | `ResetScreenTimer` | S5 | needs-evidence | mysmb_game_step_screen_routine timer reset paths |
+| 1813 | `NoReset` | S5 | needs-evidence | mysmb_game_step_screen_routine cases 5 and 7 no-reset paths |
+
+## T54 closure standard
+
+T54 closes only after all 67 labels and its allocated feasible relations have fresh static and controlled ROM/native evidence, each S records its individual zero-difference result or transfer, and the task-level screen/HUD/text route matrix is exact. A build or visible screen alone is not ROM equivalence evidence.
+
+## S1 admission — screen initialization and palette chain
+
+S1 begins at `InitScreen` because `ScreenRoutines` is a multi-target dispatcher whose complete proof belongs to S7 after its children. It compares the original task-byte writes, palette table indexing, player/background selection, queued VRAM output and call/return order at ROM lines 1408–1513. Its ROM route uses controlled task 0/1/9/10/11 snapshots with palette/player-status alternatives; its operational lane uses focused screen/palette checks, x86/x64 builds, the common-source DOS16 link and platform-purity audit. A feasible difference is repaired in `src/game` and this same S is repeated to zero.
