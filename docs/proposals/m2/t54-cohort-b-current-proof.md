@@ -264,3 +264,13 @@ so the product executable artifacts were not refreshed.
 The current-equivalence registry advances from 159 to 162 exact labels and
 from 319 to 324 exact feasible controls. Historical conformance remains
 1,992 / 1,992. No successor S has been admitted.
+
+## S6 admission — parser-task handoff chain
+
+S6 receives `AreaParserTaskControl`, `TaskLoop` and `OutputCol` at SMB1 lines
+1595–1603. It is the next contiguous `area.c` chain after the reset leaves.
+The audit covers disabling screen output, the parser-task handler loop,
+conditional `ScreenRoutineTask` advance and the final VRAM address-control
+write of six. The original-ROM/x86/x64 route matrix will vary the parser task
+count at the normal screen-task-eight entry. Historical credit remains
+unchanged; all three labels enter as current `needs-evidence`.
