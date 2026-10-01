@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T62 S9 Packet
+## M2 T62 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T62 S9 audit — Cohort I actor and movement dispatcher chain. |
-| Admission And Approval | S9 closed after static and operational evidence; the T62 Cohort-I chain is complete. |
-| Objective | Audit and repair `RunEnemyObjectsCore -> RunBowserFlame` against original-ROM semantics. |
-| Non-goals | Firebar and later actor interiors, rendering and platform-specific gameplay are outside S9. |
+| Identifier Mode | M2 T62 S10 audit — Cohort I cross-chain closure. |
+| Admission And Approval | S10 closed after the T-level cross-chain reconciliation; T62 is complete. |
+| Objective | Reconcile Cohort-I chain boundaries and prove the integrated current-ROM route matrix. |
+| Non-goals | No new node/edge credit, no actor interiors belonging to Cohort J, and no platform gameplay. |
 | Reference Baseline | Historical 1,992 / 1,992; current 983 / 1,992 nodes and 1,922 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t62-cohort-i-enemy-stream-current-proof.md. |
-| Files And ABI Surface | Shared `src/game/enemy/core.c`, `normal.c` and `dispatch_targets.c`; no platform owner. |
+| Files And ABI Surface | Shared game owners only; no product source modification planned. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | Original-ROM/current x86/x64 actor-dispatch routes, focused C90 contracts, purity and DOS16 link. |
-| Expected Markers | 9 nodes, 98 feasible internal controls and 6 material handoffs. |
-| Asset Needs | Owner-supplied local ROM and derived recorder data stay below ignored build paths; source repair refreshes three local EXEs. |
+| Verification | Original-ROM/current x86/x64 retained route matrix, focused chain contracts, purity and DOS16 link. |
+| Expected Markers | 0 node promotions; reconcile 165 exact nodes, 339 feasible controls and 46 material handoffs from S1–S9. |
+| Asset Needs | Owner-supplied local ROM and derived records remain below ignored build paths; no executable refresh unless source changes. |
 | Reporting Requirements | Report historical 1,992 / 1,992, exact nodes / 1,992, exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | No feasible difference remains in S9; every scoped path is closed. |
-| Exit Criteria | Closed: all 9 nodes, 98 feasible internal controls and 6 material handoffs exact; no platform gameplay rule. |
+| Stop Conditions | Any boundary or route difference reopens its owning S before T62 can close. |
+| Exit Criteria | All retained primary-chain evidence and boundary matrix agree; T-level integrated operational checks pass. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | Actor/vector selector bounds and scratch, normal caller order/timer skip, retainer and flame tails. |
+| Similar-Issue Sweep | Caller/return boundary ownership, vector scratch exclusions, parser-to-initializer handoff, group/frenzy routing and actor dispatch. |
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64; T62 S9 is closed; T62 Cohort-I source-order chains are complete.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64; T62 Cohort-I is closed through S10 cross-chain verification.
 
 ## T62 S1 Closure
 
@@ -57,3 +57,7 @@ No product source changed.
 ## T62 S6 Closure
 
 `PutAtRightExtent -> FireBulletBill` is current-exact: 23 nodes, 29 feasible internal controls and six material handoffs passed static `$C39C-$C43F`, fresh current original-ROM/x86/x64 routes and focused C90 footprints. The snapshot routes total 462 per width: 120 fireworks, 160 Bowser flame and 182 Bullet Bill/Cheep. Historical mapping is **1,992 / 1,992**; current registry is **937 / 1,992** exact nodes and **1,776 / 4,324** feasible controls (raw **4,342**, infeasible **18**). No product source changed.
+
+## T62 S10 Closure
+
+T62 closed with **165 / 165** primary-chain nodes, **339 / 339** scoped feasible controls and **46 / 46** scoped material handoffs exact. The original-ROM/current x86/x64 route matrix accounts for 3,706 passing fixture comparisons; S1/S2 routes were refreshed during the closure, S3 vector/common contracts passed, and all later retained routes share the unchanged source baseline. Platform purity passed and the OpenNT DOS16 link produced the local MZ executable with its known `OLDNAMES.LIB` warning. Historical mapping remains **1,992 / 1,992**; current exact status is **983 / 1,992 nodes** and **1,922 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).

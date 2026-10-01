@@ -2020,3 +2020,16 @@ The source-order chain `PutAtRightExtent -> FireBulletBill` is current-exact: 23
 ### T62 S9 actor dispatcher result
 
 `RunEnemyObjectsCore -> RunBowserFlame` adds nine current-exact labels and closes 98 scoped feasible controls plus six material handoffs. Static `$C546-$C5B4`, 192 original-ROM/current x86/x64 actor routes with documented direct-entry scratch exclusion, and minimal-owner C90 contracts agree. The registry is **983 / 1,992** nodes and **1,922 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
+
+### T62 Cohort I cross-chain closure
+
+T62 closes `EnemiesAndLoopsCore -> RunBowserFlame` after S1–S10. Its 165
+labels, 339 feasible control relations and 46 material handoffs are all
+current-exact. The retained original-ROM/current x86/x64 matrix has 3,706
+passing fixture comparisons; S1/S2 were rerun against the current source at
+closure and S3 vector/common current contracts passed. No source changed after
+the remaining S3–S9 route records were generated. Platform purity passed and
+the OpenNT DOS16 link produced its local executable with the known linker
+warning. The live registry remains **983 / 1,992** exact nodes and **1,922 /
+4,324** feasible control relations; historical mapping remains **1,992 /
+1,992**.

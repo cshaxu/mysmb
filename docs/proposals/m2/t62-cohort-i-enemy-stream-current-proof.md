@@ -32,8 +32,10 @@ committed.
 | S7 | `$C44C-$C4AD`, `HandleGroupEnemies -> EndFrenzy` | 12 | `stream.c`, `frenzy.c`; group allocation and frenzy dispatch/termination. |
 | S8 | `$C4AF-$C541`, `LakituChk -> EndOfEnemyInitCode` | 25 | `init_targets.c`; Lakitu and platform initializer families. |
 | S9 | `$C546-$C5B4`, `RunEnemyObjectsCore -> RunBowserFlame` | 9 | `enemy/core.c`; actor vector selection and dispatch boundaries. |
+| S10 | `Cohort I cross-chain closure` | 0 | shared game owners; S1–S9 boundary matrix and T-level operational regression. |
 
-The nine rows cover all **165** current Cohort-I labels. Each later S remains
+The nine primary rows cover all **165** current Cohort-I labels. S10 has zero
+node credit and closes the T-level cross-chain evidence. Each later S remains
 unadmitted until its exact packet records its internal relation count and
 original-ROM route. S9 is a dispatch-boundary audit only; individual actor
 interiors retain their source-order owner in the later Cohort-J chains.
@@ -200,3 +202,38 @@ S9 admits `$C546-$C5B4`, `RunEnemyObjectsCore -> RunBowserFlame`: `RunEnemyObjec
 `RunEnemyObjectsCore -> RunBowserFlame` is current-exact. All nine scoped labels, 98 feasible control relations and six material handoffs agree with static original-ROM `$C546-$C5B4` semantics: actor/movement vectors, call/return sequence, timer skip, retainer rendering tail and Bowser-flame route. Five scoped control relations were already exact from shared JumpEngine boundaries; 93 newly receive S9 evidence.
 
 All-current-source x86/x64 replay matches 192 actor/normal original-ROM fixtures after the explicit direct-entry ABI exclusion of temporary CPU-stack workspace `$00-$07`; all persistent RAM, OAM and PPU output are compared. Minimal-owner C90 dispatcher, normal-caller and retainer-chain contracts pass per width. No product source changed, so local executable artifacts were not refreshed. Historical mapping remains **1,992 / 1,992**; current exact status is **983 / 1,992 nodes** and **1,922 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+## S10 admission — Cohort I cross-chain closure
+
+S10 has zero node credit. It closes T62 only after reconciling all 165 labels
+credited by S1–S9, each immediate predecessor/successor boundary, the 339
+feasible controls and 46 material handoffs credited by those chains, and the
+explicit successor boundaries (`RunFirebarObj` and actor interiors). The ROM
+logic track reconciles the retained controlled original-ROM/current x86/x64 route
+matrix for stream parsing, initializer vectors, frenzy/group allocation, actor
+dispatch, retainer, normal and Bowser-flame paths. The operational track reruns
+the focused chain contracts, shared DOS16 link and platform-purity audit. Any
+difference reopens its owning S; S10 grants no independent node or edge credit.
+
+## S10 closure — Cohort I cross-chain closure
+
+T62 closes with no new S10 node credit. The T-level reconciliation proves all
+165 primary-chain labels current-exact, with all 339 scoped feasible control
+relations and 46 scoped material handoffs exact in the current registry. Five
+S9 controls were already exact shared `JumpEngine` boundaries; the remaining
+334 became exact during T62. `RunFirebarObj` and individual actor interiors
+remain explicit Cohort-J boundaries, with no inferred credit.
+
+The retained original-ROM/current x86/x64 matrix contains 3,706 passing
+fixture comparisons across S1, S2 and S4–S9; S1 and S2 were re-run on the
+current source during this S10 reconciliation. S3's current x86/x64 common
+initializer and vector-handoff contracts also pass. The remaining retained
+S3–S9 matrix results were generated after the same product-source baseline,
+which remained unchanged. Platform purity passes, and the shared OpenNT
+DOS16 link emits `mysmb-dos16.exe` with the established `OLDNAMES.LIB` warning.
+No product source changed, so the three local executable artifacts were not
+refreshed.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**983 / 1,992 nodes** and **1,922 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**).
