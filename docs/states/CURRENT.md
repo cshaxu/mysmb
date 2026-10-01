@@ -25,7 +25,11 @@
 
 ## Current Technical Baseline
 
-One shared C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic. T61 S7 is the sole active packet.
+One shared C90 game implementation serves DOS16 and Win32 x86/x64; platform adapters do not own game logic. T61 S7 is closed; its successor requires a new admission packet.
+
+## T61 S7 Closure
+
+Twenty-eight block-chain nodes, fifty-five internal feasible controls and four material handoffs are exact; 296 caller and 296 full-current x86/x64 routes pass; no source changed.
 
 ## T61 S6 Closure
 

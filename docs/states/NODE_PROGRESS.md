@@ -2058,3 +2058,5 @@ T61 S4 audited 12 historical-complete labels against `$BB38-$BBF7`; all are curr
 Current exact: 740 / 1,992 nodes; 1,455 / 4,324 feasible controls. Historical: 1,992 / 1,992.
 
 - Current-equivalence audit M2 T61 S6 closed `SetupPowerUp -> ExitPUp`: historical migration remains 1,992 / 1,992; current exact registry is 750 / 1,992 nodes and 1,474 / 4,324 feasible controls.
+
+- Current-equivalence audit M2 T61 S7 closed: historical 1,992 / 1,992; current exact registry 778 / 1,992 nodes and 1,529 / 4,324 feasible controls.

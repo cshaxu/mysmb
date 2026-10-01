@@ -1964,3 +1964,5 @@ All 49 T60 labels from `ProcFireball_Bubble` through `VineHeightData` are curren
 Eight newly exact nodes and seven internal controls in the score/tally chain; caller and full product routes pass.
 
 - M2 T61 S6: `SetupPowerUp -> ExitPUp` closed: 10 nodes, 19 internal controls and 2 material handoffs exact; 72 init, 100 caller and 100 full-current x86/x64 routes passed. Current exact 750 / 1,992 nodes and 1,474 / 4,324 feasible controls.
+
+- M2 T61 S7 closed: 28 nodes, 55 feasible controls and 4 material handoffs exact; current exact 778 / 1,992 nodes and 1,529 / 4,324 feasible controls.
