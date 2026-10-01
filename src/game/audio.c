@@ -859,6 +859,11 @@ static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
                                   mysmb_u8 value)
 {
     game->apu_registers[index] = value;
+    if (game->apu_write_count < MYSMB_APU_WRITE_CAPACITY) {
+        game->apu_writes[game->apu_write_count].index = index;
+        game->apu_writes[game->apu_write_count].value = value;
+        game->apu_write_count++;
+    }
     if (index == 17U) game->apu_delta_counter_load = value;
     if (index == 21U) game->apu_channel_enable = value;
     if (index == 23U) game->apu_frame_counter = value;
@@ -1181,6 +1186,7 @@ void mysmb_audio_step(struct mysmb_game *game)
     mysmb_u8 pause_length;
     mysmb_u8 pause_started;
 
+    game->apu_write_count = 0U;
     if (game->ram[MYSMB_RAM_OPERATING_MODE] == 0U) {
         mysmb_audio_write_apu(game, 21U, 0U);
         return;

@@ -4,6 +4,7 @@
 #include "game/game.h"
 #include "game/ppu_frame.h"
 #include "platform/startup_timing.h"
+#include "platform/win32/audio_output.h"
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
@@ -24,12 +25,32 @@
 static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
+static struct mysmb_win32_audio_output g_audio_output;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static mysmb_u8 g_startup_vblank_waits;
 static mysmb_u8 g_game_started;
+static mysmb_u8 g_audio_available;
+static mysmb_u8 g_title_paused;
 static BITMAPINFO g_bitmap_info;
 static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
+
+static void mysmb_win32_update_title(HWND window)
+{
+    mysmb_u8 paused;
+    const char *title;
+
+    paused = (mysmb_u8)(g_game.ram[0x0776U] & 1U);
+    if (paused == g_title_paused) return;
+    if (paused != 0U)
+        title = g_audio_available != 0U ? "MySMB (Paused)" :
+                "MySMB (Paused) (audio unavailable)";
+    else
+        title = g_audio_available != 0U ? "MySMB" :
+                "MySMB (audio unavailable)";
+    if (SetWindowText(window, title) != 0) g_title_paused = paused;
+}
+
 static mysmb_u8 mysmb_win32_buttons_from_keys(unsigned int keys)
 {
     mysmb_u8 buttons;
@@ -195,9 +216,11 @@ static void mysmb_win32_step(HWND window)
     do {
         g_last_tick.QuadPart += frame_period;
         mysmb_game_tick(&g_game, &input, &g_frame);
+        mysmb_win32_audio_submit(&g_audio_output, &g_game);
         ++steps;
         elapsed = now.QuadPart - g_last_tick.QuadPart;
     } while (elapsed >= frame_period && steps < 4U);
+    mysmb_win32_update_title(window);
     /* Discard excess wall-clock debt after four logical frames.  This keeps
      * the message pump responsive instead of attempting an unbounded catch-up. */
     if (elapsed >= frame_period) g_last_tick = now;
@@ -215,6 +238,7 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
         return 0;
     }
     if (message == WM_DESTROY) {
+        mysmb_win32_audio_close(&g_audio_output);
         PostQuitMessage(0);
         return 0;
     }
@@ -266,6 +290,9 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     }
     ShowWindow(window, show);
     UpdateWindow(window);
+    g_audio_available = mysmb_win32_audio_open(&g_audio_output) != 0 ? 1U : 0U;
+    g_title_paused = 2U;
+    mysmb_win32_update_title(window);
 
     for (;;) {
         while (PeekMessage(&message, NULL, 0U, 0U, PM_REMOVE) != 0) {

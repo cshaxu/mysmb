@@ -6,6 +6,8 @@ typedef unsigned char mysmb_u8;
 typedef unsigned short mysmb_u16;
 typedef unsigned long mysmb_u32;
 
+#define MYSMB_APU_WRITE_CAPACITY 64U
+
 enum {
     MYSMB_SCREEN_WIDTH = 256,
     MYSMB_SCREEN_HEIGHT = 240,
@@ -32,6 +34,11 @@ struct mysmb_area_command {
     mysmb_u8 row;
     mysmb_u8 page;
     mysmb_u8 dispatch_id;
+};
+
+struct mysmb_apu_write {
+    mysmb_u8 index;
+    mysmb_u8 value;
 };
 
 struct mysmb_game {
@@ -66,6 +73,9 @@ struct mysmb_game {
     mysmb_u8 apu_channel_enable;
     mysmb_u8 apu_frame_counter;
     mysmb_u8 apu_registers[24];
+    /* Ordered output writes preserve same-value retriggers within a tick. */
+    mysmb_u8 apu_write_count;
+    struct mysmb_apu_write apu_writes[MYSMB_APU_WRITE_CAPACITY];
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
     /* Immutable owner-local CHR pattern data used by the shared PPU compositor. */
     const mysmb_u8 *chr_data;

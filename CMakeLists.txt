@@ -903,8 +903,26 @@ if(WIN32)
         endif()
     endif()
 
-    add_executable(mysmb_win32 WIN32 src/platform/win32/main_win32.c)
-    target_link_libraries(mysmb_win32 PRIVATE mysmb_game user32 gdi32)
+    add_executable(mysmb_win32 WIN32 src/platform/win32/main_win32.c
+        src/platform/win32/audio_output.c
+        src/platform/win32/audio_renderer.c)
+    target_link_libraries(mysmb_win32 PRIVATE mysmb_game user32 gdi32 winmm)
+    add_executable(mysmb_win32_audio_renderer_smoke
+        test/win32_audio_renderer_smoke.c
+        src/platform/win32/audio_renderer.c)
+    target_include_directories(mysmb_win32_audio_renderer_smoke PRIVATE src)
+    add_test(NAME mysmb.win32-audio-renderer-smoke
+        COMMAND mysmb_win32_audio_renderer_smoke)
+    add_executable(mysmb_win32_audio_output_smoke
+        test/win32_audio_output_smoke.c
+        src/platform/win32/audio_output.c
+        src/platform/win32/audio_renderer.c)
+    target_include_directories(mysmb_win32_audio_output_smoke PRIVATE src)
+    target_link_libraries(mysmb_win32_audio_output_smoke PRIVATE winmm)
+    add_test(NAME mysmb.win32-audio-output-smoke
+        COMMAND mysmb_win32_audio_output_smoke)
+    set_tests_properties(mysmb.win32-audio-output-smoke PROPERTIES
+        SKIP_RETURN_CODE 77)
     set_target_properties(mysmb_win32 PROPERTIES
         OUTPUT_NAME "mysmb-win32-${MYSMB_WIN32_ARCH}"
     )
@@ -1536,6 +1554,17 @@ if(MYSMB_ROM_PATH)
     target_link_libraries(mysmb_local_death_music_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.local-death-music-smoke
              COMMAND mysmb_local_death_music_smoke)
+    if(TARGET mysmb_win32)
+        add_executable(mysmb_win32_death_audio_smoke
+            test/win32_death_audio_smoke.c
+            src/platform/win32/audio_renderer.c
+            $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        target_include_directories(mysmb_win32_death_audio_smoke PRIVATE src
+            "${MYSMB_LOCAL_ROM_DIR}")
+        target_link_libraries(mysmb_win32_death_audio_smoke PRIVATE mysmb_game)
+        add_test(NAME mysmb.win32-death-audio-smoke
+            COMMAND mysmb_win32_death_audio_smoke)
+    endif()
     add_executable(mysmb_local_frame_summary test/local_frame_summary.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>
         $<TARGET_OBJECTS:mysmb_local_title_data>)
