@@ -263,7 +263,7 @@ so the product executable artifacts were not refreshed.
 
 The current-equivalence registry advances from 159 to 162 exact labels and
 from 319 to 324 exact feasible controls. Historical conformance remains
-1,992 / 1,992. No successor S has been admitted.
+1,992 / 1,992.
 
 ## S6 admission — parser-task handoff chain
 
@@ -274,3 +274,26 @@ conditional `ScreenRoutineTask` advance and the final VRAM address-control
 write of six. The original-ROM/x86/x64 route matrix will vary the parser task
 count at the normal screen-task-eight entry. Historical credit remains
 unchanged; all three labels enter as current `needs-evidence`.
+
+## S6 closure — parser-task handoff chain
+
+S6 closes with no feasible ROM/C difference in `AreaParserTaskControl`,
+`TaskLoop` or `OutputCol`. Static comparison of SMB1 lines 1595–1603 with
+`mysmb_area_parser_task_control` proves the disable-screen increment, the
+do/while parser-handler loop until `AreaParserTaskNum` becomes zero, the
+signed `ColumnSets` branch, and the source order of final task increment before
+the unconditional VRAM control-six write. The six source-owned relations
+`control-00239` through `control-00243` and `control-03525` are exact.
+
+The current normal Start route reaches this chain on samples 6–18 in the
+original ROM and both current native widths. All three execute the same twelve
+column sets: `ColumnSets` descends from 11 to 0 with task 8 retained and
+control six selected, then descends to 255 and advances task 8 to 9. Across
+the full route window, `ColumnSets`, `AreaParserTaskNum`, `ScreenRoutineTask`,
+`DisableScreenFlag` and VRAM control are identical. Parser-column and
+screen-status focused smoke tests and the platform-purity audit pass. No
+product source changed, so artifacts were not refreshed.
+
+The current-equivalence registry advances from 162 to 165 exact labels and
+from 324 to 330 exact feasible controls. Historical conformance remains
+1,992 / 1,992. No successor S has been admitted.

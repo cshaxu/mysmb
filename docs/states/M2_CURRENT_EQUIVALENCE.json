@@ -9565,12 +9565,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 162,
-    "needs-evidence": 1830
+    "exact": 165,
+    "needs-evidence": 1827
   },
   "controlEdgeCounts": {
-    "exact": 324,
-    "needs-evidence": 4000,
+    "exact": 330,
+    "needs-evidence": 3994,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -12007,13 +12007,16 @@
       "label": "AreaParserTaskControl",
       "asmLine": 1595,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "ROM $86e6: disables screen, completes parser tasks for one column set, conditionally advances task, then selects VRAM buffer control six.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12023,13 +12026,16 @@
       "label": "TaskLoop",
       "asmLine": 1597,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control parser loop",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "ROM $86e8: repeatedly invokes AreaParserTaskHandler until its task count is zero.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12039,13 +12045,16 @@
       "label": "OutputCol",
       "asmLine": 1603,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control VRAM selector write",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "ROM $86f8: writes VRAM_Buffer_AddrCtrl $06 after each completed parser column set.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -47498,12 +47507,15 @@
       "instruction": "inc",
       "id": "control-00239",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control ordered C loop/branch control flow",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "Original AreaParserTaskControl -> TaskLoop fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -47517,12 +47529,15 @@
       "instruction": "jsr",
       "id": "control-00240",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control ordered C loop/branch control flow",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "Original TaskLoop -> AreaParserTaskHandler call relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -47536,12 +47551,15 @@
       "instruction": "bne",
       "id": "control-00241",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control ordered C loop/branch control flow",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "Original TaskLoop -> TaskLoop branch relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -47555,12 +47573,15 @@
       "instruction": "bpl",
       "id": "control-00242",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control ordered C loop/branch control flow",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "Original TaskLoop -> OutputCol branch relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -47574,12 +47595,15 @@
       "instruction": "inc",
       "id": "control-00243",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control ordered C loop/branch control flow",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "Original TaskLoop -> OutputCol fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -111272,12 +111296,15 @@
       "instruction": "rts/rti",
       "id": "control-03525",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control ordered C loop/branch control flow",
       "semanticEvidence": [
-        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+      ],
       "semanticContract": "Original AreaParserTaskHandler -> TaskLoop return relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"

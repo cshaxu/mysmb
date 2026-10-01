@@ -321632,7 +321632,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t54-cohort-b-current-proof.md",
-      "state": "admitted-parser-task-handoff-current-equivalence-audit",
+      "state": "closed-parser-task-handoff-current-equivalence-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 ScreenRoutines task 8 parser-task-count zero and nonzero variants."
     }
   ]

@@ -25,7 +25,7 @@
 
 ## Current Technical Baseline
 
-M2 T54 S5 is closed. S6 is active and audits the next source-order parser handoff chain.
+M2 T54 S6 is closed. No successor S is admitted until the coordinator opens it.
 
 ## S5 Closure
 
@@ -39,5 +39,15 @@ The focused screen-status smoke and platform-purity audit pass. The registry
 advances from 159 to 162 exact nodes and from 319 to 324 exact feasible
 controls; historical conformance remains 1,992 / 1,992. The only code change
 is a focused test assertion, so product artifacts were not refreshed.
+
+## S6 Closure
+
+`AreaParserTaskControl`, `TaskLoop` and `OutputCol` are current-exact. The
+normal Start route executes 12 parser column sets in ROM, x86 and x64: task 8
+remains active through the non-final sets, each selects control 6, and the
+final decrement underflows to 255 before advancing to task 9. The five
+tracked state bytes agree for samples 6–18. The registry advances from 162 to
+165 exact nodes and from 324 to 330 exact feasible controls; historical
+conformance remains 1,992 / 1,992. No product code changed.
 One shared native C90 game implementation serves DOS16 and Win32 x86/x64;
 platform adapters do not own game logic.
