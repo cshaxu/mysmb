@@ -2,31 +2,31 @@
 
 ## Current Work
 
-## M2 T63 S5 Packet
+## M2 T63 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T63 S5 audit — Cohort J normal and defeated enemy movement chain. |
-| Admission And Approval | S5 admitted after S4 closure under the owner-approved source-order program. |
-| Objective | Prove `MoveNormalEnemy -> NKGmba` and its owned relations current-exact before jumping-enemy movement. |
-| Non-goals | No jumping-enemy child interior, gravity/horizontal/lifecycle child implementation, sprite/OAM, terrain/collision or platform adapter change. |
-| Reference Baseline | Historical 1,992 / 1,992; current 1,004 / 1,992 nodes and 1,985 / 4,324 feasible controls. |
+| Identifier Mode | M2 T63 S6 audit — Cohort J jumping enemy and red Paratroopa movement. |
+| Admission And Approval | S6 admitted after S5 closure under the owner-approved source-order program. |
+| Objective | Prove `MoveJumpingEnemy -> MovPTDwn` and owned relations current-exact before green Paratroopa movement. |
+| Non-goals | No green Paratroopa interior, gravity/horizontal child implementation, terrain/collision, sprite/OAM or platform adapter change. |
+| Reference Baseline | Historical 1,992 / 1,992; current 1,015 / 1,992 nodes and 2,013 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md. |
-| Files And ABI Surface | `src/game/enemy/movement.c`; shared game C90 only; no platform logic. |
+| Files And ABI Surface | `src/game/enemy/movement.c`, `src/game/enemy/paratroopa.c`; shared game C90 only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | `$CA77-$CAF8` audit; original-ROM/current x86/x64 normal-movement route; focused checks; purity and DOS16 link. |
-| Expected Markers | 11 nodes, 28 feasible controls and four material handoffs promoted only if both tracks agree. |
+| Verification | `$CAF9-$CB24` audit; original-ROM/current x86/x64 Paratroopa route; focused checks; purity and DOS16 link. |
+| Expected Markers | Five nodes, ten feasible controls and four material handoffs promoted only if both tracks agree. |
 | Asset Needs | Owner ROM and generated records remain below ignored build paths; refresh three artifacts only if product source changes. |
 | Reporting Requirements | Report historical 1,992 / 1,992, current exact nodes / 1,992, current exact feasible controls / 4,324, raw 4,342 and infeasible 18. |
-| Stop Conditions | A source, route or boundary difference keeps S5 open for shared-owner repair and re-audit. |
-| Exit Criteria | All 11 labels, 28 feasible controls and four material handoffs are current-exact with current source and route evidence. |
+| Stop Conditions | A source, route or boundary difference keeps S6 open for shared-owner repair and re-audit. |
+| Exit Criteria | All five labels, ten feasible controls and four material handoffs are current-exact with current source and route evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32. |
-| Similar-Issue Sweep | State-bit priority, child-result reread, temporary speed restoration, revive timers/tables, defeated tail and Goomba timer erase gate. |
+| Similar-Issue Sweep | Jump child order, zero force/speed reset, anchor/frame gate, center threshold and red-gravity direction. |
 
 ## Current Technical Baseline
 
 One shared C90 game implementation serves DOS16 and Win32 x86/x64. T62 Cohort I
-is closed. T63 S1/S2/S3/S4 are closed; S5 has closed normal/defeated enemy movement. The next source-order chain is jumping-enemy movement.
+is closed. T63 S1/S2/S3/S4 are closed; S5 has closed normal/defeated enemy movement; S6 has closed jumping/red-Paratroopa movement. The next source-order chain is green-Paratroopa movement.
 
 
 ## T63 S1 Closure
@@ -107,3 +107,14 @@ Platform purity passes and DOS16 links with its known `OLDNAMES.LIB` warning.
 No product source changed, so no artifact refresh applies. Historical mapping
 is **1,992 / 1,992**; current exact status is **1,015 / 1,992 nodes** and
 **2,013 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
+
+
+## T63 S6 Closure
+
+`MoveJumpingEnemy -> MovPTDwn` closes five labels, ten feasible controls and
+four material handoffs exact. Static `$CAF9-$CB24`, 320 fresh original-ROM/current
+x86/x64 comparisons and exhaustive focused contracts per width agree. Platform
+purity passes and DOS16 links with its known `OLDNAMES.LIB` warning. No product
+source changed, so no artifact refresh applies. Historical mapping is **1,992 /
+1,992**; current exact status is **1,020 / 1,992 nodes** and **2,023 / 4,324
+feasible controls** (raw **4,342**, infeasible **18**).

@@ -2097,3 +2097,13 @@ product source changed. Historical node mapping remains **1,992 / 1,992**;
 current-equivalence totals are **1,015 / 1,992 exact nodes**, **2,013 / 4,324
 exact feasible controls**, **4,342 raw controls**, and **18 infeasible
 controls**.
+
+
+## M2 T63 S6 current-equivalence closure
+
+`MoveJumpingEnemy -> MovPTDwn` records five nodes, ten feasible controls and
+four material handoffs current-exact. Original-ROM/current x86/x64 replay passes
+320 comparisons and focused red-Paratroopa contracts pass per width. Historical
+mapping is **1,992 / 1,992**; current exact totals are **1,020 / 1,992 nodes**,
+**2,023 / 4,324 feasible controls**, **4,342 raw controls**, and **18 infeasible
+controls**.

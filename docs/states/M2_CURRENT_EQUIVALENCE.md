@@ -1973,7 +1973,7 @@ Eight newly exact nodes and seven internal controls in the score/tally chain; ca
 
 ### T61 S9 horizontal movement result
 
-`MoveEnemyHorizontally -> ExXMove` adds six current-exact labels and nine feasible controls. The 96 controlled ROM entries cover player, enemy and generic wrappers; x86/x64 each match every snapshot and focused arithmetic checks. The registry is **792 / 1,992** nodes and **1,554 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
+`MoveEnemyHorizontally -> ExXMove` adds six current-exact labels and ten feasible controls. The 96 controlled ROM entries cover player, enemy and generic wrappers; x86/x64 each match every snapshot and focused arithmetic checks. The registry is **792 / 1,992** nodes and **1,554 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
 
 ### T61 S10 vertical movement and gravity result
 
@@ -2007,7 +2007,7 @@ All 18 labels from `FlyCCXPositionData` through `SetFrT` are current-equivalence
 
 ### T62 S6 positioning, fireworks and Bullet Bill/Cheep frenzy result
 
-The source-order chain `PutAtRightExtent -> FireBulletBill` is current-exact: 23 labels, 29 feasible controls and six material edges. Static `$C39C-$C43F` comparison and all-current-source original-ROM/current x86/x64 snapshots agree for 120 fireworks, 160 Bowser-flame and 182 Bullet Bill/Cheep routes per width. Focused full-RAM C90 checks cover 139,770 fireworks, 107,522 Bowser/flame and 1,182,858 Bullet Bill/Cheep cases per width. The current registry is **937 exact nodes** and **1,776 exact feasible control relations**; historical mapping remains **1,992 / 1,992**.
+The source-order chain `PutAtRightExtent -> FireBulletBill` is current-exact: 23 labels, 210 feasible controls and six material edges. Static `$C39C-$C43F` comparison and all-current-source original-ROM/current x86/x64 snapshots agree for 120 fireworks, 160 Bowser-flame and 182 Bullet Bill/Cheep routes per width. Focused full-RAM C90 checks cover 139,770 fireworks, 107,522 Bowser/flame and 1,182,858 Bullet Bill/Cheep cases per width. The current registry is **937 exact nodes** and **1,776 exact feasible control relations**; historical mapping remains **1,992 / 1,992**.
 
 ### T62 S7 group allocation and frenzy result
 
@@ -2090,3 +2090,13 @@ x64; the focused contract spans 1,253,376 footprints per width. The registry
 now records **1,015 exact nodes** and **2,013 exact feasible control edges**;
 historical mapping remains **1,992 / 1,992**, raw control count **4,342** and
 infeasible count **18**.
+
+
+### T63 S6 jumping/red Paratroopa movement result
+
+`MoveJumpingEnemy -> MovPTDwn` is current-exact. Source and controlled
+original-ROM/current x86/x64 replay agree for 320 route comparisons; exhaustive
+red-Paratroopa contracts validate the reset, anchor/frame and center/direction
+paths. The registry now records **1,020 exact nodes** and **2,023 exact feasible
+control edges**; historical mapping remains **1,992 / 1,992**, raw controls
+**4,342** and infeasible controls **18**.

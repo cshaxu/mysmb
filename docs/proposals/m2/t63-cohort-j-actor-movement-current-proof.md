@@ -285,3 +285,43 @@ product source changed, so the three local EXE artifacts were not refreshed.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,015 / 1,992 nodes** and **2,013 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**). S6 begins with `MoveJumpingEnemy`.
+
+## S6 admission — jumping enemy and red Paratroopa movement chain
+
+S6 admits `MoveJumpingEnemy -> MovPTDwn` (lines 9396–9421, `$CAF9-$CB24`):
+`MoveJumpingEnemy`, `ProcMoveRedPTroopa`, `NoIncPT`, `MoveRedPTUpOrDown`, and
+`MovPTDwn`. The shared game owners are `enemy/movement.c` and
+`enemy/paratroopa.c`; their gravity/horizontal children remain established
+source-order boundaries. S5 is the predecessor, while S7 starts with
+`MoveFlyGreenPTroopa`.
+
+The chain owns ten feasible controls and four material handoffs: jumping
+gravity/horizontal order, speed/force gate and dummy reset, anchor/frame
+increment gate, center-Y up/down dispatch and red-gravity direction handoff.
+The logic track replays the controlled original-ROM 160-case fixture on current
+x86/x64. The operational track runs the exhaustive red-Paratroopa contract,
+platform purity and shared DOS16 link.
+
+### S6 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,015 / 1,992**.
+- Current exact feasible controls: **2,013 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **5** unique labels; expected promotions: **5**; maximum current
+  exact node count on successful closure: **1,020 / 1,992**.
+
+## S6 closure — jumping enemy and red Paratroopa movement chain
+
+All five labels are current-exact. Static `$CAF9-$CB24` comparison confirms
+jumping gravity/horizontal order, zero speed/force dummy reset, anchor/frame
+step gate, center-Y dispatch and red gravity direction. All nine feasible
+controls and four material handoffs are exact. Fresh original-ROM/current
+x86/x64 replay passes **320 / 320** comparisons (160 per width); the exhaustive
+red-Paratroopa contract passes per width. Platform purity passes and DOS16
+links with the known `OLDNAMES.LIB` warning. No product source changed, so the
+three local EXE artifacts were not refreshed.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,020 / 1,992 nodes** and **2,023 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**). S7 begins with `MoveFlyGreenPTroopa`.
