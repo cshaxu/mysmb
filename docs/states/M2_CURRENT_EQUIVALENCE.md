@@ -425,6 +425,19 @@ task increment, while current case 10 exits early for BackgroundColorCtrl
 the `BGColorCtrl_Addr -> GetBackgroundColor` material path therefore remain
 explicitly non-exact; the repair candidate records the required route matrix.
 
+### T52 S4 — B2 current remediation result
+
+The B2 repair has completed after the static source audit and five controlled
+owner-ROM task-ten routes. `GetBackgroundColor`, `NoBGColor`,
+`GetPlayerColors`, `control-00204`, `control-00205` and `control-00206` are
+current-equivalence `exact`. The routes cover BackgroundColorCtrl values 0,
+4, 5, 6 and 7 through ordinary `GameMode -> ScreenRoutines` dispatch; x86 and
+x64 each agree with the ROM on task advancement, address control, Buffer1
+offset and the emitted `$3f10` command. The current registry now reports 50
+exact nodes, 1,940 needing route evidence and two remaining semantic
+mismatches; it reports 86 exact control edges, 4,240 needing evidence and 16
+remaining control mismatches. Material-edge dispositions are unchanged.
+
 ### Cohort B — B3 screen-flow and parser handoff
 
 The audit now maps `GetAlternatePalette1` through

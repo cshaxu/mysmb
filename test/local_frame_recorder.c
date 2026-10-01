@@ -741,6 +741,24 @@ static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game
     game->ram[0x073cU] = 14U;
 }
 
+/* T52/S4 prepares the normal game-mode ScreenRoutines task-ten boundary.
+ * The frame root remains the caller; this only supplies the source RAM state
+ * for either GetBackgroundColor path. */
+static void mysmb_recorder_apply_t52_background_palette_fixture(
+    struct mysmb_game *game, mysmb_u8 background_control)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 1U;
+    game->ram[0x073cU] = 10U;
+    game->ram[0x0744U] = background_control;
+    game->ram[0x074eU] = 1U;
+    game->ram[0x0753U] = 0U;
+    game->ram[0x0756U] = 1U;
+    game->ram[0x0773U] = 0U;
+    game->ram[0x0300U] = 0U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -1296,6 +1314,11 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 57U;
         }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-0") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 103U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-4") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 104U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-5") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 105U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-6") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 106U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t52-background-palette-7") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 107U; }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -1406,6 +1429,9 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t28_top_score_fixture(&game, 0U);
             else if (t26_fixture == 57U)
                 mysmb_recorder_apply_t28_title_score_fixture(&game);
+            else if (t26_fixture >= 103U && t26_fixture <= 107U)
+                mysmb_recorder_apply_t52_background_palette_fixture(&game,
+                    t26_fixture == 103U ? 0U : (mysmb_u8)(t26_fixture - 100U));
             else if (t26_fixture == 58U)
                 mysmb_recorder_apply_t28_area_entry_fixture(&game);
             else if (t26_fixture == 59U)

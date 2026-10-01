@@ -136,6 +136,39 @@ refreshes the local executable; its existing optional `OLDNAMES.LIB` warning
 does not change the successful exit status. All three local artifacts were
 refreshed under the ignored build directory.
 
+## T52 S4 admission: B2 background-to-player palette fall-through
+
+S4 owns `GetBackgroundColor -> NoBGColor -> GetPlayerColors` in source order.
+It receives all three labels from M2 T27 S1. The predecessor is ScreenRoutines
+task 10; successors are the VRAM-buffer consumer and task 11. Historical
+credit remains **1,992 / 1,992**. The ROM-logic route covers background
+controls 4-7 and zero, proving that both paths increment the task and fall
+through to the `$3f10` player palette command. The operational track uses the
+focused palette command test, x86/x64 self-tests and purity, plus the shared
+OpenNT DOS16 link and three ignored local artifacts.
+
+## T52 S4 closure: B2 background-to-player palette fall-through
+
+S4 closes `GetBackgroundColor`, `NoBGColor` and `GetPlayerColors` as
+current-equivalence exact without changing historical credit: it remains
+**1,992 / 1,992**. `control-00204` (the zero-control branch),
+`control-00205` (the nonzero fall-through) and `control-00206` (the shared
+fall-through into the palette producer) are exact. Internal palette-selection
+edges and independently enumerated material paths remain assigned to their
+source-order owners; this S does not claim them.
+
+The shared C writes the address-control selector only for controls 4-7, then
+unconditionally calls the translated `GetPlayerColors` producer. The focused
+C test covers zero, every nonzero selector and Mario/Luigi/fiery palette
+choices. Five controlled owner-ROM routes use controls 0, 4, 5, 6 and 7 at a
+normal NMI-return boundary and resume through ordinary
+`GameMode -> ScreenRoutines` dispatch. For each route, the owner ROM and both
+native widths agree on task 11, the address-control result, Buffer1 offset and
+the `$3f10`, length-four command. The route checker compares only this
+chain-owned state, deliberately excluding unrelated uninitialized frame
+output. x86/x64 focused tests, Win32 self-tests, platform-purity and the
+OpenNT DOS16 link pass. All three ignored target artifacts were refreshed.
+
 ## T52 S1 closure: A2 NMI-prefix state handoff
 
 S1 closes its three current-equivalence labels without changing the historical

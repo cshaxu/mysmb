@@ -11389,15 +11389,16 @@
       "label": "GetBackgroundColor",
       "asmLine": 1460,
       "cohort": "B",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
-        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+        "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8594: if BackgroundColorCtrl is nonzero, selects BGColorCtrl_Addr-4 then increments ScreenRoutineTask; both zero and nonzero paths unconditionally fall into GetPlayerColors. Current C omits that palette command for controls 4-7.",
-      "repairCandidate": "B2",
+      "operationalEvidence": [
+        "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route."
+      ],
+      "semanticContract": "ROM $8594: BackgroundColorCtrl zero branches to NoBGColor; controls 4-7 index BGColorCtrl_Addr-4; both paths increment ScreenRoutineTask then enter GetPlayerColors.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -11406,15 +11407,16 @@
       "label": "NoBGColor",
       "asmLine": 1465,
       "cohort": "B",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
-        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+        "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8599: increments ScreenRoutineTask and unconditionally falls into GetPlayerColors; current C exits case 10 after the control-4-7 address-control write.",
-      "repairCandidate": "B2",
+      "operationalEvidence": [
+        "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route."
+      ],
+      "semanticContract": "ROM $8599: increments ScreenRoutineTask exactly once then falls through to GetPlayerColors without a control-dependent exit.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -11423,14 +11425,16 @@
       "label": "GetPlayerColors",
       "asmLine": 1467,
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette",
       "semanticEvidence": [
-        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+        "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $859d: builds one $3f10 length-4 VRAM command using player and background palette data, then advances Buffer1 offset by seven.",
+      "operationalEvidence": [
+        "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route."
+      ],
+      "semanticContract": "ROM $859d: selects Mario, Luigi or fiery player bytes and the BackgroundColorCtrl-or-AreaType universal byte, writes one $3f10 length-four Buffer1 command, then advances the offset by seven.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -45894,13 +45898,15 @@
       "instruction": "beq",
       "id": "control-00204",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:case 10 BackgroundColorCtrl zero path",
       "semanticEvidence": [
-        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+        "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "GetBackgroundColor zero branch skips the address-control table then reaches the shared task increment and palette producer.",
+      "operationalEvidence": [
+        "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route."
+      ],
+      "semanticContract": "GetBackgroundColor BEQ takes the zero BackgroundColorCtrl path to NoBGColor, skipping only the address-control table selection.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -45913,14 +45919,15 @@
       "instruction": "sta",
       "id": "control-00205",
       "cohort": "B",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
-        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+        "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM nonzero BackgroundColorCtrl path writes BGColorCtrl_Addr-4 then still reaches NoBGColor and falls into GetPlayerColors; current case 10 exits after the control-4-7 selector write.",
-      "repairCandidate": "B2",
+      "operationalEvidence": [
+        "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route."
+      ],
+      "semanticContract": "After the nonzero control table write, GetBackgroundColor falls through to NoBGColor.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -45933,14 +45940,15 @@
       "instruction": "inc",
       "id": "control-00206",
       "cohort": "B",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
-        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+        "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM NoBGColor increments ScreenRoutineTask and always falls through to GetPlayerColors; current case 10 has no player-palette producer for BackgroundColorCtrl 4-7.",
-      "repairCandidate": "B2",
+      "operationalEvidence": [
+        "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route."
+      ],
+      "semanticContract": "NoBGColor increments ScreenRoutineTask then falls through to GetPlayerColors on both predecessor paths.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"

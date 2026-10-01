@@ -246,13 +246,9 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
             game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = background_controls[
                 game->ram[MYSMB_RAM_BACKGROUND_COLOR] - 4U];
         }
-        else {
-            /* GetAreaPalette's ground stream has just reached the PPU.  The
-             * following NMI restores GetPlayerColors through Buffer1, so the
-             * universal entry becomes the source-selected $3f00 color before
-             * title draw or the game-mode setup handoff. */
-            (void)mysmb_area_sync_player_palette(game);
-        }
+        /* NoBGColor falls directly into GetPlayerColors.  This is an
+         * unconditional producer, not a palette-difference optimization. */
+        (void)mysmb_area_queue_player_palette(game);
         break;
     case 11U:
         if (game->ram[0x0733U] == 1U)

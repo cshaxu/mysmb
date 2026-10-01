@@ -1018,6 +1018,23 @@ static void mysmb_reference_apply_t52_title_menu_fixture(lib_u8 *ram,
     ram[0x06fdu] = 0u;
 }
 
+/* T52/S4 enters only through the ordinary GameMode/ScreenRoutines dispatch
+ * after placing the original task-ten palette precondition at an NMI return. */
+static void mysmb_reference_apply_t52_background_palette_fixture(lib_u8 *ram,
+                                                                  lib_u8 background_control)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 1u;
+    ram[0x073cu] = 10u;
+    ram[0x0744u] = background_control;
+    ram[0x074eu] = 1u;
+    ram[0x0753u] = 0u;
+    ram[0x0756u] = 1u;
+    ram[0x0773u] = 0u;
+    ram[0x0300u] = 0u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -3072,6 +3089,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 102u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t52-background-palette-0") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 103u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t52-background-palette-4") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 104u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t52-background-palette-5") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 105u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t52-background-palette-6") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 106u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t52-background-palette-7") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 107u; continue; }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -3333,6 +3355,10 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 102u)
                     mysmb_reference_apply_t52_title_menu_fixture(
                         driver->machine->ram, 1u);
+                else if (t26_fixture >= 103u && t26_fixture <= 107u)
+                    mysmb_reference_apply_t52_background_palette_fixture(
+                        driver->machine->ram, t26_fixture == 103u ? 0u :
+                        (lib_u8)(t26_fixture - 100u));
                 else if (t26_fixture == 58u)
                     mysmb_reference_apply_t28_area_entry_fixture(
                         driver->machine->ram);
