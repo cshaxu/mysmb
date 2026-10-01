@@ -22174,14 +22174,16 @@
       "label": "MaxLeftXSpdData",
       "asmLine": 6051,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22190,14 +22192,16 @@
       "label": "MaxRightXSpdData",
       "asmLine": 6054,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22206,14 +22210,16 @@
       "label": "FrictionData",
       "asmLine": 6058,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22222,14 +22228,16 @@
       "label": "Climb_Y_SpeedData",
       "asmLine": 6061,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22238,14 +22246,16 @@
       "label": "Climb_Y_MForceData",
       "asmLine": 6064,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22254,14 +22264,16 @@
       "label": "PlayerPhysicsSub",
       "asmLine": 6067,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22270,14 +22282,16 @@
       "label": "ProcClimb",
       "asmLine": 6079,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22286,14 +22300,16 @@
       "label": "SetCAnim",
       "asmLine": 6086,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22302,14 +22318,16 @@
       "label": "CheckForJumping",
       "asmLine": 6089,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22318,14 +22336,16 @@
       "label": "NoJump",
       "asmLine": 6097,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22334,14 +22354,16 @@
       "label": "ProcJumping",
       "asmLine": 6099,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22350,14 +22372,16 @@
       "label": "InitJS",
       "asmLine": 6109,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22366,14 +22390,16 @@
       "label": "ChkWtr",
       "asmLine": 6133,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22382,14 +22408,16 @@
       "label": "GetYPhy",
       "asmLine": 6141,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player physics owners",
-      "currentCounterpart": "player movement, physics and climbing helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ground/jump/swim/climb dispatch, byte-state tables and movement handoff.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22398,14 +22426,16 @@
       "label": "PJumpSnd",
       "asmLine": 6159,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_start_jump dry-jump sound selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves PlayerSize selection of big versus small jump sound before the common queue store.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22414,14 +22444,16 @@
       "label": "SJumpSnd",
       "asmLine": 6163,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_start_jump sound queue write",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores the selected dry-jump sound in Square1SoundQueue before horizontal physics.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22430,14 +22462,16 @@
       "label": "X_Physics",
       "asmLine": 6164,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal state/speed selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes the X-physics selectors and chooses grounded, fast-airborne or slow-airborne parameter flow.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22446,14 +22480,16 @@
       "label": "ProcPRun",
       "asmLine": 6172,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal grounded selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves water, direction, B-button and RunningTimer ordering before the ChkRFast path.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22462,14 +22498,16 @@
       "label": "ChkRFast",
       "asmLine": 6184,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal fast-friction selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the running-speed and absolute-speed threshold that adds the fast friction table index.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22478,14 +22516,16 @@
       "label": "FastXSp",
       "asmLine": 6191,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal fast-friction selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Adds exactly one friction-table index before the common limits/table loads.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22494,14 +22534,16 @@
       "label": "SetRTmr",
       "asmLine": 6193,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal running timer write",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes RunningTimer value $0a only on the grounded same-direction B-button route.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22510,14 +22552,16 @@
       "label": "GetXPhy",
       "asmLine": 6195,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal maximum-left selector",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Loads MaximumLeftSpeed from the current speed index, then substitutes index three only for entrance routine seven.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22526,14 +22570,16 @@
       "label": "GetXPhy2",
       "asmLine": 6201,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal limits and friction setup",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Loads MaximumRightSpeed and FrictionAdder bytes from their independently selected source indices.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -22542,14 +22588,16 @@
       "label": "ExitPhy",
       "asmLine": 6213,
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentOwner": "shared player core",
-      "currentCounterpart": "mysmb_player_configure_horizontal facing/moving direction adjustment",
+      "status": "exact",
+      "currentOwner": "src/game/player.c",
+      "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Leaves unshifted friction for matching directions and shifts low/high exactly once for a mismatch.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64750,13 +64798,15 @@
       "instruction": "bne",
       "id": "control-00989",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerPhysicsSub -> CheckForJumping.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64769,13 +64819,15 @@
       "instruction": "beq",
       "id": "control-00990",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerPhysicsSub -> ProcClimb.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64788,13 +64840,15 @@
       "instruction": "bne",
       "id": "control-00991",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerPhysicsSub -> ProcClimb.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64807,13 +64861,15 @@
       "instruction": "iny",
       "id": "control-00992",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerPhysicsSub -> ProcClimb.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64826,13 +64882,15 @@
       "instruction": "bmi",
       "id": "control-00993",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcClimb -> SetCAnim.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64845,13 +64903,15 @@
       "instruction": "lsr",
       "id": "control-00994",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ProcClimb -> SetCAnim.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64864,13 +64924,15 @@
       "instruction": "bne",
       "id": "control-00995",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation CheckForJumping -> NoJump.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64883,13 +64945,15 @@
       "instruction": "beq",
       "id": "control-00996",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation CheckForJumping -> NoJump.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64902,13 +64966,15 @@
       "instruction": "beq",
       "id": "control-00997",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation CheckForJumping -> ProcJumping.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64921,13 +64987,15 @@
       "instruction": "beq",
       "id": "control-00998",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation CheckForJumping -> NoJump.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64940,13 +65008,15 @@
       "instruction": "jmp",
       "id": "control-00999",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source jump relation NoJump -> X_Physics.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64959,13 +65029,15 @@
       "instruction": "beq",
       "id": "control-01000",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> InitJS.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64978,13 +65050,15 @@
       "instruction": "beq",
       "id": "control-01001",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> NoJump.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -64997,13 +65071,15 @@
       "instruction": "bne",
       "id": "control-01002",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> InitJS.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65016,13 +65092,15 @@
       "instruction": "bpl",
       "id": "control-01003",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ProcJumping -> InitJS.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65035,13 +65113,15 @@
       "instruction": "jmp",
       "id": "control-01004",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source jump relation ProcJumping -> X_Physics.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65054,13 +65134,15 @@
       "instruction": "bcc",
       "id": "control-01005",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65073,13 +65155,15 @@
       "instruction": "bcc",
       "id": "control-01006",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65092,13 +65176,15 @@
       "instruction": "bcc",
       "id": "control-01007",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65111,13 +65197,15 @@
       "instruction": "bcc",
       "id": "control-01008",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation InitJS -> ChkWtr.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65130,13 +65218,15 @@
       "instruction": "iny",
       "id": "control-01009",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation InitJS -> ChkWtr.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65149,13 +65239,15 @@
       "instruction": "beq",
       "id": "control-01010",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ChkWtr -> GetYPhy.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65168,13 +65260,15 @@
       "instruction": "beq",
       "id": "control-01011",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ChkWtr -> GetYPhy.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65187,13 +65281,15 @@
       "instruction": "iny",
       "id": "control-01012",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ChkWtr -> GetYPhy.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65206,13 +65302,15 @@
       "instruction": "beq",
       "id": "control-01013",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation GetYPhy -> PJumpSnd.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65225,13 +65323,15 @@
       "instruction": "bcs",
       "id": "control-01014",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation GetYPhy -> X_Physics.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65244,13 +65344,15 @@
       "instruction": "jmp",
       "id": "control-01015",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source jump relation GetYPhy -> X_Physics.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65263,13 +65365,15 @@
       "instruction": "beq",
       "id": "control-01016",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PJumpSnd -> SJumpSnd.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65282,13 +65386,15 @@
       "instruction": "lda",
       "id": "control-01017",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation PJumpSnd -> SJumpSnd.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65301,13 +65407,15 @@
       "instruction": "sta",
       "id": "control-01018",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation SJumpSnd -> X_Physics.",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12d player state static node-and-edge audit: SMB1 lines 5899-6150 compared with shared player physics owners; controlled routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source input, state and physics-table branch ordering.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65320,13 +65428,15 @@
       "instruction": "beq",
       "id": "control-01019",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Player_State == 0 enters the grounded selector before all grounded speed/index decisions.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65339,13 +65449,15 @@
       "instruction": "bcs",
       "id": "control-01020",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Airborne absolute speed >= $19 bypasses ChkRFast and retains the initial friction index.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65358,13 +65470,15 @@
       "instruction": "bcc",
       "id": "control-01021",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Airborne absolute speed < $19 enters ChkRFast.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65377,13 +65491,15 @@
       "instruction": "bcc",
       "id": "control-01022",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The non-branch continuation reaches the grounded selector.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65396,13 +65512,15 @@
       "instruction": "beq",
       "id": "control-01023",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Water areas bypass the non-water direction/run decision and enter ChkRFast.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65415,13 +65533,15 @@
       "instruction": "bne",
       "id": "control-01024",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "A direction mismatch bypasses the grounded run timer route and enters ChkRFast.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65434,13 +65554,15 @@
       "instruction": "bne",
       "id": "control-01025",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "A held B button after the same-direction gate sets RunningTimer before common limits.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65453,13 +65575,15 @@
       "instruction": "bne",
       "id": "control-01026",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "A nonzero RunningTimer reaches limits without the ChkRFast increment.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65472,13 +65596,15 @@
       "instruction": "bne",
       "id": "control-01027",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The ordinary grounded non-running continuation enters ChkRFast.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65491,13 +65617,15 @@
       "instruction": "bne",
       "id": "control-01028",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Nonzero RunningSpeed selects FastXSp.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65510,13 +65638,15 @@
       "instruction": "bcc",
       "id": "control-01029",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Absolute speed below $21 reaches common limits without the fast index increment.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65529,13 +65659,15 @@
       "instruction": "bcc",
       "id": "control-01030",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The remaining ChkRFast continuation reaches FastXSp.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65548,13 +65680,15 @@
       "instruction": "jmp",
       "id": "control-01031",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "FastXSp adds its index then reaches common limit/table setup.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65567,13 +65701,15 @@
       "instruction": "sta",
       "id": "control-01032",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "SetRTmr falls through to common limit/table setup after writing $0a.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65586,13 +65722,15 @@
       "instruction": "bne",
       "id": "control-01033",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Non-entrance routines retain the current index for maximum-right selection.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65605,13 +65743,15 @@
       "instruction": "ldy",
       "id": "control-01034",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Entrance routine seven substitutes index three before maximum-right selection.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65624,13 +65764,15 @@
       "instruction": "beq",
       "id": "control-01035",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Matching facing/moving direction leaves friction unshifted and exits.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -65643,13 +65785,15 @@
       "instruction": "rol",
       "id": "control-01036",
       "cohort": "F",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core branch/call ordering",
+      "status": "exact",
+      "currentCounterpart": "M2 T59 S4 shared C90 branch, jump, fallthrough or return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Direction mismatch shifts friction low into high then exits.",
+      "operationalEvidence": [
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+      ],
+      "semanticContract": "M2 T59 S4 confirms this source physics relation and state handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
