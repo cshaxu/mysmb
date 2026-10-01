@@ -174,3 +174,8 @@ The shared owners are `src/game/blocks/head.c`, `src/game/blocks/bump.c`, and `s
 ## S7 closure - player-head block and brick-shatter chain
 
 All 28 scoped labels are current-exact. Static `$BCEB-$BE6F` comparison found no feasible difference in scratch block-buffer access, player-size/crouch selection, carry, coin timer, coordinate/page writes, content dispatch, lookup order, overhead coin path, replacement, chunk initialization or child order. Fifty-five internal feasible controls and four material handoffs are exact; `BlockCode -> MushFlowerBlock` remains the already-proven infeasible raw fallthrough. Fresh x86/x64 routes pass 296 caller and 296 full-current checks. Focused head, bump and chunk smokes pass; platform purity and DOS16 link pass. No source changed. Current: **778 / 1,992** nodes and **1,529 / 4,324** feasible controls; historical **1,992 / 1,992**.
+
+
+## S8 admission - block lifetime and metatile-update chain
+
+S8 admits `$BE70-$BEDD`, `BlockObjectsCore -> NextBUpd`: `BlockObjectsCore`, `ChkTop`, `BouncingBlockHandler`, `KillBlock`, `UpdSte`, `BlockObjMT_Updater`, `UpdateLoop`, and `NextBUpd`. All eight are `needs-evidence`, yielding eight candidates from **778 / 1,992** to **786 / 1,992**. It owns 16 feasible internal controls. Shared owners are `src/game/blocks/lifetime.c` and `replacement.c`; S7 precedes it and S9 motion follows. ROM logic compares state masking, bounce phase, gravity/motion handoffs, two-slot update loop, metatile replacement and retirement. Platform adapters remain out of scope.
