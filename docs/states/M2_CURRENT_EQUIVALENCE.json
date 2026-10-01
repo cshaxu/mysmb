@@ -20464,14 +20464,16 @@
       "label": "ScrollHandler",
       "asmLine": 5403,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20480,14 +20482,16 @@
       "label": "ChkNearMid",
       "asmLine": 5422,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20496,14 +20500,16 @@
       "label": "ScrollScreen",
       "asmLine": 5427,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20512,14 +20518,16 @@
       "label": "InitScrlAmt",
       "asmLine": 5451,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20528,14 +20536,16 @@
       "label": "ChkPOffscr",
       "asmLine": 5453,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20544,14 +20554,16 @@
       "label": "KeepOnscr",
       "asmLine": 5463,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20560,14 +20572,16 @@
       "label": "InitPlatScrl",
       "asmLine": 5475,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20576,14 +20590,16 @@
       "label": "X_SubtracterData",
       "asmLine": 5479,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20592,14 +20608,16 @@
       "label": "OffscrJoypadBitsData",
       "asmLine": 5482,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -20608,14 +20626,16 @@
       "label": "GetScreenPosition",
       "asmLine": 5487,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentOwner": "src/game/scroll.c shared C90 scroll owner",
+      "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -51740,15 +51760,18 @@
       "instruction": "jsr",
       "id": "control-00392",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original StartPage -> GetScreenPosition call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
-        "src/game/area.c"
+        "src/game/area.c",
+        "src/game/scroll.c"
       ]
     },
     {
@@ -60799,13 +60822,15 @@
       "instruction": "bne",
       "id": "control-00810",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60818,13 +60843,15 @@
       "instruction": "bcc",
       "id": "control-00811",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60837,13 +60864,15 @@
       "instruction": "bne",
       "id": "control-00812",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60856,13 +60885,15 @@
       "instruction": "bmi",
       "id": "control-00813",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> InitScrlAmt.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60875,13 +60906,15 @@
       "instruction": "bcc",
       "id": "control-00814",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source branch relation ScrollHandler -> ChkNearMid.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60894,13 +60927,15 @@
       "instruction": "dey",
       "id": "control-00815",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source fallthrough relation ScrollHandler -> ChkNearMid.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60913,13 +60948,15 @@
       "instruction": "bcc",
       "id": "control-00816",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source branch relation ChkNearMid -> ScrollScreen.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60932,13 +60969,15 @@
       "instruction": "ldy",
       "id": "control-00817",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source fallthrough relation ChkNearMid -> ScrollScreen.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60951,13 +60990,15 @@
       "instruction": "jsr",
       "id": "control-00818",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source call relation ScrollScreen -> GetScreenPosition.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60970,13 +61011,15 @@
       "instruction": "jmp",
       "id": "control-00819",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source jump relation ScrollScreen -> ChkPOffscr.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -60989,13 +61032,15 @@
       "instruction": "sta",
       "id": "control-00820",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source fallthrough relation InitScrlAmt -> ChkPOffscr.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -61008,13 +61053,15 @@
       "instruction": "jsr",
       "id": "control-00821",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original call ChkPOffscr \u00e2\u2020\u2019 GetXOffscreenBits: inputs are handed to the child before the caller continuation resumes.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -61027,13 +61074,15 @@
       "instruction": "bcs",
       "id": "control-00822",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original conditional branch ChkPOffscr \u00e2\u2020\u2019 KeepOnscr: the source comparison/flag predicate selects this successor before any later state mutation.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -61046,13 +61095,15 @@
       "instruction": "beq",
       "id": "control-00823",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original conditional branch ChkPOffscr \u00e2\u2020\u2019 InitPlatScrl: the source comparison/flag predicate selects this successor before any later state mutation.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -61065,13 +61116,15 @@
       "instruction": "beq",
       "id": "control-00824",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original sequential fall-through ChkPOffscr \u00e2\u2020\u2019 KeepOnscr: prior source writes and flags reach the successor in instruction order.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -61084,13 +61137,15 @@
       "instruction": "beq",
       "id": "control-00825",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original conditional branch KeepOnscr \u00e2\u2020\u2019 InitPlatScrl: the source comparison/flag predicate selects this successor before any later state mutation.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -61103,13 +61158,15 @@
       "instruction": "sta",
       "id": "control-00826",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original sequential fall-through KeepOnscr \u00e2\u2020\u2019 InitPlatScrl: prior source writes and flags reach the successor in instruction order.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -61912,13 +61969,15 @@
       "instruction": "jsr",
       "id": "control-00868",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared game core preserves source call relation PlayerSubs -> ScrollHandler.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12b entry/control static node-and-edge audit: SMB1 lines 5499-5705 compared with shared entry/player/transition owners; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, input partition and successor ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/player_control.c",
         "src/game/scroll.c"
@@ -62467,13 +62526,15 @@
       "instruction": "jsr",
       "id": "control-00897",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source call relation VerticalPipeEntry -> ScrollHandler.",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/player_transition.c",
         "src/game/scroll.c"
@@ -113924,15 +113985,18 @@
       "instruction": "rts/rti",
       "id": "control-03541",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> shared initialization owner",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation GetScreenPosition \u00e2\u2020\u2019 StartPage: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
-        "src/game/area.c"
+        "src/game/area.c",
+        "src/game/scroll.c"
       ]
     },
     {
@@ -116098,13 +116162,15 @@
       "instruction": "rts/rti",
       "id": "control-03637",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation GetScreenPosition \u00e2\u2020\u2019 ScrollScreen: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/scroll.c"
       ]
@@ -116117,15 +116183,18 @@
       "instruction": "rts/rti",
       "id": "control-03638",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation GetXOffscreenBits \u00e2\u2020\u2019 ChkPOffscr exposes the resolved partition index or offscreen mask to its caller continuation.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
-        "src/game/scroll.c"
+        "src/game/scroll.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -116238,13 +116307,15 @@
       "instruction": "rts/rti",
       "id": "control-03644",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_routines and player entry/control helpers",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation ScrollHandler \u00e2\u2020\u2019 PlayerSubs: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/player_control.c",
         "src/game/scroll.c"
@@ -116373,13 +116444,15 @@
       "instruction": "rts/rti",
       "id": "control-03651",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentCounterpart": "shared C90 direct call/return and branch counterpart in scroll.c with the named caller or child owner",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation ScrollHandler \u00e2\u2020\u2019 VerticalPipeEntry: child completion restores the caller\u00e2\u20ac\u2122s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+      ],
+      "semanticContract": "M2 T58 S2 static audit confirms this original control relation reaches the same shared C branch, call or ordinary return continuation with identical state handoff order.",
       "currentSourcePaths": [
         "src/game/player_transition.c",
         "src/game/scroll.c"
