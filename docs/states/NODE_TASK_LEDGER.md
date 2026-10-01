@@ -3244,11 +3244,11 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T54 S5 | 3 | 1992 | none / 0 | none / 0 | closed-reset-screen-timer-current-equivalence-audit; [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
 | M2 T54 S6 | 3 | 1992 | none / 0 | none / 0 | closed-parser-task-handoff-current-equivalence-audit; [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
 | M2 T54 S7 | 1 | 1992 | none / 0 | none / 0 | admitted-screen-routines-dispatcher-current-equivalence-audit; [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
-| M2 T55 S1 | 11 | 1992 | none / 0 | none / 0 | admitted-renderer-attribute-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
-| M2 T55 S2 | 7 | 1992 | none / 0 | none / 0 | admitted-palette-rotation-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
-| M2 T55 S3 | 11 | 1992 | none / 0 | none / 0 | admitted-block-metatile-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
-| M2 T55 S4 | 14 | 1992 | none / 0 | none / 0 | admitted-metatile-graphics-and-palette-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
-| M2 T55 S5 | 7 | 1992 | none / 0 | none / 0 | admitted-message-stream-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T55 S1 | 11 | 1992 | none / 0 | none / 0 | closed-renderer-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T55 S2 | 7 | 1992 | none / 0 | none / 0 | closed-palette-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T55 S3 | 11 | 1992 | none / 0 | none / 0 | closed-block-metatile-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T55 S4 | 14 | 1992 | none / 0 | none / 0 | closed-metatile-data-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T55 S5 | 7 | 1992 | none / 0 | none / 0 | closed-message-stream-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S6 | 5 | 1992 | none / 0 | none / 0 | closed-current-exact-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S7 | 4 | 1992 | none / 0 | none / 0 | closed-joypad-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
-| M2 T55 S8 | 8 | 1992 | none / 0 | none / 0 | admitted-vram-ppu-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T55 S8 | 8 | 1992 | none / 0 | none / 0 | closed-vram-ppu-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |

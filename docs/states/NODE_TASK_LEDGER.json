@@ -325771,7 +325771,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md",
-      "state": "admitted-renderer-attribute-current-equivalence-audit",
+      "state": "closed-renderer-current-equivalence-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 area renderer route over metatile direction, attribute and control-six outcomes."
     },
     {
@@ -327785,7 +327785,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md",
-      "state": "admitted-palette-rotation-current-equivalence-audit",
+      "state": "closed-palette-current-equivalence-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 palette rotation route over frame gate, buffer capacity, area palette selection and rotation wrap."
     },
     {
@@ -329803,7 +329803,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md",
-      "state": "admitted-block-metatile-current-equivalence-audit",
+      "state": "closed-block-metatile-current-equivalence-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 block replacement, destroy, water blank and bridge metatile routes."
     },
     {
@@ -331824,7 +331824,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md",
-      "state": "admitted-metatile-graphics-and-palette-current-equivalence-audit",
+      "state": "closed-metatile-data-current-equivalence-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 graphics and palette table-consumer selector routes."
     },
     {
@@ -333838,7 +333838,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md",
-      "state": "admitted-message-stream-current-equivalence-audit",
+      "state": "closed-message-stream-current-equivalence-audit",
       "romRoute": "Original-ROM PRG byte identity plus x86/x64 selector-driven message command routes."
     },
     {
@@ -339875,7 +339875,7 @@
       ],
       "baseline": 1992,
       "maximumComplete": 1992,
-      "state": "admitted-vram-ppu-current-equivalence-audit",
+      "state": "closed-vram-ppu-current-equivalence-audit",
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md"
     }
   ]

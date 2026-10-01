@@ -7,12 +7,12 @@
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | M2 T55 S8 — VRAM packet and PPU handoff current-equivalence audit. |
-| Admission And Approval | T55 S7 closed with zero scoped feasible differences; owner authorization permits source-order S8 admission. |
+| Admission And Approval | T55 S8 closed with zero scoped feasible differences; T55 closure review is in progress. |
 | Objective | Closed: audited `WriteBufferToScreen` through `WritePPUReg1`, repair every feasible shared-C mismatch, and repeat scoped ROM/native evidence until each node and incident feasible control is exact. |
 | Non-goals | No platform rendering/input decisions, no historical-node credit, and no successor admission before this chain closes with zero feasible differences. |
 | Reference Baseline | Historical 1,992 / 1,992. Current registry: 225 exact and 1,767 needs-evidence nodes; 458 exact feasible controls. Scope: eight labels and 13 pending incident feasible controls; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
-| Files And ABI Surface | Shared `src/game/frame_root.c` and `src/game/boot.c`; focused packet/recorder tests only. |
+| Files And ABI Surface | Shared `src/game/game.c`; focused packet/recorder tests only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
 | Verification | ROM-logic: source packet header branches, payload/read pointer, terminator and scroll/control call-return relations. Operational: controlled original-ROM/x86/x64 packet matrix, focused x86/x64 tests, DOS16 build if product source changes, and platform-purity audit. |
 | Expected Markers | Empty, sequential, vertical and repeat packets preserve physical `$2000`, `$2005`, VRAM outputs, mirror state, zero-page pointer progression and terminal transfer in shared C. |
@@ -27,9 +27,13 @@
 
 S8 closes with eight current-exact nodes and 13 current-exact feasible control relations. The shared packet interpreter now retains the ROM `$00/$01` indirect-pointer advance through every packet and publishes each packet header's physical `$2000` state. Input-identical original-ROM/native repeat and vertical routes cover both header branch families; direct chained carry, NMI-parent, x86/x64, platform-purity and DOS16 checks pass. Historical status remains 1,992 / 1,992, while the fresh registry is **233 exact nodes** and **471 exact feasible controls**.
 
+## T55 Closure Review
+
+All 67 T55 labels are current-exact. The T55 incident graph contains 137 exact feasible controls, five source-infeasible controls, and 25 exact material edges; it has no unresolved feasible relation. The final cross-chain review re-ran renderer x86/x64 output, the controlled 120-frame ROM/native joypad route, and the controlled repeat/vertical VRAM and scroll routes. T55 now awaits only the formal closure record and successor admission.
+
 ## Current Technical Baseline
 
-M2 T55 S7 is active after the closed S6 dispatcher audit. It continues Cohort C with the contiguous two-port joypad serial-read chain.
+M2 T55 is in closure review after its eight Cohort C bootstrap chains. No successor S is admitted.
 
 ## S5 Closure
 

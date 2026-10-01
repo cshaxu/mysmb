@@ -13,7 +13,7 @@ M2 T55 is the source-order first half of Cohort C. It audits the 67 labels from 
 | S5 | `MarioThanksMessage through WorldSelectMessage2` | 7 | `src/game/area.c` | Controlled message-stream selector routes that consume the contiguous text data. |
 | S6 | `JumpEngine through InitATLoop` | 5 | `src/game/dispatcher.c plus src/game/boot.c` | Controlled vector and name-table-clear route, including inline table return behavior. |
 | S7 | `ReadJoypads through Save8Bits` | 4 | `src/game/frame_root.c` | Controlled both-port serial input, Select/Start suppression and saved-byte routes. |
-| S8 | `WriteBufferToScreen through WritePPUReg1` | 8 | `src/game/frame_root.c plus src/game/boot.c` | Controlled empty/repeat/multi-write VRAM packet and scroll/register handoff routes. |
+| S8 | `WriteBufferToScreen through WritePPUReg1` | 8 | `src/game/game.c` | Controlled empty/repeat/multi-write VRAM packet and scroll/register handoff routes. |
 
 ## Exact source-order labels
 
@@ -491,3 +491,9 @@ S8 receives the contiguous eight-label `WriteBufferToScreen → WritePPUReg1` ch
 ## S8 closure
 
 S8 closes after the shared `UpdateScreen` packet interpreter restores the ROM indirect pointer advance through each packet and publishes the packet-selected physical PPU control state at each header. The repeat and vertical fixtures now share identical input addresses. Original-ROM/x86/x64 route evidence, direct carry coverage, platform-purity audit, and the DOS16 build pass. All eight scoped nodes and 13 scoped feasible controls are exact.
+
+## T55 closure
+
+The eight source-order chains close with all **67 / 67** scoped nodes current-exact. Their incident graph contains **137 exact feasible control relations**, **five source-infeasible relations** with retained instruction-semantic proofs, and **25 exact material producer-consumer relations**. No feasible node, control relation, or material handoff remains deferred or mismatched.
+
+The required cross-chain matrix is complete: S1 renderer/attribute output passes on x86 and x64; S7's bounded 120-frame original-ROM/x86/x64 route passes for both controller ports and both Select/Start debounce outcomes; S8's input-identical repeat and vertical original-ROM/x86/x64 routes pass for packet output, pointer progression, scroll and PPU control handoff. The shared game layer is platform-pure, and the S8 product repair refreshed and validated the DOS16, Win32 x86 and Win32 x64 artifacts. This closes T55; T56 may be admitted only with its own source-order packet.
