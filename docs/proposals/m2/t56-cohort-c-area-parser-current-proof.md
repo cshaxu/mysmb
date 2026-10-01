@@ -333,3 +333,38 @@ owner-local original-ROM/current x86/x64 routes, focused pipe/castle/parser
 smokes, DOS16 link if product source changes and platform purity. Any feasible
 difference remains in S5 for shared-C repair and repeat audit before S6
 admission.
+
+## S5 closure - castle finish, pipe, allocation and high question-row chain
+
+S5 closes all 22 scoped labels current-exact. The source audit maps SMB1 lines
+3789-3947 to shared `src/game/area.c`: castle floor stop, water/intro/exit and
+vertical pipe paths, side-shaft tables, piranha allocation, pipe height and
+draw tail, regular-slot scan, water hole and high question-row dispatch. The
+source decoder routes normal small objects only through rows 0-11, so its
+staging guards have no feasible effect on WaterPipe; all source-reachable RAM
+writes agree.
+
+The controlled original-ROM/current x86/x64 matrix covers vertical pipe, high
+question row and a special-object path; all scoped parser, staging and enemy
+state is equal and x86/x64 are byte-identical. Focused special-object, pipe
+tail, castle-column and parser-data smokes pass, as does platform purity. No
+product source changed, so the existing three artifacts remain valid. The
+registry records 22 nodes, 49 feasible control relations and two material
+relations as exact. Historical conformance remains 1,992 / 1,992; current
+registry total is 348 exact nodes and 757 exact feasible controls.
+
+## S6 admission - low question row, bridge and residual flag-ball chain
+
+S6 admits the contiguous `QuestionBlockRow_Low -> FlagBalls_Residual` chain:
+`QuestionBlockRow_Low`, `Bridge_High`, `Bridge_Middle`, `Bridge_Low` and
+`FlagBalls_Residual`. Its predecessor is S5 high-row dispatch; it is the final
+T56 chain before the T-level integrated parser regression. The shared owner is
+`src/game/area.c`.
+
+All five labels are historically complete and currently need evidence; expected
+historical credit is zero. ROM-logic verification covers common low-row entry,
+three bridge row selectors, length helper order, rail/body writes and residual
+flag-ball extent. Operational verification uses a controlled owner-local
+original-ROM/current x86/x64 special-row matrix, focused parser tests, DOS16
+link if product source changes and platform purity. Any feasible difference
+remains in S6 for shared-C repair and repeat audit before T56 closure.

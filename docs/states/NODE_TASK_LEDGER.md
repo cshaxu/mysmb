@@ -3263,4 +3263,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T56 S2 | 20 | 1992 | none / 0 | none / 0 | closed-scenery-terrain-and-block-buffer-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
 | M2 T56 S3 | 32 | 1992 | none / 0 | none / 0 | closed-area-data-decoder-and-attribute-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
 | M2 T56 S4 | 27 | 1992 | none / 0 | none / 0 | closed-warp-scroll-frenzy-style-pulley-castle-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
-| M2 T56 S5 | 22 | 1992 | none / 0 | none / 0 | admitted-castle-pipe-allocation-question-row-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S5 | 22 | 1992 | none / 0 | none / 0 | closed-castle-pipe-allocation-question-row-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S6 | 5 | 1992 | none / 0 | none / 0 | admitted-low-question-bridge-flag-balls-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |

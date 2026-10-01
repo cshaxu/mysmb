@@ -1290,13 +1290,16 @@
       "consumer": "DrawPipe",
       "storage": "pipe phase-indexed top/body metatile pairs to staged buffer",
       "feasiblePath": "VerticalPipe selects a source phase, DrawPipe reads its top then body pair before RenderUnderPart.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:vertical-pipe selection in mysmb_area_apply_parser_object",
       "semanticContract": "Usage-control phase, top/body pair order and under-part height agree.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1309,13 +1312,16 @@
       "consumer": "NotTall/WarpPipe",
       "storage": "regular-slot search carry result and selected X slot",
       "feasiblePath": "Castle ignores carry and may use slot five; vertical pipe branches on carry and creates piranha only on success.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_find_empty_enemy_slot callers",
       "semanticContract": "The same primitive result reaches distinct caller-specific successor behavior without conflation.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -16969,13 +16975,16 @@
       "label": "PlayerStop",
       "asmLine": 3789,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Writes the terminal floor brick before common castle return.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -16985,13 +16994,16 @@
       "label": "ExitCastle",
       "asmLine": 3791,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Common castle return after page/length/flag decisions.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17001,13 +17013,16 @@
       "label": "WaterPipe",
       "asmLine": 3795,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Writes two water-pipe metatiles at decoded row.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17017,13 +17032,16 @@
       "label": "IntroPipe",
       "asmLine": 3810,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Builds fixed side pipe and conditionally clears upper vertical-pipe staging.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17033,13 +17051,16 @@
       "label": "VPipeSectLoop",
       "asmLine": 3817,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Clears staged rows six through zero before intro-pipe cap placement.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17049,13 +17070,16 @@
       "label": "NoBlankP",
       "asmLine": 3823,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Intro-pipe completion return.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17065,13 +17089,16 @@
       "label": "SidePipeShaftData",
       "asmLine": 3825,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Binds shaft-present selector and shaft metatile values.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17081,13 +17108,16 @@
       "label": "SidePipeTopPart",
       "asmLine": 3828,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Binds side-pipe top metatiles by horizontal phase.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17097,13 +17127,16 @@
       "label": "SidePipeBottomPart",
       "asmLine": 3831,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Binds side-pipe bottom metatiles by horizontal phase.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17113,13 +17146,16 @@
       "label": "ExitPipe",
       "asmLine": 3835,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Combines fixed horizontal length, decoded height and side-pipe rendering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17129,13 +17165,16 @@
       "label": "RenderSidewaysPipe",
       "asmLine": 3840,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Separates vertical shaft height from horizontal phase and renders shaft before side pieces when present.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17145,13 +17184,16 @@
       "label": "DrawSidePart",
       "asmLine": 3855,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Writes source top/bottom side-pipe pair at selected staged row.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17161,13 +17203,16 @@
       "label": "VerticalPipeData",
       "asmLine": 3862,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Binds warp and decoration vertical pipe top/body pairs.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17177,13 +17222,16 @@
       "label": "VerticalPipe",
       "asmLine": 3868,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Selects pipe data, conditionally creates one piranha, then renders top/body/under-part.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17193,13 +17241,16 @@
       "label": "WarpPipe",
       "asmLine": 3876,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Skips or creates piranha according to 1-1, phase and empty-slot predicates before DrawPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17209,13 +17260,16 @@
       "label": "DrawPipe",
       "asmLine": 3900,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Writes top/body pipe metatiles and tail-enters under-part rendering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17225,13 +17279,16 @@
       "label": "GetPipeHeight",
       "asmLine": 3911,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Decodes fixed pipe phase and three-bit vertical extent.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17241,13 +17298,16 @@
       "label": "FindEmptyEnemySlot",
       "asmLine": 3921,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Scans slots zero through four, returning success at first zero or carry failure after all occupied.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17257,13 +17317,16 @@
       "label": "EmptyChkLoop",
       "asmLine": 3923,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Per-slot empty test and bounded regular-slot increment.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17273,13 +17336,16 @@
       "label": "ExitEmptyChk",
       "asmLine": 3929,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Common success/failure return preserving source carry outcome.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17289,14 +17355,17 @@
       "label": "Hole_Water",
       "asmLine": 3933,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Decodes the persistent large-object length, writes wave at row 10, then renders water metatile $87 from row 11 for one row.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -17306,14 +17375,17 @@
       "label": "QuestionBlockRow_High",
       "asmLine": 3944,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Uses the source BIT-opcode fall-through to select row 3, then shares low-row length decode and coin-question write.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56492,12 +56564,15 @@
       "instruction": "sty",
       "id": "control-00642",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation PlayerStop -> ExitCastle.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation PlayerStop -> ExitCastle.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56511,12 +56586,15 @@
       "instruction": "jsr",
       "id": "control-00643",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation WaterPipe -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation WaterPipe -> GetLrgObjAttrib.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56530,12 +56608,15 @@
       "instruction": "jsr",
       "id": "control-00644",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation IntroPipe -> ChkLrgObjFixedLength.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation IntroPipe -> ChkLrgObjFixedLength.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56549,12 +56630,15 @@
       "instruction": "jsr",
       "id": "control-00645",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation IntroPipe -> RenderSidewaysPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation IntroPipe -> RenderSidewaysPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56568,12 +56652,15 @@
       "instruction": "bcs",
       "id": "control-00646",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation IntroPipe -> NoBlankP.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation IntroPipe -> NoBlankP.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56587,12 +56674,15 @@
       "instruction": "ldx",
       "id": "control-00647",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation IntroPipe -> VPipeSectLoop.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation IntroPipe -> VPipeSectLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56606,12 +56696,15 @@
       "instruction": "bpl",
       "id": "control-00648",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation VPipeSectLoop -> VPipeSectLoop.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation VPipeSectLoop -> VPipeSectLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56625,12 +56718,15 @@
       "instruction": "sta",
       "id": "control-00649",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation VPipeSectLoop -> NoBlankP.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation VPipeSectLoop -> NoBlankP.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56644,12 +56740,15 @@
       "instruction": "jsr",
       "id": "control-00650",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation ExitPipe -> ChkLrgObjFixedLength.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation ExitPipe -> ChkLrgObjFixedLength.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56663,12 +56762,15 @@
       "instruction": "jsr",
       "id": "control-00651",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation ExitPipe -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation ExitPipe -> GetLrgObjAttrib.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56682,12 +56784,15 @@
       "instruction": "jsr",
       "id": "control-00652",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation ExitPipe -> RenderSidewaysPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation ExitPipe -> RenderSidewaysPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56701,12 +56806,15 @@
       "instruction": "beq",
       "id": "control-00653",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation RenderSidewaysPipe -> DrawSidePart.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation RenderSidewaysPipe -> DrawSidePart.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56720,12 +56828,15 @@
       "instruction": "jsr",
       "id": "control-00654",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation RenderSidewaysPipe -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation RenderSidewaysPipe -> RenderUnderPart.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56739,12 +56850,15 @@
       "instruction": "clc",
       "id": "control-00655",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation RenderSidewaysPipe -> DrawSidePart.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation RenderSidewaysPipe -> DrawSidePart.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56758,12 +56872,15 @@
       "instruction": "jsr",
       "id": "control-00656",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation VerticalPipe -> GetPipeHeight.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation VerticalPipe -> GetPipeHeight.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56777,12 +56894,15 @@
       "instruction": "beq",
       "id": "control-00657",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation VerticalPipe -> WarpPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation VerticalPipe -> WarpPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56796,12 +56916,15 @@
       "instruction": "iny",
       "id": "control-00658",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation VerticalPipe -> WarpPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation VerticalPipe -> WarpPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56815,12 +56938,15 @@
       "instruction": "beq",
       "id": "control-00659",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56834,12 +56960,15 @@
       "instruction": "beq",
       "id": "control-00660",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56853,12 +56982,15 @@
       "instruction": "jsr",
       "id": "control-00661",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation WarpPipe -> FindEmptyEnemySlot.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation WarpPipe -> FindEmptyEnemySlot.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56872,12 +57004,15 @@
       "instruction": "bcs",
       "id": "control-00662",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation WarpPipe -> DrawPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56891,12 +57026,15 @@
       "instruction": "jsr",
       "id": "control-00663",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation WarpPipe -> GetAreaObjXPosition.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation WarpPipe -> GetAreaObjXPosition.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56910,12 +57048,15 @@
       "instruction": "jsr",
       "id": "control-00664",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation WarpPipe -> GetAreaObjYPosition.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation WarpPipe -> GetAreaObjYPosition.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56929,12 +57070,15 @@
       "instruction": "jsr",
       "id": "control-00665",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves original call relation WarpPipe -> InitPiranhaPlant with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56948,12 +57092,15 @@
       "instruction": "jsr",
       "id": "control-00666",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation WarpPipe -> DrawPipe.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation WarpPipe -> DrawPipe.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56967,12 +57114,15 @@
       "instruction": "jmp",
       "id": "control-00667",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source jump relation DrawPipe -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source jump relation DrawPipe -> RenderUnderPart.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -56986,12 +57136,15 @@
       "instruction": "jsr",
       "id": "control-00668",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation GetPipeHeight -> ChkLrgObjFixedLength.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation GetPipeHeight -> ChkLrgObjFixedLength.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57005,12 +57158,15 @@
       "instruction": "jsr",
       "id": "control-00669",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source call relation GetPipeHeight -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source call relation GetPipeHeight -> GetLrgObjAttrib.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57024,12 +57180,15 @@
       "instruction": "ldx",
       "id": "control-00670",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation FindEmptyEnemySlot -> EmptyChkLoop.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation FindEmptyEnemySlot -> EmptyChkLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57043,12 +57202,15 @@
       "instruction": "beq",
       "id": "control-00671",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation EmptyChkLoop -> ExitEmptyChk.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation EmptyChkLoop -> ExitEmptyChk.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57062,12 +57224,15 @@
       "instruction": "bne",
       "id": "control-00672",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source branch relation EmptyChkLoop -> EmptyChkLoop.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source branch relation EmptyChkLoop -> EmptyChkLoop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57081,12 +57246,15 @@
       "instruction": "bne",
       "id": "control-00673",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source fallthrough relation EmptyChkLoop -> ExitEmptyChk.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source fallthrough relation EmptyChkLoop -> ExitEmptyChk.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57100,13 +57268,16 @@
       "instruction": "jsr",
       "id": "control-00674",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source call relation Hole_Water -> ChkLrgObjLength through the shared parser-object helper path.",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "The parser preserves this call handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57120,13 +57291,16 @@
       "instruction": "jmp",
       "id": "control-00675",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source jump relation Hole_Water -> RenderUnderPart through the shared parser-object helper path.",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "The parser preserves this jump handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -57140,13 +57314,16 @@
       "instruction": "lda",
       "id": "control-00676",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source fallthrough relation QuestionBlockRow_High -> QuestionBlockRow_Low through the shared parser-object helper path.",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "The parser preserves this fallthrough handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113537,12 +113714,15 @@
       "instruction": "rts/rti",
       "id": "control-03574",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → WaterPipe: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113556,12 +113736,15 @@
       "instruction": "rts/rti",
       "id": "control-03575",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → IntroPipe: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113575,12 +113758,15 @@
       "instruction": "rts/rti",
       "id": "control-03576",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source return handoff RenderSidewaysPipe -> IntroPipe, including caller-specific empty-slot result handling.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source return handoff RenderSidewaysPipe -> IntroPipe, including caller-specific empty-slot result handling.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113594,12 +113780,15 @@
       "instruction": "rts/rti",
       "id": "control-03577",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → ExitPipe: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113613,12 +113802,15 @@
       "instruction": "rts/rti",
       "id": "control-03578",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → ExitPipe: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113632,12 +113824,15 @@
       "instruction": "rts/rti",
       "id": "control-03579",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation RenderUnderPart → RenderSidewaysPipe: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113651,12 +113846,15 @@
       "instruction": "rts/rti",
       "id": "control-03580",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source return handoff GetPipeHeight -> VerticalPipe, including caller-specific empty-slot result handling.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source return handoff GetPipeHeight -> VerticalPipe, including caller-specific empty-slot result handling.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113670,12 +113868,15 @@
       "instruction": "rts/rti",
       "id": "control-03581",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source return handoff FindEmptyEnemySlot -> WarpPipe, including caller-specific empty-slot result handling.",
       "semanticEvidence": [
-        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required."
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "area.c preserves source return handoff FindEmptyEnemySlot -> WarpPipe, including caller-specific empty-slot result handling.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113689,12 +113890,15 @@
       "instruction": "rts/rti",
       "id": "control-03582",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetAreaObjXPosition → WarpPipe: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113708,12 +113912,15 @@
       "instruction": "rts/rti",
       "id": "control-03583",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetAreaObjYPosition → WarpPipe: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113727,12 +113934,15 @@
       "instruction": "rts/rti",
       "id": "control-03584",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves original return relation InitPiranhaPlant -> WarpPipe with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113746,12 +113956,15 @@
       "instruction": "rts/rti",
       "id": "control-03585",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → GetPipeHeight: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113765,12 +113978,15 @@
       "instruction": "rts/rti",
       "id": "control-03586",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → GetPipeHeight: child completion restores the caller’s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113784,12 +114000,15 @@
       "instruction": "rts/rti",
       "id": "control-03587",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves the source return relation ChkLrgObjLength -> Hole_Water through the shared parser-object helper path.",
       "semanticEvidence": [
-        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+      ],
       "semanticContract": "The parser preserves this return handoff, including the selected row/length state and caller return ordering.",
       "currentSourcePaths": [
         "src/game/area.c"
