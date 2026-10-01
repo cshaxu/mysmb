@@ -21508,14 +21508,16 @@
       "label": "FlagpoleSlide",
       "asmLine": 5835,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21524,14 +21526,16 @@
       "label": "SlidePlayer",
       "asmLine": 5847,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21540,14 +21544,16 @@
       "label": "NoFPObj",
       "asmLine": 5848,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21556,14 +21562,16 @@
       "label": "Hidden1UpCoinAmts",
       "asmLine": 5853,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21572,14 +21580,16 @@
       "label": "PlayerEndLevel",
       "asmLine": 5856,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21588,14 +21598,16 @@
       "label": "ChkStop",
       "asmLine": 5868,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21604,14 +21616,16 @@
       "label": "InCastle",
       "asmLine": 5874,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21620,14 +21634,16 @@
       "label": "RdyNextA",
       "asmLine": 5876,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21636,14 +21652,16 @@
       "label": "NextArea",
       "asmLine": 5888,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -21652,14 +21670,16 @@
       "label": "ExitNA",
       "asmLine": 5895,
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentOwner": "src/game shared player transition/mode owners",
-      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers",
+      "status": "exact",
+      "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
+      "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source timer decrement, byte coordinate, entrance mode and next-area state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63374,13 +63394,15 @@
       "instruction": "bne",
       "id": "control-00927",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation FlagpoleSlide -> NoFPObj.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63393,13 +63415,15 @@
       "instruction": "bcs",
       "id": "control-00928",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation FlagpoleSlide -> SlidePlayer.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63412,13 +63436,15 @@
       "instruction": "lda",
       "id": "control-00929",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation FlagpoleSlide -> SlidePlayer.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63473,13 +63499,15 @@
       "instruction": "bcc",
       "id": "control-00932",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerEndLevel -> ChkStop.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63492,13 +63520,15 @@
       "instruction": "beq",
       "id": "control-00933",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation PlayerEndLevel -> ChkStop.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63511,13 +63541,15 @@
       "instruction": "sta",
       "id": "control-00934",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation PlayerEndLevel -> ChkStop.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63530,13 +63562,15 @@
       "instruction": "bcs",
       "id": "control-00935",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ChkStop -> RdyNextA.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63549,13 +63583,15 @@
       "instruction": "bne",
       "id": "control-00936",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation ChkStop -> InCastle.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63568,13 +63604,15 @@
       "instruction": "inc",
       "id": "control-00937",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation ChkStop -> InCastle.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63587,13 +63625,15 @@
       "instruction": "sta",
       "id": "control-00938",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation InCastle -> RdyNextA.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63606,13 +63646,15 @@
       "instruction": "bne",
       "id": "control-00939",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation RdyNextA -> ExitNA.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63625,13 +63667,15 @@
       "instruction": "bne",
       "id": "control-00940",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation RdyNextA -> NextArea.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63644,13 +63688,15 @@
       "instruction": "bcc",
       "id": "control-00941",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source branch relation RdyNextA -> NextArea.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63663,13 +63709,15 @@
       "instruction": "inc",
       "id": "control-00942",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation RdyNextA -> NextArea.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]
@@ -63724,13 +63772,15 @@
       "instruction": "sta",
       "id": "control-00945",
       "cohort": "E",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player core preserves source fallthrough relation NextArea -> ExitNA.",
+      "status": "exact",
+      "currentCounterpart": "M2 T58 S6 shared C90 direct call, branch or ordinary return counterpart.",
       "semanticEvidence": [
-        "Td S9 B12c pipe/vine/transition static node-and-edge audit: SMB1 lines 5691-5900 compared with shared player transition/mode owners; routes remain required."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate and transition state ordering.",
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+      ],
+      "semanticContract": "M2 T58 S6 confirms this source relation and state handoff in the shared end-level owner.",
       "currentSourcePaths": [
         "src/game/player_end_level.c"
       ]

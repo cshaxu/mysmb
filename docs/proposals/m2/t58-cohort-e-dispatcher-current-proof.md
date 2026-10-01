@@ -175,3 +175,7 @@ All 14 labels from PlayerChangeSize through ExitDeath are current-equivalence ex
 ## S6 admission - flagpole and next-area chain
 
 S6 audits 10 labels from FlagpoleSlide through ExitNA. It retains historical custody. Current baseline is 568 exact labels and 1,100 exact feasible controls; historical expected matches remain empty. ROM track compares flagpole, castle, hidden one-up and next-area branches. Operational track uses x86/x64 caller snapshots, DOS16 link and platform purity.
+
+## S6 closure - flagpole and next-area chain
+
+All 10 labels from FlagpoleSlide through ExitNA are current-equivalence exact. Static comparison of original lines 5835-5895 found no shared-owner difference across the flag-object gate, sound queue transfer, slide input, end-level task, hidden one-up threshold and next-area reset. All 29 end-level snapshots replay recorded child boundaries through fresh C90 x86/x64 owners; 58 caller comparisons over 1,784 persistent bytes pass and all nine source branches have both outcomes. Platform purity and the unchanged shared DOS16 core link pass. Unmocked production calls retain downstream child differences outside this chain, so they are not used as whole-call proof. No product source changed, so no artifact refresh is due. Of 25 feasible incident controls, 15 receive fresh S6 evidence and 10 retain compatible prior proof.
