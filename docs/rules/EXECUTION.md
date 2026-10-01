@@ -34,7 +34,7 @@ A milestone closes only when its roadmap exit criteria, task evidence, deferred 
 
 The [M2 ROM-node progress report](../states/NODE_PROGRESS.md), its linked inventory, and the [node-backfill validation matrix](../etc/architecture/m2-node-backfill-validation-matrix.md) are the sole quantitative basis for M2 conformance progress. Before work starts, every S admission must record its incoming ROM-match-complete / total fraction, the exact inventory labels in scope, the exact subset expected to become matches, the maximum expected resulting fraction, and its focused CTest plus original-ROM route baseline. An S closure must record the resulting fraction, every completed and deferred label by name, and the ROM-reference evidence that justifies each newly completed node. A C owner, source move, unit test, or build alone remains unfinished.
 
-Every M2 P continues to refresh and report all three target artifacts: `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`, with their build/validation results. This delivery requirement is additive to, and cannot be substituted for, the node accounting and ordinary P evidence.
+Every M2 P that changes product code refreshes and reports all three target artifacts: `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`, with their build/validation results. Audit-only, documentation-only and test-evidence-only P work does not require an artifact refresh. This delivery requirement is additive to, and cannot be substituted for, the node accounting and ordinary P evidence.
 
 ### Current-equivalence re-audit
 
@@ -60,11 +60,13 @@ impossible by the ROM's instruction semantics receives the explicit
 and is excluded from the feasible-control denominator. Every feasible original
 edge must have a current C counterpart. A route replay marks
 only the nodes and edges it actually observes; it never infers coverage of an
-unobserved graph connection. `mismatch` results become unnumbered queue
-candidates grouped by their smallest contiguous shared-owner chain; only an
-admitted later implementation task receives a numeric T/S identifier. No code
-repair, node promotion, or "all complete" conclusion may be made from the
-re-audit's planning pass alone.
+unobserved graph connection. An S finding a feasible mismatch does not close
+or advance to its successor. It becomes the corrective shared-owner chain (or
+transfers that chain to an explicitly admitted corrective receiver), repairs
+the mismatch, and repeats the same static and ROM/native audit until its
+scoped feasible paths have no unresolved difference. Only then may the next
+source-order S be admitted. No node promotion or "all complete" conclusion
+may be made from a planning pass alone.
 
 Before each M2 S, report both the number of unique labels in scope and the number expected to become complete; list both sets by exact inventory name, including incoming status. The expected set must be a subset of scope and exclude already completed nodes. The maximum closing numerator is the incoming completed count plus that expected count. A validation queue size is not an S estimate. Run `tools/Verify-NodeProgress.ps1 -AdmissionPath build/<task>/node-admission.json` and copy its named/countable result into the proposal and packet. The JSON fields are `baseline`, `total`, `scope` (label array), `expectedMatches` (label array), `maximumComplete`, `focusedTests` (test-name array), and `romRoute` (reproducible route description). Explicit empty arrays and zero expected matches are valid for mapping-only work. Closure reports expected versus actual labels/counts, explains misses and transfers, and updates the canonical rows before rerunning the gate.
 

@@ -25,7 +25,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S27 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
-| M2 T22 S9 | 1 | `ScreenOff` |
 | M2 T25 S12 | 1 | `SelectBLogic` |
 | M2 T25 S13 | 1 | `IncWorldSel` |
 | M2 T25 S14 | 1 | `UpdateShroom` |
@@ -228,6 +227,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T52 S4 | 3 | `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors` |
 | M2 T52 S5 | 3 | `DisplayTimeUp`, `NoTimeUp`, `OutputInter` |
 | M2 T52 S6 | 1 | `DrawLargePlatform` |
+| M2 T53 S3 | 1 | `ScreenOff` |
 
 ## Future admission packages and queued plans
 
@@ -258,7 +258,7 @@ transfer existing ownership or allocate a numeric T.
 | 752 | `VRAM_AddrTable_High` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 761 | `VRAM_Buffer_Offset` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 764 | `NonMaskableInterrupt` | M2 T52 S1 | existing closure backlog; T52 S1 accepted current-equivalence corrective transfer. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
-| 776 | `ScreenOff` | M2 T22 S9 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 776 | `ScreenOff` | M2 T53 S3 | existing closure backlog; Owner-directed T53 S3 corrective receipt after current S1 audit found the shared frame-root transaction order mismatch. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
 | 796 | `InitBuffer` | M2 T22 S23 | existing closure backlog; T22/S16 completed the InitBuffer source branch/write contract; T22/S23 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S16; M2 T22 S23; M2 T24 S1 |
 | 814 | `DecTimers` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
 | 820 | `DecTimersLoop` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
@@ -2316,7 +2316,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S6 | 0 | 0 | source-order-intake; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S7 | 0 | 0 | source-order-migration; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S8 | 0 | 0 | source-order-branch-audit; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S9 | 0 | 1 | screenoff-evidence; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S9 | 0 | 0 | screenoff-evidence; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S10 | 0 | 0 | nmi-root-remainder; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S11 | 0 | 0 | boot-root-proof; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S12 | 0 | 0 | vram-table-migration; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2600,7 +2600,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T53 | 0 | - | [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S1 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-reset-nmi-dispatch-chain, closed-s1-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S2 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-title-menu-demo-chain, closed-s2-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
-| M2 T53 S3 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-victory-end-chain; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
+| M2 T53 S3 | 0 | 1 | owner-directed-screenoff-corrective, cohort-a-screenoff-transaction-order; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2938,6 +2938,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | t52-s4-background-palette | M2 T27 S1 | M2 T52 S4 | 3 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | transfer-m2-t27-s2-to-t52-s5-b3-timeup | M2 T27 S2 | M2 T52 S5 | 3 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | transfer-m2-t44-s5-to-t52-s6-h9-platform-y | M2 T44 S5 | M2 T52 S6 | 1 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| transfer-283-t22-s9-to-t53-s3 | M2 T22 S9 | M2 T53 S3 | 1 | Owner directed that every current-audit mismatch is repaired and re-audited to zero before any successor S admission.; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3214,4 +3215,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T52 S7 | 0 | 1992 | none / 0 | none / 0 | closed-h1-h8-infeasible-control-edge-disposition; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T53 S1 | 39 | 1992 | none / 0 | none / 0 | closed-s1-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S2 | 26 | 1992 | none / 0 | none / 0 | closed-s2-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
-| M2 T53 S3 | 22 | 1992 | none / 0 | none / 0 | active-cohort-a-victory-end-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
+| M2 T53 S3 | 1 | 1992 | none / 0 | none / 0 | active-screenoff-corrective-reaudit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |

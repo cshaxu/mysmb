@@ -85,8 +85,8 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     game->frame_number++;
     if (game->oam_dma_primed != 0U) mysmb_game_submit_oam(game);
     else game->oam_dma_primed = 1U;
-    mysmb_game_commit_vram_buffer(game);
     mysmb_game_commit_display_state(game);
+    mysmb_game_commit_vram_buffer(game);
     mysmb_audio_step(game);
     mysmb_frame_root_read_joypads(game, input->buttons, input->buttons2);
     paused = mysmb_frame_root_pause_step(game);

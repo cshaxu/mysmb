@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -4525,12 +4525,12 @@
             "docs/proposals/m2/t53-cohort-a-current-proof.md"
           ],
           "recordKinds": [
-            "owner-directed-source-order-current-equivalence",
-            "cohort-a-victory-end-chain"
+            "owner-directed-screenoff-corrective",
+            "cohort-a-screenoff-transaction-order"
           ],
-          "canReceive": false,
-          "admissionRole": "audit",
-          "receipt": "Owner-directed T53 Cohort A source-order audit; historical node custody stays with its existing receivers."
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Owner directed corrective receipt: S1 current audit found ScreenOff display transaction order mismatch; S3 repairs and re-audits it before any successor chain advances."
         }
       ]
     }
@@ -7794,8 +7794,8 @@
     {
       "label": "ScreenOff",
       "line": 776,
-      "receiver": "M2 T22 S9",
-      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "receiver": "M2 T53 S3",
+      "receivingBasis": "Owner-directed T53 S3 corrective receipt after current S1 audit found the shared frame-root transaction order mismatch.",
       "futurePackage": null,
       "history": [
         {
@@ -60313,7 +60313,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -65805,6 +65805,17 @@
       ],
       "acceptedBy": "Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.",
       "evidence": "docs/proposals/m2/t52-current-audit-mismatch-remediation.md"
+    },
+    {
+      "id": "transfer-283-t22-s9-to-t53-s3",
+      "type": "transfer",
+      "from": "M2 T22 S9",
+      "to": "M2 T53 S3",
+      "nodes": [
+        "ScreenOff"
+      ],
+      "acceptedBy": "Owner directed that every current-audit mismatch is repaired and re-audited to zero before any successor S admission.",
+      "evidence": "docs/proposals/m2/t53-cohort-a-current-proof.md"
     }
   ],
   "runs": [
@@ -303342,30 +303353,9 @@
     },
     {
       "subtask": "M2 T53 S3",
-      "kind": "audit",
+      "kind": "implementation",
       "scope": [
-        "VictoryMode",
-        "AutoPlayer",
-        "VictoryModeSubroutines",
-        "SetupVictoryMode",
-        "PlayerVictoryWalk",
-        "PerformWalk",
-        "DontWalk",
-        "ExitVWalk",
-        "PrintVictoryMessages",
-        "MRetainerMsg",
-        "ThankPlayer",
-        "SecondPartMsg",
-        "EvalForMusic",
-        "PrintMsg",
-        "IncMsgCounter",
-        "SetEndTimer",
-        "IncModeTask_A",
-        "ExitMsgs",
-        "PlayerEndWorld",
-        "EndExitOne",
-        "EndChkBButton",
-        "EndExitTwo"
+        "ScreenOff"
       ],
       "baseline": 1992,
       "incomingComplete": [
@@ -305366,7 +305356,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t53-cohort-a-current-proof.md",
-      "state": "active-cohort-a-victory-end-audit"
+      "state": "active-screenoff-corrective-reaudit"
     }
   ]
 }

@@ -118,6 +118,17 @@ now **75 exact nodes**, **142 exact control relations**, **18 infeasible raw
 relations**, **4,324 feasible control relations**, and one remaining
 `ScreenOff` mismatch. Historical conformance remains **1,992 / 1,992**.
 
+### T53 S3 `ScreenOff` corrective result
+
+The shared NMI root now applies the temporary `ScreenOff` display mask before
+the source scroll/OAM/VRAM sequence. `ScreenOff` and transaction relations
+`control-00018`, `control-00019`, `control-03487`, and `control-03488` are
+current-exact. Focused NMI-parent checks pass on x86 and x64, and the same C90
+source linked into the refreshed DOS16 artifact. The live registry is now
+**76 exact nodes**, **146 exact control relations**, **18 infeasible raw
+relations**, **4,324 feasible control relations**, and **zero mismatches**.
+Historical conformance remains **1,992 / 1,992**.
+
 ## Source-anchor resolvability finding
 
 Td S9's independent counterpart-resolvability pass found that the existing
