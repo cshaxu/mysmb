@@ -3278,4 +3278,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T57 S3 | 16 | 1992 | none / 0 | none / 0 | closed-hole-underpart-block-buffer-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |
 | M2 T57 S4 | 7 | 1992 | none / 0 | none / 0 | closed-loopback-area-pointer-header-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |
 | M2 T57 S5 | 16 | 1992 | none / 0 | none / 0 | closed-world-area-pointer-table-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |
-| M2 T57 S6 | 34 | 1992 | none / 0 | none / 0 | admitted-enemy-area-stream-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |
+| M2 T57 S6 | 34 | 1992 | none / 0 | none / 0 | closed-enemy-area-stream-current-equivalence-audit; [record](../../docs/proposals/m2/t57-cohort-d-renderer-current-proof.md) |

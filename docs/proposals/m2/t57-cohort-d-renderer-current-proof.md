@@ -418,3 +418,8 @@ not.
 **Exit.** Static byte/ownership/edge audit and controlled ROM/native route must
 have no unresolved scoped difference.  Any feasible mismatch is repaired in this
 S and re-audited before S7 admission.
+
+
+## S6 closure — enemy-area stream data and consumer chain
+
+All 34 scoped labels are current-equivalence exact. The static audit bound 1,087 stream bytes, all 34 pointer targets, every `$ff` termination and the `E_GroundArea9` / `E_GroundArea10` shared terminator to the generated owner-local PRG and the shared `area_data.c` / `enemy/stream.c` chain. The 80 controlled `t38-stream` original-ROM/current x86/x64 routes all entered `ProcessEnemyData` at `$c144`; compared persistent state had zero differences and x86/x64 records were byte-identical. Focused stream/local-consumer and platform-purity tests pass in both widths; OpenNT relinked the unchanged shared DOS16 core. No product source mismatch was found, so target artifacts were not refreshed. `material-00075` is exact.

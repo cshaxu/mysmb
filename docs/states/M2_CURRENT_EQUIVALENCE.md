@@ -1827,3 +1827,8 @@ and byte-identical x86/x64 results. Pointer/header smokes, platform-purity and
 the shared OpenNT DOS16 link pass. The live registry is 431 exact nodes, 888
 exact feasible controls, 18 infeasible raw controls and zero mismatches;
 historical conformance remains 1,992 / 1,992.
+
+
+### T57 S6 enemy-area stream result
+
+The 34 labels from `E_CastleArea1` through `E_WaterArea3` and `material-00075` are current-exact. The static audit bound all 1,087 stream bytes, pointer targets, `$ff` terminators and the `E_GroundArea9` / `E_GroundArea10` alias to the generated local PRG and shared stream decoder. All 80 controlled original-ROM/current x86/x64 stream fixtures enter `ProcessEnemyData` at `$c144`, cover record/page/row/suppression/group/fallback paths, have zero compared persistent-state differences, and produce byte-identical x86/x64 records. The registry is **465 exact nodes**, **1,527 nodes needing evidence**, **888 exact feasible controls**, 18 infeasible raw controls and zero mismatches; historical conformance remains **1,992 / 1,992**.
