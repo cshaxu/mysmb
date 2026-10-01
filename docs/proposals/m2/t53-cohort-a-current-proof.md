@@ -121,3 +121,7 @@ Historical completion is already 1,992, so `expectedMatches` is intentionally em
 T53 owns the 185 internal Cohort-A relations. S1 owns 75 reset/NMI/dispatcher interior relations; S2 owns 45 title/demo relations; S3 owns 44 victory relations; S4 owns 18 floatey relations. The three inter-S relations are checked at their receiving-chain entry and recorded once in the T53 cross-chain matrix. Cross-cohort relations stay for T69.
 ## Closure standard
 T53 closes only after every 97 label and 185 internal control relation has a current disposition, every required material relation is disposed, S closures list each label as exact/mismatch/deferred, and the task-level matrix proves the four handoffs. A mismatch becomes a later unnumbered queue candidate grouped by its smallest shared-owner chain; no repair is smuggled into this audit.
+
+## S1 closure ? reset/NMI through operating-mode dispatch
+
+S1 closed with no historical-credit change: historical progress remains 1,992 / 1,992. Its 39 current nodes are individually disposed as 38 exact and one mismatch (`ScreenOff`). All 75 internal control relations are disposed as 74 exact and `control-00076` infeasible. The four display-transaction mismatch relations are external to the S1 interior and remain the unnumbered shared-frame-root repair candidate. Owner-ROM four-vector and 600-frame pause/sprite routes, focused root tests, registry validation and platform-purity validation supplied the two evidence tracks. Raw traces were deleted after neutral summaries were recorded.
