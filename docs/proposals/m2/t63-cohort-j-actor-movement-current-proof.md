@@ -150,3 +150,43 @@ later source-order obligations.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **988 / 1,992 nodes** and **1,950 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**).
+
+## S3 admission — lifecycle erase and Podoboo gravity bridge
+
+S3 admits `EraseEnemyObject`, `MovePodoboo` and `PdbM` (lines 9198–9224). It
+owns eleven feasible controls: the Podoboo timer branch/call/fall-through/tail
+and six established caller returns to the exact clear routine. It owns three
+material handoffs: eight cleared lifecycle fields, timer/slot initialization
+eligibility, and random-derived force/timer/speed into the gravity tail.
+`InitPodoboo` and `MoveJ_EnemyVertically` remain source-order child boundaries.
+The ROM route covers all six slots, zero/nonzero timer, post-child random-byte
+read and gravity tail; current x86/x64 caller records and focused lifecycle /
+Podoboo contracts form the operational track.
+
+### S3 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **988 / 1,992**.
+- Current exact feasible controls: **1,950 / 4,324**.
+- Raw controls: **4,342**; infeasible controls: **18**.
+- Scope: **3** labels; expected promotions: **3**; maximum current exact
+  node count on successful closure: **991 / 1,992**.
+
+## S3 closure — lifecycle erase and Podoboo gravity bridge
+
+All three labels are current-exact. Static `$C998-$C9CD` comparison confirms
+the eight current-slot clear stores, the timer-zero branch, child call,
+post-child PRNG read, force/timer/speed writes, unconditional gravity tail and
+the six established lifecycle caller returns. Fresh current-source original-ROM
+caller replay passes **128 / 128** Podoboo comparisons (64 x86 and 64 x64).
+The focused Podoboo contract covers 6,144 footprints per width and the
+lifecycle/caller contract covers 3,240 per width. Platform purity passes; the
+shared OpenNT DOS16 source link produces the local MZ output with its known
+`OLDNAMES.LIB` warning. No product source changed, so the three local EXE
+artifacts were not refreshed.
+
+The three nodes, eleven feasible controls and three material handoffs are now
+exact. Child interiors `InitPodoboo` and `MoveJ_EnemyVertically` remain their
+separate source-order obligations. Historical mapping remains **1,992 /
+1,992**; current exact status is **991 / 1,992 nodes** and **1,961 / 4,324
+feasible controls** (raw **4,342**, infeasible **18**).

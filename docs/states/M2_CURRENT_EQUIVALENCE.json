@@ -3836,13 +3836,16 @@
       "consumer": "InitPodoboo",
       "storage": "EnemyIntervalTimer zero predicate and current slot",
       "feasiblePath": "Timer expiry selects initialization before random-byte sampling.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_podoboos_slot",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3877,13 +3880,16 @@
       "consumer": "PdbM",
       "storage": "Y force, interval timer and Y speed",
       "feasiblePath": "Expired-timer writes complete before the common gravity tail.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_step_podoboos_slot",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3896,13 +3902,16 @@
       "consumer": "RunEnemyObjectsCore",
       "storage": "eight cleared current-slot lifecycle fields",
       "feasiblePath": "Later actor dispatch observes cleared object flag/ID/state/timers/attributes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_objects_erase_enemy",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -29729,13 +29738,16 @@
       "label": "EraseEnemyObject",
       "asmLine": 9198,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{lifecycle,podoboo}.c",
       "currentCounterpart": "shared lifecycle and Podoboo slot path",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Clears exactly Enemy_Flag, Enemy_ID, Enemy_State, FloateyNum_Control, EnemyIntervalTimer, ShellChainCounter, Enemy_SprAttrib and EnemyFrameTimer for the current slot, then returns.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -29749,13 +29761,16 @@
       "label": "MovePodoboo",
       "asmLine": 9212,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{lifecycle,podoboo}.c",
       "currentCounterpart": "shared lifecycle and Podoboo slot path",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "When interval timer is zero, calls InitPodoboo, reads LFSR byte, sets Y force bit seven, derives interval (low nibble OR six), writes Y speed $f9; both paths tail-jump to vertical gravity.",
       "currentSourcePaths": [
         "src/game/enemy/podoboo.c"
@@ -29765,13 +29780,16 @@
       "label": "PdbM",
       "asmLine": 9224,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{lifecycle,podoboo}.c",
       "currentCounterpart": "shared lifecycle and Podoboo slot path",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Tail-jumps to MoveJ_EnemyVertically after either nonzero-timer branch or completed Podoboo reinitialization.",
       "currentSourcePaths": [
         "src/game/enemy/podoboo.c"
@@ -81931,12 +81949,15 @@
       "instruction": "bne",
       "id": "control-01712",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MovePodoboo -> PdbM with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/podoboo.c"
@@ -81950,12 +81971,15 @@
       "instruction": "jsr",
       "id": "control-01713",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation MovePodoboo -> InitPodoboo with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -81971,12 +81995,15 @@
       "instruction": "sta",
       "id": "control-01714",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MovePodoboo -> PdbM with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/podoboo.c"
@@ -81990,12 +82017,15 @@
       "instruction": "jmp",
       "id": "control-01715",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation PdbM -> MoveJ_EnemyVertically with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c",
@@ -120892,12 +120922,15 @@
       "instruction": "rts/rti",
       "id": "control-03694",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EraseEnemyObject -> KillVine with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -121125,12 +121158,15 @@
       "instruction": "rts/rti",
       "id": "control-03706",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EraseEnemyObject -> KillBB with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -123743,12 +123779,15 @@
       "instruction": "rts/rti",
       "id": "control-03830",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EraseEnemyObject -> ChkKillGoomba with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -124231,12 +124270,15 @@
       "instruction": "rts/rti",
       "id": "control-03854",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EraseEnemyObject -> KillLoop with descending slot order, source state handoff and call/return behavior.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -125152,12 +125194,15 @@
       "instruction": "rts/rti",
       "id": "control-03900",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EraseEnemyObject -> TooFar with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/actor_slots.c",
@@ -125319,12 +125364,15 @@
       "instruction": "rts/rti",
       "id": "control-03908",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EraseEnemyObject -> HandlePowerUpCollision with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -127590,12 +127638,15 @@
       "instruction": "rts/rti",
       "id": "control-04020",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
       "semanticEvidence": [
-        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves ROM return relation EraseEnemyObject -> AllRowC with source actor/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",

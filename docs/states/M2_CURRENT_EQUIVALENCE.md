@@ -2057,3 +2057,14 @@ footprints, purity and DOS16 link agree. The raw fall-through to
 source-order obligations. The registry is **988 / 1,992** exact nodes and
 **1,950 / 4,324** exact feasible controls, from **4,342** raw controls with
 **18** infeasible; historical mapping remains **1,992 / 1,992**.
+
+
+### T63 S3 lifecycle and Podoboo result
+
+`EraseEnemyObject -> PdbM` is current-exact: three labels, eleven feasible
+controls and three material handoffs. Static `$C998-$C9CD` agrees with the
+shared lifecycle and Podoboo owners. Fresh original-ROM/current caller replay
+passes 128 x86/x64 comparisons; focused Podoboo and lifecycle contracts,
+platform purity and DOS16 link also pass. The registry is **991 / 1,992**
+exact nodes and **1,961 / 4,324** exact feasible controls, from **4,342** raw
+controls with **18** infeasible; historical mapping remains **1,992 / 1,992**.
