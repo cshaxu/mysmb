@@ -423,3 +423,36 @@ S and re-audited before S7 admission.
 ## S6 closure — enemy-area stream data and consumer chain
 
 All 34 scoped labels are current-equivalence exact. The static audit bound 1,087 stream bytes, all 34 pointer targets, every `$ff` termination and the `E_GroundArea9` / `E_GroundArea10` shared terminator to the generated owner-local PRG and the shared `area_data.c` / `enemy/stream.c` chain. The 80 controlled `t38-stream` original-ROM/current x86/x64 routes all entered `ProcessEnemyData` at `$c144`; compared persistent state had zero differences and x86/x64 records were byte-identical. Focused stream/local-consumer and platform-purity tests pass in both widths; OpenNT relinked the unchanged shared DOS16 core. No product source mismatch was found, so target artifacts were not refreshed. `material-00075` is exact.
+
+
+## S7 admission — area-object stream data and decoder chain
+
+**Entry / exit.** `L_CastleArea1` through `L_WaterArea3`, selected by the
+S5 area pointer pair, then consumed by `mysmb_area_process_object_state` and
+its `ProcessAreaData` / `DecodeAreaData` continuation in `src/game/area.c`.
+The chain ends before independently owned object-family routines.
+
+**Scope.** The 34 exact labels below all enter S7 as `needs-evidence` in the
+current-equivalence registry; historical M2 accounting remains 1,992 / 1,992,
+so the historic expected-match subset is empty. S6 is the predecessor and T57
+ends after S7. `material-00076` is already exact from the T56 parser-chain
+route; S7 rechecks its data binding but does not duplicate its accepted edge
+claim.
+
+`L_CastleArea1` through `L_CastleArea6`; `L_GroundArea1` through
+`L_GroundArea22`; `L_UndergroundArea1` through `L_UndergroundArea3`; and
+`L_WaterArea1` through `L_WaterArea3`.
+
+**ROM-logic track.** Compare every bounded level-stream byte, `$fd` terminator,
+header boundary and adjacent-label span with the owner ROM and generated local
+PRG. Controlled original-ROM/current x86/x64 parser routes must cover normal,
+large, special and loop object records, byte-width offset wrap and terminal
+slot behavior; compare relevant persistent RAM, staged metatiles, output and
+PPU state with explicit ABI exclusions.
+
+**Operational track.** Run area-data, parser-data, parser-boundary and
+terminal-slot smokes plus platform purity on x86/x64 and link the shared DOS16
+core. Refresh all three target artifacts only for a product-source repair.
+
+**Exit.** Every scoped node must have static and controlled-route proof. Any
+feasible mismatch is repaired and re-audited inside S7 before T57 closure.
