@@ -186,6 +186,16 @@ and **2,070 exact feasible control relations**. Historical mapping remains
 **1,992 / 1,992**; raw controls are **4,342**, with **18** infeasible and
 **4,324** feasible.
 
+### T63 S9 Bullet Bill and swimming Cheep-Cheep result
+
+`MoveBulletBill -> ExSwCC` is current-exact: all nine nodes, 13 feasible
+control relations and six material handoffs match the shared C owners. Static
+`$CC36-$CCC6` comparison and 128 Bullet Bill plus 512 Cheep-Cheep
+original-ROM/current x86/x64 records pass for **1,280 / 1,280** comparisons.
+The live registry is **1,055 exact nodes** and **2,083 exact feasible control
+relations**. Historical mapping remains **1,992 / 1,992**; raw controls are
+**4,342**, with **18** infeasible and **4,324** feasible.
+
 ## Current evidence boundary
 
 The retired baseline tables below the static checkpoint have been removed:

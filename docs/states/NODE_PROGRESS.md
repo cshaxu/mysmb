@@ -2120,3 +2120,11 @@ six material handoffs exact. ROM/current x86/x64 replay passes 1,024
 comparisons and the focused C90 contract passes. Historical **1,992 / 1,992**;
 exact nodes **1,046 / 1,992**; exact feasible controls **2,070 / 4,324**; raw
 **4,342**, infeasible **18**.
+
+## M2 T63 S9 current-equivalence closure
+
+The Bullet Bill and swimming Cheep-Cheep movement chain closes nine labels, 13
+feasible controls and six material handoffs exact. ROM/current x86/x64 replay
+passes 1,280 comparisons and focused C90 contracts pass. Historical **1,992 /
+1,992**; exact nodes **1,055 / 1,992**; exact feasible controls **2,083 /
+4,324**; raw **4,342**, infeasible **18**.

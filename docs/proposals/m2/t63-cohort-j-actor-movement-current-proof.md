@@ -403,3 +403,44 @@ not refreshed.
 Historical mapping remains **1,992 / 1,992**; current exact status is
 **1,046 / 1,992 nodes** and **2,070 / 4,324 feasible controls** (raw
 **4,342**, infeasible **18**). S9 begins with `MoveBulletBill`.
+
+## S9 admission — Bullet Bill and swimming Cheep-Cheep movement
+
+S9 admits `MoveBulletBill -> ExSwCC` (lines 9603–9686, `$CC36-$CCC6`):
+`MoveBulletBill`, `NotDefB`, `SwimCCXMoveData`, `MoveSwimmingCheepCheep`,
+`CCSwim`, `CCSwimUpwards`, `ChkSwimYPos`, `YPDiff` and `ExSwCC`. The shared
+owners are `enemy/bullet_bill.c` and `enemy/swimming_cheep.c`. S8 is the
+predecessor; S10 begins with the independent Firebar table and position chain.
+Gravity and horizontal movement children remain explicit boundaries.
+
+The logic track audits defeated tails, the fixed Bullet Bill speed, the
+two-value Cheep-Cheep force table, byte borrow through X/page movement,
+slot-gated vertical movement, up/down carry/borrow and the signed 15-pixel
+anchor threshold. The operational track replays the controlled original-ROM
+Bullet Bill and Cheep-Cheep routes on current x86/x64, runs focused contracts,
+platform-purity and the shared DOS16 link.
+
+### S9 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,046 / 1,992**.
+- Current exact feasible control edges: **2,070 / 4,324**.
+- Raw control edges: **4,342**; infeasible controls: **18**.
+- Scope: **9** labels; expected current promotions: **9**; maximum exact node
+  count: **1,055 / 1,992**.
+
+## S9 closure — Bullet Bill and swimming Cheep-Cheep movement
+
+All nine scoped labels are current-exact. Static `$CC36-$CCC6` comparison
+confirms both defeated tails, Bullet Bill's fixed speed, the two active force
+table values, byte borrow propagation through horizontal position/page,
+slot-gated Cheep-Cheep vertical movement, both vertical directions and the
+signed 15-pixel anchor threshold. All 13 feasible controls and six material
+handoffs are exact. The controlled original-ROM routes match current x86/x64
+for **1,280 / 1,280** comparisons (128 Bullet Bill plus 512 Cheep-Cheep cases
+per width); focused C90 contracts, platform purity and the shared OpenNT DOS16
+link pass. No product source changed, so no three-EXE artifact refresh applies.
+
+Historical mapping remains **1,992 / 1,992**; current exact status is
+**1,055 / 1,992 nodes** and **2,083 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**). S10 begins with `FirebarPosLookupTbl`.
