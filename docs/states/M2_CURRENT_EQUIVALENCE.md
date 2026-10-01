@@ -1978,3 +1978,7 @@ Eight newly exact nodes and seven internal controls in the score/tally chain; ca
 ### T61 S10 vertical movement and gravity result
 
 `MovePlayerVertically -> ExVMove` adds twenty-six current-exact labels, thirty-four feasible controls and three material handoffs. Three raw internal controls are ROM-infeasible. Static `$BF4D-$C0A8`, 32 original-ROM vertical caller, 32 complete-current vertical and 32 gravity routes per width, focused C90 checks, platform purity and DOS16-link evidence agree. The registry is **818 / 1,992** nodes and **1,588 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.
+
+### T62 S1 enemy loop result
+
+`EnemiesAndLoopsCore -> ChkEnemyFrenzy` adds sixteen current-exact labels, twenty-seven feasible controls and three loop-table material handoffs. Static `$C047-$C0C3`, 96 original-ROM/current caller routes per width, 44 table-byte checks, focused C90 loop checks, platform-purity and DOS16-link evidence agree. The registry is **834 / 1,992** nodes and **1,615 / 4,324** feasible controls, from **4,342 raw** controls with **18 infeasible**; historical migration remains **1,992 / 1,992**.

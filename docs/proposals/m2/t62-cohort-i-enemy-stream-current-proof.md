@@ -59,3 +59,9 @@ boundary, and frenzy queue handoff. The operational route uses ordinary
 original-ROM NMI enemy turns and the matching current x86/x64 fixture records;
 it also runs focused loop tests, platform-purity and the shared DOS16 link.
 Any feasible difference remains in S1 until repaired and re-audited.
+
+## S1 closure — enemy flags, loop commands and frenzy handoff
+
+All sixteen scoped labels are current-exact. Static `$C047-$C0C3` comparison found no feasible difference in high-bit duplicate-flag handling, parser-task-seven suppression, all eleven loop records, world-seven counters, five page rewinds, cursor/page reset ordering, erase-call boundary, frenzy queue writes, or child handoff order. All 27 internal feasible controls and the three loop-table material handoffs are exact.
+
+Fresh x86/x64 current caller checks match all 96 controlled original-ROM snapshots per width (192 comparisons). The four loop tables match 44 ROM bytes, and focused loop smoke passes for both widths. Platform purity passes and the OpenNT DOS16 link completes with its known OLDNAMES warning. `ProcessEnemyData`, initializer and actor bodies remain explicit successor boundaries and receive no S1 credit. No product source changed, so local executable artifacts were not refreshed. Historical migration remains **1,992 / 1,992**; current exact progress is **834 / 1,992 nodes** and **1,615 / 4,324 feasible controls** from **4,342 raw controls** with **18 infeasible**.

@@ -2419,13 +2419,16 @@
       "consumer": "FindLoop",
       "storage": "reverse-indexed eleven-entry world selector table",
       "feasiblePath": "FindLoop decrements from eleven and compares WorldNumber against LoopCmdWorldNumber[Y].",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "loop_world[index]",
       "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2439,13 +2442,16 @@
       "consumer": "FindLoop",
       "storage": "reverse-indexed eleven-entry page selector table",
       "feasiblePath": "After world match, FindLoop compares CurrentPageLoc against LoopCmdPageNumber[Y].",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "loop_page[index]",
       "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2459,13 +2465,16 @@
       "consumer": "FindLoop",
       "storage": "reverse-indexed eleven-entry player-Y selector table",
       "feasiblePath": "After world/page match, FindLoop compares Player_Y_Position against LoopCmdYPosition[Y].",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "loop_y[index]",
       "semanticContract": "Preserves source table selection, consuming comparison/write and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9741,12 +9750,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 818,
-    "needs-evidence": 1174
+    "exact": 834,
+    "needs-evidence": 1158
   },
   "controlEdgeCounts": {
-    "exact": 1588,
-    "needs-evidence": 2736,
+    "exact": 1615,
+    "needs-evidence": 2709,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -26255,13 +26264,16 @@
       "label": "EnemiesAndLoopsCore",
       "asmLine": 7788,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Dispatches each enemy slot by flag: high-bit linked-slot cleanup, active object run, or parser/loop work unless parser task seven owns the turn.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26272,13 +26284,16 @@
       "label": "ChkAreaTsk",
       "asmLine": 7796,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Masks AreaParserTaskNum to three bits and returns only at task seven; otherwise tail-jumps into loop processing.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26289,13 +26304,16 @@
       "label": "ChkBowserF",
       "asmLine": 7801,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses Enemy_Flag low nibble as a linked-slot index and clears the current high-bit flag only when that referenced flag is zero.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26306,13 +26324,16 @@
       "label": "ExitELCore",
       "asmLine": 7807,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns from the current enemy/loop slot invocation.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26323,13 +26344,16 @@
       "label": "LoopCmdWorldNumber",
       "asmLine": 7812,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds the eleven reverse-searched world selector entries for castle loop commands.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26340,13 +26364,16 @@
       "label": "LoopCmdPageNumber",
       "asmLine": 7815,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds the eleven reverse-searched page selector entries for castle loop commands.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26357,13 +26384,16 @@
       "label": "LoopCmdYPosition",
       "asmLine": 7818,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds the eleven reverse-searched player-Y selector entries for castle loop commands.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26374,13 +26404,16 @@
       "label": "ExecGameLoopback",
       "asmLine": 7821,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Subtracts four pages from the five source page controls, clears parser page/offset controls and selects AreaDataOfsLoopback by matched loop index.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26391,13 +26424,16 @@
       "label": "ProcLoopCommand",
       "asmLine": 7851,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Gates loop evaluation on LoopCommand and CurrentColumnPos, then enters the reverse eleven-entry matcher or frenzy tail.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26408,13 +26444,16 @@
       "label": "FindLoop",
       "asmLine": 7857,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Searches tables from index ten down to zero and distinguishes correct grounded loop passage, wrong passage and no match.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26425,13 +26464,16 @@
       "label": "IncMLoop",
       "asmLine": 7875,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Advances World-7 multi-loop pass count and selects reset versus loopback after the third pass.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26442,13 +26484,16 @@
       "label": "WrongChk",
       "asmLine": 7883,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Routes wrong player Y/state through World-7 pass accounting or direct loopback.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26459,13 +26504,16 @@
       "label": "DoLpBack",
       "asmLine": 7886,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Runs page/area loopback before KillAllEnemies, restores ObjectOffset, then resets multi-loop counters.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26476,13 +26524,16 @@
       "label": "InitMLp",
       "asmLine": 7888,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Clears multi-loop pass and correct counters before clearing LoopCommand.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26493,13 +26544,16 @@
       "label": "InitLCmd",
       "asmLine": 7891,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Clears LoopCommand then enters the frenzy/stream tail.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -26510,13 +26564,16 @@
       "label": "ChkEnemyFrenzy",
       "asmLine": 7896,
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared enemy core and loop-command core",
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Consumes a queued frenzy ID into current slot ID/flag/state, clears the queue and tail-jumps to initialization; otherwise enters stream processing.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -74890,12 +74947,15 @@
       "instruction": "bcs",
       "id": "control-01429",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemiesAndLoopsCore -> ChkBowserF with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -74910,12 +74970,15 @@
       "instruction": "beq",
       "id": "control-01430",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemiesAndLoopsCore -> ChkAreaTsk with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -74951,12 +75014,15 @@
       "instruction": "beq",
       "id": "control-01432",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkAreaTsk -> ExitELCore with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -74971,12 +75037,15 @@
       "instruction": "jmp",
       "id": "control-01433",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ChkAreaTsk -> ProcLoopCommand with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -74991,12 +75060,15 @@
       "instruction": "bne",
       "id": "control-01434",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkBowserF -> ExitELCore with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75011,12 +75083,15 @@
       "instruction": "sta",
       "id": "control-01435",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkBowserF -> ExitELCore with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75031,12 +75106,15 @@
       "instruction": "beq",
       "id": "control-01436",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcLoopCommand -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75051,12 +75129,15 @@
       "instruction": "bne",
       "id": "control-01437",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcLoopCommand -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75071,12 +75152,15 @@
       "instruction": "ldy",
       "id": "control-01438",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcLoopCommand -> FindLoop with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75091,12 +75175,15 @@
       "instruction": "bmi",
       "id": "control-01439",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FindLoop -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75111,12 +75198,15 @@
       "instruction": "bne",
       "id": "control-01440",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FindLoop -> FindLoop with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75131,12 +75221,15 @@
       "instruction": "bne",
       "id": "control-01441",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FindLoop -> FindLoop with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75151,12 +75244,15 @@
       "instruction": "bne",
       "id": "control-01442",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FindLoop -> WrongChk with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75171,12 +75267,15 @@
       "instruction": "bne",
       "id": "control-01443",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FindLoop -> WrongChk with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75191,12 +75290,15 @@
       "instruction": "bne",
       "id": "control-01444",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation FindLoop -> InitMLp with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75211,12 +75313,15 @@
       "instruction": "inc",
       "id": "control-01445",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation FindLoop -> IncMLoop with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75231,12 +75336,15 @@
       "instruction": "bne",
       "id": "control-01446",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation IncMLoop -> InitLCmd with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75251,12 +75359,15 @@
       "instruction": "beq",
       "id": "control-01447",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation IncMLoop -> InitMLp with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75271,12 +75382,15 @@
       "instruction": "bne",
       "id": "control-01448",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation IncMLoop -> DoLpBack with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75291,12 +75405,15 @@
       "instruction": "bne",
       "id": "control-01449",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation IncMLoop -> WrongChk with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75311,12 +75428,15 @@
       "instruction": "beq",
       "id": "control-01450",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation WrongChk -> IncMLoop with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75331,12 +75451,15 @@
       "instruction": "beq",
       "id": "control-01451",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation WrongChk -> DoLpBack with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75351,12 +75474,15 @@
       "instruction": "jsr",
       "id": "control-01452",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation DoLpBack -> ExecGameLoopback with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75391,12 +75517,15 @@
       "instruction": "jsr",
       "id": "control-01454",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation DoLpBack -> InitMLp with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75411,12 +75540,15 @@
       "instruction": "sta",
       "id": "control-01455",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitMLp -> InitLCmd with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -75431,12 +75563,15 @@
       "instruction": "sta",
       "id": "control-01456",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation InitLCmd -> ChkEnemyFrenzy with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -120963,12 +121098,15 @@
       "instruction": "rts/rti",
       "id": "control-03765",
       "cohort": "I",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation ExecGameLoopback -> DoLpBack with source predicate, slot/page state handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
