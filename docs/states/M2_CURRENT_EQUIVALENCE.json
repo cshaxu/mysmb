@@ -2157,13 +2157,16 @@
       "consumer": "PowerUpObjHandler",
       "storage": "Enemy_State+5 / Enemy_Flag+5 fixed-slot activation",
       "feasiblePath": "PwrUpJmp writes active state and flag; the next power-up core invocation reads slot-five state before any behavior dispatch.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "slot-five state/flag initialization and subsequent dispatcher gate",
       "semanticContract": "Preserves source producer write, consumer read and feasible frame-to-frame handoff order.",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 fixed-slot producer/consumer routes pass on current x86/x64."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2177,13 +2180,16 @@
       "consumer": "PowerUpObjHandler",
       "storage": "PowerUpType shared byte",
       "feasiblePath": "For type below two, StrType writes PowerUpType; after activation the handler selects mushroom, star or flower behavior from that byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "PowerUpType write and active behavior selection",
       "semanticContract": "Preserves source producer write, consumer read and feasible frame-to-frame handoff order.",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 fixed-slot producer/consumer routes pass on current x86/x64."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -24746,13 +24752,16 @@
       "label": "SetupPowerUp",
       "asmLine": 7150,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Initializes fixed enemy slot five from the selected block: ID, page, X, Y-high and Y minus eight, then enters the residual initializer.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -24762,13 +24771,16 @@
       "label": "PwrUpJmp",
       "asmLine": 7163,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Initializes slot-five state, flag and bounding-box control; derives mushroom/flower type from PlayerStatus only when incoming PowerUpType is below two.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -24778,13 +24790,16 @@
       "label": "StrType",
       "asmLine": 7175,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Stores the selected player-status-derived power-up type before the common priority and sound tail.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -24794,13 +24809,16 @@
       "label": "PutBehind",
       "asmLine": 7176,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Sets slot-five background-priority attribute and queues GrowPowerUp sound before return.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -24810,13 +24828,16 @@
       "label": "PowerUpObjHandler",
       "asmLine": 7184,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Selects fixed slot five; gates inactive, emerging and active state; dispatches mushroom, star and flower behavior using the original state-bit and TimerControl predicates.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -24826,13 +24847,16 @@
       "label": "ShroomM",
       "asmLine": 7202,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Runs normal-enemy motion followed by enemy-to-background collision, then enters the common power-up tail.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -24842,13 +24866,16 @@
       "label": "GrowThePowerUp",
       "asmLine": 7206,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "On every fourth frame raises the item, increments emergence state, and at the original threshold installs active speed/state, foreground priority and rightward direction.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -24858,13 +24885,16 @@
       "label": "ChkPUSte",
       "asmLine": 7223,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Suppresses relative position, drawing and player collision until the current emergence state reaches six.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -24874,13 +24904,16 @@
       "label": "RunPUSubs",
       "asmLine": 7226,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Runs relative position, offscreen bits, bounding box, graphics, player collision and offscreen bounds check in source order without an intervening type gate.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -24890,13 +24923,16 @@
       "label": "ExitPUp",
       "asmLine": 7232,
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "shared power-up and game-object core",
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+      ],
       "semanticContract": "Returns from the current fixed-slot power-up invocation without further writes.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71383,12 +71419,15 @@
       "instruction": "sta",
       "id": "control-01279",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Block-derived slot-five coordinates flow into the residual initializer without an intervening return.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -71402,12 +71441,15 @@
       "instruction": "bcs",
       "id": "control-01280",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "PowerUpType >= 2 bypasses PlayerStatus type selection and enters the common attribute/sound tail.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -71421,12 +71463,15 @@
       "instruction": "bcc",
       "id": "control-01281",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "PlayerStatus < 2 retains its value as PowerUpType before the common tail.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -71440,12 +71485,15 @@
       "instruction": "lsr",
       "id": "control-01282",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Fiery PlayerStatus shifts right before the StrType store.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -71459,12 +71507,15 @@
       "instruction": "sta",
       "id": "control-01283",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "StrType falls directly into the common attribute/sound tail.",
       "currentSourcePaths": [
         "src/game/power_up_init.c"
@@ -71478,12 +71529,15 @@
       "instruction": "beq",
       "id": "control-01284",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Zero slot-five state returns immediately.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71497,12 +71551,15 @@
       "instruction": "bcc",
       "id": "control-01285",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "A clear state high bit selects the emergence path.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71516,12 +71573,15 @@
       "instruction": "bne",
       "id": "control-01286",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "TimerControl nonzero skips active-item motion but retains the common tail.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71535,12 +71595,15 @@
       "instruction": "beq",
       "id": "control-01287",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Type zero selects normal mushroom motion.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71554,12 +71617,15 @@
       "instruction": "beq",
       "id": "control-01288",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Type three selects normal 1-up mushroom motion.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71573,12 +71639,15 @@
       "instruction": "bne",
       "id": "control-01289",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "A non-star non-mushroom active type enters the common tail without motion.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71630,12 +71699,15 @@
       "instruction": "jmp",
       "id": "control-01292",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Star motion tail-jumps to the common tail after both children return.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71687,12 +71759,15 @@
       "instruction": "jmp",
       "id": "control-01295",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Mushroom path tail-jumps to the common tail after terrain handling.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71706,12 +71781,15 @@
       "instruction": "bne",
       "id": "control-01296",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Nonzero FrameCounter low bits skip per-four-frame emergence movement.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71725,12 +71803,15 @@
       "instruction": "bcc",
       "id": "control-01297",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Pre-increment state below 0x11 keeps emergence state rather than activating.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71744,12 +71825,15 @@
       "instruction": "sta",
       "id": "control-01298",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Activation writes speed/state/attribute/direction then falls to the emergence visibility gate.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71763,12 +71847,15 @@
       "instruction": "bcc",
       "id": "control-01299",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "Current emergence state below six returns before all common-tail children.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71782,12 +71869,15 @@
       "instruction": "bcc",
       "id": "control-01300",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "State at least six enters the common tail.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -71915,12 +72005,15 @@
       "instruction": "jsr",
       "id": "control-01307",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T61 S6 current caller/full-product routes exercise this owned internal relation on x86/x64."
+      ],
       "semanticContract": "The common tail falls into the return exit.",
       "currentSourcePaths": [
         "src/game/power_up.c"
