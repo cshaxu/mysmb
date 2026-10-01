@@ -189,3 +189,34 @@ VRAM address controls 12?18 and the shared NMI/area consumers. The local PRG
 is byte-identical to the original ROM and `area_data_smoke` passes all streams
 on x86 and x64. All seven nodes and their seven NMI material handoffs are
 current-exact; no product source changed, so artifacts remain unchanged.
+
+## S6 admission ? JumpEngine and name-table initialization chain
+
+S6 receives `JumpEngine`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`
+and `InitATLoop` at SMB1 lines 2395?2441. It owns every feasible incident
+vector/caller-return relation for `JumpEngine`, plus the shared boot clear and
+PPU-control sequence. It will not accept visually similar dispatch: each vector
+target and continuation must map to a source-owned shared C call relation.
+
+## S6 P1 ? restore name-table PPU write order
+
+The initial static audit found a feasible shared-C difference before node
+credit: `InitializeNameTables` in the ROM calls `WriteNTAddr` with `$24`, then
+`$20`, so it clears name table 1 before name table 0.  The C loop had written
+the same final bytes in the reverse order.  `boot.c` now executes table 1 then
+table 0 while retaining the 768 `$24` writes, 64 zero attribute writes, buffer
+reset and scroll/control sequence.  This is a shared-game repair; no platform
+source decides the order.
+
+Focused x86 and x64 `name-table-init-smoke` and
+`game-entry-dispatch-smoke` pass.  The packaged x86/x64 self-tests return zero;
+the OpenNT DOS16 MZ link succeeds (with its pre-existing `OLDNAMES.LIB`
+warning), and the platform-purity gate passes.  The three required artifacts
+were refreshed: `mysmb16.exe` SHA-256
+`c3a03911ef011cb91f198717df645547fc959626a1b1929f005ff2ab968b635b`,
+`mysmb32.exe` SHA-256
+`dde28ebb0b5c813e358e712bb1a209534e6ef77c1b3f878ae55fadfaebc7401c`, and
+`mysmb64.exe` SHA-256
+`5acd0cdd379846a0e9ce46a880d7ba5e79f1481833491d9b45b24e9dac5f0e7d`.
+S6 remains open for its required full incident-control and ROM/native route
+audit; this P does not grant current-exact node credit.

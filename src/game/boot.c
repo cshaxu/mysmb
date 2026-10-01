@@ -151,14 +151,19 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     mysmb_u8 control;
     mysmb_u16 offset;
 
-    for (table = 0U; table < 2U; ++table) {
+    /* WriteNTAddr receives $24 before $20: PPU name table 1 is cleared
+     * before name table 0.  Preserve that observable PPU write order. */
+    table = 1U;
+    do {
         for (offset = 0U; offset < 0x03c0U; ++offset) {
             game->name_table[table][offset] = 0x24U;
         }
         for (offset = 0x03c0U; offset < 0x0400U; ++offset) {
             game->name_table[table][offset] = 0U;
         }
-    }
+        if (table == 0U) break;
+        table = 0U;
+    } while (1);
     game->ram[0x0300U] = 0U;
     game->ram[0x0301U] = 0U;
     game->ram[0x073fU] = 0U;

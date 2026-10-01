@@ -2,30 +2,30 @@
 
 ## Current Work
 
-## M2 T55 S5 Packet
+## M2 T55 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T55 S5 ? Cohort C message-stream current-equivalence audit. |
-| Admission And Approval | T55 S4 closed with zero scoped feasible differences; owner-directed source-order continuation. |
-| Objective | Audit seven message streams from `MarioThanksMessage` through `WorldSelectMessage2`, repair every feasible shared-C difference, and repeat the scoped ROM/native and graph audit to zero. |
-| Non-goals | No historical-node credit, no vector-table audit, and no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 209 exact, 1,783 needs-evidence nodes; 411 exact feasible controls. Scope: seven labels; expected historical delta 0. |
+| Identifier Mode | M2 T55 S6 ? JumpEngine and name-table initialization current-equivalence audit. |
+| Admission And Approval | T55 S5 closed with zero scoped feasible differences; owner-directed source-order continuation. |
+| Objective | Audit `JumpEngine` through `InitATLoop`, repair every feasible shared-C difference, and repeat the scoped node/edge and ROM/native audit to zero. |
+| Non-goals | No historical-node credit, no joypad routine audit, and no platform-owned game decision. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 216 exact, 1,776 needs-evidence nodes; 411 exact feasible controls. Scope: five labels plus incident feasible controls; expected historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
-| Files And ABI Surface | Shared `src/game/area.c` and `src/game/frame_root.c`, focused tests and current-equivalence registry only. |
+| Files And ABI Surface | Shared `src/game/dispatcher.c`, `src/game/boot.c`, existing translated vector owners and focused tests only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
-| Verification | ROM-logic: PRG byte identity and static VRAM-address/NMI selector mapping. Operational: x86/x64 message command routes and platform-purity audit. |
-| Expected Markers | All seven labels and seven NMI material handoffs have exact shared-C selector and packet-consumer evidence. |
-| Asset Needs | No artifacts unless product source changes. |
-| Reporting Requirements | Report each scoped label and material disposition with separate logic and operational results. |
-| Stop Conditions | A feasible ROM/C difference remains after repair, a material handoff lacks a shared-C counterpart, or platform code makes a gameplay decision. |
-| Exit Criteria | Every scoped node and incident feasible material handoff is exact under static and controlled evidence. |
+| Verification | ROM-logic: source-equivalent vector/return control audit and controlled original-ROM/native name-table initialization. Operational: focused x86/x64 checks, DOS16 build if source changes and platform-purity audit. |
+| Expected Markers | Five labels and all incident feasible controls preserve selector, target and caller-return semantics in shared C. |
+| Asset Needs | Refresh all three artifacts only if product source changes. |
+| Reporting Requirements | Report each scoped label and each incident control disposition with separate logic and operational results. |
+| Stop Conditions | A feasible ROM/C difference remains after repair, an incident control lacks a shared-C counterpart, or platform code makes a gameplay decision. |
+| Exit Criteria | Every scoped node and incident feasible control is exact under static and controlled evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
-| Similar-Issue Sweep | VRAM address table controls 12-18, message terminators, increment/repeat flags and NMI command consumption. |
+| Similar-Issue Sweep | Inline jump-table selectors, C switch ranges, caller/return continuation, nametable writes, PPU-control preservation and scroll reset. |
 
 ## Current Technical Baseline
 
-M2 T55 S5 is active after the closed S4 table audit. It continues Cohort C with the contiguous message-stream chain.
+M2 T55 S6 is active after the closed S5 message-stream audit. It continues Cohort C with the contiguous dispatcher and name-table chain.
 
 ## S5 Closure
 
