@@ -287,13 +287,15 @@
       "consumer": "RenderAreaGraphics",
       "storage": "13 staged encoded metatiles to tile/attribute command producer",
       "feasiblePath": "DrawMTLoop reads each staged metatile exactly once for graphics and attributes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics metatile loop",
       "semanticContract": "All 13 staged values select the same tile and attribute outputs.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "cohort": "D",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
       "currentSourcePaths": [
@@ -306,13 +308,15 @@
       "consumer": "RenderAreaGraphics",
       "storage": "palette-indexed ROM low address table to metatile graphics",
       "feasiblePath": "DrawMTLoop uses top two metatile bits to select graphics pointer low byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:area_prg MYSMB_AREA_METATILE_LOW",
       "semanticContract": "Every palette class selects the same graphics address low byte.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -325,13 +329,15 @@
       "consumer": "RenderAreaGraphics",
       "storage": "palette-indexed ROM high address table to metatile graphics",
       "feasiblePath": "DrawMTLoop uses top two metatile bits to select graphics pointer high byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:area_prg MYSMB_AREA_METATILE_HIGH",
       "semanticContract": "Every palette class selects the same graphics address high byte.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -344,13 +350,15 @@
       "consumer": "RenderAttributeTables",
       "storage": "seven accumulated attribute bytes to Buffer2 commands",
       "feasiblePath": "AttribLoop emits then clears each of seven attribute bytes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_attribute_tables",
       "semanticContract": "All seven attribute bytes retain source order, address stride and clear behavior.",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "cohort": "D",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
       "currentSourcePaths": [
@@ -9565,12 +9573,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 166,
-    "needs-evidence": 1826
+    "exact": 177,
+    "needs-evidence": 1815
   },
   "controlEdgeCounts": {
-    "exact": 347,
-    "needs-evidence": 3977,
+    "exact": 370,
+    "needs-evidence": 3954,
     "infeasible": 18
   },
   "controlEdgeTypeCounts": {
@@ -12712,13 +12720,15 @@
       "label": "RenderAreaGraphics",
       "asmLine": 1825,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $88ae: stages a 13-metatile vertical Buffer2 command, accumulates attributes, advances name-table address and selects control six.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12728,13 +12738,15 @@
       "label": "DrawMTLoop",
       "asmLine": 1840,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics row loop",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $88c7: selects metatile graphics half by parser-task parity and emits two vertical tile bytes for each of 13 rows.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12744,13 +12756,15 @@
       "label": "RightCheck",
       "asmLine": 1878,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics attribute_shift calculation",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8901: selects top/right attribute-bit placement.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12760,13 +12774,15 @@
       "label": "LLeft",
       "asmLine": 1886,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics attribute_shift calculation",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8910: selects lower-left attribute-bit placement.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12776,13 +12792,15 @@
       "label": "NextMTRow",
       "asmLine": 1888,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics row progression",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8916: advances attribute row for lower quadrants.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12792,13 +12810,15 @@
       "label": "SetAttrib",
       "asmLine": 1889,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics AttributeBuffer OR update",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8917: merges selected palette bits and advances two tile-byte output positions.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12808,13 +12828,15 @@
       "label": "ExitDrawM",
       "asmLine": 1914,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics name-table wrap handling",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8933: terminates Buffer2, advances name-table low byte and toggles nametable at the status-bar boundary.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12824,13 +12846,15 @@
       "label": "RenderAttributeTables",
       "asmLine": 1920,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_attribute_tables",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8940: appends seven one-byte attribute commands derived from the just-rendered column.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12840,13 +12864,15 @@
       "label": "SetATHigh",
       "asmLine": 1930,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_attribute_tables attribute address setup",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8956: builds $23c0-family attribute-table address after borrow/nametable adjustment.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12856,13 +12882,15 @@
       "label": "AttribLoop",
       "asmLine": 1940,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_attribute_tables seven-row loop",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $8962: emits one attribute byte every eight address bytes and clears its source entry.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -12872,13 +12900,15 @@
       "label": "SetVRAMCtrl",
       "asmLine": 1962,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics and mysmb_area_render_attribute_tables selector write",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "ROM $899f: writes VRAM_Buffer_AddrCtrl six and returns.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48549,12 +48579,14 @@
       "instruction": "tax",
       "id": "control-00286",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original RenderAreaGraphics -> DrawMTLoop fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48568,12 +48600,14 @@
       "instruction": "bne",
       "id": "control-00287",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original DrawMTLoop -> RightCheck branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48587,12 +48621,14 @@
       "instruction": "bcs",
       "id": "control-00288",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original DrawMTLoop -> LLeft branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48606,12 +48642,14 @@
       "instruction": "jmp",
       "id": "control-00289",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original DrawMTLoop -> SetAttrib jump relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48625,12 +48663,14 @@
       "instruction": "bcs",
       "id": "control-00290",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original RightCheck -> NextMTRow branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48644,12 +48684,14 @@
       "instruction": "jmp",
       "id": "control-00291",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original RightCheck -> SetAttrib jump relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48663,12 +48705,14 @@
       "instruction": "lsr",
       "id": "control-00292",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original LLeft -> NextMTRow fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48682,12 +48726,14 @@
       "instruction": "inc",
       "id": "control-00293",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original NextMTRow -> SetAttrib fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48701,12 +48747,14 @@
       "instruction": "bcc",
       "id": "control-00294",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SetAttrib -> DrawMTLoop branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48720,12 +48768,14 @@
       "instruction": "bne",
       "id": "control-00295",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SetAttrib -> ExitDrawM branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48739,12 +48789,14 @@
       "instruction": "sta",
       "id": "control-00296",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SetAttrib -> ExitDrawM fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48758,12 +48810,14 @@
       "instruction": "jmp",
       "id": "control-00297",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original ExitDrawM -> SetVRAMCtrl jump relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48777,12 +48831,14 @@
       "instruction": "bcs",
       "id": "control-00298",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original RenderAttributeTables -> SetATHigh branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48796,12 +48852,14 @@
       "instruction": "eor",
       "id": "control-00299",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original RenderAttributeTables -> SetATHigh fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48815,12 +48873,14 @@
       "instruction": "ldy",
       "id": "control-00300",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original SetATHigh -> AttribLoop fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48834,12 +48894,14 @@
       "instruction": "bcc",
       "id": "control-00301",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original AttribLoop -> AttribLoop branch relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -48853,12 +48915,14 @@
       "instruction": "sty",
       "id": "control-00302",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared C renderer owner named by Td S9 B6",
       "semanticEvidence": [
-        "Td S9 B6 renderer static node/edge pass: SMB1 lines 1825-2025 was compared with src/game/area.c and frame_root.c; controlled original-ROM/x86/x64 column and palette routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "Original AttribLoop -> SetVRAMCtrl fallthrough relation must preserve source predicate, buffer/table state and successor or return handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52157,12 +52221,14 @@
       "instruction": "jsr",
       "id": "control-00475",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c invokes attribute output only after the post-task counter reaches zero.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "area.c invokes attribute output only after the post-task counter reaches zero.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -111898,12 +111964,14 @@
       "instruction": "rts/rti",
       "id": "control-03555",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c attribute output returns to the common parser-handler return.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "area.c attribute output returns to the common parser-handler return.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -123324,12 +123392,14 @@
       "selector": 1,
       "id": "control-04128",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selector one performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "area.c selector one performs graphics expansion.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -123344,12 +123414,14 @@
       "selector": 2,
       "id": "control-04129",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selector two performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "area.c selector two performs graphics expansion.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -123404,12 +123476,14 @@
       "selector": 5,
       "id": "control-04132",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selector five performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "area.c selector five performs graphics expansion.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -123424,12 +123498,14 @@
       "selector": 6,
       "id": "control-04133",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selector six performs graphics expansion.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+      ],
       "semanticContract": "area.c selector six performs graphics expansion.",
       "currentSourcePaths": [
         "src/game/area.c"

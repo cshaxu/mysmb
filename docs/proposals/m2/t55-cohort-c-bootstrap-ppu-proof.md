@@ -94,3 +94,36 @@ S1 owns the contiguous eleven-label `RenderAreaGraphics → SetVRAMCtrl` chain. 
 ## T55 closure standard
 
 T55 closes only after all eight S chains have current dispositions for their 67 labels, every owned feasible control/material relation has a shared-C counterpart and evidence, all scoped mismatches have been repaired and re-audited to zero, and a cross-chain ROM/native matrix covers renderer, input, VRAM and scroll handoffs. A source build or visible frame alone is insufficient.
+
+## S1 closure — renderer and attribute-output chain
+
+S1 is current-exact with **zero feasible differences**. The static source
+comparison covers SMB1 lines 1825–1962 and the shared `src/game/area.c`
+owner: the thirteen-row metatile loop, both parser-task tile sides, all four
+attribute quadrants, the seventh-row exits, name-table wrap, the carry-aware
+attribute address calculation, seven output commands, each attribute clear,
+and the selector-six handoff. `AreaParserTaskHandler` retains the source
+post-decrement dispatch: selectors 1, 2, 5 and 6 call the renderer, while the
+final selector-zero completion calls the attribute writer and returns through
+the common handler.
+
+The bounded owner-local ROM/native matrix uses `t28-render-left`,
+`t28-render-right`, `t28-attribute-left`, and `t28-attribute-right`. Original
+ROM, x86 and x64 agree on all scoped `VRAM_Buffer2` command bytes,
+`AttributeBuffer` bytes, `CurrentNTAddr`, and `VRAM_Buffer_AddrCtrl`; x86 and
+x64 snapshots are byte-identical. The focused `area_output_smoke` executable
+also passes on both widths. No shared product source changed, so this audit
+does not refresh the three committed product artifacts. The current registry
+advances from 166 to **177 exact nodes** and from 347 to **370 exact feasible
+control edges**; historical credit remains 1,992 / 1,992.
+
+## S2 admission — palette-rotation chain
+
+S2 receives the contiguous seven-label chain `ColorRotatePalette`,
+`BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`
+and `ExitColorRot` at SMB1 lines 1970–2024. The audit compares the
+frame-counter eighth-frame gate, buffer-capacity gate, eight-byte blank copy,
+area-type palette selection, rotating colour insertion, offset wrap and every
+return path. The controlled owner-local ROM/native route will exercise each
+gate, all four area types and rotation offsets 0–6. A feasible difference
+stays in S2 for shared `area.c` repair and re-audit before S3 is admitted.
