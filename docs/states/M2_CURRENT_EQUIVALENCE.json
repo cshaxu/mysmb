@@ -1181,13 +1181,15 @@
       "consumer": "ChkMTLow",
       "storage": "metatile high-two-bit indexed collision threshold to physical block-buffer write",
       "feasiblePath": "After ProcessAreaData mutates the staged column, every row selects one bound before StrBlock writes the physical block buffer.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column bound-index comparison",
       "semanticContract": "Each source threshold is selected after object processing and determines zero-versus-metatile storage for the corresponding physical row.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -15468,13 +15470,15 @@
       "label": "RenderSceneryTerrain",
       "asmLine": 3184,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Builds one staged 13-row column, processes area objects, collision-qualifies resulting rows, then writes the physical block-buffer column.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15484,13 +15488,15 @@
       "label": "ClrMTBuf",
       "asmLine": 3187,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Clears all thirteen staged rows before scenery overlays.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15500,13 +15506,15 @@
       "label": "ThirdP",
       "asmLine": 3193,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Reduces CurrentPageLoc modulo three by repeated subtraction.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15516,13 +15524,15 @@
       "label": "RendBack",
       "asmLine": 3198,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Combines page phase, background-family offset and column to select one packed background entry.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15532,13 +15542,15 @@
       "label": "SceLoop1",
       "asmLine": 3223,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Overlays no more than three selected background metatiles without crossing staged row eleven.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15548,13 +15560,15 @@
       "label": "RendFore",
       "asmLine": 3231,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Gates the thirteen-row foreground overlay by ForegroundScenery.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15564,13 +15578,15 @@
       "label": "SceLoop2",
       "asmLine": 3235,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Reads exactly thirteen foreground entries and conditionally overwrites staged rows.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15580,13 +15596,15 @@
       "label": "NoFore",
       "asmLine": 3238,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Preserves staged rows for zero foreground entries and advances the foreground loop.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15596,13 +15614,15 @@
       "label": "RendTerr",
       "asmLine": 3242,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Applies the World 8 water castle-wall terrain exception only in its source conditions.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15612,13 +15632,15 @@
       "label": "TerMTile",
       "asmLine": 3249,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Selects AreaType terrain and then applies the cloud override.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15628,13 +15650,15 @@
       "label": "StoreMT",
       "asmLine": 3253,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Stores terrain value and initializes the two-byte terrain-mask scan.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15644,13 +15668,15 @@
       "label": "TerrLoop",
       "asmLine": 3258,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Loads each terrain mask byte and applies cloud masking only to the second byte.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15660,13 +15686,15 @@
       "label": "NoCloud2",
       "asmLine": 3269,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Enters the least-significant-bit-first terrain bit scan.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15676,13 +15704,15 @@
       "label": "TerrBChk",
       "asmLine": 3270,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Writes selected terrain only for a set source bitmask.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15692,13 +15722,15 @@
       "label": "NextTBit",
       "asmLine": 3275,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Advances the staged row and applies only the underground bottom-row terrain substitution.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15708,13 +15740,15 @@
       "label": "EndUChk",
       "asmLine": 3285,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Continues the current byte scan or switches to the saved second-byte index.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15724,13 +15758,15 @@
       "label": "RendBBuf",
       "asmLine": 3290,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Processes objects before resolving and writing the physical block-buffer column.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15740,13 +15776,15 @@
       "label": "ChkMTLow",
       "asmLine": 3295,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Selects collision bound from metatile high bits and replaces only below-bound values with zero.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15756,13 +15794,15 @@
       "label": "StrBlock",
       "asmLine": 3306,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Stores qualified values at row stride sixteen through all thirteen physical rows.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15772,13 +15812,15 @@
       "label": "BlockBuffLowBounds",
       "asmLine": 3319,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "Binds source threshold bytes $10/$51/$88/$c0 to high-bit collision classes.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52816,12 +52858,14 @@
       "instruction": "lda",
       "id": "control-00484",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RenderSceneryTerrain -> ClrMTBuf at source line 3186.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RenderSceneryTerrain -> ClrMTBuf at source line 3186.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52835,12 +52879,14 @@
       "instruction": "bpl",
       "id": "control-00485",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> ClrMTBuf at source line 3189.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> ClrMTBuf at source line 3189.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52854,12 +52900,14 @@
       "instruction": "beq",
       "id": "control-00486",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> RendFore at source line 3191.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> RendFore at source line 3191.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52873,12 +52921,14 @@
       "instruction": "lda",
       "id": "control-00487",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ClrMTBuf -> ThirdP at source line 3192.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ClrMTBuf -> ThirdP at source line 3192.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52892,12 +52942,14 @@
       "instruction": "bmi",
       "id": "control-00488",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> RendBack at source line 3194.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> RendBack at source line 3194.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52911,12 +52963,14 @@
       "instruction": "bpl",
       "id": "control-00489",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> ThirdP at source line 3197.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> ThirdP at source line 3197.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52930,12 +52984,14 @@
       "instruction": "bpl",
       "id": "control-00490",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ThirdP -> RendBack at source line 3197.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ThirdP -> RendBack at source line 3197.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52949,12 +53005,14 @@
       "instruction": "beq",
       "id": "control-00491",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendBack -> RendFore at source line 3206.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendBack -> RendFore at source line 3206.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52968,12 +53026,14 @@
       "instruction": "sta",
       "id": "control-00492",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBack -> SceLoop1 at source line 3222.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBack -> SceLoop1 at source line 3222.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52987,12 +53047,14 @@
       "instruction": "beq",
       "id": "control-00493",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> RendFore at source line 3228.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> RendFore at source line 3228.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53006,12 +53068,14 @@
       "instruction": "bne",
       "id": "control-00494",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> SceLoop1 at source line 3230.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> SceLoop1 at source line 3230.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53025,12 +53089,14 @@
       "instruction": "bne",
       "id": "control-00495",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop1 -> RendFore at source line 3230.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop1 -> RendFore at source line 3230.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53044,12 +53110,14 @@
       "instruction": "beq",
       "id": "control-00496",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendFore -> RendTerr at source line 3232.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendFore -> RendTerr at source line 3232.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53063,12 +53131,14 @@
       "instruction": "ldx",
       "id": "control-00497",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendFore -> SceLoop2 at source line 3234.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendFore -> SceLoop2 at source line 3234.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53082,12 +53152,14 @@
       "instruction": "beq",
       "id": "control-00498",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop2 -> NoFore at source line 3236.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop2 -> NoFore at source line 3236.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53101,12 +53173,14 @@
       "instruction": "sta",
       "id": "control-00499",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop2 -> NoFore at source line 3237.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop2 -> NoFore at source line 3237.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53120,12 +53194,14 @@
       "instruction": "bne",
       "id": "control-00500",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NoFore -> SceLoop2 at source line 3241.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NoFore -> SceLoop2 at source line 3241.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53139,12 +53215,14 @@
       "instruction": "bne",
       "id": "control-00501",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoFore -> RendTerr at source line 3241.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoFore -> RendTerr at source line 3241.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53158,12 +53236,14 @@
       "instruction": "bne",
       "id": "control-00502",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3243.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3243.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53177,12 +53257,14 @@
       "instruction": "bne",
       "id": "control-00503",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3246.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3246.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53196,12 +53278,14 @@
       "instruction": "jmp",
       "id": "control-00504",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original jump relation RendTerr -> StoreMT at source line 3248.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original jump relation RendTerr -> StoreMT at source line 3248.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53215,12 +53299,14 @@
       "instruction": "beq",
       "id": "control-00505",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerMTile -> StoreMT at source line 3251.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerMTile -> StoreMT at source line 3251.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53234,12 +53320,14 @@
       "instruction": "lda",
       "id": "control-00506",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerMTile -> StoreMT at source line 3252.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerMTile -> StoreMT at source line 3252.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53253,12 +53341,14 @@
       "instruction": "tay",
       "id": "control-00507",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation StoreMT -> TerrLoop at source line 3257.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation StoreMT -> TerrLoop at source line 3257.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53272,12 +53362,14 @@
       "instruction": "beq",
       "id": "control-00508",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3263.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3263.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53291,12 +53383,14 @@
       "instruction": "beq",
       "id": "control-00509",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3265.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3265.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53310,12 +53404,14 @@
       "instruction": "sta",
       "id": "control-00510",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrLoop -> NoCloud2 at source line 3268.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrLoop -> NoCloud2 at source line 3268.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53329,12 +53425,14 @@
       "instruction": "ldy",
       "id": "control-00511",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoCloud2 -> TerrBChk at source line 3269.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoCloud2 -> TerrBChk at source line 3269.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53348,12 +53446,14 @@
       "instruction": "beq",
       "id": "control-00512",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrBChk -> NextTBit at source line 3272.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrBChk -> NextTBit at source line 3272.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53367,12 +53467,14 @@
       "instruction": "sta",
       "id": "control-00513",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrBChk -> NextTBit at source line 3274.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrBChk -> NextTBit at source line 3274.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53386,12 +53488,14 @@
       "instruction": "beq",
       "id": "control-00514",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> RendBBuf at source line 3277.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> RendBBuf at source line 3277.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53405,12 +53509,14 @@
       "instruction": "bne",
       "id": "control-00515",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3280.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3280.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53424,12 +53530,14 @@
       "instruction": "bne",
       "id": "control-00516",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3282.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3282.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53443,12 +53551,14 @@
       "instruction": "sta",
       "id": "control-00517",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NextTBit -> EndUChk at source line 3284.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NextTBit -> EndUChk at source line 3284.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53462,12 +53572,14 @@
       "instruction": "bne",
       "id": "control-00518",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrBChk at source line 3287.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrBChk at source line 3287.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53481,12 +53593,14 @@
       "instruction": "bne",
       "id": "control-00519",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrLoop at source line 3289.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrLoop at source line 3289.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53500,12 +53614,14 @@
       "instruction": "bne",
       "id": "control-00520",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation EndUChk -> RendBBuf at source line 3289.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation EndUChk -> RendBBuf at source line 3289.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53519,12 +53635,14 @@
       "instruction": "jsr",
       "id": "control-00521",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> ProcessAreaData at source line 3290.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> ProcessAreaData at source line 3290.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53538,12 +53656,14 @@
       "instruction": "jsr",
       "id": "control-00522",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> GetBlockBufferAddr at source line 3292.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> GetBlockBufferAddr at source line 3292.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53557,12 +53677,14 @@
       "instruction": "ldy",
       "id": "control-00523",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBBuf -> ChkMTLow at source line 3294.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBBuf -> ChkMTLow at source line 3294.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53576,12 +53698,14 @@
       "instruction": "bcs",
       "id": "control-00524",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ChkMTLow -> StrBlock at source line 3304.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ChkMTLow -> StrBlock at source line 3304.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53595,12 +53719,14 @@
       "instruction": "lda",
       "id": "control-00525",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ChkMTLow -> StrBlock at source line 3305.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ChkMTLow -> StrBlock at source line 3305.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -53614,12 +53740,14 @@
       "instruction": "bcc",
       "id": "control-00526",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation StrBlock -> ChkMTLow at source line 3314.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation StrBlock -> ChkMTLow at source line 3314.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -112518,12 +112646,14 @@
       "instruction": "rts/rti",
       "id": "control-03558",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source return handoff ProcessAreaData -> RendBBuf.",
       "semanticEvidence": [
-        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c preserves source return handoff ProcessAreaData -> RendBBuf.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -112537,12 +112667,14 @@
       "instruction": "rts/rti",
       "id": "control-03559",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves the source return handoff GetBlockBufferAddr -> RendBBuf before the following RenderSceneryTerrain phase.",
       "semanticEvidence": [
-        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+      ],
       "semanticContract": "area.c preserves the source return handoff GetBlockBufferAddr -> RendBBuf before the following RenderSceneryTerrain phase.",
       "currentSourcePaths": [
         "src/game/area.c"

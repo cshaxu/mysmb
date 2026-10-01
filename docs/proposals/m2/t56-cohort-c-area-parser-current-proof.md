@@ -201,3 +201,29 @@ block-buffer write. The operational track uses the controlled original-ROM /
 current x86/x64 parser route, focused parser-column and parser-schedule smoke
 tests, and platform-purity audit. Any feasible mismatch remains in S2 for
 shared-C repair and repeat audit before S3 is admitted.
+
+## S2 closure - scenery, terrain and block-buffer handoff
+
+S2 closes all 20 labels current-exact. The source audit finds no feasible
+difference in the 13-row clear, page-modulo background selection, foreground
+zero retention, terrain bit order, cloud and World 8 overrides, underground
+row handling, AreaData-before-block-buffer ordering, bound selection or the
+13-row physical write. The valid background table has no start row above 10,
+which proves the current staging bound covers every reachable table entry.
+
+The controlled original-ROM/current x86/x64 eight-frame parser route is
+byte-identical between x86/x64 and has zero differences for `$06a0-$06ad`,
+`$0500-$06a0`, parser state and scenery controls. Current x86/x64 parser
+column, parser schedule smokes pass, as does platform
+purity. The registry records 20 nodes, 45 feasible control relations and one
+material relation as exact. No product source changed, so no executable
+artifacts are refreshed.
+
+## S3 admission - area-data decoder and attribute chain
+
+S3 admits the contiguous 32-label `ProcessAreaData -> SetFore` chain named in
+the planned source-order table. It owns stream-slot selection, row-13/14
+decoding, object dispatch, parser-state mutation and area attribute updates.
+All 32 labels are currently `needs-evidence`, historically complete, and have
+a zero historical credit forecast. A feasible difference stays in S3 for
+shared-C repair and repeated ROM/native audit before S4 is admitted.
