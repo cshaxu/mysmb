@@ -229,3 +229,39 @@ focused staircase/jumpspring/item-block tests and platform-purity. A product
 repair must use shared C, rebuild the DOS16 link and refresh all three target
 artifacts. A feasible difference remains in S2 until repair and repeated audit
 close it.
+
+## S2 closure — staircase, jumpspring and question/brick chain
+
+S2 closes all 13 scoped labels current-exact. The source comparison finds no
+feasible difference in post-decrement staircase table indexing, jump-spring
+slot fallback and actor initialization, hidden-1UP early return, question/brick
+selector arithmetic, or the `DrawQBlk -> GetLrgObjAttrib -> DrawRow` tail.
+The 39 incident control relations are exact; 27 are newly exact and 12 were
+already exact dispatch/shared-tail relations.
+
+The controlled matrix covers 12 staircase cases, eight jump-spring ordinary
+slot/full-pool cases, and 72 item-block selector/area-type/hidden-state cases.
+Original ROM, current x86 and current x64 agree in every scoped state range,
+and native records are byte-identical. Focused staircase, jump-spring and
+item-block smokes pass on both widths. No product source changed, so the S1
+three-artifact set remains current. Historical conformance remains 1,992 /
+1,992.
+
+## S3 admission — hole, under-part and block-buffer-address chain
+
+S3 admits the contiguous 16-label chain `HoleMetatiles -> GetBlockBufferAddr`:
+`HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`, `RenderUnderPart`,
+`DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `ChkLrgObjLength`,
+`ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`,
+`GetAreaObjXPosition`, `GetAreaObjYPosition`, `BlockBufferAddr` and
+`GetBlockBufferAddr`. S2 is its predecessor and S4 owns the pointer-loading
+continuation. The shared owner is `src/game/area.c` with the shared block-buffer
+consumer. All labels are historically complete and require current evidence,
+so expected historical credit remains zero.
+
+The ROM-logic track compares water-only whirlpool registration/ring wrap,
+hole rendering, UnderPart loop/overlay paths, large-object length and
+attribute helpers, coordinate helpers, and block-buffer address selection.
+The operational track uses a controlled original-ROM/current x86/x64 matrix
+and focused hole/helper/address tests. A feasible difference remains in S3
+until shared-C repair and repeat audit close it.

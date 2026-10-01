@@ -17985,13 +17985,16 @@
       "label": "StaircaseHeightData",
       "asmLine": 4151,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Provides the nine descending staircase vertical extents.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18001,13 +18004,16 @@
       "label": "StaircaseRowData",
       "asmLine": 4154,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Provides the paired nine staircase start rows.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18017,13 +18023,16 @@
       "label": "StaircaseObject",
       "asmLine": 4157,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Initializes control to nine only on first length decode, decrements before paired table lookup, and renders $61.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18033,13 +18042,16 @@
       "label": "NextStair",
       "asmLine": 4162,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Consumes decremented staircase control as both table index and shared renderer input.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18049,13 +18061,16 @@
       "label": "Jumpspring",
       "asmLine": 4172,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Uses the empty-slot result even when full, initializes the jumpspring actor and writes $67/$68 at decoded row.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18065,13 +18080,16 @@
       "label": "Hidden1UpBlock",
       "asmLine": 4197,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Returns while hidden flag is zero; otherwise clears it and shares BrickWithItem.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18081,13 +18099,16 @@
       "label": "QuestionBlock",
       "asmLine": 4204,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves decoded ID then tail-enters question/brick metatile selection.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18097,13 +18118,16 @@
       "label": "BrickWithCoins",
       "asmLine": 4208,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Clears multi-coin timer before falling through to BrickWithItem.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18113,13 +18137,16 @@
       "label": "BrickWithItem",
       "asmLine": 4212,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Chooses the area-dependent metatile offset and falls into DrawQBlk.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18129,13 +18156,16 @@
       "label": "BWithL",
       "asmLine": 4220,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Adds preserved object ID to the selected metatile base before DrawQBlk.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18145,13 +18175,16 @@
       "label": "DrawQBlk",
       "asmLine": 4223,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves selected metatile across attribute decode and tail-enters DrawRow.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18161,13 +18194,16 @@
       "label": "GetAreaObjectID",
       "asmLine": 4228,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Copies parser ID from $00 to Y through source SEC/SBC identity operation.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -18177,13 +18213,16 @@
       "label": "ExitDecBlock",
       "asmLine": 4233,
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Returns from disabled hidden block or completed object-ID decode.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58356,12 +58395,15 @@
       "instruction": "jsr",
       "id": "control-00719",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation StaircaseObject -> ChkLrgObjLength.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58375,12 +58417,15 @@
       "instruction": "bcc",
       "id": "control-00720",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source branch relation StaircaseObject -> NextStair.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58394,12 +58439,15 @@
       "instruction": "sta",
       "id": "control-00721",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source fallthrough relation StaircaseObject -> NextStair.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58413,12 +58461,15 @@
       "instruction": "jmp",
       "id": "control-00722",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source jump relation NextStair -> RenderUnderPart.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58432,12 +58483,15 @@
       "instruction": "jsr",
       "id": "control-00723",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58451,12 +58505,15 @@
       "instruction": "jsr",
       "id": "control-00724",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> FindEmptyEnemySlot.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58470,12 +58527,15 @@
       "instruction": "jsr",
       "id": "control-00725",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> GetAreaObjXPosition.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58489,12 +58549,15 @@
       "instruction": "jsr",
       "id": "control-00726",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation Jumpspring -> GetAreaObjYPosition.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58508,12 +58571,15 @@
       "instruction": "beq",
       "id": "control-00727",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source branch relation Hidden1UpBlock -> ExitDecBlock.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58527,12 +58593,15 @@
       "instruction": "jmp",
       "id": "control-00728",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source jump relation Hidden1UpBlock -> BrickWithItem.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58546,12 +58615,15 @@
       "instruction": "jsr",
       "id": "control-00729",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation QuestionBlock -> GetAreaObjectID.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58565,12 +58637,15 @@
       "instruction": "jmp",
       "id": "control-00730",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source jump relation QuestionBlock -> DrawQBlk.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58584,12 +58659,15 @@
       "instruction": "sta",
       "id": "control-00731",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source fallthrough relation BrickWithCoins -> BrickWithItem.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58603,12 +58681,15 @@
       "instruction": "jsr",
       "id": "control-00732",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation BrickWithItem -> GetAreaObjectID.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58622,12 +58703,15 @@
       "instruction": "beq",
       "id": "control-00733",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source branch relation BrickWithItem -> BWithL.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58641,12 +58725,15 @@
       "instruction": "lda",
       "id": "control-00734",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source fallthrough relation BrickWithItem -> BWithL.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58660,12 +58747,15 @@
       "instruction": "tay",
       "id": "control-00735",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source fallthrough relation BWithL -> DrawQBlk.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58679,12 +58769,15 @@
       "instruction": "jsr",
       "id": "control-00736",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source call relation DrawQBlk -> GetLrgObjAttrib.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58703,10 +58796,12 @@
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
@@ -58721,12 +58816,15 @@
       "instruction": "tay",
       "id": "control-00738",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source fallthrough relation GetAreaObjectID -> ExitDecBlock.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114576,12 +114674,15 @@
       "instruction": "rts/rti",
       "id": "control-03603",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation ChkLrgObjLength -> StaircaseObject.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114595,12 +114696,15 @@
       "instruction": "rts/rti",
       "id": "control-03604",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetLrgObjAttrib -> Jumpspring.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114614,12 +114718,15 @@
       "instruction": "rts/rti",
       "id": "control-03605",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation FindEmptyEnemySlot -> Jumpspring.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114633,12 +114740,15 @@
       "instruction": "rts/rti",
       "id": "control-03606",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjXPosition -> Jumpspring.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114652,12 +114762,15 @@
       "instruction": "rts/rti",
       "id": "control-03607",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjYPosition -> Jumpspring.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114671,12 +114784,15 @@
       "instruction": "rts/rti",
       "id": "control-03608",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjectID -> QuestionBlock.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114690,12 +114806,15 @@
       "instruction": "rts/rti",
       "id": "control-03609",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetAreaObjectID -> BrickWithItem.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -114709,12 +114828,15 @@
       "instruction": "rts/rti",
       "id": "control-03610",
       "cohort": "D",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c preserves source return relation GetLrgObjAttrib -> DrawQBlk.",
       "semanticEvidence": [
-        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
+      ],
       "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -125724,10 +125846,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> StaircaseObject selector 19.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> StaircaseObject selector 19.",
       "currentSourcePaths": [
@@ -125793,10 +125917,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> QuestionBlock selector 22.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> QuestionBlock selector 22.",
       "currentSourcePaths": [
@@ -125816,10 +125942,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> QuestionBlock selector 23.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> QuestionBlock selector 23.",
       "currentSourcePaths": [
@@ -125839,10 +125967,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> QuestionBlock selector 24.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> QuestionBlock selector 24.",
       "currentSourcePaths": [
@@ -125862,10 +125992,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> Hidden1UpBlock selector 25.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> Hidden1UpBlock selector 25.",
       "currentSourcePaths": [
@@ -125885,10 +126017,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 26.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 26.",
       "currentSourcePaths": [
@@ -125908,10 +126042,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 27.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 27.",
       "currentSourcePaths": [
@@ -125931,10 +126067,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 28.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 28.",
       "currentSourcePaths": [
@@ -125954,10 +126092,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithCoins selector 29.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithCoins selector 29.",
       "currentSourcePaths": [
@@ -125977,10 +126117,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 30.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> BrickWithItem selector 30.",
       "currentSourcePaths": [
@@ -126048,10 +126190,12 @@
       "currentCounterpart": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> Jumpspring selector 33.",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths."
       ],
       "semanticContract": "area.c parser-object dispatch preserves source jump-engine-dispatch relation RunAObj -> Jumpspring selector 33.",
       "currentSourcePaths": [
