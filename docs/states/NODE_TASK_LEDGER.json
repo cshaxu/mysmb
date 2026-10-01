@@ -335824,7 +335824,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md",
-      "state": "admitted-jump-engine-and-nametable-current-equivalence-audit",
+      "state": "closed-current-exact-audit",
       "romRoute": "Controlled original-ROM/current x86/x64 name-table initialization plus static source audit of all JumpEngine vector and return relations."
     }
   ]

@@ -3247,4 +3247,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T55 S3 | 11 | 1992 | none / 0 | none / 0 | admitted-block-metatile-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S4 | 14 | 1992 | none / 0 | none / 0 | admitted-metatile-graphics-and-palette-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T55 S5 | 7 | 1992 | none / 0 | none / 0 | admitted-message-stream-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
-| M2 T55 S6 | 5 | 1992 | none / 0 | none / 0 | admitted-jump-engine-and-nametable-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
+| M2 T55 S6 | 5 | 1992 | none / 0 | none / 0 | closed-current-exact-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |

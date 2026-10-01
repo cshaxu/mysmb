@@ -6,11 +6,11 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T55 S6 ? JumpEngine and name-table initialization current-equivalence audit. |
+| Identifier Mode | M2 T55 S6 ? closed JumpEngine and name-table initialization current-equivalence audit. |
 | Admission And Approval | T55 S5 closed with zero scoped feasible differences; owner-directed source-order continuation. |
-| Objective | Audit `JumpEngine` through `InitATLoop`, repair every feasible shared-C difference, and repeat the scoped node/edge and ROM/native audit to zero. |
+| Objective | Completed: audit `JumpEngine` through `InitATLoop`, repair every feasible shared-C difference, and repeat the scoped node/edge and ROM/native audit to zero. |
 | Non-goals | No historical-node credit, no joypad routine audit, and no platform-owned game decision. |
-| Reference Baseline | Historical 1,992 / 1,992. Current registry: 216 exact, 1,776 needs-evidence nodes; 411 exact feasible controls. Scope: five labels plus incident feasible controls; expected historical delta 0. |
+| Reference Baseline | Historical 1,992 / 1,992. Current registry: 221 exact, 1,771 needs-evidence nodes; 450 exact feasible controls. Scope: five labels plus incident feasible controls; historical delta 0. |
 | Candidate Proposal | docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md. |
 | Files And ABI Surface | Shared `src/game/dispatcher.c`, `src/game/boot.c`, existing translated vector owners and focused tests only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation and source policy. |
@@ -19,13 +19,16 @@
 | Asset Needs | Refresh all three artifacts only if product source changes. |
 | Reporting Requirements | Report each scoped label and each incident control disposition with separate logic and operational results. |
 | Stop Conditions | A feasible ROM/C difference remains after repair, an incident control lacks a shared-C counterpart, or platform code makes a gameplay decision. |
-| Exit Criteria | Every scoped node and incident feasible control is exact under static and controlled evidence. |
+| Exit Criteria | Met: every scoped node and incident feasible control is exact under static and controlled evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16 and Win32, with auditable node and graph equivalence. |
 | Similar-Issue Sweep | Inline jump-table selectors, C switch ranges, caller/return continuation, nametable writes, PPU-control preservation and scroll reset. |
 
 ## Current Technical Baseline
 
-M2 T55 S6 is active after the closed S5 message-stream audit. It continues Cohort C with the contiguous dispatcher and name-table chain.
+M2 T55 S6 is closed with zero scoped feasible differences. The four
+name-table labels and `JumpEngine` are current-exact; all 51 incident raw
+relations are exact or source-infeasible. No successor is admitted by this
+closure.
 
 ## S5 Closure
 

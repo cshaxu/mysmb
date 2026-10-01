@@ -13663,13 +13663,15 @@
       "label": "JumpEngine",
       "asmLine": 2395,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/dispatcher.c",
-      "currentCounterpart": "C switch dispatch owners",
+      "currentCounterpart": "shared C vector dispatch at each source-owned caller",
       "semanticEvidence": [
-        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass."
+      ],
       "semanticContract": "ROM $8d91: selector-indexed inline jump-table dispatch preserving caller return continuation.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
@@ -76359,12 +76361,14 @@
       "instruction": "jsr",
       "id": "control-01710",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared platform/screen C dispatch and direct return continuation",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass."
+      ],
       "semanticContract": "Preserves original call relation LargePlatformSubroutines -> JumpEngine with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -111395,12 +111399,14 @@
       "instruction": "rts/rti",
       "id": "control-03515",
       "cohort": "B",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine switch selected case completion",
+      "status": "exact",
+      "currentCounterpart": "shared platform/screen C dispatch and direct return continuation",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass."
+      ],
       "semanticContract": "Original JumpEngine -> ScreenRoutines returns from its selected inline task without a second task dispatch.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
@@ -117495,12 +117501,14 @@
       "instruction": "rts/rti",
       "id": "control-03823",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "shared platform/screen C dispatch and direct return continuation",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass."
+      ],
       "semanticContract": "Preserves original return relation JumpEngine -> LargePlatformSubroutines with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",

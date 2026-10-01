@@ -399,3 +399,38 @@ snapshots for all five selected vector states pass on both widths. The
 that vector call relation; the star-flag node's later chain remains owned by
 its source-order cohort. The CMake addition exposes the existing checker as a
 focused test target; no product source or artifact changed.
+
+## S6 P14 ? final JumpEngine platform and screen continuations
+
+The bounded original-ROM large-platform matrix covers all seven selector values:
+each reaches `RunLargePlatform` `$c965`, `LargePlatformSubroutines` `$c982`
+and `JumpEngine` `$8e04`. The current x86/x64 platform-caller and
+large-platform-graphics checks pass. Its shared C dispatch returns directly to
+`RunLargePlatform`, matching the source target `RTS` continuation. The already
+controlled name-table route also reaches `ScreenRoutines` `$8567`, its
+`JumpEngine` call `$8e04`, and `InitScreen` `$8e19`; the shared `game.c`
+screen-task call maintains that continuation.
+
+All feasible incident `JumpEngine` relations are now backed by a source audit
+and a bounded original-ROM/current route. The registry therefore promotes
+`JumpEngine` and the large-platform and ScreenRoutines continuation edges.
+No product source changed, so artifacts are not refreshed.
+
+## S6 closure ? JumpEngine and name-table initialization chain
+
+S6 closes with zero scoped feasible differences. `JumpEngine`,
+`InitializeNameTables`, `WriteNTAddr`, `InitNTLoop` and `InitATLoop` are
+current-exact. The original-ROM evidence covers every JumpEngine caller family
+and source return continuation, including ordinary, game-over, style, block,
+frenzy, star-flag and all seven large-platform selectors. The two deliberately
+infeasible pointer-data fall-through families remain explicitly infeasible;
+no C return has been invented for them. The name-table route proves both
+CIRAM pages byte-identical under its owned contract, and the shared boot
+implementation preserves source PPU/control/scroll ordering.
+
+The current-equivalence registry advances from 216 to **221 exact nodes** and
+from 434 to **450 exact feasible control relations** during S6. Historical
+migration accounting remains **1,992 / 1,992**. Focused x86/x64 CTest passes
+for name-table, snapshot, star-flag and large-platform chains, and the
+platform-purity audit passes. No product gameplay source changed after P1;
+therefore no additional executable refresh is due for the evidence-only Ps.
