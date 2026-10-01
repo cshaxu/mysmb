@@ -385,3 +385,17 @@ completes the containing frame. Direct x86/x64 name-table and frame-snapshot
 smokes also pass. The registry promotes the four name-table nodes and their
 twelve observed/source-audited feasible control relations. No product source
 changed, so artifacts are not refreshed.
+
+## S6 P13 ? star-flag JumpEngine vector proof
+
+The bounded original-ROM star-flag routes for task states zero through four
+(cases 0, 16, 32, 48, 64) each execute `RunStarFlagObj` `$d2d9`, its
+`JumpEngine` call `$d2e5`, and `JumpEngine` `$8e04`. The shared current
+`star_flag.c` counterpart retains the zero frenzy-buffer write, task-five
+exit predicate and five-vector target selection. Current x86/x64 star-flag
+smoke covers 779 native cases; the project-owned original caller/child
+snapshots for all five selected vector states pass on both widths. The
+`RunStarFlagObj -> JumpEngine` edge is now current-exact. This only settles
+that vector call relation; the star-flag node's later chain remains owned by
+its source-order cohort. The CMake addition exposes the existing checker as a
+focused test target; no product source or artifact changed.

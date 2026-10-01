@@ -82675,12 +82675,14 @@
       "instruction": "jsr",
       "id": "control-02035",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c task switch/vector equivalent",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot five-entry shared C vector equivalent",
       "semanticEvidence": [
-        "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T55 S6 P13 static audit: SMB1 RunStarFlagObj $d2d9-$d2e8 initializes EnemyFrenzyBuffer, rejects task >= $05, then uses JumpEngine’s five-word vector. Shared src/game/enemy/star_flag.c writes the same scratch/vector target and switches on the same task domain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T55 S6 P13 controlled original-ROM cases 0,16,32,48,64 execute $d2d9, the JumpEngine JSR at $d2e5 and $8e04. Current x86/x64 star-flag smoke covers 779 native cases; project-owned original caller/child snapshots for the five selected vector states pass on both widths."
+      ],
       "semanticContract": "Preserves original call relation RunStarFlagObj -> JumpEngine with task predicate, vector selector or timer-digit state handoff and dispatch/return ordering.",
       "currentSourcePaths": [
         "src/game/dispatcher.c",
