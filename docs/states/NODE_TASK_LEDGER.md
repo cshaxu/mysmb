@@ -3261,4 +3261,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T55 S8 | 8 | 1992 | none / 0 | none / 0 | closed-vram-ppu-current-equivalence-audit; [record](../../docs/proposals/m2/t55-cohort-c-bootstrap-ppu-proof.md) |
 | M2 T56 S1 | 14 | 1992 | none / 0 | none / 0 | closed-parser-task-and-scenery-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
 | M2 T56 S2 | 20 | 1992 | none / 0 | none / 0 | closed-scenery-terrain-and-block-buffer-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
-| M2 T56 S3 | 32 | 1992 | none / 0 | none / 0 | admitted-area-data-decoder-and-attribute-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S3 | 32 | 1992 | none / 0 | none / 0 | closed-area-data-decoder-and-attribute-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |
+| M2 T56 S4 | 27 | 1992 | none / 0 | none / 0 | admitted-warp-scroll-frenzy-style-pulley-castle-current-equivalence-audit; [record](../../docs/proposals/m2/t56-cohort-c-area-parser-current-proof.md) |

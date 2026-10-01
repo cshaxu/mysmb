@@ -248,3 +248,48 @@ existing `OLDNAMES.LIB` warning.
 The refreshed P1 artifacts are `mysmb16.exe` SHA-256
 `05A8ADBB0A1F35FECE95290BCD24251EA72B2E1166DBEA01D29382A9485B9A9E`, `mysmb32.exe` SHA-256 `C7B2C88E9E5CA15BED1F3C80A7C271B44F85C852F0C2CDFDF0D46C7C5AE9E09E`, and `mysmb64.exe`
 SHA-256 `69A271EEC057AA3B13C5C7B7A9E5C8F73ACE11C5ECF7A26598670AB5A7DA562D`.
+
+## S3 closure - area-data decoder and attribute chain
+
+S3 closes all 32 scoped labels current-exact: `ProcessAreaData`, `ProcADLoop`,
+`Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`,
+`ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`,
+`Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`,
+`NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`,
+`LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`,
+`Alter2` and `SetFore`. The source audit maps SMB1 lines 3326-3586 to
+`mysmb_area_process_object_state` and `mysmb_area_apply_parser_object` in shared
+`src/game/area.c`. It covers slot order, terminal and offset behavior, page and
+row control records, rear loading, object length, dispatch, and both attribute
+write paths.
+
+P1 repaired the one feasible difference: ROM `InitRear` falls through
+`RdyDecode` to `ChkLength`, so its cleared object offset decrements resident
+slot zero. The focused boundary fixture now proves that path. A warmed 16-route
+original-ROM/current x86/x64 object-family matrix is byte-identical in all
+scoped parser state, staging and attributes. The registry records 32 nodes and four material relations as exact; it verifies 115 scoped feasible control relations, of which 114 are newly exact because one was already exact at S3 admission. Product
+source changed in P1, so all three target artifacts were refreshed and tested;
+the asset hashes are recorded in the P1 entry. Historical conformance remains
+1,992 / 1,992; current registry total is 299 exact nodes and 649 exact feasible
+controls.
+
+## S4 admission - warp, scroll, frenzy, style, pulley and castle chain
+
+S4 admits the contiguous `ScrollLockObject_Warp -> NotTall` chain:
+`ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillEnemies`,
+`KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`,
+`ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`,
+`MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`,
+`PulleyRopeObject`, `RenderPul`, `MushLExit`, `CastleMetatiles`,
+`CastleObject`, `CRendLoop`, `ChkCFloor` and `NotTall`. Its predecessor is
+S3 object dispatch; S5 receives its pipe and allocation continuation. The
+shared owner remains `src/game/area.c`.
+
+All 27 labels are historically complete and currently need evidence; expected
+historical credit is zero. ROM-logic verification compares warp text/scroll
+writes, enemy kill loop, frenzy table and state, ledge/pulley/castle metatile
+construction and tall-castle gate. Operational verification uses a controlled
+owner-local original-ROM/current x86/x64 object-family matrix, focused parser
+smokes, DOS16 link for product changes and the platform-purity audit. Any
+feasible difference remains in S4 for shared-C repair and repeat audit before
+S5 admission.
