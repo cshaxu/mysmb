@@ -147,3 +147,57 @@ T56 closes only when all 120 labels, every owned feasible control relation and e
 ## S1 admission - parser task and scenery-table chain
 
 S1 receives `AreaParserTaskHandler -> AreaParserCore`. Its predecessor is T55's completed PPU handoff; S2 consumes its parser-core handoff. The ROM-logic track covers persistent parser-task initialization, descending task selectors, column/page wrap, scenery offsets and terrain-mask table binding. The operational track uses a controlled original-ROM/current x86/x64 parser-column route, focused parser schedule and buffer-commit checks, the shared DOS16 link when product code changes, and the platform-purity audit. All labels were historically complete at admission, so S1 expects zero historical-credit delta.
+
+## S1 closure — parser task and scenery-table chain
+
+S1 closes all 14 scoped labels as current-exact: `AreaParserTaskHandler`,
+`DoAPTasks`, `SkipATRender`, `AreaParserTasks`, `IncrementColumnPos`,
+`NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`,
+`BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`,
+`TerrainMetatiles`, `TerrainRenderBits` and `AreaParserCore`. The static
+comparison covers ROM lines 3060–3183 plus `RunParser` at line 5398. It finds
+no feasible shared-C difference in task initialization, selector order, both
+wrap paths, scenery/terrain table selection, ordinary and backloading parser
+entries, or their direct caller/return relations.
+
+The controlled reset-area route uses the ROM's normal post-header `$a690`
+stream at an NMI boundary. Across eight original-ROM/current x86/x64 frames,
+the x86/x64 recordings are byte-identical and all 32 scoped persistent parser
+RAM bytes (`$06a0-$06ad`, `$0725-$0732`, `$0741/$0742/$0744/$0745`) match.
+`$0007` is excluded because it is the ROM's transient zero-page scratch, not
+persistent parser state. Current x86/x64 parser-column and parser-schedule
+smokes pass, as does platform purity.
+
+The local-owner ROM PRG table hashes are: `BSceneDataOffsets`
+`c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e`,
+`BackSceneryData` `81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7`,
+`BackSceneryMetatiles` `dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9`,
+`FSceneDataOffsets` `b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a`,
+`ForeSceneryData` `f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367`,
+`TerrainMetatiles` `884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c`,
+and `TerrainRenderBits` `a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e`.
+
+The current-equivalence registry records 14 exact nodes, 19 newly exact
+feasible control relations and seven exact material relations. No product
+source changed, so the existing three executable artifacts remain valid and
+are not rebuilt for this audit-only closure. Historical conformance remains
+1,992 / 1,992.
+
+## S2 admission — scenery, terrain and block-buffer handoff
+
+S2 admits the contiguous 20-label chain `RenderSceneryTerrain ->
+BlockBuffLowBounds`: `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`,
+`RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`,
+`TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`,
+`EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock` and `BlockBuffLowBounds`.
+All are currently `needs-evidence`; all are historically ROM-match complete,
+so this audit has zero historical credit forecast. Its predecessor is S1's
+parser-core handoff; S3 owns the AreaData decoder called at `RendBBuf`.
+
+The shared owner is `src/game/area.c`. The ROM-logic track compares clearing,
+background and foreground overlays, terrain-mask iteration, the AreaData
+call-before-block-buffer ordering, collision-bound selection and physical
+block-buffer write. The operational track uses the controlled original-ROM /
+current x86/x64 parser route, focused parser-column and parser-schedule smoke
+tests, and platform-purity audit. Any feasible mismatch remains in S2 for
+shared-C repair and repeat audit before S3 is admitted.

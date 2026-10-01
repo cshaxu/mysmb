@@ -1013,13 +1013,18 @@
       "consumer": "RenderSceneryTerrain",
       "storage": "BackgroundScenery-indexed offset plus page/column to packed scenery byte",
       "feasiblePath": "Valid background selectors 1-3 choose an offset, page modulo three and CurrentColumnPos before reading BackSceneryData.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
       "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1032,13 +1037,18 @@
       "consumer": "RenderSceneryTerrain",
       "storage": "packed row/metatile selector to background overlay",
       "feasiblePath": "Nonzero packed byte sends high nibble to start row and low nibble minus one to a three-byte BackSceneryMetatiles triplet.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
       "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1051,13 +1061,18 @@
       "consumer": "RenderSceneryTerrain",
       "storage": "three-byte metatile overlay to MetatileBuffer",
       "feasiblePath": "At most three source values overwrite consecutive rows and never cross staged row ten.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
       "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1070,13 +1085,18 @@
       "consumer": "RenderSceneryTerrain",
       "storage": "ForegroundScenery-indexed offset to thirteen-row source record",
       "feasiblePath": "Valid foreground selectors 1-3 choose one source record before the thirteen-row loop.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
       "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1089,13 +1109,18 @@
       "consumer": "RenderSceneryTerrain",
       "storage": "foreground values to conditional MetatileBuffer overwrites",
       "feasiblePath": "Each nonzero source byte overwrites exactly its staged row; zero retains existing staging.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
       "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1108,13 +1133,18 @@
       "consumer": "RenderSceneryTerrain",
       "storage": "AreaType/override terrain selector to staged terrain values",
       "feasiblePath": "Area type table selection precedes World 8 water, cloud and underground-row exceptions.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
       "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1127,13 +1157,18 @@
       "consumer": "RenderSceneryTerrain",
       "storage": "TerrainControl two-byte mask to thirteen-row terrain overlay",
       "feasiblePath": "Two source bytes are consumed low bit first across rows 0-12, with cloud masking on the second byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
       "semanticContract": "Source table selection, index arithmetic, row ordering and resulting staged metatile values agree for each reachable route.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -15153,13 +15188,16 @@
       "label": "AreaParserTaskHandler",
       "asmLine": 3060,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Initializes a zero task counter to eight, executes exactly one descending task slot, decrements the persistent counter, and emits attributes only after slot zero.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15169,13 +15207,16 @@
       "label": "DoAPTasks",
       "asmLine": 3065,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step task decrement/tail",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Passes task minus one through the eight-way selector, then retains it as AreaParserTaskNum before conditional attribute output.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15185,13 +15226,16 @@
       "label": "SkipATRender",
       "asmLine": 3071,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step return",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Returns after nonzero task slots without emitting attribute commands.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15201,13 +15245,16 @@
       "label": "AreaParserTasks",
       "asmLine": 3073,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step selector",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Maps source selectors 0/4 to column advance, 1/2/5/6 to graphics, and 3/7 to parser core.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15217,13 +15264,16 @@
       "label": "IncrementColumnPos",
       "asmLine": 3087,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step column advance",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Increments CurrentColumnPos, wraps its low nibble at sixteen with page increment, then advances the circular 32-column block buffer.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15233,13 +15283,16 @@
       "label": "NoColWrap",
       "asmLine": 3094,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step block-column tail",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Masks BlockBufferColumnPos to five bits after either page-wrap or ordinary column path.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15249,13 +15302,18 @@
       "label": "BSceneDataOffsets",
       "asmLine": 3106,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column background offset binding",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "semanticContract": "Three source offsets $00/$30/$60 select cloud, mountain/bush and tree/fence scenery pages.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15265,13 +15323,18 @@
       "label": "BackSceneryData",
       "asmLine": 3109,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column background packed-entry binding",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "semanticContract": "Three 48-byte scenery phases provide packed row and metatile selectors after page modulo three and column selection.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15281,13 +15344,18 @@
       "label": "BackSceneryMetatiles",
       "asmLine": 3131,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column background three-row overlay binding",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "semanticContract": "Twelve source triplets map packed low-nibble selector minus one into at most three staged metatiles.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15297,13 +15365,18 @@
       "label": "FSceneDataOffsets",
       "asmLine": 3145,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column foreground offset binding",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "semanticContract": "Three source offsets $00/$0d/$1a select the water, wall and over-water thirteen-row foreground records.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15313,13 +15386,18 @@
       "label": "ForeSceneryData",
       "asmLine": 3148,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column foreground overlay binding",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "semanticContract": "Nonzero foreground entries overwrite the staged row; source zero entries deliberately preserve background or empty staging.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15329,13 +15407,18 @@
       "label": "TerrainMetatiles",
       "asmLine": 3158,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column terrain selection",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "semanticContract": "Area type indexes water, ground, underground and castle terrain metatiles before World 8 water and cloud overrides.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15345,13 +15428,18 @@
       "label": "TerrainRenderBits",
       "asmLine": 3161,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column terrain bit scan",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 local-owner ROM PRG hash audit: BSceneDataOffsets c8fb459015dc06ada0cf28025effb1fe66b28b04071d79445edd939ca9ae888e; BackSceneryData 81092b806e0d38ba25fdf7f23709576cc5c370b346beb5efc593430c38797db7; BackSceneryMetatiles dcad9dd5ae28c1758b75c1833621e441bf9283adc03eeaa39de1b884c21589c9; FSceneDataOffsets b30329774a4f526eb0d891479a6692d643ead0b84721003174c9d5992f66d84a; ForeSceneryData f7a296a83e79da4582bf7a39d787f442f67772cbd91157225d826587be79c367; TerrainMetatiles 884f7aaf67d7aa593f4794b5437531b6010ae474da705b2fb9c4b955a8819b4c; TerrainRenderBits a942453254be2bfdde94ef03f0c301131bdcb643a53fb7f96ab111983db8379e.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch."
+      ],
       "semanticContract": "Sixteen two-byte masks drive a 13-row least-significant-bit-first terrain overlay with underground/cloud exceptions.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -15361,13 +15449,16 @@
       "label": "AreaParserCore",
       "asmLine": 3179,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step parser-core selectors",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Backloading executes ProcessAreaData before scenery; ordinary entry falls to the same scenery/terrain construction.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52440,12 +52531,15 @@
       "instruction": "bne",
       "id": "control-00471",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves a nonzero persistent parser task counter before executing its decremented selector.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c preserves a nonzero persistent parser task counter before executing its decremented selector.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52459,12 +52553,15 @@
       "instruction": "sty",
       "id": "control-00472",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c initializes a zero persistent parser task counter to eight before the shared execution path.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c initializes a zero persistent parser task counter to eight before the shared execution path.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52478,12 +52575,15 @@
       "instruction": "jsr",
       "id": "control-00473",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c invokes exactly one task selector for each handler call.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c invokes exactly one task selector for each handler call.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52497,12 +52597,15 @@
       "instruction": "bne",
       "id": "control-00474",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c skips attribute output when the post-task persistent counter remains nonzero.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c skips attribute output when the post-task persistent counter remains nonzero.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52537,12 +52640,15 @@
       "instruction": "jsr",
       "id": "control-00476",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c returns after the final attribute producer without changing the parser counter again.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c returns after the final attribute producer without changing the parser counter again.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52578,12 +52684,15 @@
       "instruction": "jsr",
       "id": "control-00478",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selector zero/four reaches the same column-advance state transition.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c selector zero/four reaches the same column-advance state transition.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52597,12 +52706,15 @@
       "instruction": "bne",
       "id": "control-00479",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c nonzero low nibble bypasses CurrentPageLoc increment.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c nonzero low nibble bypasses CurrentPageLoc increment.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52616,12 +52728,15 @@
       "instruction": "inc",
       "id": "control-00480",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c page-wrap path clears CurrentColumnPos then falls into the same block-column tail.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c page-wrap path clears CurrentColumnPos then falls into the same block-column tail.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52635,12 +52750,15 @@
       "instruction": "beq",
       "id": "control-00481",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c ordinary parser-core path enters scenery/terrain construction when BackloadingFlag is zero.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c ordinary parser-core path enters scenery/terrain construction when BackloadingFlag is zero.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52654,12 +52772,15 @@
       "instruction": "jsr",
       "id": "control-00482",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c backloading path processes stream state before scenery construction.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c backloading path processes stream state before scenery construction.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -52673,12 +52794,15 @@
       "instruction": "jsr",
       "id": "control-00483",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c returns from the backloading stream call into common scenery/terrain construction.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c returns from the backloading stream call into common scenery/terrain construction.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -58892,12 +59016,15 @@
       "instruction": "jsr",
       "id": "control-00808",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared game core preserves source call relation RunParser -> AreaParserTaskHandler.",
       "semanticEvidence": [
-        "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Preserves source control predicate and frame-state handoff ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -112304,12 +112431,15 @@
       "instruction": "rts/rti",
       "id": "control-03554",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selected task returns to the persistent-counter decrement before attribute gating.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c selected task returns to the persistent-counter decrement before attribute gating.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -112366,12 +112496,15 @@
       "instruction": "rts/rti",
       "id": "control-03557",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c preserves source return handoff ProcessAreaData -> AreaParserCore.",
       "semanticEvidence": [
-        "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c preserves source return handoff ProcessAreaData -> AreaParserCore.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -113893,12 +114026,15 @@
       "instruction": "rts/rti",
       "id": "control-03636",
       "cohort": "E",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_area_parser_task_step -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "Preserves the original return continuation AreaParserTaskHandler \u2192 RunParser: child completion restores the caller\u2019s next source phase without an extra dispatch.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -123761,12 +123897,15 @@
       "selector": 0,
       "id": "control-04127",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selector zero performs column advance.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c selector zero performs column advance.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -123825,12 +123964,15 @@
       "selector": 3,
       "id": "control-04130",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser task selector three reaches parser-core semantics.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c parser task selector three reaches parser-core semantics.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -123845,12 +123987,15 @@
       "selector": 4,
       "id": "control-04131",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c selector four performs column advance.",
       "semanticEvidence": [
-        "Td S9 B10c parser-task static node-and-edge audit: SMB1 lines 3060-3102 was compared with area.c, game.c and engine_tail.c; controlled original-ROM/x86/x64 column-set and runtime-parser routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c selector four performs column advance.",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -123909,12 +124054,15 @@
       "selector": 7,
       "id": "control-04134",
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "area.c parser task selector seven reaches parser-core semantics.",
       "semanticEvidence": [
-        "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+      ],
       "semanticContract": "area.c parser task selector seven reaches parser-core semantics.",
       "currentSourcePaths": [
         "src/game/area.c"
