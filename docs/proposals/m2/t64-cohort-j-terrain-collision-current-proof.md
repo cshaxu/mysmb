@@ -1383,3 +1383,204 @@ relations remain with their consumer audits. Historical mapping stays
 No product behavior changed, so the three committed S33 EXEs remain the
 delivery. Raw records/probe binary are cleaned after review. S36 is the next
 rectangle-comparison chain.
+
+## S36 admission - rectangle collision core
+
+S36 admits $E325-$E387: `PlayerCollisionCore`, `SprObjectCollisionCore`,
+`CollisionCoreLoop`, `SecondBoxVerticalChk`, `FirstBoxGreater`,
+`NoCollisionFound`, `CollisionFound`. All seven need evidence, expected
+current exact **1,473 -> 1,480 / 1,992**; historical mapping remains
+**1,992/1,992**, zero new historical credit. Shared owner is
+`src/game/world/geometry.c:mysmb_world_boxes_collide`; S35 is the source
+predecessor and T64 aggregate integration review follows the final planned chain.
+
+Scope includes internal controls `control-02734` through `control-02750`,
+actual fireball/hammer returns `control-03901` and `control-03907`, internal
+material handoffs `material-00405` through `material-00408`, producer handoff
+`material-00404` and hammer miss consumption `material-00347`. Other
+consumer relations require their own aggregate integration proof. Incoming
+exact controls **3,081/4,323**; material **359/487**.
+
+Static proof follows every unsigned comparison, inclusive equality and wrap
+branch, horizontal short circuit, vertical loop, $06 restoration, $07 values
+1/0/$ff and carry-equivalent return. Direct ROM player/object entries cover
+all 6^4 endpoint rank combinations per axis, with isolated boot state. Actual
+fireball and hammer roots connect the proven child to source return consumers;
+a bounded box-producer/core route checks source coordinate handoff. Native
+x86/x64 owners compare all persistent RAM plus source-live $06/$07; transient
+CPU stack/flags/registers use explicit seam checks. Focused tests, purity and
+original OpenNT DOS16 link are separate operational proof. Any difference
+remains here for repair and repeated audit; behavior changes refresh all EXEs.
+
+Owner ROM/disassembly are nonredistributable local research. Raw records and
+probe outputs stay under ignored build/m2-t64-s36, bounded to 48 MiB,
+524288 steps/case and 120 seconds total; S36 owns cleanup. Similar-issue
+sweep covers geometry calls and return consumption without changing unrelated
+source. Only neutral harnesses and conclusions are committed.
+
+## S36 closure - rectangle collision core
+
+All seven scoped labels are current-exact: `PlayerCollisionCore`,
+`SprObjectCollisionCore`, `CollisionCoreLoop`, `SecondBoxVerticalChk`,
+`FirstBoxGreater`, `NoCollisionFound`, `CollisionFound`. Static $E325-$E387
+review follows every unsigned comparison, inclusive equality, wrapped interval
+branch and early return. Horizontal rejection skips vertical evaluation;
+overlap advances both offsets and decrements $07 from 1 to 0 to $ff, then
+returns set carry. The C owner preserves live $06/$07 and exposes the original
+carry as its byte return. Original Y restoration and X advancement are checked
+at that explicit address/result seam. No behavior discrepancy was found; only
+the stale $DCF6/$DD27 provenance is corrected.
+
+The neutral `tools/reference_geometry_core_probe.c` produces ignored MSGE
+records for `mysmb_geometry_core_route_check`, built from
+`test/geometry_core_route_check.c`. It executes 10,512 isolated original-ROM
+routes without ROM patches: 5,184 direct player/object entries; 2,592 real
+hammer callers; 2,592 real fireball callers with one Buzzy immune enemy; and
+144 source box-producer/player-core chains. The direct matrix contains all
+1,296 combinations of four endpoints drawn from six ordered representative
+byte values per entry/axis, with the other axis overlapping. Comparison-only
+branch predicates depend on endpoint weak ordering; this matrix covers every
+such ordering, equality and interval-wrap family. It is not an exhaustive
+Cartesian product of all eight box bytes.
+
+All 46 original core instructions are observed. Fourteen branch
+taken/fallthrough totals are E333 **15283/4419**, E338 **2734/1685**, E33A
+**720/965**, E342 **401/564**, E347 **281/283**, E352 **964/1770**, E35A
+**895/875**, E362 **1736/13547**, E367 **10180/3367**, E369 **720/2647**,
+E36E **400/2247**, E370 **440/1807**, E378 **1121/686**, E382 **9190/7828**.
+There are 2,592 actual ROM child-return continuations each into the hammer
+and fireball caller, not synthetic caller-result replay. Every family reaches
+$07=1 horizontal miss, $07=0 vertical miss and $07=$ff full overlap.
+
+Fresh x86/x64 native checks use real shared owners, with no substituted
+geometry result: each **10,512/10,512**, zero differences. All 1,792
+non-stack RAM bytes are compared, including live $06/$07 and unchanged
+bytes. The box-producer family instead compares 1,789 bytes: transient
+producer $00-$02 is checked separately against its explicit arguments.
+CPU stack and non-carry flags are excluded; direct routes compare carry and
+returned X/Y. The hammer miss route compares the reloaded misc latch; the
+fireball route checks full scan state; the producer route checks actual
+generated box bytes consumed by geometry. Focused core smoke/platform purity
+pass on both widths; original OpenNT DOS16 shared-core build/link succeeds
+with the existing OLDNAMES.LIB warning.
+
+The similar-issue sweep finds six production geometry calls: fireball, hammer,
+player-enemy, enemy-pair, large-platform and small-platform. All use the same
+shared owner; no platform geometry copy exists. Already exact caller scopes
+retain their evidence; GetEnemyBoundBoxOfsArg-to-platform consumer handoff
+`material-00402` is still pending aggregate integration proof and is not
+credited by a direct core route.
+
+New exact controls: `control-02734` through `control-02750`,
+`control-03901`, `control-03907` (**19**). New exact material relations:
+`material-00347`, `material-00404`, `material-00405`, `material-00406`,
+`material-00407`, `material-00408` (**6**). Historical mapping stays
+**1,992/1,992**; current exact nodes **1,480/1,992** (+7), exact feasible
+controls **3,100/4,323** (+19; raw 4,342, infeasible 19), material
+**365/487** (+6). No product behavior changed; the three committed S33
+EXEs remain the delivery. Raw records/probe executable are cleaned after
+review. All planned source-order chains have now reached their S closures;
+T64 itself still requires the aggregate cross-chain/node-edge review before
+closure and T65 admission.
+
+## Aggregate closure gate after S36
+
+Cohort J has **497/497 current-exact nodes**, combining the preceding
+source-order owner work and the 253 T64 labels. This does not close the graph:
+**81 feasible controls** and **3 material relations** still need current
+connection evidence. These are missing proofs, not newly confirmed behavior
+mismatches. T64 remains open. Its next admitted aggregate work must give each
+relation a source/C counterpart and actual caller/return or producer/consumer
+route before promotion; existing child or caller exact status alone is not
+sufficient. A bounded plan must group source-adjacent return families and
+retain explicit later-owner dependencies rather than silently mark all exact.
+
+| Control | Original source | Original destination | Relation |
+| --- | --- | --- | --- |
+| `control-02442` | `GBBAdr` | `HeadChk` | branch |
+| `control-02443` | `GBBAdr` | `HeadChk` | fallthrough |
+| `control-02501` | `CheckSideMTiles` | `ChkInvisibleMTiles` | call |
+| `control-03809` | `GetEnemyOffscreenBits` | `RunSmallPlatform` | return |
+| `control-03810` | `RelativeEnemyPosition` | `RunSmallPlatform` | return |
+| `control-03811` | `SmallPlatformBoundBox` | `RunSmallPlatform` | return |
+| `control-03812` | `SmallPlatformCollision` | `RunSmallPlatform` | return |
+| `control-03813` | `RelativeEnemyPosition` | `RunSmallPlatform` | return |
+| `control-03814` | `DrawSmallPlatform` | `RunSmallPlatform` | return |
+| `control-03816` | `GetEnemyOffscreenBits` | `RunLargePlatform` | return |
+| `control-03817` | `RelativeEnemyPosition` | `RunLargePlatform` | return |
+| `control-03818` | `LargePlatformBoundBox` | `RunLargePlatform` | return |
+| `control-03819` | `LargePlatformCollision` | `RunLargePlatform` | return |
+| `control-03821` | `RelativeEnemyPosition` | `SkipPT` | return |
+| `control-03822` | `DrawLargePlatform` | `SkipPT` | return |
+| `control-03824` | `InitPodoboo` | `MovePodoboo` | return |
+| `control-03825` | `SpawnHammerObj` | `ChkJH` | return |
+| `control-03826` | `PlayerEnemyDiff` | `Shimmy` | return |
+| `control-03827` | `MoveD_EnemyVertically` | `FallE` | return |
+| `control-03828` | `MoveEnemyHorizontally` | `AddHS` | return |
+| `control-03829` | `MoveD_EnemyVertically` | `MoveDefeatedEnemy` | return |
+| `control-03831` | `MoveJ_EnemyVertically` | `MoveJumpingEnemy` | return |
+| `control-03834` | `MoveEnemyHorizontally` | `XMRight` | return |
+| `control-03835` | `PlayerEnemyDiff` | `FBLeft` | return |
+| `control-03837` | `GetEnemyOffscreenBits` | `ProcFirebar` | return |
+| `control-03839` | `RelativeEnemyPosition` | `SetupGFB` | return |
+| `control-03844` | `DrawFirebar` | `FirebarCollision` | return |
+| `control-03845` | `InjurePlayer` | `SetSDir` | return |
+| `control-03846` | `MoveEnemyHorizontally` | `FlyCC` | return |
+| `control-03847` | `SetXMoveAmt` | `FlyCC` | return |
+| `control-03849` | `PlayerEnemyDiff` | `PlayerLakituDiff` | return |
+| `control-03850` | `MoveEnemySlowVert` | `MoveD_Bowser` | return |
+| `control-03853` | `InitVStf` | `RemoveBridge` | return |
+| `control-03855` | `PlayerEnemyDiff` | `B_FaceP` | return |
+| `control-03856` | `MoveEnemySlowVert` | `HammerChk` | return |
+| `control-03857` | `SpawnHammerObj` | `HammerChk` | return |
+| `control-03858` | `InitVStf` | `MakeBJump` | return |
+| `control-03862` | `RunRetainerObj` | `ProcessBowserHalf` | return |
+| `control-03863` | `GetEnemyBoundBox` | `ProcessBowserHalf` | return |
+| `control-03864` | `RelativeEnemyPosition` | `SetGfxF` | return |
+| `control-03865` | `GetEnemyOffscreenBits` | `DrawFlameLoop` | return |
+| `control-03866` | `RelativeEnemyPosition` | `SetupExpl` | return |
+| `control-03867` | `DrawExplosion_Fireworks` | `SetupExpl` | return |
+| `control-03869` | `DigitsMathRoutine` | `NoTTick` | return |
+| `control-03870` | `DigitsMathRoutine` | `ELPGive` | return |
+| `control-03871` | `RelativeEnemyPosition` | `DrawStarFlag` | return |
+| `control-03874` | `PlayerEnemyDiff` | `MovePiranhaPlant` | return |
+| `control-03887` | `MovePlatformUp` | `ChkYCenterPos` | return |
+| `control-03888` | `MovePlatformDown` | `YMDown` | return |
+| `control-03889` | `PositionPlayerOnVPlat` | `ChkYPCollision` | return |
+| `control-03892` | `PositionPlayerOnVPlat` | `SetPVar` | return |
+| `control-03893` | `MoveDropPlatform` | `DropPlatform` | return |
+| `control-03894` | `PositionPlayerOnVPlat` | `DropPlatform` | return |
+| `control-03895` | `MoveEnemyHorizontally` | `RightPlatform` | return |
+| `control-03899` | `PositionPlayerOnS_Plat` | `ChkSmallPlatCollision` | return |
+| `control-03902` | `HandleEnemyFBallCol` | `NotGoomba` | return |
+| `control-03903` | `RelativeEnemyPosition` | `HandleEnemyFBallCol` | return |
+| `control-03904` | `InitVStf` | `HurtBowser` | return |
+| `control-03906` | `SetupFloateyNumber` | `EnemySmackScore` | return |
+| `control-03909` | `SetupFloateyNumber` | `HandlePowerUpCollision` | return |
+| `control-03910` | `GetPlayerColors` | `Shroom_Flower_PUp` | return |
+| `control-03911` | `SetPRout` | `UpToFiery` | return |
+| `control-03961` | `ChkInvisibleMTiles` | `CheckSideMTiles` | return |
+| `control-03971` | `SubtEnemyYPos` | `EnemyToBGCollisionDet` | return |
+| `control-03972` | `ChkUnderEnemy` | `YesIn` | return |
+| `control-03973` | `ChkForNonSolids` | `HandleEToBGCollision` | return |
+| `control-03974` | `KillEnemyAboveBlock` | `HandleEToBGCollision` | return |
+| `control-03975` | `SetupFloateyNumber` | `GiveOEPoints` | return |
+| `control-03976` | `PlayerEnemyDiff` | `SetNotW` | return |
+| `control-03977` | `EnemyLanding` | `SetForStn` | return |
+| `control-03978` | `PlayerEnemyDiff` | `InvtD` | return |
+| `control-03979` | `ChkForBump_HammerBroJ` | `CNwCDir` | return |
+| `control-03980` | `EnemyLanding` | `LandEnemyInitState` | return |
+| `control-03981` | `BlockBufferChk_Enemy` | `SdeCLoop` | return |
+| `control-03982` | `ChkForNonSolids` | `SdeCLoop` | return |
+| `control-03983` | `InitVStf` | `EnemyLanding` | return |
+| `control-03984` | `SubtEnemyYPos` | `EnemyJump` | return |
+| `control-03985` | `ChkUnderEnemy` | `EnemyJump` | return |
+| `control-03986` | `ChkForNonSolids` | `EnemyJump` | return |
+| `control-03987` | `EnemyLanding` | `EnemyJump` | return |
+| `control-03988` | `ChkUnderEnemy` | `HammerBroBGColl` | return |
+
+| Material | Producer | Consumer |
+| --- | --- | --- |
+| `material-00402` | `GetEnemyBoundBoxOfsArg` | `PlayerCollisionCore` |
+| `material-k54-01` | `SolidMTileUpperExt` | `CheckForSolidMTiles` |
+| `material-k54-02` | `ClimbMTileUpperExt` | `CheckForClimbMTiles` |

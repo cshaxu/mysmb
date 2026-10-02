@@ -7571,13 +7571,15 @@
       "consumer": "ClHCol",
       "storage": "carry-equivalent collision result and restored ObjectOffset",
       "feasiblePath": "Carry-clear geometry result reloads ObjectOffset then clears Misc_Collision_Flag for that slot.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/hammer_collision.c hit result followed by slot=RAM[8]",
       "semanticContract": "A miss clears exactly the reloaded source misc slot latch.",
       "semanticEvidence": [
-        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8778,13 +8780,15 @@
       "consumer": "PlayerCollisionCore",
       "storage": "selected bounding box UL/LR coordinates",
       "feasiblePath": "Callers publish generated box coordinates before rectangle comparison.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/bounding_box.c output RAM to geometry.c input",
       "semanticContract": "Rectangle core consumes source-calculated relative-coordinate boxes.",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8800,13 +8804,15 @@
       "consumer": "SprObjectCollisionCore",
       "storage": "player box offset zero and source second box offset",
       "feasiblePath": "Player entry fixes X offset zero before shared two-object core.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/geometry.c mysmb_world_boxes_collide",
       "semanticContract": "Shared core receives player-first box order.",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8822,13 +8828,15 @@
       "consumer": "CollisionCoreLoop",
       "storage": "$06 original second offset and $07 one-axis counter",
       "feasiblePath": "Core initializes source scratch then compares horizontal coordinate first.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/geometry.c scratch initialization",
       "semanticContract": "Loop restores second offset and runs exactly horizontal then vertical coordinate passes.",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8842,13 +8850,15 @@
       "consumer": "CollisionFound",
       "storage": "coordinate comparison outcome and incremented box offsets",
       "feasiblePath": "Any source overlap/equality/wrap condition advances to shared collision continuation.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/geometry.c collision_found path",
       "semanticContract": "The second axis runs only after horizontal overlap and final carry is set after both axes.",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8862,13 +8872,15 @@
       "consumer": "NoCollisionFound",
       "storage": "horizontal non-overlap outcome and saved $06",
       "feasiblePath": "Source non-overlap returns clear carry without testing vertical axis.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/geometry.c no_collision_found path",
       "semanticContract": "No-hit return restores second offset and terminates early.",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10537,14 +10549,14 @@
   ],
   "nodeCounts": {
     "unclassified": 0,
-    "exact": 1473,
-    "needs-evidence": 519,
+    "exact": 1480,
+    "needs-evidence": 512,
     "mismatch": 0
   },
   "controlEdgeCounts": {
     "unclassified": 0,
-    "exact": 3081,
-    "needs-evidence": 1242,
+    "exact": 3100,
+    "needs-evidence": 1223,
     "mismatch": 0,
     "infeasible": 19
   },
@@ -39543,17 +39555,17 @@
       "label": "PlayerCollisionCore",
       "asmLine": 12956,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "semanticContract": "Selects player box offset zero then falls through to shared sprite-object collision core.",
       "currentSourcePaths": [
-        "src/game/enemy/platform_collision.c",
-        "src/game/objects.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -39561,16 +39573,17 @@
       "label": "SprObjectCollisionCore",
       "asmLine": 12959,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "semanticContract": "Saves second box offset in $06, initializes $07 to one and begins horizontal then vertical comparisons.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -39578,16 +39591,17 @@
       "label": "CollisionCoreLoop",
       "asmLine": 12964,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "semanticContract": "Compares current X then Y coordinate pairs, short-circuiting horizontal non-overlap and handling unsigned/wrapped vertical intervals.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -39595,13 +39609,15 @@
       "label": "SecondBoxVerticalChk",
       "asmLine": 12979,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "semanticContract": "Handles first-upper-before-second-lower case, treating wrapped vertical intervals as collision and otherwise testing lower edge.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
@@ -39611,13 +39627,15 @@
       "label": "FirstBoxGreater",
       "asmLine": 12989,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "semanticContract": "Handles second-upper-at/after-first-upper case, including equality and wrapped lower-edge collision rules.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
@@ -39627,16 +39645,17 @@
       "label": "NoCollisionFound",
       "asmLine": 13002,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "semanticContract": "Clears carry, restores Y from $06 and returns without second-axis continuation.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -39644,13 +39663,15 @@
       "label": "CollisionFound",
       "asmLine": 13007,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/geometry.c",
+      "currentCounterpart": "mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
       "semanticContract": "Advances both box offsets to vertical axis, decrements $07, loops once, then sets carry and restores Y from $06.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
@@ -106606,17 +106627,16 @@
       "instruction": "ldx",
       "id": "control-02734",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation PlayerCollisionCore -> SprObjectCollisionCore with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/enemy/platform_collision.c",
-        "src/game/objects.c",
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106628,15 +106648,16 @@
       "instruction": "sta",
       "id": "control-02735",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SprObjectCollisionCore -> CollisionCoreLoop with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106648,15 +106669,16 @@
       "instruction": "bcs",
       "id": "control-02736",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> FirstBoxGreater with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106668,15 +106690,16 @@
       "instruction": "bcc",
       "id": "control-02737",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> SecondBoxVerticalChk with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106688,15 +106711,16 @@
       "instruction": "beq",
       "id": "control-02738",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106708,15 +106732,16 @@
       "instruction": "bcc",
       "id": "control-02739",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106728,15 +106753,16 @@
       "instruction": "bcs",
       "id": "control-02740",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CollisionCoreLoop -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106748,13 +106774,15 @@
       "instruction": "bcc",
       "id": "control-02741",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation SecondBoxVerticalChk -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
       ]
@@ -106767,13 +106795,15 @@
       "instruction": "bcs",
       "id": "control-02742",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation SecondBoxVerticalChk -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
       ]
@@ -106786,13 +106816,15 @@
       "instruction": "beq",
       "id": "control-02743",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
       ]
@@ -106805,13 +106837,15 @@
       "instruction": "bcc",
       "id": "control-02744",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
       ]
@@ -106824,13 +106858,15 @@
       "instruction": "beq",
       "id": "control-02745",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
       ]
@@ -106843,15 +106879,16 @@
       "instruction": "bcc",
       "id": "control-02746",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FirstBoxGreater -> NoCollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106863,15 +106900,16 @@
       "instruction": "beq",
       "id": "control-02747",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FirstBoxGreater -> NoCollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106883,13 +106921,15 @@
       "instruction": "bcs",
       "id": "control-02748",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation FirstBoxGreater -> CollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
         "src/game/world/geometry.c"
       ]
@@ -106902,15 +106942,16 @@
       "instruction": "bcs",
       "id": "control-02749",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation FirstBoxGreater -> NoCollisionFound with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -106922,15 +106963,16 @@
       "instruction": "bpl",
       "id": "control-02750",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CollisionFound -> CollisionCoreLoop with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -130185,16 +130227,16 @@
       "instruction": "rts/rti",
       "id": "control-03901",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SprObjectCollisionCore -> NotGoomba with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/world/bounding_box.c",
-        "src/game/world/fireball_enemy.c",
         "src/game/world/geometry.c"
       ]
     },
@@ -130309,18 +130351,17 @@
       "instruction": "rts/rti",
       "id": "control-03907",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/geometry.c:mysmb_world_boxes_collide source comparison, two-axis continuation and actual caller return",
       "semanticEvidence": [
-        "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerHammerCollision with source box offsets, carry and coordinate-loop handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "Same original branch/fallthrough and carry-equivalent return to the actual source caller; scoped conditional outcomes and caller returns are directly observed.",
       "currentSourcePaths": [
-        "src/game/enemy/platform_collision.c",
-        "src/game/objects.c",
-        "src/game/world/geometry.c",
-        "src/game/world/hammer_collision.c"
+        "src/game/world/geometry.c"
       ]
     },
     {

@@ -1,6 +1,6 @@
 #include "game/world/world.h"
 
-/* ROM $dcf6 PlayerCollisionCore through $dd27 CollisionFound.
+/* ROM $e325 PlayerCollisionCore through $e387 CollisionFound return.
  * `first` and `second` are BoundingBox_UL_Corner addresses.  The original
  * enters X/Y as offsets from $04ac; preserve its two scratch bytes after
  * every terminal path as well as its carry-equivalent return value. */
