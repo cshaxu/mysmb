@@ -2804,13 +2804,13 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T67 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-m; [record](../../docs/history/M2-T67-sound-command-current-proof.md) |
 | M2 T67 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-m; [record](../../docs/history/M2-T67-sound-command-current-proof.md) |
 | M2 T67 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-m; [record](../../docs/history/M2-T67-sound-command-current-proof.md) |
-| M2 T68 | 0 | - | [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S1 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S2 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S3 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
+| M2 T68 | 0 | - | [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S1 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S2 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S3 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-n; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
@@ -3613,9 +3613,9 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T67 S4 | 11 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T67-sound-command-current-proof.md) |
 | M2 T67 S5 | 27 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T67-sound-command-current-proof.md) |
 | M2 T67 S6 | 126 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T67-sound-command-current-proof.md) |
-| M2 T68 S1 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S2 | 9 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S3 | 23 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S4 | 21 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S5 | 7 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S6 | 77 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
+| M2 T68 S1 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S2 | 9 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S3 | 23 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S4 | 21 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S5 | 7 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T68-music-data-current-proof.md) |
+| M2 T68 S6 | 77 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T68-music-data-current-proof.md) |

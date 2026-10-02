@@ -311,7 +311,7 @@ T68 next unadmitted, then cross-cohort/final certification.
 
 ## Current checkpoint after T68 S1
 
-[T68 S1](t68-cohort-n-music-data-current-proof.md) closes17 nodes/41 controls,
+[T68 S1](../../history/M2-T68-music-data-current-proof.md) closes17 nodes/41 controls,
 5 impossible raw fallthroughs proven. Current1859/1992 nodes,3956/4281 controls
 (raw4342,infeasible61),408/493 material partial; historical1992/1992 separate.
 200961 original roots each width agree after zero-loopback/INC-order repairs;
@@ -322,7 +322,7 @@ in TODO before whole-domain certification; earlier PRG evidence remains bounded.
 
 ## Current checkpoint after T68 S2
 
-[T68 S2](t68-cohort-n-music-data-current-proof.md) closes9 helpers/8 controls,
+[T68 S2](../../history/M2-T68-music-data-current-proof.md) closes9 helpers/8 controls,
 2 impossible raw fallthroughs. Current1868/1992 nodes,3964/4279 controls
 (raw4342,infeasible63),408/493 material partial; historical1992/1992 distinct.
 786432 original roots each width zero diff after original two-ADC carry repair;
@@ -332,7 +332,7 @@ RAM-alias fetch order remains explicit cross-cohort debt, not silently closed.
 
 ## Current checkpoint after T68 S3
 
-[T68 S3](t68-cohort-n-music-data-current-proof.md) closes23 music-header nodes/
+[T68 S3](../../history/M2-T68-music-data-current-proof.md) closes23 music-header nodes/
 23 material relations after all171 region bytes are actually indexed/read and
 native consumers proven. Current1891/1992 nodes,3964/4279 controls
 (raw4342,infeasible63),431/493 material partial; historical1992/1992 distinct.
@@ -342,7 +342,7 @@ unadmitted;28 N plus73 earlier C nodes remain pending, no final certification.
 
 ## Current checkpoint after T68 S4
 
-[T68 S4](t68-cohort-n-music-data-current-proof.md) closes21 streams and adds62
+[T68 S4](../../history/M2-T68-music-data-current-proof.md) closes21 streams and adds62
 actual typed material relations. Current1912/1992 nodes,3964/4279 controls
 (raw4342,infeasible63),493/555 material partial; denominator493->555 reflects
 new source-path enumeration.1348 bytes actually read,4 explicit source-unused
@@ -352,10 +352,21 @@ S5 next unadmitted;7 N plus73 C labels and external relations remain pending.
 
 ## Current checkpoint after T68 S5
 
-[T68 S5](t68-cohort-n-music-data-current-proof.md) closes7 table nodes and7
+[T68 S5](../../history/M2-T68-music-data-current-proof.md) closes7 table nodes and7
 material relations. Current1919/1992 nodes,3964/4279 controls(raw4342,
 infeasible63),500/555 material partial.250 declared-consumer bytes/2304 actual
 original roots each width zero differences;current builds/4 focused tests
 each/purity/OpenNT link pass;3 products unchanged. All77 N nodes exact;
 T68 open,S6 integration next unadmitted. Earlier73 C nodes and external
 relations remain pending; historical1992/1992 is not current certification.
+
+## Current checkpoint after T68 closure
+
+[Closed T68](../../history/M2-T68-music-data-current-proof.md) proves all77 N
+nodes/49 feasible controls/92 material;7 impossible raw controls retained.
+S6 adds16384 mixed/sequential/title/pause original roots each width,zero diff.
+Current1919/1992 nodes,3964/4279 controls(raw4342,infeasible63),500/555 material
+partial;historical1992/1992 separate. Full builds/248 tests each/purity/OpenNT
+link pass;3 S2 products unchanged. T69 cross-cohort work next unadmitted;
+earlier73 C nodes/315 controls/55 enumerated material rows and M alias debt
+remain before final certification. M2 remains open.

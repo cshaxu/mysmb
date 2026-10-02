@@ -878,3 +878,85 @@ queue priority/pause/zero/loopback and ordered channel output boundaries.
 Owner-local ROM/reviewed ASM research only, nonredistributable. Ignored
 build/m2-t68-s6,128MiB raw,1024 roots/batch,120seconds/process,524288steps/root;
 coordinator removes raw per batch and retains neutral summaries only.
+
+## S6 P2 and T68 closure - N census and integrated audio joins
+
+All77 planned N labels in the source-order matrix exact, no N deferral or
+transfer. S6 scopes77 already-exact labels, intended/actual fresh0. Every56
+owned raw control accounted:49 feasible exact and7 opcode-proven infeasible.
+All92 owned material relations exact (initial30 plus62 actual stream consumers).
+T68 as a whole advances1842->1919/1992 nodes,3915->3964 exact controls;
+feasible4286->4279 after7 retained infeasible proofs. Material408->500 exact,
+enumeration493->555 partial. S6 keeps1919/1992,3964/4279(raw4342,
+infeasible63),500/555 unchanged. Historical1992/1992 distinct, expected and
+actualMatches empty. No global/full-domain certification from this cohort.
+
+| Accepted chain | Exact nodes | Raw control dispositions | Material | Original roots per width |
+| --- | --- | --- | --- | --- |
+| S1 | 17 | 46 | 0 | 200961 |
+| S2 | 9 | 10 | 0 | 786432 |
+| S3 | 23 | 0 | 23 | 12544 |
+| S4 | 21 | 0 | 62 | 51201 |
+| S5 | 7 | 0 | 7 | 2304 |
+
+Accepted member roots total1053442; each
+node appears once, each56 control once,49 exact/7 impossible proofs retained.
+Source bindings/header regions/streams/tables and actual producer/consumer
+contracts independently reviewed in S1-S5. S6 combines those accepted proofs,
+does not repeat every member matrix or infer unobserved paths.
+
+S6 adds16384 unchanged original returning SoundEngine roots each width:
+mode24 carries original RAM/APU through16 selected event/area music sequences,
+256 calls each(4096); mode28 exercises4096 paired queue profiles (all256
+Square1 values across16 Square2 values) with original noise/music priorities;
+mode29 adds8192 title/pause profiles. Timing baseline alone resets; inputs are
+controlled original machine states or actual original prior outputs, never C
+outputs. Full1841 RAM including0109-0139,24 APU and all ordered write counts,
+indices/values agree. Only true CPU stack0100-0108/013A-01FF and unmapped CPU
+transients excluded. Real SoundEngine/RTS, no patched ROM or mocked child.
+
+| Actual original join entry | Observations in new integration roots |
+| --- | --- |
+| `LoadHeader` | 5651 |
+| `HandleSquare2Music` | 8870 |
+| `HandleSquare1Music` | 8348 |
+| `HandleTriangleMusic` | 8348 |
+| `HandleNoiseMusic` | 8348 |
+| `ProcessLengthData` | 17677 |
+| `LoadEnvelopeData` | 5658 |
+| `Dump_Freq_Regs` | 16450 |
+
+Manual cross-chain audit: LoadHeader selects source pointer/length/channel
+offsets before counters/reset/master writes; channel execution follows
+Square2,Square1,triangle,noise and preserves queue protection. Length/control/
+envelope/frequency consumers use real original indices and return values;
+zero end/rest/loop paths and alternate death register remain in shared audio.c.
+S1's INC-before-read triangle/noise and zero noise loopback, S2's two-ADC
+carry, S3's short header cross-reads, S4's typed shared streams/unused storage,
+S5's low-zero/counter-shift/table-minus1 semantics integrate with zero diff.
+Similar-issue sweep found no scoped new channel-order, child-return, priority,
+pause bypass or terminal queue-clear discrepancy. Platform adapters consume
+neutral commands; no platform gameplay introduced. Earlier M Square1/Square2
+RAM-alias fetch-order debt remains explicitly unresolved, immutable PRG paths
+do not close it. Earlier73 C nodes likewise remain pending for cross-cohort
+work. Remaining315 feasible controls/55 enumerated material rows need proof;
+global material enumeration is partial. M2 remains open.
+
+All16 incoming external control dispositions retain accepted owner evidence:
+control-03397 (M, Squ2LengthHandler -> ProcessLengthData, exact); control-03402 (M, Squ2NoteHandler -> LoadControlRegs, exact); control-03411 (M, NoDecEnv1 -> LoadEnvelopeData, exact); control-03413 (M, HandleSquare1Music -> HandleTriangleMusic, exact); control-03419 (M, Squ1NoteHandler -> AlternateLengthHandler, exact); control-03420 (M, Squ1NoteHandler -> HandleTriangleMusic, exact); control-03423 (M, Squ1NoteHandler -> LoadControlRegs, exact); control-03427 (M, MiscSqu1MusicTasks -> HandleTriangleMusic, exact); control-03428 (M, MiscSqu1MusicTasks -> DeathMAltReg, exact); control-03429 (M, MiscSqu1MusicTasks -> NoDecEnv2, exact); control-03430 (M, MiscSqu1MusicTasks -> NoDecEnv2, exact); control-04081 (M, ProcessLengthData -> Squ2LengthHandler, exact); control-04083 (M, LoadControlRegs -> Squ2NoteHandler, exact); control-04085 (M, LoadEnvelopeData -> NoDecEnv1, exact); control-04086 (M, AlternateLengthHandler -> Squ1NoteHandler, exact); control-04088 (M, LoadControlRegs -> Squ1NoteHandler, exact). No incoming material rows currently enumerated; this is not a
+claim of globally complete material enumeration. No external relation promoted.
+
+Operational: full current x86/x64 builds and248 tests each pass, including
+platform purity. Original OpenNT DOS16 link exits0 with inherited OLDNAMES.LIB
+warning, no interactive DOS/performance qualification claim. No product code
+change; three committed S2 products equal current builds:
+
+- `mysmb16.exe`: 260967 bytes, SHA256 `08027088cb6789482a9f7d20a7a5d3ac6f549ffe1ee56f746425c8f4f1c045d8`, byte-identical committed/current product retained.
+- `mysmb32.exe`: 373988 bytes, SHA256 `dd09059aed071d96d73caad9c3203f7556f1c34ca1b1d674f920e7035e3c2f28`, byte-identical committed/current product retained.
+- `mysmb64.exe`: 381530 bytes, SHA256 `e6c3cbee528e79ee4b3404ae869f60ab79101b01b5a4cdb8bc5899b537043520`, byte-identical committed/current product retained.
+
+Ignored build/m2-t68-s6 retains neutral census/join/route/build/test summaries;
+raw deleted per batch, recorder deleted at closure. Ledger/registry/progress/
+documentation gates required before P2. Closed proposal retained in history;
+queue already lists only T69-T70, unrelated I/O candidates preserved unstaged.
+T69 cross-cohort work is next unadmitted;T70 final certification follows.

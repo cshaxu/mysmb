@@ -10,7 +10,7 @@
   fetch chain, test original alias inputs, restore operation order and rerun
   M/N integration before full-domain closure. Existing maintenance custody
   retained; no out-of-scope repair or silent evidence upgrade.
-  [Exact finding](../proposals/m2/t68-cohort-n-music-data-current-proof.md#s1-p2-closure---music-tails-and-original-ram-operation-order).
+  [Exact finding](../history/M2-T68-music-data-current-proof.md#s1-p2-closure---music-tails-and-original-ram-operation-order).
 
 - [ ] **Original dump-child graph fidelity (High):** T65 S3's similar-issue
   sweep found DrawBrickChunks and PlayerOffscreenChk duplicate original

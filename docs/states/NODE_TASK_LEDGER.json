@@ -7115,13 +7115,13 @@
     {
       "id": "M2 T68",
       "evidence": [
-        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md"
+        "docs/history/M2-T68-music-data-current-proof.md"
       ],
       "subtasks": [
         {
           "id": "M2 T68 S1",
           "evidence": [
-            "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md"
+            "docs/history/M2-T68-music-data-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7134,7 +7134,7 @@
         {
           "id": "M2 T68 S2",
           "evidence": [
-            "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md"
+            "docs/history/M2-T68-music-data-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7147,7 +7147,7 @@
         {
           "id": "M2 T68 S3",
           "evidence": [
-            "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md"
+            "docs/history/M2-T68-music-data-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7160,7 +7160,7 @@
         {
           "id": "M2 T68 S4",
           "evidence": [
-            "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md"
+            "docs/history/M2-T68-music-data-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7173,7 +7173,7 @@
         {
           "id": "M2 T68 S5",
           "evidence": [
-            "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md"
+            "docs/history/M2-T68-music-data-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7186,7 +7186,7 @@
         {
           "id": "M2 T68 S6",
           "evidence": [
-            "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md"
+            "docs/history/M2-T68-music-data-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -690201,7 +690201,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md",
+      "evidence": "docs/history/M2-T68-music-data-current-proof.md",
       "state": "closed"
     },
     {
@@ -692216,7 +692216,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md",
+      "evidence": "docs/history/M2-T68-music-data-current-proof.md",
       "state": "closed"
     },
     {
@@ -694245,7 +694245,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md",
+      "evidence": "docs/history/M2-T68-music-data-current-proof.md",
       "state": "closed"
     },
     {
@@ -696272,7 +696272,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md",
+      "evidence": "docs/history/M2-T68-music-data-current-proof.md",
       "state": "closed"
     },
     {
@@ -698285,7 +698285,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md",
+      "evidence": "docs/history/M2-T68-music-data-current-proof.md",
       "state": "closed"
     },
     {
@@ -700368,8 +700368,8 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md",
-      "state": "admitted"
+      "evidence": "docs/history/M2-T68-music-data-current-proof.md",
+      "state": "closed"
     }
   ]
 }

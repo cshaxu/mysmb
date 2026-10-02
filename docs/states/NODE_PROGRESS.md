@@ -1,15 +1,19 @@
 # M2 ROM conformance node progress
 
-## M2 T68 S6 - active cohort integration
+## M2 T68 - closed music/data cohort
 
-[Full77-node/56-control/92-material census](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
-scope already exact,intended fresh0,max1919/1992. Current1919/1992 nodes,
-3964/4279 controls(raw4342,infeasible63),500/555 material partial;historical
-1992/1992 separate. Actual cross-chain proof/integrated regression required.
+[All77 labels/56 raw controls/92 material proof](../history/M2-T68-music-data-current-proof.md)
+close77 nodes,49 feasible controls/92 material exact;7 impossible retained.
+Current1919/1992 nodes,3964/4279 controls(raw4342,infeasible63),500/555 material
+partial;historical1992/1992 separate. S6 fresh0,16384 new integration roots each
+width zero diff;full builds/248 tests each/purity/OpenNT link pass,3 S2 products
+unchanged. No owned deferral/transfer. Earlier73 C nodes,315 feasible controls,
+55 enumerated material rows and earlier M alias debt remain;M2 open,T69 next
+unadmitted before final certification. Queue retains only pending candidates.
 
 ## M2 T68 S5 - closed final table chain
 
-[All7 tables/7 material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+[All7 tables/7 material consumers](../history/M2-T68-music-data-current-proof.md)
 close exact:250 bytes read by their declared original consumers,2304 returning
 original/current roots each width zero differences. Current1919/1992 nodes,
 3964/4279 controls(raw4342,infeasible63),500/555 material partial. Current
@@ -19,7 +23,7 @@ T68 open,S6 next unadmitted. Earlier73 C nodes/M fetch-order debt remain pending
 
 ## M2 T68 S4 - closed stream-region chain
 
-[All21 regions/62 source-proven material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+[All21 regions/62 source-proven material consumers](../history/M2-T68-music-data-current-proof.md)
 close21 nodes exact after1348 actual stream-byte reads and4 explicit source-unused
 storage dispositions. Current1912/1992 nodes,3964/4279 controls(raw4342,
 infeasible63); newly proved62 material rows expand enumeration493->555 and
@@ -31,7 +35,7 @@ earlier M controlled RAM-alias scope remains explicit cross-cohort debt.
 
 ## M2 T68 S3 - closed header-data chain
 
-[All23 regions/23 material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+[All23 regions/23 material consumers](../history/M2-T68-music-data-current-proof.md)
 close exact after all171 bytes have original indexed reads and native consumer
 proof. Current1891/1992 nodes,3964/4279 controls(raw4342,infeasible63),431/493
 material partial; historical1992/1992 distinct.12544 current original/native
@@ -42,7 +46,7 @@ remain pending, material enumeration still partial.
 
 ## M2 T68 S2 - closed helper chain
 
-[All9 nodes/10 raw control dispositions](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+[All9 nodes/10 raw control dispositions](../history/M2-T68-music-data-current-proof.md)
 close9 nodes/8 feasible controls exact,2 impossible instruction-proven.
 Current1868/1992 nodes,3964/4279 controls(raw4342,infeasible63),408/493 material
 partial; historical1992/1992 distinct.786432 final original/native roots agree
@@ -52,7 +56,7 @@ Remaining51 N plus73 C nodes pending; material enumeration still partial.
 
 ## M2 T68 S1 - closed music-tail chain
 
-[All17 nodes and46 raw control dispositions](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+[All17 nodes and46 raw control dispositions](../history/M2-T68-music-data-current-proof.md)
 close17 nodes/41 feasible controls exact,5 impossible instruction-proven.
 Current1859/1992 nodes,3956/4281 controls(raw4342,infeasible61),408/493 material
 partial; historical1992/1992 separate.200961 final unchanged original/native
