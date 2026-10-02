@@ -440,14 +440,16 @@ int main(void)
     game.ram[0x0731U] = 0xffU;
     game.ram[0x0732U] = 0xffU;
     game.ram[0x074eU] = 2U;
+    /* ROM WorldNumber=0 selects WarpNum's default selector 4 (4-3-2). */
+    game.ram[0x075fU] = 0U;
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x06d6U] != 5U || game.ram[0x0300U] != 0x2cU ||
+        game.ram[0x06d6U] != 4U || game.ram[0x0300U] != 0x2cU ||
         mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
         game.name_table[0][0x0584U] != mysmb_local_prg[0x0752U +
             mysmb_local_prg[0x07feU + 8U] + 3U] ||
-        game.ram[0x031cU] != mysmb_local_prg[0x07f6U] ||
-        game.ram[0x0320U] != mysmb_local_prg[0x07f7U] ||
-        game.ram[0x0324U] != mysmb_local_prg[0x07f8U]) return 1;
+        game.ram[0x031cU] != mysmb_local_prg[0x07f2U] ||
+        game.ram[0x0320U] != mysmb_local_prg[0x07f3U] ||
+        game.ram[0x0324U] != mysmb_local_prg[0x07f4U]) return 1;
 
     /* After a timer death restarts game mode, ScreenRoutines task 4 takes
      * DisplayTimeUp's OutputInter route before the normal area parser. */

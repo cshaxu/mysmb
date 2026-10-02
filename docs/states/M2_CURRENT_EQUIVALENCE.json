@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3160,
-    "needs-evidence": 1163,
+    "exact": 3163,
+    "needs-evidence": 1160,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -12672,13 +12672,15 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette",
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "M2 T64 S56 full-scratch caller audit found omitted ClrGetLoop RAM00=$ff; shared area.c now restores the source terminal counter. Prior T54 output-region proof did not compare this scratch byte. Actual $D833 return and original GetPlayerColors loop confirm the correction. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "M2 T64 S56 before repair x86/x64 each have 96 RAM00 differences; after repair each matches 1536 actual pickup roots across 1841 bytes, including every scratch byte and 49 lower-stack game aliases. Ten operational regressions per width and original OpenNT DOS16 pass; three EXEs refreshed. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "semanticContract": "ROM $859d: selects Mario, Luigi or fiery player bytes and the BackgroundColorCtrl-or-AreaType universal byte, writes one $3f10 length-four Buffer1 command, then advances the offset by seven.",
+      "semanticContract": "ROM $85F1 GetPlayerColors selects Mario/Luigi/fiery bytes and BackgroundColorCtrl-or-AreaType, preserves the four-color counter terminal RAM00=$ff, writes the $3f10 length-four Buffer1 packet and advances its offset by seven within the admitted table/buffer domain.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -130584,13 +130586,16 @@
       "instruction": "rts/rti",
       "id": "control-03909",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/powerup_collision.c with real lifecycle/floatey/palette/routine return outputs and corrected src/game/area.c palette scratch.",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: SetupFloateyNumber returns at $D808 with the incoming score slot and relative X in A after default control six/timer/Y/X writes; HandlePowerUpCollision then sets grab sound and reads live type/status, with 1UP overwriting only the control."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetupFloateyNumber -> HandlePowerUpCollision with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SetupFloateyNumber returns at $D808 with the incoming score slot and relative X in A after default control six/timer/Y/X writes; HandlePowerUpCollision then sets grab sound and reads live type/status, with 1UP overwriting only the control.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c",
         "src/game/world/powerup_collision.c"
@@ -130604,13 +130609,16 @@
       "instruction": "rts/rti",
       "id": "control-03910",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/powerup_collision.c with real lifecycle/floatey/palette/routine return outputs and corrected src/game/area.c palette scratch.",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: GetPlayerColors returns at $D833 with the original VRAM offset X and advanced offset A after the source palette packet and terminal RAM00=$ff; Shroom_Flower_PUp reloads ObjectOffset before the fiery routine setup."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetPlayerColors -> Shroom_Flower_PUp with source type/status predicate and score/status/routine handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "GetPlayerColors returns at $D833 with the original VRAM offset X and advanced offset A after the source palette packet and terminal RAM00=$ff; Shroom_Flower_PUp reloads ObjectOffset before the fiery routine setup.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/world/powerup_collision.c"
@@ -130624,13 +130632,16 @@
       "instruction": "rts/rti",
       "id": "control-03911",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/powerup_collision.c with real lifecycle/floatey/palette/routine return outputs and corrected src/game/area.c palette scratch.",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: SetPRout returns at $D84C with X=ObjectOffset after routine nine/twelve, state zero, TimerControl=$ff and ScrollAmount=zero writes; UpToFiery immediately returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetPRout -> UpToFiery with source signed/timer/status predicate and current-slot state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SetPRout returns at $D84C with X=ObjectOffset after routine nine/twelve, state zero, TimerControl=$ff and ScrollAmount=zero writes; UpToFiery immediately returns.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c",
         "src/game/world/powerup_collision.c"

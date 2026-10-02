@@ -3155,3 +3155,115 @@ Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
 unchanged. Exact feasible controls rise 3,156 to 3,160/4,323 (raw 4,342,
 infeasible 19). T64 remains open with 21 Cohort-J controls, zero pending
 material; power-up collection returns follow. T65 is not admitted.
+
+## Aggregate S56 admission - power-up collection child returns
+
+S56 owns control-03909/03910/03911. Ten scoped labels are
+HandlePowerUpCollision, Shroom_Flower_PUp, SetFor1Up, UpToSuper, UpToFiery, NoPUp, EraseEnemyObject, SetupFloateyNumber, GetPlayerColors, SetPRout.
+All already exact; expected new nodes empty, custody unchanged.
+Historical 1992/1992, exact nodes 1480/1992 and material 368/487 unchanged;
+controls enter 3160/4323 and can reach 3163/4323. S55 precedes; enemy
+terrain/landing returns follow. T64 stays open; no T65 admission.
+
+Shared world/powerup_collision.c owns $D800-$D84C with real lifecycle,
+floating-score, area palette and player routine children. Static track checks
+erase/default score before live type/status reads, 1UP control overwrite,
+star timer/music, small/super/fiery paths, palette return before ObjectOffset
+reload and routine/state setup. Actual roots across all six slots cover type
+and status byte alternatives, both players, background selectors and legal
+VRAM buffer edge offsets; source RTS seams verify score, palette and routine
+outputs. Compare persistent RAM, scratch and $0109-$0139 with explicit
+CPU-stack exclusions. Original PRG binds palette resources. Current x86/x64
+focused pickup/purity tests and original OpenNT DOS16 are operational gates.
+Scoped differences stay here for repair/re-audit; a product repair refreshes
+all three approved EXEs. Existing exact nodes are not new node credit.
+
+Owner-local nonredistributable ROM/ASM remain research-only. Ignored
+build/m2-t64-s56 owns <=8 MiB raw, 524288 steps/case, 120 seconds and
+cleanup. Preserve unrelated work.
+
+### S56 corrective scope and regression fixture adjudication
+
+Full scratch comparison finds 96 palette-return differences per width:
+GetPlayerColors omitted ClrGetLoop's terminal RAM00=$ff. Repair the shared
+area.c owner and repeat the identical route; no scratch exclusion is added.
+GetPlayerColors retains its previous exact count only after fresh correction
+and re-audit evidence; the three target artifacts must be refreshed.
+
+The expanded operational suite also exposes a pre-existing local-area-smoke
+warp assertion. Ignored diagnostic executables link current shared C with
+HEAD's pre-repair area.c and current area.c separately: both fail at the same
+warp assertion. WorldNumber=0 selects WarpNum's default selector four and
+4-3-2 table at $87f2, while the fixture incorrectly expected selector five
+and the next row. Adjudicate this existing test against original lines
+3590-3601, make WorldNumber=0 explicit and correct only the expected selector/
+row. Product warp logic, node statuses and ownership are unchanged. This
+small test-only correction is part of S56's shared-area operational regression;
+it claims no extra ROM node/edge proof or admission beyond the ten-node scope.
+
+## Aggregate S56 closure - corrected palette scratch and real pickup returns
+
+Control-03909/03910/03911 are exact. All ten scoped labels retain exact:
+HandlePowerUpCollision, Shroom_Flower_PUp, SetFor1Up, UpToSuper, UpToFiery,
+NoPUp, EraseEnemyObject, SetupFloateyNumber, GetPlayerColors and SetPRout.
+GetPlayerColors receives fresh correction evidence rather than new node credit;
+no custody transfer or unobserved generic path inference.
+
+Static $D800-$D84C audit preserves erase/default score before live type/status,
+1UP's control-only override, star timer/music and small/super/fiery alternatives.
+Real score return at $D808 precedes grab sound/type reads. Original palette
+child $85F1 decrements its four-color scratch counter through zero to $ff;
+the C owner omitted this store. Full scratch audit found 96 RAM00 differences
+per width (original $ff, C retained fixture $a5). Shared area.c now preserves
+that original terminal value. The source palette return at $D833 advances the
+buffer before ObjectOffset reload/fiery routine. SetPRout return at $D84C
+restores ObjectOffset after routine/state/timer/scroll writes.
+
+1,536 actual HandlePowerUpCollision roots span six slots and type
+0/1/2/3/4/127/128/255, status 0/1/2/255, both players, background selectors
+0-7, and legal buffer offsets $00/$07/$f0/$f8. Score/palette/routine actual
+RTS returns execute 1,536/96/192 times. Source checks floating control/timer,
+palette offset/A/terminal scratch and SetPRout slot/state/timer/scroll outputs.
+Controlled ObjectOffset variants verify source reload behavior. Real children
+execute without substituted outputs; maximum root execution is 101 instructions.
+Original PRG binds palette resources.
+
+Identical post-repair records match current x86/x64 1,536/1,536 with zero
+differences across 1,841 bytes, including all zero-page scratch, persistent
+non-stack RAM and all 49 game aliases $0109-$0139. Only other CPU-stack
+bytes are excluded. No scratch exclusion was introduced to hide the defect.
+Prior GetPlayerColors evidence compared its output region only; the registry
+now explicitly records this expanded source/RAM evidence and correction.
+
+The broader local-area smoke initially failed before and after the palette
+repair at the same warp assertion. Ignored diagnostics linked HEAD area.c
+and current area.c separately and both reported WorldNumber=0, selector four,
+4-3-2 output. Original ScrollLockObject_Warp branches directly to WarpNum
+with X=four for world zero. The existing fixture incorrectly expected selector
+five/next table row; only its expected selector/row was corrected and input
+world zero made explicit. Product warp logic is unchanged; no additional
+warp node or edge credit is claimed.
+
+Final operational checks pass 10/10 on each width: pickup, local-area,
+palette rotation/timing, pause root, focus pause, audio renderer/output,
+Win32 self-test and platform purity. Fresh original OpenNT DOS16 builds/links
+with the existing OLDNAMES.LIB warning. Similar-issue sweep finds one shared
+GetPlayerColors owner and seven production calls: two screen/game callers,
+player entrance, title, injury, pickup and the sync helper. All reuse the
+corrected owner; palette/timing/native area regressions cover its wider use.
+No platform gameplay copy or scoped unresolved difference remains.
+
+Product code changed, so all three approved artifacts are refreshed and
+byte-identical to their new build outputs: mysmb16.exe 264,805 bytes,
+mysmb32.exe 376,153 bytes, mysmb64.exe 382,570 bytes. MZ and PE machine types
+are checked; both new Win32 self-tests pass. SHA256 values: DOS16
+3397878f92afd8201e94d1c58848c7ecf2b0c170325d2908f2162fe463a7c281;
+x86 c814ab3feff234b550d6c7dd747d8f5e2097f0d5cd0dc261f27d875d4a0112f1;
+x64 35cceec921b6a58095e014dbc9fb9b0030fa29138712156074e9ec2ceba6738b.
+These owner-approved local artifacts are not redistribution/release evidence.
+Raw records/probe and local diagnostic derivatives are cleaned after gates.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
+unchanged. Exact feasible controls rise 3,160 to 3,163/4,323 (raw 4,342,
+infeasible 19). T64 remains open with 18 Cohort-J controls, zero pending
+material; enemy terrain/landing returns follow. T65 is not admitted.

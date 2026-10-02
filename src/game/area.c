@@ -483,6 +483,9 @@ mysmb_u8 mysmb_area_queue_player_palette(struct mysmb_game *game)
         game->ram[MYSMB_AREA_BACKGROUND_COLOR] : game->ram[MYSMB_AREA_TYPE];
     if (background_index >= 8U || game->area_prg_size <=
         MYSMB_AREA_BACKGROUND_COLORS + background_index) return 0U;
+    /* ROM ClrGetLoop decrements its four-color counter through zero to
+     * $ff before writing the background color and command header. */
+    game->ram[0U] = 0xffU;
     game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] = 0x3fU;
     game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] = 0x10U;
     game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] = 4U;
