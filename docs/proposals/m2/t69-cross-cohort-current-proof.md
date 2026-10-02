@@ -1425,3 +1425,139 @@ Ignored build/m2-t69-s10;raw<=128MiB,1024 roots/batch,120seconds/process,
 Similar-issue sweep:canonical scratch-writing offscreen joins,slot restore,
 carry through vector dispatch,paired chunk arrays,low-Y wrap,buffer-idle
 replacement predicate and actual child order. No admission credit.
+
+## S10 P2 closure - original power-up/block/movement joins
+
+All49 planned controls and material-00110/00111/00112 exact.All36 existing
+labels rechecked:Setup_Vine; CoinBlock; SetupJumpCoin; AddToScore; SetupPowerUp; PowerUpObjHandler; ShroomM; RunPUSubs; BlockCode; ExtraLifeMushBlock; VineBlock; BrickShatter; CheckTopOfBlock; SpawnBrickChunks; BlockObjectsCore; BouncingBlockHandler; BlockObjMT_Updater; MoveObjectHorizontally; ExXMove; MovePlayerVertically; ImposeGravityBlock; MoveNormalEnemy; MoveJumpingEnemy; OffscreenBoundsCheck; PlayerEnemyCollision; EnemyToBGCollisionDet; EnemyJump; GetEnemyBoundBox; DrawPowerUp; DrawBlock; DrawBrickChunks; RelativeEnemyPosition; RelativeBlockPosition; GetEnemyOffscreenBits; GetBlockOffscreenBits; PlayerHeadCollision.Zero fresh nodes,no scoped
+deferral.Current1992/1992 scoped-exact nodes,4152->4201/4277 feasible controls
+(raw4342,infeasible65),540->543/555 material partial;historical1992/1992
+separate.T69 remains open,S11 next unadmitted;76 controls/12 material and
+earlier M alias scope plus final integrated proof remain.No whole-game or
+all-machine-states certification inferred from these bounded routes.
+
+Source-first audit found two actual join defects. RunPUSubs used the value-only
+offscreen helper and omitted source scratch writes;initial1024 roots showed
+1001 differences at06. It now invokes canonical GetEnemyOffscreenBits in the
+same original position between relative position and bounding box. BlockCode
+used a native switch without original JumpEngine scratch;initial head route
+showed224 differences at04-07 across56 roots. It now invokes the existing
+shared JumpEngine-state helper with popped returnBDBF before that switch.
+Both are shared game changes;no platform business logic added.
+
+Original BC49-BCEA power-up type/status setup,TimerControl/type movement,
+emergence frame mask,old-state11 transition,new-state6 draw threshold and six
+RunPUSubs children retained. Head BCED-BD83 preserves incoming metatile over
+actual VRAM child,live block buffer read,PlayerSize/crouch offsets,coin brick
+timer/replacement,world coordinate carry and original slot inversion. Bump
+BD9B-BDE7 reloads slot and05 after CheckTopOfBlock;descending metatile match,
+index>=9 subtract5,overlapping BIT type entries and original coin dispatch
+carry0 retained. Original JumpEngine ASL/TAY preserves carry while popping
+its return and reading the vector;the9 content choices remain fixed C calls,
+not runtime emulation. Selectors1/2/7 separately observed reading both source
+vector bytes,each equals CoinBlock;actual8E16 indirect jump observed.
+
+BrickShatter/check-top/chunk producers BE02-BE6F retain coin-above row write,
+actual score child and paired X/page/Y/speed/force arrays,including no chunk
+high-Y initialization. BlockObjectsCore BE70-BED3 preserves masked stacked
+state,slot+9/+11 gravity/movement,actual relative/offscreen/graphics,high-Y
+zero state preservation,bottom chunk clamp and low-Y wrap replacement.
+BlockObjMT_Updater BED4-BF01 checks0301 rather than0300,walks1 then0,reloads
+scratch pointer/row and consumes actual replacement before clearing flag.
+MovePlayerVertically BF4D retains TimerControl-bypassed jumpspring guard and
+original ExXMove branch;actual world movement/gravity keep byte carry and
+array offsets. Existing accepted leaf algorithms are reused,not credited anew.
+
+Final532480 original roots each width zero diff:five65536 entry families
+(power-up,head,block lifetime,replacement,vertical movement),three65536
+sequential families(shatter->replacement,spawn->lifetime,bounce->replacement),
+plus8192 head vector-read observations. Fixtures cover full byte coordinates,
+power-up state/type/frame/freeze,block metatile/head size,coin-above paths,
+paired speeds/forces,page and scroll carry,OAM positions,low-Y wrap and busy/
+idle buffer predicates. Sequential roots preserve all persistent RAM and CPU
+registers;only the declared return sentinel/physical stack is restored before
+the next original entry. Actual consumer handoffs:{'0': 28672, '1': 65536, '2': 10232}. Other
+fixtures do not imply every combination is reachable during gameplay.
+No child mocks or ROM patches in original/current route proof. Full2032 RAM,
+24 APU and ordered writes/count equal;only01F0-01FF physical stack/sentinel
+excluded,minSP F0,CPU return registers/flags outside native C ABI. The separate
+call-order units deliberately stub children and do not count as ROM proof.
+
+Similar-issue sweep searched every value-only enemy-offscreen production hit.
+power_up.c repaired;vine/cannon/dispatch_targets already canonical. Remaining
+jumpspring.c,enemy/normal.c,special_callers.c,platform_callers.c and
+firebar_children.c retain earlier contracts for later planned caller/integrated
+proof;S12 explicitly owns firebar joins. OAM bowser_flame/bloober/cheep/flagpole/
+normal_enemy/goomba/piranha/podoboo graphics use value queries and are not
+mechanically replaced. This S audits only the admitted power-up caller join.
+JumpEngine-state sweep covers existing game/area/terminal/enemy-init/normal
+bindings;only scoped BlockCode lacked its scratch handoff. All scoped slot,
+carry,paired-array,low-Y-wrap and buffer-idle paths re-audited after repair;
+no scoped difference remains. Later scopes keep responsibility for remaining
+caller coverage;no new T invented and no later edge pre-credit.
+
+| ID | Original/shared join | Type | Original observations |
+| --- | --- | --- | --- |
+| `control-01290` | PowerUpObjHandler -> MoveJumpingEnemy | call | 4096 |
+| `control-01291` | PowerUpObjHandler -> EnemyJump | call | 4096 |
+| `control-01293` | ShroomM -> MoveNormalEnemy | call | 8192 |
+| `control-01294` | ShroomM -> EnemyToBGCollisionDet | call | 8192 |
+| `control-01301` | RunPUSubs -> RelativeEnemyPosition | call | 64064 |
+| `control-01302` | RunPUSubs -> GetEnemyOffscreenBits | call | 64064 |
+| `control-01303` | RunPUSubs -> GetEnemyBoundBox | call | 64064 |
+| `control-01304` | RunPUSubs -> DrawPowerUp | call | 64064 |
+| `control-01305` | RunPUSubs -> PlayerEnemyCollision | call | 64064 |
+| `control-01306` | RunPUSubs -> OffscreenBoundsCheck | call | 64064 |
+| `control-01342` | ExtraLifeMushBlock -> SetupPowerUp | jump | 1040 |
+| `control-01343` | VineBlock -> Setup_Vine | call | 260 |
+| `control-01351` | BrickShatter -> AddToScore | call | 4096 |
+| `control-01355` | CheckTopOfBlock -> SetupJumpCoin | call | 30208 |
+| `control-01359` | BlockObjectsCore -> ImposeGravityBlock | call | 32768 |
+| `control-01360` | BlockObjectsCore -> MoveObjectHorizontally | call | 32768 |
+| `control-01361` | BlockObjectsCore -> ImposeGravityBlock | call | 32768 |
+| `control-01362` | BlockObjectsCore -> MoveObjectHorizontally | call | 32768 |
+| `control-01363` | BlockObjectsCore -> RelativeBlockPosition | call | 32768 |
+| `control-01364` | BlockObjectsCore -> GetBlockOffscreenBits | call | 32768 |
+| `control-01365` | BlockObjectsCore -> DrawBrickChunks | call | 32768 |
+| `control-01372` | BouncingBlockHandler -> ImposeGravityBlock | call | 32768 |
+| `control-01373` | BouncingBlockHandler -> RelativeBlockPosition | call | 32768 |
+| `control-01374` | BouncingBlockHandler -> GetBlockOffscreenBits | call | 32768 |
+| `control-01375` | BouncingBlockHandler -> DrawBlock | call | 32768 |
+| `control-01394` | MovePlayerVertically -> ExXMove | branch | 16384 |
+| `control-03727` | EnemyJump -> PowerUpObjHandler | return | 4096 |
+| `control-03730` | RelativeEnemyPosition -> RunPUSubs | return | 64064 |
+| `control-03731` | GetEnemyOffscreenBits -> RunPUSubs | return | 64064 |
+| `control-03732` | GetEnemyBoundBox -> RunPUSubs | return | 64064 |
+| `control-03733` | DrawPowerUp -> RunPUSubs | return | 64064 |
+| `control-03734` | PlayerEnemyCollision -> RunPUSubs | return | 64064 |
+| `control-03735` | OffscreenBoundsCheck -> RunPUSubs | return | 64064 |
+| `control-03747` | AddToScore -> BrickShatter | return | 4096 |
+| `control-03749` | SetupJumpCoin -> CheckTopOfBlock | return | 30208 |
+| `control-03750` | ImposeGravityBlock -> BlockObjectsCore | return | 32768 |
+| `control-03751` | MoveObjectHorizontally -> BlockObjectsCore | return | 32768 |
+| `control-03752` | ImposeGravityBlock -> BlockObjectsCore | return | 32768 |
+| `control-03753` | MoveObjectHorizontally -> BlockObjectsCore | return | 32768 |
+| `control-03754` | RelativeBlockPosition -> BlockObjectsCore | return | 32768 |
+| `control-03755` | GetBlockOffscreenBits -> BlockObjectsCore | return | 32768 |
+| `control-03756` | DrawBrickChunks -> BlockObjectsCore | return | 32768 |
+| `control-03757` | ImposeGravityBlock -> BouncingBlockHandler | return | 32768 |
+| `control-03758` | RelativeBlockPosition -> BouncingBlockHandler | return | 32768 |
+| `control-03759` | GetBlockOffscreenBits -> BouncingBlockHandler | return | 32768 |
+| `control-03760` | DrawBlock -> BouncingBlockHandler | return | 32768 |
+| `control-04207` | BlockCode -> CoinBlock | jump-engine-dispatch | 520 |
+| `control-04208` | BlockCode -> CoinBlock | jump-engine-dispatch | 520 |
+| `control-04213` | BlockCode -> CoinBlock | jump-engine-dispatch | 520 |
+
+Operational:9 focused tests each width pass(power-up init/actor,head,bump,
+chunks,lifetime,replacement,gravity,purity);current x86/x64 products and
+original OpenNT DOS16 link pass. Inherited OLDNAMES.LIB warning remains;
+no interactive DOS claim. All3 products refreshed together:
+
+- `mysmb16.exe`: 261399 bytes, SHA256 `b73e6cbb6e54f81b115f37686e12cc2eb97a6d2df6ebeefd563576e4ea7bf955`; refreshed from current target.
+- `mysmb32.exe`: 374811 bytes, SHA256 `d37925f435091faa8fb16789701b8bd0aa151c670eaba2e90aea206ab1ad7f57`; refreshed from current target.
+- `mysmb64.exe`: 382348 bytes, SHA256 `c07d686b1d3a137cf2cce0b85749465bdb8d8ffc796f2fab6afa7d3af85d093b`; refreshed from current target.
+
+Raw bounded128MiB/1024 batch/120seconds process/524288steps root and deleted
+per batch;probe deleted at closure. Neutral ignored summaries/logs retained.
+Registry/ledger/progress/documentation/diff gates required before local P2
+commit.Unrelated owner work preserved,no push,no S11 pre-credit.

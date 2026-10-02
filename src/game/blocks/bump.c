@@ -1,6 +1,7 @@
 #include "game/blocks/bump.h"
 #include "game/area.h"
 #include "game/objects.h"
+#include "game/frame_root.h"
 
 /* ROM BrickQBlockMetatiles: question/hidden entries, ground bricks, then
  * alternate-area bricks. Selection and collision consume one data owner. */
@@ -40,6 +41,9 @@ void mysmb_blocks_bump(struct mysmb_game *game, mysmb_u8 slot)
     index = mysmb_blocks_bumped_index(game->ram[5U]);
     if (index == 0xffU) return;
     if (index >= 9U) index = (mysmb_u8)(index - 5U);
+    /* ROM $BDBD JSR JumpEngine saves $BDBF and the selected vector in
+     * $04-$07 before entering the content handler. */
+    mysmb_game_jump_engine_state(game, 0xbdbfU, index);
     switch (index) {
     case 0U:
     case 4U:

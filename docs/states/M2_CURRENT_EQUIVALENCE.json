@@ -2412,13 +2412,16 @@
       "consumer": "BlockObjMT_Updater",
       "storage": "Block_RepFlag / Block_Metatile replacement handoff",
       "feasiblePath": "BrickShatter sets the slot replacement flag; a later BlockObjMT_Updater turn restores the buffered metatile only when VRAM Buffer1 is idle.",
-      "status": "needs-evidence",
-      "currentCounterpart": "block replacement flag and slot metatile handoff",
+      "status": "exact",
+      "currentCounterpart": "Actual shared blocks/chunks.c producer to blocks/lifetime.c or blocks/replacement.c consumer;all persistent RAM retained between calls.",
       "semanticContract": "Preserves source producer write, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original paired chunk arrays/replace flags and metatile/row/column consumed by actual lifetime/replacement;buffer0301 busy preserves flag,low-Y wrap sets flag;no separately fabricated consumer state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original sequential producer/consumer roots retaining RAM;28672 eligible actual consumer handoffs,full final RAM/APU/ordered writes equal both widths;focused tests/current builds/3 EXEs."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2432,13 +2435,16 @@
       "consumer": "BlockObjectsCore",
       "storage": "paired block chunk position/speed/force arrays",
       "feasiblePath": "SpawnBrickChunks initializes the two paired SprObject records; BlockObjectsCore advances both in the chunk-state path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "paired chunk arrays consumed by lifetime core",
+      "status": "exact",
+      "currentCounterpart": "Actual shared blocks/chunks.c producer to blocks/lifetime.c or blocks/replacement.c consumer;all persistent RAM retained between calls.",
       "semanticContract": "Preserves source producer write, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original paired chunk arrays/replace flags and metatile/row/column consumed by actual lifetime/replacement;buffer0301 busy preserves flag,low-Y wrap sets flag;no separately fabricated consumer state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original sequential producer/consumer roots retaining RAM;65536 eligible actual consumer handoffs,full final RAM/APU/ordered writes equal both widths;focused tests/current builds/3 EXEs."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -2452,13 +2458,16 @@
       "consumer": "BlockObjMT_Updater",
       "storage": "Block_RepFlag after bounce Y-low wrap",
       "feasiblePath": "BouncingBlockHandler sets replacement flag when the source Y-low threshold is crossed; the updater consumes it on an idle buffer turn.",
-      "status": "needs-evidence",
-      "currentCounterpart": "bounce replacement flag consumed by updater",
+      "status": "exact",
+      "currentCounterpart": "Actual shared blocks/chunks.c producer to blocks/lifetime.c or blocks/replacement.c consumer;all persistent RAM retained between calls.",
       "semanticContract": "Preserves source producer write, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original paired chunk arrays/replace flags and metatile/row/column consumed by actual lifetime/replacement;buffer0301 busy preserves flag,low-Y wrap sets flag;no separately fabricated consumer state."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original sequential producer/consumer roots retaining RAM;10232 eligible actual consumer handoffs,full final RAM/APU/ordered writes equal both widths;focused tests/current builds/3 EXEs."
+      ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -26587,10 +26596,12 @@
       "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
       "semanticEvidence": [
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Copies source block page/X/Y into the selected vine enemy slot, initializes identity/flag, records first-vine start Y only at zero offset, appends the slot and queues grow-vine sound.",
       "currentSourcePaths": [
@@ -27251,11 +27262,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Allocates a misc slot and derives normal block coin coordinates with incoming allocation carry.",
       "currentSourcePaths": [
@@ -27272,11 +27285,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Allocates a misc slot and derives jump-coin coordinates using four-ASL carry.",
       "currentSourcePaths": [
@@ -27598,12 +27613,14 @@
       "semanticEvidence": [
         "M2 T52 S3 ROM logic: controlled normal-NMI floatey 1-UP route covers $84c3-$84e4 and AddToScore $bc27-$bc48; source lines 1320-1337 show DEC RAM write before the $2b comparison, score-table access and JSR.",
         "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "M2 T52 S3 operational: mysmb.floatey-oam-smoke covers initial $2b award with RAM timer $2a before score effects and initial $2a non-award with RAM timer $29; x86/x64 platform-purity and Win32 self-tests pass; OpenNT DOS16 links shared objects.c.",
         "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "ROM $bc27 selects the current-player score offset and calls BCD math. On the floatey route it is reached after LoadNumTiles and the timer decrement.",
       "currentSourcePaths": [
@@ -27680,10 +27697,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Initializes fixed enemy slot five from the selected block: ID, page, X, Y-high and Y minus eight, then enters the residual initializer.",
       "currentSourcePaths": [
@@ -27756,10 +27775,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects fixed slot five; gates inactive, emerging and active state; dispatches mushroom, star and flower behavior using the original state-bit and TimerControl predicates.",
       "currentSourcePaths": [
@@ -27775,10 +27796,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Runs normal-enemy motion followed by enemy-to-background collision, then enters the common power-up tail.",
       "currentSourcePaths": [
@@ -27832,10 +27855,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Runs relative position, offscreen bits, bounding box, graphics, player collision and offscreen bounds check in source order without an intervening type gate.",
       "currentSourcePaths": [
@@ -27889,10 +27914,12 @@
       "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Initializes the alternating block slot and breakability state, destroys the display metatile, captures block-buffer scratch, selects replacement behavior, then starts bump or shatter and toggles the slot.",
       "currentSourcePaths": [
@@ -28136,10 +28163,12 @@
       "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Normalizes the matched index and invokes JumpEngine over the nine-entry block-content vector.",
       "currentSourcePaths": [
@@ -28193,10 +28222,12 @@
       "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Stores power-up type three then tail-jumps into SetupPowerUp.",
       "currentSourcePaths": [
@@ -28212,10 +28243,12 @@
       "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects enemy slot five and current alternating block slot before Setup_Vine, then returns.",
       "currentSourcePaths": [
@@ -28326,10 +28359,12 @@
       "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Checks the cell above, sets immediate replacement/noise, creates chunks, forces player Y speed, writes 50-point modifier, then adds score.",
       "currentSourcePaths": [
@@ -28345,10 +28380,12 @@
       "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "For a nonzero buffer row, probes the cell one row above; only a normal coin is cleared, rendered blank and converted to a jump coin.",
       "currentSourcePaths": [
@@ -28383,10 +28420,12 @@
       "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Initializes paired chunk coordinates, speeds and forces, retaining the original omission of chunk Y-high writes.",
       "currentSourcePaths": [
@@ -28402,10 +28441,12 @@
       "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch."
+        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass."
+        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Reads block state, separates bouncing blocks from paired brick chunks, preserves child order and source low-nibble lifetime decisions.",
       "currentSourcePaths": [
@@ -28440,10 +28481,12 @@
       "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch."
+        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass."
+        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Applies block gravity, relative/offscreen/graphics tail, then replaces/kills once the Y low nibble wraps below five.",
       "currentSourcePaths": [
@@ -28497,10 +28540,12 @@
       "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch."
+        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass."
+        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Processes block slots one then zero; only when VRAM Buffer1 is free and replace flag is set does it restore buffer tile and submit replacement graphics.",
       "currentSourcePaths": [
@@ -28595,11 +28640,13 @@
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Splits signed 4.4 X speed into fractional and signed integer parts, propagates both carries into X/page and returns the source displacement byte.",
       "currentSourcePaths": [
@@ -28653,10 +28700,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Returns the movement displacement or the blocked jumpspring control value.",
       "currentSourcePaths": [
@@ -28672,10 +28721,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Uses TimerControl/Jumpspring gate, then supplies VerticalForce and maximum four to shared gravity.",
       "currentSourcePaths": [
@@ -28978,10 +29029,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects block maximum-speed table index one and force $50 before common SprObject gravity.",
       "currentSourcePaths": [
@@ -32814,10 +32867,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Orders state handling as d6 fall, d7 steady, d5 defeated, low state normal/egg/fall/revive; preserves source vertical/horizontal and temporary-speed restore behavior.",
       "currentSourcePaths": [
@@ -33023,10 +33078,12 @@
       "currentCounterpart": "shared jumping and red paratroopa slot paths",
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction."
+        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Calls jumping vertical gravity then tail-jumps to horizontal movement.",
       "currentSourcePaths": [
@@ -37087,11 +37144,13 @@
       "semanticEvidence": [
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Immediately retains Flying Cheep; otherwise preserves CPY carry through special left-edge arithmetic, constructs extended bounds, performs source X/page subtract comparisons and applies right-side exception IDs before erase.",
       "currentSourcePaths": [
@@ -37724,11 +37783,13 @@
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "On even frames only, rejects off-vertical/offscreen/non-control/d5 enemies, uses prepared enemy box and PlayerCollisionCore, reloads ObjectOffset, clears collision d0 on a miss and dispatches a hit by power-up ID or star timer.",
       "currentSourcePaths": [
@@ -40352,10 +40413,12 @@
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
         "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Guards state/Y then dispatches jump paratroopa, hammer bro or normal enemy terrain collision by ID.",
       "currentSourcePaths": [
@@ -41122,10 +41185,12 @@
       "currentCounterpart": "mysmb_objects_step_enemy_jump_terrain",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S25 static - audit: wrapped ADC/CMP predicates, ordered child calls, landing write and DoSide tail match src/game/enemy/jump_terrain.c."
+        "M2 T64 S25 static - audit: wrapped ADC/CMP predicates, ordered child calls, landing write and DoSide tail match src/game/enemy/jump_terrain.c.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T64 S25 controlled original-ROM  four-route probe replayed by current x86/x64 shared C owners with zero non-stack RAM differences; focused chain and platform-purity tests pass."
+        "M2 T64 S25 controlled original-ROM  four-route probe replayed by current x86/x64 shared C owners with zero non-stack RAM differences; focused chain and platform-purity tests pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Checks the wrapped Y threshold and falling speed, accepts only solid under-metatiles, lands, assigns speed $fd, then always performs the side check.",
       "currentSourcePaths": [
@@ -41432,11 +41497,13 @@
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects enemy offscreen masks $48/$44 and transfers to masked enemy-box routing.",
       "currentSourcePaths": [
@@ -43023,10 +43090,12 @@
       "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
         "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
-        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Fixed slot5 OAM, wrapped relativeY+8 to RAM02 and relativeX to RAM05, indexed type attributes, RAM07/RAM03=1 precede row loop."
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Fixed slot5 OAM, wrapped relativeY+8 to RAM02 and relativeX to RAM05, indexed type attributes, RAM07/RAM03=1 precede row loop.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Fixed slot5 OAM, wrapped relativeY+8 to RAM02 and relativeX to RAM05, indexed type attributes, RAM07/RAM03=1 precede row loop.",
       "currentSourcePaths": [
@@ -44289,10 +44358,12 @@
       "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop.",
       "currentSourcePaths": [
@@ -44468,10 +44539,12 @@
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
         "Additional S10 source-order finding repaired: native formerly omitted initial RAM00=2 on non-state5 path; current code preserves the write before testing engine state and possible palette3 replacement.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks.",
       "currentSourcePaths": [
@@ -45827,11 +45900,13 @@
       "semanticEvidence": [
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
         "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf152 observed65536 times.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells.",
       "currentSourcePaths": [
@@ -45847,10 +45922,12 @@
       "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
       "semanticEvidence": [
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
-        "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Performs two relative-coordinate calculations for the selected block object and its paired object at source slot plus two."
+        "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Performs two relative-coordinate calculations for the selected block object and its paired object at source slot plus two.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf159 observed65536 times."
+        "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf159 observed65536 times.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Performs two relative-coordinate calculations for the selected block object and its paired object at source slot plus two.",
       "currentSourcePaths": [
@@ -46022,11 +46099,13 @@
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/history/M2-T66-player-relative-offscreen-current-proof.md Selects enemy array displacement and enemy offscreen destination before common calculation.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
         "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entry/tablef1af, observations65536.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects enemy array displacement and enemy offscreen destination before common calculation.",
       "currentSourcePaths": [
@@ -46042,10 +46121,12 @@
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/history/M2-T66-player-relative-offscreen-current-proof.md Selects block array displacement and block offscreen destination before common calculation."
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/history/M2-T66-player-relative-offscreen-current-proof.md Selects block array displacement and block offscreen destination before common calculation.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
       ],
       "operationalEvidence": [
-        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entry/tablef1b6, observations65536."
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entry/tablef1b6, observations65536.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects block array displacement and block offscreen destination before common calculation.",
       "currentSourcePaths": [
@@ -78554,12 +78635,15 @@
       "instruction": "jsr",
       "id": "control-01290",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bca1 target caf9 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bca1-caf9': 4096},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation PowerUpObjHandler -> MoveJumpingEnemy with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78573,12 +78657,15 @@
       "instruction": "jsr",
       "id": "control-01291",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bca4 target e163 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bca4-e163': 4096},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "The same star then runs EnemyJump after gravity returns.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78614,12 +78701,15 @@
       "instruction": "jsr",
       "id": "control-01293",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcaa target ca77 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bcaa-ca77': 8192},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation ShroomM -> MoveNormalEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78633,12 +78723,15 @@
       "instruction": "jsr",
       "id": "control-01294",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcad target dfc1 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bcad-dfc1': 8192},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Mushroom terrain collision follows normal motion.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78784,12 +78877,15 @@
       "instruction": "jsr",
       "id": "control-01301",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcd8 target f152 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bcd8-f152': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Relative coordinates are produced before offscreen-bit calculation.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78803,12 +78899,15 @@
       "instruction": "jsr",
       "id": "control-01302",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcdb target f1af verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bcdb-f1af': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Offscreen bits consume the just-produced relative coordinates.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78822,12 +78921,15 @@
       "instruction": "jsr",
       "id": "control-01303",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcde target e243 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bcde-e243': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation RunPUSubs -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78841,12 +78943,15 @@
       "instruction": "jsr",
       "id": "control-01304",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bce1 target e6d2 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bce1-e6d2': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves ROM call relation RunPUSubs -> DrawPowerUp with source type predicate, scratch/OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78860,12 +78965,15 @@
       "instruction": "jsr",
       "id": "control-01305",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bce4 target d853 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bce4-d853': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation RunPUSubs -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -78879,12 +78987,15 @@
       "instruction": "jsr",
       "id": "control-01306",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bce7 target d67a verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bce7-d67a': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation RunPUSubs -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -79672,12 +79783,15 @@
       "instruction": "jmp",
       "id": "control-01342",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bddc target bc49 verified against ROM/ASM;jump source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bddc-bc49': 1040},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original jump relation ExtraLifeMushBlock -> SetupPowerUp with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/blocks/bump.c",
@@ -79692,12 +79806,15 @@
       "instruction": "jsr",
       "id": "control-01343",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bde4 target b91e verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bde4-b91e': 260},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation VineBlock -> Setup_Vine with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/blocks/bump.c",
@@ -79866,12 +79983,15 @@
       "instruction": "jsr",
       "id": "control-01351",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be18 target bc27 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be18-bc27': 4096},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BrickShatter -> AddToScore with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/chunks.c",
@@ -79952,12 +80072,15 @@
       "instruction": "jsr",
       "id": "control-01355",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be3d target bb51 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be3d-bb51': 30208},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation CheckTopOfBlock -> SetupJumpCoin with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/chunks.c",
@@ -80038,12 +80161,15 @@
       "instruction": "jsr",
       "id": "control-01359",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be80 target bfa4 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be80-bfa4': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BlockObjectsCore -> ImposeGravityBlock with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -80058,12 +80184,15 @@
       "instruction": "jsr",
       "id": "control-01360",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be83 target bf0f verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be83-bf0f': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BlockObjectsCore -> MoveObjectHorizontally with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -80078,12 +80207,15 @@
       "instruction": "jsr",
       "id": "control-01361",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be8b target bfa4 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be8b-bfa4': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BlockObjectsCore -> ImposeGravityBlock with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -80098,12 +80230,15 @@
       "instruction": "jsr",
       "id": "control-01362",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be8e target bf0f verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be8e-bf0f': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BlockObjectsCore -> MoveObjectHorizontally with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -80118,12 +80253,15 @@
       "instruction": "jsr",
       "id": "control-01363",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be93 target f159 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be93-f159': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BlockObjectsCore -> RelativeBlockPosition with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -80137,12 +80275,15 @@
       "instruction": "jsr",
       "id": "control-01364",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be96 target f1b6 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be96-f1b6': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BlockObjectsCore -> GetBlockOffscreenBits with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -80156,12 +80297,15 @@
       "instruction": "jsr",
       "id": "control-01365",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be99 target ec53 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'be99-ec53': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves ROM call relation BlockObjectsCore -> DrawBrickChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -80312,12 +80456,15 @@
       "instruction": "jsr",
       "id": "control-01372",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site beb3 target bfa4 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'beb3-bfa4': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BouncingBlockHandler -> ImposeGravityBlock with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -80332,12 +80479,15 @@
       "instruction": "jsr",
       "id": "control-01373",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site beb8 target f159 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'beb8-f159': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BouncingBlockHandler -> RelativeBlockPosition with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -80351,12 +80501,15 @@
       "instruction": "jsr",
       "id": "control-01374",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bebb target f1b6 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bebb-f1b6': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original call relation BouncingBlockHandler -> GetBlockOffscreenBits with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -80370,12 +80523,15 @@
       "instruction": "jsr",
       "id": "control-01375",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bebe target ebd1 verified against ROM/ASM;call source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bebe-ebd1': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves ROM call relation BouncingBlockHandler -> DrawBlock with source block/area/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -80787,12 +80943,15 @@
       "instruction": "bne",
       "id": "control-01394",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bf57 target bf4c verified against ROM/ASM;branch source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bf57-bf4c': 16384},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original branch relation MovePlayerVertically -> ExXMove with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -133340,12 +133499,15 @@
       "instruction": "rts/rti",
       "id": "control-03727",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bca4 target e163 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'e123-bca7': 4080, 'db44-bca7': 16},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Child return resumes the same source invocation at its next ordered instruction.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -133403,12 +133565,15 @@
       "instruction": "rts/rti",
       "id": "control-03730",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcd8 target f152 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'f170-bcdb': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunPUSubs restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -133422,12 +133587,15 @@
       "instruction": "rts/rti",
       "id": "control-03731",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcdb target f1af verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'f1d6-bcde': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunPUSubs exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -133441,12 +133609,15 @@
       "instruction": "rts/rti",
       "id": "control-03732",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bcde target e243 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'e30b-bce1': 7464, 'e324-bce1': 23951, 'e29b-bce1': 32649},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunPUSubs with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -133460,12 +133631,15 @@
       "instruction": "rts/rti",
       "id": "control-03733",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bce1 target e6d2 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'eba9-bce4': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves ROM return relation DrawPowerUp -> RunPUSubs with source type predicate, scratch/OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -133479,12 +133653,15 @@
       "instruction": "rts/rti",
       "id": "control-03734",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bce4 target d853 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'d880-bce7': 32064, 'd84c-bce7': 32000},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunPUSubs with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -133498,12 +133675,15 @@
       "instruction": "rts/rti",
       "id": "control-03735",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bce7 target d67a verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'d6d5-bcea': 64064},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> RunPUSubs with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -133765,12 +133945,15 @@
       "instruction": "rts/rti",
       "id": "control-03747",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be18 target bc27 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bc48-be1b': 4096},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation AddToScore -> BrickShatter with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/chunks.c",
@@ -133807,12 +133990,15 @@
       "instruction": "rts/rti",
       "id": "control-03749",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared block lifecycle branch, call and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be3d target bb51 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bb83-be40': 30208},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation SetupJumpCoin -> CheckTopOfBlock with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/blocks/chunks.c",
@@ -133827,12 +134013,15 @@
       "instruction": "rts/rti",
       "id": "control-03750",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be80 target bfa4 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'c046-be83': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -133847,12 +134036,15 @@
       "instruction": "rts/rti",
       "id": "control-03751",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be83 target bf0f verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bf4c-be86': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -133867,12 +134059,15 @@
       "instruction": "rts/rti",
       "id": "control-03752",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be8b target bfa4 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'c046-be8e': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation ImposeGravityBlock -> BlockObjectsCore with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -133887,12 +134082,15 @@
       "instruction": "rts/rti",
       "id": "control-03753",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be8e target bf0f verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'bf4c-be91': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation MoveObjectHorizontally -> BlockObjectsCore with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -133907,12 +134105,15 @@
       "instruction": "rts/rti",
       "id": "control-03754",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be93 target f159 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'f170-be96': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "The source return relation RelativeBlockPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BlockObjectsCore restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -133926,12 +134127,15 @@
       "instruction": "rts/rti",
       "id": "control-03755",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be96 target f1b6 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'f1d6-be99': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "The source return relation GetBlockOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BlockObjectsCore exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -133945,12 +134149,15 @@
       "instruction": "rts/rti",
       "id": "control-03756",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site be99 target ec53 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'ecdd-be9c': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves ROM return relation DrawBrickChunks -> BlockObjectsCore with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -133964,12 +134171,15 @@
       "instruction": "rts/rti",
       "id": "control-03757",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site beb3 target bfa4 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'c046-beb6': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original return relation ImposeGravityBlock -> BouncingBlockHandler with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c",
@@ -133984,12 +134194,15 @@
       "instruction": "rts/rti",
       "id": "control-03758",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site beb8 target f159 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'f170-bebb': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "The source return relation RelativeBlockPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BouncingBlockHandler restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -134003,12 +134216,15 @@
       "instruction": "rts/rti",
       "id": "control-03759",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bebb target f1b6 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'f1d6-bebe': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "The source return relation GetBlockOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BouncingBlockHandler exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -134022,12 +134238,15 @@
       "instruction": "rts/rti",
       "id": "control-03760",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bebe target ebd1 verified against ROM/ASM;return source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'ec52-bec1': 32768},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves ROM return relation DrawBlock -> BouncingBlockHandler with source block/area/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/blocks/lifetime.c"
@@ -144332,12 +144551,16 @@
       "selector": 1,
       "id": "control-04207",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bdbd target bb38 verified against ROM/ASM;jump-engine-dispatch source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 selector1 vectorbdc2 both original bytes independently bound/read;BDBD JSR8E04 pops BDBF into04/05 and JMP8E16 consumes06/07;target RTS returns to BumpBlock's caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'8e16-bb38': 520},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> CoinBlock with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/blocks/bump.c",
@@ -144353,12 +144576,16 @@
       "selector": 2,
       "id": "control-04208",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bdbd target bb38 verified against ROM/ASM;jump-engine-dispatch source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 selector2 vectorbdc4 both original bytes independently bound/read;BDBD JSR8E04 pops BDBF into04/05 and JMP8E16 consumes06/07;target RTS returns to BumpBlock's caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'8e16-bb38': 520},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> CoinBlock with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/blocks/bump.c",
@@ -144466,12 +144693,16 @@
       "selector": 7,
       "id": "control-04213",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared power_up.c,blocks and player/world movement retain actual enemy/OAM/score children and original ordering;BlockCode saves original vector scratch via existing game JumpEngine helper.",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original site bdbd target bb38 verified against ROM/ASM;jump-engine-dispatch source predicate,slot,array offsets,carry,scratch and return contract mapped to actual shared caller.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 selector7 vectorbdce both original bytes independently bound/read;BDBD JSR8E04 pops BDBF into04/05 and JMP8E16 consumes06/07;target RTS returns to BumpBlock's caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original/native roots each width zero diff;actual transitions {'8e16-bb38': 520},RTS returns filtered opcode60;9 tests each/purity/current builds/OpenNT link/3 EXEs."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation BlockCode -> CoinBlock with its predicate, ordered state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
         "src/game/blocks/bump.c",

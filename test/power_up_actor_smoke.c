@@ -16,8 +16,8 @@ void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *g,mysmb_u8 x) {chi
 void mysmb_enemy_move_normal(struct mysmb_game *g,mysmb_u8 x) {child(g,3U,x);}
 void mysmb_objects_enemy_background_current(struct mysmb_game *g,mysmb_u8 x) {child(g,4U,x);}
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 x) {child(g,5U,x);}
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 x)
-{child((struct mysmb_game *)g,6U,x);return g->ram[0x3d1U];}
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 x)
+{child(g,6U,x);}
 void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *g,mysmb_u8 x) {child(g,7U,x);}
 void mysmb_objects_draw_power_up(struct mysmb_game *g) {child(g,8U,5U);}
 void mysmb_objects_player_enemy_current(struct mysmb_game *g,mysmb_u8 x,mysmb_u8 preserve)

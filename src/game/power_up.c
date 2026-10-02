@@ -38,7 +38,7 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
     }
     /* RunPUSubs has no state/ID gate between any of its six children. */
     mysmb_oam_relative_enemy_position(game, 5U);
-    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, 5U);
+    mysmb_oam_get_enemy_offscreen_bits(game, 5U);
     mysmb_objects_update_enemy_bounding_box(game, 5U);
     mysmb_objects_draw_power_up(game);
     mysmb_objects_player_enemy_current(game, 5U, 1U);

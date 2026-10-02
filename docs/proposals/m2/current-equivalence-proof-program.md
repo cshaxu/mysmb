@@ -465,3 +465,14 @@ all36 actual joins observed,12 tests each/purity/current builds/OpenNT link
 pass.No product repair,3 S8 products retained byte-identical.T69 open,S10
 next unadmitted;125 controls/15 material and earlier M alias scope plus
 integrated proof remain.
+
+## Current checkpoint after T69 S10
+
+[T69 S10](t69-cross-cohort-current-proof.md) closes49 controls/3 material,36
+existing labels rechecked with zero fresh nodes.Current1992/1992 scoped-exact
+nodes,4201/4277 controls(raw4342,infeasible65),543/555 material partial;
+historical1992/1992 separate.532480 original roots each width equal,all49
+controls including each coin vector observed,3 sequential RAM chains,9 tests
+each/purity/current builds/OpenNT link pass.Shared offscreen/JumpEngine
+repairs,3 products refreshed.T69 open,S11 next unadmitted;76 controls/12
+material and earlier M alias scope plus integrated proof remain.

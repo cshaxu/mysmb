@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include <string.h>
 static unsigned int failures,calls,route;
+/* This call-order unit checks the dispatch ABI. Full-ROM routes exercise
+ * the actual JumpEngine state helper and vector bytes separately. */
+void mysmb_game_jump_engine_state(struct mysmb_game *g,mysmb_u16 ret,mysmb_u8 selector)
+{
+    if(ret!=0xbdbfU || selector>8U) ++failures;
+    g->ram[4U]=(mysmb_u8)ret;g->ram[5U]=(mysmb_u8)(ret>>8U);
+}
 static mysmb_u8 after_tile,after_slot;
 void mysmb_blocks_check_top(struct mysmb_game *g,mysmb_u8 slot,mysmb_u8 low,mysmb_u8 row)
 {
@@ -46,6 +53,7 @@ int main(void)
             expected[0x60U+slot]=0U;expected[0x43cU+slot]=0U;
             expected[0x9fU]=0U;expected[0xa8U+slot]=0xfeU;
             want=index==255U?0U:targets[index];
+            if(want) {expected[4U]=0xbfU;expected[5U]=0xbdU;}
             if(want==1U) expected[0x39U]=types[index];
             route=0U;calls=0U;mysmb_blocks_bump(&g,0U);
             if(route!=want || calls!=(want?2U:1U) || memcmp(g.ram,expected,2048U)!=0) ++failures;

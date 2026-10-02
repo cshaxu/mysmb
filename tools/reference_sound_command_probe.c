@@ -20,6 +20,7 @@ static unsigned long music_reads[4][65536];
 static unsigned long lookup_reads[7][65536];
 static unsigned long status_reads[2][65536];
 static unsigned long setup_reads[2][65536];
+static unsigned long material_consumptions[3];
 static unsigned int minimum_stack=0xffu;
 static int ready(core_machine *m)
 {
@@ -83,6 +84,56 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode>=82u&&mode<=89u){
+        unsigned int j,slot=p&1u;
+        static const unsigned char tiles[16]={0xc1u,0xc0u,0x5fu,0x60u,0x55u,0x56u,0x57u,0x58u,0x59u,0x5au,0x5bu,0x5cu,0x5du,0x5eu,0x51u,0u};
+        m->ram[8u]=(unsigned char)slot;m->ram[9u]=(unsigned char)p;
+        m->ram[0x3eeu]=(unsigned char)slot;
+        if(mode>=87u)m->ram[0x770u]=(unsigned char)((p&8u)?0u:1u);m->ram[0x753u]=(unsigned char)(p&1u);
+        m->ram[0x754u]=(unsigned char)((p>>1u)&1u);
+        m->ram[0x756u]=(unsigned char)((p>>2u)%3u);
+        m->ram[0x747u]=(unsigned char)((p&16u)?1u:0u);
+        m->ram[0x70eu]=(unsigned char)((p&32u)?1u:0u);
+        m->ram[0x709u]=(unsigned char)n;
+        m->ram[0x71au]=2u;m->ram[0x71cu]=(unsigned char)(p*7u);
+        m->ram[0x71bu]=(unsigned char)(2u+(m->ram[0x71cu]?1u:0u));
+        m->ram[0x71du]=(unsigned char)(m->ram[0x71cu]-1u);
+        m->ram[0x86u]=(unsigned char)n;m->ram[0x6du]=2u;
+        m->ram[0xceu]=(unsigned char)(p*13u);m->ram[0xb5u]=1u;
+        m->ram[0x9fu]=(unsigned char)(p*17u);
+        m->ram[0x416u]=(unsigned char)n;m->ram[0x433u]=(unsigned char)(p*7u);
+        m->ram[0x3d0u]=0xffu;m->ram[0x3d1u]=0xffu;
+        m->ram[0x23u]=(unsigned char)n;m->ram[0x39u]=(unsigned char)(p%4u);
+        m->ram[0x1bu]=0x2eu;m->ram[0x14u]=1u;m->ram[0x4bu]=(unsigned char)((p&1u)+1u);
+        m->ram[0x5du]=(unsigned char)(p*17u);m->ram[0x8cu]=(unsigned char)n;
+        m->ram[0x73u]=2u;m->ram[0xd4u]=(unsigned char)(p*13u);m->ram[0xbbu]=1u;
+        m->ram[0xa5u]=(unsigned char)(p*17u);m->ram[0x49au]=3u;m->ram[0x6eau]=0x40u;
+        m->ram[0x400u+6u]=(unsigned char)n;m->ram[0x416u+6u]=(unsigned char)n;
+        m->ram[0x433u+6u]=(unsigned char)(p*7u);
+        m->ram[6u]=(unsigned char)(p%16u);m->ram[7u]=5u;
+        m->ram[2u]=(unsigned char)((p%13u)*16u);
+        for(j=0u;j<416u;++j)m->ram[0x500u+j]=0u;
+        m->ram[0x500u+m->ram[6u]+m->ram[2u]]=tiles[(p>>2u)%16u];
+        if(m->ram[2u]!=0u&&((p&64u)!=0u))m->ram[0x500u+m->ram[6u]+m->ram[2u]-16u]=0xc2u;
+        m->ram[0x300u]=(unsigned char)((p%8u)*7u);
+        m->ram[0x301u]=(unsigned char)((p&128u)?1u:0u);
+        for(j=0u;j<4u;++j){
+            m->ram[0x76u+j]=2u;m->ram[0x8fu+j]=(unsigned char)n;
+            m->ram[0xd7u+j]=(unsigned char)(n+j*8u);m->ram[0xbeu+j]=1u;
+            m->ram[0x60u+j]=(unsigned char)(p*17u);m->ram[0xa8u+j]=(unsigned char)(p*13u);
+            m->ram[0x400u+9u+j]=(unsigned char)n;m->ram[0x416u+9u+j]=(unsigned char)n;
+            m->ram[0x433u+9u+j]=(unsigned char)(p*7u);
+        }
+        for(j=0u;j<2u;++j){
+            m->ram[0x26u+j]=(unsigned char)((p&4u)?0x12u:0x11u);
+            m->ram[0x3e4u+j]=(unsigned char)((p%13u)*16u);
+            m->ram[0x3e6u+j]=(unsigned char)(p%16u);
+            m->ram[0x3e8u+j]=0xc4u;m->ram[0x3ecu+j]=(unsigned char)((p>>j)&1u);
+            m->ram[0x6f1u+j]=(unsigned char)(0x80u+j*16u);
+        }
+        if(mode>=87u) {m->ram[0x3ecu]=0u;m->ram[0x3edu]=0u;}
+        if(mode==88u)m->ram[0x26u+slot]=0x12u;
+        if(mode==89u)m->ram[0x26u+slot]=0x11u;
     }else if(mode==76u||mode==77u){
         static const unsigned char hammer_states[4]={0x80u,0x81u,0x82u,0x90u};
         static const unsigned char misc_states[10]={0u,1u,2u,0x2fu,0x30u,0x7fu,0x80u,0x81u,0x82u,0x90u};
@@ -463,6 +514,7 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
     if(mode==73u)m->x=(unsigned char)((p&8u)?4u:5u);
     if(mode==74u)m->x=(unsigned char)(p%3u);
     if(mode==76u)m->x=(unsigned char)(p%9u);
+    if(mode>=82u&&mode<=89u)m->x=(unsigned char)(p&1u);
     if(mode==78u||mode==79u)m->x=(unsigned char)(p&1u);
 }
 int main(int argc,char **argv)
@@ -475,7 +527,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>81u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>89u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -544,6 +596,14 @@ int main(int argc,char **argv)
         if(mode==79u)entry=0xbb51u;
         if(mode==80u)entry=0xbbfeu;
         if(mode==81u)entry=0xbc27u;
+        if(mode==82u)entry=0xbc85u;
+        if(mode==83u)entry=0xbcedu;
+        if(mode==84u)entry=0xbe70u;
+        if(mode==85u)entry=0xbed4u;
+        if(mode==86u)entry=0xbf4du;
+        if(mode==87u)entry=0xbe02u;
+        if(mode==88u)entry=0xbe41u;
+        if(mode==89u)entry=0xbe70u;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -558,9 +618,27 @@ int main(int argc,char **argv)
         record[2]=d->machine->a;record[3]=d->machine->x;record[4]=d->machine->y;
         memcpy(record+16,d->machine->ram,2048u);memcpy(record+2064,d->machine->apu.registers,24u);
         writes=0;
-        for(steps=0;steps<524288u&&d->machine->pc!=(boundary?0xf73au:0x8001u);++steps){
+        if(mode>=87u)record[8]=1u;
+        for(steps=0;steps<524288u;++steps){
+            if(d->machine->pc==(boundary?0xf73au:0x8001u)) {
+                if(mode>=87u&&record[9]==0u) {
+                    /* Sequential original producer/consumer roots. Keep all
+                     * persistent RAM, registers and hardware intact; restore
+                     * only the declared test return sentinel on stack. */
+                    if(mode==88u)++material_consumptions[1];
+                    else if(d->machine->ram[0x301u]==0u&&
+                        d->machine->ram[0x3ecu+d->machine->ram[0x3eeu]]!=0u)
+                        ++material_consumptions[mode==87u?0u:2u];
+                    record[9]=1u;d->machine->pc=mode==88u?0xbe70u:0xbed4u;
+                    d->machine->s=0xfdu;d->machine->ram[0x1feu]=0u;
+                    d->machine->ram[0x1ffu]=0x80u;
+                } else break;
+            }
             pc=d->machine->pc;if(pc<0x8000u){fprintf(stderr,"reference low PC mode=%u root=%u pc=%04x steps=%u stack=%02x nmi=%u pending=%u control=%02x\n",mode,n,pc,steps,d->machine->s,d->machine->nmi_asserted,d->machine->nmi_pending,d->machine->ppu.control);return 67;}op=prg[pc-0x8000u];++visits[pc];
             if(d->machine->s<minimum_stack)minimum_stack=d->machine->s;
+            if(mode>=82u&&(pc==0x8e0du||pc==0x8e12u)&&
+                d->machine->ram[4u]==0xbfu&&d->machine->ram[5u]==0xbdu)
+                ++lookup_reads[4][0xbdbfu+d->machine->y];
             if(mode==60u&&pc==0x9110u&&op==0xb9u)
                 ++setup_reads[0][0x90e7u+d->machine->y];
             if(mode==62u&&pc==0x91f6u&&op==0xbcu)
@@ -707,5 +785,6 @@ int main(int argc,char **argv)
     for(n=0;n<2u;++n)for(i=0;i<65536u;++i)if(status_reads[n][i])printf("status-table=%u address=%04x reads=%lu\n",n,i,status_reads[n][i]);
     for(n=0;n<2u;++n)for(i=0;i<65536u;++i)if(setup_reads[n][i])printf("setup-table=%u address=%04x reads=%lu\n",n,i,setup_reads[n][i]);
     printf("minimum-stack=%02x\n",minimum_stack);
+    for(i=0;i<3u;++i)if(material_consumptions[i])printf("material-chain=%u consumptions=%lu\n",i,material_consumptions[i]);
     core_driver_destroy(d);return 0;
 }
