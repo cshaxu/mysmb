@@ -10,6 +10,9 @@ struct mysmb_win32_audio_renderer {
     unsigned int envelope_level[3];
     unsigned int envelope_divider[3];
     mysmb_u8 envelope_start[3];
+    unsigned int pulse_timer[2];
+    unsigned int sweep_divider[2];
+    mysmb_u8 sweep_reload[2];
     unsigned int triangle_linear;
     mysmb_u8 triangle_reload;
     double pulse_phase[2];

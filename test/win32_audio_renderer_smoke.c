@@ -127,5 +127,45 @@ int main(void)
     apu_write(&game, 3U, 0x08U);
     render_frame(&renderer, &game, samples);
     if (renderer.envelope_level[0U] <= 2U) return 12;
+
+    /* A jump uses $4001 sweep writes: pulse one must change pitch without
+     * another $4002/$4003 write. Pulse two has a different negate bias. */
+    memset(&game, 0, sizeof(game));
+    mysmb_win32_audio_renderer_initialize(&renderer);
+    apu_write(&game, 21U, 3U);
+    apu_write(&game, 0U, 0x9fU);
+    apu_write(&game, 4U, 0x9fU);
+    apu_write(&game, 1U, 0x89U);
+    apu_write(&game, 5U, 0x89U);
+    apu_write(&game, 2U, 0xe8U);
+    apu_write(&game, 6U, 0xe8U);
+    apu_write(&game, 3U, 0x03U);
+    apu_write(&game, 7U, 0x03U);
+    render_frame(&renderer, &game, samples);
+    if (renderer.pulse_timer[0U] != 249U ||
+        renderer.pulse_timer[1U] != 250U) return 13;
+    apu_write(&game, 1U, 0xf6U);
+    render_frame(&renderer, &game, samples);
+    if (renderer.pulse_timer[0U] != 252U) return 14;
+    if (game.apu_registers[2U] != 0xe8U ||
+        game.apu_registers[3U] != 0x03U) return 15;
+
+    mysmb_win32_audio_renderer_initialize(&renderer);
+    game.apu_write_count = 0U;
+    apu_write(&game, 21U, 1U);
+    apu_write(&game, 1U, 0xa7U);
+    apu_write(&game, 2U, 0xe8U);
+    apu_write(&game, 3U, 0x03U);
+    render_frame(&renderer, &game, samples);
+    if (renderer.pulse_timer[0U] != 1007U) return 16;
+
+    mysmb_win32_audio_renderer_initialize(&renderer);
+    game.apu_write_count = 0U;
+    apu_write(&game, 21U, 1U);
+    apu_write(&game, 1U, 0xbcU);
+    apu_write(&game, 2U, 0xe8U);
+    apu_write(&game, 3U, 0x03U);
+    render_frame(&renderer, &game, samples);
+    if (renderer.pulse_timer[0U] != 937U) return 17;
     return 0;
 }

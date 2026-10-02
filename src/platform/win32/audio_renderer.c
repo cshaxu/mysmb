@@ -36,6 +36,31 @@ static void mysmb_win32_audio_clock_length(
             renderer->length[channel]--;
 }
 
+static void mysmb_win32_audio_clock_sweep(
+    struct mysmb_win32_audio_renderer *renderer, unsigned int channel)
+{
+    unsigned int control;
+    unsigned int timer;
+    unsigned int change;
+    unsigned int target;
+
+    control = renderer->registers[channel * 4U + 1U];
+    timer = renderer->pulse_timer[channel];
+    change = timer >> (control & 7U);
+    target = (control & 8U) != 0U ?
+        timer - change - (channel == 0U ? 1U : 0U) : timer + change;
+    if (renderer->sweep_divider[channel] == 0U &&
+        (control & 0x80U) != 0U && (control & 7U) != 0U &&
+        timer >= 8U && target <= 0x7ffU)
+        renderer->pulse_timer[channel] = target;
+    if (renderer->sweep_divider[channel] == 0U ||
+        renderer->sweep_reload[channel] != 0U) {
+        renderer->sweep_divider[channel] = (control >> 4U) & 7U;
+        renderer->sweep_reload[channel] = 0U;
+    }
+    else renderer->sweep_divider[channel]--;
+}
+
 static void mysmb_win32_audio_clock_quarter(
     struct mysmb_win32_audio_renderer *renderer)
 {
@@ -84,6 +109,18 @@ static void mysmb_win32_audio_apply_writes(
         value = game->apu_writes[event].value;
         if (index >= 24U) continue;
         renderer->registers[index] = value;
+        if (index < 8U) {
+            channel = index >> 2U;
+            if ((index & 3U) == 1U)
+                renderer->sweep_reload[channel] = 1U;
+            else if ((index & 3U) == 2U)
+                renderer->pulse_timer[channel] =
+                    (renderer->pulse_timer[channel] & 0x700U) | value;
+            else if ((index & 3U) == 3U)
+                renderer->pulse_timer[channel] =
+                    (renderer->pulse_timer[channel] & 0xffU) |
+                    ((unsigned int)(value & 7U) << 8U);
+        }
         if (index == 21U) {
             renderer->enabled = value & 15U;
             for (channel = 0U; channel < 4U; ++channel)
@@ -126,8 +163,7 @@ static double mysmb_win32_pulse_sample(
     volume = (renderer->registers[offset] & 0x10U) != 0U ?
         (renderer->registers[offset] & 15U) :
         renderer->envelope_level[channel];
-    timer = renderer->registers[offset + 2U] |
-        ((unsigned int)(renderer->registers[offset + 3U] & 7U) << 8U);
+    timer = renderer->pulse_timer[channel];
     if (volume == 0U || timer < 8U) return 0.0;
     phase = renderer->pulse_phase[channel] +
         1789773.0 / (16.0 * (double)(timer + 1U) * (double)sample_rate);
@@ -197,8 +233,11 @@ void mysmb_win32_audio_render(struct mysmb_win32_audio_renderer *renderer,
         if (index == count / 4U || index == count / 2U ||
             index == (count * 3U) / 4U) {
             mysmb_win32_audio_clock_quarter(renderer);
-            if (index == count / 2U)
+            if (index == count / 2U) {
                 mysmb_win32_audio_clock_length(renderer);
+                mysmb_win32_audio_clock_sweep(renderer, 0U);
+                mysmb_win32_audio_clock_sweep(renderer, 1U);
+            }
         }
         input = mysmb_win32_pulse_sample(renderer, 0U, sample_rate) +
             mysmb_win32_pulse_sample(renderer, 1U, sample_rate) +
@@ -215,5 +254,7 @@ void mysmb_win32_audio_render(struct mysmb_win32_audio_renderer *renderer,
     if ((renderer->registers[23U] & 0x80U) == 0U) {
         mysmb_win32_audio_clock_quarter(renderer);
         mysmb_win32_audio_clock_length(renderer);
+        mysmb_win32_audio_clock_sweep(renderer, 0U);
+        mysmb_win32_audio_clock_sweep(renderer, 1U);
     }
 }
