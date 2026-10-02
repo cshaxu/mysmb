@@ -85,7 +85,7 @@ void __wrap_mysmb_oam_dump_six_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 
 void __real_mysmb_oam_dump_four_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
 void __wrap_mysmb_oam_dump_four_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
 {
-    if(mode!=6U&&mode!=7U&&mode!=9U){__real_mysmb_oam_dump_four_sprites(g,a,y);return;}
+    if(mode!=6U&&mode!=7U&&mode!=9U&&mode!=13U){__real_mysmb_oam_dump_four_sprites(g,a,y);return;}
     (void)consume(g,9U,a,0U,y,5U);
 }
 void __real_mysmb_oam_check_block_left_column(struct mysmb_game *,mysmb_u8,mysmb_u8);
@@ -93,6 +93,19 @@ void __wrap_mysmb_oam_check_block_left_column(struct mysmb_game *g,mysmb_u8 a,my
 {
     if(mode!=6U&&mode!=7U&&mode!=9U){__real_mysmb_oam_check_block_left_column(g,a,y);return;}
     (void)consume(g,10U,a,0U,y,5U);
+}
+mysmb_u8 __real_mysmb_oam_draw_firebar(struct mysmb_game *,mysmb_u8);
+mysmb_u8 __wrap_mysmb_oam_draw_firebar(struct mysmb_game *g,mysmb_u8 y)
+{
+    unsigned int pos;
+    if(mode!=10U)return __real_mysmb_oam_draw_firebar(g,y);
+    pos=consume(g,11U,0U,0U,y,4U);return record[pos+5U];
+}
+void __real_mysmb_oam_draw_fireworks_explosion(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_draw_fireworks_explosion(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
+{
+    if(mode!=12U){__real_mysmb_oam_draw_fireworks_explosion(g,a,y);return;}
+    (void)consume(g,12U,a,0U,y,5U);
 }
 #endif
 static unsigned long read32(const unsigned char *p)
@@ -106,7 +119,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f)return 65;
     if(fread(h,1U,16U,f)!=16U||memcmp(h,"MSOH\1",5U))return 66;
     mode=h[5];count=(unsigned int)read32(h+8U);current=(unsigned int)read32(h+12U);
-    if(mode>9U||count==0U||count>2048U)return 66;
+    if(mode>13U||count==0U||count>2048U)return 66;
     for(i=0U;i<count;++i,++current){
         if(fread(record,1U,sizeof(record),f)!=sizeof(record))return 66;
         memset(&game,0,sizeof(game));memcpy(game.ram,record+16U,2048U);calls=0U;x=record[1];y=record[2];
@@ -119,6 +132,10 @@ int main(int argc,char **argv)
         if(mode==6U)mysmb_objects_draw_bouncing_block(&game,x);
         if(mode==7U||mode==9U)mysmb_objects_draw_brick_chunks(&game,x);
         if(mode==8U)mysmb_oam_check_block_left_column(&game,record[0],y);
+        if(mode==10U)mysmb_oam_draw_fireball(&game,x);
+        if(mode==11U){y=mysmb_oam_draw_firebar(&game,y);if(y!=record[5])++failures;}
+        if(mode==12U)mysmb_oam_draw_fireball_explosion(&game,x);
+        if(mode==13U)mysmb_oam_draw_fireworks_explosion(&game,record[0],y);
         if((mode==3U||mode==4U)&&(x!=record[4]||y!=record[5]))++failures;
 #ifdef MYSMB_OAM_HELPER_CHILD_CHECK
         if(calls!=record[3])++failures;

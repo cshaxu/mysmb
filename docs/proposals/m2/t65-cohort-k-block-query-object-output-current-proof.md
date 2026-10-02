@@ -1392,3 +1392,83 @@ Similar-issue sweep covers fireball/firebar duplicate frame logic and two
 explosion bodies, all actual production callers, byte Y+1 dump offsets and
 ordered coordinate/attribute stores. Do not alter fireball range, physics,
 sound or platform presentation to disguise an output-node difference.
+
+## S11 P2 repair, independent proof and closure
+
+All7 admitted labels become current exact, none deferred or transferred.
+Current nodes1615->1622/1992, feasible controls3457->3464/4317 (raw4342,
+infeasible25), material390->391/492 partial. Historical1992/1992 is unchanged.
+T65 remains open with11 pending nodes; S12 next, not admitted.
+
+| Exact node | Current source contract |
+| --- | --- |
+| DrawFireball | ECDE loads byte sprite offset, writes relative Y then X, then enters actual shared DrawFirebar with that Y. |
+| DrawFirebar | ECED reads FrameCounter once; source d2 selects tile64/65 before d3 selects attributes2/C2; Y preserved. |
+| FireA | ED02 receives both source BCC and ORA paths and stores the selected attribute before returning. |
+| ExplosionTiles | Existing ordered three-byte table matches owner ROM ED06-ED08 and reaches actual DumpFourSpr A for each valid source index0-2. |
+| DrawExplosion_Fireball | ED09 loads alternate OAM offset before state, increments byte state, selects using pre-increment bits d3-d1 and enters shared explosion or KillFireBall. |
+| DrawExplosion_Fireworks | ED17 loads the shared table, wraps byte Y+1 before actual DumpFourSpr, restores Y, then performs ordered Y/X/attribute stores; ObjectOffset CPU-X restoration uses the explicit native caller-slot ABI. |
+| KillFireBall | ED61 clears the original slot state after source increment when pre-increment masked index>=3, including state overflow. |
+
+All7 owned controls03005-03010 and04029 close; existing exact incoming
+callers01090/01093/01866/02032 and returns03844/03867 retain their prior
+credit. Material00426 closes the single ExplosionTiles indexed consumer.
+No unadmitted caller-node credit or inferred cross-cohort proof is added.
+
+Before repair, identical2048-root batches at ED09 and ED17 produce48 and64
+RAM byte differences on x64. The source INY at OAM FF wraps to00 before
+DumpFourSpr; prior direct stores wrote the wrong page. The shared body now
+uses the actual child with that byte offset. DrawFireball now stores Y/X
+before the actual shared DrawFirebar, whose frame input is read once.
+DrawExplosion_Fireball loads Y before incrementing state, then uses the one
+canonical fireworks explosion table/body or clears the original state slot.
+Y/X/attribute store order matches the source; no gameplay workaround is added.
+
+The existing bounded neutral probe/checker is extended with modes10-13 and
+instruction/branch coverage through ED65. Full current product-library routes
+and independently intercepted original child input/return routes compare1841
+RAM bytes/root, including aliases0109-0139 and all scratch/OAM. True CPU
+stack, volatile flags and unused temporary CPU registers are excluded.
+Original tail/fallthrough entries retain their selected return continuation;
+native explicit arguments replace transient A/Y and caller-slot CPU-X ABI.
+Each2048-root chunk is58851344 bytes at most,120seconds/run and524288steps/
+case, under192MiB raw; consumed raw snapshots are removed, neutral summaries
+remain under ignored S11 build output. No reference emulator enters product.
+
+| Original route mode / entry | Roots | Child returns | Contract |
+| --- | ---: | ---: | --- |
+| 10 / ECDE | 65536 | 65536 | All byte OAM x frame values; actual shared firebar input after Y/X stores and source return8001. |
+| 11 / ECED | 65536 | 0 | All byte OAM x frame values; tile/attributes and preserved Y. |
+| 12 / ED09 | 65536 | 24576 | All byte OAM x states, increment/overflow;24576 shared entry returns8001 and40960 kill selections. |
+| 13 / ED17 | 196608 | 196608 | Three source-valid indices x all byte OAM x all byte relative-coordinate patterns; actual DumpFourSpr A/Y and returnED1F. |
+
+All393216 roots match with zero differences on both widths under both
+checkers. Original BCC ECFE taken/fall32768 each; BCS ED15 taken40960,
+fall24576. Shared source entries and both branch alternatives are observed;
+the existing three source table bytes bind exactly at ED06-ED08. Direct
+fireworks indices outside0-2 are excluded by its already-proved SetupExpl
+writer contract, not silently treated as source-reachable game states.
+
+Similar-issue sweep: production fireball/fireball_core.c reaches the two
+canonical fireball entries; enemy/firebar.c reaches shared DrawFirebar;
+enemy/fireworks.c reaches the same canonical explosion body. All hits are
+repaired/shared or retained exact incoming consumers. block_gfx.c and
+small_platform_gfx.c also call DumpFourSpr and remain in their own accepted
+or later scope; that leaf is unchanged. The OAM declaration owns the shared
+firebar seam; enemy/firebar.h includes the neutral OAM contract. Both explosion
+paths share one table and actual dump dependency. All changes remain in game;
+no platform, audio, physics, timer or pause behavior is changed.
+
+Operational track: complete C90 x86/x64 builds and14/14 focused tests per
+width pass after builds finish, including projectile/firebar/fireworks/dump/
+core/purity/audio/focus/product self-tests. Original OpenNT DOS16 link exits0
+with the existing OLDNAMES.LIB warning; no DOS gameplay/performance claim.
+Fresh three EXEs include the committed audio/title/focus pause fixes; explicit
+owner artifact-delivery authorization overrides default output exclusions.
+
+- mysmb16.exe: 260759 bytes; SHA-256 7ff5c9ff56523f9a6280bc82c84f9811dd2316e89b814fd6cfe5cb40a941fcb2.
+- mysmb32.exe: 373790 bytes; SHA-256 7986c161371f04ce7cf17e3d8abf2e75d8ee0da0de12974df95a50067aba102e.
+- mysmb64.exe: 380823 bytes; SHA-256 2bf22c5afd2c4f58d054fa5f5fa32aff484a06cada650ea991f343e243ee9c0f.
+
+Ledger admission/closure, documentation and whitespace gates rerun at closure.
+This S closes its exact scope; T65 and M2 remain open.

@@ -468,7 +468,9 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
         "-Wl,--wrap=mysmb_oam_check_block_left_column"
         "-Wl,--wrap=mysmb_oam_draw_one_sprite_row"
         "-Wl,--wrap=mysmb_oam_draw_sprite_object"
-        "-Wl,--wrap=mysmb_oam_dump_six_sprites")
+        "-Wl,--wrap=mysmb_oam_dump_six_sprites"
+        "-Wl,--wrap=mysmb_oam_draw_firebar"
+        "-Wl,--wrap=mysmb_oam_draw_fireworks_explosion")
 endif()
 
 add_executable(mysmb_enemy_graphics_output_route_check

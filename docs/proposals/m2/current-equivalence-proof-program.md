@@ -131,3 +131,11 @@ nodes,36 controls and one material row. Current1615/1992 nodes,3457/4317
 controls(raw4342,infeasible25),390/492 material partial; historical1992/1992
 distinct. T65 stays open with18 pending nodes; S11 next, not admitted.
 External BlockObjectsCore/BouncingBlockHandler caller boundaries remain pending.
+
+## Current checkpoint after T65 S11
+
+[T65 S11](t65-cohort-k-block-query-object-output-current-proof.md) closes7
+nodes,7 controls and one material row. Current1622/1992 nodes,3464/4317
+controls(raw4342,infeasible25),391/492 material partial; historical1992/1992
+separate. T65 remains open with11 pending nodes; S12 next, not admitted.
+Shared projectile/explosion output repairs retain exact incoming caller credit.
