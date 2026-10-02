@@ -1,17 +1,19 @@
 # M2 ROM conformance node progress
 
-## M2 T66 S7 - active cross-chain census and closure
+## M2 T66 S7 and T66 - closed census and integrated joins
 
-[Exact S7 scope and current integration contract](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
-audits83 existing exact labels/164 feasible controls/10 material rows, one
-source-infeasible raw relation, zero fresh credit. Current1716/1992 nodes,
-3649/4316 controls(raw4342,infeasible26),403/493 material partial; historical
-1992/1992 separate. GameEngine/victory/row/paired-block joins and full native
-regressions required before T66 closure; outside pending boundaries retained.
+[Retained T66 member and integration evidence](../history/M2-T66-player-relative-offscreen-current-proof.md)
+closes83 owned exact nodes,164 exact feasible controls/one infeasible raw control,
+10 exact material rows, no owned deferrals or transfers. S7 fresh0; T66 nodes
+1633->1716/1992, feasible controls3485->3649/4316(raw4342,infeasible26),
+material394/492->403/493 partial. Historical1992/1992 separate. Current20,512
+original roots match both widths, full248 native tests each and original DOS16
+link pass; S2 products retained byte-identical. Fifteen H-owned incoming controls
+remain pending for cross-cohort/T69. T67 next unadmitted; M2 remains open.
 
 ## M2 T66 S6 - closed two-sprite output chain
 
-[Individual S6 node/edge proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+[Individual S6 node/edge proof](../history/M2-T66-player-relative-offscreen-current-proof.md)
 closes3 nodes/3 feasible controls and source-proven infeasible03162. Current
 1716/1992 nodes,3649/4316 controls(raw4342,infeasible26),403/493 material
 partial; historical1992/1992 separate.131072 original roots match both widths
@@ -21,7 +23,7 @@ for S7 integration closure; S7 next unadmitted.
 
 ## M2 T66 S5 - closed vertical offscreen/division chain
 
-[Individual S5 node/edge/table proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+[Individual S5 node/edge/table proof](../history/M2-T66-player-relative-offscreen-current-proof.md)
 closes10 nodes/13 controls/material00435-00437 with no production discrepancy.
 Current1713/1992 nodes,3646/4317 controls(raw4342,infeasible25),403/493
 material partial; historical1992/1992 separate.131072 original roots match
@@ -31,7 +33,7 @@ T66 has3 pending sprite-output nodes; S6 next unadmitted.
 
 ## M2 T66 S4 - closed horizontal offscreen chain
 
-[Individual S4 node/edge/table proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+[Individual S4 node/edge/table proof](../history/M2-T66-player-relative-offscreen-current-proof.md)
 closes6 nodes/9 controls/material00433-00434, no production discrepancy.
 Current1703/1992 nodes,3633/4317 controls(raw4342,infeasible25),400/493
 material partial; historical1992/1992 separate.131072 original roots match
@@ -41,7 +43,7 @@ retained. T66 has13 pending nodes; S5 next unadmitted.
 
 ## M2 T66 S3 - closed offscreen composition chain
 
-[Individual S3 node/edge/material proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+[Individual S3 node/edge/material proof](../history/M2-T66-player-relative-offscreen-current-proof.md)
 closes11 nodes/18 controls/material00432 with no production discrepancy.
 Current1697/1992 nodes,3624/4317 controls(raw4342,infeasible25),398/493
 material partial; historical1992/1992 separate.393216 original roots match
@@ -50,7 +52,7 @@ retained unchanged. T66 has19 pending nodes; S4 next unadmitted.
 
 ## M2 T66 S2 - closed relative coordinate chain
 
-[S2 individual node/edge and material proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+[S2 individual node/edge and material proof](../history/M2-T66-player-relative-offscreen-current-proof.md)
 closes9 nodes,18 controls and newly enumerated block-return material relation.
 Current1686/1992 nodes,3606/4317 feasible controls(raw4342,infeasible25),
 397/493 material partial; historical1992/1992 separate. All393216 original
@@ -60,7 +62,7 @@ link pass;3 EXEs refreshed. T66 has30 pending nodes; S3 next unadmitted.
 
 ## M2 T66 S1 - closed player graphics owner chain
 
-[S1 individual node/edge and dual proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+[S1 individual node/edge and dual proof](../history/M2-T66-player-relative-offscreen-current-proof.md)
 closes44 fresh nodes,103 controls and2 material relations, none deferred.
 Current1677/1992 nodes,3588/4317 feasible controls(raw4342,infeasible25),
 396/492 material partial; historical1992/1992 separate. All75040 original

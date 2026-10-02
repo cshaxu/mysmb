@@ -175,14 +175,14 @@ not admitted; no milestone-wide proof inferred from this closure.
 
 ## T66 admission checkpoint
 
-[T66 exact83-node plan](t66-cohort-l-player-relative-offscreen-proof.md) is admitted
+[T66 exact83-node plan](../../history/M2-T66-player-relative-offscreen-current-proof.md) is admitted
 with S1 player graphics44 nodes active. No exact credit at admission; current
 1633/1992 nodes and3485/4317 feasible controls. Remaining S chains follow
 original source order; accepted historical mapping1992/1992 stays separate.
 
 ## Current checkpoint after T66 S1
 
-[T66 S1](t66-cohort-l-player-relative-offscreen-proof.md) closes44 nodes,
+[T66 S1](../../history/M2-T66-player-relative-offscreen-current-proof.md) closes44 nodes,
 103 controls and2 material rows. Current1677/1992 nodes,3588/4317 feasible
 controls(raw4342,infeasible25),396/492 material partial; historical1992/1992
 separate. Original75040 roots/127104 actual row/erase returns match both
@@ -191,7 +191,7 @@ refreshed. T66 stays open with39 pending nodes; S2 next, not admitted.
 
 ## Current checkpoint after T66 S2
 
-[T66 S2](t66-cohort-l-player-relative-offscreen-proof.md) closes9 nodes,
+[T66 S2](../../history/M2-T66-player-relative-offscreen-current-proof.md) closes9 nodes,
 18 controls and one newly enumerated consumed block-return material relation.
 Current1686/1992 nodes,3606/4317 feasible controls(raw4342,infeasible25),
 397/493 material partial; historical1992/1992 separate. All393216 original
@@ -200,7 +200,7 @@ pass,3 products refreshed. T66 has30 pending nodes; S3 next unadmitted.
 
 ## Current checkpoint after T66 S3
 
-[T66 S3](t66-cohort-l-player-relative-offscreen-proof.md) closes11 nodes,
+[T66 S3](../../history/M2-T66-player-relative-offscreen-current-proof.md) closes11 nodes,
 18 controls/material00432 without production differences. Current1697/1992
 nodes,3624/4317 controls(raw4342,infeasible25),398/493 material partial;
 historical1992/1992 separate.393216 original roots match both widths,14/14
@@ -209,7 +209,7 @@ T66 has19 pending nodes and S4 next unadmitted.
 
 ## Current checkpoint after T66 S4
 
-[T66 S4](t66-cohort-l-player-relative-offscreen-proof.md) closes6 nodes,
+[T66 S4](../../history/M2-T66-player-relative-offscreen-current-proof.md) closes6 nodes,
 9 controls/material00433-00434 without production differences. Current1703/
 1992 nodes,3633/4317 controls(raw4342,infeasible25),400/493 material partial;
 historical1992/1992 separate.131072 original roots match both widths;14/14
@@ -218,7 +218,7 @@ T66 has13 pending nodes, S5 next unadmitted.
 
 ## Current checkpoint after T66 S5
 
-[T66 S5](t66-cohort-l-player-relative-offscreen-proof.md) closes10 nodes,
+[T66 S5](../../history/M2-T66-player-relative-offscreen-current-proof.md) closes10 nodes,
 13 controls/material00435-00437 without production differences. Current1713/
 1992 nodes,3646/4317 controls(raw4342,infeasible25),403/493 material partial;
 historical1992/1992 separate.131072 original roots match both widths;14/14
@@ -227,9 +227,19 @@ T66 has3 pending nodes, S6 next unadmitted before S7 integration closure.
 
 ## Current checkpoint after T66 S6
 
-[T66 S6](t66-cohort-l-player-relative-offscreen-proof.md) closes3 nodes,
+[T66 S6](../../history/M2-T66-player-relative-offscreen-current-proof.md) closes3 nodes,
 3 feasible controls and instruction-proven impossible03162, retained raw.
 Current1716/1992 nodes,3649/4316 controls(raw4342,infeasible26),403/493
 material partial; historical1992/1992 separate.131072 original roots match
 both widths;16 focused tests each and original DOS16 link pass. Three S2
 products retained; all83 T66 nodes exact, T open for S7 integration closure.
+
+## Current checkpoint after T66 closure
+
+[T66 retained closure](../../history/M2-T66-player-relative-offscreen-current-proof.md)
+closes all83 owned nodes,164 feasible controls/one proven infeasible raw edge,
+10 material rows. S7 zero fresh credit;20,512 current original integration roots
+zero differences each width,248 native tests each and original DOS16 link pass.
+Current1716/1992 nodes,3649/4316 controls(raw4342,infeasible26),403/493 material
+partial; historical1992/1992 separate. Fifteen H-owned incoming controls remain
+pending for cross-cohort/T69. T67 next unadmitted; M2 not complete.

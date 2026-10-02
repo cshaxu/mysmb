@@ -6930,13 +6930,13 @@
     {
       "id": "M2 T66",
       "evidence": [
-        "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+        "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
       ],
       "subtasks": [
         {
           "id": "M2 T66 S1",
           "evidence": [
-            "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+            "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6949,7 +6949,7 @@
         {
           "id": "M2 T66 S2",
           "evidence": [
-            "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+            "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6962,7 +6962,7 @@
         {
           "id": "M2 T66 S3",
           "evidence": [
-            "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+            "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6975,7 +6975,7 @@
         {
           "id": "M2 T66 S4",
           "evidence": [
-            "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+            "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6988,7 +6988,7 @@
         {
           "id": "M2 T66 S5",
           "evidence": [
-            "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+            "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7001,7 +7001,7 @@
         {
           "id": "M2 T66 S6",
           "evidence": [
-            "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+            "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7014,7 +7014,7 @@
         {
           "id": "M2 T66 S7",
           "evidence": [
-            "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
+            "docs/history/M2-T66-player-relative-offscreen-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -663560,7 +663560,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md",
+      "evidence": "docs/history/M2-T66-player-relative-offscreen-current-proof.md",
       "state": "closed"
     },
     {
@@ -665575,7 +665575,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md",
+      "evidence": "docs/history/M2-T66-player-relative-offscreen-current-proof.md",
       "state": "closed"
     },
     {
@@ -667592,7 +667592,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md",
+      "evidence": "docs/history/M2-T66-player-relative-offscreen-current-proof.md",
       "state": "closed"
     },
     {
@@ -669604,7 +669604,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md",
+      "evidence": "docs/history/M2-T66-player-relative-offscreen-current-proof.md",
       "state": "closed"
     },
     {
@@ -671620,7 +671620,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md",
+      "evidence": "docs/history/M2-T66-player-relative-offscreen-current-proof.md",
       "state": "closed"
     },
     {
@@ -673629,7 +673629,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md",
+      "evidence": "docs/history/M2-T66-player-relative-offscreen-current-proof.md",
       "state": "closed"
     },
     {
@@ -675718,8 +675718,8 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md",
-      "state": "admitted"
+      "evidence": "docs/history/M2-T66-player-relative-offscreen-current-proof.md",
+      "state": "closed"
     }
   ]
 }

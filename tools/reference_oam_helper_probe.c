@@ -180,6 +180,21 @@ static void sprite_fixture(core_machine *m,unsigned int n,unsigned int mode)
     m->ram[4u]=(unsigned char)n;m->ram[5u]=(unsigned char)(n*13u);
     if(mode==38u){m->y=(unsigned char)(n*19u);m->ram[2u]=(unsigned char)n;m->ram[5u]=(unsigned char)((n>>8u)*13u);}
 }
+static void integrated_player_fixture(core_machine *m,unsigned int n,unsigned int mode)
+{
+    static const unsigned char deltas[4]={0xffu,0u,1u,2u};
+    unsigned int profile=n>>9u,encoded=(n&255u)|(profile<<12u);
+    unsigned char left=(unsigned char)(n*3u),page=(unsigned char)(profile&3u);
+    player_fixture(m,encoded,19u);
+    m->ram[0x86u]=(unsigned char)(n*13u);
+    m->ram[0xceu]=(unsigned char)(n*17u);
+    m->ram[0x6du]=(unsigned char)(page+deltas[(n>>7u)&3u]);
+    m->ram[0xb5u]=(unsigned char)((n>>8u)&3u);
+    m->ram[0x71cu]=left;m->ram[0x71du]=(unsigned char)(left-1u);
+    m->ram[0x71au]=page;m->ram[0x71bu]=(unsigned char)(page+(left!=0u));
+    /* Victory tail preserves the already-saved offscreen byte. */
+    if(mode==40u)m->ram[0x3d0u]=(unsigned char)n;
+}
 int main(int argc,char **argv)
 {
     static core_machine baseline;
@@ -187,14 +202,14 @@ int main(int argc,char **argv)
     static unsigned int hits[4096],taken[4096],fell[4096],events[14],continuations[65536],offset_reads[16],graphic_reads[208],kick_reads[2],size_reads[20],intermediate_reads[6],proper_reads[3],xmask_reads[16],xdefault_reads[3],ymask_reads[9],ydefault_reads[3],yhigh_reads[2];
     static unsigned long transfer_keys[8192];
     static unsigned int transfer_counts[8192];
-    static const unsigned int entries[39]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u,0xede1u,0xeee9u,0xefa4u,0xeee9u,0xeee9u,0xeee9u,0xf12au,0xf131u,0xf13bu,0xf148u,0xf152u,0xf159u,0xf180u,0xf187u,0xf191u,0xf19bu,0xf1afu,0xf1b6u,0xf1f6u,0xf1f6u,0xf1c0u,0xf1c0u,0xf282u,0xf282u};
+    static const unsigned int entries[41]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u,0xede1u,0xeee9u,0xefa4u,0xeee9u,0xeee9u,0xeee9u,0xf12au,0xf131u,0xf13bu,0xf148u,0xf152u,0xf159u,0xf180u,0xf187u,0xf191u,0xf19bu,0xf1afu,0xf1b6u,0xf1f6u,0xf1f6u,0xf1c0u,0xf1c0u,0xf282u,0xf282u,0xaf10u,0x839au};
     unsigned char h[16]={'M','S','O','H',1u};
     core_driver *d=NULL;core_driver_options options={0u,LIB_FALSE};core_run_result r;
-    unsigned int mode,first,count,n,i,slot,pc,steps,k,pos,pending,continuation,maxsteps=0u,returns=0u;
+    unsigned int mode,first,count,n,i,slot,pc,steps,k,pos,pending,continuation,maxsteps=0u,returns=0u,endpc;
     int ok=1;FILE *f;time_t start=time(NULL);
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],NULL,0);first=(unsigned int)strtoul(argv[4],NULL,0);count=(unsigned int)strtoul(argv[5],NULL,0);
-    if(mode>38u||count==0u||count>2048u||first+count>(mode>=21u?65536u:(mode>=19u?(mode==19u?65536u:8192u):(mode>=16u?(mode==16u?1024u:(mode==17u?32u:256u)):(mode==15u?131072u:(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u)))))))))))return 64;
+    if(mode>40u||count==0u||count>2048u||first+count>(mode>=21u?65536u:(mode>=19u?(mode==19u?65536u:8192u):(mode>=16u?(mode==16u?1024u:(mode==17u?32u:256u)):(mode==15u?131072u:(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u)))))))))))return 64;
     h[5]=(unsigned char)mode;for(i=0u;i<4u;++i){h[8u+i]=(unsigned char)(count>>(i*8u));h[12u+i]=(unsigned char)(first>>(i*8u));}
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1u,sizeof(prg),f)!=sizeof(prg))return 65;fclose(f);
     if(core_driver_create(&d,&options)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
@@ -282,11 +297,13 @@ int main(int argc,char **argv)
         if(mode==33u||mode==34u)horizontal_fixture(d->machine,n,mode);
         if(mode==35u||mode==36u)vertical_fixture(d->machine,n,mode);
         if(mode==37u||mode==38u)sprite_fixture(d->machine,n,mode);
+        if(mode==39u||mode==40u)integrated_player_fixture(d->machine,n,mode);
+        endpc=mode==39u?0xaf19u:0x8001u;
         d->machine->pc=(unsigned short)entries[mode];d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
         memset(rec,0,sizeof(rec));rec[0]=d->machine->a;rec[1]=d->machine->x;rec[2]=d->machine->y;
         memcpy(rec+16u,d->machine->ram,2048u);pending=0u;continuation=0u;
-        for(steps=0u;steps<524288u&&d->machine->pc!=0x8001u;++steps){
+        for(steps=0u;steps<524288u&&d->machine->pc!=endpc;++steps){
             pc=d->machine->pc;if(pc>=0xe900u&&pc<0xf900u)++hits[pc-0xe900u];
             if(mode>=16u&&(prg[pc-0x8000u]==0xbdu||prg[pc-0x8000u]==0xb9u||prg[pc-0x8000u]==0x79u||prg[pc-0x8000u]==0xbeu)){
                 unsigned int address=(unsigned int)(prg[pc-0x8000u+1u]|(prg[pc-0x8000u+2u]<<8u));
@@ -318,7 +335,10 @@ int main(int argc,char **argv)
             if((mode>=16u&&mode<=20u&&pc>=0xeee9u&&pc<0xf12au)||
                (mode>=21u&&mode<=26u&&pc>=0xf12au&&pc<0xf1b7u)||
                (mode>=27u&&mode<=36u&&pc>=0xf180u&&pc<0xf282u)||
-               (mode>=37u&&pc>=0xf282u&&pc<0xf300u)){
+               (mode>=37u&&mode<=38u&&pc>=0xf282u&&pc<0xf300u)||
+               (mode>=39u&&pc>=0xeee9u&&pc<0xf300u)||
+               (mode==39u&&pc>=0xaf10u&&pc<0xaf19u)||
+               (mode==40u&&pc>=0x839au&&pc<0x83a0u)){
                 unsigned long key=(((unsigned long)pc<<16u)|d->machine->pc)+1u;
                 unsigned int bucket=(unsigned int)((key^(key>>13u))&8191u),attempt;
                 for(attempt=0u;attempt<8192u;++attempt){
@@ -337,7 +357,7 @@ int main(int argc,char **argv)
             }
         }
         if(steps>maxsteps)maxsteps=steps;
-        if(d->machine->pc!=0x8001u||pending)ok=0;
+        if(d->machine->pc!=endpc||pending)ok=0;
         rec[4]=d->machine->x;rec[5]=d->machine->y;rec[6]=d->machine->a;
         memcpy(rec+2064u,d->machine->ram,2048u);if(fwrite(rec,1u,sizeof(rec),f)!=sizeof(rec))ok=0;
     }

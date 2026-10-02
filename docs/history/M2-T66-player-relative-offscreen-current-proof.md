@@ -1224,3 +1224,75 @@ scripts under ignored build/m2-t66-s7,192MiB aggregate,2048 roots/chunk,
 120seconds/run,524288steps/case; coordinator cleans raw/probe after proof.
 T67 remains unadmitted; M2 completion requires later cohorts/cross-cohort/
 final certification and is not claimed by T66 closure.
+
+## S7 P2 and T66 closure - retained census and current integration
+
+All83 scoped labels are exact, all164 feasible owned controls exact, one raw
+control instruction-proven infeasible, and10 owned material relations exact.
+S7 has zero new promotions, zero scoped differences, no deferred or transferred
+owned labels. Historical1992/1992 remains separate. Current1716/1992 nodes,
+3649/4316 feasible controls(raw4342,infeasible26),403/493 material relations
+(enumeration partial). T66 entry1633/1992 became1716/1992:83 fresh nodes across
+S1-S6. Feasible controls3485 became3649; the denominator4317 became4316 only
+through original F292 LDA#$40/F294 BNE proof for control-03162. Material394/492
+became403/493, with one newly enumerated consumed block-return relation.
+
+Every member has a named current counterpart, semantic contract, actual source
+path, source/RAM/branch/call/table audit and operational proof. Accepted member
+matrices remain retained; current joins supplement those proofs.
+
+| Member | Exact nodes | Raw controls | Accepted original roots per width | Diffs |
+| --- | --- | --- | --- | --- |
+| S1 | 44 | 103 | 75040 | 0 |
+| S2 | 9 | 18 | 393216 | 0 |
+| S3 | 11 | 18 | 393216 | 0 |
+| S4 | 6 | 9 | 131072 | 0 |
+| S5 | 10 | 13 | 131072 | 0 |
+| S6 | 3 | 4 | 131072 | 0 |
+
+The accepted member roots total1,254,688 per width; they were not all rerun in
+S7. S7 newly ran20,512 original roots against each current native width:
+
+| Original route | Roots | Required actual sequence | Diffs x86/x64 |
+| --- | --- | --- | --- |
+| AF10-AF19 GameEngine segment | 8192 | AF10->F180, AF13->F12A, AF16->EEE9; returns AF13/AF16/AF19 each8192 | 0/0 |
+| 839A AutoPlayer tail | 8192 | 839A->F12A, return839D, tail839D->EEE9, final RTS8001 each8192 | 0/0 |
+| EFA4 intermediate graphics | 32 | Shared actual row writer,128 recorded child returns and independent caller checks | 0/0 |
+| F159 paired block positions | 4096 | First helper restores ObjectOffset; second consumes restored slot+2 | 0/0 |
+
+Actual production engine.c27-29 calls offscreen,relative,player graphics in
+that order; frame_root.c243-244 victory calls relative,graphics without an
+extra offscreen update, matching original ASM5345-5347 and1144-1145. Checker
+modes39/40 invoke those real shared functions directly. The ROM probe executes
+unchanged original instructions; AF10 stops before AF19 BlockObjMT_Updater.
+This proves the bounded joins, not unrelated full-engine phases. Full1841 RAM
+comparison retains scratch, OAM and aliases0109-0139; only true CPU stack0100-
+0108/013A-01FF and unused transient registers excluded. Returned values remain
+mandatory where native ABI maps them. No mocked helper or shifted clear mask.
+
+S1 repaired animation >=10 termination, saved swimming continuation, actual
+DumpTwoSpr offscreen erasure, and shared ordinary/intermediate row traversal.
+S2 repaired paired-block second index to restored ObjectOffset+2. S3-S6 found
+no further production differences after source audits and original routes.
+S7 test/probe work changed no product source. Current full x86/x64 builds and
+248/248 tests each pass, including platform purity. Original OpenNT DOS16 link
+passes with the existing OLDNAMES.LIB warning; no interactive DOS/performance
+claim. Existing S2 products, including audio/title/focus-pause, verified byte-
+identical to committed versions and retained:
+
+- `mysmb16.exe`: 260839 bytes, SHA256 `1f99e8e864fcd5da449f3a643eab4f82e550b5b2229e71e167dd77ac96025fa0`.
+- `mysmb32.exe`: 373854 bytes, SHA256 `efb2534dc2bb7074afb4c79db301431ef47beb18d09cd99c7f73a3ee631bed8b`.
+- `mysmb64.exe`: 380886 bytes, SHA256 `87c198fc900fe0a4b744dd70459117c19d711ecf67957ebf7894374c6f0fdc84`.
+
+Fifteen incoming controls belong to H and remain pending for the existing
+cross-cohort program/T69: control-01173; control-01174; control-01200; control-01218; control-01219; control-01239; control-01240; control-01263; control-01264; control-01301; control-01302; control-01363; control-01364; control-01373; control-01374. Their caller ownership is not promoted
+by this callee-cohort closure. There are no pending external material consumers
+into L in the currently enumerated registry. Global remaining276 nodes,
+667 feasible controls and90 currently enumerated material relations remain;
+M2 stays open. T67 sound-effect cohort is next and unadmitted.
+
+Neutral evidence scripts/summaries/logs are local under ignored build/m2-t66-s7:
+census-summary.json, helper-mode-39/40/17/26-summary.json, full-build/full-tests
+x86/x64 logs and dos16-link.log. Raw recordings cleaned after comparison;
+owner ROM/ASM and derived binaries are not committed. Node ledger closure,
+registry, admission/progress and documentation gates must all pass before P2.
