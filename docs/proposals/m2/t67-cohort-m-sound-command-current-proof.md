@@ -1,0 +1,207 @@
+# M2 T67: Cohort M sound commands and current-equivalence proof
+
+Owner approved continued source-order M2 execution. T66 closed before T67.
+Actual inventory M has126 pending nodes,296 pending raw controls and five
+pending enumerated material rows. It includes music selection and partial
+Square2/Square1 streams beyond sound effects; the inventory, not the brief
+program title, defines scope. No regrouping into N or source-order bypass.
+Current1716/1992 exact nodes,3649/4316 feasible controls(raw4342,infeasible26),
+403/493 material partial. Maximum T67 nodes1842/1992 if all126 receive dual
+proof. Historical1992/1992 separate; every admission expectedMatches empty
+in the historical ledger, with named current pending promotions below.
+
+## Bounded source-order S plan
+
+| S | Chain, shared owner and original route | Nodes / intended current fresh | Exact labels | Owned control IDs | Material IDs |
+| --- | --- | --- | --- | --- | --- |
+| S1 | SoundEngine title/pause/queue/DAC and shared register-frequency entries; native audio_step/dump/play/set helpers | 22 / 22 | SoundEngine; SndOn; InPause; PTone1F; ContPau; PTone2F; PTRegC; DecPauC; SkipPIn; RunSoundSubroutines; SkipSoundSubroutines; NoIncDAC; StrWave; Dump_Squ1_Regs; PlaySqu1Sfx; SetFreq_Squ1; Dump_Freq_Regs; NoTone; Dump_Sq2_Regs; PlaySqu2Sfx; SetFreq_Squ2; SetFreq_Tri | control-03164, control-03165, control-03166, control-03167, control-03168, control-03169, control-03170, control-03171, control-03172, control-03173, control-03174, control-03175, control-03176, control-03177, control-03178, control-03179, control-03180, control-03181, control-03182, control-03183, control-03184, control-03185, control-03186, control-03187, control-03188, control-03189, control-03190, control-03191, control-03192, control-03193, control-03194, control-03195, control-03196, control-03197, control-03198, control-03199, control-03200, control-03201, control-03202, control-03203, control-03204, control-03205, control-04061, control-04066, control-04067, control-04068, control-04069, control-04070, control-04071, control-04072, control-04073, control-04074, control-04075, control-04076, control-04077, control-04082, control-04084, control-04087, control-04089 | none |
+| S2 | Square1 effect phases/dispatcher/length/stop and swim table; actual complete Square1 handler routes | 30 / 30 | SwimStompEnvelopeData; PlayFlagpoleSlide; PlaySmallJump; PlayBigJump; JumpRegContents; ContinueSndJump; N2Prt; FPS2nd; DmpJpFPS; PlayFireballThrow; PlayBump; Fthrow; ContinueBumpThrow; DecJpFPS; Square1SfxHandler; CheckSfx1Buffer; ExS1H; PlaySwimStomp; ContinueSwimStomp; BranchToDecLength1; PlaySmackEnemy; ContinueSmackEnemy; SmSpc; SmTick; DecrementSfx1Length; StopSquare1Sfx; ExSfx1; PlayPipeDownInj; ContinuePipeDownInj; NoPDwnL | control-03206, control-03207, control-03208, control-03209, control-03210, control-03211, control-03212, control-03213, control-03214, control-03215, control-03216, control-03217, control-03218, control-03219, control-03220, control-03221, control-03222, control-03223, control-03224, control-03225, control-03226, control-03227, control-03228, control-03229, control-03230, control-03231, control-03232, control-03233, control-03234, control-03235, control-03236, control-03237, control-03238, control-03239, control-03240, control-03241, control-03242, control-03243, control-03244, control-03245, control-03246, control-03247, control-03248, control-03249, control-03250, control-03251, control-03252, control-03253, control-03254, control-03255, control-03256, control-03257, control-03258, control-03259, control-03260, control-03261, control-03262, control-03263, control-03264, control-03265, control-03266, control-03267, control-03268, control-03269, control-03270, control-03271, control-03272, control-03273, control-03274, control-03275, control-04062, control-04078, control-04080 | material-00438 |
+| S3 | Square2 tables/effect phases/priority/secondary-counter/stop; actual complete Square2 handler routes | 36 / 36 | ExtraLifeFreqData; PowerUpGrabFreqData; PUp_VGrow_FreqData; PlayCoinGrab; PlayTimerTick; CGrab_TTickRegL; ContinueCGrabTTick; N2Tone; PlayBlast; ContinueBlast; SBlasJ; PlayPowerUpGrab; ContinuePowerUpGrab; LoadSqu2Regs; DecrementSfx2Length; EmptySfx2Buffer; StopSquare2Sfx; ExSfx2; Square2SfxHandler; CheckSfx2Buffer; ExS2H; Cont_CGrab_TTick; JumpToDecLength2; PlayBowserFall; BlstSJp; ContinueBowserFall; PBFRegs; EL_LRegs; PlayExtraLife; ContinueExtraLife; DivLLoop; PlayGrowPowerUp; PlayGrowVine; GrowItemRegs; ContinueGrowItems; StopGrowItems | control-03276, control-03277, control-03278, control-03279, control-03280, control-03281, control-03282, control-03283, control-03284, control-03285, control-03286, control-03287, control-03288, control-03289, control-03290, control-03291, control-03292, control-03293, control-03294, control-03295, control-03296, control-03297, control-03298, control-03299, control-03300, control-03301, control-03302, control-03303, control-03304, control-03305, control-03306, control-03307, control-03308, control-03309, control-03310, control-03311, control-03312, control-03313, control-03314, control-03315, control-03316, control-03317, control-03318, control-03319, control-03320, control-03321, control-03322, control-03323, control-03324, control-03325, control-03326, control-03327, control-03328, control-03329, control-03330, control-03331, control-03332, control-03333, control-03334, control-03335, control-03336, control-03337, control-03338, control-03339, control-03340, control-03341, control-03342, control-03343, control-04063, control-04079 | material-00439, material-00440, material-00441 |
+| S4 | Noise brick/flame/dispatcher/length/stop and table; actual complete Noise handler routes | 11 / 11 | BrickShatterFreqData; PlayBrickShatter; ContinueBrickShatter; PlayNoiseSfx; DecrementSfx3Length; ExSfx3; NoiseSfxHandler; CheckNoiseBuffer; ExNH; PlayBowserFlame; ContinueBowserFlame | control-03344, control-03345, control-03346, control-03347, control-03348, control-03349, control-03350, control-03351, control-03352, control-03353, control-03354, control-03355, control-03356, control-03357, control-03358, control-03359, control-03360, control-04064 | material-00442 |
+| S5 | ContinueMusic and M-owned music selection/header/Square2/Square1 stream prefixes; original live entry routes, N boundary kept explicit | 27 / 27 | ContinueMusic; MusicHandler; LoadEventMusic; NoStopSfx; LoadAreaMusic; NoStop1; GMLoopB; HandleAreaMusicLoopB; FindAreaMusicHeader; FindEventMusicHeader; LoadHeader; HandleSquare2Music; EndOfMusicData; NotTRO; MusicLoopBack; VictoryMLoopBack; Squ2LengthHandler; Squ2NoteHandler; Rest; SkipFqL1; MiscSqu2MusicTasks; NoDecEnv1; HandleSquare1Music; FetchSqu1MusicData; Squ1NoteHandler; SkipCtrlL; MiscSqu1MusicTasks | control-03361, control-03362, control-03363, control-03364, control-03365, control-03366, control-03367, control-03368, control-03369, control-03370, control-03371, control-03372, control-03373, control-03374, control-03375, control-03376, control-03377, control-03378, control-03379, control-03380, control-03381, control-03382, control-03383, control-03384, control-03385, control-03386, control-03387, control-03388, control-03389, control-03390, control-03391, control-03392, control-03393, control-03394, control-03395, control-03396, control-03397, control-03398, control-03399, control-03400, control-03401, control-03402, control-03403, control-03404, control-03405, control-03406, control-03407, control-03408, control-03409, control-03410, control-03411, control-03412, control-03413, control-03414, control-03415, control-03416, control-03417, control-03418, control-03419, control-03420, control-03421, control-03422, control-03423, control-03424, control-03425, control-03426, control-03427, control-03428, control-03429, control-03430, control-04065, control-04081, control-04083, control-04085, control-04086, control-04088 | none |
+| S6 | Full M census, current SoundEngine cross-chain routes and integrated three-target regression | 126 / 0 | All126 above, exact prerequisite | Remaining owned census; external owners stay explicit | All five plus any admitted in-scope enumeration |
+
+All production logic belongs to src/game/audio.c and neutral game output.
+S1 owns dispatcher/register writes; S2-S4 own effect branches in source order;
+S5 owns actual M music prefixes. T68 retains N nodes/data and continuation
+contracts. Calls into a later effect/music owner execute unchanged original
+code and real C callees for caller input/return/order observation; that does
+not promote the callee, table owner or unrelated downstream nodes. If an
+unproven dependency blocks an owned contract, resolve the dependency scope
+explicitly before claiming exact; do not stub a child, patch instructions or
+infer coverage. Every scoped mismatch is repaired and reaudited in its S.
+
+## Receiving and participation map
+
+| ASM line | Label | Existing maintenance receiver | T67 audit S | Incoming current |
+| --- | --- | --- | --- | --- |
+| 15070 | `SoundEngine` | M2 T48 S1 | S1 | needs-evidence |
+| 15075 | `SndOn` | M2 T48 S1 | S1 | needs-evidence |
+| 15084 | `InPause` | M2 T48 S1 | S1 | needs-evidence |
+| 15099 | `PTone1F` | M2 T48 S1 | S1 | needs-evidence |
+| 15101 | `ContPau` | M2 T48 S1 | S1 | needs-evidence |
+| 15108 | `PTone2F` | M2 T48 S1 | S1 | needs-evidence |
+| 15109 | `PTRegC` | M2 T48 S1 | S1 | needs-evidence |
+| 15112 | `DecPauC` | M2 T48 S1 | S1 | needs-evidence |
+| 15121 | `SkipPIn` | M2 T48 S1 | S1 | needs-evidence |
+| 15125 | `RunSoundSubroutines` | M2 T48 S1 | S1 | needs-evidence |
+| 15134 | `SkipSoundSubroutines` | M2 T48 S1 | S1 | needs-evidence |
+| 15147 | `NoIncDAC` | M2 T48 S1 | S1 | needs-evidence |
+| 15150 | `StrWave` | M2 T48 S1 | S1 | needs-evidence |
+| 15155 | `Dump_Squ1_Regs` | M2 T48 S2 | S1 | needs-evidence |
+| 15160 | `PlaySqu1Sfx` | M2 T48 S2 | S1 | needs-evidence |
+| 15163 | `SetFreq_Squ1` | M2 T48 S2 | S1 | needs-evidence |
+| 15166 | `Dump_Freq_Regs` | M2 T48 S2 | S1 | needs-evidence |
+| 15174 | `NoTone` | M2 T48 S2 | S1 | needs-evidence |
+| 15176 | `Dump_Sq2_Regs` | M2 T48 S2 | S1 | needs-evidence |
+| 15181 | `PlaySqu2Sfx` | M2 T48 S2 | S1 | needs-evidence |
+| 15184 | `SetFreq_Squ2` | M2 T48 S2 | S1 | needs-evidence |
+| 15188 | `SetFreq_Tri` | M2 T48 S2 | S1 | needs-evidence |
+| 15194 | `SwimStompEnvelopeData` | M2 T48 S3 | S2 | needs-evidence |
+| 15198 | `PlayFlagpoleSlide` | M2 T48 S3 | S2 | needs-evidence |
+| 15206 | `PlaySmallJump` | M2 T48 S3 | S2 | needs-evidence |
+| 15210 | `PlayBigJump` | M2 T48 S3 | S2 | needs-evidence |
+| 15213 | `JumpRegContents` | M2 T48 S3 | S2 | needs-evidence |
+| 15220 | `ContinueSndJump` | M2 T48 S3 | S2 | needs-evidence |
+| 15227 | `N2Prt` | M2 T48 S3 | S2 | needs-evidence |
+| 15230 | `FPS2nd` | M2 T48 S3 | S2 | needs-evidence |
+| 15231 | `DmpJpFPS` | M2 T48 S3 | S2 | needs-evidence |
+| 15234 | `PlayFireballThrow` | M2 T48 S3 | S2 | needs-evidence |
+| 15239 | `PlayBump` | M2 T48 S3 | S2 | needs-evidence |
+| 15242 | `Fthrow` | M2 T48 S3 | S2 | needs-evidence |
+| 15247 | `ContinueBumpThrow` | M2 T48 S3 | S2 | needs-evidence |
+| 15253 | `DecJpFPS` | M2 T48 S3 | S2 | needs-evidence |
+| 15256 | `Square1SfxHandler` | M2 T48 S4 | S2 | needs-evidence |
+| 15276 | `CheckSfx1Buffer` | M2 T48 S4 | S2 | needs-evidence |
+| 15294 | `ExS1H` | M2 T48 S4 | S2 | needs-evidence |
+| 15296 | `PlaySwimStomp` | M2 T48 S4 | S2 | needs-evidence |
+| 15304 | `ContinueSwimStomp` | M2 T48 S4 | S2 | needs-evidence |
+| 15313 | `BranchToDecLength1` | M2 T48 S4 | S2 | needs-evidence |
+| 15316 | `PlaySmackEnemy` | M2 T48 S4 | S2 | needs-evidence |
+| 15325 | `ContinueSmackEnemy` | M2 T48 S4 | S2 | needs-evidence |
+| 15333 | `SmSpc` | M2 T48 S4 | S2 | needs-evidence |
+| 15334 | `SmTick` | M2 T48 S4 | S2 | needs-evidence |
+| 15336 | `DecrementSfx1Length` | M2 T48 S4 | S2 | needs-evidence |
+| 15340 | `StopSquare1Sfx` | M2 T48 S4 | S2 | needs-evidence |
+| 15347 | `ExSfx1` | M2 T48 S4 | S2 | needs-evidence |
+| 15349 | `PlayPipeDownInj` | M2 T48 S4 | S2 | needs-evidence |
+| 15353 | `ContinuePipeDownInj` | M2 T48 S4 | S2 | needs-evidence |
+| 15365 | `NoPDwnL` | M2 T48 S4 | S2 | needs-evidence |
+| 15369 | `ExtraLifeFreqData` | M2 T48 S5 | S3 | needs-evidence |
+| 15372 | `PowerUpGrabFreqData` | M2 T48 S5 | S3 | needs-evidence |
+| 15380 | `PUp_VGrow_FreqData` | M2 T48 S5 | S3 | needs-evidence |
+| 15386 | `PlayCoinGrab` | M2 T48 S5 | S3 | needs-evidence |
+| 15391 | `PlayTimerTick` | M2 T48 S5 | S3 | needs-evidence |
+| 15395 | `CGrab_TTickRegL` | M2 T48 S5 | S3 | needs-evidence |
+| 15401 | `ContinueCGrabTTick` | M2 T48 S5 | S3 | needs-evidence |
+| 15407 | `N2Tone` | M2 T48 S5 | S3 | needs-evidence |
+| 15409 | `PlayBlast` | M2 T48 S5 | S3 | needs-evidence |
+| 15416 | `ContinueBlast` | M2 T48 S5 | S3 | needs-evidence |
+| 15422 | `SBlasJ` | M2 T48 S5 | S3 | needs-evidence |
+| 15424 | `PlayPowerUpGrab` | M2 T48 S5 | S3 | needs-evidence |
+| 15428 | `ContinuePowerUpGrab` | M2 T48 S5 | S3 | needs-evidence |
+| 15437 | `LoadSqu2Regs` | M2 T48 S5 | S3 | needs-evidence |
+| 15440 | `DecrementSfx2Length` | M2 T48 S5 | S3 | needs-evidence |
+| 15444 | `EmptySfx2Buffer` | M2 T48 S5 | S3 | needs-evidence |
+| 15448 | `StopSquare2Sfx` | M2 T48 S5 | S3 | needs-evidence |
+| 15453 | `ExSfx2` | M2 T48 S5 | S3 | needs-evidence |
+| 15455 | `Square2SfxHandler` | M2 T48 S6 | S3 | needs-evidence |
+| 15478 | `CheckSfx2Buffer` | M2 T48 S6 | S3 | needs-evidence |
+| 15496 | `ExS2H` | M2 T48 S6 | S3 | needs-evidence |
+| 15498 | `Cont_CGrab_TTick` | M2 T48 S6 | S3 | needs-evidence |
+| 15501 | `JumpToDecLength2` | M2 T49 S1 | S3 | needs-evidence |
+| 15504 | `PlayBowserFall` | M2 T49 S1 | S3 | needs-evidence |
+| 15509 | `BlstSJp` | M2 T49 S1 | S3 | needs-evidence |
+| 15511 | `ContinueBowserFall` | M2 T49 S1 | S3 | needs-evidence |
+| 15517 | `PBFRegs` | M2 T49 S1 | S3 | needs-evidence |
+| 15518 | `EL_LRegs` | M2 T49 S1 | S3 | needs-evidence |
+| 15520 | `PlayExtraLife` | M2 T49 S1 | S3 | needs-evidence |
+| 15524 | `ContinueExtraLife` | M2 T49 S1 | S3 | needs-evidence |
+| 15527 | `DivLLoop` | M2 T49 S1 | S3 | needs-evidence |
+| 15537 | `PlayGrowPowerUp` | M2 T49 S1 | S3 | needs-evidence |
+| 15541 | `PlayGrowVine` | M2 T49 S1 | S3 | needs-evidence |
+| 15544 | `GrowItemRegs` | M2 T49 S1 | S3 | needs-evidence |
+| 15551 | `ContinueGrowItems` | M2 T49 S1 | S3 | needs-evidence |
+| 15564 | `StopGrowItems` | M2 T49 S1 | S3 | needs-evidence |
+| 15569 | `BrickShatterFreqData` | M2 T49 S2 | S4 | needs-evidence |
+| 15573 | `PlayBrickShatter` | M2 T49 S2 | S4 | needs-evidence |
+| 15577 | `ContinueBrickShatter` | M2 T49 S2 | S4 | needs-evidence |
+| 15585 | `PlayNoiseSfx` | M2 T49 S2 | S4 | needs-evidence |
+| 15591 | `DecrementSfx3Length` | M2 T49 S2 | S4 | needs-evidence |
+| 15598 | `ExSfx3` | M2 T49 S2 | S4 | needs-evidence |
+| 15600 | `NoiseSfxHandler` | M2 T49 S2 | S4 | needs-evidence |
+| 15609 | `CheckNoiseBuffer` | M2 T49 S2 | S4 | needs-evidence |
+| 15616 | `ExNH` | M2 T49 S2 | S4 | needs-evidence |
+| 15618 | `PlayBowserFlame` | M2 T49 S2 | S4 | needs-evidence |
+| 15622 | `ContinueBowserFlame` | M2 T49 S2 | S4 | needs-evidence |
+| 15632 | `ContinueMusic` | M2 T49 S2 | S5 | needs-evidence |
+| 15635 | `MusicHandler` | M2 T49 S3 | S5 | needs-evidence |
+| 15645 | `LoadEventMusic` | M2 T49 S3 | S5 | needs-evidence |
+| 15651 | `NoStopSfx` | M2 T49 S3 | S5 | needs-evidence |
+| 15662 | `LoadAreaMusic` | M2 T49 S3 | S5 | needs-evidence |
+| 15666 | `NoStop1` | M2 T49 S3 | S5 | needs-evidence |
+| 15667 | `GMLoopB` | M2 T49 S3 | S5 | needs-evidence |
+| 15669 | `HandleAreaMusicLoopB` | M2 T49 S3 | S5 | needs-evidence |
+| 15682 | `FindAreaMusicHeader` | M2 T49 S3 | S5 | needs-evidence |
+| 15686 | `FindEventMusicHeader` | M2 T49 S3 | S5 | needs-evidence |
+| 15691 | `LoadHeader` | M2 T49 S3 | S5 | needs-evidence |
+| 15720 | `HandleSquare2Music` | M2 T49 S4 | S5 | needs-evidence |
+| 15730 | `EndOfMusicData` | M2 T49 S4 | S5 | needs-evidence |
+| 15736 | `NotTRO` | M2 T49 S4 | S5 | needs-evidence |
+| 15750 | `MusicLoopBack` | M2 T49 S4 | S5 | needs-evidence |
+| 15753 | `VictoryMLoopBack` | M2 T49 S4 | S5 | needs-evidence |
+| 15756 | `Squ2LengthHandler` | M2 T49 S4 | S5 | needs-evidence |
+| 15763 | `Squ2NoteHandler` | M2 T49 S4 | S5 | needs-evidence |
+| 15769 | `Rest` | M2 T49 S4 | S5 | needs-evidence |
+| 15771 | `SkipFqL1` | M2 T49 S4 | S5 | needs-evidence |
+| 15774 | `MiscSqu2MusicTasks` | M2 T49 S4 | S5 | needs-evidence |
+| 15783 | `NoDecEnv1` | M2 T49 S4 | S5 | needs-evidence |
+| 15788 | `HandleSquare1Music` | M2 T49 S5 | S5 | needs-evidence |
+| 15794 | `FetchSqu1MusicData` | M2 T49 S5 | S5 | needs-evidence |
+| 15806 | `Squ1NoteHandler` | M2 T49 S5 | S5 | needs-evidence |
+| 15816 | `SkipCtrlL` | M2 T49 S5 | S5 | needs-evidence |
+| 15819 | `MiscSqu1MusicTasks` | M2 T49 S5 | S5 | needs-evidence |
+
+Audit participation preserves existing maintenance custody. No transfers.
+Per-node manual source evidence covers predicates, RAM reads/writes, byte
+wrapping, table addresses/indexes, call/return/tail and producer/consumer
+edges. A source visit alone never proves equality. Every feasible edge needs
+its actual current counterpart and runtime route; impossible fallthroughs
+require instruction proof and remain in raw counts.
+
+## S1 admission and dual proof contract
+
+Scope22 pending labels: SoundEngine; SndOn; InPause; PTone1F; ContPau; PTone2F; PTRegC; DecPauC; SkipPIn; RunSoundSubroutines; SkipSoundSubroutines; NoIncDAC; StrWave; Dump_Squ1_Regs; PlaySqu1Sfx; SetFreq_Squ1; Dump_Freq_Regs; NoTone; Dump_Sq2_Regs; PlaySqu2Sfx; SetFreq_Squ2; SetFreq_Tri.
+Intended current exact22, maximum1738/1992. Historical baseline/maximum1992,
+incomingComplete retained, historical actual/expectedMatches empty. Source
+entry SoundEngine through SetFreq_Tri before SwimStompEnvelopeData; shared
+owner audio.c with public audio.h helper ABI. No platform/audio synthesis
+changes or product presentation rewrite.
+
+ROM track: Unchanged original SoundEngine F2D0 entry/real RTS controlled title, pause, unpause, empty normal dispatch and all-byte DAC states; original F381-F3B0 register/frequency helper entries. Compare1841 non-stack RAM bytes,24 final APU bytes and every ordered APU write; real calls/returns/branches and local frequency table reads, x86/x64. No downstream music/effect node credit.
+Retain RAM scratch and0109-0139 aliases; exclude only actual CPU stack0100-
+0108/013A-01FF and transient registers unused by native ABI. Compare required
+returned A where helper ABI exposes it. Capture actual memory-store instruction
+addresses and values for APU2000-independent4000-4017 writes before execution;
+compare ordered stream as well as final registers, including repeated writes.
+No final-register-only acceptance. Helpers use owner-local original frequency
+data without copying it into tracked fixtures; N frequency table credit deferred.
+Normal dispatcher route uses empty SFX/music with actual callees and records
+their order/returns; no claim of full music/effect proof. Title must preserve
+queues/DAC; pause skips normal children; queue clearing precedes old-DAC write.
+
+Operational track: focused audio/local-death/music-header/square2/noise smoke
+and platform purity on x86/x64; current minimal checker builds, original
+OpenNT DOS16 link. Product-code repair refreshes three user-authorized assets
+EXEs in same P; pure evidence retains T66 S2 products including tested audio,
+title/focus pause. Full integrated native regression at T closure. Similar-issue
+sweep covers queue priority, old-versus-new DAC, pause start/termination,
+frequency zero/wrap and register-write ordering across all admitted helpers.
+
+Owner-local original SMB1 ROM and reviewed SMBDIS are nonredistributable
+research inputs only; unchanged original execution via read-only reference
+driver, not a production emulator. Raw/scripts/logs/probes stay ignored under
+build/m2-t67-s1, budget128MiB raw,1024 roots per batch,120 seconds per process,
+524288 CPU instructions per root. Coordinator deletes raw after comparison.
+Neutral metadata alone retained. S1 remains active on any scoped difference or
+missing branch/edge evidence. No S2 admission before S1 dual proof/closure.

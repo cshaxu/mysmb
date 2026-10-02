@@ -243,3 +243,11 @@ zero differences each width,248 native tests each and original DOS16 link pass.
 Current1716/1992 nodes,3649/4316 controls(raw4342,infeasible26),403/493 material
 partial; historical1992/1992 separate. Fifteen H-owned incoming controls remain
 pending for cross-cohort/T69. T67 next unadmitted; M2 not complete.
+
+## T67 admission checkpoint
+
+[T67 exact126-node plan](t67-cohort-m-sound-command-current-proof.md) follows the
+actual M inventory, including its music selection and partial stream prefixes.
+S1 admits22 SoundEngine/register nodes, intended fresh22/max1738/1992; no
+admission credit. Current1716/1992 nodes,3649/4316 controls,403/493 material
+partial. Remaining S follows source order; T68 owns N, T69 external joins.
