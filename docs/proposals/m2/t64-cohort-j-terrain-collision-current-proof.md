@@ -2752,3 +2752,74 @@ remain unchanged. Exact feasible controls rise 3,140 to 3,142/4,323
 (raw 4,342, infeasible 19). T64 remains open with 39 Cohort-J controls,
 zero pending material; explosion relative-position return follows.
 T65 is not admitted.
+
+## Aggregate S51 admission - fireworks relative return
+
+S51 owns control-03866. Six scoped labels: RunFireworks, SetupExpl,
+FireworksSoundScore, RelativeEnemyPosition, DrawExplosion_Fireworks,
+EndAreaPoints. Four retain exact; RelativeEnemyPosition and
+DrawExplosion_Fireworks retain needs-evidence under generic later owners.
+Expected new nodes empty; no custody transfer. Historical 1992/1992,
+exact nodes 1480/1992 and material 368/487 unchanged. Controls enter
+3142/4323 and can reach 3143/4323. S50 precedes; star-flag returns follow.
+
+Shared enemy/fireworks.c owns $D295-$D2CC. Static track checks timer
+byte decrement, reset/phase increment and terminal score tail; relative
+return slot then Y-before-X copy and current-slot phase/OAM arguments.
+Actual ROM/native roots execute real position, explosion and scoring
+children across six slots, timer and three drawing phases, both players,
+score carries, page/coordinate wrapping and aligned OAM boundary offsets.
+Persistent RAM/OAM and all $0109-$0139 aliases are compared; scratch/CPU
+stack exclusions and real return seams are explicit. x86/x64 focused tests,
+platform purity and original OpenNT DOS16 provide operational evidence.
+
+Owner-local nonredistributable ROM/ASM are research only. Ignored
+build/m2-t64-s51 owns <=8 MiB raw, 524288 steps/case, 120 seconds
+and cleanup. A scoped difference stays here for repair/re-audit; product
+repairs refresh all three approved EXEs. Preserve unrelated work; no T65.
+
+## Aggregate S51 closure - real fireworks relative return
+
+Control-03866 is exact. Four scoped nodes retain exact: RunFireworks,
+SetupExpl, FireworksSoundScore and EndAreaPoints. RelativeEnemyPosition
+and DrawExplosion_Fireworks retain needs-evidence under generic later
+owners. No new node credit, custody transfer or inferred generic coverage.
+
+Static $D295-$D2CC audit confirms byte-decrement before nonzero branch,
+reset to eight, byte-wrapped phase increment and unsigned terminal gate.
+The return at $D2A8 restores ObjectOffset and relative A. The caller copies
+relative Y before X, then loads current-slot OAM offset and frame before
+calling DrawExplosion_Fireworks. Terminal phase disables the enemy, queues
+blast sound, sets modifier +4 to five and tails into EndAreaPoints. Its
+current-player score modifier and status-number descendants execute for real.
+
+1,536 actual RunFireworks roots across six slots observe 1,410 relative
+returns and 1,410 drawing calls, plus 126 terminal score tails. Drawing
+phases zero/one/two occur 402/504/504 times; maximum execution is 270
+instructions. Fixtures include timer zero wrapping to 255, timers one/two/
+eight, phase rollover and terminal cutoff, both players, mode-dependent
+score modification, decimal score carry, page/coordinate wrapping and
+aligned OAM offsets $20/$f0/$f8/$fc. The real source seam checks X/relative A
+on return and X/Y/frame plus both coordinate copies before drawing. No child
+is replaced by a synthetic return or test stub.
+
+Fresh current x86/x64 each match 1,536/1,536 with zero differences across
+1,833 compared bytes: all persistent non-stack RAM, OAM and VRAM score
+packets, plus all 49 game aliases $0109-$0139. Scratch $00-$07 and other
+CPU-stack bytes are explicit ABI exclusions; generic child scratch and
+unaligned/non-source fireworks OAM inputs remain with their generic owners.
+Immutable owner-local PRG binds score resources, with no emulator in product.
+
+Focused fireworks lifetime/initialization and platform-purity tests pass
+3/3 on each width; fresh C90 route checkers pass on both. Original OpenNT
+DOS16 builds/links with the existing OLDNAMES.LIB warning. Similar-issue
+sweep checks return-slot restoration, coordinate order, frame/timer branches,
+aligned OAM boundary crossing and terminal sound/score handoff. No scoped
+discrepancy or platform gameplay copy found. Product C and three delivered
+EXEs are unchanged; only neutral harness and audit evidence were added.
+Raw records and probe executable are cleaned after acceptance.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 remain
+unchanged. Exact feasible controls rise 3,142 to 3,143/4,323 (raw 4,342,
+infeasible 19). T64 remains open with 38 Cohort-J controls and zero pending
+material; star-flag/end-level control returns follow. T65 is not admitted.

@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3142,
-    "needs-evidence": 1181,
+    "exact": 3143,
+    "needs-evidence": 1180,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129598,13 +129598,16 @@
       "instruction": "rts/rti",
       "id": "control-03866",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot with real relative return, coordinate copies and drawing/score descendants.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S51 static $D295-$D2CC and real return-consumer audit: RelativeEnemyPosition returns at $D2A8 with X=ObjectOffset and A=$03AE; SetupExpl copies relative Y before X to fireball coordinates, then passes the current-slot frame and OAM offset into the real drawing child."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetupExpl restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "operationalEvidence": [
+        "M2 T64 S51 current x86/x64 each match 1536 actual fireworks roots with zero differences across 1833 bytes; relative/draw returns 1410/1410, terminal score tails 126 and all three drawing phases; C90 fireworks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "RelativeEnemyPosition returns at $D2A8 with X=ObjectOffset and A=$03AE; SetupExpl copies relative Y before X to fireball coordinates, then passes the current-slot frame and OAM offset into the real drawing child.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
       ]
