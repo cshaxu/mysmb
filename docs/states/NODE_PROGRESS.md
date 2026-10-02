@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T69 S5 - active life/game-over/player transpose chain
+
+[Exact17 pending targets/ScreenRoutines exact dependency](../proposals/m2/t69-cross-cohort-current-proof.md)
+scope18,intended fresh17,max1992/1992;28 controls/2 material. Current1975/1992
+nodes,4060/4278 controls(raw4342,infeasible64),510/555 material partial;
+historical1992/1992 separate. Both proof tracks required before credit.
+S6 remains unadmitted;node completion alone cannot close M2.
+
 ## M2 T69 S4 - closed player-entry initialization chain
 
 [All11 intended labels/17 controls/5 material](../proposals/m2/t69-cross-cohort-current-proof.md)

@@ -686,3 +686,23 @@ Raw deleted per1024-root batch;bounded ignored output retains neutral
 summaries/pre-fix diagnostics/build logs only,probe deleted at closure.
 Registry/ledger/progress/docs gates required before commit;unrelated queue,
 terrain line-endings and proposals preserved unstaged. S5 unadmitted.
+
+## S5 admission - life/game-over/player transpose chain
+
+Scope18,intended fresh17 pending:HalfwayPageNybbles; PlayerLoseLife; StillInGame; GetHalfway; MaskHPNyb; SetHalfway; GameOverMode; SetupGameOver; RunGameOver; TerminateGame; ContinueGame; GameIsOn; TransposePlayers; TransLoop; ExTrans; DoNothing1; DoNothing2.
+ScreenRoutines already exact dependency receives zero credit.28 controls/2
+material pending. Current1975/1992 nodes,4060/4278 feasible controls
+(raw4342,infeasible64),510/555 material partial;max1992/1992. Historical
+1992/1992 separate,expectedMatches empty;maintenance custody retained.
+Shared terminal_modes.c life/game-over/transpose owner and game.c no-op leaves;
+actual area-pointer/screen children,source-valid world0-7/area0-3 and mode
+dispatch0-2. ROM track:Unchanged original PlayerLoseLife/GameOverMode returning roots with actual TransposePlayers/ContinueGame/LoadAreaPointer/ScreenRoutines children;vary life sign/byte,all8 worlds/4 levels,halfway threshold,both player states,START/timer/task0-2;actual half-way table reads/source transfers and persistent RAM/APU/order compare x86/x64;recheck actual SecondaryGameSetup no-op children.
+Operational:focused life/game-over/boot/title tests,current x86/x64 builds,
+purity and original OpenNT DOS16 link. Product edits refresh3 EXEs under
+owner authorization;pure audit retains accepted outputs. Any scoped difference
+repaired/re-audited before S6. Similar-issue sweep:byte INC/DEC versus fixed
+assignment,halfway parity/threshold,descending player-record exchange,carry
+result branch,actual restart/screen/no-op call/return/fallthrough order.
+Owner-local ROM/reviewed ASM research only,nonredistributable,no import.
+Ignored build/m2-t69-s5,128MiB raw/1024 roots batch/120seconds process/
+524288steps root;coordinator deletes raw per batch,retains neutral summaries.
