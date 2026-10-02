@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T68 S3 - active header-data chain
+
+[Exact23-node/23-material admission](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+scope/intended fresh23, maximum1891/1992; current1868/1992 nodes,3964/4279
+controls(raw4342,infeasible63),408/493 material partial; historical1992/1992
+distinct. Original indexed reads and actual shared consumer required before credit.
+
 ## M2 T68 S2 - closed helper chain
 
 [All9 nodes/10 raw control dispositions](../proposals/m2/t68-cohort-n-music-data-current-proof.md)

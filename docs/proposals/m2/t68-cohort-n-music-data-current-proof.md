@@ -413,3 +413,31 @@ owner authorization, preserving audio/title/focus pause:
 Ignored build/m2-t68-s2 contains neutral route/coverage summaries, modes36-47,
 pre-fix-carry difference, final build/test/DOS16 logs. Raw removed per batch,
 recorder removed at closure; registry/ledger/progress/docs gates before commit.
+
+## S3 admission - music header selection and field regions
+
+Exact23 pending scope/intended fresh23, maximum1891/1992:
+MusicHeaderData; TimeRunningOutHdr; Star_CloudHdr; EndOfLevelMusHdr; ResidualHeaderData; UndergroundMusHdr; SilenceHdr; CastleMusHdr; VictoryMusHdr; GameOverMusHdr; WaterMusHdr; WinCastleMusHdr; GroundLevelPart1Hdr; GroundLevelPart2AHdr; GroundLevelPart2BHdr; GroundLevelPart2CHdr; GroundLevelPart3AHdr; GroundLevelPart3BHdr; GroundLevelLeadInHdr; GroundLevelPart4AHdr; GroundLevelPart4BHdr; GroundLevelPart4CHdr; DeathMusHdr.
+Current1868/1992 nodes,3964/4279 controls(raw4342,infeasible63),408/493 material
+partial; historical1992/1992 distinct, expectedMatches empty. No owned control
+rows;23 producer relations material-k36-01 through23 to actual LoadHeader.
+Shared audio.c CPU PRG binding/LoadHeader consumer. Source15989-16048; real
+header caller and later stream/table consumers are dependencies, not promoted.
+Entry original selector read at F6F5, exit F73A actual channel continuation.
+No maintenance transfer; data remains owner-local, no generated data import.
+
+ROM track: Unchanged LoadHeader F6F5 to F73A boundary, all256 selectors; record original selection and all six field indexed reads, full RAM/APU/ordered writes x86/x64. Actual event/area queues and continuous original music states prove header-to-stream handoff; no patched ROM or mocked data.
+Manual contracts: exact adjacent region bounds, selector table base one byte
+before MusicHeaderData, six absolute-Y field reads (no Y increment/wrap between
+fields), RAM F0/F5/F6/F9/F8/7B0/7C1, counters1/F7 and alternate0, master0B->0F.
+Short4/5-byte source headers intentionally read neighboring bytes for remaining
+fields; no padding/default field invented. Residual header bytes must have
+actual indexed-consumer evidence, not a checksum-only claim.
+Operational: current focused tests/builds x86/x64, original OpenNT DOS16 link
+and purity; retain S2 EXEs byte-identical if no product code change. Any scoped
+diff remains S3 until repair/reaudit. Similar-issue sweep covers selection bases,
+short header adjacency, pointer endian and counter/write/handoff order.
+
+Owner-local ROM/reviewed ASM nonredistributable research; ignored
+build/m2-t68-s3,128MiB raw budget,1024 roots/batch,120seconds/process,
+524288steps/root. Raw deleted per batch, neutral metadata only tracked.
