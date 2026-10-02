@@ -1938,3 +1938,106 @@ Historical **1,992/1,992**, exact nodes **1,480/1,992** and material
 T64 remains open with **62 Cohort-J controls**, zero pending material.
 Next source-order group is normal/defeated/jumping movement return
 integration. T65 is not admitted.
+
+## Aggregate S41 admission - shared movement return integration
+
+S41 owns `control-03827`, `control-03828`, `control-03829`,
+`control-03831`. The 27 exact scoped labels are XSpeedAdderData,
+RevivedXSpeed, MoveNormalEnemy, FallE, MEHor, SlowM, SteadM, AddHS,
+ReviveStunned, SetRSpd, MoveDefeatedEnemy, ChkKillGoomba, NKGmba,
+MoveJumpingEnemy, MoveD_EnemyVertically, MoveFallingPlatform, ContVMove,
+MoveJ_EnemyVertically, SetHiMax, SetXMoveAmt, ImposeGravitySprObj,
+MoveEnemyHorizontally, MoveObjectHorizontally, SaveXSpd, UseAdder,
+ExXMove, EraseEnemyObject. Expected new node set is empty.
+Historical 1,992/1,992 and exact 1,480/1,992 remain unchanged; controls
+enter at 3,119/4,323 and can reach 3,123/4,323, material stays 368/487.
+
+One shared movement-entry matrix covers the contiguous $CA77-$CAFE
+normal/defeated/jumping entries, all using enemy/movement.c and world
+movement/gravity children; erase is the existing lifecycle dependency.
+Entry selects the mode, exit is its complete return. Missing evidence is
+the real gravity/horizontal return ABI beyond earlier substituted children.
+S40 is predecessor; movement-counter branch is the next distinct owner.
+
+Static audit checks state-bit precedence, exact state-five gravity force,
+returned slot, state reload, signed speed-table selection, stack-saved
+speed restoration, revive/erase and jumping tail. Actual ROM roots use
+real children and restored boot state; x86/x64 compare persistent RAM.
+All state bytes, six slots, both speed signs, timer/hard-mode/frame
+selection, page/fraction boundaries and all three entries are covered.
+Game-owned stack-page arrays $0110-$0115 and $0125-$012A are compared
+explicitly rather than hidden by CPU-stack exclusions. Return slot,
+gravity force/max and horizontal temporary speed have separate seam checks.
+
+Owner ROM/disassembly are nonredistributable local research. Ignored
+build/m2-t64-s41 owns <=40 MiB raw, 524288 steps/case and 120 seconds
+total; S41 cleans raw records/probe. Neutral harness/metadata only are
+tracked. Focused movement, purity and original OpenNT DOS16 link are
+independent operational proof. Any scoped diff stays here for repair and
+re-audit; product repairs refresh three approved EXEs. Preserve unrelated work.
+
+## Aggregate S41 closure - shared movement returns exact
+
+`control-03827`, `control-03828`, `control-03829`, `control-03831` are
+exact. All 27 scoped labels retain exact status: XSpeedAdderData,
+RevivedXSpeed, MoveNormalEnemy, FallE, MEHor, SlowM, SteadM, AddHS,
+ReviveStunned, SetRSpd, MoveDefeatedEnemy, ChkKillGoomba, NKGmba,
+MoveJumpingEnemy, MoveD_EnemyVertically, MoveFallingPlatform, ContVMove,
+MoveJ_EnemyVertically, SetHiMax, SetXMoveAmt, ImposeGravitySprObj,
+MoveEnemyHorizontally, MoveObjectHorizontally, SaveXSpd, UseAdder,
+ExXMove, EraseEnemyObject. Expected/actual new node sets are empty;
+no deferred labels or transfers and existing custody remains unchanged.
+
+Static $CA77-$CAFE and shared enemy/movement.c agree on state-bit
+precedence (bit 6, bit 7, bit 5, low-state branches), exact state-five
+force $20 versus ordinary $3D, state reload after gravity, state-two
+horizontal tail, PowerUp exception, signed speed-adder indexing,
+revival/Goomba erase and defeated/jumping tails. Native saved speed
+corresponds to source PHA/PLA, with no mutation of it by the actual child.
+Both child adapters select slot+1 and restore original ObjectOffset X;
+native immutable slot preserves that same identity. Jumping force is $1C
+and all three gravity routes use maximum $03.
+
+Neutral `tools/reference_enemy_movement_integration_probe.c` and
+`test/enemy_movement_integration_route_check.c` execute **9,216 actual
+ROM roots**, with real gravity, horizontal and erase children. Normal
+entry contributes **6,144**, defeated and jumping **1,536 each**.
+Every entry covers all **256 state values** in all six slots; normal
+states have four signed-speed/timer variants. Fixtures vary hard mode,
+frame phase, object ID, fractional position/force and page boundaries.
+Restored boot state is used per case; maximum **126 instructions**.
+
+Original return observations are **$CA9B: 3,360**, **$CAC4: 4,968**,
+**$CAE8: 2,304**, **$CAFC: 1,536**. All preserve the enemy slot. Gravity
+returns separately check force and maximum. Force observations are
+**$1C: 1,536 / $20: 30 / $3D: 5,634**. Horizontal AddHS seams check
+the actual temporary table-adjusted speed and returned fractional/integer
+displacement before the caller restores the original speed. Source and
+current native control/table contracts have no scoped difference.
+
+Current x86/x64 each match **9,216/9,216**, zero differences over all
+**1,796 persistent bytes**. This includes both six-byte game arrays
+**$0110-$0115 and $0125-$012A** inside the lower stack page; their initial
+values are nonzero and **32 actual erase calls** clear both selected
+entries. Scratch $00-$07 and the remaining CPU-stack bytes are declared
+ABI exclusions, not exclusions of those game-owned aliases. Original
+return X/force/max/speed/displacement checks are separate seam evidence.
+The focused test manifest uses the existing normal-enemy-movement,
+vertical-adapters, gravity and platform-purity tests; all **4/4** pass on
+both widths. There is no separate jumping-enemy-movement CTest name;
+the real jumping routes and vertical-adapters cover that admission intent.
+Original OpenNT DOS16 compiles/links with its existing OLDNAMES.LIB warning.
+
+The similar-issue sweep checks all four movement returns, exact-state
+force selection, native/source saved speed, byte carry/page propagation,
+state reload and erase's eight stores including its two lower-stack
+aliases. No host gameplay copy or scoped mismatch exists. No product
+source changed, so EXEs remain the previous delivery. Raw records and
+probe executable are cleaned after accepted verification.
+
+Historical **1,992/1,992**, exact nodes **1,480/1,992**, material
+**368/487** remain unchanged. Exact feasible controls rise
+**3,119 -> 3,123 / 4,323** (raw **4,342**, infeasible **19**).
+T64 remains open with **58 Cohort-J controls**, zero pending material.
+The next source-order branch is green paratroopa/platform X-counter
+horizontal-return integration. T65 is not admitted.

@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3119,
-    "needs-evidence": 1204,
+    "exact": 3123,
+    "needs-evidence": 1200,
     "infeasible": 19,
     "unclassified": 0,
     "mismatch": 0
@@ -128696,12 +128696,15 @@
       "instruction": "rts/rti",
       "id": "control-03827",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/movement.c actual MoveD_EnemyVertically return to FallE with native immutable slot and real child state",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S41: $CA9B FallE receives restored ObjectOffset, then reloads state and resets Y before state-two/direct or slow/steady horizontal selection; exact state five receives force $20, other states $3D. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 3360 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> FallE with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -128715,12 +128718,15 @@
       "instruction": "rts/rti",
       "id": "control-03828",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/movement.c actual MoveEnemyHorizontally return to AddHS with native immutable slot and real child state",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S41: $CAC4 AddHS receives the real horizontal displacement and restored slot while temporary adjusted speed remains stored; the source PLA/STA and native saved local restore the original horizontal speed afterwards. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 4968 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> AddHS with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c",
@@ -128735,12 +128741,15 @@
       "instruction": "rts/rti",
       "id": "control-03829",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/movement.c actual MoveD_EnemyVertically return to MoveDefeatedEnemy with native immutable slot and real child state",
       "semanticEvidence": [
-        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S41: $CAE8 MoveDefeatedEnemy receives restored slot and completed real downward gravity before its unconditional horizontal tail, independent of normal-state precedence. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 2304 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> MoveDefeatedEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
@@ -128781,12 +128790,15 @@
       "instruction": "rts/rti",
       "id": "control-03831",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared jumping/red-paratroopa branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/movement.c actual MoveJ_EnemyVertically return to MoveJumpingEnemy with native immutable slot and real child state",
       "semanticEvidence": [
-        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S41: $CAFC MoveJumpingEnemy receives restored slot and force $1C/max $03 completed gravity before its unconditional horizontal tail. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 1536 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation MoveJ_EnemyVertically -> MoveJumpingEnemy with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
