@@ -2984,3 +2984,88 @@ Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
 unchanged. Exact feasible controls rise 3,147 to 3,148/4,323 (raw 4,342,
 infeasible 19). T64 remains open with 33 Cohort-J controls, zero pending
 material; platform movement/position returns follow. T65 is not admitted.
+
+## Aggregate S54 admission - platform movement and rider returns
+
+S54 owns control-03887/03888/03889/03892/03893/03894/03895/03899.
+Twenty-six scoped labels in source order:
+YMovingPlatform, SkipIY, ChkYCenterPos, YMDown, ChkYPCollision, ExYPl, XMovingPlatform, PositionPlayerOnHPlat, PPHSubt, SetPVar, ExXMP, DropPlatform, ExDPl, RightPlatform, ExRPl, MoveLargeLiftPlat, MoveSmallPlatform, MoveLiftPlatforms, ChkSmallPlatCollision, ExLiftP, MovePlatformUp, MovePlatformDown, MoveDropPlatform, PositionPlayerOnVPlat, PositionPlayerOnS_Plat, MoveEnemyHorizontally.
+All already exact; expected new nodes empty and custody unchanged.
+Historical 1992/1992, exact nodes 1480/1992 and material 368/487 unchanged;
+controls enter 3148/4323 and can reach 3156/4323. S53 precedes; projectile
+hit/defeat return family follows. T64 stays open; no T65 admission.
+
+Shared enemy/platform.c owns the contiguous $D5D3-$D679 movement family,
+with platform_position.c, world movement/gravity and enemy movement/x_counter
+children. Static track checks up/down and rest-path selection, returned slot
+before rider gates, horizontal displacement/page carry before vertical rider
+placement, drop movement before rider placement, rightward returned A before
+speed acceleration, lift fractional carry and small collision counter.
+One manifest covers all six adjacent movement roots across all six slots,
+rest/moving branches, page/force wrapping, rider/no-rider, death/high-Y
+position guards and small-platform counters. Real source return seams and
+persistent RAM plus $0109-$0139 are compared; scratch/stack exclusions are
+explicit. Original PRG binds the small-platform positioning data table.
+Current x86/x64 focused chain/position/purity tests and original OpenNT DOS16
+are operational gates. Scoped differences stay here for repair/re-audit;
+product repairs refresh the three approved EXEs.
+
+Owner-local nonredistributable ROM/ASM remain research-only. Ignored
+build/m2-t64-s54 owns <=8 MiB raw, 524288 steps/case, 120 seconds and
+cleanup. Preserve unrelated work.
+
+## Aggregate S54 closure - real platform movement and rider returns
+
+Control-03887/03888/03889/03892/03893/03894/03895/03899 are exact.
+All 26 scoped labels retain exact: YMovingPlatform, SkipIY, ChkYCenterPos,
+YMDown, ChkYPCollision, ExYPl, XMovingPlatform, PositionPlayerOnHPlat,
+PPHSubt, SetPVar, ExXMP, DropPlatform, ExDPl, RightPlatform, ExRPl,
+MoveLargeLiftPlat, MoveSmallPlatform, MoveLiftPlatforms,
+ChkSmallPlatCollision, ExLiftP, MovePlatformUp, MovePlatformDown,
+MoveDropPlatform, PositionPlayerOnVPlat, PositionPlayerOnS_Plat and
+MoveEnemyHorizontally. No new node credit or custody transfer.
+
+Static $D5D3-$D679 audit preserves rest-path dummy clearing/eighth-frame
+increment before the rider gate; the center comparison selects up/down
+before real gravity returns and ObjectOffset reload. Horizontal platform
+counter movement commits saved displacement, player low X, sign-dependent
+page carry and scroll before vertical placement. Drop movement returns before
+placement; RightPlatform saves the actual horizontal A before testing collision
+and setting next-frame speed $10. Lift motion uses fractional carry into Y;
+TimerControl skips motion while preserving rider tails. Small positioning
+consumes the nonzero collision counter through the bound original PRG table.
+Shared death/high-Y guards and byte-wrapped rider height remain unchanged.
+
+1,728 actual roots cover six movement entries $D5D3/$D607/$D631/$D63D/
+$D64F/$D655, each with 288 fixtures across six slots. Eight actual return
+seams $D5F8/$D5FE/$D606/$D630/$D639/$D63C/$D640/$D679 execute
+120/102/288/288/144/144/288/192 times. The probe requires the preceding
+instruction to be RTS; branch/jump visits to shared exit addresses are not
+credited as returns. Every observed return checks restored X. RightPlatform
+additionally checks the actual returned displacement against source integer
+plus fractional carry before STA $00. Both small-counter 1/2 entries execute
+96 times. Maximum root execution is 106 instructions. Real children execute
+without substituted outputs, including gravity, horizontal movement/counters
+and shared rider positioning.
+
+Fixtures include rest/up/down, zero/nonzero and byte-edge forces/speeds,
+low-X/page wrapping, rider/no-rider, source death/high-Y guards, paused lift
+movement with rider positioning retained, small counters zero/one/two and
+height wrap. Current x86/x64 each match 1,728/1,728 with zero differences
+across 1,841 bytes: all zero-page scratch, all persistent non-stack RAM and
+all 49 game aliases $0109-$0139. Only other CPU-stack bytes are excluded.
+Immutable owner-local PRG binds the small-platform adder; the product gains
+no reference emulator or new ROM material.
+
+Fresh C90 checkers plus vertical/horizontal/lift/positioning and platform-purity
+tests pass 5/5 per width. Original OpenNT DOS16 builds/links with the existing
+OLDNAMES.LIB warning. Similar-issue sweep checks all eight return slots,
+common-exit RTS discrimination, displacement carry/consumer order, rest/center
+selection, rider gates, delayed rightward acceleration and lift/counter tails.
+No scoped discrepancy or host gameplay duplicate found. Product C and three
+approved EXEs remain unchanged; raw records/probe are cleaned after gates.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
+unchanged. Exact feasible controls rise 3,148 to 3,156/4,323 (raw 4,342,
+infeasible 19). T64 remains open with 25 Cohort-J controls, zero pending
+material; projectile hit/defeat returns follow. T65 is not admitted.

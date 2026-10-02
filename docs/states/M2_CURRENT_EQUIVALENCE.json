@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3148,
-    "needs-evidence": 1175,
+    "exact": 3156,
+    "needs-evidence": 1167,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -130077,13 +130077,16 @@
       "instruction": "rts/rti",
       "id": "control-03887",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MovePlatformUp returns at $D5F8 with X=ObjectOffset after gravity state writes; ChkYCenterPos jumps into the current-slot rider gate."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlatformUp -> ChkYCenterPos with speed/force/position/collision predicate and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "MovePlatformUp returns at $D5F8 with X=ObjectOffset after gravity state writes; ChkYCenterPos jumps into the current-slot rider gate.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
         "src/game/world/gravity.c"
@@ -130097,13 +130100,16 @@
       "instruction": "rts/rti",
       "id": "control-03888",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform.c Y-platform state machine and rider gate",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MovePlatformDown returns at $D5FE with X=ObjectOffset after gravity state writes; YMDown falls into the current-slot rider gate."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MovePlatformDown -> YMDown with speed/force/position/collision predicate and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "MovePlatformDown returns at $D5FE with X=ObjectOffset after gravity state writes; YMDown falls into the current-slot rider gate.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
         "src/game/world/gravity.c"
@@ -130117,13 +130123,16 @@
       "instruction": "rts/rti",
       "id": "control-03889",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnVPlat returns at $D606 after the guarded rider Y/high-Y and vertical-speed/force writes; ChkYPCollision immediately returns, shared by vertical and large lift callers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> ChkYPCollision with source platform box/counter/player-state predicate and position handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PositionPlayerOnVPlat returns at $D606 after the guarded rider Y/high-Y and vertical-speed/force writes; ChkYPCollision immediately returns, shared by vertical and large lift callers.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
         "src/game/enemy/platform_position.c"
@@ -130183,13 +130192,16 @@
       "instruction": "rts/rti",
       "id": "control-03892",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnVPlat returns at $D630 after horizontal rider displacement/page carry and Platform_X_Scroll were committed; SetPVar immediately returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> SetPVar with source platform box/counter/player-state predicate and position handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PositionPlayerOnVPlat returns at $D630 after horizontal rider displacement/page carry and Platform_X_Scroll were committed; SetPVar immediately returns.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
         "src/game/enemy/platform_position.c"
@@ -130203,13 +130215,16 @@
       "instruction": "rts/rti",
       "id": "control-03893",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MoveDropPlatform returns at $D639 with X=ObjectOffset after real gravity updates; DropPlatform invokes current-slot vertical rider positioning next."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveDropPlatform -> DropPlatform with collision/delta/carry predicate and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "MoveDropPlatform returns at $D639 with X=ObjectOffset after real gravity updates; DropPlatform invokes current-slot vertical rider positioning next.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c",
         "src/game/enemy/platform.c"
@@ -130223,13 +130238,16 @@
       "instruction": "rts/rti",
       "id": "control-03894",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnVPlat returns at $D63C after real drop movement and guarded rider placement; DropPlatform immediately returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PositionPlayerOnVPlat -> DropPlatform with source platform box/counter/player-state predicate and position handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PositionPlayerOnVPlat returns at $D63C after real drop movement and guarded rider placement; DropPlatform immediately returns.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
         "src/game/enemy/platform_position.c"
@@ -130243,13 +130261,16 @@
       "instruction": "rts/rti",
       "id": "control-03895",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform.c X/drop/right platform sequence",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MoveEnemyHorizontally returns at $D640 with X=ObjectOffset and A=integer displacement plus fractional carry; RightPlatform stores that A into $00 before the collision gate and next-frame speed acceleration."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> RightPlatform with collision/delta/carry predicate and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "MoveEnemyHorizontally returns at $D640 with X=ObjectOffset and A=integer displacement plus fractional carry; RightPlatform stores that A into $00 before the collision gate and next-frame speed acceleration.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
         "src/game/world/movement.c"
@@ -130329,13 +130350,16 @@
       "instruction": "rts/rti",
       "id": "control-03899",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform.c six shared movement entries with real movement/gravity and platform_position.c child returns and source rider consumers.",
       "semanticEvidence": [
-        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnS_Plat returns at $D679 after consuming the nonzero collision counter to select the bound PRG height adder and applying guarded rider placement; ChkSmallPlatCollision immediately returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PositionPlayerOnS_Plat -> ChkSmallPlatCollision with source platform box/counter/player-state predicate and position handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PositionPlayerOnS_Plat returns at $D679 after consuming the nonzero collision counter to select the bound PRG height adder and applying guarded rider placement; ChkSmallPlatCollision immediately returns.",
       "currentSourcePaths": [
         "src/game/enemy/platform.c",
         "src/game/enemy/platform_position.c"
