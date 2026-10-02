@@ -724,3 +724,104 @@ in the complete admitted music chain. Source policy: owner-local original
 ROM/reviewed ASM nonredistributable, no third-party import. All local scripts,
 logs/raw under ignored build/m2-t67-s5,128MiB raw budget,1024 roots/batch,
 120seconds/process,524288steps/root; coordinator deletes raw after comparison.
+
+## S5 P2 closure - exact music selection and prefix streams
+
+All27 expected labels completed: ContinueMusic; MusicHandler; LoadEventMusic; NoStopSfx; LoadAreaMusic; NoStop1; GMLoopB; HandleAreaMusicLoopB; FindAreaMusicHeader; FindEventMusicHeader; LoadHeader; HandleSquare2Music; EndOfMusicData; NotTRO; MusicLoopBack; VictoryMLoopBack; Squ2LengthHandler; Squ2NoteHandler; Rest; SkipFqL1; MiscSqu2MusicTasks; NoDecEnv1; HandleSquare1Music; FetchSqu1MusicData; Squ1NoteHandler; SkipCtrlL; MiscSqu1MusicTasks.
+No deferral or transfer.82 raw controls:78 feasible exact,4 independently
+impossible fallthroughs retained. Current1815->1842/1992 nodes,3837->3915
+exact feasible controls; denominator4290->4286(raw4342,infeasible56).
+Material408/493 remains partial; no new M producer/table row fabricated or
+later N row promoted. Historical1992/1992 separate, actualMatches empty.
+All126 T67 nodes now exact; T67 remains open until S6 census/integration.
+
+| Inventory label | Shared counterpart | Manual source/state/control contract |
+| --- | --- | --- |
+| `ContinueMusic` | `mysmb_audio_continue_music / run_music_stream` | Actual stream handoff starts Square2, then real Square1/triangle/noise continuations; no queue/header selection replay. |
+| `MusicHandler` | `mysmb_audio_step_music / select_music` | Event queue before area queue; without queues, active-buffer OR controls continuation; both clear returns without stream work. |
+| `LoadEventMusic` | `mysmb_audio_load_event_music` | Save exact event A; death1 stops Square1 then Square2, clears only Square1 buffer; others skip stops. |
+| `NoStopSfx` | `mysmb_audio_load_event_music` | Save current area buffer into alternate, clear length adder/area; event40 sets adder8, otherwise0; actual header bit scan follows. |
+| `LoadAreaMusic` | `mysmb_audio_load_area_music` | Exact area4 stops Square1; other masks skip stop, then common ground-counter initialization. |
+| `NoStop1` | `mysmb_audio_load_area_music` | Ground header counter10 starts all new area selections before area loop handler. |
+| `GMLoopB` | `mysmb_audio_handle_area_music_loop / load_area_music` | Store supplied ground selector, re-enter area chain; reset11 must increment again before header read. |
+| `HandleAreaMusicLoopB` | `mysmb_audio_handle_area_music_loop` | Clear event, save area; area!=1 bit scan. Area1 increments byte counter;32 resets11 and loops to increment12, otherwise direct header. |
+| `FindAreaMusicHeader` | `mysmb_audio_handle_area_music_loop` | Residual F7=08 precedes area selector scan with Y8; later LoadHeader resets F7. |
+| `FindEventMusicHeader` | `mysmb_audio_find_header_selector` | Increment selector before each LSR; lowest set bit selects event1..8 or area9..16; reachable caller mask nonzero. |
+| `LoadHeader` | `mysmb_audio_load_music_header` | All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI. |
+| `HandleSquare2Music` | `mysmb_audio_step_square2_music` | Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note. |
+| `EndOfMusicData` | `mysmb_audio_end_square2_music` | Exact event40 restores nonzero alternate area first; otherwise Victory mask4 loops; area masked5F loops; no remaining music clears both buffers then triangle0/Square1 90/Square2 90 and returns. |
+| `NotTRO` | `mysmb_audio_end_square2_music` | AND4 result, not unmasked original event, becomes A for victory tail load; event40 with zero saved area leaves zero A at this test. |
+| `MusicLoopBack` | `mysmb_audio_handle_area_music_loop from end_square2_music` | Actual tail loads area header and resumes Square2 in same invocation; timeout uses saved area, ordinary loop uses masked5F area. |
+| `VictoryMLoopBack` | `mysmb_audio_load_event_music from end_square2_music` | Tail transfer consumes masked event4; reload/header then current Square2 note in same invocation. |
+| `Squ2LengthHandler` | `mysmb_audio_step_square2_music / process_music_length` | Actual length lookup saves7B3, then increments stream offset and reads second byte as note without a second length classification. |
+| `Squ2NoteHandler` | `mysmb_audio_step_square2_music` | Active F2 skips frequency/control but still loads note counter. Otherwise actual SetFreq/LoadControlRegs/rest and Dump_Sq2_Regs order. |
+| `Rest` | `mysmb_audio_step_square2_music` | Save returned A as envelope; rest keeps SetFreq X4 and Ynote while nonrest supplies X82/Y7F; ordered dump follows. |
+| `SkipFqL1` | `mysmb_audio_step_square2_music` | Copy original note-length buffer7B3 to counter7B4 regardless effect ownership. |
+| `MiscSqu2MusicTasks` | `mysmb_audio_step_square2_music tail` | F2 nonzero or event&91 skips envelope tail; otherwise old envelope index is used while RAM is decremented. |
+| `NoDecEnv1` | `mysmb_audio_step_square2_music / load_music_envelope` | Zero index is still read; actual helper then4004 envelope/4005 7F, actual Square1 handoff. |
+| `HandleSquare1Music` | `mysmb_audio_step_square1_music` | OffsetF8 zero goes straight to triangle; else byte counter decrement decides fetch vs tail. |
+| `FetchSqu1MusicData` | `mysmb_audio_step_square1_music zero-prefix loop` | Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler. |
+| `Squ1NoteHandler` | `mysmb_audio_step_square1_music` | Actual alternate length bits0/7/6 produce lookup/count; active F1 goes directly triangle, else masked note SetFreq/LoadControlRegs. |
+| `SkipCtrlL` | `mysmb_audio_step_square1_music` | Save frequency-return A or loaded envelope; actual Dump_Squ1_Regs with source X/Y values before tail. |
+| `MiscSqu1MusicTasks` | `mysmb_audio_step_square1_music tail` | F1 nonzero bypasses writes; event&91 bypasses envelope but retains actual alternate-register tail; otherwise pre-decrement index read and alternate tail before triangle. |
+
+20736 unchanged original roots compare full1841 RAM (including0109-0139),
+24 APU registers and every ordered command count/index/value each x86/x64:
+4096 event queue profiles,4096 area queue profiles,4096 continuous music
+states (256 calls for each8 event/8 area selector),4096 controlled terminal/
+ground reset/victory/timeout routes,4096 active-effect/tail profiles,256 direct
+LoadHeader selector boundaries from F6F5 to F73A. Full SoundEngine entry F2D0
+and real RTS used otherwise. Source N continuation/table callees execute
+actually, with boundary outputs/returns audited, but their nodes uncredited.
+Only CPU stack0100-0108/013A-01FF/unmapped transient registers excluded.
+Direct header helper has no C A-register ABI, so its transient A is excluded;
+all its RAM/APU/order is compared. All27 node entries/78 feasible edges seen.
+
+Continuous route preserves actual prior original RAM/APU between calls while
+restoring the recorder CPU/PPU timing baseline per root. Initial full-machine
+continuation accidentally accumulated reference-machine scheduling outside
+the audio-only root; corrected recorder containment, then replayed. No ROM
+instruction patched, no child mocked, no native output used as original input.
+Final roots were rerun against final shared C after all repairs.
+
+Repairs by original source: ground header32->LDY11/GMLoopB must re-enter the
+increment path and actually load12; previous C loaded11. Victory tail consumes
+AND4 output, previous C loaded full event mask. LoadHeader has no selector
+0/40 upper guard; removed C-specific byte restrictions and restored its F7
+reset after note counters. Full256 original selector boundary proves this
+contract; adjacent data reads retain original CPU indexing, not new table
+membership. Existing complete-ROM binding guards remain outside ROM state.
+No platform game logic added. Similar-issue sweep covers all admitted event/
+area masks, forced branches, loop re-entry, header reads/write order, Square1
+zero-prefix/alternate controls, Square2 length/rest/effect/envelope tails.
+Other forced branches follow fixed nonzero flags; actual zero-result flame
+branch remains as accepted S4 repair, not forcibly unconditional.
+
+Unobserved raw fallthroughs independently proven impossible:
+
+- `control-03371`: LDX08 sets Z0 before BNE FindEventMusicHeader.
+- `control-03380`: LDY11 sets Z0 before BNE GMLoopB.
+- `control-03389`: Zero data already branches EndOfMusicData; nonnegative data already branches Squ2NoteHandler; surviving negative data necessarily makes BNE taken.
+- `control-03418`: LDA94/STA leave Z0 before BNE FetchSqu1MusicData; note entry is the earlier nonzero-byte branch, not this fallthrough.
+
+Note03418's earlier annotation described a different branch; corrected to
+the actual LDA94/BNE instruction, retaining historical evidence. No absence-
+only infeasible classification. Actual scoped header/stream fields and helper
+data consumers were audited; remaining table-producer material census stays
+with N and global enumeration remains partial.
+
+Operational: final builds/248 tests each width pass; direct256-selector table
+checker passes each. Original OpenNT DOS16 link passes, inherited OLDNAMES.LIB
+warning retained; no interactive DOS claim. A prior same-tree concurrent
+full/checker build failed artifact links; all final builds run without that
+contention and no failed/stale artifact is acceptance evidence. All3 products
+refreshed together under owner authorization, retaining audio/title/focus pause:
+
+- `mysmb16.exe`: 260887 bytes, SHA256 `f0f539f9a4c687a25259325db9702c5a5974d05a9be0492a57b79c2224372a83`.
+- `mysmb32.exe`: 373920 bytes, SHA256 `deb1b52df54056b5480d282a87e79f6972872a1a662bf763446032cf80bea238`.
+- `mysmb64.exe`: 380951 bytes, SHA256 `7372175fca354684ab12fcecc166b6d1adda080a09d6481e6c0250b07ea14da8`.
+
+Neutral ignored evidence under build/m2-t67-s5: modes22-27, route/coverage
+summaries, pre-fix terminal diff, final tests/builds/header-table/DOS16 logs.
+Raw removed per batch, probe removed at closure. Registry/ledger/progress/docs
+gates required before P2 commit; unrelated owner work remains unstaged.

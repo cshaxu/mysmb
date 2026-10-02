@@ -8,6 +8,7 @@
 #define RECORD_BYTES 4290u
 static core_machine baseline;
 static unsigned char prg[32768],record[RECORD_BYTES];
+static unsigned char live_ram[2048],live_apu[24];
 static unsigned long visits[65536],transfers[65536];
 static unsigned long transition_keys[8192],transition_counts[8192];
 static unsigned long envelope_reads[256];
@@ -81,6 +82,36 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7b9u]=(unsigned char)(3u+(n>>1u));
         m->ram[0x7bau]=(unsigned char)(3u+(n>>1u));
         m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode>=22u&&mode<=24u){
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=(unsigned char)(mode==23u?n:(mode==22u?p:(p>=8u?1u<<(p-8u):0u)));
+        m->ram[0xfcu]=(unsigned char)(mode==22u?n:(mode==24u&&p<8u?1u<<p:0u));
+        m->ram[0xf4u]=(unsigned char)(mode==24u?0u:1u<<(p%8u));
+        m->ram[0xf1u]=(unsigned char)(mode==24u?0u:((p&1u)?0x40u:0u));
+        m->ram[0xf2u]=(unsigned char)(mode==24u?0u:((p&2u)?0x80u:0u));
+        m->ram[0x7bbu]=0x30u;m->ram[0x7bdu]=0x30u;
+        m->ram[0x7b4u]=5u;m->ram[0x7b6u]=5u;m->ram[0x7b9u]=5u;m->ram[0x7bau]=5u;
+        m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==25u){
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
+        m->ram[0x7b1u]=(unsigned char)n;
+        m->ram[0xf4u]=(unsigned char)(1u<<(p%8u));
+        m->ram[0x7c5u]=(unsigned char)(p<8u?1u<<p:0u);
+        m->ram[0x7c7u]=0x31u;
+        m->ram[0xf5u]=0u;m->ram[0xf6u]=2u;m->ram[0x7b4u]=1u;
+        m->ram[0xf8u]=1u;m->ram[0x7b6u]=5u;m->ram[0x7b9u]=5u;m->ram[0x7bau]=5u;
+        m->ram[0xf1u]=(unsigned char)((p&1u)?0x40u:0u);m->ram[0x7bbu]=0x30u;
+        m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==26u){
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;m->ram[0xf4u]=1u;
+        m->ram[0x7b1u]=(unsigned char)(p<<4u);
+        m->ram[0xf1u]=(unsigned char)n;m->ram[0xf2u]=(unsigned char)p;
+        m->ram[0x7bbu]=0x30u;m->ram[0x7bdu]=0x30u;
+        m->ram[0xf8u]=1u;m->ram[0x7b4u]=5u;m->ram[0x7b6u]=5u;
+        m->ram[0x7b9u]=5u;m->ram[0x7bau]=5u;
+        m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
     }
     m->a=(unsigned char)n;m->x=(unsigned char)(p%3u*4u);m->y=(unsigned char)(n*13u);
 }
@@ -94,22 +125,30 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>21u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>27u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
     baseline=*d->machine;
     h[5]=(unsigned char)mode;for(i=0;i<4;++i)h[8+i]=(unsigned char)(count>>(i*8u));
     f=fopen(argv[2],"wb");if(!f||fwrite(h,1,16,f)!=16)return 65;
     for(n=first;n<first+count;++n){
-        *d->machine=baseline;fixture(d->machine,n,mode);memset(record,0,sizeof(record));
-        index=mode<5u||mode>=14u?0u:mode-4u;entry=entries[index];
+        *d->machine=baseline;
+        if(mode!=24u||n%256u==0u)fixture(d->machine,n,mode);
+        else{
+            memcpy(d->machine->ram,live_ram,2048u);
+            memcpy(d->machine->apu.registers,live_apu,24u);
+        }
+        memset(record,0,sizeof(record));
+        index=mode<5u||mode>=14u?0u:mode-4u;entry=mode==27u?0xf6f5u:entries[index];
+        if(mode==27u)d->machine->y=(unsigned char)n;
         d->machine->pc=(unsigned short)entry;d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
         record[0]=(unsigned char)entry;record[1]=(unsigned char)(entry>>8u);
         record[2]=d->machine->a;record[3]=d->machine->x;record[4]=d->machine->y;
         memcpy(record+16,d->machine->ram,2048u);memcpy(record+2064,d->machine->apu.registers,24u);
         writes=0;
-        for(steps=0;steps<524288u&&d->machine->pc!=0x8001u;++steps){
+        for(steps=0;steps<524288u&&d->machine->pc!=(mode==27u?0xf73au:0x8001u);++steps){
             pc=d->machine->pc;if(pc<0x8000u)return 67;op=prg[pc-0x8000u];++visits[pc];
             if(op==0xb9u&&prg[pc-0x8000u+1u]==0xb0u&&prg[pc-0x8000u+2u]==0xf3u)++envelope_reads[d->machine->y];
             if(op==0xb9u&&prg[pc-0x8000u+2u]==0xf4u){
@@ -146,9 +185,13 @@ int main(int argc,char **argv)
             if(attempt==8192u)return 68;
             if(time(0)-start>110)return 69;
         }
-        if(d->machine->pc!=0x8001u)return 67;
+        if(d->machine->pc!=(mode==27u?0xf73au:0x8001u))return 67;
         record[5]=d->machine->a;record[6]=(unsigned char)writes;
         memcpy(record+2088,d->machine->ram,2048u);memcpy(record+4136,d->machine->apu.registers,24u);
+        if(mode==24u){
+            memcpy(live_ram,d->machine->ram,2048u);
+            memcpy(live_apu,d->machine->apu.registers,24u);
+        }
         if(fwrite(record,1,sizeof(record),f)!=sizeof(record))return 65;
     }
     fclose(f);

@@ -18,6 +18,7 @@ int main(int argc,char **argv)
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
         case 0xf2d0U:mysmb_audio_step(&game);break;
+        case 0xf6f5U:(void)mysmb_audio_load_music_header(&game,record[4]);break;
         case 0xf381U:mysmb_audio_dump_squ1_regs(&game,record[3],record[4]);break;
         case 0xf388U:a=mysmb_audio_play_squ1_sfx(&game,a,record[3],record[4]);break;
         case 0xf38bU:a=mysmb_audio_set_freq_squ1(&game,a);break;
@@ -29,7 +30,7 @@ int main(int argc,char **argv)
         case 0xf3adU:a=mysmb_audio_set_freq_tri(&game,a);break;
         default:return 66;
         }
-        if(pc!=0xf2d0U&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(pc!=0xf2d0U&&pc!=0xf6f5U&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
             if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
             if(game.ram[i]!=record[2088U+i]){if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}

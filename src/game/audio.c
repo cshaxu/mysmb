@@ -73,8 +73,7 @@ mysmb_u8 mysmb_audio_load_music_header(struct mysmb_game *game,
     mysmb_u16 table_offset;
     mysmb_u16 header_offset;
 
-    if (game->area_prg == 0 || selector == 0U || selector >= 0x40U)
-        return 0U;
+    if (game->area_prg == 0) return 0U;
     table_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_HEADER_DATA - 1U + selector);
     if (table_offset >= game->area_prg_size) return 0U;
     header_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_HEADER_DATA +
@@ -82,7 +81,6 @@ mysmb_u8 mysmb_audio_load_music_header(struct mysmb_game *game,
     if (header_offset >= game->area_prg_size ||
         (mysmb_u16)(game->area_prg_size - header_offset) < 6U) return 0U;
     game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET] = game->area_prg[header_offset];
-    game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2] = 0U;
     game->ram[0x00f5U] = game->area_prg[(mysmb_u16)(header_offset + 1U)];
     game->ram[0x00f6U] = game->area_prg[(mysmb_u16)(header_offset + 2U)];
     game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE] =
@@ -97,6 +95,7 @@ mysmb_u8 mysmb_audio_load_music_header(struct mysmb_game *game,
     game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = 1U;
     game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] = 1U;
     game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] = 1U;
+    game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2] = 0U;
     game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT] = 0U;
     mysmb_audio_write_apu(game, 21U, 0x0bU);
     mysmb_audio_write_apu(game, 21U, 0x0fU);
@@ -501,7 +500,8 @@ static mysmb_u8 mysmb_audio_end_square2_music(struct mysmb_game *game)
         }
     }
     if ((event & 0x04U) != 0U) {
-        mysmb_audio_load_event_music(game, event);
+        /* NotTRO's AND #VictoryMusic supplies A to the tail transfer. */
+        mysmb_audio_load_event_music(game, (mysmb_u8)(event & 0x04U));
         return 0U;
     }
     area = (mysmb_u8)(game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x5fU);
@@ -800,9 +800,14 @@ static void mysmb_audio_handle_area_music_loop(struct mysmb_game *game,
             mysmb_audio_find_header_selector(area, 8U));
         return;
     }
-    game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
-    if (game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] == 0x32U)
+    for (;;) {
+        game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
+        if (game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] != 0x32U)
+            break;
+        /* LDY #$11 -> GMLoopB stores the reset, then re-enters the
+         * ground path which increments it again before LoadHeader. */
         game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x11U;
+    }
     (void)mysmb_audio_load_music_header(game,
         game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]);
 }

@@ -46398,14 +46398,17 @@
       "label": "ContinueMusic",
       "asmLine": 15632,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_continue_music / run_music_stream",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual stream handoff starts Square2, then real Square1/triangle/noise continuations; no queue/header selection replay."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Tail-transfers an already active music stream into square-two processing without re-reading either queue.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Actual stream handoff starts Square2, then real Square1/triangle/noise continuations; no queue/header selection replay.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46414,14 +46417,17 @@
       "label": "MusicHandler",
       "asmLine": 15635,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_music / select_music",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Event queue before area queue; without queues, active-buffer OR controls continuation; both clear returns without stream work."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Prioritizes nonzero event queue over area queue; with both queues clear, continues only when either active music buffer is nonzero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Event queue before area queue; without queues, active-buffer OR controls continuation; both clear returns without stream work.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46430,14 +46436,17 @@
       "label": "LoadEventMusic",
       "asmLine": 15645,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_load_event_music",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Save exact event A; death1 stops Square1 then Square2, clears only Square1 buffer; others skip stops."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Copies event queue to active buffer, stops both square SFX only for death music, preserves area buffer alternate, selects length adder, clears active area buffer and loads event header.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Save exact event A; death1 stops Square1 then Square2, clears only Square1 buffer; others skip stops.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46446,14 +46455,17 @@
       "label": "NoStopSfx",
       "asmLine": 15651,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_load_event_music",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Save current area buffer into alternate, clear length adder/area; event40 sets adder8, otherwise0; actual header bit scan follows."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves active area music in alternate buffer, resets length adder and active area buffer, and uses the time-running-out adder before the shared event-header scan.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Save current area buffer into alternate, clear length adder/area; event40 sets adder8, otherwise0; actual header bit scan follows.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46462,14 +46474,17 @@
       "label": "LoadAreaMusic",
       "asmLine": 15662,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_load_area_music",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Exact area4 stops Square1; other masks skip stop, then common ground-counter initialization."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stops square-one SFX only for underground area music, initializes ground header counter and enters common area-loop/header selection.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Exact area4 stops Square1; other masks skip stop, then common ground-counter initialization.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46478,14 +46493,17 @@
       "label": "NoStop1",
       "asmLine": 15666,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_load_area_music",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Ground header counter10 starts all new area selections before area loop handler."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Seeds GroundMusicHeaderOfs with $10 before the common ground-loop path.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Ground header counter10 starts all new area selections before area loop handler.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46494,14 +46512,17 @@
       "label": "GMLoopB",
       "asmLine": 15667,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_handle_area_music_loop / load_area_music",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Store supplied ground selector, re-enter area chain; reset11 must increment again before header read."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the current ground music header offset then enters common area music loop processing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Store supplied ground selector, re-enter area chain; reset11 must increment again before header read.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46510,14 +46531,17 @@
       "label": "HandleAreaMusicLoopB",
       "asmLine": 15669,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_handle_area_music_loop",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Clear event, save area; area!=1 bit scan. Area1 increments byte counter;32 resets11 and loops to increment12, otherwise direct header."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Clears event music, activates area music, uses base-eight selector scan for non-ground music and advances/wraps the ground header selector before LoadHeader.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Clear event, save area; area!=1 bit scan. Area1 increments byte counter;32 resets11 and loops to increment12, otherwise direct header.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46526,14 +46550,17 @@
       "label": "FindAreaMusicHeader",
       "asmLine": 15682,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_handle_area_music_loop",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Residual F7=08 precedes area selector scan with Y8; later LoadHeader resets F7."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Sets residual square-two offset to eight then joins the shared one-based bit scan used to select an area music header.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Residual F7=08 precedes area selector scan with Y8; later LoadHeader resets F7.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46542,14 +46569,17 @@
       "label": "FindEventMusicHeader",
       "asmLine": 15686,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_find_header_selector",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Increment selector before each LSR; lowest set bit selects event1..8 or area9..16; reachable caller mask nonzero."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Increments selector before each right shift until the first set music-mask bit, then enters LoadHeader with the corresponding header-table index.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Increment selector before each LSR; lowest set bit selects event1..8 or area9..16; reachable caller mask nonzero.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46558,14 +46588,17 @@
       "label": "LoadHeader",
       "asmLine": 15691,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "shared music selection/header helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Loads six-byte music header state, initializes all music counters and square-two offset, clears alternate square-one control data, and cycles triangle enable before immediate square-two processing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46574,14 +46607,17 @@
       "label": "HandleSquare2Music",
       "asmLine": 15720,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Decrements square-two counter, fetches and classifies stream bytes only when it expires, then enters end/length/note processing or tail tasks.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46590,14 +46626,17 @@
       "label": "EndOfMusicData",
       "asmLine": 15730,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_end_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Exact event40 restores nonzero alternate area first; otherwise Victory mask4 loops; area masked5F loops; no remaining music clears both buffers then triangle0/Square1 90/Square2 90 and returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "On stream terminator restores saved area music for time-running-out, loops victory or eligible area music, otherwise clears both buffers and resets channel controls before returning.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Exact event40 restores nonzero alternate area first; otherwise Victory mask4 loops; area masked5F loops; no remaining music clears both buffers then triangle0/Square1 90/Square2 90 and returns.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46606,14 +46645,17 @@
       "label": "NotTRO",
       "asmLine": 15736,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_end_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: AND4 result, not unmasked original event, becomes A for victory tail load; event40 with zero saved area leaves zero A at this test."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Separates victory loop from area-music loop and terminal buffer/control reset.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "AND4 result, not unmasked original event, becomes A for victory tail load; event40 with zero saved area leaves zero A at this test.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46622,14 +46664,17 @@
       "label": "MusicLoopBack",
       "asmLine": 15750,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_handle_area_music_loop from end_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual tail loads area header and resumes Square2 in same invocation; timeout uses saved area, ordinary loop uses masked5F area."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Tail-jumps terminated area music into common area loop/header handling.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Actual tail loads area header and resumes Square2 in same invocation; timeout uses saved area, ordinary loop uses masked5F area.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46638,14 +46683,17 @@
       "label": "VictoryMLoopBack",
       "asmLine": 15753,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_load_event_music from end_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Tail transfer consumes masked event4; reload/header then current Square2 note in same invocation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Tail-jumps repeating victory event into event music loading.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Tail transfer consumes masked event4; reload/header then current Square2 note in same invocation.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46654,14 +46702,17 @@
       "label": "Squ2LengthHandler",
       "asmLine": 15756,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music / process_music_length",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual length lookup saves7B3, then increments stream offset and reads second byte as note without a second length classification."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses shared length lookup, saves square-two duration and fetches the following non-length music byte.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Actual length lookup saves7B3, then increments stream offset and reads second byte as note without a second length classification.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46670,14 +46721,17 @@
       "label": "Squ2NoteHandler",
       "asmLine": 15763,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Active F2 skips frequency/control but still loads note counter. Otherwise actual SetFreq/LoadControlRegs/rest and Dump_Sq2_Regs order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Suppresses square-two note writes while SFX owns the channel; otherwise sets frequency, conditionally loads controls, stores envelope control and dumps register pair.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Active F2 skips frequency/control but still loads note counter. Otherwise actual SetFreq/LoadControlRegs/rest and Dump_Sq2_Regs order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46686,14 +46740,17 @@
       "label": "Rest",
       "asmLine": 15769,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Save returned A as envelope; rest keeps SetFreq X4 and Ynote while nonrest supplies X82/Y7F; ordered dump follows."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores zero/rest envelope state, dumps square-two registers and continues note-counter update.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Save returned A as envelope; rest keeps SetFreq X4 and Ynote while nonrest supplies X82/Y7F; ordered dump follows.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46702,14 +46759,17 @@
       "label": "SkipFqL1",
       "asmLine": 15771,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Copy original note-length buffer7B3 to counter7B4 regardless effect ownership."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Copies buffered duration to the active square-two note counter before tail tasks.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Copy original note-length buffer7B3 to counter7B4 regardless effect ownership.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46718,14 +46778,17 @@
       "label": "MiscSqu2MusicTasks",
       "asmLine": 15774,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music tail",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: F2 nonzero or event&91 skips envelope tail; otherwise old envelope index is used while RAM is decremented."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Skips envelope writes for active square-two SFX or death/D4 events; otherwise preserves pre-decrement envelope index for source table lookup and writes the fixed high control byte.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "F2 nonzero or event&91 skips envelope tail; otherwise old envelope index is used while RAM is decremented.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46734,14 +46797,17 @@
       "label": "NoDecEnv1",
       "asmLine": 15783,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music / load_music_envelope",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Zero index is still read; actual helper then4004 envelope/4005 7F, actual Square1 handoff."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Loads selected square-two envelope using preserved index, writes it and $7f, then enters square-one music.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Zero index is still read; actual helper then4004 envelope/4005 7F, actual Square1 handoff.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46750,14 +46816,17 @@
       "label": "HandleSquare1Music",
       "asmLine": 15788,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: OffsetF8 zero goes straight to triangle; else byte counter decrement decides fetch vs tail."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Skips directly to triangle when no square-one stream exists; otherwise decrements its counter and fetches a stream byte only at expiry.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "OffsetF8 zero goes straight to triangle; else byte counter decrement decides fetch vs tail.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46766,14 +46835,17 @@
       "label": "FetchSqu1MusicData",
       "asmLine": 15794,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music zero-prefix loop",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Treats null stream bytes as audible control writes, records alternate control value and refetches until nonzero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46782,14 +46854,17 @@
       "label": "Squ1NoteHandler",
       "asmLine": 15806,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual alternate length bits0/7/6 produce lookup/count; active F1 goes directly triangle, else masked note SetFreq/LoadControlRegs."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Derives square-one length selector from bits 0/7/6, updates note counter, skips owned channel, then selects frequency/control/register writes.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Actual alternate length bits0/7/6 produce lookup/count; active F1 goes directly triangle, else masked note SetFreq/LoadControlRegs.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46798,14 +46873,17 @@
       "label": "SkipCtrlL",
       "asmLine": 15816,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Save frequency-return A or loaded envelope; actual Dump_Squ1_Regs with source X/Y values before tail."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores envelope offset and dumps square-one register pair before tail tasks.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "Save frequency-return A or loaded envelope; actual Dump_Squ1_Regs with source X/Y values before tail.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46814,14 +46892,17 @@
       "label": "MiscSqu1MusicTasks",
       "asmLine": 15819,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1_music",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music tail",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: F1 nonzero bypasses writes; event&91 bypasses envelope but retains actual alternate-register tail; otherwise pre-decrement index read and alternate tail before triangle."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Skips tail writes when SFX owns square one; otherwise envelope-updates except death/D4 then selects alternate or $7f high control.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+      ],
+      "semanticContract": "F1 nonzero bypasses writes; event&91 bypasses envelope but retains actual alternate-register tail; otherwise pre-decrement index read and alternate tail before triangle.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -122497,12 +122578,15 @@
       "instruction": "jmp",
       "id": "control-03361",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11428; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Unconditional active-stream transfer is represented by mysmb_audio_continue_music calling the square-two music step.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122516,12 +122600,15 @@
       "instruction": "bne",
       "id": "control-03362",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4088; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "A nonzero event queue takes the first selection branch and invokes the event loader.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122535,12 +122622,15 @@
       "instruction": "bne",
       "id": "control-03363",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4103; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "A zero event queue with nonzero area queue invokes the area loader.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122554,12 +122644,15 @@
       "instruction": "bne",
       "id": "control-03364",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11428; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "With both queues clear and either active buffer nonzero, music selection returns and the dispatcher continues the active stream.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122573,12 +122666,15 @@
       "instruction": "bne",
       "id": "control-03365",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=6119; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "After death SFX stops, execution joins common event setup.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122592,12 +122688,15 @@
       "instruction": "jsr",
       "id": "control-03366",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=17; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Death music stops square-one SFX before square-two SFX.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122611,12 +122710,15 @@
       "instruction": "jsr",
       "id": "control-03367",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=17; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Death music stops square-two SFX after square-one SFX.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122630,12 +122732,15 @@
       "instruction": "jsr",
       "id": "control-03368",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=17; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "After death SFX stops, execution joins common event setup.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122649,12 +122754,15 @@
       "instruction": "bne",
       "id": "control-03369",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=6119; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Time-running-out sets length adder eight and unconditionally enters shared event-header scan.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122668,12 +122776,15 @@
       "instruction": "bne",
       "id": "control-03370",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=17; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Time-running-out sets length adder eight and unconditionally enters shared event-header scan.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122687,13 +122798,16 @@
       "instruction": "bne",
       "id": "control-03371",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 LDX08 sets Z0 before BNE FindEventMusicHeader."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source fall-through after the forced time-running-out branch is structurally present but unreachable when LDX #$08 sets nonzero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=0; ordered native equality; impossible edges independently instruction-proven."
+      ],
+      "semanticContract": "LDX08 sets Z0 before BNE FindEventMusicHeader.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -122706,12 +122820,15 @@
       "instruction": "bne",
       "id": "control-03372",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4085; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "After underground SFX stop, execution joins common area setup.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122725,12 +122842,15 @@
       "instruction": "jsr",
       "id": "control-03373",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=18; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Underground area music stops square-one SFX before common setup.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122744,12 +122864,15 @@
       "instruction": "jsr",
       "id": "control-03374",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=18; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "After underground SFX stop, execution joins common area setup.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122763,12 +122886,15 @@
       "instruction": "ldy",
       "id": "control-03375",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4103; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Area loader seeds ground loop selector $10 before common loop processing.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122782,12 +122908,15 @@
       "instruction": "sty",
       "id": "control-03376",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4359; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Ground-loop selector store falls through to the common area music loop.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122801,12 +122930,15 @@
       "instruction": "bne",
       "id": "control-03377",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5369; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "The source fall-through after forced ground-loop branch is structurally present but unreachable when Y is reset to $11.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122820,12 +122952,15 @@
       "instruction": "bne",
       "id": "control-03378",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=275; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Ground music advances selector below wrap limit and loads that header directly.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122839,12 +122974,15 @@
       "instruction": "bne",
       "id": "control-03379",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=256; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Ground selector reaching $32 resets to $11 then loops to store/process it.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122858,13 +122996,16 @@
       "instruction": "bne",
       "id": "control-03380",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 LDY11 sets Z0 before BNE GMLoopB."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source fall-through after forced ground-loop branch is structurally present but unreachable when Y is reset to $11.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=0; ordered native equality; impossible edges independently instruction-proven."
+      ],
+      "semanticContract": "LDY11 sets Z0 before BNE GMLoopB.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -122877,12 +123018,15 @@
       "instruction": "sty",
       "id": "control-03381",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5369; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Area selector residual setup falls through into the shared one-based bit scan.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122896,12 +123040,15 @@
       "instruction": "bcc",
       "id": "control-03382",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=16185; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "A clear shifted bit repeats increment and shift until the first set mask bit.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122915,12 +123062,15 @@
       "instruction": "bcc",
       "id": "control-03383",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11505; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "The first set mask bit ends the scan and selects the matching music header.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122934,12 +123084,15 @@
       "instruction": "sta",
       "id": "control-03384",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=12036; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Header initialization falls directly into square-two music handling in the same SoundEngine invocation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122953,12 +123106,15 @@
       "instruction": "bne",
       "id": "control-03385",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=7071; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "A nonzero square-two counter bypasses fetch and enters tail tasks.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122972,12 +123128,15 @@
       "instruction": "beq",
       "id": "control-03386",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4139; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "A fetched zero byte enters terminator handling.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122991,12 +123150,15 @@
       "instruction": "bpl",
       "id": "control-03387",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=194; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "A nonnegative fetched byte is a direct note.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123010,12 +123172,15 @@
       "instruction": "bne",
       "id": "control-03388",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11804; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "A negative fetched byte is a length command.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123029,13 +123194,16 @@
       "instruction": "bne",
       "id": "control-03389",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Zero data already branches EndOfMusicData; nonnegative data already branches Squ2NoteHandler; surviving negative data necessarily makes BNE taken."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source fall-through after the forced negative-byte branch is structurally present but unreachable.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=0; ordered native equality; impossible edges independently instruction-proven."
+      ],
+      "semanticContract": "Zero data already branches EndOfMusicData; nonnegative data already branches Squ2NoteHandler; surviving negative data necessarily makes BNE taken.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -123048,12 +123216,15 @@
       "instruction": "bne",
       "id": "control-03390",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4122; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Non-time-running-out event buffers skip saved-area restoration.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123067,12 +123238,15 @@
       "instruction": "bne",
       "id": "control-03391",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=8; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Time-running-out restores and loops nonzero saved area music.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123086,12 +123260,15 @@
       "instruction": "bne",
       "id": "control-03392",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=9; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Zero saved area music continues through ordinary terminator selection.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123105,12 +123282,15 @@
       "instruction": "bne",
       "id": "control-03393",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=2048; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Victory event bit loops through event music loading.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123124,12 +123304,15 @@
       "instruction": "bne",
       "id": "control-03394",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=1533; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Eligible nonzero area music loops through area loader.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123143,12 +123326,15 @@
       "instruction": "jmp",
       "id": "control-03395",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=1541; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Area loopback is a tail transfer to common area header selection.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123162,12 +123348,15 @@
       "instruction": "jmp",
       "id": "control-03396",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=2048; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Victory loopback is a tail transfer to event header loading.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123181,12 +123370,15 @@
       "instruction": "jsr",
       "id": "control-03397",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11804; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Length byte calls shared lookup before storing duration.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123200,12 +123392,15 @@
       "instruction": "lda",
       "id": "control-03398",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11804; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Length processing fetches its following byte then falls through to note handling.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123219,12 +123414,15 @@
       "instruction": "bne",
       "id": "control-03399",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4072; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Active square-two SFX bypasses note/control writes.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123238,12 +123436,15 @@
       "instruction": "jsr",
       "id": "control-03400",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=7926; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Unowned channel invokes square-two frequency selection.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123257,12 +123458,15 @@
       "instruction": "beq",
       "id": "control-03401",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=3402; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Zero-frequency result takes rest path without loading controls.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123276,12 +123480,15 @@
       "instruction": "jsr",
       "id": "control-03402",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4524; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Non-rest notes load control register data before common rest tail.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123295,12 +123502,15 @@
       "instruction": "jsr",
       "id": "control-03403",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4524; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Control loader returns to common envelope/register dump path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123314,12 +123524,15 @@
       "instruction": "jsr",
       "id": "control-03404",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=7926; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Rest/common path dumps square-two register pair.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123333,12 +123546,15 @@
       "instruction": "jsr",
       "id": "control-03405",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=7926; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Register dump returns to duration-counter update.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123352,12 +123568,15 @@
       "instruction": "sta",
       "id": "control-03406",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11998; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Buffered duration store falls through to square-two tail tasks.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123371,12 +123590,15 @@
       "instruction": "bne",
       "id": "control-03407",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=7920; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Active square-two SFX skips tail envelope writes.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123390,12 +123612,15 @@
       "instruction": "bne",
       "id": "control-03408",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=2180; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Death or D4 event masks skip tail envelope writes.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123409,12 +123634,15 @@
       "instruction": "beq",
       "id": "control-03409",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=3361; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Zero saved envelope index bypasses decrement while retaining that index.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123428,12 +123656,15 @@
       "instruction": "dec",
       "id": "control-03410",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5608; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Nonzero envelope decrements memory then preserves original index for lookup.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123447,12 +123678,15 @@
       "instruction": "jsr",
       "id": "control-03411",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=8969; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Tail reads envelope with preserved index.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123466,12 +123700,15 @@
       "instruction": "stx",
       "id": "control-03412",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=8969; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Envelope/control writes fall through to square-one processing.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123485,12 +123722,15 @@
       "instruction": "beq",
       "id": "control-03413",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=1043; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Zero Square1 stream offset skips directly to triangle processing.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123504,12 +123744,15 @@
       "instruction": "bne",
       "id": "control-03414",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=6834; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Nonzero note counter bypasses fetch to tail tasks.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123523,12 +123766,15 @@
       "instruction": "bne",
       "id": "control-03415",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11192; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Expired counter falls through to stream fetch.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123542,12 +123788,15 @@
       "instruction": "bne",
       "id": "control-03416",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11192; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Nonzero fetched byte enters note processing.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123561,12 +123810,15 @@
       "instruction": "bne",
       "id": "control-03417",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=2049; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Null byte performs controls and refetches.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123580,13 +123832,16 @@
       "instruction": "bne",
       "id": "control-03418",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 LDA94/STA leave Z0 before BNE FetchSqu1MusicData; note entry is the earlier nonzero-byte branch, not this fallthrough."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Refetched nonzero byte enters note processing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=0; ordered native equality; impossible edges independently instruction-proven."
+      ],
+      "semanticContract": "LDA94/STA leave Z0 before BNE FetchSqu1MusicData; note entry is the earlier nonzero-byte branch, not this fallthrough.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -123599,12 +123854,15 @@
       "instruction": "jsr",
       "id": "control-03419",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11192; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Square-one note derives duration through alternate bit rotation helper.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123618,12 +123876,15 @@
       "instruction": "bne",
       "id": "control-03420",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5345; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Active square-one SFX skips note writes and enters triangle.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123637,12 +123898,15 @@
       "instruction": "jsr",
       "id": "control-03421",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5847; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Unowned Square1 invokes frequency helper.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123656,12 +123920,15 @@
       "instruction": "beq",
       "id": "control-03422",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=140; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Rest frequency skips control loader.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123675,12 +123942,15 @@
       "instruction": "jsr",
       "id": "control-03423",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5707; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Non-rest note loads controls before common dump path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123694,12 +123964,15 @@
       "instruction": "jsr",
       "id": "control-03424",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5707; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Control load returns to common envelope/register tail.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123713,12 +123986,15 @@
       "instruction": "jsr",
       "id": "control-03425",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5847; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Common path dumps Square1 registers.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123732,12 +124008,15 @@
       "instruction": "jsr",
       "id": "control-03426",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5847; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Dump returns to Square1 tail tasks.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123751,12 +124030,15 @@
       "instruction": "bne",
       "id": "control-03427",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4080; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Active Square1 SFX bypasses tail writes.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123770,12 +124052,15 @@
       "instruction": "bne",
       "id": "control-03428",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=2200; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Death or D4 bypasses envelope update but still selects high control.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123789,12 +124074,15 @@
       "instruction": "beq",
       "id": "control-03429",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=796; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Zero envelope offset retains index and skips decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -123808,12 +124096,15 @@
       "instruction": "dec",
       "id": "control-03430",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5605; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Nonzero envelope decrements memory but retains original lookup index.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138164,12 +138455,15 @@
       "instruction": "rts/rti",
       "id": "control-04078",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=17; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "The source return relation StopSquare1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 LoadEventMusic exposes the completed square-one state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138183,12 +138477,15 @@
       "instruction": "rts/rti",
       "id": "control-04079",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
       "semanticEvidence": [
-        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=17; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "The source return relation StopSquare2Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 LoadEventMusic exposes completed square-two state to the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138202,12 +138499,15 @@
       "instruction": "rts/rti",
       "id": "control-04080",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=18; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "The source return relation StopSquare1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 LoadAreaMusic exposes the completed square-one state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138221,12 +138521,15 @@
       "instruction": "rts/rti",
       "id": "control-04081",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11804; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Shared duration lookup returns to square-two length handler with lookup result.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138240,12 +138543,15 @@
       "instruction": "rts/rti",
       "id": "control-04082",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=7926; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Frequency helper returns zero for rest or register inputs for note controls.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138259,12 +138565,15 @@
       "instruction": "rts/rti",
       "id": "control-04083",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=4524; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Control loader returns envelope offset and register pair to square-two note path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138278,12 +138587,15 @@
       "instruction": "rts/rti",
       "id": "control-04084",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=7926; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Square-two register dump returns to common note-counter tail.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138297,12 +138609,15 @@
       "instruction": "rts/rti",
       "id": "control-04085",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square2_music and end/loop helpers",
       "semanticEvidence": [
-        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required."
+        "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=8969; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Envelope lookup returns selected envelope byte to square-two tail.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138316,12 +138631,15 @@
       "instruction": "rts/rti",
       "id": "control-04086",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=11192; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Alternate length helper returns transformed selector/length to Square1 note path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138335,12 +138653,15 @@
       "instruction": "rts/rti",
       "id": "control-04087",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5847; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Frequency helper returns rest/result state to Square1 note path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138354,12 +138675,15 @@
       "instruction": "rts/rti",
       "id": "control-04088",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5707; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Control helper returns register pair and envelope offset.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -138373,12 +138697,15 @@
       "instruction": "rts/rti",
       "id": "control-04089",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_audio_step_square1_music",
       "semanticEvidence": [
-        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required."
+        "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 Explicit current music selection/header/stream predicate and caller-owned return matches original source contract."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S5 P2 original transition observations=5847; ordered native equality; impossible edges independently instruction-proven."
+      ],
       "semanticContract": "Square1 dump returns to common tail.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -144288,12 +144615,16 @@
     "control-03330",
     "control-03336",
     "control-03338",
+    "control-03371",
+    "control-03380",
+    "control-03389",
+    "control-03418",
     "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 52,
-  "feasibleControlEdgeTotal": 4290
+  "infeasibleControlEdgeTotal": 56,
+  "feasibleControlEdgeTotal": 4286
 }

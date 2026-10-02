@@ -67,8 +67,8 @@ int main(int argc, char **argv)
     }
     fclose(rom);
     failures = 0U;
-    for (selector = 1U; selector < 0x40U; ++selector)
+    for (selector = 0U; selector < 256U; ++selector)
         failures += check_header(prg, selector);
-    printf("music header table selectors=63 failures=%u\n", failures);
+    printf("music header table selectors=256 failures=%u\n", failures);
     return failures != 0U;
 }

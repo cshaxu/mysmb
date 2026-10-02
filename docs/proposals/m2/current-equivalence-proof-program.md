@@ -287,3 +287,13 @@ fallthrough;69760 unchanged original roots agree each width. Current1815/1992
 nodes,3837/4290 controls(raw4342,infeasible52),408/493 material partial;
 historical1992/1992 separate.248 tests each plus7 updated focused tests and
 original DOS16 link pass; all3 EXEs refreshed. S5 next unadmitted, T67 open.
+
+## Current checkpoint after T67 S5
+
+[T67 S5](t67-cohort-m-sound-command-current-proof.md) closes27 music-prefix
+nodes/78 controls after original ground-loop/victory-mask/header repairs;
+4 impossible raw fallthroughs retained. Current1842/1992 nodes,3915/4286
+controls(raw4342,infeasible56),408/493 material partial; historical1992/1992
+separate.20736 roots both widths zero differences;248 tests each/256 header
+selectors each/OpenNT link pass;3 EXEs refreshed. All126 T67 nodes exact;
+T67 open for S6 census/integration, next unadmitted.
