@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3116,
-    "needs-evidence": 1207,
+    "exact": 3117,
+    "needs-evidence": 1206,
     "infeasible": 19,
     "unclassified": 0,
     "mismatch": 0
@@ -128622,12 +128622,15 @@
       "instruction": "rts/rti",
       "id": "control-03824",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/podoboo.c mysmb_objects_step_podoboos_slot real mysmb_enemy_init_podoboo return, immutable slot and post-return PRNG read",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S39: original MovePodoboo $C9B0 timer-zero JSR $C2F7 returns at $C9B8 after the SmallBBox/SetBBox/InitVStf tail. All eight initialization stores, unchanged remaining persistent RAM, A=0, preserved slot X/Y and post-return PRNG consumption match the current shared Podoboo/init/movement/gravity owner. The nonzero timer skips initialization; both paths tail to gravity force $1C/max $03. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S39: reference_podoboo_integration_probe and mysmb_podoboo_integration_route_check execute 3072 actual ROM roots with all six slots, all 256 PRNG bytes per timer path, 1536 real initializer returns and 3072 gravity tails. Current x86/x64 each compare every 1784 persistent RAM byte, zero differences; CPU scratch $00-$07 and stack are explicit ABI exclusions. Podoboo/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation InitPodoboo -> MovePodoboo with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",

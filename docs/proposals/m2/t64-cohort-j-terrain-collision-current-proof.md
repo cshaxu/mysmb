@@ -1761,3 +1761,83 @@ Cohort J now has **65 controls and zero material relations** needing
 evidence. The S36 aggregate table remains its historical snapshot. T64 is
 open; actor-movement return integration is the next bounded source-order
 family. T65 is not admitted.
+
+## Aggregate S39 admission - Podoboo initialization return
+
+The next source-order missing edge is `control-03824`, InitPodoboo return
+to MovePodoboo. Scope labels, all already exact, are InitPodoboo,
+MovePodoboo, PdbM, MoveJ_EnemyVertically, SetHiMax, SetXMoveAmt,
+ImposeGravitySprObj. Expected node promotions are empty; historical
+1,992/1,992 and current exact 1,480/1,992 remain unchanged. Controls enter
+at 3,116/4,323 and can reach 3,117/4,323; material remains 368/487.
+
+Entry is MovePodoboo $C9B0, exit is the completed gravity tail; shared
+owners are enemy/podoboo.c, enemy/init_targets.c, enemy/movement.c and
+world/gravity.c. The missing dependency is fresh evidence of the real
+initializer return, previously tested with oracle-return substitution.
+The predecessor is the S38 platform-return group; the next branch owner
+is Hammer Bro movement. No unadmitted child or node promotion is assumed.
+
+Static proof compares timer predicate, initializer tail and eight writes,
+slot preservation, post-return PRNG read and gravity arguments. Actual ROM
+routes restore a boot machine each case and execute all children. Native
+x86/x64 compare every persistent RAM byte, with CPU scratch and stack
+declared ABI exclusions and initializer return inputs/outputs checked
+explicitly. Cases cover every PRNG byte, six slots and both timer paths.
+Focused Podoboo/purity tests and original OpenNT DOS16 are independent
+operational gates. Any scoped difference is repaired here and re-audited.
+
+Owner ROM/disassembly are nonredistributable local research, not product
+imports. Ignored build/m2-t64-s39 contains <=16 MiB raw records, with
+524288 steps/case and 120-second total budget; S39 cleans raw records and
+probe executable after verification. Only neutral harness and summaries
+are tracked. Product repairs refresh all three owner-approved EXEs;
+pure evidence does not. Preserve unrelated work and T64 remains open.
+
+## Aggregate S39 closure - real Podoboo initialization return exact
+
+`control-03824` is exact. All seven scoped nodes retain exact status:
+InitPodoboo, MovePodoboo, PdbM, MoveJ_EnemyVertically, SetHiMax,
+SetXMoveAmt, ImposeGravitySprObj. Expected/actual new nodes are both empty;
+no deferred or transferred labels and no custody change.
+
+Static source establishes MovePodoboo $C9B0, its timer-zero JSR $C2F7
+and return $C9B8. InitPodoboo tails through SmallBBox, SetBBox and InitVStf;
+it writes Y high/position=2, timer=1, state=0, box=9, direction=2,
+speed=0 and force=0. The native real child does those same eight stores.
+The source and C then read the same PRNG byte after the child return,
+OR $80 into force, use low nibble OR 6 for timer and set speed $F9.
+Both timer paths tail to MoveJ_EnemyVertically, force $1C, maximum $03,
+enemy-to-sprite offset slot+1, shared gravity and original-slot restoration.
+
+Neutral `tools/reference_podoboo_integration_probe.c` generates ignored
+records for `test/podoboo_integration_route_check.c`. Each of the six
+slots runs all 256 PRNG bytes with timer zero and again with nonzero timer
+(1/2/3/$ff across fixtures). Thus **3,072 actual ROM roots** execute real
+initialization and gravity children, with no oracle-return substitution.
+**1,536 initializer returns** preserve A=0, X=slot and Y=$44. At every
+return the probe checks every persistent byte against the input, allowing
+only the eight original stores. **3,072 gravity entries** retain the slot.
+Maximum route length is **66 instructions**; boot state is restored per case.
+
+Fresh native x86/x64 each pass **3,072/3,072**, zero differences over every
+**1,784 persistent RAM byte**, including unchanged RAM/OAM. Scratch $00-$07
+and stack are declared CPU ABI exclusions; source return A/X/Y and slot
+consumption are checked separately. CPU flags are not native data: the
+post-return LDA overwrites N/Z and gravity resets carry before arithmetic.
+Focused Podoboo movement and platform-purity tests pass on both widths;
+original OpenNT DOS16 builds/links with its existing OLDNAMES.LIB warning.
+
+The similar-issue review finds one real initializer call in the Podoboo
+movement owner; all six slots and both timer branches are checked. The
+initializer dispatcher also shares that same child. No host implementation
+or PRNG read preceding initialization exists. No scoped difference or
+product source change was found; three EXEs remain the prior delivery.
+Raw records/probe executable are cleaned after accepted proof.
+
+Historical **1,992/1,992**, current exact nodes **1,480/1,992**, material
+**368/487** remain unchanged. Exact feasible controls rise
+**3,116 -> 3,117 / 4,323** (raw **4,342**, infeasible **19**).
+T64 remains open with **64 Cohort-J controls**, zero pending material.
+Next source-order branch is Hammer Bro throw/relative-position returns.
+T65 is not admitted.
