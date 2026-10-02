@@ -228,3 +228,25 @@ shared-source link.
 - Scope: **6** labels; expected fresh historical matches: **0**; maximum
   historical complete: **1,992 / 1,992**.
 - Current-exact promotions are determined only after both audit tracks finish.
+
+## S5 closure — power-up pickup response
+
+All six scoped nodes are current-exact: `HandlePowerUpCollision`,
+`Shroom_Flower_PUp`, `SetFor1Up`, `UpToSuper`, `UpToFiery` and `NoPUp`.
+Static `$D800-$D84C` comparison found no shared-C difference in common child
+order, type carry/equality paths, the one-up overwrite, star timer/music,
+status dispatch, palette call, routine values or return tails.
+
+The retained controlled original-ROM pickup route ran 128 records through one
+x86 and one x64 native process, comparing full mapped RAM and recorded erase,
+score, palette and routine child calls, with zero differences. The strengthened
+snapshot runner now accepts a manifest, so each width handles the complete
+record family in one process. The focused pickup contract, platform purity and
+OpenNT DOS16 shared-source link pass. Product C did not change, so package
+artifacts were not refreshed.
+
+S5 marks six nodes, 11 source-owned controls (`control-02244` through
+`control-02254`) and six material handoffs (`material-00350` through
+`material-00355`) exact. Current totals: historical **1,992 / 1,992**;
+current exact nodes **1,258 / 1,992**; current exact feasible controls
+**2,540 / 4,324** (raw **4,342**, infeasible **18**).

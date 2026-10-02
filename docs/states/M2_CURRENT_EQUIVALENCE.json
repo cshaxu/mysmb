@@ -7636,13 +7636,15 @@
       "consumer": "Shroom_Flower_PUp",
       "storage": "PowerUpType after erase/score/sound common prefix",
       "feasiblePath": "Types below two enter mushroom/fire-flower status dispatch after common erase, score six and PowerUpGrab writes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/powerup_collision.c type dispatch",
       "semanticContract": "Status conversion consumes PowerUpType only after the source common pickup effects.",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7655,13 +7657,15 @@
       "consumer": "SetFor1Up",
       "storage": "PowerUpType equal three and active FloateyNum_Control",
       "feasiblePath": "Type three changes only the active floatey modifier from six to eleven.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/powerup_collision.c type==3 branch",
       "semanticContract": "1UP preserves the common pickup effects and overwrites only the source floatey control.",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7674,13 +7678,15 @@
       "consumer": "NoPUp",
       "storage": "StarInvincibleTimer and AreaMusicQueue",
       "feasiblePath": "Non-0/1/3 types write timer $23 and StarPower music before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/powerup_collision.c star branch",
       "semanticContract": "Star pickup writes timer and music after common pickup effects without a player-routine transition.",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7693,13 +7699,15 @@
       "consumer": "UpToFiery",
       "storage": "PlayerStatus, palette queue and routine value $0c",
       "feasiblePath": "Only status one becomes fiery, queues palette update and selects routine $0c.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/powerup_collision.c status==1 branch",
       "semanticContract": "Fiery transition completes palette handling before SetPRout receives routine twelve/state zero.",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7712,13 +7720,15 @@
       "consumer": "UpToFiery",
       "storage": "PlayerStatus one and routine value $09",
       "feasiblePath": "Small Mario writes status one then falls through with routine nine.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/powerup_collision.c status==0 branch",
       "semanticContract": "Super transition reaches common routine setup with status one and routine nine.",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7731,13 +7741,15 @@
       "consumer": "NoPUp",
       "storage": "GameEngineSubroutine, Player_State, TimerControl and ScrollAmount",
       "feasiblePath": "SetPRout consumes selected routine/state and publishes player transformation routing before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c:mysmb_objects_set_player_routine",
       "semanticContract": "The routine child owns timer halt and scroll initialization for both super and fiery pickup tails.",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -35292,13 +35304,15 @@
       "label": "HandlePowerUpCollision",
       "asmLine": 11262,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Erases the power-up, initializes modifier six and PowerUpGrab sound before type dispatch; types 0/1 go to status logic, type 3 overwrites the floatey modifier with eleven, and other types set star timer $23 and StarPower music.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -35308,13 +35322,15 @@
       "label": "Shroom_Flower_PUp",
       "asmLine": 11279,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Routes small Mario to super, only super Mario to fiery, and leaves any other status unchanged; fiery conversion changes palette before the routine/state tail.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -35324,13 +35340,15 @@
       "label": "SetFor1Up",
       "asmLine": 11292,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Overwrites the already-initialized floatey-number control for the active ObjectOffset with eleven and returns without changing player status.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -35340,13 +35358,15 @@
       "label": "UpToSuper",
       "asmLine": 11297,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Writes player status one and falls through with routine value nine into the common player-routine setter.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -35356,13 +35376,15 @@
       "label": "UpToFiery",
       "asmLine": 11302,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Supplies player state zero and the caller-selected routine value to SetPRout, which halts the source timers and initializes scroll state.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -35372,13 +35394,15 @@
       "label": "NoPUp",
       "asmLine": 11305,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns from every terminal power-up type/status path after preserving the resulting score, sound, status and routine changes.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -95146,12 +95170,14 @@
       "instruction": "jsr",
       "id": "control-02244",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HandlePowerUpCollision -> EraseEnemyObject with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
@@ -95170,12 +95196,14 @@
       "instruction": "jsr",
       "id": "control-02245",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HandlePowerUpCollision -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c",
@@ -95190,12 +95218,14 @@
       "instruction": "bcc",
       "id": "control-02246",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePowerUpCollision -> Shroom_Flower_PUp with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -95209,12 +95239,14 @@
       "instruction": "beq",
       "id": "control-02247",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePowerUpCollision -> SetFor1Up with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -95228,12 +95260,14 @@
       "instruction": "beq",
       "id": "control-02248",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation Shroom_Flower_PUp -> UpToSuper with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -95247,12 +95281,14 @@
       "instruction": "bne",
       "id": "control-02249",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation Shroom_Flower_PUp -> NoPUp with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -95266,12 +95302,14 @@
       "instruction": "jsr",
       "id": "control-02250",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation Shroom_Flower_PUp -> GetPlayerColors with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -95286,12 +95324,14 @@
       "instruction": "jmp",
       "id": "control-02251",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation Shroom_Flower_PUp -> UpToFiery with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -95305,12 +95345,14 @@
       "instruction": "lda",
       "id": "control-02252",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation UpToSuper -> UpToFiery with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"
@@ -95324,12 +95366,14 @@
       "instruction": "jsr",
       "id": "control-02253",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation UpToFiery -> SetPRout with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c",
@@ -95344,12 +95388,14 @@
       "instruction": "jsr",
       "id": "control-02254",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation UpToFiery -> NoPUp with source type/status predicate and score/status/routine handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/powerup_collision.c"

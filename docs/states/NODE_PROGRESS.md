@@ -23,7 +23,7 @@ all 1,992 labels. The separate current-equivalence baseline and its
 source-order cohort results are authoritative in
 [M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
-Latest task review: M2 T64 S4 closes `PlayerHammerCollision -> ExPHC`: three labels, eight feasible controls and three material handoffs are current-exact after static and 288-record original-ROM/x86/x64 caller replay. The current registry records 1,252 exact labels and 2,529 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
+Latest task review: M2 T64 S5 closes `HandlePowerUpCollision -> NoPUp`: six labels, 11 feasible controls and six material handoffs are current-exact after static and 128-record original-ROM/x86/x64 caller replay. The current registry records 1,258 exact labels and 2,540 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
