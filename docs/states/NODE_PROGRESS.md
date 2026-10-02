@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T69 S10 - active power-up/block/movement joins
+
+[Exact36 existing labels/49 pending controls/3 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+intended fresh0,max1992/1992.Current1992/1992 scoped-exact nodes,
+4152/4277 controls(raw4342,infeasible65),540/555 material partial;
+historical1992/1992 separate.Both proof tracks required;S11 unadmitted.
+
 ## M2 T69 S9 - closed hammer/coin/score joins
 
 [All36 controls/3 material,29 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)

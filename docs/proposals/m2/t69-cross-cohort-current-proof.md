@@ -1396,3 +1396,32 @@ Raw bounded128MiB/1024 batch/120seconds process/524288steps root and deleted
 per batch;probe deleted at closure,neutral ignored summaries/logs retained.
 Registry/ledger/progress/documentation/diff gates required before local P2
 commit;unrelated work preserved,no push,no S10 pre-credit.
+
+## S10 admission - power-up/block/movement joins
+
+Scope36 already-exact labels:Setup_Vine; CoinBlock; SetupJumpCoin; AddToScore; SetupPowerUp; PowerUpObjHandler; ShroomM; RunPUSubs; BlockCode; ExtraLifeMushBlock; VineBlock; BrickShatter; CheckTopOfBlock; SpawnBrickChunks; BlockObjectsCore; BouncingBlockHandler; BlockObjMT_Updater; MoveObjectHorizontally; ExXMove; MovePlayerVertically; ImposeGravityBlock; MoveNormalEnemy; MoveJumpingEnemy; OffscreenBoundsCheck; PlayerEnemyCollision; EnemyToBGCollisionDet; EnemyJump; GetEnemyBoundBox; DrawPowerUp; DrawBlock; DrawBrickChunks; RelativeEnemyPosition; RelativeBlockPosition; GetEnemyOffscreenBits; GetBlockOffscreenBits; PlayerHeadCollision.Intended fresh nodes0,
+max1992/1992;49 planned controls and3 material rows00110-00112 pending.
+Incoming1992/1992 scoped-exact nodes,4152/4277 feasible controls(raw4342,
+infeasible65),540/555 material partial;historical1992/1992 separate.
+S9 closed,S11 and later unadmitted.Maintenance custody retained;
+expectedMatches empty. PlayerHeadCollision is the already-exact real parent
+needed to observe BlockCode's original JumpEngine dispatch,zero extra credit.
+Entry/exit:SetupPowerUp/PowerUpObjHandler through actual movement,position,
+offscreen,box,graphics,collision/bounds children;PlayerHeadCollision through
+BlockCode/brick producers,BlockObjectsCore and BlockObjMT_Updater consumers;
+MovePlayerVertically through ExXMove. Shared game power_up.c,blocks/*,
+player/world movement and listed enemy/OAM/score children only;no platform
+business logic. Concrete missing evidence:49 cross-owner joins including
+3 coin vectors and vertical branch,plus replacement/chunk RAM handoffs.
+ROM track:Source-first original power-up, PlayerHeadCollision/BlockCode actual vector dispatch, brick producer/lifetime/replacement and player vertical movement roots with actual shared children; preserve producer RAM into later consumers, observe original branch/call/RTS/vector sites and compare persistent RAM/APU/ordered writes against actual x86/x64.
+Operational:power-up/block/brick/gravity/collision tests,focused movement,
+current x86/x64 builds,original OpenNT DOS16 link and platform purity.
+All scoped differences repaired and re-audited before S11;no inferred
+coverage from route equality. Product-code P refreshes all3 EXEs under
+standing owner authorization;pure audit retains byte-identical products.
+Original local ROM/reviewed ASM only,nonredistributable,no third-party import.
+Ignored build/m2-t69-s10;raw<=128MiB,1024 roots/batch,120seconds/process,
+524288steps/root;coordinator deletes raw each batch and probe at closure.
+Similar-issue sweep:canonical scratch-writing offscreen joins,slot restore,
+carry through vector dispatch,paired chunk arrays,low-Y wrap,buffer-idle
+replacement predicate and actual child order. No admission credit.
