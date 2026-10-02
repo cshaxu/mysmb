@@ -250,3 +250,28 @@ S5 marks six nodes, 11 source-owned controls (`control-02244` through
 `material-00355`) exact. Current totals: historical **1,992 / 1,992**;
 current exact nodes **1,258 / 1,992**; current exact feasible controls
 **2,540 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S6 admission — player/enemy collision response
+
+S6 admits the contiguous `$D84D-$D965` player/enemy collision chain: the 34
+source-order labels assigned to S6 in the plan table, from `ResidualXSpdData`
+through `ExSFN`. The shared owner is `src/game/world/player_enemy_collision.c`;
+S5 is the predecessor and S7 starts enemy/enemy collision. Geometry, power-up,
+enemy and palette children retain their own owners while this S audits all
+caller-side input, output and ordering contracts.
+
+The ROM-logic track compares data tables, every slot/state/timer predicate,
+carry-equivalent collision and injury decisions, routine/death tails, stomp and
+shell paths, score controls and child ordering. The operational track batches
+retained controlled original-ROM contact records once per x86/x64 process, then
+runs the focused contact contract, platform-purity gate and OpenNT DOS16
+shared-source link.
+
+### S6 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,258 / 1,992**.
+- Current exact feasible controls: **2,540 / 4,324**.
+- Scope: **34** labels; expected fresh historical matches: **0**; maximum
+  historical complete: **1,992 / 1,992**.
+- Current-exact promotions are determined only after both audit tracks finish.
