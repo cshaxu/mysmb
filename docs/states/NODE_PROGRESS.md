@@ -2,7 +2,7 @@
 
 ## M2 T69 S6 - active text/scenery material consumer proof
 
-[Exact14 already-exact labels/9 pending material rows](../proposals/m2/t69-cross-cohort-current-proof.md)
+[Exact18 already-exact labels/9 pending material rows](../proposals/m2/t69-cross-cohort-current-proof.md)
 intended fresh nodes0,max1992/1992. Current1992/1992 scoped-exact nodes,
 4087/4277 controls(raw4342,infeasible65),512/555 material partial;
 historical1992/1992 separate. Both proof tracks required before material credit.

@@ -852,3 +852,20 @@ Similar-issue sweep:invented buffer capacity/input gates,byte selector/cursor
 wrap,name low-bit/descending copies,warp index/stride,table producer/consumer
 binding and real shared decoder/renderer children. Material enumeration stays
 partial until final sweep;node numerator alone cannot certify M2.
+
+## S6 P2 dependency amendment - actual area vector state
+
+Controlled unchanged original ProcessAreaData9508 through genuine resident
+level pairs and DecodeAreaData/RunAObj confirms3456 RAM differences in the
+first1024 current x86 cases:missing04-07 JumpEngine state. Source9664 JSR
+consumes inline-vector return9666,then selects the handler through original
+PRG; native direct object dispatch omitted these stores. Coordinator admits
+ProcessAreaData;DecodeAreaData;RunAObj;JumpEngine as four already-exact
+zero-credit dependency labels. Scope18,intended fresh0,max1992/1992;all9
+planned material rows unchanged. This expands the previously bounded proof,
+not the historical match numerator. Source-first repair must use the existing
+shared jump-state helper at the real decoder dispatch before the actual
+object child;no ROM patch, interpreter, mocked child or new platform logic.
+Repeat original/current parser matrix varying all8 declared consumer entries,
+AreaType0-3,cloud override0/1,resident length0-7 and four foreground kinds.
+S6 remains active until these differences and all9 relations are resolved.

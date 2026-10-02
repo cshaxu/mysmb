@@ -710585,7 +710585,11 @@
         "C_ObjectMetatile",
         "ChainObj",
         "SolidBlockMetatiles",
-        "BrickMetatiles"
+        "BrickMetatiles",
+        "ProcessAreaData",
+        "DecodeAreaData",
+        "RunAObj",
+        "JumpEngine"
       ],
       "baseline": 1992,
       "incomingComplete": [
