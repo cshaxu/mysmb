@@ -10533,13 +10533,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1446,
-    "needs-evidence": 546
+    "exact": 1447,
+    "needs-evidence": 545
   },
   "controlEdgeCounts": {
-    "exact": 3031,
+    "exact": 3033,
     "infeasible": 18,
-    "needs-evidence": 1293
+    "needs-evidence": 1291
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -39029,13 +39029,15 @@
       "label": "KillEnemyAboveBlock",
       "asmLine": 12711,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c:mysmb_objects_kill_enemy_above_block",
       "currentCounterpart": "mysmb_objects_kill_enemy_above_block",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S27 static direct-entry audit: SMB1 $E18B calls ShellOrBlockDefeat, returns, then loads/stores Enemy_Y_Speed=$FC before RTS; current objects.c has the same ordered shared-child call and write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S27 controlled original-ROM $E18B probe: four direct entries cover Goomba, Hammer Bro, Piranha ADC carry and high-state-mask cases; current x86/x64 full persistent-RAM replays have zero differences; focused terrain/purity checks pass."
+      ],
       "semanticContract": "Uses ShellOrBlockDefeat then sets Enemy_Y_Speed to $fc.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -105517,12 +105519,14 @@
       "instruction": "jsr",
       "id": "control-02690",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S27 static direct-entry audit: SMB1 $E18B calls ShellOrBlockDefeat, returns, then loads/stores Enemy_Y_Speed=$FC before RTS; current objects.c has the same ordered shared-child call and write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S27 controlled original-ROM $E18B probe: four direct entries cover Goomba, Hammer Bro, Piranha ADC carry and high-state-mask cases; current x86/x64 full persistent-RAM replays have zero differences; focused terrain/purity checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain call relation KillEnemyAboveBlock \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ShellOrBlockDefeat, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c",
@@ -131882,12 +131886,14 @@
       "instruction": "rts/rti",
       "id": "control-03989",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S27 static direct-entry audit: SMB1 $E18B calls ShellOrBlockDefeat, returns, then loads/stores Enemy_Y_Speed=$FC before RTS; current objects.c has the same ordered shared-child call and write."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S27 controlled original-ROM $E18B probe: four direct entries cover Goomba, Hammer Bro, Piranha ADC carry and high-state-mask cases; current x86/x64 full persistent-RAM replays have zero differences; focused terrain/purity checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain return relation ShellOrBlockDefeat \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 KillEnemyAboveBlock, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c",

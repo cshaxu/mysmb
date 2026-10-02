@@ -2373,3 +2373,16 @@ feasible controls (raw **4,342**, infeasible **18**).
 - Current exact progress: nodes **1,445 → 1,446 / 1,992**; feasible controls
   **3,027 → 3,031 / 4,324** (raw **4,342**, infeasible **18**). The registry
   reconciliation also records the already-closed S21–S25 increments.
+
+
+## M2 T64 S27 — bumped-block enemy defeat tail
+
+- Planned and completed label: `KillEnemyAboveBlock`; no node is deferred.
+  Exact source-owned controls: `control-02690` and `control-03989`.
+- ROM logic-equivalence: `$E18B` calls `ShellOrBlockDefeat`, returns, then
+  writes `$FC` to enemy Y speed before RTS; no caller guard is part of the leaf.
+- Operational verification: four controlled direct-ROM entries replayed with
+  zero x86/x64 persistent-RAM differences; focused terrain-chain and platform
+  purity checks pass. Product C did not change, so S26's artifacts remain valid.
+- Current exact progress: nodes **1,446 → 1,447 / 1,992**; feasible controls
+  **3,031 → 3,033 / 4,324** (raw **4,342**, infeasible **18**).

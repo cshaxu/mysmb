@@ -1713,3 +1713,6 @@ add_executable(mysmb_enemy_jump_actual_check test/enemy_jump_actual_check.c)
 target_link_libraries(mysmb_enemy_jump_actual_check PRIVATE mysmb_game)
 add_executable(mysmb_hammer_bg_actual_check test/hammer_bg_actual_check.c)
 target_link_libraries(mysmb_hammer_bg_actual_check PRIVATE mysmb_game)
+
+add_executable(mysmb_kill_enemy_above_block_actual_check test/kill_enemy_above_block_actual_check.c)
+target_link_libraries(mysmb_kill_enemy_above_block_actual_check PRIVATE mysmb_game)

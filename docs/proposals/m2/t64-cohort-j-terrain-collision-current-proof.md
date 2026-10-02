@@ -961,3 +961,39 @@ This closure also reconciles the previously closed S21-S25 registry entries, so
 current totals are historical **1,992 / 1,992**; current exact nodes **1,446 /
 1,992**; current exact feasible controls **3,031 / 4,324** (raw **4,342**,
 infeasible **18**).
+
+
+## S27 admission — bumped-block enemy defeat tail
+
+S27 admits `$E18B-$E18F` `KillEnemyAboveBlock`, owned by
+`src/game/objects.c:mysmb_objects_kill_enemy_above_block`. S26 supplies the
+blank-metatile fallthrough and S28 resumes Hammer Bro ground handling. The
+ROM-logic track checks the ordered `ShellOrBlockDefeat` call, its return, then
+the `$FC` `Enemy_Y_Speed` write and return to each original caller. The
+operational track records controlled original-ROM direct entries and replays
+them through x86/x64 current owners, then runs the focused defeat/terrain and
+platform-purity checks plus the existing OpenNT DOS16 shared-source build.
+Product artifacts refresh only if shared product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,446 / 1,992** nodes and **3,031 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **1** label (`KillEnemyAboveBlock`); expected current matches: **1**;
+  maximum current exact: **1,447 / 1,992**.
+
+
+## S27 closure — bumped-block enemy defeat tail
+
+`KillEnemyAboveBlock` is current-exact. Static `$E18B-$E18F` comparison
+confirms the `ShellOrBlockDefeat` call and return precede the `$FC` enemy-Y-speed
+write, with no caller predicate copied into the leaf. Four controlled original-ROM
+direct entries cover Goomba, Hammer Bro, Piranha ADC-carry and high-state-mask
+paths; current x86/x64 full persistent-RAM replays have zero differences.
+Focused terrain-chain and platform-purity CTests pass on both widths. No product
+C changed, so package EXEs remain those from S26.
+
+S27 records `KillEnemyAboveBlock`, `control-02690` and `control-03989` exact.
+The caller-owned return `control-03974` remains for its caller integration audit.
+Current totals: historical **1,992 / 1,992**; current exact nodes **1,447 /
+1,992**; current exact feasible controls **3,033 / 4,324** (raw **4,342**,
+infeasible **18**).
