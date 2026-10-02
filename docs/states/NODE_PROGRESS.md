@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T69 S2 - active initialization chain
+
+[Exact21 pending targets/3 investigated dependencies](../proposals/m2/t69-cross-cohort-current-proof.md)
+scope24,intended fresh21,max1959/1992. Current1938/1992 nodes,3993/4278
+controls(raw4342,infeasible64),502/555 material partial;historical1992/1992
+separate.42 controls/2 table material and dual original/operational proof
+required before any credit;later S unadmitted.
+
 ## M2 T69 S1 - closed status residual chain
 
 [All19 status labels/30 control dispositions/2 material](../proposals/m2/t69-cross-cohort-current-proof.md)

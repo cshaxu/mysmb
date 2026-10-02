@@ -327,3 +327,28 @@ Ignored build/m2-t69-s1 retains bounded source/coverage/routes,pre-fix neutral
 differences and final build/test logs. Raw deleted per batch;probe deleted at
 closure. Registry/ledger/progress/docs gates required before commit;unrelated
 owner queue/source/proposals preserved unstaged. S2 remains unadmitted.
+
+## S2 admission - memory/game/area initialization chain
+
+Scope24, intended fresh21 pending/max1959/1992:
+DefaultSprOffsets; Sprite0Data; InitializeGame; ClrSndLoop; InitializeArea; ClrTimersLoop; StartPage; SetInitNTHigh; SetSecHard; CheckHalfway; DoneInitArea; PrimaryGameSetup; SecondaryGameSetup; ClearVRLoop; ShufAmtLoop; ISpr0Loop; InitializeMemory; InitPageLoop; InitByteLoop; InitByte; SkipByte.
+Other3 investigated dependency labels (no credit):GetAreaMusic,DoNothing1,
+DoNothing2,already reserved for S3/S5. Scope is all24 labels in S2 plan above.
+Current1938/1992 nodes,3993/4278 controls(raw4342,infeasible64),502/555
+material partial;42 pending controls/2 table material rows. Historical1992/1992
+separate,expectedMatches empty;maintenance custody retained.
+Shared boot.c/title_modes.c/area.c/game.c and frame-root caller;original
+InitializeGame falls into InitializeArea,PrimaryGameSetup into Secondary;
+pointer/header/GetAreaMusic/no-op children are real dependencies,not stubs.
+ROM track:Unchanged original InitializeMemory/InitializeGame/InitializeArea/PrimaryGameSetup/SecondaryGameSetup roots with real area-pointer/header/music/no-op children and RTS; vary clear boundary, retained stack/page state, start-page/hard-mode/header selection, mirror parity/task byte and actual default OAM table reads. Compare persistent RAM/APU/ordered output x86/x64 and source transitions.
+Operational:focused boot/area-entry/title-bootstrap tests,current x86/x64
+builds,purity/original OpenNT DOS16 link. Product changes refresh3 EXEs under
+owner authorization;pure audit retains byte-identical products. Scope repair
+includes caller removal of duplicate fallthrough if shared entry is restored.
+Any scoped diff/missing source/child/data proof keeps S2 active. Similar-issue
+sweep:descending byte clears,stack160-1FF retention,scratch06/07,original
+mirror LSR/ROR/ROL,task INC versus assignment,caller/fallthrough/no-op order,
+unconditional source stores and default indexed OAM regions.
+Owner-local ROM/reviewed ASM research only,nonredistributable,no import.
+Ignored build/m2-t69-s2,128MiB raw,1024 roots/batch,120seconds/process,
+524288steps/root;coordinator deletes raw per batch and retains neutral summaries.
