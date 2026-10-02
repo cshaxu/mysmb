@@ -459,14 +459,24 @@ static void mysmb_audio_step_noise(struct mysmb_game *game)
 
 /* ROM ProcessLengthData.  This helper belongs to the later shared-music
  * helper chain, but S4 calls it at exactly the source call boundary. */
+static mysmb_u8 mysmb_audio_music_length_index(const struct mysmb_game *game,
+                                               mysmb_u8 data)
+{
+    mysmb_u16 sum;
+
+    sum = (mysmb_u16)((data & 7U) +
+        game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
+    /* CLC precedes only the first ADC. Its carry enters the second ADC. */
+    return (mysmb_u8)((mysmb_u8)sum +
+        game->ram[MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER] + (sum >> 8U));
+}
+
 mysmb_u8 mysmb_audio_process_music_length(struct mysmb_game *game,
                                           mysmb_u8 data)
 {
     mysmb_u8 index;
 
-    index = (mysmb_u8)((data & 7U) +
-        game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET] +
-        game->ram[MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER]);
+    index = mysmb_audio_music_length_index(game, data);
     return mysmb_audio_read_cpu(game,
         (mysmb_u16)(0xff66UL + index));
 }
@@ -733,8 +743,7 @@ static void mysmb_audio_step_noise_music(struct mysmb_game *game)
     x = data;
     table_index = (mysmb_u8)(((data & 1U) << 2U) |
         ((data & 0x80U) >> 6U) | ((data & 0x40U) >> 6U));
-    y = (mysmb_u8)(table_index + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET] +
-        game->ram[MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER]);
+    y = mysmb_audio_music_length_index(game, table_index);
     game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] =
         mysmb_audio_read_cpu(game, (mysmb_u16)(0xff66UL + y));
 

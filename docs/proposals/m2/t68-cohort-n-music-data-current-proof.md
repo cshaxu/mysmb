@@ -328,3 +328,88 @@ length consumers and original carry semantics across shared audio.c.
 Owner-local ROM/reviewed ASM are nonredistributable research, no imports.
 Ignored build/m2-t68-s2,128MiB raw,1024 roots/batch,120seconds/process,
 524288steps/root; raw deleted per batch. Tracked neutral metadata only.
+
+## S2 P2 closure - original two-ADC length contract
+
+All9 intended labels completed: AlternateLengthHandler; ProcessLengthData; LoadControlRegs; NotECstlM; WaterMus; AllMus; LoadEnvelopeData; LoadUsualEnvData; LoadWaterEventMusEnvData.
+No scoped deferral/transfer.8 feasible controls exact,2 impossible fallthroughs
+independently proven. Current1859->1868/1992 nodes,3956->3964 feasible controls;
+denominator4281->4279(raw4342,infeasible63). Material408/493 partial unchanged;
+later S3-S5 table producers uncredited. Historical1992/1992 distinct, historical
+expectedMatches/actualMatches empty. T68 open; S3 next unadmitted.
+
+| Node | Shared counterpart | Manual source/state/control contract |
+| --- | --- | --- |
+| `AlternateLengthHandler` | `mysmb_audio_step_square1_music / step_noise_music` | Retain original byte X. ROR saves bit0, three ROLs yield low selector bits from original0/7/6; inline callers retain original note and lookup Y semantics. |
+| `ProcessLengthData` | `mysmb_audio_process_music_length / music_length_index` | AND7/CLC; first ADC header offset produces wrapped byte and carry; second ADC adder includes that carry, then byte Y indexes original FF66+Y. No RAM/APU writes; actual table byte returns to caller. |
+| `LoadControlRegs` | `mysmb_audio_envelope_control and actual channel caller` | Event AND08 has precedence; nonzero returns04. Otherwise area AND7D selects08 or28; actual caller supplies X82/Y7F before ordered channel control writes. |
+| `NotECstlM` | `mysmb_audio_envelope_control` | Area AND7D zero goes water/event28, nonzero default08 and forced nonzero BNE AllMus. |
+| `WaterMus` | `mysmb_audio_envelope_control` | Exact control28, regardless other event bits when castle bit08 is absent and area mask zero. |
+| `AllMus` | `mysmb_audio_step_square1_music / step_square2_music` | Source helper X82/Y7F are consumed by real channel dump writes in original order; A04/08/28 retained separately as envelope. |
+| `LoadEnvelopeData` | `mysmb_audio_load_music_envelope` | Event AND08 selects FF96+Y first; otherwise usual path. Input Y unchanged, byte CPU address addition and actual owner binding preserved, return A is read byte. |
+| `LoadUsualEnvData` | `mysmb_audio_load_music_envelope` | Area AND7D nonzero reads FF9A+Y; zero transfers to water/event data, no inferred table-clamping. |
+| `LoadWaterEventMusEnvData` | `mysmb_audio_load_music_envelope` | Read FFA2+Y, preserve index and original selected byte, real caller writes result to4000/4004; no synthesized envelope. |
+
+### ROM proof, repair and similar-issue sweep
+
+Final786432 unchanged original roots agree each width. Modes36-43 call actual
+F8CB ProcessLengthData through real RTS, exhaust all8 low selectors x256 header
+offsets x256 adders:524288 inputs. Actual returned A compared; direct helper
+Y has no exported C-register ABI and is audited through static carry/index
+contract and actual noise400F writes. Modes44-47 each65536 actual F2D0 roots:
+alternate noise byte/all header offsets with adderFF, all event/area masks
+with old envelope indices, triangle length bytes/header offsets/adders, and
+Square2 note->control->real dump calls over all event/area masks.
+
+Comparison:1841 RAM including0109-0139,24 APU registers and every ordered write
+count/index/value. Only true CPU stack0100-0108/013A-01FF and unmapped transient
+registers excluded. No patched ROM, mocked helper, C-derived reference input
+or fabricated table membership. Extended table indices keep original CPU
+address behavior; table ownership/bounds independently close in S5.
+
+Actual pre-fix difference at selector1/headerFF: original first ADC wraps to0
+with carry1, second ADC includes1 and reads index1; C read index0. Returned
+bytes0A vs05 differ. Restored first-sum byte/carry then second-add semantics.
+Similar-issue sweep finds exactly two production arithmetic sites: exported
+ProcessLengthData and noise inline alternate-length consumer. Both now share
+one music_length_index implementation. Square1/Square2/triangle and flame
+consume the exported length helper, so inherit repair without platform changes.
+No other header+adder arithmetic remains in audio.c. Neutral regressions use
+project-owned table bytes and verify direct returned length and actual noise
+length/X/Y writes; mode44 verifies original retained Y for all noise bytes.
+
+Event08 precedence, area7D gating, all three envelope read bases, preserved
+old index and actual channel X82/Y7F dump outputs independently audited.
+All9 entries/8 feasible owned transitions observed.2 unobserved fallthroughs
+require fixed nonzero LDA/BNE original opcode proof, not absence-only marking.
+Source returns belong to already-audited callers; actual original helper
+RTS/caller continuation executes in integrated roots, no new return rows invented.
+
+- `control-03476`: LDA04 immediately precedes BNE AllMus, fixing Z0; fallthrough NotECstlM impossible.
+- `control-03479`: LDA08 immediately precedes BNE AllMus, fixing Z0; fallthrough WaterMus impossible.
+
+| Control | Source PC | Observations | Disposition |
+| --- | --- | --- | --- |
+| `control-03473` | `f8ca` | 65536 | exact |
+| `control-03474` | `f8dd` | 32767 | exact |
+| `control-03475` | `f8e1` | 32768 | exact |
+| `control-03476` | `f8e1` | 0 | infeasible |
+| `control-03477` | `f8e7` | 511 | exact |
+| `control-03478` | `f8eb` | 32256 | exact |
+| `control-03479` | `f8eb` | 0 | infeasible |
+| `control-03480` | `f8ed` | 511 | exact |
+| `control-03481` | `f8f9` | 278524 | exact |
+| `control-03482` | `f903` | 252 | exact |
+
+Operational: final full builds/248 tests each width pass including purity;
+original OpenNT DOS16 link passes with inherited OLDNAMES.LIB warning; no
+interactive DOS qualification claim. All3 products refreshed together under
+owner authorization, preserving audio/title/focus pause:
+
+- `mysmb16.exe`: 260967 bytes, SHA256 `08027088cb6789482a9f7d20a7a5d3ac6f549ffe1ee56f746425c8f4f1c045d8`.
+- `mysmb32.exe`: 373988 bytes, SHA256 `dd09059aed071d96d73caad9c3203f7556f1c34ca1b1d674f920e7035e3c2f28`.
+- `mysmb64.exe`: 381530 bytes, SHA256 `e6c3cbee528e79ee4b3404ae869f60ab79101b01b5a4cdb8bc5899b537043520`.
+
+Ignored build/m2-t68-s2 contains neutral route/coverage summaries, modes36-47,
+pre-fix-carry difference, final build/test/DOS16 logs. Raw removed per batch,
+recorder removed at closure; registry/ledger/progress/docs gates before commit.

@@ -319,3 +319,13 @@ T68 next unadmitted, then cross-cohort/final certification.
 S2 next unadmitted;60 N plus73 earlier C labels remain pending. Cross-cohort
 audit must resolve Square1/Square2 controlled RAM-alias fetch-order scope
 in TODO before whole-domain certification; earlier PRG evidence remains bounded.
+
+## Current checkpoint after T68 S2
+
+[T68 S2](t68-cohort-n-music-data-current-proof.md) closes9 helpers/8 controls,
+2 impossible raw fallthroughs. Current1868/1992 nodes,3964/4279 controls
+(raw4342,infeasible63),408/493 material partial; historical1992/1992 distinct.
+786432 original roots each width zero diff after original two-ADC carry repair;
+248 tests each/purity/OpenNT link pass,3 EXEs refreshed. T68 open, S3 next
+unadmitted;51 N plus73 earlier C nodes remain pending. Earlier Square1/Square2
+RAM-alias fetch order remains explicit cross-cohort debt, not silently closed.

@@ -122,5 +122,20 @@ int main(void)
     if (game.ram[0x07b0U] != 1U || game.apu_registers[12U] != 0x10U ||
         game.apu_registers[14U] != 1U ||
         game.apu_registers[15U] != 4U) return 7;
+    /* The first ADC wraps FF+1 and passes carry into the second ADC. */
+    prg[0x7f66U] = 7U;
+    prg[0x7f67U] = 9U;
+    game.ram[0x00f0U] = 0xffU;
+    game.ram[0x07c4U] = 0U;
+    if (mysmb_audio_process_music_length(&game, 1U) != 9U) return 8;
+    game.ram[0x00f5U] = 0U;
+    game.ram[0x00f6U] = 2U;
+    game.ram[0x0201U] = 0x40U;
+    game.ram[0x07b0U] = 1U;
+    game.ram[0x07baU] = 1U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x07baU] != 9U ||
+        game.apu_registers[14U] != 0x40U ||
+        game.apu_registers[15U] != 1U) return 9;
     return 0;
 }

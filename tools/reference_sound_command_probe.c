@@ -129,6 +129,28 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0xfau]=(unsigned char)((p>>1u)&3u);
         m->ram[0x7b2u]=(unsigned char)((p>>3u)&3u);
         m->ram[0x7bbu]=(unsigned char)n;
+    }else if(mode>=36u&&mode<=43u){
+        m->ram[0xf0u]=(unsigned char)n;
+        m->ram[0x7c4u]=(unsigned char)p;
+    }else if(mode>=44u&&mode<=47u){
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
+        m->ram[0xf4u]=(unsigned char)(mode==45u||mode==47u?p:1u);
+        m->ram[0x7b1u]=(unsigned char)(mode==45u||mode==47u?n:0u);
+        m->ram[0xf5u]=0u;m->ram[0xf6u]=2u;
+        m->ram[0xf8u]=1u;m->ram[0x7b4u]=(unsigned char)(mode==47u?1u:5u);m->ram[0x7b6u]=5u;
+        m->ram[0x7b7u]=(unsigned char)(n+p);
+        m->ram[0x7cau]=(unsigned char)(n^p);
+        m->ram[0x7b9u]=(unsigned char)(mode==46u?1u:5u);
+        m->ram[0x7b8u]=5u;
+        m->ram[0x7bau]=(unsigned char)(mode==44u?1u:5u);
+        m->ram[0x7b0u]=1u;m->ram[0x7c1u]=2u;
+        m->ram[0x200u]=(unsigned char)(mode==46u?(0x80u|(n&7u)):2u);
+        m->ram[0x201u]=(unsigned char)(mode==44u?n:2u);
+        m->ram[0x202u]=0x11u;
+        m->ram[0xf0u]=(unsigned char)p;
+        m->ram[0x7c4u]=(unsigned char)(mode==44u?0xffu:n);
+        m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
     }else if(mode==35u){
         m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
         m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
@@ -177,7 +199,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>35u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>47u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
@@ -192,7 +214,9 @@ int main(int argc,char **argv)
             memcpy(d->machine->apu.registers,live_apu,24u);
         }
         memset(record,0,sizeof(record));
-        index=mode<5u||mode>=14u?0u:mode-4u;entry=mode==27u?0xf6f5u:entries[index];
+        index=mode<5u||mode>=14u?0u:mode-4u;
+        entry=mode>=36u&&mode<=43u?0xf8cbu:(mode==27u?0xf6f5u:entries[index]);
+        if(mode>=36u&&mode<=43u)d->machine->a=(unsigned char)(mode-36u);
         if(mode==27u)d->machine->y=(unsigned char)n;
         d->machine->pc=(unsigned short)entry;d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
