@@ -853,3 +853,28 @@ Ignored build/m2-t68-s5 holds modes7/36/51/20, actual indexed coverage and
 build/test summaries. Raw deleted per batch; recorder deleted at closure.
 Registry,ledger,progress and documentation gates required before P2 commit.
 Unrelated owner work preserved unstaged. S6 remains unadmitted.
+
+## S6 admission - full cohort census and cross-chain integration
+
+Exact77 scoped labels, all already exact; intended fresh empty, maximum1919/1992:
+NoDecEnv2; DeathMAltReg; DoAltLoad; HandleTriangleMusic; TriNoteHandler; NotDOrD4; MediN; LongN; LoadTriCtrlReg; HandleNoiseMusic; FetchNoiseBeatData; NoiseBeatHandler; StrongBeat; LongBeat; SilentBeat; PlayBeat; ExitMusicHandler; AlternateLengthHandler; ProcessLengthData; LoadControlRegs; NotECstlM; WaterMus; AllMus; LoadEnvelopeData; LoadUsualEnvData; LoadWaterEventMusEnvData; MusicHeaderData; TimeRunningOutHdr; Star_CloudHdr; EndOfLevelMusHdr; ResidualHeaderData; UndergroundMusHdr; SilenceHdr; CastleMusHdr; VictoryMusHdr; GameOverMusHdr; WaterMusHdr; WinCastleMusHdr; GroundLevelPart1Hdr; GroundLevelPart2AHdr; GroundLevelPart2BHdr; GroundLevelPart2CHdr; GroundLevelPart3AHdr; GroundLevelPart3BHdr; GroundLevelLeadInHdr; GroundLevelPart4AHdr; GroundLevelPart4BHdr; GroundLevelPart4CHdr; DeathMusHdr; Star_CloudMData; GroundM_P1Data; SilenceData; GroundM_P2AData; GroundM_P2BData; GroundM_P2CData; GroundM_P3AData; GroundM_P3BData; GroundMLdInData; GroundM_P4AData; GroundM_P4BData; DeathMusData; GroundM_P4CData; CastleMusData; GameOverMusData; TimeRunOutMusData; WinLevelMusData; UndergroundMusData; WaterMusData; EndOfCastleMusData; VictoryMusData; FreqRegLookupTbl; MusicLengthLookupTbl; EndOfCastleMusicEnvData; AreaMusicEnvData; WaterEventMusEnvData; BowserFlameEnvData; BrickShatterEnvData.
+Current1919/1992 nodes,3964/4279 controls(raw4342,infeasible63),500/555 material
+partial; historical1992/1992 separate, expectedMatches empty. N footprint77
+nodes,56 raw controls(49 exact/7 source-proven infeasible),92 exact material.
+S1-S5 accepted source/route contracts are prerequisites; S6 owns their joins
+and integrated regression, not repetition of every exhaustive member matrix.
+Shared audio.c remains sole game owner. Entry real F2D0 SoundEngine, exit real
+RTS8001; accepted M selection/header/channel owners execute as real boundaries.
+Earlier C73 and M alias debt remain explicit later cross-cohort work, no credit.
+
+ROM track: Actual unchanged original SoundEngine sequential16 event/area selectors, mixed sound/music queues and title/pause state routes; compare1841 RAM/24 APU/ordered output x86/x64. Independently census accepted77 node/56 raw control/92 material proofs and external boundary ownership; no zero-observation inference.
+Operational: full x86/x64 CTest matrix/current product builds, original OpenNT
+DOS16 link/platform purity;3 products retained byte-identical if no game change.
+Stop on any scoped discrepancy, missing prior proof or boundary custody.
+Closure requires every77 node and every49 feasible control/92 material proof
+accounted,7 infeasible opcode proofs retained, cross-chain routes zero diff.
+Similar-issue sweep: selection/header offsets, stream/table consumers, original
+queue priority/pause/zero/loopback and ordered channel output boundaries.
+Owner-local ROM/reviewed ASM research only, nonredistributable. Ignored
+build/m2-t68-s6,128MiB raw,1024 roots/batch,120seconds/process,524288steps/root;
+coordinator removes raw per batch and retains neutral summaries only.

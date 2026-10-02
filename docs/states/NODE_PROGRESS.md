@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T68 S6 - active cohort integration
+
+[Full77-node/56-control/92-material census](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+scope already exact,intended fresh0,max1919/1992. Current1919/1992 nodes,
+3964/4279 controls(raw4342,infeasible63),500/555 material partial;historical
+1992/1992 separate. Actual cross-chain proof/integrated regression required.
+
 ## M2 T68 S5 - closed final table chain
 
 [All7 tables/7 material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
