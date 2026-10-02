@@ -38936,13 +38936,15 @@
       "label": "EnemyLanding",
       "asmLine": 12671,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c:mysmb_world_land_enemy",
-      "currentCounterpart": "mysmb_world_land_enemy",
+      "currentCounterpart": "mysmb_world_land_enemy invokes exact InitVStf semantics",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S24 static audit: SMB1 EnemyLanding calls InitVStf to clear Enemy_Y_Speed and Enemy_Y_MoveForce, then masks Enemy_Y_Position with $f0 and ORs $08; shared world/collision.c performs the same ordered writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S24 controlled original-ROM EnemyLanding entries: two Y low-nibble cases replay on current x86/x64 with zero differences in Y speed, move force and aligned Y; focused chain, terrain-state and purity CTests pass."
+      ],
       "semanticContract": "Initializes vertical movement state and aligns Enemy_Y_Position to its high nibble plus bit d3.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -105170,12 +105172,14 @@
       "instruction": "jsr",
       "id": "control-02675",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_world_land_enemy directly sequences the InitVStf writes",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S24 static audit: SMB1 EnemyLanding calls InitVStf to clear Enemy_Y_Speed and Enemy_Y_MoveForce, then masks Enemy_Y_Position with $f0 and ORs $08; shared world/collision.c performs the same ordered writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S24 controlled original-ROM EnemyLanding entries: two Y low-nibble cases replay on current x86/x64 with zero differences in Y speed, move force and aligned Y; focused chain, terrain-state and purity CTests pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain call relation EnemyLanding Ã¢â€ â€™ InitVStf, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",

@@ -915,3 +915,9 @@ source-owned audits. Current totals: historical mapping **1,992 / 1,992**;
 current exact nodes **1,441 / 1,992**; current exact feasible controls
 **3,016 / 4,324** (raw **4,342**, infeasible **18**); exact material relations
 **358 / 487**.
+
+## S24 admission and closure — EnemyLanding
+
+S24 admits $E14F-: EnemyLanding, owned by src/game/world/collision.c:mysmb_world_land_enemy; control-02675 is its InitVStf call. Static comparison shows the shared C implementation clears vertical speed and force before setting Y to its high nibble plus 8. Two controlled original-ROM landing entries with distinct Y low nibbles replay with zero x86/x64 differences in those outputs. Focused chain, terrain-state and platform-purity CTests pass. No product C changed, so no EXE refresh is due.
+
+S24 records EnemyLanding and control-02675 exact. Current totals: historical **1,992 / 1,992**; current exact nodes **1,442 / 1,992**; current exact feasible controls **3,017 / 4,324** (raw **4,342**, infeasible **18**).

@@ -1,12 +1,14 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)] [string]$NnesSourceDirectory,
-    [Parameter(Mandatory = $true)] [string]$OutputDirectory
+    [Parameter(Mandatory = $true)] [string]$OutputDirectory,
+    [string]$ProbeSource = (Join-Path $PSScriptRoot 'reference_player_difference_probe.c'),
+    [string]$TargetName = 'mysmb_reference_player_difference_probe'
 )
 $ErrorActionPreference = 'Stop'
 $sourceRoot = (Resolve-Path -LiteralPath $NnesSourceDirectory).Path
 $outputRoot = [System.IO.Path]::GetFullPath($OutputDirectory)
-$probe = Join-Path $PSScriptRoot 'reference_player_difference_probe.c'
+$probe = [System.IO.Path]::GetFullPath($ProbeSource)
 if (-not (Test-Path -LiteralPath (Join-Path $sourceRoot 'CMakeLists.txt')) -or
     -not (Test-Path -LiteralPath $probe)) { throw 'The local nnes source or player-difference probe is unavailable.' }
 New-Item -ItemType Directory -Path $outputRoot -Force | Out-Null
@@ -25,12 +27,12 @@ endfunction()
 add_subdirectory("@NNES@/src/lib" nxvm-lib EXCLUDE_FROM_ALL)
 add_subdirectory("@NNES@/src/common" nxvm-common EXCLUDE_FROM_ALL)
 add_subdirectory("@NNES@/src/app-mynes/core" mynes-core EXCLUDE_FROM_ALL)
-add_executable(mysmb_reference_player_difference_probe "@PROBE@")
-target_include_directories(mysmb_reference_player_difference_probe PRIVATE "@NNES@/src/app-mynes" "@NNES@/src/lib")
-target_link_libraries(mysmb_reference_player_difference_probe PRIVATE mynes-core-driver)
-'@.Replace('@NNES@', $escapedNnes).Replace('@PROBE@', $escapedProbe) |
+add_executable(@TARGET@ "@PROBE@")
+target_include_directories(@TARGET@ PRIVATE "@NNES@/src/app-mynes" "@NNES@/src/lib")
+target_link_libraries(@TARGET@ PRIVATE mynes-core-driver)
+'@.Replace('@NNES@', $escapedNnes).Replace('@PROBE@', $escapedProbe).Replace('@TARGET@', $TargetName) |
     Set-Content -LiteralPath (Join-Path $outputRoot 'CMakeLists.txt') -Encoding ascii
 cmake -S $outputRoot -B (Join-Path $outputRoot 'build')
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-cmake --build (Join-Path $outputRoot 'build') --target mysmb_reference_player_difference_probe --parallel
+cmake --build (Join-Path $outputRoot 'build') --target $TargetName --parallel
 exit $LASTEXITCODE

@@ -2349,3 +2349,9 @@ feasible controls (raw **4,342**, infeasible **18**).
 ## M2 T64 S21 closure — bump and Hammer Bro response entry
 
 `ChkForBump_HammerBroJ` and `NoBump` are current-exact. Five controlled original-ROM `$E124` entries cover the slot-five BEQ, state-clear BCC, sound fallthrough, ordinary `InvEnemyDir` tail, and Hammer `SetHJ` handoff. The current x86/x64 checkers replay all five records with zero differences. Static `$E124-$E131`, focused jump/Hammer and terrain-state tests, and platform purity agree. S21 adds two nodes and five feasible controls: current **1,439 / 1,992** nodes and **3,015 / 4,324** feasible controls; historical mapping remains **1,992 / 1,992**. No product C changed, so package EXEs were not refreshed.
+
+## M2 T64 S24 — EnemyLanding
+
+- Completed: EnemyLanding; its InitVStf call relation is exact.
+- Direct original-ROM landing records and x86/x64 owner replay have zero Y speed, force or aligned-Y differences; focused chain and purity tests pass.
+- Current exact progress: nodes **1,441 → 1,442 / 1,992**; feasible controls **3,016 → 3,017 / 4,324** (raw **4,342**, infeasible **18**).
