@@ -83,6 +83,44 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==76u||mode==77u){
+        static const unsigned char hammer_states[4]={0x80u,0x81u,0x82u,0x90u};
+        static const unsigned char misc_states[10]={0u,1u,2u,0x2fu,0x30u,0x7fu,0x80u,0x81u,0x82u,0x90u};
+        unsigned int j,slot=p%9u,parent=4u+(p&1u);
+        m->ram[8u]=(unsigned char)slot;m->ram[9u]=(unsigned char)p;
+        m->ram[0x747u]=(unsigned char)((p&8u)?1u:0u);m->ram[0x3d6u]=0xffu;
+        m->ram[0x71au]=2u;m->ram[0x71cu]=(unsigned char)(p*7u);
+        m->ram[0x71bu]=(unsigned char)(2u+(m->ram[0x71cu]?1u:0u));
+        m->ram[0x71du]=(unsigned char)(m->ram[0x71cu]-1u);
+        m->ram[0x775u]=(unsigned char)(p*3u);
+        for(j=0u;j<9u;++j){
+            m->ram[0x6aeu+j]=(unsigned char)parent;
+            m->ram[0x7au+j]=2u;m->ram[0x93u+j]=(unsigned char)n;
+            m->ram[0xdbu+j]=(unsigned char)(p*13u);m->ram[0xc2u+j]=1u;
+            m->ram[0xacu+j]=(unsigned char)((p&16u)?5u:0xfbu);
+            m->ram[0x64u+j]=(unsigned char)((p&1u)?0xf0u:0x10u);
+            m->ram[0x4a2u+j]=7u;m->ram[0x6f3u+j]=(unsigned char)(0x20u+j*8u);
+            m->ram[0x416u+13u+j]=(unsigned char)n;
+            m->ram[0x433u+13u+j]=(unsigned char)(p*17u);
+            m->ram[0x400u+13u+j]=(unsigned char)(n*17u);
+        }
+        m->ram[0x2au+slot]=mode==76u?hammer_states[(p>>1u)&3u]:misc_states[(p>>1u)%10u];
+        m->ram[0x87u+parent]=(unsigned char)n;m->ram[0x6eu+parent]=(unsigned char)((p&32u)?3u:2u);
+        m->ram[0xcfu+parent]=(unsigned char)(p*13u);
+        m->ram[0x46u+parent]=(unsigned char)((p&1u)+1u);m->ram[0x1eu+parent]=(unsigned char)n;
+    }else if(mode>=78u&&mode<=81u){
+        unsigned int j,slot=p&1u;
+        m->ram[8u]=(unsigned char)slot;m->ram[0x753u]=(unsigned char)(p&1u);
+        m->ram[0x770u]=(unsigned char)((p&16u)?0u:1u);
+        m->ram[0x75eu]=(unsigned char)n;m->ram[0x75au]=(unsigned char)(p*13u);
+        m->ram[0x300u]=(unsigned char)n;m->ram[0x748u]=(unsigned char)(n+p);
+        m->ram[0x76u+slot]=(unsigned char)p;m->ram[0x8fu+slot]=(unsigned char)n;
+        m->ram[0xd7u+slot]=(unsigned char)(p*13u);m->ram[0x3eau+slot]=(unsigned char)p;
+        m->ram[6u]=(unsigned char)n;m->ram[2u]=(unsigned char)(p*16u);
+        for(j=0u;j<3u;++j)m->ram[0x30u+j]=(unsigned char)((p&(4u<<j))?1u:0u);
+        for(j=0u;j<36u;++j)m->ram[0x7d7u+j]=(unsigned char)((n+j+p)%10u);
+        for(j=0u;j<6u;++j)m->ram[0x134u+j]=(unsigned char)(mode==81u?n+p*17u+j:0u);
+        if(mode==78u)m->p=(unsigned char)((m->p&0xfeu)|((p>>1u)&1u));
     }else if(mode==73u){
         unsigned int j;
         m->ram[8u]=5u;m->ram[9u]=(unsigned char)p;
@@ -424,6 +462,8 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
     if(mode==72u)m->x=(unsigned char)p;
     if(mode==73u)m->x=(unsigned char)((p&8u)?4u:5u);
     if(mode==74u)m->x=(unsigned char)(p%3u);
+    if(mode==76u)m->x=(unsigned char)(p%9u);
+    if(mode==78u||mode==79u)m->x=(unsigned char)(p&1u);
 }
 int main(int argc,char **argv)
 {
@@ -435,7 +475,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>75u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>81u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -498,6 +538,12 @@ int main(int argc,char **argv)
         if(mode==73u)entry=0xb94bu;
         if(mode==74u)entry=0xba33u;
         if(mode==75u)entry=0xb9bcu;
+        if(mode==76u)entry=0xbac3u;
+        if(mode==77u)entry=0xbb96u;
+        if(mode==78u)entry=0xbb38u;
+        if(mode==79u)entry=0xbb51u;
+        if(mode==80u)entry=0xbbfeu;
+        if(mode==81u)entry=0xbc27u;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -508,6 +554,7 @@ int main(int argc,char **argv)
         d->machine->pc=(unsigned short)entry;d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
         record[0]=(unsigned char)entry;record[1]=(unsigned char)(entry>>8u);
+        if(mode==78u)record[7]=(unsigned char)(d->machine->p&1u);
         record[2]=d->machine->a;record[3]=d->machine->x;record[4]=d->machine->y;
         memcpy(record+16,d->machine->ram,2048u);memcpy(record+2064,d->machine->apu.registers,24u);
         writes=0;
@@ -518,6 +565,11 @@ int main(int argc,char **argv)
                 ++setup_reads[0][0x90e7u+d->machine->y];
             if(mode==62u&&pc==0x91f6u&&op==0xbcu)
                 ++setup_reads[0][0x91bdu+d->machine->x];
+            if(mode>=78u&&pc>=0xbbfeu&&pc<0xbc36u&&(op==0xbcu||op==0xb9u)){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                unsigned int kind=base==0xbbf8u?0u:(base==0xbbfau?1u:(base==0xbbfcu?2u:3u));
+                if(kind<3u)++lookup_reads[kind][base+(op==0xbcu?d->machine->x:d->machine->y)];
+            }
             if(mode==73u&&pc==0xb956u&&op==0xd9u)++lookup_reads[0][0xb949u+d->machine->y];
             if(mode>=70u&&pc>=0xb689u&&pc<0xb74bu&&(op==0xb9u||op==0xf9u)){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);

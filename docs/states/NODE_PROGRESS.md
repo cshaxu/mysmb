@@ -1,11 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S9 - active hammer/coin/score joins
+## M2 T69 S9 - closed hammer/coin/score joins
 
-[Exact29 existing labels/36 pending controls/3 material](../proposals/m2/t69-cross-cohort-current-proof.md)
-intended fresh0,max1992/1992.Current1992/1992 scoped-exact nodes,
-4116/4277 controls(raw4342,infeasible65),537/555 material partial;
-historical1992/1992 separate.Both proof tracks required;S10 unadmitted.
+[All36 controls/3 material,29 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+close with zero fresh node credit.Current1992/1992 scoped-exact nodes,
+4152/4277 controls(raw4342,infeasible65),540/555 material partial;
+historical1992/1992 separate.393216 original roots each width zero diff,
+all36 actual joins observed,6 score table bytes independently equal/read;
+12 tests each/purity/current builds/OpenNT link pass.No product repair,
+3 EXEs retained byte-identical.No scoped deferral.T69 open,S10 next unadmitted;
+125 controls/15 material and M alias scope plus integrated proof remain.
 
 ## M2 T69 S8 - closed vine/cannon cross-owner joins
 

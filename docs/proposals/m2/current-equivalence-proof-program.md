@@ -454,3 +454,14 @@ width equal,all29 actual joins observed,12 tests each/purity/current builds/
 OpenNT link pass,3 EXEs refreshed after shared offscreen/graphics/RAM00
 handoff repair.T69 open,S9 next unadmitted;161 controls/18 material and earlier
 M alias scope plus integrated proof remain.
+
+## Current checkpoint after T69 S9
+
+[T69 S9](t69-cross-cohort-current-proof.md) closes36 controls/3 material,29
+existing labels rechecked with zero fresh node credit.Current1992/1992
+scoped-exact nodes,4152/4277 controls(raw4342,infeasible65),540/555 material
+partial;historical1992/1992 separate.393216 original roots each width equal,
+all36 actual joins observed,12 tests each/purity/current builds/OpenNT link
+pass.No product repair,3 S8 products retained byte-identical.T69 open,S10
+next unadmitted;125 controls/15 material and earlier M alias scope plus
+integrated proof remain.

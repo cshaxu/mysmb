@@ -1284,3 +1284,115 @@ nonredistributable,no third-party import.Ignored build/m2-t69-s9;raw<=128MiB,
 deletes raw per batch and probe at closure.Similar-issue sweep:slot restore,
 carry/borrow through allocation/ASL/math,temporary RAM handoff,table indices,
 status buffer offsets and child order.
+
+## S9 P2 closure - actual hammer/coin/score joins, no product repair
+
+All36 planned control relations and material-00101/00102/00103 exact.All29
+existing labels rechecked:PrintStatusBarNumbers; DigitsMathRoutine; ProcHammerObj; RunAllH; RunHSubs; CoinBlock; SetupJumpCoin; JCoinC; FindEmptyMiscSlot; MiscLoop; JCoinRun; RunJCSubs; CoinTallyOffsets; ScoreOffsets; StatusBarNybbles; GiveOneCoin; AddToScore; GetSBNybbles; UpdateNumber; MoveObjectHorizontally; ImposeGravity; PlayerHammerCollision; GetMiscBoundBox; DrawHammer; JCoinGfxHandler; RelativeMiscPosition; GetMiscOffscreenBits; MiscObjectsCore; HammerXSpdData.Zero fresh node credit,
+no scoped deferral.Current1992/1992 scoped-exact nodes,4116->4152/4277
+feasible controls(raw4342,infeasible65),537->540/555 material partial;
+historical1992/1992 separate.T69 open,S10 next unadmitted;125 controls/15
+material and earlier M alias scope plus integrated certification remain.
+No all-state/whole-game certification inferred from node numerator.
+
+Original BAC3-BC48 source reviewed first against shared hammer.c,coin.c,
+misc.c,score.c and existing children. ProcHammerObj uses TimerControl gate,
+masked state,live parent offset,source motion slot+0D and00/01/02 forces;
+released state2 sets FE speed/parent-state bit3 clear and direction-minus1
+speed;parent X+2/page carry,Y-0A then state decrement and original movement/
+collision/offscreen/relative/box/OAM order. MiscObjectsCore traverses8..0,
+stores ObjectOffset even empty,high-bit dispatches hammer;coin state1 uses
+actual gravity and Yspeed5 transition,other states increment and scroll
+carry,retire exactly30,then relative/offscreen/box/graphics in source order.
+
+CoinBlock/SetupJumpCoin use real FindEmptyMiscSlot8/7/6 fallback8;CPY after
+DEY sets carry while initially-free8 preserves it. CoinBlock preserves that
+carry to SBC10. SetupJumpCoin four ASLs leave column bit4 in carry for row
+ADC20;low coordinate uses shifted nibble OR5. Shared JCoinC sets FB speed,
+high/state/sound1,ObjectOffset,actual GiveOneCoin,then increments separate
+1-up tally after return. GiveOneCoin sets modifier+5 then coin math;INC tally
+rolls at100 to zero/life increment/sound40,then modifier+4=2 and score tail.
+AddToScore reads current player for math;GetSBNybbles rereads it after math;
+UpdateNumber invokes actual PrintStatusBarNumbers and then reads live buffer
+offset for absolute02FB+Y zero suppression,finally original ObjectOffset
+reload. All source child-order/read/write/carry contracts remain unchanged.
+
+Final393216 unchanged original returning roots per width zero diff:mode76
+ProcHammerObj,77 MiscObjectsCore,78 CoinBlock,79 SetupJumpCoin,80 GiveOneCoin,
+81 AddToScore,each65536. Hammer/misc vary all byteX,256 profiles,slots0-8,
+parent4/5/facing1/2,held/released/flying/freeze state,scroll/page carry,Yspeed,
+vertical/horizontal fractional motion,offscreen screen extents and OAM slots.
+Misc covers empty,1,2,2F,30,7F and80/81/82/90. Hammer collision starts with
+FF offscreen to bound that child to its source exit;actual call/return handoff
+is proven,not new injury branch coverage. Coin/score vary all byte buffer
+positions/coin tally,CurrentPlayer0/1,mode0/1,allocation occupancy patterns,
+block slot0/1 and coordinates,entry carry0/1,column bit4 carry,all digit
+modifier bytes and valid decimal digit patterns. Controlled profiles are
+not a claim all combinations occur in play. No replaced/mock child/ROM patch.
+
+Full2032 persistent RAM including OAM,24 APU and ordered writes/counts equal;
+only01F0-01FF physical stack/sentinel excluded,minSP F2. CPU registers/flags
+outside native C ABI;CoinBlock's meaningful input carry explicitly recorded
+in neutral record byte7 and passed to its declared C entry. All36 site/targets
+independently verified against source/opcodes;return evidence filters actual
+RTS60 to call-site+3 rather than any branch/fall-through to that PC. Six native
+score table bytes independently equal BBF8-BBFD;all source-valid indices0/1
+observed. Actual lookup counts:bbf8:98304; bbf9:98304; bbfa:131072; bbfb:131072; bbfc:131072; bbfd:131072. Existing HammerXSpdData BA92/BA93
+also independently equals10/F0. Similar-issue sweep audits all admitted
+allocation/ASL/page carry,parent/slot restoration and three live player table
+reads,coin rollover/sound,buffer wrap/zero suppression and actual child order;
+no scoped product mismatch found and no production code changed.
+
+| ID | Original/shared join | Type | Original observations |
+| --- | --- | --- | --- |
+| `control-01231` | ProcHammerObj -> ImposeGravity | call | 22528 |
+| `control-01232` | ProcHammerObj -> MoveObjectHorizontally | call | 22528 |
+| `control-01237` | RunAllH -> PlayerHammerCollision | call | 22528 |
+| `control-01239` | RunHSubs -> GetMiscOffscreenBits | call | 91136 |
+| `control-01240` | RunHSubs -> RelativeMiscPosition | call | 91136 |
+| `control-01241` | RunHSubs -> GetMiscBoundBox | call | 91136 |
+| `control-01242` | RunHSubs -> DrawHammer | call | 91136 |
+| `control-01247` | JCoinC -> GiveOneCoin | call | 131072 |
+| `control-01255` | MiscLoop -> ProcHammerObj | call | 25600 |
+| `control-01260` | JCoinRun -> ImposeGravity | call | 6656 |
+| `control-01263` | RunJCSubs -> RelativeMiscPosition | call | 26624 |
+| `control-01264` | RunJCSubs -> GetMiscOffscreenBits | call | 26624 |
+| `control-01265` | RunJCSubs -> GetMiscBoundBox | call | 26624 |
+| `control-01266` | RunJCSubs -> JCoinGfxHandler | call | 26624 |
+| `control-01269` | GiveOneCoin -> DigitsMathRoutine | call | 196608 |
+| `control-01273` | AddToScore -> DigitsMathRoutine | call | 262144 |
+| `control-01276` | UpdateNumber -> PrintStatusBarNumbers | call | 262144 |
+| `control-03707` | ImposeGravity -> ProcHammerObj | return | 22528 |
+| `control-03708` | MoveObjectHorizontally -> ProcHammerObj | return | 22528 |
+| `control-03709` | PlayerHammerCollision -> RunAllH | return | 22528 |
+| `control-03710` | GetMiscOffscreenBits -> RunHSubs | return | 91136 |
+| `control-03711` | RelativeMiscPosition -> RunHSubs | return | 91136 |
+| `control-03712` | GetMiscBoundBox -> RunHSubs | return | 91136 |
+| `control-03713` | DrawHammer -> RunHSubs | return | 91136 |
+| `control-03714` | FindEmptyMiscSlot -> CoinBlock | return | 65536 |
+| `control-03715` | FindEmptyMiscSlot -> SetupJumpCoin | return | 65536 |
+| `control-03716` | GiveOneCoin -> JCoinC | return | 131072 |
+| `control-03717` | ProcHammerObj -> MiscLoop | return | 25600 |
+| `control-03718` | ImposeGravity -> JCoinRun | return | 6656 |
+| `control-03719` | RelativeMiscPosition -> RunJCSubs | return | 26624 |
+| `control-03720` | GetMiscOffscreenBits -> RunJCSubs | return | 26624 |
+| `control-03721` | GetMiscBoundBox -> RunJCSubs | return | 26624 |
+| `control-03722` | JCoinGfxHandler -> RunJCSubs | return | 26624 |
+| `control-03723` | DigitsMathRoutine -> GiveOneCoin | return | 196608 |
+| `control-03724` | DigitsMathRoutine -> AddToScore | return | 262144 |
+| `control-03725` | PrintStatusBarNumbers -> UpdateNumber | return | 262144 |
+
+Operational:12 focused tests each width pass(hammer chain/contact,coin
+allocation,misc lifetime/OAM,score HUD,status arithmetic,box core/clip,title,
+NMI,purity);current x86/x64 builds and original OpenNT DOS16 link pass.
+Inherited OLDNAMES.LIB warning remains;no interactive DOS claim.Pure audit:
+all3 committed S8 products still equal current outputs,unchanged:
+
+- `mysmb16.exe`: 261383 bytes, SHA256 `1d1de5e025116c03cfc69a7298fc72719de00c3a3f8800bac4adcdc9d103f77c`; S8 product retained byte-identical.
+- `mysmb32.exe`: 374811 bytes, SHA256 `584d48e75eca43f0a59989558d2d953f604312ce86cd6762a33fbf9d2c0ac600`; S8 product retained byte-identical.
+- `mysmb64.exe`: 382348 bytes, SHA256 `0fd90ebd4ba59b42571da291c5a4cc0e14a9f32cf9f805d7efd563db4b717e1a`; S8 product retained byte-identical.
+
+Raw bounded128MiB/1024 batch/120seconds process/524288steps root and deleted
+per batch;probe deleted at closure,neutral ignored summaries/logs retained.
+Registry/ledger/progress/documentation/diff gates required before local P2
+commit;unrelated work preserved,no push,no S10 pre-credit.
