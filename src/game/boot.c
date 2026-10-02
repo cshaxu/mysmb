@@ -112,7 +112,9 @@ void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y)
 
     page = 0x07U;
     offset = initial_y;
+    game->ram[0x0006U] = 0U;
     do {
+        game->ram[0x0007U] = page;
         do {
             if (page != 0x01U || offset < 0x60U) {
                 game->ram[(mysmb_u16)((mysmb_u16)page * 0x0100U + offset)] = 0U;

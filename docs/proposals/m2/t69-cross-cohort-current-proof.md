@@ -352,3 +352,140 @@ unconditional source stores and default indexed OAM regions.
 Owner-local ROM/reviewed ASM research only,nonredistributable,no import.
 Ignored build/m2-t69-s2,128MiB raw,1024 roots/batch,120seconds/process,
 524288steps/root;coordinator deletes raw per batch and retains neutral summaries.
+
+## S2 P2 closure - complete initialization chain source repair
+
+All21 intended labels exact: DefaultSprOffsets; Sprite0Data; InitializeGame; ClrSndLoop; InitializeArea; ClrTimersLoop; StartPage; SetInitNTHigh; SetSecHard; CheckHalfway; DoneInitArea; PrimaryGameSetup; SecondaryGameSetup; ClearVRLoop; ShufAmtLoop; ISpr0Loop; InitializeMemory; InitPageLoop; InitByteLoop; InitByte; SkipByte.42 scoped controls and2
+material relations exact,zero scoped deferral/transfer. Investigated GetAreaMusic,
+DoNothing1 and DoNothing2 are actual dependencies with no new node credit;
+their independent remaining contracts stay in S3/S5. Current1938->1959/1992
+nodes,3993->4035/4278 feasible controls(raw4342,infeasible64),502->504/555
+material partial. Historical1992/1992 separate;expected/actualMatches empty.
+T69 open,S3 next unadmitted;33 nodes/243 feasible controls/51 enumerated
+material rows and earlier M alias debt remain. No whole-game equivalence claim.
+
+| Node | Manual original/current contract |
+| --- | --- |
+| `DefaultSprOffsets` | Existing15 native bytes equal original8FBC-8FCB;actual SecondaryGameSetup absolute-X reads all entries descending14 to0 into6E4-6F2. |
+| `Sprite0Data` | Existing4 native bytes equal original8FCB-8FCF;actual SecondaryGameSetup absolute-Y reads descending3 to0 into200-203. |
+| `InitializeGame` | InitializeMemory Y6F;descending sound clear;demo timer18;actual LoadAreaPointer then InitializeArea fallthrough translated as actual shared child. |
+| `ClrSndLoop` | Original A0 survives InitializeMemory;clear7CF down7B0 with original descending index31 to0 before demo timer and pointer child. |
+| `InitializeArea` | InitializeMemory Y4B then timer clear/start-page/screen-border/header/hard-mode/halfway/music-disable/task chain in original order with actual children. |
+| `ClrTimersLoop` | Clear7A1 down780 with descending X21 to0,not final-state-only ascending substitution. |
+| `StartPage` | Select HalfwayPage unless AltEntranceControl nonzero selects EntrancePage;store screen/current/backloading in order and call actual GetScreenPosition. |
+| `SetInitNTHigh` | Page parity chooses NT high20/24;low80;shift masked parity four times into block-column;DEC three object lengths;column sets0B;actual GetAreaDataAddrs. |
+| `SetSecHard` | Primary-hard nonzero or world>4 or world4/level>=2 increments secondary-hard byte;other branches skip increment. |
+| `CheckHalfway` | Nonzero HalfwayPage overrides header PlayerEntranceCtrl with2;zero retains actual loaded header value. |
+| `DoneInitArea` | Store Silence80 area queue;DisableScreen1;byte INC OperMode_Task;return after actual header and overrides. |
+| `PrimaryGameSetup` | Store timer-fetch1/player-size1/lives2/offscreen-lives2 then original fallthrough implemented by actual SecondaryGameSetup child;frame root duplicate removed. |
+| `SecondaryGameSetup` | DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC. |
+| `ClearVRLoop` | Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields. |
+| `ShufAmtLoop` | Shuffle amounts+2=38,+1=48,+0=58 first;load existing default offsets descending14 to0 into sprite offsets. |
+| `ISpr0Loop` | Load existing sprite0 bytes descending3 to0;actual DoNothing2 then DoNothing1 leaves;INC sprite0-hit then mode-task,not fixed task3. |
+| `InitializeMemory` | Set X7,A0,STA06 then STX07 per page;initial Y caller byte on page7 then FF for lower pages;skip160-1FF and return through actual stack. |
+| `InitPageLoop` | Store actual page in scratch07 before each descending byte loop;seven-to-zero pages,original sign-tested termination. |
+| `InitByteLoop` | Check page1 and Y>=60 to retain stack;all other bytes enter indirect store,including100-15F. |
+| `InitByte` | Actual indirect scratch06/07 plus byte Y writes zero;native address expression and scratch writes retained,including pointer self-clears on page0. |
+| `SkipByte` | Both store and retained-stack paths decrement byte Y;loop until FF then decrement page;final page sign ends routine. |
+
+### Actual original proof and source-driven repairs
+
+Final5888 unchanged original returning roots each width zero differences:
+InitializeMemory90CC256 caller Y boundaries;SecondaryGameSetup90714096
+mirror/task/page/music-state fixtures;PrimaryGameSetup9061256 actual fallthrough
+fixtures;InitializeArea8FE41024 start-page/hard-mode/header fixtures;
+InitializeGame8FCF256 actual pointer/area-entry fixtures. Area fixtures first
+execute unchanged LoadAreaPointer9C03 to obtain original header-pointer input.
+All child calls are actual original/shared C calls;no patched ROM or mocked
+original child. Existing bound full PRG supplies actual area-pointer/header
+reads. Title/icon presence fields satisfy the C facade precondition only;
+neither resource is read in InitializeGame. CPU A/X/Y/flags have no exported
+C ABI on these entries;success facade is not original A.
+
+Compare2032 RAM bytes,24 APU and ordered writes/counts/indices;only1F0-1FF
+excluded for root sentinel and nested CPU stack. Actual minimum SP is bounded
+above EF in every route,so no excluded game write or deeper CPU stack is
+assumed. Cleared100-15F and retained160-1EF are compared explicitly. All21
+entries/regions,42 control transitions and19 table bytes actually observed;
+existing native OAM tables independently equal original bytes. No new table
+import or raw fixture retained.
+
+Pre-fix256 SecondaryGameSetup roots produced383 RAM differences:original
+byte task INC versus C fixed3 and original778 mirror page-bit replacement.
+Repair restores INC and original LSR/ROR/ROL semantics to the RAM mirror only.
+Source audit also restores primary's real secondary fallthrough and removes
+the compensating duplicate frame-root call;restores actual DoNothing2 then
+DoNothing1 leaves,descending sound/timer/OAM writes,scratch06/07 writes,
+original DEC object-length stores and disable/buffer/music/no-op order.
+Redundant screen-X/scroll stores absent in original were removed. No platform
+or game-rule heuristic added. Similar-issue sweep searched all primary/secondary
+callers and all initialization clears/OAM loops;dispatcher game-mode secondary
+entry remains direct,frame-root title primary entry now calls once. Adjacent
+music/player/life contracts remain in planned S3-S5,not promoted here.
+
+The original probe initially crossed VBlank during long memory clears and
+nested NMI,ending at8153 sprite0 wait rather than root RTS. Recorder now uses
+the real initialization entry's hardware condition:PPU NMI-enable cleared,
+as original NMI prologue does before these calls. It does not alter ROM/RAM,
+skip child code or change game logic. This is a controlled original-entry
+proof,not a claim about complete frame scheduling. Raw removed per1024-root
+batch;only neutral summaries and diagnostic metadata retained below ignored
+build output,probe deleted after closure.
+
+| Control | Original PC | Actual transition observations | Result |
+| --- | --- | --- | --- |
+| `control-00382` | `8fd1` | 256 | exact |
+| `control-00383` | `8fd4` | 256 | exact |
+| `control-00384` | `8fda` | 7936 | exact |
+| `control-00386` | `8fe1` | 256 | exact |
+| `control-00387` | `8fe6` | 1280 | exact |
+| `control-00388` | `8feb` | 1280 | exact |
+| `control-00389` | `8ff1` | 42240 | exact |
+| `control-00390` | `8ff9` | 768 | exact |
+| `control-00391` | `8ffb` | 512 | exact |
+| `control-00393` | `900e` | 768 | exact |
+| `control-00394` | `9010` | 512 | exact |
+| `control-00396` | `9035` | 512 | exact |
+| `control-00397` | `903c` | 512 | exact |
+| `control-00398` | `903e` | 192 | exact |
+| `control-00399` | `9045` | 32 | exact |
+| `control-00400` | `9045` | 32 | exact |
+| `control-00401` | `9047` | 736 | exact |
+| `control-00402` | `904d` | 768 | exact |
+| `control-00403` | `9051` | 512 | exact |
+| `control-00404` | `906e` | 256 | exact |
+| `control-00405` | `9076` | 4352 | exact |
+| `control-00406` | `907b` | 1109760 | exact |
+| `control-00407` | `9097` | 4352 | exact |
+| `control-00408` | `90a9` | 4352 | exact |
+| `control-00409` | `90b2` | 60928 | exact |
+| `control-00410` | `90b4` | 4352 | exact |
+| `control-00411` | `90bd` | 13056 | exact |
+| `control-00412` | `90bf` | 4352 | exact |
+| `control-00413` | `90c2` | 4352 | exact |
+| `control-00414` | `90d0` | 1792 | exact |
+| `control-00415` | `90d2` | 14336 | exact |
+| `control-00416` | `90d6` | 2911360 | exact |
+| `control-00417` | `90da` | 286720 | exact |
+| `control-00418` | `90da` | 172032 | exact |
+| `control-00419` | `90dc` | 3083392 | exact |
+| `control-00420` | `90e1` | 3355776 | exact |
+| `control-00421` | `90e4` | 12544 | exact |
+| `control-03538` | `8fd1` | 256 | exact |
+| `control-03540` | `8fe6` | 1280 | exact |
+| `control-03543` | `9097` | 4352 | exact |
+| `control-03544` | `90bf` | 4352 | exact |
+| `control-03545` | `90c2` | 4352 | exact |
+
+Operational:final x86/x64 product/checker builds and4 focused tests each
+(area-entry,local-title-bootstrap,boot-NMI-boundary,purity) pass. Original
+OpenNT DOS16 link exit0 with inherited OLDNAMES.LIB warning,no interactive DOS
+claim. Platform code unchanged;all repairs reside in shared game owners.
+Product changes refresh all3 EXEs under owner authorization:
+
+- `mysmb16.exe`: 261063 bytes, SHA256 `1bd1304bccb059a3e5a4b06b013be9a5f273a9997178a7f6ea492f23ad5c7f15`; identical to final build.
+- `mysmb32.exe`: 374688 bytes, SHA256 `87c9bb6fc11a5c593478827275ad9e0ac58012c52a269b3a61b931bcbb351401`; identical to final build.
+- `mysmb64.exe`: 381715 bytes, SHA256 `7d5eba3ab7225cfcc12a15b638934f09572140dde4364975d713a74b376c5d1f`; identical to final build.
+
+Registry/ledger/progress/document gates required before commit. Unrelated
+queue/source/proposals preserved unstaged. S3 remains unadmitted at S2 closure.

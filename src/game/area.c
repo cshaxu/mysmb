@@ -197,8 +197,9 @@ void mysmb_area_initialize(struct mysmb_game *game)
     struct mysmb_area_source source;
 
     mysmb_game_initialize_memory(game, 0x4bU);
-    for (index = 0U; index < 0x22U; ++index) {
+    for (index = 0x21U;; --index) {
         game->ram[(mysmb_u16)(MYSMB_AREA_TIMERS + index)] = 0U;
+        if (index == 0U) break;
     }
     /* ROM InitializeArea selects the saved halfway page unless an alternate
      * entrance requests the stream's saved entrance page. */
@@ -209,15 +210,14 @@ void mysmb_area_initialize(struct mysmb_game *game)
     game->ram[MYSMB_AREA_SCREEN_LEFT_PAGE] = start_page;
     game->ram[MYSMB_AREA_CURRENT_PAGE] = start_page;
     game->ram[MYSMB_AREA_BACKLOADING] = start_page;
-    game->ram[MYSMB_AREA_SCREEN_LEFT_X] = 0U;
     mysmb_player_get_screen_position(game);
     game->ram[MYSMB_AREA_NT_HIGH] = (start_page & 1U) != 0U ? 0x24U : 0x20U;
     game->ram[MYSMB_AREA_NT_LOW] = 0x80U;
     /* SetInitNTHigh shifts the parity already selected by StartPage. */
     game->ram[MYSMB_AREA_BLOCK_COLUMN] = (mysmb_u8)((start_page & 1U) << 4U);
-    game->ram[MYSMB_AREA_OBJECT_LENGTH] = 0xffU;
-    game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 1U)] = 0xffU;
-    game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 2U)] = 0xffU;
+    game->ram[MYSMB_AREA_OBJECT_LENGTH]--;
+    game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 1U)]--;
+    game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 2U)]--;
     game->ram[MYSMB_AREA_COLUMN_SETS] = 0x0bU;
     /* InitializeArea calls the complete GetAreaDataAddrs before the
      * hard-mode/halfway overrides and final task advance. */
@@ -226,8 +226,6 @@ void mysmb_area_initialize(struct mysmb_game *game)
         source.prg_size = game->area_prg_size;
         (void)mysmb_area_get_data_addresses(game, &source);
     }
-    game->ram[MYSMB_AREA_SCROLL_X] = 0U;
-    game->ram[MYSMB_AREA_SCROLL_Y] = 0U;
     if (game->ram[MYSMB_PRIMARY_HARD] != 0U ||
         game->ram[MYSMB_WORLD_NUMBER] > 4U ||
         (game->ram[MYSMB_WORLD_NUMBER] == 4U &&

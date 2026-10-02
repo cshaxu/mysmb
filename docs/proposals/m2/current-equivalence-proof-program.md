@@ -380,3 +380,14 @@ separate.196608 final original roots each width zero diff after source repairs;
 current builds/4 focused tests each/purity/OpenNT link pass,3 EXEs refreshed.
 T69 open,S2 next unadmitted;54 nodes/285 controls/53 enumerated material
 rows plus explicit M alias debt remain before certification.
+
+## Current checkpoint after T69 S2
+
+[T69 S2](t69-cross-cohort-current-proof.md) closes21 initialization nodes,
+42 controls/2 material after original task/mirror/call/write-order repairs.
+Current1959/1992 nodes,4035/4278 feasible controls(raw4342,infeasible64),
+504/555 material partial;historical1992/1992 separate.5888 original returning
+roots each width zero diff;4 focused tests each/purity/current builds/OpenNT
+link pass,3 EXEs refreshed together. T69 open,S3 next unadmitted;33 nodes,
+243 feasible controls,51 enumerated material rows plus earlier M alias debt
+remain before certification.

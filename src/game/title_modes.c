@@ -210,8 +210,9 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
      * LoadAreaPointer, then InitializeArea.  In particular, InitializeArea's
      * smaller $4b clear deliberately retains the pointer state just loaded. */
     mysmb_game_initialize_memory(game, 0x6fU);
-    for (index = 0U; index < 0x20U; ++index) {
+    for (index = 0x1fU;; --index) {
         game->ram[(mysmb_u16)(MYSMB_RAM_SOUND_MEMORY + index)] = 0U;
+        if (index == 0U) break;
     }
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
     if (mysmb_area_load_area_pointer(game, &source) == 0U) {

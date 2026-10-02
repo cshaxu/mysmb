@@ -19,6 +19,8 @@ static unsigned long music_reads[4][65536];
 /* Actual absolute-Y reads, grouped by source operand (not inferred song). */
 static unsigned long lookup_reads[7][65536];
 static unsigned long status_reads[2][65536];
+static unsigned long setup_reads[2][65536];
+static unsigned int minimum_stack=0xffu;
 static int ready(core_machine *m)
 {
     core_run_result r;unsigned int i;
@@ -81,6 +83,21 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode>=55u&&mode<=59u){
+        unsigned int j;
+        for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
+        m->ram[0x770u]=1u;m->ram[0x772u]=(unsigned char)(n*17u);
+        m->ram[0x778u]=(unsigned char)n;m->ram[0x71au]=(unsigned char)p;
+        m->ram[0x74eu]=(unsigned char)(p&3u);m->ram[0x743u]=(unsigned char)((p>>2u)&1u);
+        m->ram[0x752u]=(unsigned char)((p&2u)?2u:0u);
+        m->ram[0x710u]=(unsigned char)((p&4u)?6u:0u);
+        m->ram[0x75fu]=(unsigned char)((n>>5u)&7u);
+        m->ram[0x760u]=(unsigned char)((n>>1u)&3u);
+        m->ram[0x75cu]=(unsigned char)((n>>3u)&3u);
+        m->ram[0x75bu]=(unsigned char)((n&1u)?0x11u:0u);
+        m->ram[0x751u]=(unsigned char)(n*13u+3u);
+        m->ram[0x76au]=(unsigned char)((n>>9u)&1u);
+        if(mode==58u)m->ram[0x752u]=(unsigned char)((n&256u)?2u:0u);
     }else if(mode>=52u&&mode<=54u){
         unsigned int j;
         m->ram[0x770u]=1u;m->ram[0x300u]=(unsigned char)p;
@@ -233,6 +250,7 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
     m->a=(unsigned char)n;m->x=(unsigned char)(p%3u*4u);m->y=(unsigned char)(n*13u);
     if(mode==51u)m->y=(unsigned char)n;
     if(mode==53u)m->y=11u;
+    if(mode==55u)m->y=(unsigned char)n;
 }
 int main(int argc,char **argv)
 {
@@ -244,7 +262,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>54u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>59u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -253,6 +271,16 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
     baseline=*d->machine;
+    if(mode>=55u&&mode<=59u){
+        /* These roots run inside NMI after its $2000 NMI-enable clear.
+         * Match that hardware entry condition, so a long memory clear cannot
+         * nest a new frame handler. No ROM, RAM, or child call is replaced. */
+        core_ppu_cpu_write(&baseline.ppu,baseline.cartridge,0u,
+            (unsigned char)(baseline.ppu.control&0x7fu));
+        core_machine_set_ppu_nmi_line(&baseline,LIB_FALSE);
+        baseline.nmi_pending=LIB_FALSE;
+        baseline.nmi_defer_once=LIB_FALSE;
+    }
     h[5]=(unsigned char)mode;for(i=0;i<4;++i)h[8+i]=(unsigned char)(count>>(i*8u));
     f=fopen(argv[2],"wb");if(!f||fwrite(h,1,16,f)!=16)return 65;
     for(n=first;n<first+count;++n){
@@ -272,12 +300,19 @@ int main(int argc,char **argv)
             d->machine->ram[0x7b9u]=5u;d->machine->ram[0x7bau]=1u;
             d->machine->ram[0x7b0u]=43u;
         }
+        if(mode==58u){
+            if(!advance_audio(d->machine,0x9c03u,0x8001u,0u))return 67;
+        }
         memset(record,0,sizeof(record));
         index=mode<5u||mode>=14u?0u:mode-4u;
         boundary=mode==27u||(mode==48u&&n%1024u==0u);
         entry=mode>=36u&&mode<=43u?0xf8cbu:(boundary?0xf6f5u:entries[index]);
         if(mode==51u)entry=0xf8f4u;
         if(mode>=52u&&mode<=54u)entry=mode==52u?0x8f06u:(mode==53u?0x8f5fu:0x8f97u);
+        if(mode>=55u&&mode<=59u){
+            static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
+            entry=setup_entries[mode-55u];
+        }
         if(mode>=36u&&mode<=43u)d->machine->a=(unsigned char)(mode-36u);
         if(mode==27u)d->machine->y=(unsigned char)n;
         if(mode==48u&&boundary)d->machine->y=(unsigned char)(n/1024u+1u);
@@ -288,7 +323,14 @@ int main(int argc,char **argv)
         memcpy(record+16,d->machine->ram,2048u);memcpy(record+2064,d->machine->apu.registers,24u);
         writes=0;
         for(steps=0;steps<524288u&&d->machine->pc!=(boundary?0xf73au:0x8001u);++steps){
-            pc=d->machine->pc;if(pc<0x8000u)return 67;op=prg[pc-0x8000u];++visits[pc];
+            pc=d->machine->pc;if(pc<0x8000u){fprintf(stderr,"reference low PC mode=%u root=%u pc=%04x steps=%u stack=%02x nmi=%u pending=%u control=%02x\n",mode,n,pc,steps,d->machine->s,d->machine->nmi_asserted,d->machine->nmi_pending,d->machine->ppu.control);return 67;}op=prg[pc-0x8000u];++visits[pc];
+            if(d->machine->s<minimum_stack)minimum_stack=d->machine->s;
+            if(pc>=0x9071u&&pc<0x90ccu&&(op==0xb9u||op==0xbdu)){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                unsigned int offset=op==0xb9u?d->machine->y:d->machine->x;
+                if(base==0x8fbcu)++setup_reads[0][(base+offset)&65535u];
+                if(base==0x8fcbu)++setup_reads[1][(base+offset)&65535u];
+            }
             if((op==0xb9u||op==0xbdu)&&pc>=0x8f06u&&pc<0x8fb0u){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 unsigned int offset=op==0xb9u?d->machine->y:d->machine->x;
@@ -350,7 +392,7 @@ int main(int argc,char **argv)
             if(attempt==8192u)return 68;
             if(time(0)-start>110)return 69;
         }
-        if(d->machine->pc!=(boundary?0xf73au:0x8001u))return 67;
+        if(d->machine->pc!=(boundary?0xf73au:0x8001u)){fprintf(stderr,"reference step limit mode=%u root=%u pc=%04x stack=%02x nmi=%u pending=%u control=%02x\n",mode,n,d->machine->pc,d->machine->s,d->machine->nmi_asserted,d->machine->nmi_pending,d->machine->ppu.control);return 67;}
         record[5]=d->machine->a;record[6]=(unsigned char)writes;
         memcpy(record+2088,d->machine->ram,2048u);memcpy(record+4136,d->machine->apu.registers,24u);
         if(mode==24u||mode==48u||mode==49u){
@@ -373,5 +415,7 @@ int main(int argc,char **argv)
     for(n=0;n<4u;++n)for(i=0;i<65536u;++i)if(music_reads[n][i])printf("music-channel=%u address=%04x reads=%lu\n",n,i,music_reads[n][i]);
     for(n=0;n<7u;++n)for(i=0;i<65536u;++i)if(lookup_reads[n][i])printf("lookup-kind=%u address=%04x reads=%lu\n",n,i,lookup_reads[n][i]);
     for(n=0;n<2u;++n)for(i=0;i<65536u;++i)if(status_reads[n][i])printf("status-table=%u address=%04x reads=%lu\n",n,i,status_reads[n][i]);
+    for(n=0;n<2u;++n)for(i=0;i<65536u;++i)if(setup_reads[n][i])printf("setup-table=%u address=%04x reads=%lu\n",n,i,setup_reads[n][i]);
+    printf("minimum-stack=%02x\n",minimum_stack);
     core_driver_destroy(d);return 0;
 }

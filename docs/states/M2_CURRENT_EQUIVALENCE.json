@@ -829,13 +829,16 @@
       "consumer": "SecondaryGameSetup",
       "storage": "15-byte ROM OAM-offset table",
       "feasiblePath": "SecondaryGameSetup copies all 15 offsets before game core starts.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/game.c:default_offsets",
-      "semanticContract": "All 15 bytes retain source order.",
+      "status": "exact",
+      "currentCounterpart": "game.c existing default_offsets/sprite0_data and actual secondary_setup descending indexed consumers",
+      "semanticContract": "Existing15 native bytes equal original8FBC-8FCB;actual SecondaryGameSetup absolute-X reads all entries descending14 to0 into6E4-6F2.",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original region/native existing bytes/index/consumer audited independently."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 all19 bytes actually read by declared original consumer;secondary and primary original roots both widths equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -848,13 +851,16 @@
       "consumer": "SecondaryGameSetup",
       "storage": "four-byte ROM sprite-zero data",
       "feasiblePath": "SecondaryGameSetup copies Sprite0Data to OAM before task 3.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/game.c:sprite0_data",
-      "semanticContract": "All four OAM bytes retain source order.",
+      "status": "exact",
+      "currentCounterpart": "game.c existing default_offsets/sprite0_data and actual secondary_setup descending indexed consumers",
+      "semanticContract": "Existing4 native bytes equal original8FCB-8FCF;actual SecondaryGameSetup absolute-Y reads descending3 to0 into200-203.",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original region/native existing bytes/index/consumer audited independently."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 all19 bytes actually read by declared original consumer;secondary and primary original roots both widths equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -16861,14 +16867,17 @@
       "label": "DefaultSprOffsets",
       "asmLine": 2665,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_secondary_setup default_offsets",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Existing15 native bytes equal original8FBC-8FCB;actual SecondaryGameSetup absolute-X reads all entries descending14 to0 into6E4-6F2."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a69 DefaultSprOffsets: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Existing15 native bytes equal original8FBC-8FCB;actual SecondaryGameSetup absolute-X reads all entries descending14 to0 into6E4-6F2.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -16877,14 +16886,17 @@
       "label": "Sprite0Data",
       "asmLine": 2669,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_secondary_setup sprite0_data",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Existing4 native bytes equal original8FCB-8FCF;actual SecondaryGameSetup absolute-Y reads descending3 to0 into200-203."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a6d Sprite0Data: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Existing4 native bytes equal original8FCB-8FCF;actual SecondaryGameSetup absolute-Y reads descending3 to0 into200-203.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -16893,14 +16905,17 @@
       "label": "InitializeGame",
       "asmLine": 2674,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
-      "currentCounterpart": "mysmb_game_begin_title_bootstrap",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: InitializeMemory Y6F;descending sound clear;demo timer18;actual LoadAreaPointer then InitializeArea fallthrough translated as actual shared child."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a72 InitializeGame: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "InitializeMemory Y6F;descending sound clear;demo timer18;actual LoadAreaPointer then InitializeArea fallthrough translated as actual shared child.",
       "currentSourcePaths": [
         "src/game/title_modes.c"
       ]
@@ -16909,14 +16924,17 @@
       "label": "ClrSndLoop",
       "asmLine": 2678,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Original A0 survives InitializeMemory;clear7CF down7B0 with original descending index31 to0 before demo timer and pointer child."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a76 ClrSndLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original A0 survives InitializeMemory;clear7CF down7B0 with original descending index31 to0 before demo timer and pointer child.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -16925,14 +16943,17 @@
       "label": "InitializeArea",
       "asmLine": 2685,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "mysmb_area_initialize",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: InitializeMemory Y4B then timer clear/start-page/screen-border/header/hard-mode/halfway/music-disable/task chain in original order with actual children."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a7d InitializeArea: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "InitializeMemory Y4B then timer clear/start-page/screen-border/header/hard-mode/halfway/music-disable/task chain in original order with actual children.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -16941,14 +16962,17 @@
       "label": "ClrTimersLoop",
       "asmLine": 2690,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Clear7A1 down780 with descending X21 to0,not final-state-only ascending substitution."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a82 ClrTimersLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Clear7A1 down780 with descending X21 to0,not final-state-only ascending substitution.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -16957,14 +16981,17 @@
       "label": "StartPage",
       "asmLine": 2697,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Select HalfwayPage unless AltEntranceControl nonzero selects EntrancePage;store screen/current/backloading in order and call actual GetScreenPosition."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a89 StartPage: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Select HalfwayPage unless AltEntranceControl nonzero selects EntrancePage;store screen/current/backloading in order and call actual GetScreenPosition.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -16973,14 +17000,17 @@
       "label": "SetInitNTHigh",
       "asmLine": 2705,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Page parity chooses NT high20/24;low80;shift masked parity four times into block-column;DEC three object lengths;column sets0B;actual GetAreaDataAddrs."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0a91 SetInitNTHigh: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Page parity chooses NT high20/24;low80;shift masked parity four times into block-column;DEC three object lengths;column sets0B;actual GetAreaDataAddrs.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -16989,14 +17019,17 @@
       "label": "SetSecHard",
       "asmLine": 2728,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Primary-hard nonzero or world>4 or world4/level>=2 increments secondary-hard byte;other branches skip increment."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0aa8 SetSecHard: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Primary-hard nonzero or world>4 or world4/level>=2 increments secondary-hard byte;other branches skip increment.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17005,14 +17038,17 @@
       "label": "CheckHalfway",
       "asmLine": 2729,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Nonzero HalfwayPage overrides header PlayerEntranceCtrl with2;zero retains actual loaded header value."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0aa9 CheckHalfway: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Nonzero HalfwayPage overrides header PlayerEntranceCtrl with2;zero retains actual loaded header value.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17021,14 +17057,17 @@
       "label": "DoneInitArea",
       "asmLine": 2733,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store Silence80 area queue;DisableScreen1;byte INC OperMode_Task;return after actual header and overrides."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0aad DoneInitArea: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store Silence80 area queue;DisableScreen1;byte INC OperMode_Task;return after actual header and overrides.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17037,14 +17076,17 @@
       "label": "PrimaryGameSetup",
       "asmLine": 2742,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_primary_setup",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store timer-fetch1/player-size1/lives2/offscreen-lives2 then original fallthrough implemented by actual SecondaryGameSetup child;frame root duplicate removed."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0ab6 PrimaryGameSetup: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store timer-fetch1/player-size1/lives2/offscreen-lives2 then original fallthrough implemented by actual SecondaryGameSetup child;frame root duplicate removed.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17053,14 +17095,17 @@
       "label": "SecondaryGameSetup",
       "asmLine": 2750,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_secondary_setup",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0abe SecondaryGameSetup: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17069,14 +17114,17 @@
       "label": "ClearVRLoop",
       "asmLine": 2754,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0ac2 ClearVRLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17085,14 +17133,17 @@
       "label": "ShufAmtLoop",
       "asmLine": 2775,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Shuffle amounts+2=38,+1=48,+0=58 first;load existing default offsets descending14 to0 into sprite offsets."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0ad7 ShufAmtLoop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Shuffle amounts+2=38,+1=48,+0=58 first;load existing default offsets descending14 to0 into sprite offsets.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17101,14 +17152,17 @@
       "label": "ISpr0Loop",
       "asmLine": 2780,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "shared initialization owner",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Load existing sprite0 bytes descending3 to0;actual DoNothing2 then DoNothing1 leaves;INC sprite0-hit then mode-task,not fixed task3."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $0adc ISpr0Loop: source initialization control/data effect and successor handoff map to the named shared-C initialization owner.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Load existing sprite0 bytes descending3 to0;actual DoNothing2 then DoNothing1 leaves;INC sprite0-hit then mode-task,not fixed task3.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17117,14 +17171,17 @@
       "label": "InitializeMemory",
       "asmLine": 2795,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_memory",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Set X7,A0,STA06 then STX07 per page;initial Y caller byte on page7 then FF for lower pages;skip160-1FF and return through actual stack."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Clears pages $0700 down through $0000 from caller-supplied Y, preserving $0160-$01ff and decrement-loop page/byte order.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Set X7,A0,STA06 then STX07 per page;initial Y caller byte on page7 then FF for lower pages;skip160-1FF and return through actual stack.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -17133,14 +17190,17 @@
       "label": "InitPageLoop",
       "asmLine": 2799,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_memory outer page loop",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store actual page in scratch07 before each descending byte loop;seven-to-zero pages,original sign-tested termination."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores the current page high byte and repeats the byte clear after each X/page decrement through page zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store actual page in scratch07 before each descending byte loop;seven-to-zero pages,original sign-tested termination.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -17149,14 +17209,17 @@
       "label": "InitByteLoop",
       "asmLine": 2800,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_memory inner byte loop",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Check page1 and Y>=60 to retain stack;all other bytes enter indirect store,including100-15F."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Tests the stack-page protected range before each write and decrements the eight-bit offset until it wraps to $ff.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Check page1 and Y>=60 to retain stack;all other bytes enter indirect store,including100-15F.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -17165,14 +17228,17 @@
       "label": "InitByte",
       "asmLine": 2804,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_memory conditional RAM clear",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Actual indirect scratch06/07 plus byte Y writes zero;native address expression and scratch writes retained,including pointer self-clears on page0."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes zero to the selected page/offset only outside protected stack bytes.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Actual indirect scratch06/07 plus byte Y writes zero;native address expression and scratch writes retained,including pointer self-clears on page0.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -17181,14 +17247,17 @@
       "label": "SkipByte",
       "asmLine": 2805,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "mysmb_game_initialize_memory offset/page loop tails",
+      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Both store and retained-stack paths decrement byte Y;loop until FF then decrement page;final page sign ends routine."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Skips protected stack writes while retaining identical offset decrement and page-loop termination.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Both store and retained-stack paths decrement byte Y;loop until FF then decrement page;final page sign ends routine.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58202,13 +58271,16 @@
       "instruction": "jsr",
       "id": "control-00382",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original InitializeGame -> InitializeMemory call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=256;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call InitializeGame -> InitializeMemory retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c",
         "src/game/title_modes.c"
@@ -58222,13 +58294,16 @@
       "instruction": "ldy",
       "id": "control-00383",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original InitializeGame -> ClrSndLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=256;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough InitializeGame -> ClrSndLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/title_modes.c"
@@ -58242,13 +58317,16 @@
       "instruction": "bpl",
       "id": "control-00384",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClrSndLoop -> ClrSndLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=7936;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ClrSndLoop -> ClrSndLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58282,13 +58360,16 @@
       "instruction": "jsr",
       "id": "control-00386",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClrSndLoop -> InitializeArea fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=256;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough ClrSndLoop -> InitializeArea retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58301,13 +58382,16 @@
       "instruction": "jsr",
       "id": "control-00387",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original InitializeArea -> InitializeMemory call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=1280;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call InitializeArea -> InitializeMemory retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/boot.c"
@@ -58321,13 +58405,16 @@
       "instruction": "lda",
       "id": "control-00388",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original InitializeArea -> ClrTimersLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=1280;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough InitializeArea -> ClrTimersLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58340,13 +58427,16 @@
       "instruction": "bpl",
       "id": "control-00389",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClrTimersLoop -> ClrTimersLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=42240;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ClrTimersLoop -> ClrTimersLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58359,13 +58449,16 @@
       "instruction": "beq",
       "id": "control-00390",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClrTimersLoop -> StartPage branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=768;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ClrTimersLoop -> StartPage retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58378,13 +58471,16 @@
       "instruction": "lda",
       "id": "control-00391",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClrTimersLoop -> StartPage fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=512;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough ClrTimersLoop -> StartPage retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58419,13 +58515,16 @@
       "instruction": "beq",
       "id": "control-00393",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original StartPage -> SetInitNTHigh branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=768;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch StartPage -> SetInitNTHigh retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58438,13 +58537,16 @@
       "instruction": "ldy",
       "id": "control-00394",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original StartPage -> SetInitNTHigh fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=512;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough StartPage -> SetInitNTHigh retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58478,13 +58580,16 @@
       "instruction": "bne",
       "id": "control-00396",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetInitNTHigh -> SetSecHard branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=512;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SetInitNTHigh -> SetSecHard retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58497,13 +58602,16 @@
       "instruction": "bcc",
       "id": "control-00397",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetInitNTHigh -> CheckHalfway branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=512;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SetInitNTHigh -> CheckHalfway retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58516,13 +58624,16 @@
       "instruction": "bne",
       "id": "control-00398",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetInitNTHigh -> SetSecHard branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=192;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SetInitNTHigh -> SetSecHard retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58535,13 +58646,16 @@
       "instruction": "bcc",
       "id": "control-00399",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetInitNTHigh -> CheckHalfway branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=32;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SetInitNTHigh -> CheckHalfway retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58554,13 +58668,16 @@
       "instruction": "bcc",
       "id": "control-00400",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetInitNTHigh -> SetSecHard fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=32;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough SetInitNTHigh -> SetSecHard retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58573,13 +58690,16 @@
       "instruction": "inc",
       "id": "control-00401",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetSecHard -> CheckHalfway fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=736;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough SetSecHard -> CheckHalfway retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58592,13 +58712,16 @@
       "instruction": "beq",
       "id": "control-00402",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original CheckHalfway -> DoneInitArea branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=768;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch CheckHalfway -> DoneInitArea retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58611,13 +58734,16 @@
       "instruction": "sta",
       "id": "control-00403",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original CheckHalfway -> DoneInitArea fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=512;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough CheckHalfway -> DoneInitArea retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58630,13 +58756,16 @@
       "instruction": "sta",
       "id": "control-00404",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original PrimaryGameSetup -> SecondaryGameSetup fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=256;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough PrimaryGameSetup -> SecondaryGameSetup retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -58649,13 +58778,16 @@
       "instruction": "tay",
       "id": "control-00405",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SecondaryGameSetup -> ClearVRLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough SecondaryGameSetup -> ClearVRLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"
@@ -58669,13 +58801,16 @@
       "instruction": "bne",
       "id": "control-00406",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClearVRLoop -> ClearVRLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=1109760;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ClearVRLoop -> ClearVRLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58688,13 +58823,16 @@
       "instruction": "jsr",
       "id": "control-00407",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClearVRLoop -> GetAreaMusic call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call ClearVRLoop -> GetAreaMusic retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"
@@ -58708,13 +58846,16 @@
       "instruction": "ldx",
       "id": "control-00408",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ClearVRLoop -> ShufAmtLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough ClearVRLoop -> ShufAmtLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58727,13 +58868,16 @@
       "instruction": "bpl",
       "id": "control-00409",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ShufAmtLoop -> ShufAmtLoop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=60928;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ShufAmtLoop -> ShufAmtLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58746,13 +58890,16 @@
       "instruction": "ldy",
       "id": "control-00410",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ShufAmtLoop -> ISpr0Loop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough ShufAmtLoop -> ISpr0Loop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58765,13 +58912,16 @@
       "instruction": "bpl",
       "id": "control-00411",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ISpr0Loop -> ISpr0Loop branch relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=13056;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ISpr0Loop -> ISpr0Loop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -58784,13 +58934,16 @@
       "instruction": "jsr",
       "id": "control-00412",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ISpr0Loop -> DoNothing2 call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call ISpr0Loop -> DoNothing2 retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"
@@ -58804,13 +58957,16 @@
       "instruction": "jsr",
       "id": "control-00413",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original ISpr0Loop -> DoNothing1 call relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call ISpr0Loop -> DoNothing1 retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"
@@ -58824,13 +58980,16 @@
       "instruction": "sta",
       "id": "control-00414",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original InitializeMemory -> InitPageLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=1792;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough InitializeMemory -> InitPageLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58843,13 +59002,16 @@
       "instruction": "stx",
       "id": "control-00415",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C initialization owner named by Td S9 B9b",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required."
+        "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original InitPageLoop -> InitByteLoop fallthrough relation must preserve initialization ordering, RAM handoff and successor/return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=14336;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough InitPageLoop -> InitByteLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58862,13 +59024,16 @@
       "instruction": "bne",
       "id": "control-00416",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "boot.c inner loop: non-stack pages and stack offsets below $60 take the conditional write path.",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "boot.c inner loop: non-stack pages and stack offsets below $60 take the conditional write path.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=2911360;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch InitByteLoop -> InitByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58881,13 +59046,16 @@
       "instruction": "bcs",
       "id": "control-00417",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "boot.c inner loop: page $01 with offset $60-$ff skips the write while preserving loop state.",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "boot.c inner loop: page $01 with offset $60-$ff skips the write while preserving loop state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=286720;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch InitByteLoop -> SkipByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58900,13 +59068,16 @@
       "instruction": "bcs",
       "id": "control-00418",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "boot.c inner loop falls from the non-protected stack check into the conditional write.",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "boot.c inner loop falls from the non-protected stack check into the conditional write.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=172032;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough InitByteLoop -> InitByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58919,13 +59090,16 @@
       "instruction": "sta",
       "id": "control-00419",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "boot.c clear path falls to the common decrement/tail.",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "boot.c clear path falls to the common decrement/tail.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=3083392;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough InitByte -> SkipByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58938,13 +59112,16 @@
       "instruction": "bne",
       "id": "control-00420",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "boot.c offset tail repeats until the eight-bit decrement wraps to $ff.",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "boot.c offset tail repeats until the eight-bit decrement wraps to $ff.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=3355776;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SkipByte -> InitByteLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -58957,13 +59134,16 @@
       "instruction": "bpl",
       "id": "control-00421",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "boot.c page tail decrements and repeats through page zero only.",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "boot.c page tail decrements and repeats through page zero only.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=12544;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SkipByte -> InitPageLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -128250,13 +128430,16 @@
       "instruction": "rts/rti",
       "id": "control-03538",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_initialize_memory -> mysmb_game_begin_title_bootstrap",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation InitializeMemory \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InitializeGame: child completion restores the caller\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=256;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original return InitializeMemory -> InitializeGame retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/boot.c",
         "src/game/title_modes.c"
@@ -128291,13 +128474,16 @@
       "instruction": "rts/rti",
       "id": "control-03540",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_initialize_memory -> mysmb_area_initialize",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation InitializeMemory \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InitializeArea: child completion restores the caller\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=1280;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original return InitializeMemory -> InitializeArea retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/boot.c"
@@ -128354,13 +128540,16 @@
       "instruction": "rts/rti",
       "id": "control-03543",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_get_area_music -> shared initialization owner",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return continuation GetAreaMusic \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ClearVRLoop: child completion restores the caller\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2s next source phase without an extra dispatch.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original return GetAreaMusic -> ClearVRLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"
@@ -128374,13 +128563,16 @@
       "instruction": "rts/rti",
       "id": "control-03544",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/game.c mysmb_game_secondary_setup startup sequence",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves residual leaf return relation DoNothing2 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ISpr0Loop without reordering surrounding initialization.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original return DoNothing2 -> ISpr0Loop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"
@@ -128394,13 +128586,16 @@
       "instruction": "rts/rti",
       "id": "control-03545",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/game.c mysmb_game_secondary_setup startup sequence",
+      "status": "exact",
+      "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
-        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves residual leaf return relation DoNothing1 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ISpr0Loop without reordering surrounding initialization.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S2 P2 original transition observations=4352;5888 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original return DoNothing1 -> ISpr0Loop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/game.c"

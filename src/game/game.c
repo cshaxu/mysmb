@@ -334,6 +334,18 @@ void mysmb_game_primary_setup(struct mysmb_game *game)
     game->ram[MYSMB_RAM_PLAYER_SIZE] = 1U;
     game->ram[MYSMB_RAM_NUMBER_OF_LIVES] = 2U;
     game->ram[MYSMB_RAM_OFFSCREEN_LIVES] = 2U;
+    mysmb_game_secondary_setup(game);
+}
+
+/* Original SecondaryGameSetup calls DoNothing2 and then DoNothing1.
+ * Retain those real leaves even though only the residual store is visible. */
+static void mysmb_game_do_nothing_2(void)
+{
+}
+
+static void mysmb_game_do_nothing_1(struct mysmb_game *game)
+{
+    game->ram[0x06c9U] = 0xffU;
 }
 
 /* Translation of SecondaryGameSetup's game-mode fields.  OAM shuffle data
@@ -354,27 +366,34 @@ void mysmb_game_secondary_setup(struct mysmb_game *game)
      * UpdateScreen's per-command terminator clear: title data remains here
      * until the setup transition, then cannot become incidental input to
      * game-mode producers. */
+    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
     for (buffer_offset = 0x0300U; buffer_offset < 0x0400U; ++buffer_offset)
         game->ram[buffer_offset] = 0U;
 
-    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
-    mysmb_game_get_area_music(game);
     game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
     game->ram[0x0769U] = 0U;
     game->ram[0x0728U] = 0U;
     game->ram[0x03a0U] = 0xffU;
-    /* ROM DoNothing2 returns, then DoNothing1 retains this otherwise unused
-     * residual store before SecondaryGameSetup continues its own writes. */
-    game->ram[0x06c9U] = 0xffU;
-    game->ram[MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS] = 0x58U;
-    game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS + 1U)] = 0x48U;
+    /* Original LSR/ROR/ROL replaces only the mirror's page-select bit. */
+    game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = (mysmb_u8)(
+        (game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] & 0xfeU) |
+        (game->ram[0x071aU] & 1U));
+    mysmb_game_get_area_music(game);
     game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS + 2U)] = 0x38U;
-    for (index = 0U; index < 15U; ++index)
+    game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS + 1U)] = 0x48U;
+    game->ram[MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS] = 0x58U;
+    for (index = 14U;; --index) {
         game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + index)] = default_offsets[index];
-    for (index = 0U; index < 4U; ++index)
+        if (index == 0U) break;
+    }
+    for (index = 3U;; --index) {
         game->ram[(mysmb_u16)(MYSMB_RAM_OAM + index)] = sprite0_data[index];
+        if (index == 0U) break;
+    }
+    mysmb_game_do_nothing_2();
+    mysmb_game_do_nothing_1(game);
     game->ram[MYSMB_RAM_SPRITE0_HIT]++;
-    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
 }
 
 /* ROM $8e92-$8eec WriteBufferToScreen through InitScroll.  This models PPU

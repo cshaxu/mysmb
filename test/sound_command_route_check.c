@@ -1,6 +1,7 @@
 #include "game/audio.h"
 #include "game/status.h"
 #include "game/frame_root.h"
+#include "game/area.h"
 #include <stdio.h>
 #include <string.h>
 #define RECORD_BYTES 4290U
@@ -17,8 +18,18 @@ int main(int argc,char **argv)
         if(fread(record,1U,sizeof(record),f)!=sizeof(record))return 66;
         memset(&game,0,sizeof(game));memcpy(game.ram,record+16U,2048U);memcpy(game.apu_registers,record+2064U,24U);
         game.area_prg=prg;game.area_prg_size=32768U;
+        /* These bootstrap bindings are presence-only preconditions here.
+         * InitializeGame does not read title/icon bytes; all actual data
+         * reads use the unchanged full owner PRG above. */
+        game.title_data=prg;game.title_data_size=0x013aU;
+        game.title_icon_data=prg;game.title_icon_data_size=1U;
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
+        case 0x90ccU:mysmb_game_initialize_memory(&game,record[4]);break;
+        case 0x9071U:mysmb_game_secondary_setup(&game);break;
+        case 0x9061U:mysmb_game_primary_setup(&game);break;
+        case 0x8fe4U:mysmb_area_initialize(&game);break;
+        case 0x8fcfU:(void)mysmb_game_begin_title_bootstrap(&game);break;
         case 0x8f06U:(void)mysmb_status_print_numbers(&game,a);break;
         case 0x8f5fU:mysmb_status_apply_digit_modifier(&game,record[4]);break;
         case 0x8f97U:mysmb_frame_root_update_top_score(&game);break;
@@ -37,9 +48,11 @@ int main(int argc,char **argv)
         case 0xf3adU:a=mysmb_audio_set_freq_tri(&game,a);break;
         default:return 66;
         }
-        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
-            if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
+            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU){
+                if(i>=0x1f0U&&i<=0x1ffU)continue;
+            }else if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
             if(game.ram[i]!=record[2088U+i]){if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}
         }
         for(i=0U;i<24U;++i)if(game.apu_registers[i]!=record[4136U+i]){if(failures<10U)printf("root=%u APU=%u ROM=%02x C=%02x\n",n,i,record[4136U+i],game.apu_registers[i]);++failures;}

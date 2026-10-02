@@ -261,7 +261,6 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     }
     else if (mode_before == 0U && task_before == 2U && game->area_prg != 0) {
         mysmb_game_primary_setup(game);
-        mysmb_game_secondary_setup(game);
     }
     /* RunDemo is the title owner's same-frame GameCoreRoutine call. */
     if (run_title_demo != 0U) {
