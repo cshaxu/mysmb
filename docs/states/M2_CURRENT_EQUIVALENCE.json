@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 487,
+    "enumeratedCount": 490,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -10480,6 +10480,69 @@
       "currentSourcePaths": [
         "src/game/enemy/background.c"
       ]
+    },
+    {
+      "id": "material-t65-query-base",
+      "producer": "BlockBufferAdderData",
+      "consumer": "PlayerBGCollision",
+      "storage": "Immutable original PRG table $E3AD",
+      "feasiblePath": "The immutable $E3AD three-entry base selector is consumed by PlayerBGCollision for ordinary big, swimming big, and small/crouching player probes.",
+      "status": "exact",
+      "currentCounterpart": "shared player terrain selector",
+      "semanticContract": "The immutable $E3AD three-entry base selector is consumed by PlayerBGCollision for ordinary big, swimming big, and small/crouching player probes.",
+      "semanticEvidence": [
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The immutable $E3AD three-entry base selector is consumed by PlayerBGCollision for ordinary big, swimming big, and small/crouching player probes."
+      ],
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 800 original-ROM selector/predicate roots with zero differences. PlayerBGCollision 32 roots compare 1784 persistent RAM bytes (scratch $00-$07 and CPU stack excluded); 768 predicate roots compare 1792 non-stack bytes. Base-table reads indices 0/1/2 = 4/4/24. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "cohort": "K",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player/terrain.c"
+      ]
+    },
+    {
+      "id": "material-t65-query-x",
+      "producer": "BlockBuffer_X_Adder",
+      "consumer": "BlockBufferCollision",
+      "storage": "Immutable original PRG table $E3B0",
+      "feasiblePath": "The immutable 28-entry $E3B0 table is indexed before wrapped object-X addition and page-carry/column construction.",
+      "status": "exact",
+      "currentCounterpart": "shared world block-buffer indexed query",
+      "semanticContract": "The immutable 28-entry $E3B0 table is indexed before wrapped object-X addition and page-carry/column construction.",
+      "semanticEvidence": [
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The immutable 28-entry $E3B0 table is indexed before wrapped object-X addition and page-carry/column construction."
+      ],
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "cohort": "K",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-t65-query-y",
+      "producer": "BlockBuffer_Y_Adder",
+      "consumer": "BlockBufferCollision",
+      "storage": "Immutable original PRG table $E3CC",
+      "feasiblePath": "The immutable 28-entry $E3CC table is indexed before wrapped object-Y addition, high-nibble mask and unsigned status-bar subtraction.",
+      "status": "exact",
+      "currentCounterpart": "shared world block-buffer indexed query",
+      "semanticContract": "The immutable 28-entry $E3CC table is indexed before wrapped object-Y addition, high-nibble mask and unsigned status-bar subtraction.",
+      "semanticEvidence": [
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The immutable 28-entry $E3CC table is indexed before wrapped object-Y addition, high-nibble mask and unsigned status-bar subtraction."
+      ],
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "cohort": "K",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/block_buffer.c"
+      ]
     }
   ],
   "cohorts": [
@@ -10555,15 +10618,15 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1480,
-    "needs-evidence": 512,
+    "exact": 1494,
+    "needs-evidence": 498,
     "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3181,
-    "needs-evidence": 1142,
-    "infeasible": 19
+    "exact": 3192,
+    "needs-evidence": 1130,
+    "infeasible": 20
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -39704,112 +39767,140 @@
       "label": "BlockBufferChk_Enemy",
       "asmLine": 13023,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves the A coordinate selector, adds one to the enemy object slot, then enters the shared BBChk_E query."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves A, offsets X by one for enemy sprite fields, then performs BBChk_E query.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves the A coordinate selector, adds one to the enemy object slot, then enters the shared BBChk_E query.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
       "label": "ResidualMiscObjectCode",
       "asmLine": 13032,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Adds thirteen to the miscellaneous object slot and selects index 27 before ResJmpM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Offsets X by $0d, selects adder $1b and uses vertical-contact query.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Adds thirteen to the miscellaneous object slot and selects index 27 before ResJmpM.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
       "label": "BlockBufferChk_FBall",
       "asmLine": 13040,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Adds seven to the fireball slot and selects index 26 before ResJmpM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Offsets X by seven, selects adder $1a and uses vertical-contact query.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Adds seven to the fireball slot and selects index 26 before ResJmpM.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
       "label": "ResJmpM",
       "asmLine": 13046,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Sets the vertical selector to zero before the BBChk_E call."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Sets the vertical selector to zero before the BBChk_E call.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
       "label": "BBChk_E",
       "asmLine": 13047,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Calls the original query, restores ObjectOffset, and compares the metatile A with zero. Native terrain.metatile preserves A; the explicit presence API alone normalizes zero/nonzero."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Calls the original query, restores ObjectOffset, and compares the metatile A with zero. Native terrain.metatile preserves A; the explicit presence API alone normalizes zero/nonzero.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
       "label": "BlockBufferAdderData",
       "asmLine": 13052,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "PlayerBGCollision terrain_base_index with immutable $E3AD binding",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The immutable $E3AD three-entry base selector is consumed by PlayerBGCollision for ordinary big, swimming big, and small/crouching player probes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 800 original-ROM selector/predicate roots with zero differences. PlayerBGCollision 32 roots compare 1784 persistent RAM bytes (scratch $00-$07 and CPU stack excluded); 768 predicate roots compare 1792 non-stack bytes. Base-table reads indices 0/1/2 = 4/4/24. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "The immutable $E3AD three-entry base selector is consumed by PlayerBGCollision for ordinary big, swimming big, and small/crouching player probes.",
       "currentSourcePaths": [
-        "src/game/player/terrain.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c",
+        "src/game/player/terrain.c"
       ]
     },
     {
       "label": "BlockBuffer_X_Adder",
       "asmLine": 13055,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The immutable 28-entry $E3B0 table is indexed before wrapped object-X addition and page-carry/column construction."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "The immutable 28-entry $E3B0 table is indexed before wrapped object-X addition and page-carry/column construction.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -39817,15 +39908,19 @@
       "label": "BlockBuffer_Y_Adder",
       "asmLine": 13061,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The immutable 28-entry $E3CC table is indexed before wrapped object-Y addition, high-nibble mask and unsigned status-bar subtraction."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "The immutable 28-entry $E3CC table is indexed before wrapped object-Y addition, high-nibble mask and unsigned status-bar subtraction.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -39833,15 +39928,19 @@
       "label": "BlockBufferColli_Feet",
       "asmLine": 13067,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Increments the original table index and continues through Head with a vertical coordinate selector."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Increments the original table index and continues through Head with a vertical coordinate selector.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -39849,15 +39948,19 @@
       "label": "BlockBufferColli_Head",
       "asmLine": 13070,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Loads the vertical selector. BIT $01A9 consumes the Side LDA bytes and continues at shared LDX #0 without executing Side entry."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Loads the vertical selector. BIT $01A9 consumes the Side LDA bytes and continues at shared LDX #0 without executing Side entry.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -39865,15 +39968,19 @@
       "label": "BlockBufferColli_Side",
       "asmLine": 13074,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Direct Side entry loads the horizontal selector and selects player object zero before the query kernel."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original block-buffer query entry, table/offset selection, scratch-coordinate and metatile return semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Direct Side entry loads the horizontal selector and selects player object zero before the query kernel.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -39881,32 +39988,39 @@
       "label": "BlockBufferCollision",
       "asmLine": 13078,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Builds wrapped page/column, obtains block-buffer address, probes status-bar-adjusted row, preserves metatile and returns selected coordinate low nibble.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A.",
       "currentSourcePaths": [
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
       "label": "RetXC",
       "asmLine": 13111,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; A nonzero source selector chooses original object X for the low-nibble return."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns horizontal coordinate low nibble when source flag is one.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "A nonzero source selector chooses original object X for the low-nibble return.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -39914,15 +40028,19 @@
       "label": "RetYC",
       "asmLine": 13112,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c",
-      "currentCounterpart": "shared block-buffer query helpers",
+      "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns vertical coordinate low nibble and queried metatile.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -107013,15 +107131,19 @@
       "instruction": "jmp",
       "id": "control-02751",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves the A coordinate selector, adds one to the enemy object slot, then enters the shared BBChk_E query."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation BlockBufferChk_Enemy -> BBChk_E with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves the A coordinate selector, adds one to the enemy object slot, then enters the shared BBChk_E query.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107032,15 +107154,19 @@
       "instruction": "jmp",
       "id": "control-02752",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Adds thirteen to the miscellaneous object slot and selects index 27 before ResJmpM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation ResidualMiscObjectCode -> ResJmpM with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Adds thirteen to the miscellaneous object slot and selects index 27 before ResJmpM.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107051,15 +107177,19 @@
       "instruction": "tax",
       "id": "control-02753",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Adds seven to the fireball slot and selects index 26 before ResJmpM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation BlockBufferChk_FBall -> ResJmpM with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Adds seven to the fireball slot and selects index 26 before ResJmpM.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107070,15 +107200,19 @@
       "instruction": "lda",
       "id": "control-02754",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Sets the vertical selector to zero before the BBChk_E call."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation ResJmpM -> BBChk_E with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Sets the vertical selector to zero before the BBChk_E call.",
       "currentSourcePaths": [
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107089,16 +107223,19 @@
       "instruction": "jsr",
       "id": "control-02755",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Calls the original query, restores ObjectOffset, and compares the metatile A with zero. Native terrain.metatile preserves A; the explicit presence API alone normalizes zero/nonzero."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation BBChk_E -> BlockBufferCollision with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Calls the original query, restores ObjectOffset, and compares the metatile A with zero. Native terrain.metatile preserves A; the explicit presence API alone normalizes zero/nonzero.",
       "currentSourcePaths": [
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107109,14 +107246,18 @@
       "instruction": "iny",
       "id": "control-02756",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Increments the original table index and continues through Head with a vertical coordinate selector."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation BlockBufferColli_Feet -> BlockBufferColli_Head with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Increments the original table index and continues through Head with a vertical coordinate selector.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -107128,14 +107269,19 @@
       "instruction": "lda",
       "id": "control-02757",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "infeasible",
+      "currentCounterpart": "Head/Feet vertical selector continues directly to the common player kernel; no Side LDA execution",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Loads the vertical selector. BIT $01A9 consumes the Side LDA bytes and continues at shared LDX #0 without executing Side entry.",
+        "Original bytes $E3EB-$E3ED encode BIT $01A9, consuming Side LDA #1 at $E3EC. Actual feet/head roots never execute $E3EC; 3456 direct Side roots do. Raw lexical edge retained, excluded from feasible denominator."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation BlockBufferColli_Head -> BlockBufferColli_Side with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Loads the vertical selector. BIT $01A9 consumes the Side LDA bytes and continues at shared LDX #0 without executing Side entry.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -107147,16 +107293,19 @@
       "instruction": "ldx",
       "id": "control-02758",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Direct Side entry loads the horizontal selector and selects player object zero before the query kernel."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation BlockBufferColli_Side -> BlockBufferCollision with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Direct Side entry loads the horizontal selector and selects player object zero before the query kernel.",
       "currentSourcePaths": [
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107168,19 +107317,20 @@
       "id": "control-02759",
       "cohort": "K",
       "status": "exact",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Original GetBlockBufferAddr executes before row/table probing, with source column and scratch-pointer output."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "semanticContract": "Preserves original call relation BlockBufferCollision -> GetBlockBufferAddr with source query offset, table and scratch-state ordering.",
+      "semanticContract": "Original GetBlockBufferAddr executes before row/table probing, with source column and scratch-pointer output.",
       "currentSourcePaths": [
-        "src/game/area.c",
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107191,16 +107341,19 @@
       "instruction": "bne",
       "id": "control-02760",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; A nonzero source selector chooses original object X for the low-nibble return."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation BlockBufferCollision -> RetXC with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "A nonzero source selector chooses original object X for the low-nibble return.",
       "currentSourcePaths": [
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107211,16 +107364,19 @@
       "instruction": "jmp",
       "id": "control-02761",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Zero selector loads original Y before the RetYC low-nibble and metatile return."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation BlockBufferCollision -> RetYC with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Zero selector loads original Y before the RetYC low-nibble and metatile return.",
       "currentSourcePaths": [
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -107231,14 +107387,18 @@
       "instruction": "lda",
       "id": "control-02762",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation RetXC -> RetYC with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns.",
       "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
     },
@@ -132569,16 +132729,19 @@
       "instruction": "rts/rti",
       "id": "control-03996",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Actual BlockBufferCollision RTS resumes BBChk_E at $E3A8 before ObjectOffset restore and CMP #0."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferCollision -> BBChk_E with source query offset, table and scratch-state ordering.",
+      "operationalEvidence": [
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Actual BlockBufferCollision RTS resumes BBChk_E at $E3A8 before ObjectOffset restore and CMP #0.",
       "currentSourcePaths": [
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -132590,19 +132753,20 @@
       "id": "control-03997",
       "cohort": "K",
       "status": "exact",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "shared world/block_buffer.c original query entry/kernel/return order",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Actual GetBlockBufferAddr RTS resumes BlockBufferCollision at $E40B before saved-index reload and vertical probing."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "semanticContract": "Preserves original return relation GetBlockBufferAddr -> BlockBufferCollision with source query offset, table and scratch-state ordering.",
+      "semanticContract": "Actual GetBlockBufferAddr RTS resumes BlockBufferCollision at $E40B before saved-index reload and vertical probing.",
       "currentSourcePaths": [
-        "src/game/area.c",
-        "src/game/area/block_buffer.c",
-        "src/game/world/block_buffer.c"
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     },
     {
@@ -140297,12 +140461,13 @@
     "control-01711",
     "control-02036",
     "control-02708",
+    "control-02757",
     "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 19,
-  "feasibleControlEdgeTotal": 4323
+  "infeasibleControlEdgeTotal": 20,
+  "feasibleControlEdgeTotal": 4322
 }

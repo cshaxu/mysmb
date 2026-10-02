@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S1 - block-query chain
+
+[T65 S1 current query/table/return proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes all fourteen named query labels; none deferred. Current exact nodes
+1494/1992, feasible controls 3192/4322 (raw 4342, infeasible 20),
+material 371/490 with partial enumeration. Historical mapping stays 1992/1992.
+Per width, 18944 query plus 800 selector/predicate original-ROM roots have
+zero differences; focused 6/6 tests and original OpenNT DOS16 link pass.
+No product change; latest three EXEs retained. T65 remains open, S2 next.
+
 ## M2 T64 closure - current terrain/collision proof
 
 [T64 retained proof and cross-chain matrix](../history/M2-T64-terrain-collision-current-proof.md)

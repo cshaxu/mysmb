@@ -20,6 +20,7 @@ int main(int argc,char **argv)
     unsigned char head[12]={'M','S','T','C',1u,0u,0u,0u,0x20u,3u,0u,0u},rec[4105];
     core_driver *d=NULL;core_driver_options opts={0u,LIB_FALSE};core_run_result r;
     FILE *f;unsigned int n,k,input,i,step,pc,beq=0u,fall=0u,sidecalls=0u,sidereturns=0u,maxstep=0u;
+    unsigned int base_reads[3]={0u};
     int ok=1;time_t start=time(NULL);
     if(argc!=3)return 64;
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||
@@ -47,6 +48,10 @@ int main(int argc,char **argv)
         memcpy(rec+9u,d->machine->ram,2048u);
         for(step=0u;step<LIMIT&&d->machine->pc!=0x8001u;++step){
             pc=d->machine->pc;if(k==0u&&pc==0xdcbau)rec[6]=d->machine->x;
+            if(k==0u&&pc==0xdcabu){
+                if(d->machine->y>=3u){ok=0;break;}
+                ++base_reads[d->machine->y];
+            }
             if(k==0u&&pc==0xdd9cu){rec[7]=d->machine->a;++sidecalls;}
             if(core_machine_debug_step(d->machine,1u,1024u,&r)!=LIB_STATUS_OK||r.trap_valid){ok=0;break;}
             if(k==0u&&pc==0xdcb7u){if(d->machine->pc==0xdcb9u)++fall;else ++beq;}
@@ -59,5 +64,6 @@ int main(int argc,char **argv)
     }
     if(fclose(f)!=0)ok=0;(void)core_driver_destroy(d);
     printf("cases=%u maxsteps=%u GBB-head-taken=%u fallthrough=%u side-calls=%u returns=%u\n",n,maxstep,beq,fall,sidecalls,sidereturns);
+    for(i=0u;i<3u;++i){printf("base-index=%u reads=%u\n",i,base_reads[i]);if(base_reads[i]==0u)ok=0;}
     return ok?0:66;
 }

@@ -29,7 +29,7 @@ original-ROM route and dual verification packet at admission.
 | T62 | Cohort I: enemy stream, initialization and groups | stream records/pointers; initializer vectors; ordinary/frenzy groups; Lakitu/Spiny/Bullet Bill family routes. |
 | T63 | Cohort J first half: enemy loop and movement | enemy loop dispatch; normal/special actors; movement/gravity; platform/hammer/Bowser routes. |
 | T64 | Cohort J second half: enemy terrain and collisions | enemy terrain state; player/enemy collision; projectile collision; star-flag/end-level actor routes. |
-| T65 | Cohort K: shared collision and player terrain | bounding boxes; player terrain probes; platform collision; fireball background collision; shared tables. |
+| T65 | Cohort K: block queries and object/OAM output | shared block-buffer entries/tables; vine/hammer/flagpole/platform/coin/power-up/enemy/block/fireball/bubble output; player graphics tables. |
 | T66 | Cohort L: relative position, offscreen and OAM | relative/offscreen bit chains; player/enemy/object OAM; title/endgame sprite output; scanline split state. |
 | T67 | Cohort M: sound effects | sound dispatcher; square/noise effect handlers; queue priority; effect tables and APU command order. |
 | T68 | Cohort N: music and music data | music selection/header load; square/triangle/noise streams; loop and envelope handling; data-table consumers. |
@@ -56,3 +56,10 @@ material 368/487; historical mapping 1992/1992 remains separate. Cohort J
 has no pending owned nodes/controls/material rows; global material enumeration
 remains partial. T65 is the next unadmitted source cohort, followed by T66-T70.
 Incoming boundary relations outside J retain their original pending owners.
+
+## Current checkpoint after T65 S1
+
+[T65 S1](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+T65 is open and S2 is next. Current exact nodes 1494/1992, feasible controls
+3192/4322 (raw 4342, infeasible 20), material 371/490 partial. Historical
+1992/1992 is separate. Earlier checkpoint paragraphs retain closure-time facts.
