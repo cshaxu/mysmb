@@ -693,3 +693,43 @@ classification checks, platform-purity and the shared-source DOS16 link.
   controls (raw 4,342, infeasible 18).
 - Scope: 8 labels; historical expected matches: 0; maximum historical complete
   1,992 / 1,992.
+
+## S18 closure — world metatile predicates
+
+All eight scoped labels are current-exact. Static `$DF8B-$DFB8` comparison
+confirms original solid/climb threshold binding by high-bit group, shared
+attribute extraction, carry semantics, ordered C2/C3 coin checks, the coin
+sound queue store and terminal return. Controlled original-ROM parent routes
+yielded 5,050 naturally reached classifier calls: DF8F 257, DF9A 1,407,
+DFA1 1,722 and DFB0 1,664. Freshly compiled current x86/x64 owners matched
+every call register contract and mapped RAM with zero differences. Complete
+predicate-domain and platform-purity checks pass on both widths. No product C
+changed, so executable artifacts were not refreshed.
+
+The eight internal controls `control-02578` through `control-02582`,
+`control-03962`, `control-03969` and `control-03970` are exact. Historical
+conformance remains **1,992 / 1,992**; current exact totals are **1,401 /
+1,992** nodes and **2,922 / 4,324** feasible controls (raw **4,342**,
+infeasible **18**).
+
+## S19 admission — enemy background collision and landing state
+
+S19 admits `$DFC0-$E07A`: EnemyBGCStateData, EnemyBGCXSpdData,
+EnemyToBGCollisionDet, DoIDCheckBGColl, HBChk, CInvu, YesIn,
+NoEToBGCollision, HandleEToBGCollision, GiveOEPoints, ChkToStunEnemies,
+Demote, SetStun, SetWYSpd, SetNotW, ChkBBill, NoCDirF, ExEBGChk,
+LandEnemyProperly, SChkA, ChkLandedEnemyState, SetForStn, ExSteChk,
+ProcEnemyDirection, InvtD, CNwCDir, LandEnemyInitState, NMovShellFallBit,
+ChkForRedKoopa, Chk2MSBSt, GetSteFromD and SetD6Ste. The shared owner is
+`src/game/enemy/background.c`. S18 supplies classifier returns; S20 begins
+enemy side collision. ROM logic covers state and ID dispatch, ground contact,
+block effects, stun/demotion, landing and direction state. The operational
+track uses controlled original-ROM enemy-background routes per x86/x64 width,
+focused background/landing checks, platform purity and the shared-source DOS16
+link.
+
+- Historical mapping: 1,992 / 1,992.
+- Incoming current exact: 1,401 / 1,992 nodes and 2,922 / 4,324 feasible
+  controls (raw 4,342, infeasible 18).
+- Scope: 32 labels; historical expected matches: 0; maximum historical complete
+  1,992 / 1,992.

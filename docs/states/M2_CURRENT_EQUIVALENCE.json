@@ -38013,13 +38013,16 @@
       "label": "SolidMTileUpperExt",
       "asmLine": 12380,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Supplies four metatile-group solid thresholds.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -38029,13 +38032,16 @@
       "label": "CheckForSolidMTiles",
       "asmLine": 12383,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Returns CMP carry for tile against its group solid threshold.",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -38046,13 +38052,16 @@
       "label": "ClimbMTileUpperExt",
       "asmLine": 12388,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Supplies four metatile-group climb thresholds.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -38062,13 +38071,16 @@
       "label": "CheckForClimbMTiles",
       "asmLine": 12391,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Returns CMP carry for tile against its group climb threshold.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -38078,13 +38090,16 @@
       "label": "CheckForCoinMTiles",
       "asmLine": 12396,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Recognizes regular/underwater coins and returns carry clear otherwise.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -38094,13 +38109,16 @@
       "label": "CoinSd",
       "asmLine": 12403,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Queues coin-grab sound and returns match carry.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -38110,13 +38128,16 @@
       "label": "GetMTileAttrib",
       "asmLine": 12407,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Derives group index from top two metatile bits while retaining original tile.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -38126,13 +38147,16 @@
       "label": "ExEBG",
       "asmLine": 12415,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c",
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Returns metatile attribute result.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -102844,12 +102868,15 @@
       "instruction": "jsr",
       "id": "control-02578",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c predicates",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves metatile predicate call relation CheckForSolidMTiles Ã¢â€ â€™ GetMTileAttrib and source flag semantics.",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -102864,12 +102891,15 @@
       "instruction": "jsr",
       "id": "control-02579",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c predicates",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves metatile predicate call relation CheckForClimbMTiles Ã¢â€ â€™ GetMTileAttrib and source flag semantics.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -102883,12 +102913,15 @@
       "instruction": "beq",
       "id": "control-02580",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c predicates",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves metatile predicate branch relation CheckForCoinMTiles Ã¢â€ â€™ CoinSd and source flag semantics.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -102902,12 +102935,15 @@
       "instruction": "beq",
       "id": "control-02581",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c predicates",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves metatile predicate branch relation CheckForCoinMTiles Ã¢â€ â€™ CoinSd and source flag semantics.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -102921,12 +102957,15 @@
       "instruction": "tya",
       "id": "control-02582",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c predicates",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves metatile predicate fallthrough relation GetMTileAttrib Ã¢â€ â€™ ExEBG and source flag semantics.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -130822,12 +130861,15 @@
       "instruction": "rts/rti",
       "id": "control-03962",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves side-probe return relation CheckForClimbMTiles Ã¢â€ â€™ CheckSideMTiles with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130977,12 +131019,15 @@
       "instruction": "rts/rti",
       "id": "control-03969",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c predicates",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves metatile predicate return relation GetMTileAttrib Ã¢â€ â€™ CheckForSolidMTiles and source flag semantics.",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -130997,12 +131042,15 @@
       "instruction": "rts/rti",
       "id": "control-03970",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c predicates",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves metatile predicate return relation GetMTileAttrib Ã¢â€ â€™ CheckForClimbMTiles and source flag semantics.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
