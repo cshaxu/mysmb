@@ -10421,13 +10421,16 @@
       "consumer": "ChkLandedEnemyState",
       "storage": "ROM EnemyBGCStateData enemy terrain table",
       "feasiblePath": "ChkLandedEnemyState selects EnemyBGCStateData through source state/facing index.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c background_data binding",
       "semanticContract": "Source index selects same ordered state/speed before enemy state write.",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10440,13 +10443,16 @@
       "consumer": "SetStun",
       "storage": "ROM EnemyBGCXSpdData enemy terrain table",
       "feasiblePath": "SetStun selects EnemyBGCXSpdData through source state/facing index.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c background_data binding",
       "semanticContract": "Source index selects same ordered state/speed before enemy state write.",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10527,13 +10533,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1330,
-    "needs-evidence": 662
+    "exact": 1433,
+    "needs-evidence": 559
   },
   "controlEdgeCounts": {
-    "exact": 2745,
+    "exact": 3000,
     "infeasible": 18,
-    "needs-evidence": 1579
+    "needs-evidence": 1324
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -38167,13 +38173,16 @@
       "label": "EnemyBGCStateData",
       "asmLine": 12420,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Supplies six landing state values.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38183,13 +38192,16 @@
       "label": "EnemyBGCXSpdData",
       "asmLine": 12423,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Supplies two facing-indexed stunned speeds.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38199,13 +38211,16 @@
       "label": "EnemyToBGCollisionDet",
       "asmLine": 12426,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Guards state/Y then dispatches jump paratroopa, hammer bro or normal enemy terrain collision by ID.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -38217,13 +38232,16 @@
       "label": "DoIDCheckBGColl",
       "asmLine": 12439,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Routes special jump/hammer IDs before normal eligibility checks.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38233,13 +38251,16 @@
       "label": "HBChk",
       "asmLine": 12443,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Routes Hammer Bro terrain path.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38249,13 +38270,16 @@
       "label": "CInvu",
       "asmLine": 12446,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Selects normal terrain eligibility for Spiny, power-up and IDs below seven.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38265,13 +38289,16 @@
       "label": "YesIn",
       "asmLine": 12452,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Calls under-enemy query for eligible normal actors.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38281,13 +38308,16 @@
       "label": "NoEToBGCollision",
       "asmLine": 12455,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Handles missing ground path.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38297,13 +38327,16 @@
       "label": "HandleEToBGCollision",
       "asmLine": 12461,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Routes non-solid terrain to no-ground, ordinary solid terrain to landing, and block $23 to erase/score/stun path.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38313,13 +38346,16 @@
       "label": "GiveOEPoints",
       "asmLine": 12476,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Awards enemy-above-block score then enters stun handling.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38329,13 +38365,16 @@
       "label": "ChkToStunEnemies",
       "asmLine": 12480,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Demotes eligible enemy IDs before stun.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38345,13 +38384,16 @@
       "label": "Demote",
       "asmLine": 12489,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Reduces eligible ID to base enemy form.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38361,13 +38403,16 @@
       "label": "SetStun",
       "asmLine": 12491,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Sets stunned state/Y behavior, faces player except bullet variants and selects facing speed.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38377,13 +38422,16 @@
       "label": "SetWYSpd",
       "asmLine": 12503,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Uses water/spiny condition for stunned Y speed.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38393,13 +38441,16 @@
       "label": "SetNotW",
       "asmLine": 12504,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Uses normal stunned Y speed.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38409,13 +38460,16 @@
       "label": "ChkBBill",
       "asmLine": 12509,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves cannon/frenzy bullet direction exceptions.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38425,13 +38479,16 @@
       "label": "NoCDirF",
       "asmLine": 12515,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Stores facing direction for non-bullet actor.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38441,13 +38498,16 @@
       "label": "ExEBGChk",
       "asmLine": 12518,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Returns from stun/background check.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38457,13 +38517,16 @@
       "label": "LandEnemyProperly",
       "asmLine": 12523,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Aligns landed enemy and clears/fixes state bits.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -38474,13 +38537,16 @@
       "label": "SChkA",
       "asmLine": 12535,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Tests special IDs/states before landing state dispatch.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38490,13 +38556,16 @@
       "label": "ChkLandedEnemyState",
       "asmLine": 12537,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Routes state to side check, direction/bump, timed transition or return.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38506,13 +38575,16 @@
       "label": "SetForStn",
       "asmLine": 12552,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Stores stunned enemy interval timer and transitions state two to three.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38522,13 +38594,16 @@
       "label": "ExSteChk",
       "asmLine": 12556,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Returns from landed-state checks.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38538,13 +38613,16 @@
       "label": "ProcEnemyDirection",
       "asmLine": 12558,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Uses ID-specific direction initialization or player-facing decision before landing.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -38554,13 +38632,16 @@
       "label": "InvtD",
       "asmLine": 12571,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Builds inverted desired facing from player/enemy difference.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38570,13 +38651,16 @@
       "label": "CNwCDir",
       "asmLine": 12575,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Compares desired and current direction and bumps only when equal.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38586,13 +38670,16 @@
       "label": "LandEnemyInitState",
       "asmLine": 12580,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Lands enemy then clears state or retains moving-shell fall bit semantics.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38602,13 +38689,16 @@
       "label": "NMovShellFallBit",
       "asmLine": 12589,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Clears d6 while retaining remaining moving-shell state bits.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38618,13 +38708,16 @@
       "label": "ChkForRedKoopa",
       "asmLine": 12597,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Applies red-koopa normal-state side check exception.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38634,13 +38727,16 @@
       "label": "Chk2MSBSt",
       "asmLine": 12603,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Dispatches old state by high-bit into falling/state-table update.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38650,13 +38746,16 @@
       "label": "GetSteFromD",
       "asmLine": 12610,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Reads new state from EnemyBGCStateData by old state index.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -38666,13 +38765,16 @@
       "label": "SetD6Ste",
       "asmLine": 12611,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/background.c",
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Stores computed enemy state.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -102980,12 +103082,15 @@
       "instruction": "bne",
       "id": "control-02583",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet Ã¢â€ â€™ ExEBG and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103002,12 +103107,15 @@
       "instruction": "jsr",
       "id": "control-02584",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background call relation EnemyToBGCollisionDet Ã¢â€ â€™ SubtEnemyYPos and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103024,12 +103132,15 @@
       "instruction": "bcc",
       "id": "control-02585",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet Ã¢â€ â€™ ExEBG and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103046,12 +103157,15 @@
       "instruction": "bne",
       "id": "control-02586",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet Ã¢â€ â€™ DoIDCheckBGColl and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103067,12 +103181,15 @@
       "instruction": "bcc",
       "id": "control-02587",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation EnemyToBGCollisionDet Ã¢â€ â€™ ExEBG and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103089,12 +103206,15 @@
       "instruction": "bcc",
       "id": "control-02588",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background fallthrough relation EnemyToBGCollisionDet Ã¢â€ â€™ DoIDCheckBGColl and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103110,12 +103230,15 @@
       "instruction": "bne",
       "id": "control-02589",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation DoIDCheckBGColl Ã¢â€ â€™ HBChk and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103129,12 +103252,15 @@
       "instruction": "jmp",
       "id": "control-02590",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background jump relation DoIDCheckBGColl Ã¢â€ â€™ EnemyJump and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103149,12 +103275,15 @@
       "instruction": "bne",
       "id": "control-02591",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation HBChk Ã¢â€ â€™ CInvu and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103168,12 +103297,15 @@
       "instruction": "jmp",
       "id": "control-02592",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background jump relation HBChk Ã¢â€ â€™ HammerBroBGColl and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103188,12 +103320,15 @@
       "instruction": "beq",
       "id": "control-02593",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation CInvu Ã¢â€ â€™ YesIn and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103207,12 +103342,15 @@
       "instruction": "beq",
       "id": "control-02594",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation CInvu Ã¢â€ â€™ YesIn and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103226,12 +103364,15 @@
       "instruction": "bcs",
       "id": "control-02595",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation CInvu Ã¢â€ â€™ ExEBGChk and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103245,12 +103386,15 @@
       "instruction": "bcs",
       "id": "control-02596",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background fallthrough relation CInvu Ã¢â€ â€™ YesIn and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103264,12 +103408,15 @@
       "instruction": "jsr",
       "id": "control-02597",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background call relation YesIn Ã¢â€ â€™ ChkUnderEnemy and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103284,12 +103431,15 @@
       "instruction": "bne",
       "id": "control-02598",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background branch relation YesIn Ã¢â€ â€™ HandleEToBGCollision and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103303,12 +103453,15 @@
       "instruction": "bne",
       "id": "control-02599",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background fallthrough relation YesIn Ã¢â€ â€™ NoEToBGCollision and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103322,12 +103475,15 @@
       "instruction": "jmp",
       "id": "control-02600",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy-background jump relation NoEToBGCollision Ã¢â€ â€™ ChkForRedKoopa and source ID/state/query ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103341,12 +103497,15 @@
       "instruction": "jsr",
       "id": "control-02601",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun call relation HandleEToBGCollision Ã¢â€ â€™ ChkForNonSolids with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103361,12 +103520,15 @@
       "instruction": "beq",
       "id": "control-02602",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision Ã¢â€ â€™ NoEToBGCollision with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103380,12 +103542,15 @@
       "instruction": "bne",
       "id": "control-02603",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision Ã¢â€ â€™ LandEnemyProperly with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103400,12 +103565,15 @@
       "instruction": "bcs",
       "id": "control-02604",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision Ã¢â€ â€™ ChkToStunEnemies with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103419,12 +103587,15 @@
       "instruction": "bne",
       "id": "control-02605",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation HandleEToBGCollision Ã¢â€ â€™ GiveOEPoints with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103438,12 +103609,15 @@
       "instruction": "jsr",
       "id": "control-02606",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun call relation HandleEToBGCollision Ã¢â€ â€™ KillEnemyAboveBlock with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103458,12 +103632,15 @@
       "instruction": "jsr",
       "id": "control-02607",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation HandleEToBGCollision Ã¢â€ â€™ GiveOEPoints with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103477,12 +103654,15 @@
       "instruction": "jsr",
       "id": "control-02608",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun call relation GiveOEPoints Ã¢â€ â€™ SetupFloateyNumber with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103497,12 +103677,15 @@
       "instruction": "jsr",
       "id": "control-02609",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation GiveOEPoints Ã¢â€ â€™ ChkToStunEnemies with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103516,12 +103699,15 @@
       "instruction": "bcc",
       "id": "control-02610",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies Ã¢â€ â€™ SetStun with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103535,12 +103721,15 @@
       "instruction": "bcs",
       "id": "control-02611",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies Ã¢â€ â€™ SetStun with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103554,12 +103743,15 @@
       "instruction": "bcc",
       "id": "control-02612",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies Ã¢â€ â€™ Demote with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103573,12 +103765,15 @@
       "instruction": "bcc",
       "id": "control-02613",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation ChkToStunEnemies Ã¢â€ â€™ SetStun with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103592,12 +103787,15 @@
       "instruction": "bcc",
       "id": "control-02614",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation ChkToStunEnemies Ã¢â€ â€™ Demote with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103611,12 +103809,15 @@
       "instruction": "sta",
       "id": "control-02615",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation Demote Ã¢â€ â€™ SetStun with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103630,12 +103831,15 @@
       "instruction": "beq",
       "id": "control-02616",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation SetStun Ã¢â€ â€™ SetWYSpd with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103649,12 +103853,15 @@
       "instruction": "bne",
       "id": "control-02617",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation SetStun Ã¢â€ â€™ SetNotW with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103668,12 +103875,15 @@
       "instruction": "bne",
       "id": "control-02618",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation SetStun Ã¢â€ â€™ SetWYSpd with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103687,12 +103897,15 @@
       "instruction": "lda",
       "id": "control-02619",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation SetWYSpd Ã¢â€ â€™ SetNotW with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103706,12 +103919,15 @@
       "instruction": "jsr",
       "id": "control-02620",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun call relation SetNotW Ã¢â€ â€™ PlayerEnemyDiff with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -103729,12 +103945,15 @@
       "instruction": "bpl",
       "id": "control-02621",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation SetNotW Ã¢â€ â€™ ChkBBill with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103748,12 +103967,15 @@
       "instruction": "iny",
       "id": "control-02622",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation SetNotW Ã¢â€ â€™ ChkBBill with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103767,12 +103989,15 @@
       "instruction": "beq",
       "id": "control-02623",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation ChkBBill Ã¢â€ â€™ NoCDirF with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103786,12 +104011,15 @@
       "instruction": "beq",
       "id": "control-02624",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation ChkBBill Ã¢â€ â€™ NoCDirF with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103805,12 +104033,15 @@
       "instruction": "sty",
       "id": "control-02625",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation ChkBBill Ã¢â€ â€™ NoCDirF with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103824,12 +104055,15 @@
       "instruction": "sta",
       "id": "control-02626",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation NoCDirF Ã¢â€ â€™ ExEBGChk with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103843,12 +104077,15 @@
       "instruction": "bcs",
       "id": "control-02627",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation LandEnemyProperly Ã¢â€ â€™ ChkForRedKoopa with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103863,12 +104100,15 @@
       "instruction": "bne",
       "id": "control-02628",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation LandEnemyProperly Ã¢â€ â€™ LandEnemyInitState with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103883,12 +104123,15 @@
       "instruction": "bcc",
       "id": "control-02629",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun branch relation LandEnemyProperly Ã¢â€ â€™ ChkLandedEnemyState with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103903,12 +104146,15 @@
       "instruction": "bcc",
       "id": "control-02630",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun fallthrough relation LandEnemyProperly Ã¢â€ â€™ SChkA with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103923,12 +104169,15 @@
       "instruction": "jmp",
       "id": "control-02631",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing/stun jump relation SChkA Ã¢â€ â€™ DoEnemySideCheck with source terrain/state ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103943,12 +104192,15 @@
       "instruction": "beq",
       "id": "control-02632",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState Ã¢â€ â€™ SChkA: the source comparison/flag predicate selects this successor before any later state mutation.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -103962,12 +104214,15 @@
       "instruction": "beq",
       "id": "control-02633",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState Ã¢â€ â€™ ProcEnemyDirection: the source comparison/flag predicate selects this successor before any later state mutation.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -103982,12 +104237,15 @@
       "instruction": "bcs",
       "id": "control-02634",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState Ã¢â€ â€™ ExSteChk: the source comparison/flag predicate selects this successor before any later state mutation.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104001,12 +104259,15 @@
       "instruction": "bne",
       "id": "control-02635",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState Ã¢â€ â€™ ProcEnemyDirection: the source comparison/flag predicate selects this successor before any later state mutation.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104021,12 +104282,15 @@
       "instruction": "bne",
       "id": "control-02636",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState Ã¢â€ â€™ SetForStn: the source comparison/flag predicate selects this successor before any later state mutation.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104040,12 +104304,15 @@
       "instruction": "lda",
       "id": "control-02637",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves the original sequential fall-through ChkLandedEnemyState Ã¢â€ â€™ SetForStn: prior source writes and flags reach the successor in instruction order.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104059,12 +104326,15 @@
       "instruction": "jsr",
       "id": "control-02638",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state call relation SetForStn Ã¢â€ â€™ EnemyLanding with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104079,12 +104349,15 @@
       "instruction": "jsr",
       "id": "control-02639",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state fallthrough relation SetForStn Ã¢â€ â€™ ExSteChk with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104098,12 +104371,15 @@
       "instruction": "beq",
       "id": "control-02640",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation ProcEnemyDirection Ã¢â€ â€™ LandEnemyInitState with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104118,12 +104394,15 @@
       "instruction": "bne",
       "id": "control-02641",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation ProcEnemyDirection Ã¢â€ â€™ InvtD with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104138,12 +104417,15 @@
       "instruction": "beq",
       "id": "control-02642",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation ProcEnemyDirection Ã¢â€ â€™ LandEnemyInitState with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104158,12 +104440,15 @@
       "instruction": "beq",
       "id": "control-02643",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state fallthrough relation ProcEnemyDirection Ã¢â€ â€™ InvtD with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104178,12 +104463,15 @@
       "instruction": "jsr",
       "id": "control-02644",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state call relation InvtD Ã¢â€ â€™ PlayerEnemyDiff with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -104201,12 +104489,15 @@
       "instruction": "bpl",
       "id": "control-02645",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation InvtD Ã¢â€ â€™ CNwCDir with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104220,12 +104511,15 @@
       "instruction": "iny",
       "id": "control-02646",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state fallthrough relation InvtD Ã¢â€ â€™ CNwCDir with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104239,12 +104533,15 @@
       "instruction": "bne",
       "id": "control-02647",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation CNwCDir Ã¢â€ â€™ LandEnemyInitState with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104258,12 +104555,15 @@
       "instruction": "jsr",
       "id": "control-02648",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state call relation CNwCDir Ã¢â€ â€™ ChkForBump_HammerBroJ with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104278,12 +104578,15 @@
       "instruction": "jsr",
       "id": "control-02649",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state fallthrough relation CNwCDir Ã¢â€ â€™ LandEnemyInitState with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104297,12 +104600,15 @@
       "instruction": "jsr",
       "id": "control-02650",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state call relation LandEnemyInitState Ã¢â€ â€™ EnemyLanding with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104317,12 +104623,15 @@
       "instruction": "bne",
       "id": "control-02651",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation LandEnemyInitState Ã¢â€ â€™ NMovShellFallBit with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104336,12 +104645,15 @@
       "instruction": "bne",
       "id": "control-02652",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation ChkForRedKoopa Ã¢â€ â€™ Chk2MSBSt with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104355,12 +104667,15 @@
       "instruction": "beq",
       "id": "control-02653",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation ChkForRedKoopa Ã¢â€ â€™ ChkForBump_HammerBroJ with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -104375,12 +104690,15 @@
       "instruction": "beq",
       "id": "control-02654",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state fallthrough relation ChkForRedKoopa Ã¢â€ â€™ Chk2MSBSt with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104394,12 +104712,15 @@
       "instruction": "bcc",
       "id": "control-02655",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state branch relation Chk2MSBSt Ã¢â€ â€™ GetSteFromD with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104413,12 +104734,15 @@
       "instruction": "jmp",
       "id": "control-02656",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state jump relation Chk2MSBSt Ã¢â€ â€™ SetD6Ste with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104432,12 +104756,15 @@
       "instruction": "lda",
       "id": "control-02657",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state fallthrough relation GetSteFromD Ã¢â€ â€™ SetD6Ste with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -104451,12 +104778,15 @@
       "instruction": "sta",
       "id": "control-02658",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/background.c",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves enemy landing-state fallthrough relation SetD6Ste Ã¢â€ â€™ DoEnemySideCheck with state/facing ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -125792,12 +126122,15 @@
       "instruction": "rts/rti",
       "id": "control-03729",
       "cohort": "H",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared power-up control flow and named child call/return counterpart",
       "semanticEvidence": [
-        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Child return resumes the same source invocation at its next ordered instruction.",
       "currentSourcePaths": [
         "src/game/power_up.c"
@@ -129600,12 +129933,15 @@
       "instruction": "rts/rti",
       "id": "control-03905",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+      ],
       "semanticContract": "Preserves original return relation ChkToStunEnemies -> StnE with its source predicate, selected slot and state/table handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",

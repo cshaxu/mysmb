@@ -2341,3 +2341,15 @@ JSFnd and NoJSFnd are current-exact with all four terminal controls. The
 source-reachable original-ROM predicate record replay has zero x86/x64
 differences. The registry is **1,385 / 1,992** nodes and **2,898 / 4,324**
 feasible controls; historical mapping remains **1,992 / 1,992**.
+
+### T64 S19 enemy-background result
+
+The `$DFC0-$E07A` enemy-background and landing chain is current-exact: 32
+labels, 80 source-owned feasible control relations and two table material
+relations. Freshly captured original-ROM routes supplied 1,643 background-root
+and 549 landing records; current x86/x64 checkers ran 2,192 comparisons each
+with zero mapped-RAM or child-sequence differences. Focused background,
+stun, landing and platform-purity tests pass. The registry is **1,433 exact
+nodes**, **3,000 exact feasible controls**, **18 infeasible raw controls** and
+**358 exact material relations**; historical conformance remains **1,992 /
+1,992**.

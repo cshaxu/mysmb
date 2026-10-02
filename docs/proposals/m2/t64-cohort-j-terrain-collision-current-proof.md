@@ -733,3 +733,50 @@ link.
   controls (raw 4,342, infeasible 18).
 - Scope: 32 labels; historical expected matches: 0; maximum historical complete
   1,992 / 1,992.
+
+## S19 closure — enemy background collision and landing state
+
+All 32 scoped labels are current-exact: `EnemyBGCStateData`,
+`EnemyBGCXSpdData`, `EnemyToBGCollisionDet`, `DoIDCheckBGColl`, `HBChk`,
+`CInvu`, `YesIn`, `NoEToBGCollision`, `HandleEToBGCollision`,
+`GiveOEPoints`, `ChkToStunEnemies`, `Demote`, `SetStun`, `SetWYSpd`,
+`SetNotW`, `ChkBBill`, `NoCDirF`, `ExEBGChk`, `LandEnemyProperly`, `SChkA`,
+`ChkLandedEnemyState`, `SetForStn`, `ExSteChk`, `ProcEnemyDirection`,
+`InvtD`, `CNwCDir`, `LandEnemyInitState`, `NMovShellFallBit`,
+`ChkForRedKoopa`, `Chk2MSBSt`, `GetSteFromD`, and `SetD6Ste`.
+
+Static `$DFC0-$E07A` comparison confirms the state/Y and Spiny gates, jump and
+Hammer dispatch, under-enemy query outcome, `$23` erase/score/demotion/stun
+sequence, both original tables, water/Bloober vertical speed selection, bullet
+direction exceptions, every landing-nibble/state branch, Spiny timing, player
+facing decision, shell falling-bit handling and red-koopa transition. The
+chain contains 80 source-owned feasible control relations; all are exact. Its
+two material table handoffs are exact.
+
+A fresh controlled original-ROM capture produced 1,643 naturally reached
+background roots and 549 natural landing entries. Freshly compiled x86 and x64
+checkers ran 2,192 comparisons each with zero differences in mapped RAM and
+recorded child-call sequence. Focused background caller, stun, landing and
+platform-purity CTests pass on both widths. No product C changed, so product
+EXEs were intentionally not refreshed.
+
+Current totals: historical mapping **1,992 / 1,992**; current exact nodes
+**1,433 / 1,992**; current exact feasible controls **3,000 / 4,324** (raw
+**4,342**, infeasible **18**); exact material relations **358 / 487**.
+
+## S20 admission — enemy side collision loop
+
+S20 admits `$E0B0-$E0D7`: `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC` and
+`ExESdeC`. Its shared owner is `src/game/enemy/side_collision.c`; S19 provides
+the landing-side transfer and S21 begins the bump path. The ROM logic track
+will compare status-bar gate, moving-direction iteration, two horizontal
+probe coordinates, non-solid result and terminal return. The operational track
+uses controlled original-ROM side-collision routes per x86/x64 width, focused
+side-caller and jump/hammer checks, platform purity and the shared-source DOS16
+link. Product artifacts refresh only if shared product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,433 / 1,992** nodes and **3,000 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **4** labels; expected historical matches: **0**; maximum historical
+  complete **1,992 / 1,992**.
