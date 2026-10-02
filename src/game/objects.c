@@ -278,10 +278,12 @@ void mysmb_objects_get_coin_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
         (mysmb_u16)(0x04d0U + slot * 4U),
         game->ram[MYSMB_MISC_BOUND_BOX + slot],
         game->ram[0x03b3U], game->ram[0x03beU]);
+    /* GetMiscBoundBox adds nine, including for CheckRightScreenBBox.
+     * Its clip inputs are not the misc motion array's +13 offsets. */
     mysmb_world_clip_bounding_box_to_screen(game,
         (mysmb_u16)(0x04d0U + slot * 4U),
-        game->ram[MYSMB_MISC_PAGE + slot],
-        game->ram[MYSMB_MISC_X + slot]);
+        game->ram[0x0076U + slot],
+        game->ram[0x008fU + slot]);
 }
 
 /* Legacy ABI used by the cannon caller and aggregate tests. All response
@@ -631,16 +633,17 @@ void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
     mysmb_objects_check_enemy_side(game, slot);
 }
 
-/* ROM $E235 GetMiscBoundBox: the hammer shares the misc relative fields and
+/* ROM $E236 GetMiscBoundBox: the hammer shares the misc relative fields and
  * takes the same BoundingBoxCore -> CheckRightScreenBBox route as a coin. */
 void mysmb_objects_get_hammer_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_world_set_bounding_box(game, (mysmb_u16)(0x04d0U + slot * 4U),
         game->ram[MYSMB_MISC_BOUND_BOX + slot], game->ram[0x03b3U],
         game->ram[0x03beU]);
+    /* Preserve the source +9 clip offset used by the shared misc entry. */
     mysmb_world_clip_bounding_box_to_screen(game,
-        (mysmb_u16)(0x04d0U + slot * 4U), game->ram[MYSMB_MISC_PAGE + slot],
-        game->ram[MYSMB_MISC_X + slot]);
+        (mysmb_u16)(0x04d0U + slot * 4U), game->ram[0x0076U + slot],
+        game->ram[0x008fU + slot]);
 }
 /* ROM PlayerCollisionCore receives relative X coordinates.  Keep every
  * special-object path on the active 256-pixel screen before comparing its

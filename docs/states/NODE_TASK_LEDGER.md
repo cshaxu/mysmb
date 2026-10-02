@@ -3497,3 +3497,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T64 S30 | 2 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
 | M2 T64 S31 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
 | M2 T64 S32 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
+| M2 T64 S33 | 10 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |

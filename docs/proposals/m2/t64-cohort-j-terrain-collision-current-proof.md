@@ -1178,3 +1178,58 @@ S32 records node `BoundBoxCtrlData` and material relation `material-00403`
 exact. Current totals: historical **1,992 / 1,992**; current exact nodes
 **1,456 / 1,992**; current exact feasible controls **3,052 / 4,324** (raw
 **4,342**, infeasible **18**); exact material relations **359 / 487**.
+
+## S33 admission - object bounding-box entry chain
+
+
+`GetFireballBoundBox`, `GetMiscBoundBox`, `FBallB`, `GetEnemyBoundBox`, `SmallPlatformBoundBox`, `GetMaskedOffScrBits`, `CMBits`, `LargePlatformBoundBox`, `SetupEOffsetFBBox`, `MoveBoundBoxOffscreen`
+
+All ten labels are incoming needs-evidence and expected current-exact; maximum 1,466/1,992. Historical mapping remains 1,992/1,992, expected new historical matches zero. S32 supplies table binding; S34/S35 own child core/clipping internals. RAM $00-$07 and CPU registers/stack are child ABI, audited at child boundaries; persistent outputs must agree unconditionally, including unchanged bytes.
+
+ROM span $E22D-$E29B. Shared owners are world/collision.c, objects.c and enemy_bounds.c. Static instruction/control audit and bounded direct original-ROM entry matrix cover entry offset, fixed relative coordinate selection, left/right masks, hidden boxes and partial large-platform visibility. Operational proof uses fresh x86/x64 replay, focused purity and DOS16 shared-source link.
+
+## S33 closure - object bounding-box entry chain
+
+All ten scoped nodes are current-exact: `GetFireballBoundBox`, `GetMiscBoundBox`, `FBallB`, `GetEnemyBoundBox`, `SmallPlatformBoundBox`, `GetMaskedOffScrBits`, `CMBits`, `LargePlatformBoundBox`, `SetupEOffsetFBBox`, `MoveBoundBoxOffscreen`.
+Static $E22D-$E29B comparison confirms +7 fireball, +9 misc and +1 enemy
+selection, fixed relative-coordinate fields, ordinary $44/$48 and small-platform
+$04/$08 masks, signed page/zero selection, masked hide/build ordering and the
+large-platform raw horizontal $FE threshold. The identical box and clipping
+children retain their own internal audits in S34/S35; their calls, returns and
+tails are observed here without crediting child-internal nodes.
+
+The original GetMiscBoundBox leaves X at slot+9 for the clipping tail. Both
+coin and hammer C entries instead used misc movement slot+13 for clip input.
+They now read the original $76+slot and $8f+slot, while keeping the ROM's
+$04a2 control, fixed relative fields and $04d0 output box. A similar-issue
+sweep reviewed all six shared clipping call sites: the two misc sites required
+this repair; fireball, enemy, small and large-platform sites match their source
+offsets. The strengthened checker compares all 1,784 persistent RAM bytes
+unconditionally, so it catches spurious writes and unchanged-byte discrepancies.
+Scratch $00-$07 and CPU stack/registers are explicit child ABI exclusions;
+call/input/output semantics are checked at the shared owner seams.
+
+Sixty controlled original-ROM entries cover all five entry families, twelve
+controls, both fireball slots, nine misc slots, six enemy slots, page/position
+variants and nonzero/zero mask outcomes. Each width also executes the twelve
+misc records through the hammer counterpart. Both widths have zero differences.
+Observed source branches: E25F 10 taken/14 fallthrough; E263 2/12; E26E
+14/10; E27A 4/8. E234 is 12/0 because LDY #$02 immediately sets Z=0.
+Thus control-02708 is infeasible, not an omitted feasible C connection.
+
+The 19 newly exact feasible controls are control-02707, control-02709 through
+control-02723, and control-03993 through control-03995. Caller-owned outer
+returns remain with their caller audits. Current totals: historical mapping
+**1,992/1,992**; current exact nodes **1,466/1,992**; current exact feasible
+controls **3,071/4,323**, raw **4,342**, infeasible **19**; exact material
+relations **359/487**. The former 4,324 denominator decreases by the newly
+proven impossible fallthrough. Registry summary caches were refreshed from
+individual authoritative rows.
+
+Operational proof: fresh x86/x64 shared-owner replay and Win32 product builds,
+product self-tests, focus-pause and audio-renderer tests, and platform-purity
+checks pass; OpenNT DOS16 shared-source build and link complete. All three
+assets/mysmb16.exe, mysmb32.exe and mysmb64.exe are refreshed from their
+matching build outputs. The owner-approved local EXE submission continues;
+no raw records, ROM bytes or generated data are staged. Unrelated working-tree
+source/proposal/queue changes are preserved.

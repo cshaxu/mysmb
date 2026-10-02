@@ -10537,16 +10537,16 @@
   ],
   "nodeCounts": {
     "unclassified": 0,
-    "exact": 1452,
-    "needs-evidence": 540,
+    "exact": 1466,
+    "needs-evidence": 526,
     "mismatch": 0
   },
   "controlEdgeCounts": {
     "unclassified": 0,
-    "exact": 3043,
-    "needs-evidence": 1281,
+    "exact": 3071,
+    "needs-evidence": 1252,
     "mismatch": 0,
-    "infeasible": 18
+    "infeasible": 19
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -39224,13 +39224,16 @@
       "label": "GetFireballBoundBox",
       "asmLine": 12805,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "mysmb_world_get_fireball_bounding_box",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Offsets fireball slot by seven, selects relative-coordinate pair two and builds/clips its source bounding box.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -39240,13 +39243,16 @@
       "label": "GetMiscBoundBox",
       "asmLine": 12813,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "mysmb_objects_get_coin_bounding_box / mysmb_objects_get_hammer_bounding_box",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Offsets misc slot by nine, selects relative-coordinate pair six and joins the shared build/clip path.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -39256,16 +39262,20 @@
       "label": "FBallB",
       "asmLine": 12819,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "ordered mysmb_world_set_bounding_box then mysmb_world_clip_bounding_box_to_screen in fireball/misc owners",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Calls BoundingBoxCore then unconditionally applies right/left screen clipping.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -39273,13 +39283,16 @@
       "label": "GetEnemyBoundBox",
       "asmLine": 12822,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/enemy_bounds.c",
+      "currentCounterpart": "mysmb_objects_update_enemy_bounding_box -> enemy_masked_box",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Selects enemy offscreen masks $48/$44 and transfers to masked enemy-box routing.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c"
@@ -39289,13 +39302,16 @@
       "label": "SmallPlatformBoundBox",
       "asmLine": 12828,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/enemy_bounds.c",
+      "currentCounterpart": "mysmb_platform_box_small -> enemy_masked_box",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Selects small-platform masks $08/$04 then shares masked routing.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c"
@@ -39305,13 +39321,16 @@
       "label": "GetMaskedOffScrBits",
       "asmLine": 12833,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/enemy_bounds.c",
+      "currentCounterpart": "enemy_masked_box signed page/zero mask selection",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Computes enemy position relative to screen-left with borrow, selects source mask by left/edge status, stores masked offscreen bits and chooses build or full-offscreen box.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c"
@@ -39321,30 +39340,35 @@
       "label": "CMBits",
       "asmLine": 12844,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/enemy_bounds.c",
+      "currentCounterpart": "enemy_masked_box offscreen mask write and hide/build fork",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Applies selected offscreen mask and branches on nonzero result.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/world/bounding_box.c"
+        "src/game/enemy_bounds.c"
       ]
     },
     {
       "label": "LargePlatformBoundBox",
       "asmLine": 12850,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/enemy_bounds.c",
+      "currentCounterpart": "mysmb_platform_box_large raw horizontal threshold",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Temporarily increments slot to query X offscreen, restores it and sends fully offscreen platforms to all-$ff box path.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c"
@@ -39354,13 +39378,16 @@
       "label": "SetupEOffsetFBBox",
       "asmLine": 12857,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/enemy_bounds.c",
+      "currentCounterpart": "enemy_masked_box / mysmb_platform_box_large build then clip tails",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Offsets enemy slot by one, selects relative pair one, builds box and clips it.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -39371,17 +39398,19 @@
       "label": "MoveBoundBoxOffscreen",
       "asmLine": 12866,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/enemy_bounds.c",
+      "currentCounterpart": "enemy_masked_box / mysmb_platform_box_large four FF box writes",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Writes $ff to all four selected enemy bounding-box coordinates and returns.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/world/bounding_box.c"
+        "src/game/enemy_bounds.c"
       ]
     },
     {
@@ -105932,17 +105961,21 @@
       "instruction": "bne",
       "id": "control-02707",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original branch relation GetFireballBoundBox -> FBallB with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
-        "src/game/world/bounding_box.c",
-        "src/game/world/collision.c"
+        "src/game/world/bounding_box.c"
       ]
     },
     {
@@ -105953,16 +105986,19 @@
       "instruction": "bne",
       "id": "control-02708",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 instruction proof: $E232 LDY #$02 sets Z=0; immediately following $E234 BNE is always taken to FBallB. No intervening flag writer exists, so fallthrough to GetMiscBoundBox is impossible. Controlled entries confirm 12 taken, zero fallthrough."
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves original fallthrough relation GetFireballBoundBox -> GetMiscBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
         "src/game/objects.c",
-        "src/game/world/collision.c"
+        "src/game/enemy_bounds.c",
+        "src/game/world/bounding_box.c"
       ]
     },
     {
@@ -105973,16 +106009,20 @@
       "instruction": "ldy",
       "id": "control-02709",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetMiscBoundBox -> FBallB with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
         "src/game/objects.c",
+        "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -105994,16 +106034,20 @@
       "instruction": "jsr",
       "id": "control-02710",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original call relation FBallB -> BoundingBoxCore with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
         "src/game/objects.c",
+        "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -106015,16 +106059,20 @@
       "instruction": "jmp",
       "id": "control-02711",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original jump relation FBallB -> CheckRightScreenBBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
         "src/game/objects.c",
+        "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -106036,15 +106084,21 @@
       "instruction": "jmp",
       "id": "control-02712",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original jump relation GetEnemyBoundBox -> GetMaskedOffScrBits with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c"
+        "src/game/world/collision.c",
+        "src/game/objects.c",
+        "src/game/enemy_bounds.c",
+        "src/game/world/bounding_box.c"
       ]
     },
     {
@@ -106055,15 +106109,21 @@
       "instruction": "ldy",
       "id": "control-02713",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original fallthrough relation SmallPlatformBoundBox -> GetMaskedOffScrBits with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c"
+        "src/game/world/collision.c",
+        "src/game/objects.c",
+        "src/game/enemy_bounds.c",
+        "src/game/world/bounding_box.c"
       ]
     },
     {
@@ -106074,14 +106134,19 @@
       "instruction": "bmi",
       "id": "control-02714",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original branch relation GetMaskedOffScrBits -> CMBits with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
@@ -106094,14 +106159,19 @@
       "instruction": "beq",
       "id": "control-02715",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original branch relation GetMaskedOffScrBits -> CMBits with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
@@ -106114,14 +106184,19 @@
       "instruction": "ldy",
       "id": "control-02716",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetMaskedOffScrBits -> CMBits with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
@@ -106134,14 +106209,19 @@
       "instruction": "bne",
       "id": "control-02717",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original branch relation CMBits -> MoveBoundBoxOffscreen with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
@@ -106154,14 +106234,19 @@
       "instruction": "jmp",
       "id": "control-02718",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original jump relation CMBits -> SetupEOffsetFBBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
@@ -106174,15 +106259,21 @@
       "instruction": "jsr",
       "id": "control-02719",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original call relation LargePlatformBoundBox -> GetXOffscreenBits with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c"
+        "src/game/world/collision.c",
+        "src/game/objects.c",
+        "src/game/enemy_bounds.c",
+        "src/game/world/bounding_box.c"
       ]
     },
     {
@@ -106193,14 +106284,19 @@
       "instruction": "bcs",
       "id": "control-02720",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original branch relation LargePlatformBoundBox -> MoveBoundBoxOffscreen with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
@@ -106213,14 +106309,19 @@
       "instruction": "bcs",
       "id": "control-02721",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original fallthrough relation LargePlatformBoundBox -> SetupEOffsetFBBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
+        "src/game/world/collision.c",
+        "src/game/objects.c",
         "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
@@ -106233,16 +106334,20 @@
       "instruction": "jsr",
       "id": "control-02722",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original call relation SetupEOffsetFBBox -> BoundingBoxCore with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
         "src/game/objects.c",
+        "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -106254,16 +106359,20 @@
       "instruction": "jmp",
       "id": "control-02723",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original jump relation SetupEOffsetFBBox -> CheckRightScreenBBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
         "src/game/objects.c",
+        "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -132054,16 +132163,20 @@
       "instruction": "rts/rti",
       "id": "control-03993",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original return relation BoundingBoxCore -> FBallB with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
         "src/game/objects.c",
+        "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -132075,15 +132188,21 @@
       "instruction": "rts/rti",
       "id": "control-03994",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "The source return relation GetXOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 LargePlatformBoundBox exposes the resolved partition index or offscreen mask to its caller continuation.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c"
+        "src/game/world/collision.c",
+        "src/game/objects.c",
+        "src/game/enemy_bounds.c",
+        "src/game/world/bounding_box.c"
       ]
     },
     {
@@ -132094,16 +132213,20 @@
       "instruction": "rts/rti",
       "id": "control-03995",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared bounding-box generation and screen-clip owners",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+      ],
       "semanticContract": "Preserves original return relation BoundingBoxCore -> SetupEOffsetFBBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
+        "src/game/world/collision.c",
         "src/game/objects.c",
+        "src/game/enemy_bounds.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -139842,12 +139965,13 @@
     "control-01632",
     "control-01711",
     "control-02036",
+    "control-02708",
     "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 18,
-  "feasibleControlEdgeTotal": 4324
+  "infeasibleControlEdgeTotal": 19,
+  "feasibleControlEdgeTotal": 4323
 }
