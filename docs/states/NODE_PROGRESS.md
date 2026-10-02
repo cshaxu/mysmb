@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T66 S2 - active relative coordinate chain
+
+[S2 exact scope and source-return audit](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+admits9 pending nodes/intended fresh9, maximum1686/1992,18 pending controls.
+Current1677/1992 nodes,3588/4317 controls(raw4342,infeasible25),396/492
+material partial; historical1992/1992 separate. Paired block consumption of
+RAM-restored ObjectOffset is under comparison; no exact credit at admission.
+
 ## M2 T66 S1 - closed player graphics owner chain
 
 [S1 individual node/edge and dual proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)

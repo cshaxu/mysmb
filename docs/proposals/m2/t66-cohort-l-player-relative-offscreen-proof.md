@@ -417,3 +417,39 @@ bytes,192MiB aggregate,120seconds/run and524288steps/case observed. No ROM,
 raw fixture or reference-emulator runtime enters tracked product source.
 Ledger admission/closure, registry, documentation and whitespace gates pass.
 S1 closes; T66/M2 stay open pending remaining nodes and complete certification.
+
+## S2 admission - shared relative coordinate entries and paired block return
+
+Unchanged scope9/intended fresh9, all incoming needs-evidence: RelativePlayerPosition; RelativeBubblePosition; RelativeFireballPosition; RelWOfs; RelativeMiscPosition; RelativeEnemyPosition; RelativeBlockPosition; VariableObjOfsRelPos; GetObjRelativePosition.
+Current1677/1992 nodes,3588/4317 feasible controls(raw4342,infeasible25),
+396/492 material partial. Maximum1686/1992 nodes; historical1992 baseline/
+maximum, expectedMatches empty and maintenance custody unchanged. All18
+owned controls in S2's plan row are pending; no material row promotions.
+
+Shared object_position.c wrappers enter one GetObjRelativePosition helper,
+store source Y first, then byte X-ScreenLeftX to fixed family destinations.
+Proper source offsets are existing dependencies without S3 table/node credit.
+RelativeBlockPosition first calls VariableObjOfsRelPos; that routine restores
+X from ObjectOffset before the second block's INX/INX. Audit must distinguish
+the incoming slot argument from that RAM-restored offset, not assume equality.
+Current C uses incoming slot+2 for the second phase; compare controlled valid
+slot combinations independently before deciding whether repair is required.
+
+Original six family entries cover all256 world-X x256 left-X byte pairs,
+all valid family slots, all Y bytes and selected independent ObjectOffset
+values; page/high state varies and must remain untouched because this routine
+reads low coordinates only. Full current native output compares1841 bytes,
+including scratch/OAM/aliases0109-0139; true CPU stack excluded. Source PC
+visits, actual transfers/RTS continuations and per-node native source mappings
+prove the listed graph relations. CPU registers unused by the native API are
+excluded; the block's consumed first-return X is a required semantic input,
+not an exclusion. Full output executes real shared helpers without mocks.
+
+Owner ROM/local reviewed ASM are nonredistributable research inputs. Ignored
+build/m2-t66-s2 contains all raw/log/script artifacts,192MiB raw aggregate,
+2048 roots/chunk,120seconds/run,524288steps/case and coordinator cleanup.
+Separate focused native tests/builds/purity and original OpenNT DOS16 link;
+product corrections refresh three owner-authorized EXEs. Sweep covers all
+relative wrappers, source-index restoration, byte addition and Y-before-X
+store order. No S3/later credit or platform/audio changes. No closure while
+any scoped semantic difference or unproved claimed relation remains.

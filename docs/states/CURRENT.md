@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T66 S1 Packet
+## M2 T66 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T66 S1 P2 closed; T66 open; S2 next, not admitted. |
-| Admission And Approval | Owner approved continued source-order audit/repair; coordinator admits exact Cohort L and S1 player graphics chain. |
-| Objective | Audit/repair44 player graphics/action/change-size/attribute nodes, their listed controls and material00430/00431. |
-| Non-goals | No later relative/offscreen/sprite-node credit, platform/audio changes or broad unrelated rewrite. |
+| Identifier Mode | Continuation: M2 T66 S2 P1 active; S1 closed; T66 open. |
+| Admission And Approval | Owner approved source-order continuation; coordinator admits unchanged S2 chain. |
+| Objective | Audit/repair9 relative-coordinate nodes and18 listed controls, including paired-block first-return ObjectOffset consumption. |
+| Non-goals | No later offscreen/table-node credit, platform/audio changes or unrelated rewrite. |
 | Reference Baseline | Historical1992/1992; current exact1677/1992 nodes,3588/4317 feasible controls(raw4342,infeasible25),material396/492 partial; owner ROM/local ASM. |
-| Candidate Proposal | [T66 proposal](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md), exact S plan and S1 admission. |
-| Files And ABI Surface | Shared player_gfx.c, existing OAM dependencies, neutral reference/caller checkers, registry/ledger and product packaging on code changes. |
+| Candidate Proposal | [T66 proposal](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md), S2 exact scope and admission. |
+| Files And ABI Surface | Shared object_position.c relative wrappers/helpers, neutral reference/full-output checkers, registry/ledger and3 products on code changes. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and admitted T66 proof program. |
-| Verification | Current75040 original roots and127104 actual row/erase returns match x86/x64; every scoped branch both outcomes,12/12 focused tests each, purity and original DOS16 link pass. |
-| Expected Markers | All44 intended nodes,103 listed controls and2 material rows exact; historical expected/actualMatches empty, complete1992. |
-| Asset Needs | Owner-local nonredistributable ROM/ASM; ignored build/m2-t66-s1,192MiB raw,2048-root chunks,120seconds/run,524288steps/case and cleanup. |
+| Verification | Original six family roots, byte coordinates and actual graph transfers/returns; full current x86/x64 RAM and static caller semantics. Separate focused native builds/tests/purity and original DOS16 link. |
+| Expected Markers | Scope9 needs-evidence/intended fresh9, maximum1686/1992;18 pending controls, no material promotions. Historical expectedMatches empty/maximum1992. |
+| Asset Needs | Owner-local nonredistributable ROM/ASM; ignored build/m2-t66-s2,192MiB raw,2048 roots/chunk,120seconds/run,524288steps/case and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | No S1 closure with scoped differences or unproved claimed branches; preserve unrelated work; no S2 admission before closure. |
-| Exit Criteria | All S1 scoped dual proof passes;3 EXEs refreshed. S2 next unadmitted; T66/M2 open. |
+| Stop Conditions | No S2 closure with scoped difference or unproved claimed edge; S3 unadmitted; preserve unrelated work. |
+| Exit Criteria | All9 intended nodes and18 controls exact by dual proof;3 EXEs refreshed if product changes. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Player row/erase calls, action/size/attribute branches and byte-wrap versus absolute-indexed addressing. |
+| Similar-Issue Sweep | Relative wrappers, consumed ObjectOffset restoration, byte arithmetic and Y-before-X store order. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **3588/4317** (raw4342,infeasible25).
 - Exact material relations: **396/492**, enumeration partial.
 - Latest three products are T66 S1 P2 builds including audio/title/focus pause.
-- T66 S1 closed44 nodes/103 controls/2 material relations;39 T66 nodes pending, S2 next not admitted.
+- T66 S2 active:9 relative nodes/18 controls; no admission-time promotion.
