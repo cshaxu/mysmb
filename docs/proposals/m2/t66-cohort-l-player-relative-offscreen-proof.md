@@ -755,3 +755,115 @@ re-audited within S4 before successor admission.
 Owner-local ROM/reviewed ASM nonredistributable research inputs. Raw/logs/
 scripts stay below ignored build/m2-t66-s4;192MiB aggregate,2048 roots/chunk,
 120seconds/run,524288steps/case; coordinator deletes raw/probe after proof.
+
+## S4 P2 horizontal offscreen loop audit and closure
+
+All6 intended labels/9 controls/material00433-00434 close exact, no deferred
+or transferred labels. Nodes1697 ->1703/1992, controls3624 ->3633/4317
+(raw4342,infeasible25), material398 ->400/493 partial. Historical1992/1992
+expected/actualMatches empty remains separate. T66 has13 pending nodes;
+S5 next unadmitted. No dependency node credit for DividePDiff.
+
+### Source and native graph/semantics audit
+
+GetXOffscreenBits saves the input source index to04 and initializes right
+edge1. XOfsLoop subtracts pixel coordinate in byte width, writes07, and
+subtracts its borrow with source page from edge page. C tests page difference
+bit7 before selecting alternate defaults. For nonnegative page differences,
+original CMP1/BPL selects alternate default for values1-127; zero alone
+sets06 to the threshold and calls real DividePDiff. C's zero comparison is
+equivalent after its preceding negative branch, including wrapped page bytes.
+Defaults/table indices match the existing locally bound owner-ROM tables.
+XLdBData reads the selected mask and restores source X from04. Nonzero
+returns immediately; zero decrements edge and loops only while nonnegative.
+Native returns bits on nonzero or edge0, otherwise continues once at edge0.
+This preserves both zero-result exits and scratch effects; returned mask
+is an explicit native result, not an excluded CPU register.
+
+Call control03143 enters real DividePDiff; return04059 and fall-through
+join03144 both require its observed RTS target at JSR+3. The call instruction
+does not directly fall through while its child executes. Other branch/loop
+and fall-through relations have actual immediate PC transfer evidence.
+Four original conditional instructions have taken and fall-through outcomes.
+Static counterparts are inspected individually below; no visit count alone
+proves C equivalence. S3's full caller routes already prove real X integration;
+this S proves the independent helper's mask and scratch contract.
+
+Similar-issue sweep: all horizontal implementation/public call sites were
+inspected. Shared RunOffscrBitsSubs passes the same source page/X, then shifts
+returned mask; scroll passes player0 page/X; small-platform output passes
+slot+1 with enemy page/X. All use this shared owner. No scoped discrepancy,
+duplicate algorithm or platform business logic found. No production repair.
+
+### Original route and comparison evidence
+
+Modes33/34 each execute65536 roots, all256 object-X x256 object-page pairs.
+Viewport33 uses left0/page0 and right255/page0. Viewport34 uses a nonzero
+left position on page254, right=left-1 on page255. Valid source indices0-24
+and independent ObjectOffset0-5 vary; these are not claimed as extra Cartesian
+dimensions. Source offset04 and all scratch changes expose wrong source/
+partition substitutions. Current real x86/x64 output matches131072 original
+roots across1841 RAM bytes plus returned A mask, zero differences. True CPU
+stack0100-0108/013A-01FF and unused CPU X/Y/flags excluded;0109-0139 compared.
+No child mock, substitute division result or runtime emulator in product.
+
+All16 X mask indices and3 default indices are observed. Existing C constants
+are checked directly against local original PRG with no new raw data fixture.
+Original opcode/index validation agrees; non-code directives outside scope
+remain indexing exclusions. Raw records/probe cleaned; neutral summaries
+retained under ignored admitted output path. Limits192MiB aggregate,
+2048 roots/chunk,120seconds/run and524288steps/case enforced.
+
+| Node | Original address | Entry visits or table reads | Current counterpart / contract |
+| --- | --- | ---: | --- |
+| XOffscreenBitsData | f1e3 | 196496 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Binds sixteen ordered X-axis offscreen bit masks indexed by the resolved X boundary/partition offset. |
+| DefaultXOnscreenOfs | f1f3 | 327058 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Binds the three ordered default X partition offsets used by right/left boundary selection. |
+| GetXOffscreenBits | f1f6 | 131072 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Starts at the right boundary, computes page/pixel difference and selects an X offscreen mask, examining the left boundary only when the right result is zero. |
+| XOfsLoop | f1fa | 196496 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; For one X screen edge, derives default or divided partition index from page difference, signed comparison and pixel difference. |
+| XLdBData | f21e | 196496 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Loads the selected X mask, restores source offset and either exits on nonzero bits or retries the remaining left edge. |
+| ExXOfsBS | f22a | 131072 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Returns the selected X offscreen mask. |
+
+| Control | Original relation | Instruction PC | Actual transfers/returns |
+| --- | --- | --- | ---: |
+| control-03140 | GetXOffscreenBits -> XOfsLoop (fallthrough) | f1f8 | 131072 |
+| control-03141 | XOfsLoop -> XLdBData (branch) | f20c | 65934 |
+| control-03142 | XOfsLoop -> XLdBData (branch) | f213 | 129538 |
+| control-03143 | XOfsLoop -> DividePDiff (call) | f21b | 1024 |
+| control-03144 | XOfsLoop -> XLdBData (fallthrough) | f21b | 1024 |
+| control-03145 | XLdBData -> ExXOfsBS (branch) | f225 | 130674 |
+| control-03146 | XLdBData -> XOfsLoop (branch) | f228 | 65424 |
+| control-03147 | XLdBData -> ExXOfsBS (fallthrough) | f228 | 398 |
+| control-04059 | DividePDiff -> XOfsLoop (return) | f21b | 1024 |
+
+| Table | Index | Actual indexed reads |
+| --- | ---: | ---: |
+| xmask | 0 | 16 |
+| xmask | 1 | 16 |
+| xmask | 2 | 16 |
+| xmask | 3 | 16 |
+| xmask | 4 | 16 |
+| xmask | 5 | 16 |
+| xmask | 6 | 16 |
+| xmask | 7 | 65822 |
+| xmask | 8 | 16 |
+| xmask | 9 | 16 |
+| xmask | 10 | 16 |
+| xmask | 11 | 16 |
+| xmask | 12 | 16 |
+| xmask | 13 | 16 |
+| xmask | 14 | 16 |
+| xmask | 15 | 130450 |
+| xdefault | 0 | 65424 |
+| xdefault | 1 | 196098 |
+| xdefault | 2 | 65536 |
+
+### Operational proof and delivery
+
+Current x86/x64 checker builds and14/14 focused tests each pass: offscreen
+bounds/chain, player OAM/route/core, purity, audio/focus and product self-test.
+Original OpenNT DOS16 shared-source link exit0 with existing OLDNAMES.LIB
+warning; no DOS graphics/performance qualification. Product code unchanged,
+three S2 P2 assets EXEs verified byte-for-byte against committed HEAD and
+retained with audio/title/focus pause. Only neutral checker/probe extensions.
+Ledger/admission/closure/registry/documentation/whitespace gates pass.
+S4 closes, T66/M2 remain open pending later chains/final certification.

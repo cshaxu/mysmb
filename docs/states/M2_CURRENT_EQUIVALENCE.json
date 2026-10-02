@@ -9427,19 +9427,20 @@
       "consumer": "GetXOffscreenBits",
       "storage": "ROM XOffscreenBitsData table to X boundary result",
       "feasiblePath": "Each X boundary loop indexes XOffscreenBitsData after resolving its page/pixel partition.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c owner-local constant table binding",
       "semanticContract": "The selected ordered X mask reaches the X offscreen result.",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The selected ordered X mask reaches the X offscreen result."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Existing table binding checked against original local PRG, each actual indexed consumer and final returned mask observed."
+      ],
       "cohort": "L",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/oam/object_position.c",
-        "src/game/scroll.c"
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -9448,19 +9449,20 @@
       "consumer": "GetXOffscreenBits",
       "storage": "ROM DefaultXOnscreenOfs table to X partition initialization",
       "feasiblePath": "Each X boundary loop selects the source default offset before optional pixel-difference refinement.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c owner-local constant table binding",
       "semanticContract": "The edge selector reads the same default X partition offset.",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The edge selector reads the same default X partition offset."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Existing table binding checked against original local PRG, each actual indexed consumer and final returned mask observed."
+      ],
       "cohort": "L",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/oam/object_position.c",
-        "src/game/scroll.c"
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -10708,12 +10710,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1697,
-    "needs-evidence": 295
+    "exact": 1703,
+    "needs-evidence": 289
   },
   "controlEdgeCounts": {
-    "exact": 3624,
-    "needs-evidence": 693,
+    "exact": 3633,
+    "needs-evidence": 684,
     "infeasible": 25
   },
   "controlEdgeTypeCounts": {
@@ -44130,13 +44132,16 @@
       "label": "XOffscreenBitsData",
       "asmLine": 14927,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Binds sixteen ordered X-axis offscreen bit masks indexed by the resolved X boundary/partition offset."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1e3 observations196496."
+      ],
       "semanticContract": "Binds sixteen ordered X-axis offscreen bit masks indexed by the resolved X boundary/partition offset.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -44146,13 +44151,16 @@
       "label": "DefaultXOnscreenOfs",
       "asmLine": 14931,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Binds the three ordered default X partition offsets used by right/left boundary selection."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1f3 observations327058."
+      ],
       "semanticContract": "Binds the three ordered default X partition offsets used by right/left boundary selection.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -44162,31 +44170,35 @@
       "label": "GetXOffscreenBits",
       "asmLine": 14934,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Starts at the right boundary, computes page/pixel difference and selects an X offscreen mask, examining the left boundary only when the right result is zero."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1f6 observations131072."
+      ],
       "semanticContract": "Starts at the right boundary, computes page/pixel difference and selects an X offscreen mask, examining the left boundary only when the right result is zero.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/oam/object_position.c",
-        "src/game/scroll.c"
+        "src/game/oam/object_position.c"
       ]
     },
     {
       "label": "XOfsLoop",
       "asmLine": 14937,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md For one X screen edge, derives default or divided partition index from page difference, signed comparison and pixel difference."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1fa observations196496."
+      ],
       "semanticContract": "For one X screen edge, derives default or divided partition index from page difference, signed comparison and pixel difference.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -44196,13 +44208,16 @@
       "label": "XLdBData",
       "asmLine": 14953,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Loads the selected X mask, restores source offset and either exits on nonzero bits or retries the remaining left edge."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef21e observations196496."
+      ],
       "semanticContract": "Loads the selected X mask, restores source offset and either exits on nonzero bits or retries the remaining left edge.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -44212,13 +44227,16 @@
       "label": "ExXOfsBS",
       "asmLine": 14959,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Returns the selected X offscreen mask."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef22a observations131072."
+      ],
       "semanticContract": "Returns the selected X offscreen mask.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117258,17 +117276,18 @@
       "instruction": "ldy",
       "id": "control-03140",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source fall-through GetXOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XOfsLoop preserves prior boundary/index state before the successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1f8 actual transfers/returns131072."
+      ],
       "semanticContract": "The source fall-through GetXOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XOfsLoop preserves prior boundary/index state before the successor.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/oam/object_position.c",
-        "src/game/scroll.c"
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -117279,12 +117298,15 @@
       "instruction": "bmi",
       "id": "control-03141",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source conditional branch XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XLdBData preserves its signed/page/pixel boundary predicate before its alternate path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf20c actual transfers/returns65934."
+      ],
       "semanticContract": "The source conditional branch XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XLdBData preserves its signed/page/pixel boundary predicate before its alternate path.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117298,12 +117320,15 @@
       "instruction": "bpl",
       "id": "control-03142",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source conditional branch XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XLdBData preserves its signed/page/pixel boundary predicate before its alternate path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf213 actual transfers/returns129538."
+      ],
       "semanticContract": "The source conditional branch XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XLdBData preserves its signed/page/pixel boundary predicate before its alternate path.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117317,12 +117342,15 @@
       "instruction": "jsr",
       "id": "control-03143",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source call XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DividePDiff receives the source difference, threshold and edge selector before return to its loop."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf21b actual transfers/returns1024."
+      ],
       "semanticContract": "The source call XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DividePDiff receives the source difference, threshold and edge selector before return to its loop.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117336,12 +117364,15 @@
       "instruction": "jsr",
       "id": "control-03144",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source fall-through XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XLdBData preserves prior boundary/index state before the successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf21b actual transfers/returns1024."
+      ],
       "semanticContract": "The source fall-through XOfsLoop \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XLdBData preserves prior boundary/index state before the successor.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117355,12 +117386,15 @@
       "instruction": "bne",
       "id": "control-03145",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source conditional branch XLdBData \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExXOfsBS preserves its signed/page/pixel boundary predicate before its alternate path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf225 actual transfers/returns130674."
+      ],
       "semanticContract": "The source conditional branch XLdBData \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExXOfsBS preserves its signed/page/pixel boundary predicate before its alternate path.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117374,12 +117408,15 @@
       "instruction": "bpl",
       "id": "control-03146",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source conditional branch XLdBData \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XOfsLoop preserves its signed/page/pixel boundary predicate before its alternate path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf228 actual transfers/returns65424."
+      ],
       "semanticContract": "The source conditional branch XLdBData \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XOfsLoop preserves its signed/page/pixel boundary predicate before its alternate path.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117393,12 +117430,15 @@
       "instruction": "bpl",
       "id": "control-03147",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source fall-through XLdBData \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExXOfsBS preserves prior boundary/index state before the successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf228 actual transfers/returns398."
+      ],
       "semanticContract": "The source fall-through XLdBData \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExXOfsBS preserves prior boundary/index state before the successor.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -136711,12 +136751,15 @@
       "instruction": "rts/rti",
       "id": "control-04059",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S4 P2 original F1E3-F22B source audit: horizontal source save04, right-before-left loop, byte subtraction borrow into page, negative/zero/positive partitions, defaults, real DividePDiff and RTS continuation, table read, source restore, nonzero exit and loop exhaustion match current shared C. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source return relation DividePDiff \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XOfsLoop exposes the resolved partition index or offscreen mask to its caller continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S4 P2 current x86/x64 each match131072 original F1F6 roots, consumed returned mask plus1841 RAM bytes, zero differences. Full256 object-X x256 object-page under each of2 valid256-wide viewports. All6 nodes/9 controls observed, four branches both outcomes, all16 X masks/3 defaults actually read.14/14 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf21b actual transfers/returns1024."
+      ],
       "semanticContract": "The source return relation DividePDiff \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 XOfsLoop exposes the resolved partition index or offscreen mask to its caller continuation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"

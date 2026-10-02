@@ -1,11 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T66 S4 - active horizontal offscreen chain
+## M2 T66 S4 - closed horizontal offscreen chain
 
-[Exact S4 scope and dual-proof contract](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
-admits6 pending nodes,9 controls and material00433/00434. Current1697/1992
-nodes,3624/4317 controls(raw4342,infeasible25),398/493 material partial;
-maximum1703/1992 nodes. Historical1992/1992 remains separate.
+[Individual S4 node/edge/table proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+closes6 nodes/9 controls/material00433-00434, no production discrepancy.
+Current1703/1992 nodes,3633/4317 controls(raw4342,infeasible25),400/493
+material partial; historical1992/1992 separate.131072 original roots match
+both widths, including returned mask; all horizontal table indices and branch
+outcomes observed.14/14 tests each and original DOS16 link pass; S2 products
+retained. T66 has13 pending nodes; S5 next unadmitted.
 
 ## M2 T66 S3 - closed offscreen composition chain
 
