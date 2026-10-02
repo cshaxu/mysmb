@@ -1,5 +1,17 @@
 # M2 ROM conformance node progress
 
+## M2 T64 S22 — InvEnemyDir tail
+
+- Planned and completed label: `InvEnemyDir`; no transferred or incomplete
+  label.
+- ROM logic-equivalence: original `$E140` tail jump and exact shared RXSpd
+  state writes are statically aligned; controlled ordinary ROM entries replay
+  without x86/x64 differences.
+- Operational verification: focused enemy-side/jump/Hammer, terrain-state and
+  platform-purity CTests pass on x86 and x64. No product C or artifact changed.
+- Current exact progress: nodes **1,439 → 1,440 / 1,992**; feasible controls
+  **3,015 → 3,016 / 4,324** (raw **4,342**, infeasible **18**).
+
 The [canonical inventory](../etc/architecture/smb1-rom-migration-inventory.md)
 contains 1,992 unique original label nodes. This is conformance accounting,
 not a percentage estimate of implemented gameplay.

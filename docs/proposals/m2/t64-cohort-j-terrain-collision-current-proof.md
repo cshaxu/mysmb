@@ -861,3 +861,22 @@ audit-only work: no product artifact refresh is due unless product C changes.
   feasible controls (raw **4,342**, infeasible **18**).
 - Scope: **1** label (`InvEnemyDir`); expected historical matches: **0**;
   maximum historical complete **1,992 / 1,992**.
+
+## S22 closure — enemy direction inversion tail
+
+`InvEnemyDir` is current-exact. The original instruction at `$E140` is the
+unconditional `jmp RXSpd`. The ordinary branch of
+`mysmb_objects_bump_enemy` is its shared C counterpart: it writes the two's
+complement of `Enemy_X_Speed` and XORs `Enemy_MovingDir` with 3, exactly as
+the separately owned `RXSpd` body does. No source discrepancy was found.
+
+The controlled original-ROM bump records include the ordinary route to the
+real `RXSpd` return sentinel. Current x86 and x64 replays compare the sound
+queue, X speed and direction with zero differences. Focused enemy-side/jump/
+Hammer, terrain-state and platform-purity CTests pass on both widths. No
+product C changed, so no product EXE refresh is due.
+
+S22 records `InvEnemyDir` and `control-02674` exact. Current totals:
+historical mapping **1,992 / 1,992**; current exact nodes **1,440 / 1,992**;
+current exact feasible controls **3,016 / 4,324** (raw **4,342**, infeasible
+**18**); exact material relations **358 / 487**.

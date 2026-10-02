@@ -38896,13 +38896,15 @@
       "label": "InvEnemyDir",
       "asmLine": 12654,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy/RXSpd owner",
-      "currentCounterpart": "mysmb_objects_bump_enemy/RXSpd owner",
+      "currentCounterpart": "mysmb_objects_bump_enemy ordinary path: exact RXSpd writes",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S22 static audit: SMB1 InvEnemyDir ($E140) is the unconditional tail jump to RXSpd; current shared objects.c performs the exact RXSpd two-complement X-speed write and moving-direction XOR 3 on the ordinary bump path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S22 controlled original-ROM ordinary bump records: x86/x64 current checkers replay all normal entry variants with zero differences in Square1SoundQueue, Enemy_X_Speed and Enemy_MovingDir; focused chain, terrain-state and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Transfers to the shared RXSpd direction-reversal owner.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -105144,12 +105146,14 @@
       "instruction": "jmp",
       "id": "control-02674",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_bump_enemy ordinary path directly performs RXSpd semantics",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S22 static audit: SMB1 InvEnemyDir ($E140) is the unconditional tail jump to RXSpd; current shared objects.c performs the exact RXSpd two-complement X-speed write and moving-direction XOR 3 on the ordinary bump path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S22 controlled original-ROM ordinary bump records: x86/x64 current checkers replay all normal entry variants with zero differences in Square1SoundQueue, Enemy_X_Speed and Enemy_MovingDir; focused chain, terrain-state and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves enemy side/terrain jump relation InvEnemyDir Ã¢â€ â€™ RXSpd, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c",

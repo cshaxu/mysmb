@@ -1,5 +1,13 @@
 # M2 current-equivalence re-audit
 
+## M2 T64 S22 — InvEnemyDir tail
+
+`InvEnemyDir` and `control-02674` are current-exact: the ROM `jmp RXSpd` tail
+is represented by the shared ordinary-bump path's exact RXSpd X-speed negate
+and direction-XOR writes. Controlled original-ROM/x86/x64 records have zero
+differences; focused chain and purity checks pass. Totals: **1,440 / 1,992**
+nodes and **3,016 / 4,324** feasible controls exact.
+
 This registry is the current-build complement to
 [node progress](NODE_PROGRESS.md). Historical node-accounting status remains
 `1,992 / 1,992`; it must never be read as a current end-to-end result until a
