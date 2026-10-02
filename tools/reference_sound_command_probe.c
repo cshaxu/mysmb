@@ -12,6 +12,7 @@ static unsigned long visits[65536],transfers[65536];
 static unsigned long transition_keys[8192],transition_counts[8192];
 static unsigned long envelope_reads[256];
 static unsigned long square2_table_reads[3][256];
+static unsigned long noise_table_reads[3][256];
 static int ready(core_machine *m)
 {
     core_run_result r;unsigned int i;
@@ -55,7 +56,7 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
         m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
-    }else if(mode>=16u){
+    }else if(mode>=16u&&mode<=18u){
         static const unsigned char buffers[8]={0u,0x40u,0xc0u,0x41u,0x80u,3u,2u,4u};
         m->ram[0xffu]=0u;m->ram[0xfeu]=(unsigned char)(mode==16u?n:0u);
         m->ram[0xf2u]=(unsigned char)(mode==16u?buffers[p%8u]:(mode==17u?p:((p&1u)?4u:2u)));
@@ -63,6 +64,23 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==19u||mode==20u){
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;
+        m->ram[0xfdu]=(unsigned char)(mode==19u?n:0u);
+        m->ram[0xf3u]=(unsigned char)p;
+        m->ram[0x7bfu]=(unsigned char)(mode==19u?p*17u:n);
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
+        m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==21u){
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xf3u]=2u;m->ram[0x7bfu]=(unsigned char)(102u+(n&1u));
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;m->ram[0xf4u]=1u;
+        m->ram[0x7b4u]=(unsigned char)(3u+(n>>1u));
+        m->ram[0x7b6u]=(unsigned char)(3u+(n>>1u));
+        m->ram[0xf8u]=1u;
+        m->ram[0x7b9u]=(unsigned char)(3u+(n>>1u));
+        m->ram[0x7bau]=(unsigned char)(3u+(n>>1u));
+        m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
     }
     m->a=(unsigned char)n;m->x=(unsigned char)(p%3u*4u);m->y=(unsigned char)(n*13u);
 }
@@ -76,7 +94,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>18u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>21u||!count||count>1024u||first+count>65536u)return 64;
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
     baseline=*d->machine;
@@ -99,6 +117,11 @@ int main(int argc,char **argv)
                 if(low==0xd3u)++square2_table_reads[0][d->machine->y];
                 if(low==0xd9u)++square2_table_reads[1][d->machine->y];
                 if(low==0xf8u)++square2_table_reads[2][d->machine->y];
+            }
+            if(op==0xbeu&&prg[pc-0x8000u+1u]==0x2bu&&prg[pc-0x8000u+2u]==0xf6u)++noise_table_reads[0][d->machine->y];
+            if(op==0xb9u&&prg[pc-0x8000u+2u]==0xffu){
+                if(prg[pc-0x8000u+1u]==0xeau)++noise_table_reads[1][d->machine->y];
+                if(prg[pc-0x8000u+1u]==0xc9u)++noise_table_reads[2][d->machine->y];
             }
             addr=0;value=0;
             if(op==0x8du||op==0x8eu||op==0x8cu||op==0x9du||op==0x99u){
@@ -137,5 +160,6 @@ int main(int argc,char **argv)
     }
     for(i=0;i<256u;++i)if(envelope_reads[i])printf("envelope-index=%u reads=%lu\n",i,envelope_reads[i]);
     for(n=0;n<3u;++n)for(i=0;i<256u;++i)if(square2_table_reads[n][i])printf("square2-table=%u index=%u reads=%lu\n",n,i,square2_table_reads[n][i]);
+    for(n=0;n<3u;++n)for(i=0;i<256u;++i)if(noise_table_reads[n][i])printf("noise-table=%u index=%u reads=%lu\n",n,i,noise_table_reads[n][i]);
     core_driver_destroy(d);return 0;
 }

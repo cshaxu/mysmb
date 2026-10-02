@@ -278,3 +278,12 @@ Current1804/1992 nodes,3820/4290 controls(raw4342,infeasible52),407/493 material
 partial; historical1992/1992 separate.135,168 actual original roots agree both
 widths including ordered APU writes;7 tests each/original DOS16 link pass.
 No product repair,3 existing EXEs retained; S4 next unadmitted, T67 open.
+
+## Current checkpoint after T67 S4
+
+[T67 S4](t67-cohort-m-sound-command-current-proof.md) closes11 noise nodes,
+17 feasible controls/material00442 after repairing zero-envelope stream
+fallthrough;69760 unchanged original roots agree each width. Current1815/1992
+nodes,3837/4290 controls(raw4342,infeasible52),408/493 material partial;
+historical1992/1992 separate.248 tests each plus7 updated focused tests and
+original DOS16 link pass; all3 EXEs refreshed. S5 next unadmitted, T67 open.

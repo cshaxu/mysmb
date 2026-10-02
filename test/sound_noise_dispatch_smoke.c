@@ -74,5 +74,35 @@ int main(void)
     mysmb_audio_step(&game);
     if (game.ram[NOISE_BUFFER] != 0x04U ||
         game.ram[NOISE_LENGTH] != 0x33U) return 5;
+
+    /* A zero table result falls into ContinueMusic even with no active
+     * music buffer.  It must not write noise or decrement its counter. */
+    reset_game(&game, prg);
+    game.ram[NOISE_BUFFER] = 2U;
+    game.ram[NOISE_LENGTH] = 0x66U;
+    mysmb_audio_step(&game);
+    if (game.ram[NOISE_LENGTH] != 0x66U ||
+        game.ram[0x07b4U] != 0xffU ||
+        game.ram[0x07b9U] != 0xffU ||
+        game.apu_registers[14U] != 0U ||
+        game.apu_registers[15U] != 0U) return 6;
+
+    /* With active music, the stream fallthrough and SoundEngine's later
+     * normal MusicHandler call each advance the same original counters. */
+    reset_game(&game, prg);
+    game.ram[NOISE_BUFFER] = 2U;
+    game.ram[NOISE_LENGTH] = 0x67U;
+    game.ram[0x00f4U] = 1U;
+    game.ram[0x07b4U] = 5U;
+    game.ram[0x07b6U] = 5U;
+    game.ram[0x07b9U] = 5U;
+    game.ram[0x00f8U] = 1U;
+    game.ram[0x07baU] = 5U;
+    mysmb_audio_step(&game);
+    if (game.ram[NOISE_LENGTH] != 0x67U ||
+        game.ram[0x07b4U] != 3U ||
+        game.ram[0x07b6U] != 3U ||
+        game.ram[0x07b9U] != 3U ||
+        game.ram[0x07baU] != 3U) return 7;
     return 0;
 }

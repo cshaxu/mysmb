@@ -9625,13 +9625,16 @@
       "consumer": "ContinueBrickShatter",
       "storage": "ROM BrickShatterFreqData half-length index to noise period",
       "feasiblePath": "ContinueBrickShatter shifts remaining noise length and indexes BrickShatterFreqData on odd-frame update path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c owner-local ROM table binding",
       "semanticContract": "The half-length index selects the same ordered brick noise period.",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 odd old length/2 produces F62B+Y read before frequency command and decrement; exact original CPU-address read for extended indexes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 original indexed reads cover all16 declared members, current ordered consumer commands equal; extended indices0..127 are neighboring memory reads, not extra table nodes."
+      ],
       "cohort": "M",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -46186,14 +46189,17 @@
       "label": "BrickShatterFreqData",
       "asmLine": 15569,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_brick_shatter_frequency",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Owner-local F62B+Y,16 table members; odd old remaining length/2 supplies unsigned index before decrement. Extended byte lengths preserve neighboring CPU reads."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds sixteen ordered brick-shatter noise frequency bytes indexed by remaining length divided by two.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Owner-local F62B+Y,16 table members; odd old remaining length/2 supplies unsigned index before decrement. Extended byte lengths preserve neighboring CPU reads.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46202,14 +46208,17 @@
       "label": "PlayBrickShatter",
       "asmLine": 15573,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_play_brick_shatter",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Save length20 then actual continuation once; initial even phase emits no noise register writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes brick-shatter noise length and enters its continuation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Save length20 then actual continuation once; initial even phase emits no noise register writes.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46218,14 +46227,17 @@
       "label": "ContinueBrickShatter",
       "asmLine": 15577,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_continue_brick_shatter",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: LSR carry selects odd lengths only; index=old length/2 reads frequency F62B and envelope FFEA, then shared three-register write and one decrement. Even lengths decrement only."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Updates brick noise only on odd remaining lengths using indexed frequency/envelope, then decrements.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "LSR carry selects odd lengths only; index=old length/2 reads frequency F62B and envelope FFEA, then shared three-register write and one decrement. Even lengths decrement only.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46234,14 +46246,17 @@
       "label": "PlayNoiseSfx",
       "asmLine": 15585,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_play_noise_sfx",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Ordered400C=A,400E=X,400F=18; continues to noise length tail. Brick X is frequency-table result, flame X0F."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes noise envelope, period and fixed length registers in source order before decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Ordered400C=A,400E=X,400F=18; continues to noise length tail. Brick X is frequency-table result, flame X0F.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46250,14 +46265,17 @@
       "label": "DecrementSfx3Length",
       "asmLine": 15591,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_decrement_noise_length",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Unsigned byte decrement0->FF/1->0; nonzero returns; zero writes400C=F0 then clears F3, without own queue clear."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Decrements noise length and on zero mutes noise envelope and clears noise buffer.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Unsigned byte decrement0->FF/1->0; nonzero returns; zero writes400C=F0 then clears F3, without own queue clear.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46266,14 +46284,17 @@
       "label": "ExSfx3",
       "asmLine": 15598,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c noise length helper return",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Return after nonterminal or mute/clear path; SoundEngine owns subsequent music/DAC/queue clearing."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns after active or terminal noise SFX processing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Return after nonterminal or mute/clear path; SoundEngine owns subsequent music/DAC/queue clearing.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46282,14 +46303,17 @@
       "label": "NoiseSfxHandler",
       "asmLine": 15600,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_noise",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Nonzero live FD saved unshifted into F3; live FD shifted in bit0 then bit1 priority, brick before flame. Unsupported bits reach buffer check with actual shifted queue retained."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Copies nonzero noise queue into buffer, scans source priority bits and dispatches brick or Bowser flame.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Nonzero live FD saved unshifted into F3; live FD shifted in bit0 then bit1 priority, brick before flame. Unsupported bits reach buffer check with actual shifted queue retained.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46298,14 +46322,17 @@
       "label": "CheckNoiseBuffer",
       "asmLine": 15609,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_noise buffer dispatch",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Zero buffer returns; bit0 selects brick, else bit1 selects flame; copy shifts preserve actual F3. Unsupported bits do not alter length or emit effect commands."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Dispatches active noise buffer to brick or Bowser flame continuation without overwriting it.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Zero buffer returns; bit0 selects brick, else bit1 selects flame; copy shifts preserve actual F3. Unsupported bits do not alter length or emit effect commands.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46314,14 +46341,17 @@
       "label": "ExNH",
       "asmLine": 15616,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_noise no active selector return",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: No buffered noise or unsupported-only bits returns to caller without noise counter/write change."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns when no noise buffer is active.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "No buffered noise or unsupported-only bits returns to caller without noise counter/write change.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46330,14 +46360,17 @@
       "label": "PlayBowserFlame",
       "asmLine": 15618,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_play_bowser_flame",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Save length40 and immediately enter actual continuation once."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes Bowser-flame noise length and enters its continuation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Save length40 and immediately enter actual continuation once.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -46346,14 +46379,17 @@
       "label": "ContinueBowserFlame",
       "asmLine": 15622,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_noise and noise SFX helpers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_continue_bowser_flame / run_music_stream",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Index=old length/2 reads FFC9+Y with 16-bit wrap. Nonzero envelope writes noise(loaded A,0F,18) and decrements; zero falls through ContinueMusic into actual stream tasks, bypassing queue/header selection and noise decrement. Normal later SoundEngine music call remains separate."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses half remaining length to select Bowser flame envelope, sets fixed period and enters common noise write.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+      ],
+      "semanticContract": "Index=old length/2 reads FFC9+Y with 16-bit wrap. Nonzero envelope writes noise(loaded A,0F,18) and decrements; zero falls through ContinueMusic into actual stream tasks, bypassing queue/header selection and noise decrement. Normal later SoundEngine music call remains separate.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -122087,12 +122123,15 @@
       "instruction": "sta",
       "id": "control-03344",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=2048; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through PlayBrickShatter \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueBrickShatter preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122106,12 +122145,15 @@
       "instruction": "bcc",
       "id": "control-03345",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=18432; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch ContinueBrickShatter \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecrementSfx3Length preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122125,12 +122167,15 @@
       "instruction": "lda",
       "id": "control-03346",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=16392; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through ContinueBrickShatter \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayNoiseSfx preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122144,12 +122189,15 @@
       "instruction": "sta",
       "id": "control-03347",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=24329; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through PlayNoiseSfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecrementSfx3Length preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122163,12 +122211,15 @@
       "instruction": "bne",
       "id": "control-03348",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=42569; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch DecrementSfx3Length \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExSfx3 preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122182,12 +122233,15 @@
       "instruction": "sta",
       "id": "control-03349",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=192; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through DecrementSfx3Length \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExSfx3 preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122201,12 +122255,15 @@
       "instruction": "beq",
       "id": "control-03350",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=65680; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch NoiseSfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 CheckNoiseBuffer preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122220,12 +122277,15 @@
       "instruction": "bcs",
       "id": "control-03351",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=2048; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch NoiseSfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayBrickShatter preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122239,12 +122299,15 @@
       "instruction": "bcs",
       "id": "control-03352",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=1024; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch NoiseSfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayBowserFlame preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122258,12 +122321,15 @@
       "instruction": "bcs",
       "id": "control-03353",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=1008; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through NoiseSfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 CheckNoiseBuffer preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122277,12 +122343,15 @@
       "instruction": "beq",
       "id": "control-03354",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=257; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch CheckNoiseBuffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExNH preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122296,12 +122365,15 @@
       "instruction": "bcs",
       "id": "control-03355",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=32776; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch CheckNoiseBuffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueBrickShatter preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122315,12 +122387,15 @@
       "instruction": "bcs",
       "id": "control-03356",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=16516; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch CheckNoiseBuffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueBowserFlame preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122334,12 +122409,15 @@
       "instruction": "bcs",
       "id": "control-03357",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=17139; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through CheckNoiseBuffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExNH preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122353,12 +122431,15 @@
       "instruction": "sta",
       "id": "control-03358",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=1024; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through PlayBowserFlame \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueBowserFlame preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122372,12 +122453,15 @@
       "instruction": "bne",
       "id": "control-03359",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=7937; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source branch ContinueBowserFlame \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayNoiseSfx preserves its queue/buffer/remaining-length predicate before alternate noise path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -122391,12 +122475,15 @@
       "instruction": "bne",
       "id": "control-03360",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 source predicate/counter/queue/stream handoff matches explicit current noise contract;03360 zero-table fallthrough repaired, no infeasible shortcut."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S4 P2 observed original transition count=9603; ordered native command/RAM comparison zero differences both widths."
+      ],
       "semanticContract": "The source fall-through ContinueBowserFlame \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueMusic preserves prior noise state writes before successor.",
       "currentSourcePaths": [
         "src/game/audio.c"

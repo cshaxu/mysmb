@@ -1,12 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T67 S4 - active noise chain
+## M2 T67 S4 - closed noise effect chain
 
-[Exact11-node scope and original route](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
-admits11 pending nodes/intended fresh11/max1815/1992, zero admission credit.
-Current1804/1992 nodes,3820/4290 controls(raw4342,infeasible52),407/493 material
-partial; historical1992/1992 separate.17 owned controls/material00442 require
-static and original ordered-output proof; S5 unadmitted.
+[All11 labels/17 controls and repair](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+close exact with material00442, no deferral/transfer/infeasible shortcut.
+Current1815/1992 nodes,3837/4290 feasible controls(raw4342,infeasible52),
+408/493 material partial; historical1992/1992 distinct.69760 original roots
+each width zero differences after shared zero-envelope stream repair, all
+scoped transitions observed;248 tests each plus7 updated focused tests and
+original DOS16 link pass. All3 owner-authorized EXEs refreshed. T67 open with
+27 pending music nodes; S5 next unadmitted.
 
 ## M2 T67 S3 - closed Square2 effect chain
 

@@ -58,6 +58,7 @@ enum {
 
 static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
                                   mysmb_u8 value);
+static void mysmb_audio_run_music_stream(struct mysmb_game *game);
 
 /* ROM HandleSquare2Music's death-event stream.  The existing audio command
  * model owns presentation elsewhere, but PlayerHole observes EventMusicBuffer
@@ -406,10 +407,17 @@ static void mysmb_audio_play_brick_shatter(struct mysmb_game *game)
 static void mysmb_audio_continue_bowser_flame(struct mysmb_game *game)
 {
     mysmb_u8 index;
+    mysmb_u8 envelope;
 
     index = (mysmb_u8)(game->ram[MYSMB_RAM_NOISE_LENGTH] >> 1U);
-    mysmb_audio_play_noise_sfx(game,
-        mysmb_audio_bowser_flame_envelope(game, index), 0x0fU);
+    envelope = mysmb_audio_bowser_flame_envelope(game, index);
+    /* ROM BNE PlayNoiseSfx tests the table result.  Zero falls through
+     * ContinueMusic directly, without MusicHandler's queue selection. */
+    if (envelope == 0U) {
+        mysmb_audio_run_music_stream(game);
+        return;
+    }
+    mysmb_audio_play_noise_sfx(game, envelope, 0x0fU);
     mysmb_audio_decrement_noise_length(game);
 }
 
@@ -841,6 +849,14 @@ void mysmb_audio_select_music(struct mysmb_game *game)
     }
 }
 
+static void mysmb_audio_run_music_stream(struct mysmb_game *game)
+{
+    if (mysmb_audio_continue_music(game) != 0U) return;
+    mysmb_audio_step_square1_music(game);
+    mysmb_audio_step_triangle_music(game);
+    mysmb_audio_step_noise_music(game);
+}
+
 static void mysmb_audio_step_music(struct mysmb_game *game)
 {
     mysmb_audio_select_music(game);
@@ -848,10 +864,7 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
      * active music buffers are clear.  This also retains final envelopes. */
     if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) return;
-    if (mysmb_audio_continue_music(game) != 0U) return;
-    mysmb_audio_step_square1_music(game);
-    mysmb_audio_step_triangle_music(game);
-    mysmb_audio_step_noise_music(game);
+    mysmb_audio_run_music_stream(game);
 }
 
 /* ROM SoundEngine writes these APU registers from shared game logic. */

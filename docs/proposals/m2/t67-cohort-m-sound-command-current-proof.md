@@ -610,3 +610,82 @@ unconditional-branch translations and queue-vs-stream boundaries in audio.c.
 Owner-local original ROM/reviewed ASM remain nonredistributable inputs;
 ignored build/m2-t67-s4 contains logs/raw,128MiB raw budget,1024 roots/batch,
 120seconds/process,524288steps/root; coordinator deletes raw after comparison.
+
+## S4 P2 closure - exact noise effects and zero-envelope fallthrough
+
+Completed all11 expected labels: BrickShatterFreqData; PlayBrickShatter; ContinueBrickShatter; PlayNoiseSfx; DecrementSfx3Length; ExSfx3; NoiseSfxHandler; CheckNoiseBuffer; ExNH; PlayBowserFlame; ContinueBowserFlame.
+No deferred labels/owned feasible edges or transfers.17 owned controls exact,
+material00442 exact; no new infeasible rows. Current1804->1815/1992 nodes,
+3820->3837/4290 feasible controls(raw4342,infeasible52),407->408/493 material
+partial. Historical1992/1992 remains separate; actualMatches empty. T67 open
+with27 pending music-prefix nodes, S5 next unadmitted.
+
+| Inventory label | Shared counterpart | Manual source/state/control contract |
+| --- | --- | --- |
+| `BrickShatterFreqData` | `mysmb_audio_brick_shatter_frequency` | Owner-local F62B+Y,16 table members; odd old remaining length/2 supplies unsigned index before decrement. Extended byte lengths preserve neighboring CPU reads. |
+| `PlayBrickShatter` | `mysmb_audio_play_brick_shatter` | Save length20 then actual continuation once; initial even phase emits no noise register writes. |
+| `ContinueBrickShatter` | `mysmb_audio_continue_brick_shatter` | LSR carry selects odd lengths only; index=old length/2 reads frequency F62B and envelope FFEA, then shared three-register write and one decrement. Even lengths decrement only. |
+| `PlayNoiseSfx` | `mysmb_audio_play_noise_sfx` | Ordered400C=A,400E=X,400F=18; continues to noise length tail. Brick X is frequency-table result, flame X0F. |
+| `DecrementSfx3Length` | `mysmb_audio_decrement_noise_length` | Unsigned byte decrement0->FF/1->0; nonzero returns; zero writes400C=F0 then clears F3, without own queue clear. |
+| `ExSfx3` | `noise length helper return` | Return after nonterminal or mute/clear path; SoundEngine owns subsequent music/DAC/queue clearing. |
+| `NoiseSfxHandler` | `mysmb_audio_step_noise` | Nonzero live FD saved unshifted into F3; live FD shifted in bit0 then bit1 priority, brick before flame. Unsupported bits reach buffer check with actual shifted queue retained. |
+| `CheckNoiseBuffer` | `mysmb_audio_step_noise buffer dispatch` | Zero buffer returns; bit0 selects brick, else bit1 selects flame; copy shifts preserve actual F3. Unsupported bits do not alter length or emit effect commands. |
+| `ExNH` | `mysmb_audio_step_noise no active selector return` | No buffered noise or unsupported-only bits returns to caller without noise counter/write change. |
+| `PlayBowserFlame` | `mysmb_audio_play_bowser_flame` | Save length40 and immediately enter actual continuation once. |
+| `ContinueBowserFlame` | `mysmb_audio_continue_bowser_flame / run_music_stream` | Index=old length/2 reads FFC9+Y with 16-bit wrap. Nonzero envelope writes noise(loaded A,0F,18) and decrements; zero falls through ContinueMusic into actual stream tasks, bypassing queue/header selection and noise decrement. Normal later SoundEngine music call remains separate. |
+
+Original unchanged F2D0 SoundEngine/real NoiseSfxHandler/real RTS routes:
+4096 starts cover256 queue bytes by16 saved-state profiles;65536 continuations
+cover every256 buffer bytes by256 length bytes.128 additional roots exercise
+zero-envelope lengths102/103 with active area music and independent counter
+values3..66; the Square1 header offset is nonzero. These confirm the extra
+stream invocation and later ordinary music invocation each advance original
+channel counters. Public native audio_step uses identical input RAM/APU and
+real callees, not private test clones or patched ROM.69760 roots each x86/x64
+have zero differences:1841 RAM bytes including0109-0139,24 final APU registers,
+every ordered write count/index/value. Only CPU stack0100-0108/013A-01FF and
+unmapped transient registers excluded. All17 scoped edges actually observed,
+including03360 zero-result fallthrough; none inferred from missing coverage.
+
+Indexed original reads cover all16 frequency and brick-envelope members,
+flame preceding byte/index0 and32 proper members/index1..32. Full byte lengths
+also exercise adjacent PRG and wrapped low RAM at indexes0..127; no invented
+extra table membership. Envelope producer nodes remain later N custody and
+uncredited; their actual consumer reads/output are proven for this chain.
+
+Found and repaired a feasible difference: C treated source BNE PlayNoiseSfx
+as unconditional. Controlled original length66 reads zero at FFC9+51; original
+keeps noise length66 and enters ContinueMusic, C instead emitted noise and
+decremented65. Shared audio.c now branches on loaded envelope; zero runs the
+same stream tasks used by ordinary music handling, without selecting queues
+or decrementing noise. Full source/current comparison rerun clean after fix.
+Normal flame lengths1..64 read nonzero envelopes; this finding proves a
+controlled-state semantic gap, not a claim of a newly observed ordinary-game
+audio symptom. No platform implementation or game state fork was added.
+
+Similar-issue sweep: noise helpers and adjacent Square1/Square2 table branches
+in audio.c checked against source. Brick effect intentionally writes even a
+zero loaded envelope after its carry-controlled entry; only flame uses the
+loaded value as its branch predicate. Frequency helpers preserve NoTone;
+existing length/parity, extra-life priority and growth-counter predicates
+remain explicit. Music selection remains gated separately; stream fallthrough
+does not replay queue selection. No other scoped repair hit. Noise CTest adds
+neutral zero-envelope inactive/active-music regression; initial active test
+omitted Square1 stream offset and was corrected to provide that prerequisite,
+then checked against original active-boundary records rather than changing
+production to satisfy the mistaken assertion.
+
+Operational: full248/248 tests each width, updated focused7/7 each, purity
+included. Original OpenNT DOS16 link passes with inherited OLDNAMES.LIB warning;
+no interactive DOS claim. Native products and original DOS16 product rebuilt
+and packaged together under owner's explicit EXE authorization:
+
+- `mysmb16.exe`: 260903 bytes, SHA256 `aab03505ce4ac8f97b6af89c46964289f2d7ef07dacae0857680e862dcadc0d2`.
+- `mysmb32.exe`: 373920 bytes, SHA256 `c3c6a7332e3b93952190dd14b01a5b9f07df1f2541d11b0d9d6f43e2a440d207`.
+- `mysmb64.exe`: 380951 bytes, SHA256 `507fa3cd92cd53b3b158b709c1f9b21ac8d62ae5a005033eab0b136cd8e17dbc`.
+
+Existing owner audio/title/focus-pause features remain in the source/products.
+Neutral evidence under ignored build/m2-t67-s4: pre-fix-difference, modes19-21,
+route/coverage summaries, full/focused tests and builds, dos16-link. Raw deleted
+per batch; probe removed at closure. Ledger/registry/progress/docs gates must
+pass before P2 commit. Unrelated owner I/O proposal/queue/source work preserved.
