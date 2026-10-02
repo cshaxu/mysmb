@@ -8415,13 +8415,15 @@
       "consumer": "ChkForPlayerC_LargeP",
       "storage": "PlatformCollisionFlag, balance partner state index and ObjectOffset",
       "feasiblePath": "Balance platform checks state-indexed partner first then restored original current slot.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c large partner sequencing",
       "semanticContract": "Each large platform check receives source current slot order and initialized collision flag.",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8434,13 +8436,15 @@
       "consumer": "ProcLPlatCollisions",
       "storage": "argument-specific bounding box, saved platform Y $00 and restored platform slot",
       "feasiblePath": "A hit reaches response only after box selection and stack slot restore.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c check_large_platform to platform_response",
       "semanticContract": "Response consumes the source selected platform box and saved Y coordinate.",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8453,13 +8457,15 @@
       "consumer": "ChkSmallPlatLoop",
       "storage": "PlatformCollisionFlag zero and two-box counter $00",
       "feasiblePath": "Active small platform begins exactly two candidate box positions.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c small counter initialization",
       "semanticContract": "Loop consumes source counter two with original current ObjectOffset reload.",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8472,13 +8478,15 @@
       "consumer": "MoveBoundBox",
       "storage": "current box vertical coordinates and counter",
       "feasiblePath": "Miss or high box shifts both box Y endpoints by $80 before next iteration.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c shift branch",
       "semanticContract": "The second physical platform box is reached by byte-wrapped source displacement.",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8491,13 +8499,15 @@
       "consumer": "ChkSmallPlatLoop",
       "storage": "wrapped box Ys and decremented two-box counter",
       "feasiblePath": "Nonzero counter repeats after moving both vertical coordinates.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c do/while loop",
       "semanticContract": "Loop retains source two-pass ordering and stops at zero.",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10488,13 +10498,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1308,
-    "needs-evidence": 684
+    "exact": 1315,
+    "needs-evidence": 677
   },
   "controlEdgeCounts": {
-    "exact": 2690,
+    "exact": 2722,
     "infeasible": 18,
-    "needs-evidence": 1634
+    "needs-evidence": 1602
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -36386,13 +36396,15 @@
       "label": "LargePlatformCollision",
       "asmLine": 11734,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c",
       "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Initializes current collision flag to $ff, rejects TimerControl/nonzero and d7 state, and for BalancePlatform visits its state-indexed partner before the original current slot.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36402,13 +36414,15 @@
       "label": "ChkForPlayerC_LargeP",
       "asmLine": 11748,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c",
       "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Rejects vertical-invalid player, gets argument-specific platform box, saves platform Y in $00 and slot on stack, then sends a collision to common large-platform response.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36418,13 +36432,15 @@
       "label": "ExLPC",
       "asmLine": 11762,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c",
       "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Restores ObjectOffset and returns after every large-platform gate, miss or response.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36434,13 +36450,15 @@
       "label": "SmallPlatformCollision",
       "asmLine": 11768,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c",
       "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Rejects TimerControl, clears collision flag, rejects vertical-invalid player, initializes two-box counter and begins successive small-platform box checks.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36450,13 +36468,15 @@
       "label": "ChkSmallPlatLoop",
       "asmLine": 11777,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c",
       "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Reloads ObjectOffset, gets box/offscreen bits, rejects d1 offscreen, tests only boxes at Y >=$20, then either dispatches collision or advances the box.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36466,13 +36486,15 @@
       "label": "MoveBoundBox",
       "asmLine": 11788,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c",
       "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Adds $80 with byte wrapping to both vertical box coordinates, decrements source counter and repeats until the two-box scan finishes.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36482,13 +36504,15 @@
       "label": "ExSPC",
       "asmLine": 11799,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c",
       "currentCounterpart": "src/game/enemy/platform_collision.c:mysmb_platform_collision_large / mysmb_platform_collision_small",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Restores ObjectOffset and returns after small-platform gate, offscreen, hit or finished two-box scan.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98238,12 +98262,14 @@
       "instruction": "bne",
       "id": "control-02380",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation LargePlatformCollision -> ExLPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98257,12 +98283,14 @@
       "instruction": "bmi",
       "id": "control-02381",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation LargePlatformCollision -> ExLPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98276,12 +98304,14 @@
       "instruction": "bne",
       "id": "control-02382",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation LargePlatformCollision -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98295,12 +98325,14 @@
       "instruction": "jsr",
       "id": "control-02383",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation LargePlatformCollision -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98314,12 +98346,14 @@
       "instruction": "jsr",
       "id": "control-02384",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation LargePlatformCollision -> ChkForPlayerC_LargeP with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98333,12 +98367,14 @@
       "instruction": "jsr",
       "id": "control-02385",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> CheckPlayerVertical with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98353,12 +98389,14 @@
       "instruction": "bcs",
       "id": "control-02386",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForPlayerC_LargeP -> ExLPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98372,12 +98410,14 @@
       "instruction": "jsr",
       "id": "control-02387",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> GetEnemyBoundBoxOfsArg with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98392,12 +98432,14 @@
       "instruction": "jsr",
       "id": "control-02388",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
         "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> PlayerCollisionCore with source box offsets, carry and coordinate-loop handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98413,12 +98455,14 @@
       "instruction": "bcc",
       "id": "control-02389",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForPlayerC_LargeP -> ExLPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98432,12 +98476,14 @@
       "instruction": "jsr",
       "id": "control-02390",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkForPlayerC_LargeP -> ProcLPlatCollisions with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98451,12 +98497,14 @@
       "instruction": "jsr",
       "id": "control-02391",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkForPlayerC_LargeP -> ExLPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98470,12 +98518,14 @@
       "instruction": "bne",
       "id": "control-02392",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SmallPlatformCollision -> ExSPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98489,12 +98539,14 @@
       "instruction": "jsr",
       "id": "control-02393",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SmallPlatformCollision -> CheckPlayerVertical with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98509,12 +98561,14 @@
       "instruction": "bcs",
       "id": "control-02394",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation SmallPlatformCollision -> ExSPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98528,12 +98582,14 @@
       "instruction": "sta",
       "id": "control-02395",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SmallPlatformCollision -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98547,12 +98603,14 @@
       "instruction": "jsr",
       "id": "control-02396",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> GetEnemyBoundBoxOfs with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98567,12 +98625,14 @@
       "instruction": "bne",
       "id": "control-02397",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkSmallPlatLoop -> ExSPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98586,12 +98646,14 @@
       "instruction": "bcc",
       "id": "control-02398",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkSmallPlatLoop -> MoveBoundBox with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98605,12 +98667,14 @@
       "instruction": "jsr",
       "id": "control-02399",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
         "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkSmallPlatLoop -> PlayerCollisionCore with source box offsets, carry and coordinate-loop handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98626,12 +98690,14 @@
       "instruction": "bcs",
       "id": "control-02400",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkSmallPlatLoop -> ProcSPlatCollisions with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98645,12 +98711,14 @@
       "instruction": "bcs",
       "id": "control-02401",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkSmallPlatLoop -> MoveBoundBox with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98664,12 +98732,14 @@
       "instruction": "bne",
       "id": "control-02402",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation MoveBoundBox -> ChkSmallPlatLoop with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98683,12 +98753,14 @@
       "instruction": "bne",
       "id": "control-02403",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation MoveBoundBox -> ExSPC with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -129480,12 +129552,14 @@
       "instruction": "rts/rti",
       "id": "control-03937",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation ChkForPlayerC_LargeP -> LargePlatformCollision with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -129499,12 +129573,14 @@
       "instruction": "rts/rti",
       "id": "control-03938",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation CheckPlayerVertical -> ChkForPlayerC_LargeP with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -129519,12 +129595,14 @@
       "instruction": "rts/rti",
       "id": "control-03939",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfsArg -> ChkForPlayerC_LargeP with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -129539,12 +129617,14 @@
       "instruction": "rts/rti",
       "id": "control-03940",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
         "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkForPlayerC_LargeP with source box offsets, carry and coordinate-loop handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -129560,12 +129640,14 @@
       "instruction": "rts/rti",
       "id": "control-03941",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation ProcLPlatCollisions -> ChkForPlayerC_LargeP with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -129579,12 +129661,14 @@
       "instruction": "rts/rti",
       "id": "control-03942",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation CheckPlayerVertical -> SmallPlatformCollision with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -129599,12 +129683,14 @@
       "instruction": "rts/rti",
       "id": "control-03943",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> ChkSmallPlatLoop with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -129619,12 +129705,14 @@
       "instruction": "rts/rti",
       "id": "control-03944",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
         "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S8 static $DB45-$DBBA audit plus retained controlled original-ROM platform-collision route replayed in one x86 and one x64 native process with full mapped-RAM and recorded child calls, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation PlayerCollisionCore -> ChkSmallPlatLoop with source box offsets, carry and coordinate-loop handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",

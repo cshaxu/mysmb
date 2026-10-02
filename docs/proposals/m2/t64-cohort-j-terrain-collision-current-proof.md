@@ -322,3 +322,34 @@ S7 records 16 nodes, 58 source-address-owned feasible controls and nine
 material handoffs exact. Current totals: historical **1,992 / 1,992**; current
 exact nodes **1,308 / 1,992**; current exact feasible controls **2,690 /
 4,324** (raw **4,342**, infeasible **18**).
+
+## S8 admission — platform collision front end
+
+S8 admits the contiguous `$DB45-$DBBA` chain: `LargePlatformCollision`,
+`ChkForPlayerC_LargeP`, `ExLPC`, `SmallPlatformCollision`,
+`ChkSmallPlatLoop`, `MoveBoundBox`, and `ExSPC`. Its shared owner is
+`src/game/enemy/platform_collision.c`; S7 is closed and S9 continues with the
+platform collision response children. The ROM-logic track covers timer and
+state gates, balance-partner ordering, live `ObjectOffset` reloads, vertical
+and offscreen exits, both platform bounding boxes, `$00` counter semantics and
+wrapped Y shifts. The operational track uses a batched original-ROM route per
+x86/x64 width, focused platform collision tests, purity and DOS16 shared-source
+link.
+
+### S8 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,308 / 1,992**.
+- Current exact feasible controls: **2,690 / 4,324**.
+- Scope: **7** labels; expected fresh historical matches: **0**; maximum
+  historical complete: **1,992 / 1,992**.
+- Expected graph scope: **32** source-address-owned feasible controls and **5**
+  material handoffs.
+
+## S8 closure — platform collision front end
+
+All seven scoped nodes are current-exact: `LargePlatformCollision`, `ChkForPlayerC_LargeP`, `ExLPC`, `SmallPlatformCollision`, `ChkSmallPlatLoop`, `MoveBoundBox`, and `ExSPC`. Static `$DB45-$DBBA` comparison found no shared-C difference in timer/state gates, balance partner ordering, live slot reloads, box selection, collision routing or byte-wrapped two-box iteration.
+
+The retained controlled original-ROM platform route covers the containing `$DB45-$DC16` sequence (100 instructions and 38 feasible branch outcomes). Its S8 front-end route replayed against one x86 and one x64 native process with full mapped RAM and child-call comparison, zero differences. Focused platform collision contracts, platform purity and OpenNT DOS16 shared-source link pass. Product C did not change, so package executables were not refreshed.
+
+S8 records seven nodes, 32 source-address-owned feasible controls and five material handoffs exact. Current totals: historical **1,992 / 1,992**; current exact nodes **1,315 / 1,992**; current exact feasible controls **2,722 / 4,324** (raw **4,342**, infeasible **18**).
