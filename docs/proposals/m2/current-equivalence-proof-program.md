@@ -179,3 +179,12 @@ not admitted; no milestone-wide proof inferred from this closure.
 with S1 player graphics44 nodes active. No exact credit at admission; current
 1633/1992 nodes and3485/4317 feasible controls. Remaining S chains follow
 original source order; accepted historical mapping1992/1992 stays separate.
+
+## Current checkpoint after T66 S1
+
+[T66 S1](t66-cohort-l-player-relative-offscreen-proof.md) closes44 nodes,
+103 controls and2 material rows. Current1677/1992 nodes,3588/4317 feasible
+controls(raw4342,infeasible25),396/492 material partial; historical1992/1992
+separate. Original75040 roots/127104 actual row/erase returns match both
+widths;12/12 focused tests each and original DOS16 link pass,3 products
+refreshed. T66 stays open with39 pending nodes; S2 next, not admitted.

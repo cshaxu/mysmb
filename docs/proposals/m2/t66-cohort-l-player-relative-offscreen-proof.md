@@ -169,3 +169,251 @@ work, at most192MiB raw aggregate,2048 roots/chunk,120seconds/run,524288
 steps/case, checkpoints and coordinator cleanup. Both dual tracks must pass
 with no scoped differences. Product corrections refresh16/32/64 EXEs under
 prior explicit owner authorization, including existing audio/title/focus pause.
+
+## S1 P2 player graphics source/graph repair and closure
+
+All44 intended S1 nodes become current exact, no deferred/transferred names;
+the exact completed names are S1's plan row and individual proof table below.
+All103 listed controls and material00430/00431 become exact. Nodes1633 ->
+1677/1992, feasible controls3485 ->3588/4317(raw4342,infeasible25 unchanged),
+material394 ->396/492 partial. Historical1992/1992 unchanged, historical
+expected/actualMatches empty. T66 open with39 pending planned nodes; S2 next,
+not admitted. No later L or cross-cohort credit inferred.
+
+### Findings and original-source corrections
+
+1. PROfsLoop directly wrote two OAM bytes instead of the actual DumpTwoSpr
+   call. The original stores shifted offscreen scratch before JSR. A2048-root
+   pre-repair batch has equal full output but1792 independent caller failures.
+   Restore the real shared pair dump with original byte Y and input scratch;
+   final output equality alone cannot prove this connection.
+2. HandleChangeSize translated CPY #0A / BCC as equality-only termination.
+   Original INY wraps byte Y, then every value>=10 resets animation and flag.
+   A2048-root extended animation baseline has3328 RAM-byte differences.
+   Restore >=10 after byte increment; retain original modulo-byte wrap.
+3. CntPl selects the swimming return before calling FindPlayerAction. Death
+   and size-change tail jumps never return to that continuation. Native code
+   retested the mutable size-change flag after rendering; clearing it this
+   frame could wrongly animate a swimming foot. Expanded high-OAM/size-end
+   fixtures reveal13 differing bytes in one2048-root batch. Save the original
+   branch decision before selection/render; source priority/order is retained.
+4. Original ordinary and intermediate entries share DrawPlayerLoop. Native
+   had duplicated loops despite matching final RAM. Restore one shared
+   mysmb_oam_player_draw_loop called by both. Its source row-count DEC/BNE
+   loop and actual DrawOneSpriteRow dependency are the sole production path.
+
+Similar-issue sweep covers every player graphics dispatch/return, both row
+callers, all pair erases, grow/shrink termination, action animation and fixed
+attribute/foot absolute bases versus byte Y adjustments. The sole size-change
+comparison and swimming-return decision are corrected; duplicate player row
+loops are eliminated. Source fall retains animation, animation obtains the
+current offset before timer update, final ASL carry is retained, and shrink
+adds ten in byte width. Attribute bases and facing-adjusted foot addressing
+remain the accepted S14 repair. No platform/audio/focus behavior changes.
+
+### Current original/native proof matrix
+
+| Mode / original entry | Roots per width | Actual selected child returns | Contract |
+| --- | ---: | ---: | --- |
+| 16 / EEE9 | 1024 | 4096 DrawOneSpriteRow | Sizes, actions, animation, death/change-size and swimming; full/independent row input and returned indices/RAM. |
+| 17 / EFA4 | 32 | 128 DrawOneSpriteRow | Six descending source-data reads into scratch, fixed shared loop and final attribute transfer. |
+| 18 / EEE9 | 256 | 0 selected | All byte OAM offsets, three/four throwing redraw and final output. |
+| 19 / EEE9 | 65536 | 122880 DumpTwoSpr | All256 byte OAM offsets x16 vertical masks x16 handler profiles; actual erase A/Y/scratch input and RTS continuation. |
+| 20 / EEE9 | 8192 | 0 selected | All256 animation values x32 action/size/timer/frame profiles, grow/shrink completion and byte wrap; full output. |
+
+All75040 roots match current x86/x64 across1841 RAM bytes, including OAM,
+scratch and aliases0109-0139; true CPU stack is excluded. Selected127104
+actual row/erase calls separately compare original inputs and returned RAM;
+row X/Y values are asserted. Full mode executes the real native children.
+Native API-unneeded temporary CPU registers/flags are explicitly excluded,
+not silently called equivalent. Recorder table reads prove20/20 size-adder
+and6/6 intermediate bytes, plus existing16/208/2 player graphics table reads.
+
+The local ASM index is checked against the original ROM opcodes; scoped
+addresses/instruction sizes have no discrepancy. Non-code segment/incbin
+directives outside scope are explicit indexing exclusions. Per-instruction
+actual PC transfers, branch taken/fall counts and selected actual return
+continuations demonstrate every scoped label and listed relation. Every
+conditional branch has both outcomes observed. Initial missing jump-crouch,
+same-direction fast walk and A-only swimming alternatives were added before
+credit. Source audit maps each native condition/read/write/call counterpart;
+observed source execution alone is not the verdict.
+
+## S1 individual node proof
+
+| Node | Original address | Observations / indexed reads | Current counterpart and audited contract |
+| --- | --- | ---: | --- |
+| PlayerGfxHandler | eee9 | 75008 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Checks injury flashing before the graphics-mode dispatch, then routes ordinary, size-change, death and swimming paths in source order. |
+| CntPl | eef3 | 70912 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Dispatches death and size-change before the swimming-state continuation; only nonzero swimming player state returns from ordinary drawing to the kick-tile path. |
+| SwimKT | ef1f | 11392 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Chooses the applicable seventh/eighth foot sprite from facing, size and replacement-tile predicates before selecting a swim-kick tile. |
+| BigKTS | ef2d | 11080 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Writes the selected SwimKickTileNum byte into the guarded foot sprite tile, then exits the graphics handler. |
+| ExPGH | ef33 | 19072 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Returns from the graphics handler without further OAM modification on the source early-exit routes. |
+| FindPlayerAction | ef34 | 51328 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Calls ProcessPlayerAction and tail-transfers the selected offset to PlayerGfxProcessing. |
+| DoChangeSize | ef3a | 11584 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Calls HandleChangeSize and tail-transfers the selected offset to PlayerGfxProcessing. |
+| PlayerKilled | ef40 | 8000 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Selects index 14 from PlayerGfxTblOffsets and falls through to common player graphics processing. |
+| PlayerGfxProcessing | ef45 | 70912 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Stores PlayerGfxOffset, renders rows, applies player attributes, conditionally rerenders throw rows, then enters vertical offscreen masking. |
+| SUpdR | ef76 | 8448 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Preserves the source three-versus-four throw-row count and calls RenderPlayerSub before the offscreen stage. |
+| PlayerOffscreenChk | ef7a | 70912 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Moves the vertical offscreen nibble into scratch and initializes a bottom-to-top four-row OAM masking loop. |
+| PROfsLoop | ef8c | 283648 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Tests one vertical-offscreen bit per iteration, conditionally dumps a pair offscreen, and advances upward through four rows. |
+| NPROffscr | ef95 | 283648 | mysmb_oam_render_player and its player graphics selection/rendering helpers; Moves to the preceding row and loops until all four player OAM rows are processed. |
+| IntermediatePlayerData | ef9e | 192 | mysmb_oam_draw_intermediate_player; Binds six ordered bytes for the fixed world/lives intermediate-player scratch setup. |
+| DrawPlayer_Intermediate | efa4 | 32 | mysmb_oam_draw_intermediate_player; Copies IntermediatePlayerData into scratch in descending index order, draws the small-standing four-row player at OAM offset four, then sets the bottom-right horizontal flip bit from the subsequent empty sprite attributes. |
+| PIntLoop | efa6 | 192 | mysmb_oam_draw_intermediate_player; Copies one descending IntermediatePlayerData byte to scratch $02 through $07 and loops until all six bytes are present before DrawPlayerLoop. |
+| RenderPlayerSub | efbe | 79360 | mysmb_oam_player_render_rows publishes scratch then enters mysmb_oam_player_draw_loop; Publishes row count, relative coordinates, facing and attributes to source scratch, then initializes PlayerGfxOffset and Player_SprDataOffset for the shared player-row loop. |
+| DrawPlayerLoop | efdc | 313344 | mysmb_oam_player_draw_loop shared by mysmb_oam_player_render_rows and mysmb_oam_draw_intermediate_player; Reads adjacent PlayerGraphicsTable tile bytes, draws one sprite row, decrements the requested row count and repeats until zero. |
+| ProcessPlayerAction | efec | 51328 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Selects the graphics-action family by Player_State before testing swimming, crouching and ground movement. |
+| ProcOnGroundActs | f00b | 20224 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Selects crouch, stand, walk/run or skid using crouching, horizontal input/speed, absolute speed and moving/facing-direction relation. |
+| NonAnimatedActs | f028 | 23696 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Applies the size action offset, clears PlayerAnimCtrl and returns the selected PlayerGfxTblOffsets entry. |
+| ActionFalling | f034 | 3584 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Selects walk/run action with size adjustment and obtains the retained current animation offset without advancing it. |
+| ActionWalkRun | f03c | 6896 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Selects walk/run action with size adjustment and enters the four-frame animation path. |
+| ActionClimbing | f044 | 6784 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Selects climbing action; zero vertical speed is non-animated while nonzero speed enters the three-frame animation path. |
+| ActionSwimming | f050 | 13952 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Selects swimming action and advances animation only when jump/swim timer, animation control or A-button predicate requires it. |
+| GetCurrentAnimOffset | f062 | 27632 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Reads PlayerAnimCtrl and tail-transfers to the table-offset calculation. |
+| FourFrameExtent | f068 | 17264 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Sets an exclusive three-frame upper bound before common animation processing. |
+| ThreeFrameExtent | f06d | 3200 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Sets an exclusive two-frame upper bound before common animation processing. |
+| AnimationControl | f06f | 20464 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Obtains the current tile-table offset first, then only on expired timer reloads the timer and advances/wraps PlayerAnimCtrl. |
+| SetAnimC | f08c | 4352 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Stores the bounded next PlayerAnimCtrl before restoring the already-selected graphics offset. |
+| ExAnimC | f08f | 20464 | mysmb_oam_process_player_action with mysmb_oam_get_gfx_offset_adder and mysmb_oam_get_offset_from_anim_ctrl; Returns the selected graphics offset without changing it after timer/animation handling. |
+| GetGfxOffsetAdder | f091 | 51328 | mysmb_oam_handle_change_size and graphics-offset helpers; Leaves a big-player action index unchanged and adds eight for a small player before table lookup. |
+| SzOfs | f09b | 51328 | mysmb_oam_handle_change_size and graphics-offset helpers; Returns the size-adjusted action index to the requesting action path. |
+| ChangeSizeOffsetAdder | f09c | 8570 | mysmb_oam_handle_change_size and graphics-offset helpers; Binds twenty ordered grow/shrink animation offset-adder bytes. |
+| HandleChangeSize | f0b0 | 11584 | mysmb_oam_handle_change_size and graphics-offset helpers; Advances PlayerAnimCtrl only each fourth frame, clears the size-change flag on the ten-frame wrap, then dispatches grow versus shrink selection. |
+| CSzNext | f0c3 | 6160 | mysmb_oam_handle_change_size and graphics-offset helpers; Stores the valid next size-change animation frame before common grow/shrink logic. |
+| GorSLog | f0c6 | 11584 | mysmb_oam_handle_change_size and graphics-offset helpers; Selects big-player grow offset calculation or transfers to small-player shrink calculation based on PlayerSize. |
+| GetOffsetFromAnimCtrl | f0d0 | 33428 | mysmb_oam_handle_change_size and graphics-offset helpers; Converts the animation selector to an eight-byte graphics-table displacement and adds the selected PlayerGfxTblOffsets base. |
+| ShrinkPlayer | f0d7 | 5788 | mysmb_oam_handle_change_size and graphics-offset helpers; Offsets the animation selector by ten, uses ChangeSizeOffsetAdder and selects the applicable big/small swimming graphics base. |
+| ShrPlF | f0e5 | 5788 | mysmb_oam_handle_change_size and graphics-offset helpers; Returns the selected shrink graphics-table base after the zero/nonzero offset-adder choice. |
+| ChkForPlayerAttrib | f0e9 | 70912 | mysmb_oam_check_player_attributes; Selects the third-row and/or fourth-row OAM flip corrections from GameEngineSubroutine and PlayerGfxOffset values. |
+| KilledAtt | f105 | 12062 | mysmb_oam_check_player_attributes; Clears flip bits in third-row first tile and sets horizontal flip in the paired tile before fourth-row handling. |
+| C_S_IGAtt | f117 | 23199 | mysmb_oam_check_player_attributes; Clears flip bits in fourth-row first tile and sets horizontal flip in the paired tile. |
+| ExPlyrAt | f129 | 70912 | mysmb_oam_check_player_attributes; Returns after the applicable player OAM attribute corrections. |
+
+## S1 individual control proof
+
+| Control | Original relation | Instruction PC | Actual transfers/returns |
+| --- | --- | --- | ---: |
+| control-03027 | PlayerGfxHandler -> CntPl (branch) | eeec | 66816 |
+| control-03028 | PlayerGfxHandler -> ExPGH (branch) | eef1 | 4096 |
+| control-03029 | PlayerGfxHandler -> CntPl (fallthrough) | eef1 | 4096 |
+| control-03030 | CntPl -> PlayerKilled (branch) | eef7 | 8000 |
+| control-03031 | CntPl -> DoChangeSize (branch) | eefc | 11584 |
+| control-03032 | CntPl -> FindPlayerAction (branch) | ef01 | 32256 |
+| control-03033 | CntPl -> FindPlayerAction (branch) | ef07 | 4096 |
+| control-03034 | CntPl -> FindPlayerAction (call) | ef09 | 14976 |
+| control-03035 | CntPl -> ExPGH (branch) | ef10 | 3584 |
+| control-03036 | CntPl -> SwimKT (branch) | ef19 | 5696 |
+| control-03037 | CntPl -> SwimKT (fallthrough) | ef1e | 5696 |
+| control-03038 | SwimKT -> BigKTS (branch) | ef22 | 5696 |
+| control-03039 | SwimKT -> ExPGH (branch) | ef2a | 312 |
+| control-03040 | SwimKT -> BigKTS (fallthrough) | ef2c | 5384 |
+| control-03041 | BigKTS -> ExPGH (fallthrough) | ef30 | 11080 |
+| control-03042 | FindPlayerAction -> ProcessPlayerAction (call) | ef34 | 51328 |
+| control-03043 | FindPlayerAction -> PlayerGfxProcessing (jump) | ef37 | 51328 |
+| control-03044 | DoChangeSize -> HandleChangeSize (call) | ef3a | 11584 |
+| control-03045 | DoChangeSize -> PlayerGfxProcessing (jump) | ef3d | 11584 |
+| control-03046 | PlayerKilled -> PlayerGfxProcessing (fallthrough) | ef42 | 8000 |
+| control-03047 | PlayerGfxProcessing -> RenderPlayerSub (call) | ef4a | 70912 |
+| control-03048 | PlayerGfxProcessing -> ChkForPlayerAttrib (call) | ef4d | 70912 |
+| control-03049 | PlayerGfxProcessing -> PlayerOffscreenChk (branch) | ef53 | 58368 |
+| control-03050 | PlayerGfxProcessing -> PlayerOffscreenChk (branch) | ef60 | 4096 |
+| control-03051 | PlayerGfxProcessing -> SUpdR (branch) | ef73 | 4224 |
+| control-03052 | PlayerGfxProcessing -> SUpdR (fallthrough) | ef75 | 4224 |
+| control-03053 | SUpdR -> RenderPlayerSub (call) | ef77 | 8448 |
+| control-03054 | SUpdR -> PlayerOffscreenChk (fallthrough) | ef77 | 8448 |
+| control-03055 | PlayerOffscreenChk -> PROfsLoop (fallthrough) | ef8b | 70912 |
+| control-03056 | PROfsLoop -> NPROffscr (branch) | ef90 | 160768 |
+| control-03057 | PROfsLoop -> DumpTwoSpr (call) | ef92 | 122880 |
+| control-03058 | PROfsLoop -> NPROffscr (fallthrough) | ef92 | 122880 |
+| control-03059 | NPROffscr -> PROfsLoop (branch) | ef9b | 212736 |
+| control-03060 | DrawPlayer_Intermediate -> PIntLoop (fallthrough) | efa4 | 32 |
+| control-03061 | PIntLoop -> PIntLoop (branch) | efac | 160 |
+| control-03062 | PIntLoop -> DrawPlayerLoop (call) | efb2 | 32 |
+| control-03063 | RenderPlayerSub -> DrawPlayerLoop (fallthrough) | efd9 | 79360 |
+| control-03064 | DrawPlayerLoop -> DrawOneSpriteRow (call) | efe4 | 313344 |
+| control-03065 | DrawPlayerLoop -> DrawPlayerLoop (branch) | efe9 | 233952 |
+| control-03066 | ProcessPlayerAction -> ActionClimbing (branch) | eff0 | 6784 |
+| control-03067 | ProcessPlayerAction -> ActionFalling (branch) | eff4 | 3584 |
+| control-03068 | ProcessPlayerAction -> ProcOnGroundActs (branch) | eff8 | 20224 |
+| control-03069 | ProcessPlayerAction -> ActionSwimming (branch) | effd | 13952 |
+| control-03070 | ProcessPlayerAction -> NonAnimatedActs (branch) | f004 | 3584 |
+| control-03071 | ProcessPlayerAction -> NonAnimatedActs (jump) | f008 | 3200 |
+| control-03072 | ProcOnGroundActs -> NonAnimatedActs (branch) | f010 | 3712 |
+| control-03073 | ProcOnGroundActs -> NonAnimatedActs (branch) | f018 | 6912 |
+| control-03074 | ProcOnGroundActs -> ActionWalkRun (branch) | f01f | 3312 |
+| control-03075 | ProcOnGroundActs -> ActionWalkRun (branch) | f025 | 3584 |
+| control-03076 | ProcOnGroundActs -> NonAnimatedActs (fallthrough) | f027 | 2704 |
+| control-03077 | NonAnimatedActs -> GetGfxOffsetAdder (call) | f028 | 23696 |
+| control-03078 | ActionFalling -> GetGfxOffsetAdder (call) | f036 | 3584 |
+| control-03079 | ActionFalling -> GetCurrentAnimOffset (jump) | f039 | 3584 |
+| control-03080 | ActionWalkRun -> GetGfxOffsetAdder (call) | f03e | 6896 |
+| control-03081 | ActionWalkRun -> FourFrameExtent (jump) | f041 | 6896 |
+| control-03082 | ActionClimbing -> NonAnimatedActs (branch) | f048 | 3584 |
+| control-03083 | ActionClimbing -> GetGfxOffsetAdder (call) | f04a | 3200 |
+| control-03084 | ActionClimbing -> ThreeFrameExtent (jump) | f04d | 3200 |
+| control-03085 | ActionSwimming -> GetGfxOffsetAdder (call) | f052 | 13952 |
+| control-03086 | ActionSwimming -> FourFrameExtent (branch) | f05b | 6784 |
+| control-03087 | ActionSwimming -> FourFrameExtent (branch) | f060 | 3584 |
+| control-03088 | ActionSwimming -> GetCurrentAnimOffset (fallthrough) | f060 | 3584 |
+| control-03089 | GetCurrentAnimOffset -> GetOffsetFromAnimCtrl (jump) | f065 | 27632 |
+| control-03090 | FourFrameExtent -> AnimationControl (jump) | f06a | 17264 |
+| control-03091 | ThreeFrameExtent -> AnimationControl (fallthrough) | f06d | 3200 |
+| control-03092 | AnimationControl -> GetCurrentAnimOffset (call) | f071 | 20464 |
+| control-03093 | AnimationControl -> ExAnimC (branch) | f078 | 16112 |
+| control-03094 | AnimationControl -> SetAnimC (branch) | f088 | 3592 |
+| control-03095 | AnimationControl -> SetAnimC (fallthrough) | f08a | 760 |
+| control-03096 | SetAnimC -> ExAnimC (fallthrough) | f08c | 4352 |
+| control-03097 | GetGfxOffsetAdder -> SzOfs (branch) | f094 | 25664 |
+| control-03098 | GetGfxOffsetAdder -> SzOfs (fallthrough) | f09a | 25664 |
+| control-03099 | HandleChangeSize -> GorSLog (branch) | f0b7 | 5424 |
+| control-03100 | HandleChangeSize -> CSzNext (branch) | f0bc | 1221 |
+| control-03101 | HandleChangeSize -> CSzNext (fallthrough) | f0c0 | 4939 |
+| control-03102 | CSzNext -> GorSLog (fallthrough) | f0c3 | 6160 |
+| control-03103 | GorSLog -> ShrinkPlayer (branch) | f0c9 | 5788 |
+| control-03104 | GorSLog -> GetOffsetFromAnimCtrl (fallthrough) | f0ce | 5796 |
+| control-03105 | ShrinkPlayer -> ShrPlF (branch) | f0e1 | 4663 |
+| control-03106 | ShrinkPlayer -> ShrPlF (fallthrough) | f0e3 | 1125 |
+| control-03107 | ChkForPlayerAttrib -> KilledAtt (branch) | f0f0 | 8000 |
+| control-03108 | ChkForPlayerAttrib -> C_S_IGAtt (branch) | f0f7 | 3654 |
+| control-03109 | ChkForPlayerAttrib -> C_S_IGAtt (branch) | f0fb | 6649 |
+| control-03110 | ChkForPlayerAttrib -> C_S_IGAtt (branch) | f0ff | 834 |
+| control-03111 | ChkForPlayerAttrib -> ExPlyrAt (branch) | f103 | 47713 |
+| control-03112 | ChkForPlayerAttrib -> KilledAtt (fallthrough) | f103 | 4062 |
+| control-03113 | KilledAtt -> C_S_IGAtt (fallthrough) | f114 | 12062 |
+| control-03114 | C_S_IGAtt -> ExPlyrAt (fallthrough) | f126 | 23199 |
+| control-04033 | FindPlayerAction -> CntPl (return) | ef09 | 14976 |
+| control-04034 | ProcessPlayerAction -> FindPlayerAction (return) | ef34 | 51328 |
+| control-04035 | HandleChangeSize -> DoChangeSize (return) | ef3a | 11584 |
+| control-04036 | RenderPlayerSub -> PlayerGfxProcessing (return) | ef4a | 70912 |
+| control-04037 | ChkForPlayerAttrib -> PlayerGfxProcessing (return) | ef4d | 70912 |
+| control-04038 | RenderPlayerSub -> SUpdR (return) | ef77 | 8448 |
+| control-04039 | DumpTwoSpr -> PROfsLoop (return) | ef92 | 122880 |
+| control-04040 | DrawPlayerLoop -> PIntLoop (return) | efb2 | 32 |
+| control-04041 | DrawOneSpriteRow -> DrawPlayerLoop (return) | efe4 | 4224 |
+| control-04042 | GetGfxOffsetAdder -> NonAnimatedActs (return) | f028 | 23696 |
+| control-04043 | GetGfxOffsetAdder -> ActionFalling (return) | f036 | 3584 |
+| control-04044 | GetGfxOffsetAdder -> ActionWalkRun (return) | f03e | 6896 |
+| control-04045 | GetGfxOffsetAdder -> ActionClimbing (return) | f04a | 3200 |
+| control-04046 | GetGfxOffsetAdder -> ActionSwimming (return) | f052 | 13952 |
+| control-04047 | GetCurrentAnimOffset -> AnimationControl (return) | f071 | 20464 |
+
+### Operational proof and three artifacts
+
+Current C90 x86/x64 products and affected game/test targets build. Each width
+passes12/12 focused CTests: player OAM/route, core/bounding/geometry/block
+regressions, platform purity, audio/focus/death-audio and product self-test.
+Original OpenNT DOS16 links the same shared source, exit0 with existing
+OLDNAMES.LIB warning; no DOS graphical/performance qualification claimed.
+No platform business logic added. All three owner-authorized EXEs refreshed,
+including the existing audio/title/focus pause; artifact authorization
+overrides the default local-output exclusion.
+
+- mysmb16.exe: 260823 bytes; SHA-256 ab215c6a6c16aa4a6eea989ba914f831a746ba022645aa64c91cad71e89b6643.
+- mysmb32.exe: 373854 bytes; SHA-256 91f320ca561efd0587ae620794b2a1fd9305294a9910d7b5c05cda8540105989.
+- mysmb64.exe: 380886 bytes; SHA-256 5b5426001f050901435ccad839456943915c732d563a54de59ea99f956ee06f4.
+
+Raw snapshots and diagnostic probe binaries removed from ignored admitted
+output directory; neutral summaries/logs remain. Chunk cap2048/58851344
+bytes,192MiB aggregate,120seconds/run and524288steps/case observed. No ROM,
+raw fixture or reference-emulator runtime enters tracked product source.
+Ledger admission/closure, registry, documentation and whitespace gates pass.
+S1 closes; T66/M2 stay open pending remaining nodes and complete certification.

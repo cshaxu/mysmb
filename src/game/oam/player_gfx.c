@@ -165,7 +165,7 @@ mysmb_u8 mysmb_oam_handle_change_size(struct mysmb_game *game)
     animation = game->ram[MYSMB_PLAYER_ANIMATION];
     if ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 3U) == 0U) {
         animation++;
-        if (animation == 10U) {
+        if (animation >= 10U) {
             animation = 0U;
             game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 0U;
         }
@@ -201,17 +201,26 @@ void mysmb_oam_get_player_offscreen_bits(struct mysmb_game *game)
     mysmb_oam_get_offscreen_bits_set(game, 0U, 0U);
 }
 
-/* ROM RenderPlayerSub/DrawPlayerLoop: consume a selected graphics offset and
- * publish the source scratch while drawing the requested top rows. */
+/* ROM DrawPlayerLoop is shared by ordinary and intermediate rendering. */
+static void mysmb_oam_player_draw_loop(struct mysmb_game *game,
+                                       mysmb_u8 tile_index,
+                                       mysmb_u8 oam_offset)
+{
+    do {
+        game->ram[0U] = game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index)];
+        mysmb_oam_draw_one_sprite_row(game, game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)],
+            &tile_index, &oam_offset);
+        game->ram[7U]--;
+    } while (game->ram[7U] != 0U);
+}
+
+/* ROM RenderPlayerSub publishes scratch before the shared DrawPlayerLoop. */
 static void mysmb_oam_player_render_rows(struct mysmb_game *game,
                                          mysmb_u8 graphics_offset,
                                          mysmb_u8 row_count)
 {
-    mysmb_u8 row;
-    mysmb_u8 oam_offset;
-    mysmb_u8 tile_index;
-    oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
-    tile_index = graphics_offset;
     /* RenderPlayerSub publishes these source scratch bytes before
      * DrawPlayerLoop consumes the indexed PlayerGraphicsTable rows. */
     game->ram[7U] = row_count;
@@ -220,14 +229,8 @@ static void mysmb_oam_player_render_rows(struct mysmb_game *game,
     game->ram[2U] = game->ram[MYSMB_PLAYER_RELATIVE_Y];
     game->ram[3U] = game->ram[MYSMB_PLAYER_FACING];
     game->ram[4U] = game->ram[MYSMB_PLAYER_SPRITE_ATTRIBUTES];
-    for (row = 0U; row < row_count; ++row) {
-        game->ram[0U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index)];
-        mysmb_oam_draw_one_sprite_row(game, game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)],
-            &tile_index, &oam_offset);
-        game->ram[7U]--;
-    }
+    mysmb_oam_player_draw_loop(game, graphics_offset,
+        game->ram[MYSMB_PLAYER_SPRITE_OFFSET]);
 }
 
 /* ROM ChkForPlayerAttrib through C_S_IGAtt. */
@@ -263,11 +266,19 @@ void mysmb_oam_render_player(struct mysmb_game *game)
     mysmb_u8 row;
     mysmb_u8 oam_offset;
     mysmb_u8 offscreen;
+    mysmb_u8 swimming_continuation;
 
     if (game->area_prg == 0 ||
         game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
     if (game->ram[MYSMB_PLAYER_INJURY_TIMER] != 0U &&
         (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 1U) != 0U) return;
+    /* CntPl chooses the swimming return before HandleChangeSize can clear
+     * its flag. DoChangeSize jumps away and never reaches that return. */
+    swimming_continuation = (mysmb_u8)(
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU &&
+        game->ram[MYSMB_PLAYER_CHANGE_SIZE] == 0U &&
+        game->ram[MYSMB_SWIMMING] != 0U &&
+        game->ram[MYSMB_PLAYER_STATE] != 0U);
     graphics_offset = mysmb_oam_player_select_gfx(game);
     game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
     mysmb_oam_player_render_rows(game, graphics_offset, 4U);
@@ -295,8 +306,9 @@ void mysmb_oam_render_player(struct mysmb_game *game)
     oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U);
     for (row = 0U; row < 4U; ++row) {
         if ((offscreen & 1U) != 0U) {
-            game->ram[(mysmb_u16)(0x0200U + oam_offset)] = 0xf8U;
-            game->ram[(mysmb_u16)(0x0204U + oam_offset)] = 0xf8U;
+            /* PROfsLoop shifts its scratch before entering DumpTwoSpr. */
+            game->ram[0U] = (mysmb_u8)(offscreen >> 1U);
+            mysmb_oam_dump_two_sprites(game, 0xf8U, oam_offset);
         }
         offscreen >>= 1U;
         game->ram[0U] = offscreen;
@@ -305,10 +317,7 @@ void mysmb_oam_render_player(struct mysmb_game *game)
     /* PlayerGfxHandler's swimming continuation follows FindPlayerAction,
      * not the ordinary render return path.  The two source bytes at $eee7
      * select the seventh/eighth sprite kick tile. */
-    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU &&
-        game->ram[MYSMB_PLAYER_CHANGE_SIZE] == 0U &&
-        game->ram[MYSMB_SWIMMING] != 0U &&
-        game->ram[MYSMB_PLAYER_STATE] != 0U &&
+    if (swimming_continuation != 0U &&
         (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 4U) == 0U &&
         game->area_prg_size >= MYSMB_SWIM_KICK_TABLE_END) {
         mysmb_u8 kick_offset;
@@ -339,8 +348,6 @@ void mysmb_oam_draw_player(struct mysmb_game *game)
 void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)
 {
     mysmb_u8 row;
-    mysmb_u8 oam_offset;
-    mysmb_u8 tile_index;
 
     if (game->area_prg == 0 ||
         game->area_prg_size < MYSMB_INTERMEDIATE_PLAYER_DATA_END) return;
@@ -351,16 +358,7 @@ void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)
         game->ram[(mysmb_u16)(2U + row)] =
             game->area_prg[(mysmb_u16)(MYSMB_INTERMEDIATE_PLAYER_DATA + row)];
     }
-    oam_offset = 4U;
-    tile_index = 0xb8U;
-    for (row = 0U; row < 4U; ++row) {
-        game->ram[0U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index)];
-        mysmb_oam_draw_one_sprite_row(game, game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)],
-            &tile_index, &oam_offset);
-        game->ram[7U]--;
-    }
+    mysmb_oam_player_draw_loop(game, 0xb8U, 4U);
     /* The source reads the next sprite's attribute at +36 and stores its
      * horizontal-flip result in the preceding sprite at +32. */
     game->ram[0x0222U] = (mysmb_u8)(game->ram[0x0226U] | 0x40U);

@@ -61,7 +61,7 @@ mysmb_u8 __wrap_mysmb_oam_move_column_offscreen(struct mysmb_game *g,mysmb_u8 y)
 void __real_mysmb_oam_dump_two_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
 void __wrap_mysmb_oam_dump_two_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
 {
-    if(mode!=2U&&mode!=7U&&mode!=9U){__real_mysmb_oam_dump_two_sprites(g,a,y);return;}
+    if(mode!=2U&&mode!=7U&&mode!=9U&&mode!=19U){__real_mysmb_oam_dump_two_sprites(g,a,y);return;}
     (void)consume(g,5U,a,0U,y,5U);
 }
 void __real_mysmb_oam_draw_one_sprite_row(struct mysmb_game *,mysmb_u8,mysmb_u8 *,mysmb_u8 *);
@@ -127,7 +127,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f)return 65;
     if(fread(h,1U,16U,f)!=16U||memcmp(h,"MSOH\1",5U))return 66;
     mode=h[5];count=(unsigned int)read32(h+8U);current=(unsigned int)read32(h+12U);
-    if(mode>18U||count==0U||count>2048U)return 66;
+    if(mode>20U||count==0U||count>2048U)return 66;
     if(mode>=16U){
         FILE *rom;
         if(argc!=3)return 64;
@@ -154,7 +154,7 @@ int main(int argc,char **argv)
         if(mode==13U)mysmb_oam_draw_fireworks_explosion(&game,record[0],y);
         if(mode==14U)mysmb_objects_draw_small_platform(&game,x);
         if(mode==15U)mysmb_fireball_draw_bubble(&game,x);
-        if(mode==16U||mode==18U)mysmb_oam_render_player(&game);
+        if(mode==16U||mode==18U||mode==19U||mode==20U)mysmb_oam_render_player(&game);
         if(mode==17U)mysmb_oam_draw_intermediate_player(&game);
         if((mode==3U||mode==4U)&&(x!=record[4]||y!=record[5]))++failures;
 #ifdef MYSMB_OAM_HELPER_CHILD_CHECK

@@ -1,13 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T66 S1 - active player graphics owner chain
+## M2 T66 S1 - closed player graphics owner chain
 
-[T66 exact plan/S1 admission](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
-admits44 pending nodes/intended fresh44, maximum1677/1992; full task83
-nodes, maximum1716/1992. Current1633/1992 nodes,3485/4317 feasible controls
-(raw4342,infeasible25),394/492 material partial; historical1992/1992 separate.
-Actual erase call must be restored and current source/ROM branch evidence
-collected before promotions. Later relative/offscreen nodes remain pending.
+[S1 individual node/edge and dual proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+closes44 fresh nodes,103 controls and2 material relations, none deferred.
+Current1677/1992 nodes,3588/4317 feasible controls(raw4342,infeasible25),
+396/492 material partial; historical1992/1992 separate. All75040 original
+roots/127104 actual row/erase returns match both widths; every scoped branch
+has both outcomes. Restored erase/shared row calls, size termination and
+original swimming return. Current builds,12/12 tests per width and original
+DOS16 link pass;3 EXEs refreshed. T66 has39 pending nodes; S2 next unadmitted.
 
 ## M2 T65 - closed after S15 cross-chain proof
 

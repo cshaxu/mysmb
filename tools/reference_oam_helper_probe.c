@@ -31,6 +31,7 @@ static unsigned int event_kind(unsigned int mode,unsigned int pc)
     if(mode==13u&&pc==0xe5bbu)return 9u;
     if(mode==14u){if(pc==0xe5b5u)return 8u;if(pc==0xe5beu)return 13u;}
     if((mode==16u||mode==17u)&&pc==0xebb2u)return 6u;
+    if(mode==19u&&pc==0xe5c1u)return 5u;
     return 0u;
 }
 static void player_fixture(core_machine *m,unsigned int n,unsigned int mode)
@@ -62,6 +63,29 @@ static void player_fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x57u]=(unsigned char)(n&1u);m->ram[0xcu]=0u;m->ram[0x70bu]=0u;m->ram[0xeu]=8u;
         m->ram[0x70du]=0u;m->ram[0x711u]=3u;m->ram[0x781u]=2u;m->ram[0x6e4u]=(unsigned char)n;
     }
+    if(mode==19u){
+        unsigned int profile=n>>12u;
+        m->ram[0x6e4u]=(unsigned char)n;
+        m->ram[0x3d0u]=(unsigned char)(((n>>8u)<<4u)|(n&15u));
+        if(profile==1u||profile==2u){m->ram[0x79eu]=1u;m->ram[9u]=(unsigned char)(profile==1u);}
+        if(profile==3u){m->ram[0x704u]=1u;m->ram[0x1du]=1u;m->ram[9u]=4u;}
+        if(profile==4u){m->ram[0x704u]=1u;m->ram[0x1du]=0u;}
+        if(profile==5u){m->ram[0x1du]=0u;m->ram[0x714u]=0u;m->ram[0x57u]=1u;m->ram[0x700u]=9u;m->ram[0x45u]=m->ram[0x33u];}
+        if(profile==6u){m->ram[0x70bu]=1u;m->ram[0x70du]=9u;m->ram[9u]=0u;}
+        if(profile==7u)m->ram[0xeu]=0xbu;
+        if(profile>=8u&&profile<=10u){m->ram[0x711u]=3u;m->ram[0x781u]=(unsigned char)(profile==8u?3u:2u);m->ram[0x57u]=(unsigned char)(profile==10u);m->ram[0xcu]=0u;}
+        if(profile==11u){m->ram[0x1du]=1u;m->ram[0x704u]=0u;m->ram[0x714u]=1u;}
+        if(profile==12u){m->ram[0x1du]=3u;m->ram[0x9fu]=0u;}
+        if(profile==13u)m->ram[0x1du]=2u;
+        if(profile==14u){m->ram[0x1du]=1u;m->ram[0x704u]=1u;m->ram[0x782u]=0u;m->ram[0x70du]=0u;m->ram[0xau]=0u;}
+        if(profile==15u){m->ram[0x1du]=1u;m->ram[0x704u]=1u;m->ram[0x782u]=0u;m->ram[0x70du]=0u;m->ram[0xau]=0x80u;m->ram[0x781u]=0u;}
+    }
+    if(mode==20u){
+        unsigned int profile=n>>8u;
+        m->ram[0x70du]=(unsigned char)n;
+        m->ram[0x781u]=(unsigned char)(profile&1u);
+        if(profile>=16u){m->ram[0x70bu]=1u;m->ram[0x754u]=(unsigned char)(profile&1u);m->ram[9u]=(unsigned char)((profile>>1u)&3u);m->ram[0xeu]=8u;}
+    }
 }
 static void enemy_fixture(core_machine *m,unsigned int n)
 {
@@ -92,15 +116,17 @@ int main(int argc,char **argv)
 {
     static core_machine baseline;
     static unsigned char rec[RECORD_BYTES],prg[32768];
-    static unsigned int hits[1536],taken[1536],fell[1536],events[14],continuations[65536],offset_reads[16],graphic_reads[208],kick_reads[2];
-    static const unsigned int entries[19]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u,0xede1u,0xeee9u,0xefa4u,0xeee9u};
+    static unsigned int hits[4096],taken[4096],fell[4096],events[14],continuations[65536],offset_reads[16],graphic_reads[208],kick_reads[2],size_reads[20],intermediate_reads[6];
+    static unsigned long transfer_keys[8192];
+    static unsigned int transfer_counts[8192];
+    static const unsigned int entries[21]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u,0xede1u,0xeee9u,0xefa4u,0xeee9u,0xeee9u,0xeee9u};
     unsigned char h[16]={'M','S','O','H',1u};
     core_driver *d=NULL;core_driver_options options={0u,LIB_FALSE};core_run_result r;
     unsigned int mode,first,count,n,i,slot,pc,steps,k,pos,pending,continuation,maxsteps=0u,returns=0u;
     int ok=1;FILE *f;time_t start=time(NULL);
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],NULL,0);first=(unsigned int)strtoul(argv[4],NULL,0);count=(unsigned int)strtoul(argv[5],NULL,0);
-    if(mode>18u||count==0u||count>2048u||first+count>(mode>=16u?(mode==16u?1024u:(mode==17u?32u:256u)):(mode==15u?131072u:(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u)))))))))return 64;
+    if(mode>20u||count==0u||count>2048u||first+count>(mode>=19u?(mode==19u?65536u:8192u):(mode>=16u?(mode==16u?1024u:(mode==17u?32u:256u)):(mode==15u?131072u:(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u))))))))))return 64;
     h[5]=(unsigned char)mode;for(i=0u;i<4u;++i){h[8u+i]=(unsigned char)(count>>(i*8u));h[12u+i]=(unsigned char)(first>>(i*8u));}
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1u,sizeof(prg),f)!=sizeof(prg))return 65;fclose(f);
     if(core_driver_create(&d,&options)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
@@ -188,13 +214,15 @@ int main(int argc,char **argv)
         memset(rec,0,sizeof(rec));rec[0]=d->machine->a;rec[1]=d->machine->x;rec[2]=d->machine->y;
         memcpy(rec+16u,d->machine->ram,2048u);pending=0u;continuation=0u;
         for(steps=0u;steps<524288u&&d->machine->pc!=0x8001u;++steps){
-            pc=d->machine->pc;if(pc>=0xe900u&&pc<0xef00u)++hits[pc-0xe900u];
+            pc=d->machine->pc;if(pc>=0xe900u&&pc<0xf900u)++hits[pc-0xe900u];
             if(mode>=16u&&(prg[pc-0x8000u]==0xbdu||prg[pc-0x8000u]==0xb9u||prg[pc-0x8000u]==0x79u)){
                 unsigned int address=(unsigned int)(prg[pc-0x8000u+1u]|(prg[pc-0x8000u+2u]<<8u));
                 address=(address+(prg[pc-0x8000u]==0xbdu?d->machine->x:d->machine->y))&65535u;
                 if(address>=0xee07u&&address<0xee17u)++offset_reads[address-0xee07u];
                 if(address>=0xee17u&&address<0xeee7u)++graphic_reads[address-0xee17u];
                 if(address>=0xeee7u&&address<0xeee9u)++kick_reads[address-0xeee7u];
+                if(address>=0xf09cu&&address<0xf0b0u)++size_reads[address-0xf09cu];
+                if(address>=0xef9eu&&address<0xefa4u)++intermediate_reads[address-0xef9eu];
             }
             k=event_kind(mode,pc);
             /* Record the selected boundary, not nested fallthrough leaves. */
@@ -208,7 +236,17 @@ int main(int argc,char **argv)
                 memcpy(rec+pos+8u,d->machine->ram,2048u);++rec[3];++events[k];
             }
             if(core_machine_debug_step(d->machine,1u,1024u,&r)!=LIB_STATUS_OK||r.trap_valid){ok=0;break;}
-            if(pc>=0xe900u&&pc<0xef00u&&(prg[pc-0x8000u]&0x1fu)==0x10u){
+            if(mode>=16u&&pc>=0xeee9u&&pc<0xf12au){
+                unsigned long key=(((unsigned long)pc<<16u)|d->machine->pc)+1u;
+                unsigned int bucket=(unsigned int)((key^(key>>13u))&8191u),attempt;
+                for(attempt=0u;attempt<8192u;++attempt){
+                    if(!transfer_keys[bucket]||transfer_keys[bucket]==key)break;
+                    bucket=(bucket+1u)&8191u;
+                }
+                if(attempt==8192u){ok=0;break;}
+                transfer_keys[bucket]=key;++transfer_counts[bucket];
+            }
+            if(pc>=0xe900u&&pc<0xf900u&&(prg[pc-0x8000u]&0x1fu)==0x10u){
                 if(d->machine->pc==(unsigned short)(pc+2u))++fell[pc-0xe900u];else ++taken[pc-0xe900u];
             }
             if(pending&&prg[pc-0x8000u]==0x60u&&d->machine->pc==continuation){
@@ -223,11 +261,17 @@ int main(int argc,char **argv)
     }
     if(fclose(f))ok=0;(void)core_driver_destroy(d);
     printf("mode=%u first=%u roots=%u maxsteps=%u child-returns=%u bytes=%u\n",mode,first,n-first,maxsteps,returns,16u+(n-first)*RECORD_BYTES);
-    for(i=0u;i<1536u;++i)if(hits[i])printf("pc=%04x visits=%u taken=%u fall=%u\n",0xe900u+i,hits[i],taken[i],fell[i]);
+    for(i=0u;i<4096u;++i)if(hits[i])printf("pc=%04x visits=%u taken=%u fall=%u\n",0xe900u+i,hits[i],taken[i],fell[i]);
     for(i=1u;i<14u;++i)if(events[i])printf("event=%u count=%u\n",i,events[i]);
     for(i=0u;i<65536u;++i)if(continuations[i])printf("continuation=%04x count=%u\n",i,continuations[i]);
     for(i=0u;i<16u;++i)if(offset_reads[i])printf("table=offset index=%u reads=%u\n",i,offset_reads[i]);
     for(i=0u;i<208u;++i)if(graphic_reads[i])printf("table=graphics index=%u reads=%u\n",i,graphic_reads[i]);
     for(i=0u;i<2u;++i)if(kick_reads[i])printf("table=kick index=%u reads=%u\n",i,kick_reads[i]);
+    for(i=0u;i<20u;++i)if(size_reads[i])printf("table=size index=%u reads=%u\n",i,size_reads[i]);
+    for(i=0u;i<6u;++i)if(intermediate_reads[i])printf("table=intermediate index=%u reads=%u\n",i,intermediate_reads[i]);
+    for(i=0u;i<8192u;++i)if(transfer_keys[i]){
+        unsigned long key=transfer_keys[i]-1u;
+        printf("transfer=%04x next=%04x count=%u\n",(unsigned int)(key>>16u),(unsigned int)(key&65535u),transfer_counts[i]);
+    }
     return ok&&n==first+count?0:66;
 }
