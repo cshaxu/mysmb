@@ -1,11 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T65 S12 - active small-platform output audit
+## M2 T65 S12 - closed ordered small-platform output
 
-[S12 exact scope/findings](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
-admits6 labels, intended fresh6, maximum1628/1992. Two nodes/three calls
-mismatch; current1622/1992 nodes,3464/4317 controls(raw4342,infeasible25),
-391/492 material partial; historical1992/1992 separate. S13 not admitted.
+[S12 node/child/address proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes6 fresh nodes and16 feasible controls, none deferred. Current1628/1992
+nodes,3480/4317 controls(raw4342,infeasible25),391/492 material partial;
+historical1992/1992 separate. All69632 original roots/208896 child returns
+match full and independent checks per width. Current builds,12/12 tests per
+width and original DOS16 link pass; three products refreshed. T65 remains
+open with5 pending nodes; S13 next, not admitted.
 
 ## M2 T65 S11 - closed shared projectile/explosion output chain
 

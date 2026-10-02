@@ -79,7 +79,7 @@ void __wrap_mysmb_oam_draw_sprite_object(struct mysmb_game *g,mysmb_u8 *x,mysmb_
 void __real_mysmb_oam_dump_six_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
 void __wrap_mysmb_oam_dump_six_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
 {
-    if(mode!=5U){__real_mysmb_oam_dump_six_sprites(g,a,y);return;}
+    if(mode!=5U&&mode!=14U){__real_mysmb_oam_dump_six_sprites(g,a,y);return;}
     (void)consume(g,8U,a,0U,y,5U);
 }
 void __real_mysmb_oam_dump_four_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
@@ -107,6 +107,12 @@ void __wrap_mysmb_oam_draw_fireworks_explosion(struct mysmb_game *g,mysmb_u8 a,m
     if(mode!=12U){__real_mysmb_oam_draw_fireworks_explosion(g,a,y);return;}
     (void)consume(g,12U,a,0U,y,5U);
 }
+void __real_mysmb_oam_dump_three_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_dump_three_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
+{
+    if(mode!=14U){__real_mysmb_oam_dump_three_sprites(g,a,y);return;}
+    (void)consume(g,13U,a,0U,y,5U);
+}
 #endif
 static unsigned long read32(const unsigned char *p)
 {
@@ -119,7 +125,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f)return 65;
     if(fread(h,1U,16U,f)!=16U||memcmp(h,"MSOH\1",5U))return 66;
     mode=h[5];count=(unsigned int)read32(h+8U);current=(unsigned int)read32(h+12U);
-    if(mode>13U||count==0U||count>2048U)return 66;
+    if(mode>14U||count==0U||count>2048U)return 66;
     for(i=0U;i<count;++i,++current){
         if(fread(record,1U,sizeof(record),f)!=sizeof(record))return 66;
         memset(&game,0,sizeof(game));memcpy(game.ram,record+16U,2048U);calls=0U;x=record[1];y=record[2];
@@ -136,6 +142,7 @@ int main(int argc,char **argv)
         if(mode==11U){y=mysmb_oam_draw_firebar(&game,y);if(y!=record[5])++failures;}
         if(mode==12U)mysmb_oam_draw_fireball_explosion(&game,x);
         if(mode==13U)mysmb_oam_draw_fireworks_explosion(&game,record[0],y);
+        if(mode==14U)mysmb_objects_draw_small_platform(&game,x);
         if((mode==3U||mode==4U)&&(x!=record[4]||y!=record[5]))++failures;
 #ifdef MYSMB_OAM_HELPER_CHILD_CHECK
         if(calls!=record[3])++failures;

@@ -29,6 +29,7 @@ static unsigned int event_kind(unsigned int mode,unsigned int pc)
     if(mode==10u&&pc==0xecedu)return 11u;
     if(mode==12u&&pc==0xed17u)return 12u;
     if(mode==13u&&pc==0xe5bbu)return 9u;
+    if(mode==14u){if(pc==0xe5b5u)return 8u;if(pc==0xe5beu)return 13u;}
     return 0u;
 }
 static void enemy_fixture(core_machine *m,unsigned int n)
@@ -60,15 +61,15 @@ int main(int argc,char **argv)
 {
     static core_machine baseline;
     static unsigned char rec[RECORD_BYTES],prg[32768];
-    static unsigned int hits[1536],taken[1536],fell[1536],events[13],continuations[65536];
-    static const unsigned int entries[14]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u};
+    static unsigned int hits[1536],taken[1536],fell[1536],events[14],continuations[65536];
+    static const unsigned int entries[15]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u};
     unsigned char h[16]={'M','S','O','H',1u};
     core_driver *d=NULL;core_driver_options options={0u,LIB_FALSE};core_run_result r;
     unsigned int mode,first,count,n,i,slot,pc,steps,k,pos,pending,continuation,maxsteps=0u,returns=0u;
     int ok=1;FILE *f;time_t start=time(NULL);
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],NULL,0);first=(unsigned int)strtoul(argv[4],NULL,0);count=(unsigned int)strtoul(argv[5],NULL,0);
-    if(mode>13u||count==0u||count>2048u||first+count>(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u))))))return 64;
+    if(mode>14u||count==0u||count>2048u||first+count>(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u)))))))return 64;
     h[5]=(unsigned char)mode;for(i=0u;i<4u;++i){h[8u+i]=(unsigned char)(count>>(i*8u));h[12u+i]=(unsigned char)(first>>(i*8u));}
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1u,sizeof(prg),f)!=sizeof(prg))return 65;fclose(f);
     if(core_driver_create(&d,&options)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
@@ -127,6 +128,20 @@ int main(int argc,char **argv)
             d->machine->ram[0x3bau]=(unsigned char)((n>>8u)*13u+7u);
             if(mode==13u)d->machine->a=(unsigned char)(n>>16u);
         }
+        if(mode==14u){
+            slot=n%6u;d->machine->x=(unsigned char)slot;d->machine->ram[8u]=(unsigned char)slot;
+            d->machine->ram[0x6e5u+slot]=(unsigned char)n;
+            d->machine->ram[0xcfu+slot]=(unsigned char)(n>>8u);
+            d->machine->ram[0x3aeu]=(unsigned char)((n>>8u)*13u+7u);
+            d->machine->ram[0x3d1u]=(unsigned char)(n>>4u);
+            if(n>=65536u){
+                k=n-65536u;
+                d->machine->ram[0x6e5u+slot]=(unsigned char)((k&8u)?0xffu:0xe8u);
+                d->machine->ram[0xcfu+slot]=(unsigned char)(k>>4u);
+                d->machine->ram[0x3aeu]=(unsigned char)(k>>4u);
+                d->machine->ram[0x3d1u]=(unsigned char)(k&15u);
+            }
+        }
         d->machine->pc=(unsigned short)entries[mode];d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
         memset(rec,0,sizeof(rec));rec[0]=d->machine->a;rec[1]=d->machine->x;rec[2]=d->machine->y;
@@ -161,7 +176,7 @@ int main(int argc,char **argv)
     if(fclose(f))ok=0;(void)core_driver_destroy(d);
     printf("mode=%u first=%u roots=%u maxsteps=%u child-returns=%u bytes=%u\n",mode,first,n-first,maxsteps,returns,16u+(n-first)*RECORD_BYTES);
     for(i=0u;i<1536u;++i)if(hits[i])printf("pc=%04x visits=%u taken=%u fall=%u\n",0xe900u+i,hits[i],taken[i],fell[i]);
-    for(i=1u;i<13u;++i)if(events[i])printf("event=%u count=%u\n",i,events[i]);
+    for(i=1u;i<14u;++i)if(events[i])printf("event=%u count=%u\n",i,events[i]);
     for(i=0u;i<65536u;++i)if(continuations[i])printf("continuation=%04x count=%u\n",i,continuations[i]);
     return ok&&n==first+count?0:66;
 }

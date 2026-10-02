@@ -139,3 +139,10 @@ nodes,7 controls and one material row. Current1622/1992 nodes,3464/4317
 controls(raw4342,infeasible25),391/492 material partial; historical1992/1992
 separate. T65 remains open with11 pending nodes; S12 next, not admitted.
 Shared projectile/explosion output repairs retain exact incoming caller credit.
+
+## Current checkpoint after T65 S12
+
+[T65 S12](t65-cohort-k-block-query-object-output-current-proof.md) closes6
+nodes and16 controls. Current1628/1992 nodes,3480/4317 feasible controls
+(raw4342,infeasible25),391/492 material partial; historical1992/1992 separate.
+T65 stays open with5 pending nodes; S13 next, not admitted.

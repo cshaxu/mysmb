@@ -1506,3 +1506,76 @@ build output owns192MiB raw,2048-root chunks,120seconds/run,524288steps/case,
 checkpoints and coordinator cleanup. Similar-issue sweep includes both small/
 large platform entries and all production callers/dump dependencies; the
 already-exact large platform path is unchanged unless a concrete regression.
+
+## S12 P2 repair, independent proof and closure
+
+All6 admitted labels become current exact, none deferred or transferred.
+Current nodes1622->1628/1992; feasible controls3464->3480/4317(raw4342,
+infeasible25); material391/492 partial unchanged. Historical1992/1992 stays
+separate. T65 remains open with5 pending nodes; S13 next, not admitted.
+Owned controls03011-03023 and04030-04032 all16 close; already-exact external
+RunSmallPlatform call01697 and return03814 retain prior credit. No caller
+node or pending material credit is inferred.
+
+| Exact node | Current source contract |
+| --- | --- |
+| DrawSmallPlatform | ED66 loads source OAM, calls DumpSixSpr with tile at byte Y+1 then attributes at byte Y+2, restores Y and writes paired relative X/X+8/X+16 coordinates before loading enemy Y. |
+| TopSP | ED9C calls actual DumpThreeSpr with original Y if >=20 or F8 otherwise, then wraps original Y+80 and applies the second status-area test. |
+| BotSP | EDAA stores bottom-row Y at absolute-indexed +12/+16/+20, then reads the offscreen mask and conditionally hides first/fourth sprites from d3. |
+| SOfs | EDC3 retains original mask and conditionally hides second/fifth sprites from d2 in source order. |
+| SOfs2 | EDD1 retains original mask and conditionally hides third/sixth sprites from d1 in source order. |
+| ExSPl | EDDE restores original ObjectOffset CPU-X and returns; native caller slot remains an explicit immutable argument, with no additional clipping or motion. |
+
+The old per-column byte-wrapped sprite-base loop differed from original
+absolute-indexed stores and omitted actual two DumpSixSpr/one DumpThreeSpr
+calls. A pre-repair2048-root x64 batch produced3584 differing RAM-byte
+comparisons. Identical cases now pass; broad current batches retain the
+original child input timing and ordered tile/attribute/X/Y/clipping stores.
+No motion/collision/platform workaround is introduced.
+
+Extended neutral reference/helper mode14 executes original ED66:65536 roots
+cover all256 OAM offsets x all256 enemy Y, all256 offscreen masks and varying
+relative X;4096 additional roots cover all256 Y x16 masks at E8/FF offsets
+selected by mask d3 and all byte relative X. These are controlled original
+entry fixtures, not a claim that every unusual OAM value is reached in play.
+All69632 roots match current x86/x64 under both full and independent child
+checks. Original two DumpSixSpr calls return to ED6F and ED75, DumpThreeSpr
+to ED9F,69632 times each; total208896 actual child returns. Relevant A/Y and
+all1841 RAM bytes are compared before each child, then original child output
+is substituted and final caller RAM checked. Full execution exercises the
+real shared child bodies. True CPU stack, volatile flags and unused temporary
+registers are excluded; native immutable slot replaces restored ObjectOffset
+CPU-X. All five original branch sites cover taken and fallthrough paths:
+
+- ED98: taken60928, fall8704.
+- EDA6: taken60928, fall8704.
+- EDB9: taken34816, fall34816.
+- EDC7: taken34816, fall34816.
+- EDD4: taken34816, fall34816.
+
+Raw chunks remain2048 roots/58851344 bytes max,120seconds/run and524288steps/
+case, below192MiB. Raw records and consumed diagnostic binaries are removed;
+neutral summaries remain local under ignored S12 build output. No ROM bytes
+or emulator enter tracked test fixtures or product runtime.
+
+Similar-issue sweep: platform_callers.c is the sole production caller of
+small and large platform drawing. Small now reaches the actual dump sequence;
+large's already-exact source body remains byte-for-byte unchanged. sprite_dump.c
+leaves remain unchanged and keep their accepted owner. The only direct small
+platform writer is the repaired canonical function; no duplicate path or
+platform business logic is added. Existing large-path source ABI and later
+small/bubble/table scopes retain their own proof boundaries.
+
+Operational track: current C90 game library, Win32 product and scoped
+checkers/tests build for x86/x64;12/12 focused tests per width pass including
+small-platform/dump/core/purity/audio/focus/product self-tests. Original OpenNT
+DOS16 link exits0 with the existing OLDNAMES.LIB warning; no DOS gameplay/
+performance qualification claimed. Three fresh owner-authorized EXEs include
+committed audio/title/focus pause. Owner artifact authorization overrides
+project default local-output exclusion.
+
+- mysmb16.exe: 260967 bytes; SHA-256 c4d99a2c432f7d2b5f403a618fcf57be647715533d819a194433f2130e0d703e.
+- mysmb32.exe: 373790 bytes; SHA-256 c4c5f8722c6d8a23aa34197608093f86b4cdddf6519f0e7ad21bc204b78b8612.
+- mysmb64.exe: 381335 bytes; SHA-256 cea510d55105f6691b67388c4244eb99fb2bce5ba245e64248e1f1e77c25226e.
+
+Ledger admission/closure, documentation and whitespace gates rerun. S12 closes its scope; T65 and M2 remain open.

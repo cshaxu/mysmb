@@ -10672,15 +10672,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1622,
-    "needs-evidence": 368,
-    "mismatch": 2
+    "exact": 1628,
+    "needs-evidence": 364
   },
   "controlEdgeCounts": {
-    "exact": 3464,
-    "needs-evidence": 850,
-    "infeasible": 25,
-    "mismatch": 3
+    "exact": 3480,
+    "needs-evidence": 837,
+    "infeasible": 25
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -42667,15 +42665,18 @@
       "label": "DrawSmallPlatform",
       "asmLine": 14334,
       "cohort": "K",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes six tiles/attributes and three X columns, then applies source top/bottom status-bar clipping.",
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "ED66 loads source OAM, calls DumpSixSpr with tile at byte Y+1 then attributes at byte Y+2, restores Y and writes paired relative X/X+8/X+16 coordinates before loading enemy Y.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -42684,15 +42685,18 @@
       "label": "TopSP",
       "asmLine": 14361,
       "cohort": "K",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Dumps the first three Ys after the source below-status-bar test.",
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "ED9C calls actual DumpThreeSpr with original Y if >=20 or F8 otherwise, then wraps original Y+80 and applies the second status-area test.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -42701,14 +42705,17 @@
       "label": "BotSP",
       "asmLine": 14369,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the lower three Ys after the wrapped +$80 status-bar test.",
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "EDAA stores bottom-row Y at absolute-indexed +12/+16/+20, then reads the offscreen mask and conditionally hides first/fourth sprites from d3.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -42717,14 +42724,17 @@
       "label": "SOfs",
       "asmLine": 14379,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies Enemy_OffscreenBits d3 first/fourth-column hide.",
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "EDC3 retains original mask and conditionally hides second/fifth sprites from d2 in source order.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -42733,14 +42743,17 @@
       "label": "SOfs2",
       "asmLine": 14386,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies d2 second/fifth-column hide before d1 third/sixth handling.",
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "EDD1 retains original mask and conditionally hides third/sixth sprites from d1 in source order.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -42749,14 +42762,17 @@
       "label": "ExSPl",
       "asmLine": 14392,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_small_platform",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Restores ObjectOffset and returns.",
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "EDDE restores original ObjectOffset CPU-X and returns; native caller slot remains an explicit immutable argument, with no additional clipping or motion.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -113972,13 +113988,16 @@
       "instruction": "jsr",
       "id": "control-03011",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM call relation DrawSmallPlatform -> DumpSixSpr with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
@@ -113993,13 +114012,16 @@
       "instruction": "jsr",
       "id": "control-03012",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM call relation DrawSmallPlatform -> DumpSixSpr with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
@@ -114014,12 +114036,15 @@
       "instruction": "bcs",
       "id": "control-03013",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM branch relation DrawSmallPlatform -> TopSP with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114033,12 +114058,15 @@
       "instruction": "lda",
       "id": "control-03014",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM fallthrough relation DrawSmallPlatform -> TopSP with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114052,13 +114080,16 @@
       "instruction": "jsr",
       "id": "control-03015",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM call relation TopSP -> DumpThreeSpr with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
@@ -114073,12 +114104,15 @@
       "instruction": "bcs",
       "id": "control-03016",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM branch relation TopSP -> BotSP with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114092,12 +114126,15 @@
       "instruction": "lda",
       "id": "control-03017",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM fallthrough relation TopSP -> BotSP with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114111,12 +114148,15 @@
       "instruction": "beq",
       "id": "control-03018",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM branch relation BotSP -> SOfs with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114130,12 +114170,15 @@
       "instruction": "sta",
       "id": "control-03019",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM fallthrough relation BotSP -> SOfs with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114149,12 +114192,15 @@
       "instruction": "beq",
       "id": "control-03020",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM branch relation SOfs -> SOfs2 with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114168,12 +114214,15 @@
       "instruction": "sta",
       "id": "control-03021",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM fallthrough relation SOfs -> SOfs2 with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114187,12 +114236,15 @@
       "instruction": "beq",
       "id": "control-03022",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM branch relation SOfs2 -> ExSPl with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -114206,12 +114258,15 @@
       "instruction": "sta",
       "id": "control-03023",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM fallthrough relation SOfs2 -> ExSPl with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -135231,12 +135286,15 @@
       "instruction": "rts/rti",
       "id": "control-04030",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM return relation DumpSixSpr -> DrawSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
@@ -135251,12 +135309,15 @@
       "instruction": "rts/rti",
       "id": "control-04031",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM return relation DumpSixSpr -> DrawSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
@@ -135271,12 +135332,15 @@
       "instruction": "rts/rti",
       "id": "control-04032",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/small_platform_gfx.c original dump and clipping flow with sprite_dump.c actual children",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM return relation DumpThreeSpr -> TopSP with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",

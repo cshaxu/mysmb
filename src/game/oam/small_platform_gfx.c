@@ -12,43 +12,47 @@ enum {
     MYSMB_SMALL_PLATFORM_SPRITE_OFFSET = 0x06e5U
 };
 
+/* ROM $ed66 DrawSmallPlatform through $edde ExSPl. Byte INY offsets
+ * wrap before dump calls; absolute-indexed sprite stores retain their base. */
 void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 oam;
-    mysmb_u8 x;
-    mysmb_u8 y;
+    mysmb_u8 coordinate;
+    mysmb_u8 original_y;
     mysmb_u8 offscreen;
-    mysmb_u8 column;
 
     oam = game->ram[MYSMB_SMALL_PLATFORM_SPRITE_OFFSET + slot];
-    x = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
-    y = game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
+    mysmb_oam_dump_six_sprites(game, 0x5bU, (mysmb_u8)(oam + 1U));
+    mysmb_oam_dump_six_sprites(game, 2U, (mysmb_u8)(oam + 2U));
+    coordinate = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
+    game->ram[0x0203U + oam] = coordinate;
+    game->ram[0x020fU + oam] = coordinate;
+    coordinate = (mysmb_u8)(coordinate + 8U);
+    game->ram[0x0207U + oam] = coordinate;
+    game->ram[0x0213U + oam] = coordinate;
+    coordinate = (mysmb_u8)(coordinate + 8U);
+    game->ram[0x020bU + oam] = coordinate;
+    game->ram[0x0217U + oam] = coordinate;
+    original_y = game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
+    coordinate = original_y < 0x20U ? 0xf8U : original_y;
+    mysmb_oam_dump_three_sprites(game, coordinate, oam);
+    coordinate = (mysmb_u8)(original_y + 0x80U);
+    if (coordinate < 0x20U) coordinate = 0xf8U;
+    game->ram[0x020cU + oam] = coordinate;
+    game->ram[0x0210U + oam] = coordinate;
+    game->ram[0x0214U + oam] = coordinate;
     offscreen = game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN];
-
-    for (column = 0U; column < 3U; ++column) {
-        mysmb_u8 row_offset;
-        mysmb_u8 column_x;
-        mysmb_u8 first_y;
-        mysmb_u8 second_y;
-
-        row_offset = (mysmb_u8)(oam + column * 4U);
-        column_x = (mysmb_u8)(x + column * 8U);
-        first_y = y < 0x20U ? 0xf8U : y;
-        second_y = (mysmb_u8)(y + 0x80U);
-        if (second_y < 0x20U) second_y = 0xf8U;
-        if ((offscreen & (mysmb_u8)(8U >> column)) != 0U) {
-            first_y = 0xf8U;
-            second_y = 0xf8U;
-        }
-        game->ram[0x0200U + row_offset] = first_y;
-        game->ram[0x0201U + row_offset] = 0x5bU;
-        game->ram[0x0202U + row_offset] = 2U;
-        game->ram[0x0203U + row_offset] = column_x;
-        row_offset = (mysmb_u8)(oam + 12U + column * 4U);
-        game->ram[0x0200U + row_offset] = second_y;
-        game->ram[0x0201U + row_offset] = 0x5bU;
-        game->ram[0x0202U + row_offset] = 2U;
-        game->ram[0x0203U + row_offset] = column_x;
+    if ((offscreen & 8U) != 0U) {
+        game->ram[0x0200U + oam] = 0xf8U;
+        game->ram[0x020cU + oam] = 0xf8U;
+    }
+    if ((offscreen & 4U) != 0U) {
+        game->ram[0x0204U + oam] = 0xf8U;
+        game->ram[0x0210U + oam] = 0xf8U;
+    }
+    if ((offscreen & 2U) != 0U) {
+        game->ram[0x0208U + oam] = 0xf8U;
+        game->ram[0x0214U + oam] = 0xf8U;
     }
 }
 void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
