@@ -142,5 +142,9 @@ mysmb_u8 mysmb_world_query_fireball_block(struct mysmb_game *game,
 mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *game, mysmb_u8 slot,
     struct mysmb_enemy_terrain *terrain)
 {
-    return mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, terrain);
+    (void)mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, terrain);
+    /* The tail-called BBChk_E returns the queried metatile in A, rather than
+     * a normalized boolean.  Existing callers intentionally use zero/nonzero
+     * tests, while this boundary preserves the direct ROM result. */
+    return terrain != 0 ? terrain->metatile : 0U;
 }

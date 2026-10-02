@@ -10533,13 +10533,17 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1449,
-    "needs-evidence": 543
+    "unclassified": 0,
+    "exact": 1450,
+    "needs-evidence": 542,
+    "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3037,
-    "infeasible": 18,
-    "needs-evidence": 1287
+    "unclassified": 0,
+    "exact": 3038,
+    "needs-evidence": 1286,
+    "mismatch": 0,
+    "infeasible": 18
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -39083,13 +39087,16 @@
       "label": "ChkUnderEnemy",
       "asmLine": 12732,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/block_buffer.c:mysmb_world_query_enemy_under",
       "currentCounterpart": "mysmb_world_query_enemy_under",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S29: direct SMB1  static audit proves LDA #, LDY # and tail JMP BlockBufferChk_Enemy; shared C preserves the returned metatile rather than a normalized boolean."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S29: five controlled original-ROM entries (empty, solid, page-carry and row variants) agree with x86/x64 returned metatile and scratch /// checks."
+      ],
       "semanticContract": "Selects vertical block-buffer probe flag A=0 and offset Y=$15.",
       "currentSourcePaths": [
         "src/game/world/block_buffer.c"
@@ -105610,12 +105617,15 @@
       "instruction": "jmp",
       "id": "control-02694",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_world_query_enemy_under -> mysmb_world_query_enemy_block with fixed adder  and vertical contact",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S29: direct  audit proves the unconditional tail jump after exact A/Y setup."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S29 controlled original-ROM route and current x86/x64 checker pass all five records."
+      ],
       "semanticContract": "Preserves enemy side/terrain jump relation ChkUnderEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BlockBufferChk_Enemy, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/world/block_buffer.c"

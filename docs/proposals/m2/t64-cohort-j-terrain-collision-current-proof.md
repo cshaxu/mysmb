@@ -1027,3 +1027,38 @@ S28 records `UnderHammerBro`, `NoUnderHammerBro`, `control-02691` through
 `control-02693`, and `control-03990` exact. Current totals: historical **1,992 /
 1,992**; current exact nodes **1,449 / 1,992**; current exact feasible controls
 **3,037 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S29 admission — enemy under-block query
+
+S29 admits `ChkUnderEnemy` at `$E1AE-$E1B4`, owned by
+`src/game/world/block_buffer.c:mysmb_world_query_enemy_under`. It sets A to
+zero and Y to `$15`, then tail-jumps to `BlockBufferChk_Enemy`; S30 starts at
+`ChkForNonSolids`. The ROM track compares both setup immediates, the tail
+relation and the returned metatile/scratch contract over empty, solid,
+page-carry and row cases. The operational track runs the controlled
+original-ROM entry once per x86/x64 checker, focused ground-query and purity
+tests, and the shared DOS16 link.
+
+- Incoming current exact: **1,449 / 1,992** nodes and **3,037 / 4,324** feasible controls.
+- Scope: `ChkUnderEnemy`; expected current matches: **1**; maximum **1,450 / 1,992**.
+
+## S29 closure — enemy under-block query
+
+`ChkUnderEnemy` is current-exact. Static `$E1AE-$E1B4` comparison confirms
+`LDA #$00`, `LDY #$15`, and the unconditional tail jump into
+`BlockBufferChk_Enemy`. The prior C wrapper normalized that callee's returned
+metatile to a boolean; it now preserves the direct ROM result while existing
+callers retain their zero/nonzero tests. Five controlled original-ROM entries
+cover empty, solid, page-carry and row variants. Their x86/x64 checks agree on
+the returned metatile and scratch `$02/$04/$06/$07` with zero differences.
+
+S29 marks `ChkUnderEnemy` and `control-02694` exact. Similar-query review
+found the shared generic helper intentionally returns an availability boolean
+for its separate API, while this direct tail wrapper alone requires the raw A
+result. Focused ground-query, focus-pause, audio-renderer and platform-purity
+CTests pass on x86/x64; OpenNT links the DOS16 product. Product C changed, so
+all three package artifacts were refreshed.
+
+Current totals: historical **1,992 / 1,992**; current exact nodes **1,450 /
+1,992**; current exact feasible controls **3,038 / 4,324** (raw **4,342**,
+infeasible **18**).

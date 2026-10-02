@@ -85,7 +85,8 @@ mysmb_u8 mysmb_world_query_misc_block(struct mysmb_game *game, mysmb_u8 slot,
 /* ROM BlockBufferChk_FBall -> ResJmpM -> BBChk_E. */
 mysmb_u8 mysmb_world_query_fireball_block(struct mysmb_game *game, mysmb_u8 slot,
                                            struct mysmb_enemy_terrain *terrain);
-/* ROM ChkUnderEnemy: A=0 and Y=$15 before BlockBufferChk_Enemy. */
+/* ROM ChkUnderEnemy: A=0 and Y=$15 before BlockBufferChk_Enemy; returns
+ * the queried metatile exactly as the tail-called BBChk_E leaves it in A. */
 mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *game, mysmb_u8 slot,
                                        struct mysmb_enemy_terrain *terrain);
 /* ROM ChkForNonSolids / NSFnd: true only for its five equality matches. */

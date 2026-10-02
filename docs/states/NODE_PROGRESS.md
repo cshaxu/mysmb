@@ -2398,3 +2398,16 @@ feasible controls (raw **4,342**, infeasible **18**).
   persistent-RAM differences; focused terrain-chain and platform-purity pass.
 - Current exact progress: nodes **1,447 → 1,449 / 1,992**; feasible controls
   **3,033 → 3,037 / 4,324** (raw **4,342**, infeasible **18**).
+
+## M2 T64 S29 — ChkUnderEnemy
+
+- Completed: `ChkUnderEnemy`; no deferred node. Exact control:
+  `control-02694`.
+- ROM logic: `$E1AE-$E1B4` sets A to zero, Y to `$15`, then tail-jumps to
+  `BlockBufferChk_Enemy`; the C wrapper now preserves its returned metatile.
+- Operational: five controlled ROM entries agree with x86/x64 on result and
+  scratch outputs; focused ground-query, focus-pause, audio-renderer and
+  platform-purity CTests pass, and OpenNT links DOS16. All three package EXEs
+  were refreshed because product C changed.
+- Current exact progress: nodes **1,449 -> 1,450 / 1,992**; feasible controls
+  **3,037 -> 3,038 / 4,324** (raw **4,342**, infeasible **18**).

@@ -1694,6 +1694,16 @@ add_test(NAME mysmb.enemy-ground-query-nonsolids-chain
 add_executable(mysmb_enemy_ground_query_actual_check
     test/enemy_ground_query_actual_check.c)
 target_link_libraries(mysmb_enemy_ground_query_actual_check PRIVATE mysmb_game)
+if(TARGET mysmb_local_rom_data)
+    add_executable(mysmb_chk_under_enemy_actual_check
+        test/chk_under_enemy_actual_check.c)
+    target_link_libraries(mysmb_chk_under_enemy_actual_check PRIVATE mysmb_game)
+    add_dependencies(mysmb_chk_under_enemy_actual_check mysmb_local_rom)
+    target_include_directories(mysmb_chk_under_enemy_actual_check PRIVATE
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_sources(mysmb_chk_under_enemy_actual_check PRIVATE
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+endif()
 add_executable(mysmb_fireball_background_actual_check
     test/fireball_background_actual_check.c)
 target_link_libraries(mysmb_fireball_background_actual_check PRIVATE mysmb_game)
