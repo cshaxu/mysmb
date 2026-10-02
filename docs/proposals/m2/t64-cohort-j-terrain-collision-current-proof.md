@@ -2128,3 +2128,95 @@ Historical **1,992/1,992**, exact nodes **1,480/1,992**, material
 T64 remains open with **57 Cohort-J controls**, zero pending material.
 Next source-order group is Bloober player-distance result/return
 integration. T65 is not admitted.
+
+## Aggregate S43 admission - Bloober distance sign and carry return
+
+S43 owns `control-03835` PlayerEnemyDiff-to-FBLeft. Eighteen exact
+scoped labels are BlooberBitmasks, MoveBloober, FBLeft, SBMDir,
+BlooberSwim, SwimX, LeftSwim, MoveDefeatedBloober, ProcSwimmingB,
+BSwimE, SlowSwim, NoSSw, ChkForFloatdown, Floatdown, NoFD,
+ChkNearPlayer, PlayerEnemyDiff, MoveEnemySlowVert. Expected new node
+set is empty. Historical 1,992/1,992 and exact nodes 1,480/1,992 stay
+unchanged; controls enter 3,124/4,323 and can reach 3,125/4,323;
+material remains 368/487.
+
+Entry is MoveBloober $CB89 and exit is completed swim/coordinate movement
+or defeated gravity return. Shared owners are enemy/bloober.c,
+enemy/distance.c and movement/gravity children. Missing evidence is the
+real distance return and carry consumption beyond earlier child-boundary
+proof. S42 precedes this owner; Firebar returns form the next branch.
+
+Static proof audits low borrow/page SBC, returned X/Y/A/N/C, facing and
+preserved carry through the float-state/timer branch into ADC $10.
+The source movement dispatcher ASL for ID 7 supplies entry carry zero;
+controlled root fixtures reproduce that original CPU input. Actual ROM
+roots execute all children. Native x86/x64 compare persistent RAM plus
+$00 and lower-stack game aliases. Six slots, all page/Y bytes, equal/next
+player pages and low borrow, both hard masks, odd/even direction paths,
+PRNG gates, swim counters/timers/frame phases and defeated routes are covered.
+
+Owner ROM/disassembly are nonredistributable local research. Ignored
+build/m2-t64-s43 owns <=16 MiB raw, 524288 steps/case and 120 seconds;
+S43 cleans records/probe. Neutral tools/summaries alone are tracked.
+Focused Bloober/purity tests and original OpenNT DOS16 are operational
+proof. Scoped diff stays here for repair/re-audit; product repairs refresh
+three approved EXEs. Preserve unrelated work; T64 remains open.
+
+## Aggregate S43 closure - Bloober distance/carry return exact
+
+`control-03835` is exact. All eighteen scoped labels retain exact status:
+BlooberBitmasks, MoveBloober, FBLeft, SBMDir, BlooberSwim, SwimX,
+LeftSwim, MoveDefeatedBloober, ProcSwimmingB, BSwimE, SlowSwim,
+NoSSw, ChkForFloatdown, Floatdown, NoFD, ChkNearPlayer,
+PlayerEnemyDiff, MoveEnemySlowVert. Expected/actual new node sets are
+empty; no deferral or transfer and custody remains unchanged.
+
+Static $CB89-$CC35 and shared Bloober/distance code agree on PRNG
+mask/direction eligibility, odd-slot player direction and carry one,
+even-slot distance call $CBA4 returning at $CBA7, sign-to-facing and
+low-byte borrow/page subtraction. The page-SBC carry is independent of
+the sign byte. Native unsigned page comparison includes the low borrow,
+including page $ff versus $ff plus borrow (comparison against 256).
+The source's float-state AND, timer LDA/branch and Y LDA retain that carry
+until **$CC2B ADC $10**, with no CLC. Current swim's near_y includes
+the same carry before byte wrapping and the player-Y comparison. Other
+directions retain original dispatcher entry carry zero or odd-slot LSR one.
+
+Neutral `tools/reference_bloober_integration_probe.c` and
+`test/bloober_integration_route_check.c` execute **3,072 actual ROM
+roots** with real distance/swim/defeated gravity children, no substitution.
+Each of six slots has 256 focused near-player cases and 256 mixed cases.
+Fixtures cover every page/Y byte, equal/next player pages and page wrap,
+low borrow, hard-mask and PRNG eligibility, odd/even slot directions,
+four swim counter states, timer/frame paths and defeated movement.
+The original ID-7 movement-dispatch ASL carry-zero input is reproduced
+at the controlled root; boot machine state is restored per case.
+Maximum **59 instructions**.
+
+Actual distance returns occur **888** times and check X=slot, Y=2,
+A/high sign, $00/low and C. Carry clear/set counts are **501/387**;
+positive-or-zero/negative signs are **384/504**. Near-player ADC
+executes with input C=0 **777** times and C=1 **1,167** times; output
+A and carry are checked immediately after the original instruction.
+Thus this is both a direction and a carry-consumer proof.
+
+Current x86/x64 each match **3,072/3,072**, zero differences across
+**1,797 compared bytes**, including $00, every non-stack persistent byte
+and the twelve lower-stack game aliases. Other transient scratch and
+CPU-stack bytes are explicit ABI exclusions; source return sign/carry/slot
+and ADC output checks are separate seam evidence. Focused Bloober movement
+and platform-purity tests pass on both widths. Original OpenNT DOS16
+builds/links with its existing OLDNAMES.LIB warning.
+
+Similar-issue review checks all three carry origins (dispatcher, odd slot,
+distance return), page/low borrow, both mask entries, source carry-preserving
+float branches and shared defeated gravity owner. No host duplicate or
+scoped difference exists. Product source and EXEs remain unchanged.
+Raw records/probe executable are cleaned after accepted proof.
+
+Historical **1,992/1,992**, exact nodes **1,480/1,992**, material
+**368/487** remain unchanged. Exact feasible controls rise
+**3,124 -> 3,125 / 4,323** (raw **4,342**, infeasible **19**).
+T64 remains open with **56 Cohort-J controls**, zero pending material.
+Next source-order branch is Firebar position/draw/injury returns.
+T65 is not admitted.

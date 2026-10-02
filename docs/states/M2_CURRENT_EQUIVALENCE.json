@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3124,
-    "needs-evidence": 1199,
+    "exact": 3125,
+    "needs-evidence": 1198,
     "infeasible": 19,
     "unclassified": 0,
     "mismatch": 0
@@ -128881,12 +128881,15 @@
       "instruction": "rts/rti",
       "id": "control-03835",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/bloober.c actual mysmb_enemy_player_difference return used for direction and explicit page-SBC carry passed to swim/near_y",
       "semanticEvidence": [
-        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S43: source $CBA4 PlayerEnemyDiff call returns at $CBA7 with original X, Y=2, A/N page difference, $00 low byte and page-SBC carry including low borrow. Current byte helper and unsigned carry computation preserve both sign and independent carry; source unchanged carry passes through float-state/timer branch into $CC2B ADC $10, equivalent to native near_y. Odd slot LSR carry=1 and original dispatcher ID-7 entry carry=0 are explicit alternate sources. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S43: reference_bloober_integration_probe and mysmb_bloober_integration_route_check execute 3072 actual ROM/current native roots; x86/x64 each zero differences over 1797 compared bytes including $00 and lower-stack game arrays. 888 distance returns check A/X/Y/N/C/low; carry-clear/set 501/387, signs 384/504; actual near ADC inputs C=0/1 observed 777/1167 times and outputs checked. Six slots, all page/Y bytes, low borrow, page wrap, hard masks, PRNG gates, swim/defeated branches. Focused Bloober/purity and original OpenNT DOS16 pass; other CPU scratch/stack explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyDiff -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
