@@ -9073,13 +9073,16 @@
       "consumer": "JCoinGfxHandler",
       "storage": "ROM JumpingCoinTiles indexed by FrameCounter bits d2-d1 to coin OAM tile bytes",
       "feasiblePath": "JCoinGfxHandler shifts FrameCounter, masks d2-d1, reads JumpingCoinTiles and dumps the selected tile to both sprite records.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/objects.c computed 0x60 + ((FrameCounter >> 1) & 3) in mysmb_objects_draw_jump_coin",
-      "semanticContract": "The four source tile choices map to the same frame index before both jumping-coin tile writes.",
+      "semanticContract": "Immutable four-entry $E682 table indexed by (FrameCounter >> 1) AND 3; all actual indexed consumers agree.",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10679,14 +10682,14 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1533,
-    "needs-evidence": 459,
+    "exact": 1538,
+    "needs-evidence": 454,
     "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3257,
-    "needs-evidence": 1064,
+    "exact": 3266,
+    "needs-evidence": 1055,
     "infeasible": 21
   },
   "controlEdgeTypeCounts": {
@@ -40878,80 +40881,100 @@
       "label": "DrawFloateyNumber_Coin",
       "asmLine": 13439,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c",
-      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; FrameCounter LSR carry skips decrement on odd frames; even frames decrement byte-wrapped Misc_Y_Position before common NotRsNum."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "On even FrameCounter decrements Misc_Y_Position,x, then writes equal two-sprite Y values, fixed 200 tiles/attributes and X/X+8.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "FrameCounter LSR carry skips decrement on odd frames; even frames decrement byte-wrapped Misc_Y_Position before common NotRsNum.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
       "label": "NotRsNum",
       "asmLine": 13444,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c",
-      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Actual DumpTwoSpr Y call precedes relative X/X+8, paired attributes $02, tiles $f7/$fb and direct ExJCGfx exit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Passes the current misc Y through DumpTwoSpr then writes 200 tile/attribute/X records and transfers to the shared exit.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Actual DumpTwoSpr Y call precedes relative X/X+8, paired attributes $02, tiles $f7/$fb and direct ExJCGfx exit.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
       "label": "JumpingCoinTiles",
       "asmLine": 13460,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c",
-      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Immutable four-entry $E682 table indexed by (FrameCounter >> 1) AND 3; all actual indexed consumers agree."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four frame-indexed jumping-coin tile bytes 60-63.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Immutable four-entry $E682 table indexed by (FrameCounter >> 1) AND 3; all actual indexed consumers agree.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
       "label": "JCoinGfxHandler",
       "asmLine": 13463,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c",
-      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Load slot OAM, unsigned state >=2 dispatches floating path; otherwise Y/Y+8, paired X, indexed tile DumpTwoSpr at OAM+1 then $02/$82 attributes and restored source slot."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the floatey branch for Misc_State >=2; otherwise writes two-row jumping-coin OAM using FrameCounter bits d2-d1 and the source vertical flip.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Load slot OAM, unsigned state >=2 dispatches floating path; otherwise Y/Y+8, paired X, indexed tile DumpTwoSpr at OAM+1 then $02/$82 attributes and restored source slot.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
       "label": "ExJCGfx",
       "asmLine": 13489,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c",
-      "currentCounterpart": "mysmb_objects_draw_jump_coin",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Coin fallthrough and floating jump return without further RAM effects; native return has no emulated CPU stack."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Restores ObjectOffset and returns.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Coin fallthrough and floating jump return without further RAM effects; native return has no emulated CPU stack.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -108967,15 +108990,19 @@
       "instruction": "bcs",
       "id": "control-02820",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DrawFloateyNumber_Coin -> NotRsNum with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch DrawFloateyNumber_Coin -> NotRsNum retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -108986,15 +109013,19 @@
       "instruction": "dec",
       "id": "control-02821",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DrawFloateyNumber_Coin -> NotRsNum with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough DrawFloateyNumber_Coin -> NotRsNum retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -109005,16 +109036,19 @@
       "instruction": "jsr",
       "id": "control-02822",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation NotRsNum -> DumpTwoSpr with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call NotRsNum -> DumpTwoSpr retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c",
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -109025,15 +109059,19 @@
       "instruction": "jmp",
       "id": "control-02823",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM jump relation NotRsNum -> ExJCGfx with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original jump NotRsNum -> ExJCGfx retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -109044,15 +109082,19 @@
       "instruction": "bcs",
       "id": "control-02824",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation JCoinGfxHandler -> DrawFloateyNumber_Coin with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch JCoinGfxHandler -> DrawFloateyNumber_Coin retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -109063,16 +109105,19 @@
       "instruction": "jsr",
       "id": "control-02825",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation JCoinGfxHandler -> DumpTwoSpr with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call JCoinGfxHandler -> DumpTwoSpr retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c",
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -109083,15 +109128,19 @@
       "instruction": "ldx",
       "id": "control-02826",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation JCoinGfxHandler -> ExJCGfx with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough JCoinGfxHandler -> ExJCGfx retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -133473,16 +133522,19 @@
       "instruction": "rts/rti",
       "id": "control-04008",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> NotRsNum with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return DumpTwoSpr -> NotRsNum retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c",
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -133493,16 +133545,19 @@
       "instruction": "rts/rti",
       "id": "control-04009",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/objects.c:mysmb_objects_draw_jump_coin and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_jump_coin state/parity branches, ordered DumpTwoSpr calls and common return",
       "semanticEvidence": [
-        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required."
+        "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> JCoinGfxHandler with source state/frame predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return DumpTwoSpr -> JCoinGfxHandler retained by shared parity/state/ordered output stages and actual child boundaries; original continuations $E661/$E6B0 observed.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c",
-        "src/game/objects.c"
+        "src/game/objects.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {

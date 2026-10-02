@@ -1840,3 +1840,12 @@ target_link_libraries(mysmb_large_platform_output_route_check PRIVATE mysmb_game
 add_executable(mysmb_large_platform_output_caller_check test/large_platform_output_route_check.c src/game/oam/small_platform_gfx.c)
 target_include_directories(mysmb_large_platform_output_caller_check PRIVATE src)
 target_compile_definitions(mysmb_large_platform_output_caller_check PRIVATE MYSMB_LARGE_PLATFORM_CHILD_CHECK=1)
+
+add_executable(mysmb_coin_output_route_check test/coin_output_route_check.c)
+target_link_libraries(mysmb_coin_output_route_check PRIVATE mysmb_game)
+if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    add_executable(mysmb_coin_output_caller_check test/coin_output_route_check.c)
+    target_link_libraries(mysmb_coin_output_caller_check PRIVATE mysmb_game)
+    target_compile_definitions(mysmb_coin_output_caller_check PRIVATE MYSMB_COIN_CHILD_CHECK=1)
+    target_link_options(mysmb_coin_output_caller_check PRIVATE "-Wl,--wrap=mysmb_oam_dump_two_sprites")
+endif()

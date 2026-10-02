@@ -635,3 +635,97 @@ Totals: nodes 1523 -> 1533/1992; controls 3226 -> 3257/4321 (raw 4342,
 infeasible 21); material remains 381/492 partial. Historical mapping 1992/1992
 is separate. Cohort K now has 54 exact, 100 pending nodes. T65 remains open;
 S6 five-node floating/jumping coin output is next. No scoped difference remains.
+
+## S6 admission - coin and floating score output
+
+Five needs-evidence labels, intended fresh exact five: DrawFloateyNumber_Coin,
+NotRsNum, JumpingCoinTiles, JCoinGfxHandler, ExJCGfx. Baseline current nodes
+1533/1992, controls 3257/4321, material 381/492 partial; maximum nodes 1538.
+Historical 1992/1992, no new historical credit or custody transfer.
+Scope controls 02820-02826 and 04008/04009 (nine pending), material-00417.
+External RunJCSubs call/return retain caller ownership and are not pre-credited.
+Original $E686 through $E6BD with floating branch $E655/$E65C; shared owner
+objects.c and accepted sprite_dump.c dependency. S5 precedes; S7 follows.
+Static audit found duplicated child stores and reordered OAM writes in both
+paths. Restore the actual original DumpTwoSpr calls and ordered phases, and
+prove four indexed tile consumers. ROM batches compare all scratch/OAM and
+$0109-$0139 game aliases (1841 bytes), excluding only true CPU stack.
+Native caller verification independently checks original child A/X/Y and
+pre-state/order with recorded child effects; full check invokes real child.
+Operational C90 x86/x64 tests, platform purity and original OpenNT DOS16 link;
+product repairs require three refreshed owner-approved EXEs.
+Owner-local nonredistributable ROM/ASM remain research-only, sibling core
+read-only; ignored build/m2-t65-s6 owns <=80 MiB raw, 524288 steps/root,
+120 seconds/probe and cleanup. Similar-issue sweep: both output paths,
+parity/wrapped Y, all table indices, child inputs/returns and store ordering.
+
+## S6 closure - coin/floating score original child boundaries
+
+All five scoped labels freshly exact: DrawFloateyNumber_Coin, NotRsNum,
+JumpingCoinTiles, JCoinGfxHandler, ExJCGfx. None deferred or transferred;
+historical expected/actual new matches remain empty.
+Static audit found both native paths duplicated original DumpTwoSpr writes
+and reordered OAM phases. Before repair the full output checker matched 9216
+roots, while independent caller checking found one missing child per root
+(9216 failures). Shared objects.c now calls actual DumpTwoSpr for floating Y
+and coin tiles, preserves source Y/X/tile/attribute store sequence and binds
+the original four-entry JumpingCoinTiles table instead of arithmetic synthesis.
+
+tools/reference_coin_output_probe.c records original $E686 roots with actual
+$E5C1 input RAM/A/X/Y and $E5C7 returns to $E661 or $E6B0. The neutral
+test/coin_output_route_check.c supplies full actual-child output and independent
+caller proof. The latter uses GNU link wrapping only in the test executable,
+checks pre-child RAM/value/OAM and count then replays recorded child RAM;
+production and DOS code have no wrapping or test macro. Source X is preserved
+by the dump leaf, not consumed; native caller index/slot convention is checked
+against the recorded X, without adding a runtime emulated register.
+Both x86/x64 checkers report zero differences for all 9216 roots after repair.
+1841 RAM bytes compare: all scratch/OAM and $0109-$0139 game aliases included;
+only remaining CPU stack is excluded.
+
+Nine miscellaneous slots, four states 0/1/2/$80 and all 256 frame seeds cover
+unsigned state threshold and both parity alternatives. Y seed multiplier13
+and relative X multiplier17 cover all byte values/wraps. Two-sprite OAM
+allocations include final legal $F8. Original maximum steps/root 29.
+Coin return $E6B0 and floating return $E661 occur 4608 times each.
+DrawFloateyNumber_Coin raises/holds 2304/2304 times; NotRsNum executes 4608,
+ExJCGfx 9216. All four table indices have 1152 actual reads each at $E6A9.
+The probe rejects missing indexed reads, wrong returns and incomplete counts.
+Static source tests match unsigned CMP #2, LSR parity carry, cleared-carry
+X/Y additions, decrement wrapping, immutable table and exit order.
+
+Nine controls exact: control-02820 through control-02826, control-04008,
+control-04009. Existing material-00417 becomes exact. External RunJCSubs
+call/return remain with caller custody and pending evidence; no new relation
+enumeration or later node credit. Out-of-scope registry rows are asserted
+identical to the preceding commit.
+Similar-issue sweep examines every paired OAM store in objects.c. Both coin
+paths are repaired. Coin Y/Y+8 stores remain direct because source values
+differ; floating tiles $f7/$fb also remain separate. Other floating enemy
+number output follows its own distinct source sequence and accepted ownership,
+not the coin's dump call. Earlier flagged block/player duplicate-dump repairs
+retain T65 S10/Cohort L ownership; no unrelated edit or inferred promotion.
+
+Operational track: C90 x86/x64 products/checkers build, 8/8 focused/product
+tests pass per width (floating OAM, core, purity, focus pause, audio renderer/
+output, death audio and self test). Original OpenNT DOS16 same-source build
+links with existing OLDNAMES.LIB warning; no DOS runtime qualification claim.
+Owner-approved three refreshed artifacts retain audio/title/focus pause:
+
+- mysmb16.exe: 265113 bytes; SHA-256 81be3fcc115ef5acaa6bcce82b43e1181349bfa03e08c9f1f8accdff18a63d2e.
+
+- mysmb32.exe: 376313 bytes; SHA-256 f6373750d17c5b86435219adf69c508ac09560b29bb2ae35860d3079acdc3fda.
+
+- mysmb64.exe: 383239 bytes; SHA-256 81de837bdb263105dcc4521168f87542125e7d0f610ad339ce9fd2daf015c879.
+
+Owner-local nonredistributable ROM/ASM remain ignored research inputs; no
+protected test fixture or third-party implementation import. Raw records and
+probe binary removed after accepted gates, neutral logs retained under build.
+Reproduction compiles the named project probe against the read-only reference
+core, records owner-ROM roots to a bounded ignored output then runs both
+current native checkers on the same batch. Admission gates passed.
+
+Totals: nodes 1533 -> 1538/1992; controls 3257 -> 3266/4321 (raw 4342,
+infeasible 21); material 381 -> 382/492 partial. Historical mapping 1992/1992
+remains separate. Cohort K has 59 exact, 95 pending nodes. T65 remains open;
+S7 six-node power-up output chain is next. No scoped feasible difference remains.

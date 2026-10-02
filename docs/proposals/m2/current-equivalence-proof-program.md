@@ -92,3 +92,10 @@ remains separate; no later-scope node or relation is pre-credited.
 T65 stays open, S6 next. Current nodes 1533/1992, feasible controls 3257/4321
 (raw 4342, infeasible 21), material 381/492 partial. Historical 1992/1992 is
 separate; dependency-node and external material evidence retains later scope.
+
+## Current checkpoint after T65 S6
+
+[T65 S6](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+T65 stays open, S7 next. Current nodes 1538/1992, feasible controls 3266/4321
+(raw 4342, infeasible 21), material 382/492 partial. Historical 1992/1992 is
+separate; external caller relations retain their own audit scope.

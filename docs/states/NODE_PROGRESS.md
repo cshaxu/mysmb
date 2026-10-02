@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S6 - coin output child and indexed table proof
+
+[T65 S6 source/output/graph proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes five nodes, nine controls and one material relation, none deferred.
+Current nodes 1538/1992, feasible controls 3266/4321 (raw 4342, infeasible 21),
+material 382/492 partial. Historical mapping 1992/1992 remains separate.
+Full and child-order checks match 9216 ROM roots per width after restoring
+original dump calls; 8/8 operational tests per width and DOS16 link pass.
+Three products refreshed. T65 remains open, S7 next.
+
 ## M2 T65 S5 - large-platform stores and graph
 
 [T65 S5 source/output/call proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

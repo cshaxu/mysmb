@@ -239,6 +239,10 @@ void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
 /* ROM JCoinGfxHandler / DrawFloateyNumber_Coin. */
 void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
 {
+    /* ROM $e682 JumpingCoinTiles, indexed by FrameCounter bits 2-1. */
+    static const mysmb_u8 jumping_coin_tiles[4] = {
+        0x60U, 0x61U, 0x62U, 0x63U
+    };
     mysmb_u8 oam_offset;
     mysmb_u8 relative_x;
     mysmb_u8 state;
@@ -248,27 +252,26 @@ void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
     state = game->ram[MYSMB_MISC_STATE + slot];
     if (state >= 2U) {
         if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U) game->ram[MYSMB_MISC_Y + slot]--;
-        game->ram[(mysmb_u16)(0x0200U + oam_offset)] = game->ram[MYSMB_MISC_Y + slot];
-        game->ram[(mysmb_u16)(0x0204U + oam_offset)] = game->ram[MYSMB_MISC_Y + slot];
-        game->ram[(mysmb_u16)(0x0201U + oam_offset)] = 0xf7U;
-        game->ram[(mysmb_u16)(0x0205U + oam_offset)] = 0xfbU;
-        game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
-        game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 2U;
+        mysmb_oam_dump_two_sprites(game,
+            game->ram[MYSMB_MISC_Y + slot], oam_offset);
         game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
         game->ram[(mysmb_u16)(0x0207U + oam_offset)] = (mysmb_u8)(relative_x + 8U);
+        game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+        game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 2U;
+        game->ram[(mysmb_u16)(0x0201U + oam_offset)] = 0xf7U;
+        game->ram[(mysmb_u16)(0x0205U + oam_offset)] = 0xfbU;
         return;
     }
     game->ram[(mysmb_u16)(0x0200U + oam_offset)] = game->ram[MYSMB_MISC_Y + slot];
     game->ram[(mysmb_u16)(0x0204U + oam_offset)] =
         (mysmb_u8)(game->ram[MYSMB_MISC_Y + slot] + 8U);
-    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
-        (mysmb_u8)(0x60U + ((game->ram[MYSMB_FRAME_COUNTER] >> 1U) & 3U));
-    game->ram[(mysmb_u16)(0x0205U + oam_offset)] =
-        game->ram[(mysmb_u16)(0x0201U + oam_offset)];
-    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
-    game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 0x82U;
     game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
     game->ram[(mysmb_u16)(0x0207U + oam_offset)] = relative_x;
+    mysmb_oam_dump_two_sprites(game,
+        jumping_coin_tiles[(game->ram[MYSMB_FRAME_COUNTER] >> 1U) & 3U],
+        (mysmb_u8)(oam_offset + 1U));
+    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+    game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 0x82U;
 }
 /* Existing clipped GetMiscBoundBox path used by jumping coins.
  * Exposing this boundary does not certify or alter its child algorithms. */
