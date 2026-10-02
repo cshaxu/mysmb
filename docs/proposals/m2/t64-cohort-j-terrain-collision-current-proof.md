@@ -880,3 +880,38 @@ S22 records `InvEnemyDir` and `control-02674` exact. Current totals:
 historical mapping **1,992 / 1,992**; current exact nodes **1,440 / 1,992**;
 current exact feasible controls **3,016 / 4,324** (raw **4,342**, infeasible
 **18**); exact material relations **358 / 487**.
+
+## S23 admission — player/enemy horizontal difference
+
+S23 admits `$E143-$E14A`: `PlayerEnemyDiff`. The single shared owner is
+`src/game/enemy/distance.c:mysmb_enemy_player_difference`; all return edges
+remain with their individual callers. The ROM logic track checks `$00` low-byte
+subtraction and its borrow into the page return. The operational track uses a
+controlled four-case original-ROM entry probe covering borrow, no-borrow and
+page wrap, then replays it on x86/x64. No product artifact refresh is due
+unless product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,440 / 1,992** nodes and **3,016 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **1** label (`PlayerEnemyDiff`); expected historical matches: **0**;
+  maximum historical complete **1,992 / 1,992**.
+
+## S23 closure — player/enemy horizontal difference
+
+`PlayerEnemyDiff` is current-exact. Static comparison confirms the exact ROM
+order: low X subtraction is saved in `$00`, and the resulting borrow is then
+subtracted from the page difference. The C owner uses the same unsigned-byte
+predicate and arithmetic order, so both wrapping bytes and returned sign match.
+
+Four controlled original-ROM entries cover low-byte borrow, no-borrow and two
+page-wrap cases. Fresh x86/x64 checks compare returned A and `$00` with zero
+differences; focused enemy-side/jump/Hammer, terrain-state and platform-purity
+CTests pass on both widths. No product C changed, so no product EXE refresh is
+due.
+
+S23 records `PlayerEnemyDiff` exact. Its caller return edges retain their
+source-owned audits. Current totals: historical mapping **1,992 / 1,992**;
+current exact nodes **1,441 / 1,992**; current exact feasible controls
+**3,016 / 4,324** (raw **4,342**, infeasible **18**); exact material relations
+**358 / 487**.

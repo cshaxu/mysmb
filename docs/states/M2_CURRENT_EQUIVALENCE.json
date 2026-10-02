@@ -38914,13 +38914,15 @@
       "label": "PlayerEnemyDiff",
       "asmLine": 12660,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/distance.c:mysmb_enemy_player_difference",
-      "currentCounterpart": "mysmb_enemy_player_difference",
+      "currentCounterpart": "mysmb_enemy_player_difference: low subtraction scratch and borrowed page return",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S23 static audit: SMB1 $E143-$E14A loads enemy X, subtracts player X into $00, then subtracts page bytes with the preserved low-byte borrow; shared enemy/distance.c uses the identical byte arithmetic order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S23 controlled original-ROM probe: four direct PlayerEnemyDiff entries span low-byte borrow and no-borrow, including page wrap; current x86/x64 owner checks compare A and $00 with zero differences, and focused chain/purity CTests pass."
+      ],
       "semanticContract": "Stores the low player/enemy X subtraction in $00 and returns the page subtraction with the original low-byte borrow.",
       "currentSourcePaths": [
         "src/game/cannon.c",

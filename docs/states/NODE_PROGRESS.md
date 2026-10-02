@@ -1,5 +1,17 @@
 # M2 ROM conformance node progress
 
+## M2 T64 S23 — PlayerEnemyDiff
+
+- Planned and completed label: `PlayerEnemyDiff`; no transferred or incomplete
+  label. Caller return edges remain under their call-site audits.
+- ROM logic-equivalence: `$00` low subtraction and its page-subtraction borrow
+  are identical to the original routine.
+- Operational verification: four direct original-ROM entries replay with zero
+  x86/x64 A and `$00` differences; focused chain, terrain and purity CTests
+  pass. No product C or artifact changed.
+- Current exact progress: nodes **1,440 → 1,441 / 1,992**; feasible controls
+  remain **3,016 / 4,324** (raw **4,342**, infeasible **18**).
+
 ## M2 T64 S22 — InvEnemyDir tail
 
 - Planned and completed label: `InvEnemyDir`; no transferred or incomplete

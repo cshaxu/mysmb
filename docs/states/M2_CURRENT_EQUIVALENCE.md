@@ -1,5 +1,12 @@
 # M2 current-equivalence re-audit
 
+## M2 T64 S23 — PlayerEnemyDiff
+
+`PlayerEnemyDiff` is current-exact. Four direct original-ROM cases covering
+low-byte borrow/no-borrow and page wrap replay with zero A and `$00`
+differences on x86/x64. Totals: **1,441 / 1,992** nodes and **3,016 / 4,324**
+feasible controls exact.
+
 ## M2 T64 S22 — InvEnemyDir tail
 
 `InvEnemyDir` and `control-02674` are current-exact: the ROM `jmp RXSpd` tail
