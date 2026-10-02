@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S13 - active bubble output audit
+
+[S13 scope/source finding](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+admits2 labels, intended fresh2, maximum1630/1992. One source-order mismatch;
+current1628/1992 nodes,3480/4317 controls(raw4342,infeasible25),391/492
+material partial. Historical1992/1992 separate; S14 not admitted.
+
 ## M2 T65 S12 - closed ordered small-platform output
 
 [S12 node/child/address proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

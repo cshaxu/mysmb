@@ -10673,7 +10673,8 @@
   ],
   "nodeCounts": {
     "exact": 1628,
-    "needs-evidence": 364
+    "needs-evidence": 363,
+    "mismatch": 1
   },
   "controlEdgeCounts": {
     "exact": 3480,
@@ -42781,11 +42782,12 @@
       "label": "DrawBubble",
       "asmLine": 14397,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/fireball/bubble.c",
       "currentCounterpart": "mysmb_fireball_draw_bubble",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S13 source-only finding: native X store comes after Y/tile/attributes; source X/Y/tile/attributes order must be restored. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Draws a bubble only when Player_Y_HighPos is one and Bubble_OffscreenBits d3 is clear.",

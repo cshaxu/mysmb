@@ -1579,3 +1579,31 @@ project default local-output exclusion.
 - mysmb64.exe: 381335 bytes; SHA-256 cea510d55105f6691b67388c4244eb99fb2bce5ba245e64248e1f1e77c25226e.
 
 Ledger admission/closure, documentation and whitespace gates rerun. S12 closes its scope; T65 and M2 remain open.
+
+## S13 admission - bubble output leaf and exit
+
+Unchanged S13 scope2: DrawBubble, ExDBub, both incoming needs-evidence;
+intended fresh2, maximum1630/1992 from1628. Historical baseline/maximum1992,
+expectedMatches empty; maintenance custody unchanged. Entry EDE1, exit EE06
+RTS; shared fireball/bubble.c owner. S12 closed; S14 follows only after S13
+has no scoped unresolved difference. Pending controls03024-03026:3; no scoped
+pending material. Already-exact BublLoop caller01075 and return03672 retain
+prior credit; no caller-node promotion. Current1628/1992 nodes,3480/4317
+controls(raw4342,infeasible25),391/492 material partial; historical separate.
+
+Source finding: DrawBubble gates are equivalent, but native stores Y/tile/
+attributes/X instead of original X/Y/tile/attributes. Register that node
+mismatch, ExDBub and internal edges need evidence. Restore the original
+read/store order without claiming a visible defect from this source-only
+finding. Similar-issue sweep covers the canonical leaf, production BublLoop
+caller and bubble positioning/offscreen dependencies; no motion change.
+
+ROM track audits byte high-position decrement/nonzero, d3 short circuit,
+X/Y/tile/attribute order and return, then bounded EDE1 fixtures cover all256
+high-position x256 masks and drawable byte OAM/relative-coordinate patterns.
+The leaf has no child calls, so no child-input proof is invented. Operational
+track separately builds current C90 x86/x64, focused bubble/core/audio/focus/
+purity tests and original OpenNT DOS16 link; product-code changes refresh all
+three authorized EXEs. Owner ROM/local ASM remain nonredistributable research
+inputs; ignored S13 build output owns192MiB raw,2048-root chunks,120seconds/
+run,524288steps/case, checkpoints and coordinator cleanup.
