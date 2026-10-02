@@ -369,3 +369,34 @@ S10 admits `$DC41-$DC54`: `CheckPlayerVertical`, `ExCPV`, `GetEnemyBoundBoxOfs`,
 ## S10 closure — player vertical and enemy box offsets
 
 All four scoped nodes are current-exact. Static `$DC41-$DC54` audit, retained x86/x64 original-ROM caller route, focused platform contract, platform purity and the S9-contiguous DOS16 shared-source link pass. S10 records four nodes, four controls and two material handoffs exact. Current totals: historical **1,992 / 1,992**; current **1,330 / 1,992** nodes and **2,745 / 4,324** feasible controls. Product C did not change.
+
+## S11 admission — player background-collision entry
+
+S11 admits `$DC64-$DC8C`: `PlayerBGUpperExtent`, `PlayerBGCollision`,
+`SetFallS`, `SetPSte`, `ChkOnScr`, `ExPBGCol`, `ChkCollSize`, and `GBBAdr`.
+The chain is owned by `src/game/player/terrain.c`; S10 is closed and S12 owns
+the head/feet/side child chain. It proves the no-collision, routine and
+off-screen exits; swimming/falling state selection; collision-bit reset; and
+the crouching/small/swimming block-buffer base selection.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,330 / 1,992** nodes and **2,745 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **8** labels, all `needs-evidence`; expected historical matches:
+  **0**; maximum historical complete: **1,992 / 1,992**.
+- Graph scope: **16** source-address-owned feasible controls; no distinct
+  material-handoff row begins in this address interval.
+
+ROM logic evidence uses static source comparison and the retained controlled
+`terrain-0` through `terrain-7` PlayerBGCollision roots per x86/x64 width.
+Operational evidence runs `mysmb.player-terrain-chain`, platform purity and the
+OpenNT DOS16 shared-source link. No product artifact refresh is needed unless
+the shared C audit finds and repairs a discrepancy.
+
+## S11 closure — player background-collision entry
+
+All eight scoped nodes are current-exact: `PlayerBGUpperExtent`, `PlayerBGCollision`, `SetFallS`, `SetPSte`, `ChkOnScr`, `ExPBGCol`, `ChkCollSize`, and `GBBAdr`. Static `$DC64-$DC8C` comparison found no shared-C difference: the disable, death-routine and low-routine exits retain their original order; swimming and normal/climbing state selection writes occur before the vertical-high-byte guard; collision bits are reset only on-screen; `$cf` is the bottom exit; and the crouching/small/swimming index selects the original `BlockBufferAdderData` bytes `$00,$07,$0e` before the head child boundary.
+
+The retained controlled original-ROM PlayerBGCollision root route replayed `terrain-0` through `terrain-7` against freshly compiled current x86 and x64 snapshot runners. Each width compared mapped RAM and recorded child-call arguments/returns with **8/8** zero-difference records. Focused `mysmb.player-terrain-chain` and `mysmb.platform-purity` CTests pass on both widths. The immediately preceding focus-pause product change already linked the unchanged shared terrain source through OpenNT DOS16; the reusable CMake configuration was no longer present for a redundant S11 relink. This audit changes no product C, so no package artifact refresh is required.
+
+S11 records eight nodes and 16 source-address-owned feasible controls (`control-02426` through `control-02441`) exact; no material handoff originates in this interval. Current totals: historical **1,992 / 1,992**; current exact nodes **1,338 / 1,992**; current exact feasible controls **2,761 / 4,324** (raw **4,342**, infeasible **18**).
