@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3156,
-    "needs-evidence": 1167,
+    "exact": 3160,
+    "needs-evidence": 1163,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -130421,13 +130421,16 @@
       "instruction": "rts/rti",
       "id": "control-03902",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/fireball_enemy.c and fireball_hit.c real scan/hit/init/floatey returns with source live-offset and continuation consumers.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: HandleEnemyFBallCol returns at $D72C after hit response; the scan restores its saved fireball box Y and live enemy $01, decrements that enemy and continues even after setting fireball state $80. Returned CPU X is dead and need not equal the hit enemy."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation HandleEnemyFBallCol -> NotGoomba with its source predicate, selected slot and state/table handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "HandleEnemyFBallCol returns at $D72C after hit response; the scan restores its saved fireball box Y and live enemy $01, decrements that enemy and continues even after setting fireball state $80. Returned CPU X is dead and need not equal the hit enemy.",
       "currentSourcePaths": [
         "src/game/world/fireball_enemy.c",
         "src/game/world/fireball_hit.c"
@@ -130441,13 +130444,16 @@
       "instruction": "rts/rti",
       "id": "control-03903",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/fireball_enemy.c and fireball_hit.c real scan/hit/init/floatey returns with source live-offset and continuation consumers.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: RelativeEnemyPosition returns at $D741 with X=ObjectOffset and A=$03AE; HandleEnemyFBallCol reloads live enemy $01 before duplicate Bowser selection and immunity/health handling."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 HandleEnemyFBallCol restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "operationalEvidence": [
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "RelativeEnemyPosition returns at $D741 with X=ObjectOffset and A=$03AE; HandleEnemyFBallCol reloads live enemy $01 before duplicate Bowser selection and immunity/health handling.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
       ]
@@ -130460,13 +130466,16 @@
       "instruction": "rts/rti",
       "id": "control-03904",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/fireball_enemy.c and fireball_hit.c real scan/hit/init/floatey returns with source live-offset and continuation consumers.",
       "semanticEvidence": [
-        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: InitVStf returns at $D764 with A=0 and selected Bowser X, clearing vertical speed/force; HurtBowser uses that zero for horizontal speed/frenzy before setting death velocity and source-world identity/state."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitVStf -> HurtBowser with its source predicate, selected slot and state/table handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "InitVStf returns at $D764 with A=0 and selected Bowser X, clearing vertical speed/force; HurtBowser uses that zero for horizontal speed/frenzy before setting death velocity and source-world identity/state.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
         "src/game/enemy/init_targets.c",
@@ -130504,13 +130513,16 @@
       "instruction": "rts/rti",
       "id": "control-03906",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/fireball_enemy.c and fireball_hit.c real scan/hit/init/floatey returns with source live-offset and continuation consumers.",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: SetupFloateyNumber returns at $D7BF with the original score enemy slot, stored control/timer/Y/relative-X and A=$03AE; EnemySmackScore then writes $08 to the square-one sound queue."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetupFloateyNumber -> EnemySmackScore with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SetupFloateyNumber returns at $D7BF with the original score enemy slot, stored control/timer/Y/relative-X and A=$03AE; EnemySmackScore then writes $08 to the square-one sound queue.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c",
         "src/game/world/player_enemy_collision.c"

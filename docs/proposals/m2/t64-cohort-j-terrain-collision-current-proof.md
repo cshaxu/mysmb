@@ -3069,3 +3069,89 @@ Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
 unchanged. Exact feasible controls rise 3,148 to 3,156/4,323 (raw 4,342,
 infeasible 19). T64 remains open with 25 Cohort-J controls, zero pending
 material; projectile hit/defeat returns follow. T65 is not admitted.
+
+## Aggregate S55 admission - fireball hit and defeat returns
+
+S55 owns control-03902/03903/03904/03906. Twenty-two scoped labels:
+FireballEnemyCollision, FireballEnemyCDLoop, GoombaDie, NotGoomba, NoFToECol, ExitFBallEnemy, BowserIdentities, HandleEnemyFBallCol, ChkBuzzyBeetle, HurtBowser, SetDBSte, ChkOtherEnemies, ShellOrBlockDefeat, StnE, GoombaPoints, EnemySmackScore, ExHCF, RelativeEnemyPosition, InitVStf, SetupFloateyNumber, SprObjectCollisionCore, ChkToStunEnemies.
+Twenty-one are exact; RelativeEnemyPosition retains needs-evidence under its
+later generic owner. Expected new nodes empty and custody unchanged.
+Historical 1992/1992, exact nodes 1480/1992 and material 368/487 unchanged;
+controls enter 3156/4323 and can reach 3160/4323. S54 precedes; power-up
+collection returns follow. T64 stays open; no T65 admission.
+
+Shared world/fireball_enemy.c and fireball_hit.c own $D6D9-$D7C3 scan/hit
+family with real geometry, relative position, stun, vertical initialization
+and floating-score children. Static track checks hit return before continuing
+the scan, relative return before loading live enemy $01, Bowser duplicate
+selection/health/init-zero consumers, piranha adjustment and stun ordering,
+floating-score return before sound queue. A single manifest combines real
+scan and direct-hit roots: all six enemy slots, both fireball slots, immunity
+IDs, state/offscreen/geometry gates, byte health wrapping, all eight identity
+worlds, duplicate/fallback selection and score controls. Actual RTS returns
+and child arguments/outputs are checked. Persistent RAM, scratch and
+$0109-$0139 are compared with explicit CPU-stack exclusions. Immutable
+owner PRG binds source tables. x86/x64 focused scan/hit/purity and original
+OpenNT DOS16 are operational gates. Scoped differences stay here for
+repair/re-audit; product repairs refresh the three approved EXEs.
+
+Owner-local nonredistributable ROM/ASM remain research-only. Ignored
+build/m2-t64-s55 owns <=16 MiB raw, 524288 steps/case, 120 seconds and
+cleanup. Preserve unrelated work.
+
+## Aggregate S55 closure - real fireball hit and defeat returns
+
+Control-03902/03903/03904/03906 are exact. Twenty-one scoped nodes retain
+exact: FireballEnemyCollision, FireballEnemyCDLoop, GoombaDie, NotGoomba,
+NoFToECol, ExitFBallEnemy, BowserIdentities, HandleEnemyFBallCol,
+ChkBuzzyBeetle, HurtBowser, SetDBSte, ChkOtherEnemies, ShellOrBlockDefeat,
+StnE, GoombaPoints, EnemySmackScore, ExHCF, InitVStf, SetupFloateyNumber,
+SprObjectCollisionCore and ChkToStunEnemies. RelativeEnemyPosition retains
+needs-evidence with its later generic owner. No new node credit/custody transfer.
+
+Static $D6D9-$D7C3 audit preserves inactive/exploding/odd-frame gates,
+saved fireball box through the five-enemy scan, state/flag/ID/offscreen gates,
+real geometry carry and fireball-state write before hit handling. The hit
+return at $D72C restores stack-saved box Y and live enemy $01 before decrement;
+it does not stop the scan. Returned CPU X is dead here, including duplicate
+Bowser paths. Relative return at $D741 exposes ObjectOffset/relative A before
+explicit live enemy reload. Duplicate flag selection distinguishes Bowser
+alias from fallback; health decrements as a byte and zero reaches InitVStf.
+Return at $D764 supplies A=0 for horizontal speed/frenzy, then original death
+velocity, world identity/state and sound follow. Piranha ADC inherits the
+source equality carry (+$19), stun precedes defeat bits/score selection, and
+floating-score return at $D7BF precedes smack sound.
+
+3,584 actual roots comprise 3,072 direct HandleEnemyFBallCol fixtures
+(512 per enemy slot) and 512 FireballEnemyCollision fixtures (256 per
+fireball slot). Real hit/relative/init/floatey RTS returns execute
+780/3,852/232/2,346 times. The probe checks preceding RTS rather than mere
+return-address visits, relative ObjectOffset/A, initialization zero/speed/force,
+and floating timer/Y/relative-X plus original enemy slot. It also checks saved
+fireball Y at 1,250 real geometry calls. There are 156 multi-hit scans,
+proving continuation after the first hit. Maximum root execution is 831
+instructions. No descendant output is replaced or stubbed.
+
+Direct fixtures cover all 16 selected normal/immune/Bowser IDs, health
+zero/one/two/255, all eight source identity worlds, duplicate Bowser and
+non-Bowser fallback, piranha Y/ADC wrapping, stun demotion and floating score
+controls. Scan fixtures cover both fireball slots, all five enemy scan slots,
+state/flag/offscreen/geometry rejection, inactive/exploding/odd-frame entry
+exits, immunity and multiple hits. Current x86/x64 each match 3,584/3,584
+with zero differences across 1,841 bytes: all scratch, persistent non-stack
+RAM and all 49 game aliases $0109-$0139. Only other CPU-stack bytes are
+excluded. Immutable owner-local PRG binds identity/stun resources; generic
+unobserved relative-position contracts retain their later owner's scope.
+
+Fresh C90 checkers plus scan/hit/platform-purity tests pass 3/3 per width.
+Original OpenNT DOS16 builds/links with the existing OLDNAMES.LIB warning.
+Similar-issue sweep checks scan box/live enemy continuation, relative offset
+reload, duplicate/fallback health and init-zero consumers, piranha carry,
+stun/defeat order and floating-score/sound handoff. No scoped discrepancy or
+platform gameplay duplicate found. Product C and three approved EXEs remain
+unchanged. Raw records/probe are cleaned after registry/governance gates.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
+unchanged. Exact feasible controls rise 3,156 to 3,160/4,323 (raw 4,342,
+infeasible 19). T64 remains open with 21 Cohort-J controls, zero pending
+material; power-up collection returns follow. T65 is not admitted.
