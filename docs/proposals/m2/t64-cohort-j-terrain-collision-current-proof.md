@@ -2909,3 +2909,78 @@ Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
 unchanged. Exact feasible controls rise 3,143 to 3,147/4,323 (raw 4,342,
 infeasible 19). T64 remains open with 34 Cohort-J controls, zero pending
 material. The piranha distance return follows; T65 remains unadmitted.
+
+## Aggregate S53 admission - piranha distance return
+
+S53 owns control-03874. Seven scoped labels are MovePiranhaPlant,
+ChkPlayerNearPipe, ReversePlantSpeed, SetupToMovePPlant,
+RiseFallPiranhaPlant, PutinPipe and PlayerEnemyDiff. All are already exact;
+expected new nodes empty, no custody transfer. Historical 1992/1992,
+exact nodes 1480/1992 and material 368/487 unchanged; controls enter
+3147/4323 and can reach 3148/4323. S52 precedes; vertical platform
+movement/position returns follow. T64 stays open; no T65 admission.
+
+Shared enemy/piranha.c owns $D3B0-$D40F with real enemy/distance.c child.
+Static track checks returned high-byte sign, low scratch subtraction and
+borrow, negative-distance two's complement and unsigned $21 threshold;
+state/timer/moving/rising gates, byte speed reversal, endpoint selection,
+frame/timer movement gates, endpoint equality and priority write. Actual
+ROM/native roots span all six slots, low distances, high-byte signs and
+borrow, then bounded state/movement variants. Persistent RAM including
+scratch and all $0109-$0139 game aliases are compared; CPU-stack-only
+exclusion and actual return seams are explicit. x86/x64 movement/OAM/purity
+and original OpenNT DOS16 are operational gates. Scoped differences stay
+here for repair/re-audit; product repairs refresh three approved EXEs.
+
+Owner-local nonredistributable ROM/ASM remain research-only. Ignored
+build/m2-t64-s53 owns <=8 MiB raw, 524288 steps/case, 120 seconds and
+cleanup. Preserve unrelated work.
+
+## Aggregate S53 closure - real piranha distance return
+
+Control-03874 is exact. Seven scoped nodes retain exact: MovePiranhaPlant,
+ChkPlayerNearPipe, ReversePlantSpeed, SetupToMovePPlant,
+RiseFallPiranhaPlant, PutinPipe and PlayerEnemyDiff. No new node credit,
+custody transfer or inference about unobserved generic routes.
+
+Static $D3B0-$D40F audit confirms state/frame-timer gates precede the idle
+move flag and speed sign gates. Real distance return at $D3C4 retains X,
+low subtraction in $00 and borrow-adjusted page subtraction in A/N.
+The caller negates only the low byte when the returned high sign is negative;
+it compares this source byte magnitude against $21, without introducing a
+new full-world-coordinate range test. Speed reversal is byte two's complement,
+move flag increments, speed sign selects the original endpoint, frame parity
+and TimerControl gate Y addition, equality clears move flag and sets $40
+frame delay. Every path finally writes $20 background priority.
+
+1,920 actual MovePiranhaPlant roots comprise 1,536 idle distance fixtures
+(all 256 low-byte results in each of six slots) plus 384 bounded state,
+timer and movement variants. The source observes 1,752 real distance returns;
+high sign clear/set 888/864 and low borrow clear/set 912/840. At the actual
+return seam X, low/high subtraction, N sign and final page-subtraction carry
+are checked independently. The absolute-low-byte consumer is checked before
+the threshold comparison. Near/far counts are 486/1,266, negative conversion
+864, reversal 1,314, and endpoint stops 312; maximum execution 54 instructions.
+No child return is stubbed. Fixtures cover $20/$21 from both directions,
+page wrapping, state/timer early exits, existing movement, signed/zero/wrapped
+speeds, endpoint equality/non-equality, parity, paused movement and priority.
+
+Current x86/x64 each match 1,920/1,920 with zero differences across 1,841
+compared bytes: all zero-page scratch, persistent RAM and all 49 game aliases
+$0109-$0139. Only other CPU-stack bytes are excluded. This broader comparison
+retains the distance/endpoint scratch itself rather than excluding it as an
+ABI temporary. Same project-owned C90 checker is built on both widths;
+the native product contains no reference emulator or new ROM material.
+
+Fresh movement/OAM/platform-purity tests pass 3/3 per width. Original OpenNT
+DOS16 builds/links with the existing OLDNAMES.LIB warning. Similar-issue
+sweep checks subtraction borrow/sign return, low-byte magnitude threshold,
+speed and move-flag wrapping, endpoint selection, timer/parity gates and
+common priority exit. No scoped discrepancy or host gameplay duplicate found.
+Product C and three approved EXEs remain unchanged; raw records/probe are
+cleaned after governance and registry gates.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
+unchanged. Exact feasible controls rise 3,147 to 3,148/4,323 (raw 4,342,
+infeasible 19). T64 remains open with 33 Cohort-J controls, zero pending
+material; platform movement/position returns follow. T65 is not admitted.

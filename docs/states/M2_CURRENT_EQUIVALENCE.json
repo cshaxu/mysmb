@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3147,
-    "needs-evidence": 1176,
+    "exact": 3148,
+    "needs-evidence": 1175,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129777,13 +129777,16 @@
       "instruction": "rts/rti",
       "id": "control-03874",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/piranha.c plant state machine with player-distance child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot consuming the real enemy/distance.c return sign and low scratch before the near-pipe gate.",
       "semanticEvidence": [
-        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S53 static $D3B0-$D40F and real return-consumer audit: PlayerEnemyDiff returns at $D3C4 with unchanged X, low difference in $00 and borrow-adjusted high difference in A/N; MovePiranhaPlant uses that high sign to conditionally negate the low byte, then compares the magnitude against $21 before reversing speed."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> MovePiranhaPlant with state/timer/distance predicate, endpoint handoff and branch/call/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S53 current x86/x64 each match 1920 actual piranha roots with zero differences across 1841 bytes; 1752 real distance returns, both high signs/low borrows, near/far 486/1266 and 312 endpoint stops; C90 movement/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PlayerEnemyDiff returns at $D3C4 with unchanged X, low difference in $00 and borrow-adjusted high difference in A/N; MovePiranhaPlant uses that high sign to conditionally negate the low byte, then compares the magnitude against $21 before reversing speed.",
       "currentSourcePaths": [
         "src/game/cannon.c",
         "src/game/enemy/background.c",
