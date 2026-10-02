@@ -275,3 +275,11 @@ shared-source link.
 - Scope: **34** labels; expected fresh historical matches: **0**; maximum
   historical complete: **1,992 / 1,992**.
 - Current-exact promotions are determined only after both audit tracks finish.
+
+## S6 closure — player/enemy collision response
+
+All 34 scoped nodes from `ResidualXSpdData` through `ExSFN` are current-exact. Static `$D84D-$DA24` review confirms table bytes and binding, frame/offscreen/state gates, live-slot reload after geometry, collision latch behavior, power-up and star dispatch, shell score selection, injury/death transitions, stomp/demotion/revival paths, facing and floating-score writes.
+
+The retained controlled original-ROM contact route replayed 1,024 records in one x86 and one x64 native process. Each compared mapped RAM and the recorded geometry, power-up, defeat, palette, stun, vertical-state, direction and routine child calls; both widths reported zero differences. The focused contact contract, platform-purity gate and OpenNT DOS16 shared-source link pass. The audio output and title-pause CTests also pass on both widths, with the owner separately confirming their interactive behavior. Product C did not change, so the three package artifacts were not refreshed.
+
+S6 records 34 nodes, 92 source-address-owned control relations and 28 material handoffs as current-exact. Five edges carrying S6 label names but emitted at other ROM source addresses remain with their owning cohorts and were not claimed here. Current totals: historical **1,992 / 1,992**; current exact nodes **1,292 / 1,992**; current exact feasible controls **2,632 / 4,324** (raw **4,342**, infeasible **18**).

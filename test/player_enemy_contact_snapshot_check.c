@@ -57,20 +57,34 @@ mysmb_u8 mysmb_enemy_player_difference(struct mysmb_game *g,mysmb_u8 s)
 { return child(g,9U,s); }
 void mysmb_objects_turn_enemy(struct mysmb_game *g,mysmb_u8 s)
 { (void)child(g,10U,s); }
-int main(int argc,char **argv)
+static int run_case(const char *snapshot_path,const char *calls_path)
 {
     static struct mysmb_game g;
     static unsigned char expected[2048];
     unsigned char h[8];FILE *f;
-    if(argc!=3)return 64;
-    f=fopen(argv[2],"rb");if(!f)return 65;
+    count=0U;calls=0U;failures=0U;
+    f=fopen(calls_path,"rb");if(!f)return 65;
     if(fread(h,1,8,f)!=8||memcmp(h,"MS~C\1",5)||h[5]>16U)return 66;
     count=h[5];if(fread(records,4098,count,f)!=count||fgetc(f)!=EOF)return 66;
-    fclose(f);f=fopen(argv[1],"rb");if(!f)return 65;
+    fclose(f);f=fopen(snapshot_path,"rb");if(!f)return 65;
     if(fread(h,1,8,f)!=8||memcmp(h,"MS~P\1",5)||
         fread(g.ram,1,2048,f)!=2048||fread(expected,1,2048,f)!=2048||fgetc(f)!=EOF)return 66;
     fclose(f);g.area_prg=mysmb_local_prg;g.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     mysmb_objects_player_enemy_current(&g,h[6],1U);compare(g.ram,expected);
     if(calls!=count)++failures;
     return failures?1:0;
+}
+int main(int argc,char **argv)
+{
+    FILE *f;char snapshot[1024],child_path[1024];unsigned int cases,failed;
+    if(argc!=3)return 64;
+    if(strcmp(argv[1],"--manifest")!=0)return run_case(argv[1],argv[2]);
+    f=fopen(argv[2],"rb");if(!f)return 65;
+    cases=0U;failed=0U;
+    while(fscanf(f,"%1023s %1023s",snapshot,child_path)==2) {
+        ++cases;if(run_case(snapshot,child_path)!=0)++failed;
+    }
+    if(ferror(f)) { fclose(f);return 66; }
+    fclose(f);printf("player enemy contact manifest: %u cases, %u failures\n",cases,failed);
+    return failed?1:0;
 }

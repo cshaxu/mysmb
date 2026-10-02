@@ -7762,13 +7762,15 @@
       "consumer": "CheckForPUpCollision",
       "storage": "prepared player/enemy boxes, carry-equivalent hit and reloaded ObjectOffset",
       "feasiblePath": "An eligible even-frame hit reloads ObjectOffset before ID dispatch.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c geometry result and slot reload",
       "semanticContract": "The hit dispatcher consumes the reloaded source current slot after prepared-box geometry.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7781,13 +7783,15 @@
       "consumer": "NoPECol",
       "storage": "Enemy_CollisionBits d0 on a carry-clear geometry result",
       "feasiblePath": "A miss clears only d0 of the current enemy collision byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c miss branch",
       "semanticContract": "Miss handling releases a stale collision latch without changing other collision bits.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7800,13 +7804,15 @@
       "consumer": "HandlePowerUpCollision",
       "storage": "Enemy_ID equal PowerUpObject and current ObjectOffset",
       "feasiblePath": "PowerUpObject transfers to pickup after collision; non-power-up preserves ID for EColl.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c id==0x2e branch",
       "semanticContract": "The pickup chain receives the active enemy slot selected by collision geometry.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7820,13 +7826,15 @@
       "consumer": "ShellOrBlockDefeat",
       "storage": "nonzero StarInvincibleTimer and active enemy slot",
       "feasiblePath": "Star Mario converts a collided enemy through common shell/block defeat.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c star branch",
       "semanticContract": "Star defeat bypasses ordinary enemy contact after source collision dispatch.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7840,13 +7848,15 @@
       "consumer": "ChkForPlayerInjury",
       "storage": "collision latch and ID/area/state eligibility result",
       "feasiblePath": "Spiny, cannon Bullet Bill and selected enemy states route into the stomp-or-injury decision child.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c check_player_injury",
       "semanticContract": "The child receives the newly latched active enemy contact after source filters.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7859,13 +7869,15 @@
       "consumer": "InjurePlayer",
       "storage": "collision latch and direct hazard eligibility result",
       "feasiblePath": "Piranha, Podoboo, IDs >=$15 and water route directly to guarded injury.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_force_injury",
       "semanticContract": "Direct hazard paths retain the source latch and delegate InjuryTimer semantics.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7878,13 +7890,15 @@
       "consumer": "KSPts",
       "storage": "EnemyFacePlayer direction, shell speed and point modifier",
       "feasiblePath": "Qualifying kicked shell uses direction-indexed speed and timer-selected point modifier.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c kicked speed/points path",
       "semanticContract": "Floatey setup consumes the source kick modifier after moving-shell state and speed write.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7897,13 +7911,15 @@
       "consumer": "ExPEC",
       "storage": "Floatey number control and EnemySmack queue/state",
       "feasiblePath": "Score setup completes the shell-kick response before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_setup_floatey_from_relative",
       "semanticContract": "Return observes the completed source score handoff without an extra response.",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7916,13 +7932,15 @@
       "consumer": "ChkInj",
       "storage": "Player_Y_Speed signed result and active enemy ID",
       "feasiblePath": "Negative/zero vertical-speed route reaches ID-specific adjusted-Y injury/stomp comparison.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c check_player_injury",
       "semanticContract": "The child sees the source player speed and current enemy slot before any response change.",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7935,13 +7953,15 @@
       "consumer": "ChkETmrs",
       "storage": "Player_Y_Position+$0c versus Enemy_Y_Position comparison result",
       "feasiblePath": "For eligible large IDs, only strict player-above-enemy comparison branches to stomp; all other cases test timers.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c adjusted-Y predicate",
       "semanticContract": "Timer/facing logic receives exactly the source non-stomp position cases.",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7954,13 +7974,15 @@
       "consumer": "TInjE",
       "storage": "zero StompTimer, zero InjuryTimer and relative X comparison",
       "feasiblePath": "Only live non-stomp, non-invulnerable contact forwards relative-X relation to the left-side facing test.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c relative X branch",
       "semanticContract": "Facing logic consumes source live-contact coordinates after both timer guards.",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7973,13 +7995,15 @@
       "consumer": "LInj",
       "storage": "Enemy_MovingDir and active current enemy slot",
       "feasiblePath": "Player-left/right cases decide whether EnemyTurnAround is required before injury.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c turn predicate",
       "semanticContract": "Turnaround is performed only for the source-facing combinations before guarded injury.",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -7992,13 +8016,15 @@
       "consumer": "SetKRout",
       "storage": "PlayerStatus, InjuryTimer, Square1 sound and routine value $0a",
       "feasiblePath": "Non-small injury writes downgrade/timer/audio/palette effects before common state-one route.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_force_injury_entry",
       "semanticContract": "The routine tail consumes completed injury state after palette routing.",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8011,13 +8037,15 @@
       "consumer": "SetKRout",
       "storage": "Player X/Y speed, EventMusicQueue and routine value $0b",
       "feasiblePath": "Small-player death initializes movement/music then joins state-one route.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_force_injury_entry",
       "semanticContract": "Death shares the routine setter only after source death-motion and music writes.",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8030,13 +8058,15 @@
       "consumer": "ExInjColRoutines",
       "storage": "GameEngineSubroutine, Player_State, TimerControl, ScrollAmount and restored ObjectOffset",
       "feasiblePath": "Transformation/injury/death route writes state then restores ObjectOffset before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_set_player_routine",
       "semanticContract": "Return observes the source timer halt/scroll initialization and current enemy restoration.",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8049,13 +8079,15 @@
       "consumer": "EnemyStompedPts",
       "storage": "enemy ID-selected StompedEnemyPtsData index and active slot",
       "feasiblePath": "Eligible fixed-class IDs select index 0/1/2/3 before common stun/score path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c stomped_points binding",
       "semanticContract": "The point setup receives the exact source class index before SetStun.",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8068,13 +8100,15 @@
       "consumer": "SBnce",
       "storage": "Enemy_MovingDir preservation, defeat state d5, cleared motion and player bounce $fd",
       "feasiblePath": "Common killed-enemy path completes score/stun/state/motion then returns with $fd player bounce.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c fixed-class stomp path",
       "semanticContract": "The return preserves source enemy direction around SetStun and uses $fd bounce.",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8087,13 +8121,15 @@
       "consumer": "ChkForDemoteKoopa",
       "storage": "nonfixed enemy ID after stomp sound/class selection",
       "feasiblePath": "Nonfixed IDs are split at nine into paratroopa demotion or shell handling.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c id >=9 split",
       "semanticContract": "Demotion/shell branches consume the source current ID after stomp sound routing.",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8106,13 +8142,15 @@
       "consumer": "SBnce",
       "storage": "demoted ID low bit, state zero, modifier three and direction-indexed speed",
       "feasiblePath": "Paratroopa path writes ordinary Koopa state and speed before common $fc bounce.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c demotion path",
       "semanticContract": "Bounce follows the source score/init/face/speed sequence.",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8125,13 +8163,15 @@
       "consumer": "SBnce",
       "storage": "StompChainCounter, StompTimer and hard-mode RevivalRateData",
       "feasiblePath": "Shell path writes state four, chain score, timer increment and revival interval before bounce.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c shell stomp path",
       "semanticContract": "Bounce occurs after source revive interval assignment.",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8144,13 +8184,15 @@
       "consumer": "SFcRt",
       "storage": "PlayerEnemyDiff sign to Enemy_MovingDir and speed-table index",
       "feasiblePath": "Sign chooses direction one or two, then returns direction minus one.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_enemy_face_player",
       "semanticContract": "Consumers receive source direction/index relation for kicked and demoted speeds.",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8163,13 +8205,15 @@
       "consumer": "ExSFN",
       "storage": "Floatey control/timer/Y/relative-X fields",
       "feasiblePath": "Score setup writes all four current-slot fields before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_setup_floatey_from_relative",
       "semanticContract": "Return follows completed source floatey state publication.",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10079,13 +10123,15 @@
       "consumer": "PlayerEnemyCollision",
       "storage": "ROM ResidualXSpdData collision table",
       "feasiblePath": "PlayerEnemyCollision selects ResidualXSpdData on the source collision state path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
       "semanticContract": "Source index selects the same ordered table byte before collision state write.",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10098,13 +10144,15 @@
       "consumer": "HandlePECollisions",
       "storage": "ROM KickedShellXSpdData collision table",
       "feasiblePath": "HandlePECollisions selects KickedShellXSpdData on the source collision state path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
       "semanticContract": "Source index selects the same ordered table byte before collision state write.",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10117,13 +10165,15 @@
       "consumer": "EnemyStomped",
       "storage": "ROM DemotedKoopaXSpdData collision table",
       "feasiblePath": "EnemyStomped selects DemotedKoopaXSpdData on the source collision state path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
       "semanticContract": "Source index selects the same ordered table byte before collision state write.",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10136,13 +10186,15 @@
       "consumer": "HandlePECollisions",
       "storage": "ROM KickedShellPtsData collision table",
       "feasiblePath": "HandlePECollisions selects KickedShellPtsData on the source collision state path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
       "semanticContract": "Source index selects the same ordered table byte before collision state write.",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10155,13 +10207,15 @@
       "consumer": "EnemyStomped",
       "storage": "ROM StompedEnemyPtsData collision table",
       "feasiblePath": "EnemyStomped selects StompedEnemyPtsData on the source collision state path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
       "semanticContract": "Source index selects the same ordered table byte before collision state write.",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10174,13 +10228,15 @@
       "consumer": "HandleStompedShellE",
       "storage": "ROM RevivalRateData collision table",
       "feasiblePath": "HandleStompedShellE selects RevivalRateData on the source collision state path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/player_enemy_collision.c contact_data PRG binding",
       "semanticContract": "Source index selects the same ordered table byte before collision state write.",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10414,13 +10470,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1232,
-    "needs-evidence": 760
+    "exact": 1292,
+    "needs-evidence": 700
   },
   "controlEdgeCounts": {
-    "exact": 2476,
+    "exact": 2632,
     "infeasible": 18,
-    "needs-evidence": 1848
+    "needs-evidence": 1692
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -35412,13 +35468,15 @@
       "label": "ResidualXSpdData",
       "asmLine": 11309,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "contact_data PRG bindings and collision handlers",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35428,13 +35486,15 @@
       "label": "KickedShellXSpdData",
       "asmLine": 11312,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "contact_data PRG bindings and collision handlers",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35444,13 +35504,15 @@
       "label": "DemotedKoopaXSpdData",
       "asmLine": 11315,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "contact_data PRG bindings and collision handlers",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35460,13 +35522,15 @@
       "label": "PlayerEnemyCollision",
       "asmLine": 11318,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "On even frames only, rejects off-vertical/offscreen/non-control/d5 enemies, uses prepared enemy box and PlayerCollisionCore, reloads ObjectOffset, clears collision d0 on a miss and dispatches a hit by power-up ID or star timer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35476,13 +35540,15 @@
       "label": "NoPECol",
       "asmLine": 11339,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns after a gated or miss contact; a miss has cleared only collision-bit d0 for the reloaded current enemy slot.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35492,13 +35558,15 @@
       "label": "CheckForPUpCollision",
       "asmLine": 11341,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Reads enemy ID into Y and transfers PowerUpObject to the pickup chain; every other ID falls through with Y preserved for contact handling.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35508,13 +35576,15 @@
       "label": "EColl",
       "asmLine": 11346,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Routes star-invincible contact to ShellOrBlockDefeat and routes a zero StarInvincibleTimer to ordinary player/enemy response.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35524,13 +35594,15 @@
       "label": "KickedShellPtsData",
       "asmLine": 11350,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "contact_data PRG bindings and collision handlers",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35540,13 +35612,15 @@
       "label": "HandlePECollisions",
       "asmLine": 11353,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Latches a first on-screen contact, applies source ID/area/state eligibility ordering, sends injury/stomp cases to their owners, and turns a qualifying non-Goomba defeated shell into a player-facing moving shell with source score selection.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35556,13 +35630,15 @@
       "label": "KSPts",
       "asmLine": 11398,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses timer-indexed kick points for intervals below three, otherwise retains StompChainCounter plus three, then initializes the floatey number.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35572,13 +35648,15 @@
       "label": "ExPEC",
       "asmLine": 11399,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns after contact suppression, Goomba defeated exclusion, injury/stomp delegation or completed shell-kick response while retaining the active ObjectOffset semantics.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35588,13 +35666,15 @@
       "label": "ChkForPlayerInjury",
       "asmLine": 11401,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses signed player Y speed to choose upward/neutral versus downward stomp logic; delegates nonzero positive speed to EnemyStomped and otherwise enters the ID/vertical overlap path.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35604,13 +35684,15 @@
       "label": "ChkInj",
       "asmLine": 11405,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "For IDs below Bloober, skips adjusted-Y comparison; for IDs at/above Bloober, only adjusted player Y strictly above the enemy produces the stomp path.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35620,13 +35702,15 @@
       "label": "ChkETmrs",
       "asmLine": 11413,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "StompTimer forces stomp; InjuryTimer suppresses response; otherwise compares relative X and selects the matching facing/turnaround injury tail.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35636,13 +35720,15 @@
       "label": "TInjE",
       "asmLine": 11421,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "When player is left of enemy, an enemy not moving right goes directly to injury; a right-moving enemy is turned before injury.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35652,13 +35738,15 @@
       "label": "InjurePlayer",
       "asmLine": 11426,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Guards ForceInjury with a second zero-InjuryTimer test, preserving the active ObjectOffset on suppression.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35668,13 +35756,15 @@
       "label": "ForceInjury",
       "asmLine": 11430,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses PlayerStatus: small Mario takes KillPlayer; other status consumes input A as new small status, sets InjuryTimer eight, queues injury sound, updates palette and selects subroutine ten/state one.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35684,13 +35774,15 @@
       "label": "SetKRout",
       "asmLine": 11440,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Supplies player state one to the shared routine setter for injury and death tails.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35700,13 +35792,15 @@
       "label": "SetPRout",
       "asmLine": 11441,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Writes selected GameEngineSubroutine and Player_State, then sets TimerControl $ff and clears ScrollAmount before restoring ObjectOffset and returning.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35716,13 +35810,15 @@
       "label": "ExInjColRoutines",
       "asmLine": 11448,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Reloads ObjectOffset and returns from injury, transformation and death response tails.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35732,13 +35828,15 @@
       "label": "KillPlayer",
       "asmLine": 11452,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Clears player horizontal speed through X=PlayerStatus zero, queues death event music one, writes vertical speed $fc and selects subroutine eleven/state one.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35748,13 +35846,15 @@
       "label": "StompedEnemyPtsData",
       "asmLine": 11461,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "contact_data PRG bindings and collision handlers",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35764,13 +35864,15 @@
       "label": "EnemyStomped",
       "asmLine": 11464,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Routes Spiny to guarded injury; otherwise queues EnemyStomp, selects the four-entry stomp-point class by ID and sends remaining enemies to paratroopa demotion or shell handling.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35780,13 +35882,15 @@
       "label": "EnemyStompedPts",
       "asmLine": 11490,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Selects point table entry, preserves Enemy_MovingDir across SetStun, writes defeat state d5, zeros motion through InitVStf and applies player bounce speed $fd.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35796,13 +35900,15 @@
       "label": "ChkForDemoteKoopa",
       "asmLine": 11506,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "IDs at or above nine become ordinary Koopa ID low-bit/state zero, award modifier three, initialize motion, face player and use direction-indexed demoted speed before bounce.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35812,13 +35918,15 @@
       "label": "RevivalRateData",
       "asmLine": 11521,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "contact_data PRG bindings and collision handlers",
       "semanticEvidence": [
         "Td S9 K44 player/enemy collision table node/material audit: SMB1 lines 11309-11521 compared with src/game/world/player_enemy_collision.c PRG/fallback bindings; controlled collision routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves source table values and original unmasked index for its collision-state consumer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35828,13 +35936,15 @@
       "label": "HandleStompedShellE",
       "asmLine": 11524,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Writes shell defeated state four, increments StompChainCounter, scores counter plus StompTimer, increments StompTimer, selects hard-mode revival rate and then bounces player.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35844,13 +35954,15 @@
       "label": "SBnce",
       "asmLine": 11536,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Writes player vertical speed $fc and returns from both paratroopa-demotion and shell-stomp paths.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35860,13 +35972,15 @@
       "label": "ChkEnemyFaceRight",
       "asmLine": 11540,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Turns a right-moving enemy before injury; other directions fall to the common turnaround tail.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35876,13 +35990,15 @@
       "label": "LInj",
       "asmLine": 11545,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Calls EnemyTurnAround when needed, then unconditionally routes to guarded InjuryPlayer.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35892,13 +36008,15 @@
       "label": "EnemyFacePlayer",
       "asmLine": 11549,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Uses PlayerEnemyDiff sign to write movement direction one/right or two/left and returns zero/one speed-table index.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35908,13 +36026,15 @@
       "label": "SFcRt",
       "asmLine": 11554,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Stores selected direction, decrements it to the source speed-table index and returns.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35924,13 +36044,15 @@
       "label": "SetupFloateyNumber",
       "asmLine": 11558,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Writes score control, timer $30, enemy Y and relative X to the current enemy floatey-number slot.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -35940,13 +36062,15 @@
       "label": "ExSFN",
       "asmLine": 11566,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns after the complete four-field floatey-number write.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95409,12 +95533,14 @@
       "instruction": "bcs",
       "id": "control-02255",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPUp with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c",
@@ -95429,12 +95555,14 @@
       "instruction": "jsr",
       "id": "control-02256",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation PlayerEnemyCollision -> CheckPlayerVertical with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -95449,12 +95577,14 @@
       "instruction": "bcs",
       "id": "control-02257",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95468,12 +95598,14 @@
       "instruction": "bne",
       "id": "control-02258",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95487,12 +95619,14 @@
       "instruction": "bne",
       "id": "control-02259",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95506,12 +95640,14 @@
       "instruction": "bne",
       "id": "control-02260",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95525,12 +95661,14 @@
       "instruction": "jsr",
       "id": "control-02261",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation PlayerEnemyCollision -> GetEnemyBoundBoxOfs with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -95545,12 +95683,14 @@
       "instruction": "jsr",
       "id": "control-02262",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
         "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation PlayerEnemyCollision -> PlayerCollisionCore with source box offsets, carry and coordinate-loop handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -95567,12 +95707,14 @@
       "instruction": "bcs",
       "id": "control-02263",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlayerEnemyCollision -> CheckForPUpCollision with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95586,12 +95728,14 @@
       "instruction": "sta",
       "id": "control-02264",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation PlayerEnemyCollision -> NoPECol with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95605,12 +95749,14 @@
       "instruction": "bne",
       "id": "control-02265",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckForPUpCollision -> EColl with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95624,12 +95770,14 @@
       "instruction": "jmp",
       "id": "control-02266",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation CheckForPUpCollision -> HandlePowerUpCollision with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c",
@@ -95644,12 +95792,14 @@
       "instruction": "beq",
       "id": "control-02267",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EColl -> HandlePECollisions with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95663,12 +95813,14 @@
       "instruction": "jmp",
       "id": "control-02268",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation EColl -> ShellOrBlockDefeat with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c",
@@ -95683,12 +95835,14 @@
       "instruction": "bne",
       "id": "control-02269",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> ExPEC with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95702,12 +95856,14 @@
       "instruction": "beq",
       "id": "control-02270",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95721,12 +95877,14 @@
       "instruction": "beq",
       "id": "control-02271",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95740,12 +95898,14 @@
       "instruction": "beq",
       "id": "control-02272",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95759,12 +95919,14 @@
       "instruction": "beq",
       "id": "control-02273",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95778,12 +95940,14 @@
       "instruction": "bcs",
       "id": "control-02274",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95797,12 +95961,14 @@
       "instruction": "beq",
       "id": "control-02275",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95816,12 +95982,14 @@
       "instruction": "bcs",
       "id": "control-02276",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95835,12 +96003,14 @@
       "instruction": "bcc",
       "id": "control-02277",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95854,12 +96024,14 @@
       "instruction": "beq",
       "id": "control-02278",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> ExPEC with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95873,12 +96045,14 @@
       "instruction": "jsr",
       "id": "control-02279",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HandlePECollisions -> EnemyFacePlayer with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95892,12 +96066,14 @@
       "instruction": "bcs",
       "id": "control-02280",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation HandlePECollisions -> KSPts with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95911,12 +96087,14 @@
       "instruction": "lda",
       "id": "control-02281",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation HandlePECollisions -> KSPts with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95930,12 +96108,14 @@
       "instruction": "jsr",
       "id": "control-02282",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation KSPts -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95949,12 +96129,14 @@
       "instruction": "jsr",
       "id": "control-02283",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation KSPts -> ExPEC with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95968,12 +96150,14 @@
       "instruction": "bmi",
       "id": "control-02284",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForPlayerInjury -> ChkInj with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -95987,12 +96171,14 @@
       "instruction": "bne",
       "id": "control-02285",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForPlayerInjury -> EnemyStomped with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96006,12 +96192,14 @@
       "instruction": "bne",
       "id": "control-02286",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkForPlayerInjury -> ChkInj with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96025,12 +96213,14 @@
       "instruction": "bcc",
       "id": "control-02287",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkInj -> ChkETmrs with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96044,12 +96234,14 @@
       "instruction": "bcc",
       "id": "control-02288",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkInj -> EnemyStomped with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96063,12 +96255,14 @@
       "instruction": "bcc",
       "id": "control-02289",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkInj -> ChkETmrs with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96082,12 +96276,14 @@
       "instruction": "bne",
       "id": "control-02290",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkETmrs -> EnemyStomped with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96101,12 +96297,14 @@
       "instruction": "bne",
       "id": "control-02291",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkETmrs -> ExInjColRoutines with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96120,12 +96318,14 @@
       "instruction": "bcc",
       "id": "control-02292",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkETmrs -> TInjE with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96139,12 +96339,14 @@
       "instruction": "jmp",
       "id": "control-02293",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ChkETmrs -> ChkEnemyFaceRight with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96158,12 +96360,14 @@
       "instruction": "bne",
       "id": "control-02294",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation TInjE -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96177,12 +96381,14 @@
       "instruction": "jmp",
       "id": "control-02295",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation TInjE -> LInj with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96196,12 +96402,14 @@
       "instruction": "bne",
       "id": "control-02296",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation InjurePlayer -> ExInjColRoutines with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96215,12 +96423,14 @@
       "instruction": "bne",
       "id": "control-02297",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation InjurePlayer -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96234,12 +96444,14 @@
       "instruction": "beq",
       "id": "control-02298",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ForceInjury -> KillPlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96253,12 +96465,14 @@
       "instruction": "jsr",
       "id": "control-02299",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ForceInjury -> GetPlayerColors with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -96273,12 +96487,14 @@
       "instruction": "lda",
       "id": "control-02300",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ForceInjury -> SetKRout with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96292,12 +96508,14 @@
       "instruction": "ldy",
       "id": "control-02301",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetKRout -> SetPRout with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96311,12 +96529,14 @@
       "instruction": "sty",
       "id": "control-02302",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetPRout -> ExInjColRoutines with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96330,12 +96550,14 @@
       "instruction": "bne",
       "id": "control-02303",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation KillPlayer -> SetKRout with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96349,12 +96571,14 @@
       "instruction": "bne",
       "id": "control-02304",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation KillPlayer -> StompedEnemyPtsData with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96368,12 +96592,14 @@
       "instruction": "beq",
       "id": "control-02305",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> InjurePlayer with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96387,12 +96613,14 @@
       "instruction": "beq",
       "id": "control-02306",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96406,12 +96634,14 @@
       "instruction": "beq",
       "id": "control-02307",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96425,12 +96655,14 @@
       "instruction": "beq",
       "id": "control-02308",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96444,12 +96676,14 @@
       "instruction": "beq",
       "id": "control-02309",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96463,12 +96697,14 @@
       "instruction": "beq",
       "id": "control-02310",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96482,12 +96718,14 @@
       "instruction": "beq",
       "id": "control-02311",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96501,12 +96739,14 @@
       "instruction": "bne",
       "id": "control-02312",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyStomped -> ChkForDemoteKoopa with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96520,12 +96760,14 @@
       "instruction": "bne",
       "id": "control-02313",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation EnemyStomped -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96539,12 +96781,14 @@
       "instruction": "jsr",
       "id": "control-02314",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation EnemyStompedPts -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96558,12 +96802,14 @@
       "instruction": "jsr",
       "id": "control-02315",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation EnemyStompedPts -> SetStun with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -96578,12 +96824,14 @@
       "instruction": "jsr",
       "id": "control-02316",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation EnemyStompedPts -> InitVStf with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -96599,12 +96847,14 @@
       "instruction": "bcc",
       "id": "control-02317",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForDemoteKoopa -> HandleStompedShellE with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96618,12 +96868,14 @@
       "instruction": "jsr",
       "id": "control-02318",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkForDemoteKoopa -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96637,12 +96889,14 @@
       "instruction": "jsr",
       "id": "control-02319",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkForDemoteKoopa -> InitVStf with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -96658,12 +96912,14 @@
       "instruction": "jsr",
       "id": "control-02320",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation ChkForDemoteKoopa -> EnemyFacePlayer with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96677,12 +96933,14 @@
       "instruction": "jmp",
       "id": "control-02321",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ChkForDemoteKoopa -> SBnce with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96696,12 +96954,14 @@
       "instruction": "jsr",
       "id": "control-02322",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation HandleStompedShellE -> SetupFloateyNumber with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96715,12 +96975,14 @@
       "instruction": "sta",
       "id": "control-02323",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation HandleStompedShellE -> SBnce with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96734,12 +96996,14 @@
       "instruction": "bne",
       "id": "control-02324",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkEnemyFaceRight -> LInj with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96753,12 +97017,14 @@
       "instruction": "jmp",
       "id": "control-02325",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation ChkEnemyFaceRight -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96772,12 +97038,14 @@
       "instruction": "jsr",
       "id": "control-02326",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
       "semanticEvidence": [
         "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation LInj -> EnemyTurnAround with source slot/mask/state predicate and pair collision handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/enemy_collision.c",
@@ -96792,12 +97060,14 @@
       "instruction": "jmp",
       "id": "control-02327",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original jump relation LInj -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96811,12 +97081,14 @@
       "instruction": "jsr",
       "id": "control-02328",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation EnemyFacePlayer -> PlayerEnemyDiff with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -96834,12 +97106,14 @@
       "instruction": "bpl",
       "id": "control-02329",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation EnemyFacePlayer -> SFcRt with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96853,12 +97127,14 @@
       "instruction": "iny",
       "id": "control-02330",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation EnemyFacePlayer -> SFcRt with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -96872,12 +97148,14 @@
       "instruction": "sta",
       "id": "control-02331",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetupFloateyNumber -> ExSFN with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -128506,12 +128784,14 @@
       "instruction": "rts/rti",
       "id": "control-03912",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation CheckPlayerVertical -> PlayerEnemyCollision with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -128526,12 +128806,14 @@
       "instruction": "rts/rti",
       "id": "control-03913",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation GetEnemyBoundBoxOfs -> PlayerEnemyCollision with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -128546,12 +128828,14 @@
       "instruction": "rts/rti",
       "id": "control-03914",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/bounding_box.c and geometry.c box/rectangle core",
       "semanticEvidence": [
         "Td S9 B16s bounding-box/rectangle integration audit: source endpoint, box/control/table predicate, $06/$07 carry and loop handoff compared with shared bounding_box.c and geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerEnemyCollision with source box offsets, carry and coordinate-loop handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -128568,12 +128852,14 @@
       "instruction": "rts/rti",
       "id": "control-03915",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EnemyFacePlayer -> HandlePECollisions with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -128587,12 +128873,14 @@
       "instruction": "rts/rti",
       "id": "control-03916",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation SetupFloateyNumber -> KSPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -128606,12 +128894,14 @@
       "instruction": "rts/rti",
       "id": "control-03917",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation GetPlayerColors -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -128626,12 +128916,14 @@
       "instruction": "rts/rti",
       "id": "control-03918",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation SetupFloateyNumber -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -128645,12 +128937,14 @@
       "instruction": "rts/rti",
       "id": "control-03919",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation SetStun -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
@@ -128665,12 +128959,14 @@
       "instruction": "rts/rti",
       "id": "control-03920",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation InitVStf -> EnemyStompedPts with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -128686,12 +128982,14 @@
       "instruction": "rts/rti",
       "id": "control-03921",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation SetupFloateyNumber -> ChkForDemoteKoopa with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -128705,12 +129003,14 @@
       "instruction": "rts/rti",
       "id": "control-03922",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation InitVStf -> ChkForDemoteKoopa with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -128726,12 +129026,14 @@
       "instruction": "rts/rti",
       "id": "control-03923",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EnemyFacePlayer -> ChkForDemoteKoopa with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -128745,12 +129047,14 @@
       "instruction": "rts/rti",
       "id": "control-03924",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation SetupFloateyNumber -> HandleStompedShellE with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -128764,12 +129068,14 @@
       "instruction": "rts/rti",
       "id": "control-03925",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/enemy_collision.c with named geometry/defeat/score/turnaround children",
       "semanticEvidence": [
         "Td S9 B16o enemy-pair collision integration audit: source endpoint, slot/mask/state predicate, stack/$01/ObjectOffset handoff and call/return ordering compared with shared enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation EnemyTurnAround -> LInj with source slot/mask/state predicate and pair collision handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/enemy_collision.c",
@@ -128784,12 +129090,14 @@
       "instruction": "rts/rti",
       "id": "control-03926",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named stun/init/distance/score children",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score integration audit: source endpoint, ID/table/direction predicate, active slot and score/motion handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyDiff -> EnemyFacePlayer with source ID/direction/table predicate and current-slot score/motion handoff ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
