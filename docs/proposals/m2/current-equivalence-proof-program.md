@@ -215,3 +215,12 @@ T66 has19 pending nodes and S4 next unadmitted.
 historical1992/1992 separate.131072 original roots match both widths;14/14
 focused tests each and original DOS16 link pass. Three S2 products retained;
 T66 has13 pending nodes, S5 next unadmitted.
+
+## Current checkpoint after T66 S5
+
+[T66 S5](t66-cohort-l-player-relative-offscreen-proof.md) closes10 nodes,
+13 controls/material00435-00437 without production differences. Current1713/
+1992 nodes,3646/4317 controls(raw4342,infeasible25),403/493 material partial;
+historical1992/1992 separate.131072 original roots match both widths;14/14
+focused tests each and original DOS16 link pass. Three S2 products retained;
+T66 has3 pending nodes, S6 next unadmitted before S7 integration closure.

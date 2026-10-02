@@ -907,3 +907,148 @@ Any scoped diff stays in S5 until repaired and re-audited to zero.
 Owner-local ROM/reviewed ASM nonredistributable inputs. All scripts/raw/logs
 under ignored build/m2-t66-s5;192MiB aggregate,2048 roots/chunk,120seconds/
 run,524288steps/case; coordinator cleans raw/probe after proof.
+
+## S5 P2 vertical offscreen and division audit closure
+
+All10 intended labels/13 controls/material00435-00437 close exact; no deferred
+or transferred names. Nodes1703 ->1713/1992, controls3633 ->3646/4317
+(raw4342,infeasible25), material400 ->403/493 partial. Historical1992/1992
+expected/actualMatches empty remains separate. T66 has3 pending sprite-output
+nodes, S6 next unadmitted. No production discrepancy or correction in S5.
+
+### Native source and original graph/semantic audit
+
+GetYOffscreenBits saves source04, caches unchanged source low/high bytes and
+starts top edge1. YOfsLoop subtracts the selected HighPosUnit byte minus low Y
+in byte width, stores07, then subtracts high Y and the low-byte borrow from1.
+Native bit7 negative test corresponds to original CMP0/BMI. Only after that
+test, original CMP1/BPL means nonnegative differences1-127; zero alone sets
+threshold06 and calls DividePDiff. C's zero branch is equivalent under the
+preceding sign partition. Defaults retain top/bottom selection in order.
+YLdBData reads resolved mask, restores source index, exits when nonzero;
+otherwise proceeds from top1 to bottom0, and exits after bottom even if zero.
+C's nonzero-or-edge0 return and single edge0 retry preserve those paths.
+
+DividePDiff always stores supplied adder05 before threshold comparison.
+Original BCS keeps current index on difference >= threshold; C returns its
+current_offset without extra scratch/index effects. Below threshold both
+shift by3 and mask7. Original CPY1 sets carry for top/right1, skipping adder;
+for bottom/left0 it clears carry, so ADC adds exactly the supplied adder in
+byte width. C edge0 addition preserves that domain: all real X/Y callers use
+only side0/1. SetOscrO moves resolved index to the table consumer; ExDivPD
+returns either unchanged or resolved index. Actual X/Y division calls execute
+both paths with their original different adders and thresholds. No duplicated
+algorithm or production test exposure is introduced for the private helpers.
+
+The Y division call03151, its child return04060 and join03152 have actual
+RTS-to-JSR+3 evidence. All other listed branches/fall-through relations have
+immediate source PC transfer evidence. Native counterpart and per-node
+contract inspection is separate from these original observations; source
+visits alone do not establish equivalence. Six conditional instructions each
+have taken and fall-through outcomes, including division's early exit/adder.
+
+Similar-issue sweep inspects every vertical/division use in object_position.c:
+one RunOffscrBitsSubs Y consumer and two X/Y division callers. Source low/high
+caching cannot change inputs because their offsets do not alias scratch04-07
+for valid source slots0-24. Both callers set the correct threshold/adder;
+all state remains shared C, with no platform API or platform business branch.
+No correction required. Existing S3/S4 accepted dependencies are not credited
+again; later DrawSpriteObject remains unadmitted.
+
+### Real original/native routes and table binding
+
+Modes35/36 each enter original F1C0 and execute real X/Y/DividePDiff,65536
+roots each covering all256 Y-low x256 Y-high pairs. Viewport35 has left0/
+page0,right255/page0; viewport36 has nonzero left on page254 and right=left-1
+on page255. Source slots0-24, destinations0-6 and independent ObjectOffset0-5
+vary but are not claimed as extra exhaustive Cartesian dimensions. Source X
+varies through every byte with source page at the viewport left page, allowing
+real X division and both edge indices alongside every vertical-byte domain.
+Both native widths match all131072 roots across1841 RAM bytes including
+scratch/OAM/aliases0109-0139, with zero differences and no child mocks.
+
+True CPU stack0100-0108/013A-01FF and unused CPU A/X/Y/flags are excluded.
+The private Y result is not discarded: its mask is0-15 by source tables and
+is shifted into the stored high nibble, disjoint from the proven X low nibble.
+Thus full RAM comparison preserves every returned Y-mask bit. Division result
+feeds actual indexed masks; scratch05-07 also independently compares. No
+register consumed as a native result is silently excluded from its data path.
+
+All9 existing Y-mask table bytes,3 defaults and2 high-unit bytes are bound
+locally to original PRG without importing protected bytes. Mask indices0-7,
+all defaults and both high-unit entries have actual reads. Index8 is unreachable
+for these source callers: defaults are0/4, below-threshold32 yields quotients
+0-3 and optional adder4 gives4-7. At threshold or above, existing default stays.
+Its byte binding is checked; no invented index8 route or missing-read claim.
+Actual table producer/consumer relations00435-00437 prove final Y output.
+
+Original opcode/index validation agrees in the admitted scope; non-code
+directives outside remain explicit index exclusions. All raw/probe artifacts
+cleaned; neutral summaries/logs stay below ignored admitted output path.
+Limits192MiB aggregate,2048 roots/chunk,120seconds/run,524288steps/case
+enforced. This is scoped logic proof, not DOS graphics/performance or full
+milestone certification.
+
+| Node | Original address | Entry visits or table reads | Native counterpart / contract |
+| --- | --- | ---: | --- |
+| YOffscreenBitsData | f22b | 196624 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Binds nine ordered Y-axis offscreen bit masks indexed by the resolved Y boundary/partition offset. |
+| DefaultYOnscreenOfs | f234 | 262686 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Binds the three ordered default Y partition offsets used by top/bottom boundary selection. |
+| HighPosUnitData | f237 | 196624 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Binds the top and bottom high-position edge values used by Y coordinate comparison. |
+| GetYOffscreenBits | f239 | 131072 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Starts at the top boundary, computes vertical-unit/pixel difference and selects a Y offscreen mask, examining bottom only when top result is zero. |
+| YOfsLoop | f23d | 196624 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; For one Y screen edge, derives default or divided partition index from high-byte comparison and pixel difference. |
+| YLdBData | f260 | 196624 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Loads the selected Y mask, restores source offset and either exits on nonzero bits or retries the remaining bottom edge. |
+| ExYOfsBS | f26c | 131072 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Returns the selected Y offscreen mask. |
+| DividePDiff | f26d | 132608 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Writes the supplied partition adder to scratch, retains current offset when pixel difference reaches the preset, otherwise divides by eight and resolves side-specific partition index. |
+| SetOscrO | f280 | 29056 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Transfers the resolved partition index to the table-index register. |
+| ExDivPD | f281 | 132608 | mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables; Returns the current or resolved partition index to its X/Y caller. |
+
+| Control | Original relation | Instruction PC | Actual transfers/returns |
+| --- | --- | --- | ---: |
+| control-03148 | GetYOffscreenBits -> YOfsLoop (fallthrough) | f23b | 131072 |
+| control-03149 | YOfsLoop -> YLdBData (branch) | f24e | 130562 |
+| control-03150 | YOfsLoop -> YLdBData (branch) | f255 | 65038 |
+| control-03151 | YOfsLoop -> DividePDiff (call) | f25d | 1024 |
+| control-03152 | YOfsLoop -> YLdBData (fallthrough) | f25d | 1024 |
+| control-03153 | YLdBData -> ExYOfsBS (branch) | f267 | 130610 |
+| control-03154 | YLdBData -> YOfsLoop (branch) | f26a | 65552 |
+| control-03155 | YLdBData -> ExYOfsBS (fallthrough) | f26a | 462 |
+| control-03156 | DividePDiff -> ExDivPD (branch) | f273 | 103552 |
+| control-03157 | DividePDiff -> SetOscrO (branch) | f27c | 14400 |
+| control-03158 | DividePDiff -> SetOscrO (fallthrough) | f27e | 14656 |
+| control-03159 | SetOscrO -> ExDivPD (fallthrough) | f280 | 29056 |
+| control-04060 | DividePDiff -> YOfsLoop (return) | f25d | 1024 |
+
+| Branch PC | Taken | Fall-through |
+| --- | ---: | ---: |
+| f24e | 130562 | 66062 |
+| f255 | 65038 | 1024 |
+| f267 | 130610 | 66014 |
+| f26a | 65552 | 462 |
+| f273 | 103552 | 29056 |
+| f27c | 14400 | 14656 |
+
+| Table | Index | Actual indexed reads |
+| --- | ---: | ---: |
+| ymask | 0 | 66014 |
+| ymask | 1 | 16 |
+| ymask | 2 | 16 |
+| ymask | 3 | 16 |
+| ymask | 4 | 130514 |
+| ymask | 5 | 16 |
+| ymask | 6 | 16 |
+| ymask | 7 | 16 |
+| ydefault | 0 | 65552 |
+| ydefault | 1 | 131598 |
+| ydefault | 2 | 65536 |
+| yhigh | 0 | 65552 |
+| yhigh | 1 | 131072 |
+
+### Separate operational proof and unchanged products
+
+Current x86/x64 checker builds and14/14 focused tests each pass, including
+offscreen bounds/chain, player OAM/route/core, purity, audio/focus/self tests.
+Original OpenNT DOS16 same shared sources link exit0, existing OLDNAMES.LIB
+warning retained. No product source changed. All3 S2 P2 EXEs verified against
+committed HEAD byte-for-byte and retained, including audio/title/focus pause.
+Only neutral probe/checker extensions. Node ledger/admission/closure/current
+registry/documentation/whitespace gates pass. S5 closes; T66/M2 remain open.
