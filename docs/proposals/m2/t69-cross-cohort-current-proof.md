@@ -1130,3 +1130,27 @@ refreshed under explicit owner authorization:
 
 Registry/ledger/progress/documentation gates and diff check required before
 local P4 commit;unrelated queue/proposals/terrain preserved.No push.
+
+## S8 admission - vine/Bullet Bill cross-owner control joins
+
+Scope26 already-exact labels:VineHeightData; VineObjectHandler; RunVSubs; VDrawLoop; KillVine; WrCMTile; Chk_BB; BulletBillHandler; ChkDSte; BBFly; RunBBSubs; KillBB; MoveEnemyHorizontally; MoveD_EnemyVertically; EraseEnemyObject; OffscreenBoundsCheck; PlayerEnemyCollision; PlayerEnemyDiff; GetEnemyBoundBox; BlockBufferCollision; DrawVine; EnemyGfxHandler; RelativeEnemyPosition; GetEnemyOffscreenBits; ProcessCannons; BulletBillXSpdData.Intended fresh nodes0,
+max1992/1992;29 planned pending controls and material-00096.
+Current1992/1992 scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),
+536/555 material partial;historical1992/1992 separate.S7 closed;S9 and later
+unadmitted.Maintenance custody retained,expectedMatches empty.Concrete missing
+evidence:actual caller/child return and vine-height consumer relations beyond
+previous bounded node proofs. ProcessCannons admits the actual Chk_BB parent;
+BulletBillXSpdData is its already-exact handler dependency,zero extra credit.
+Shared vine.c/cannon.c and listed game children only;platform code excluded.
+Predecessor:S7 accepted;successor:S9 hammer/coin/score unadmitted.
+ROM track:Source-first VineObjectHandler B94B and ProcessCannons B9BC/BulletBillHandler BA33 returning roots with actual relative/offscreen/OAM/block query/movement/bounding-box/collision/lifecycle children;observe caller-to-child and child-return transitions and full persistent RAM/APU/ordered writes on current x86/x64.
+Operational:vine actor/OAM,enemy block query,cannon children/bullet output,
+box integration,title/NMI,purity focused tests,current x86/x64 products and
+original OpenNT DOS16 link. Product repairs refresh3 EXEs under standing
+owner approval;pure audit keeps products byte-identical. Every scoped diff
+repaired/re-audited before S9. Original local ROM and reviewed ASM research
+only,nonredistributable,no imported source/assets. Ignored build/m2-t69-s8;
+raw<=128MiB,1024 roots per batch,120seconds process,524288steps per root;
+coordinator deletes raw per batch and probe at closure. Similar-issue sweep:
+source slot restoration,temporary RAM stores,carry/borrow,child parameter and
+return handoffs,offscreen/growth thresholds,collision/OAM execution order.

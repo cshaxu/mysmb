@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T69 S8 - active vine/cannon cross-owner joins
+
+[Exact26 existing labels/29 pending controls/1 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+intended fresh0,max1992/1992.Current1992/1992 scoped-exact nodes,
+4087/4277 controls(raw4342,infeasible65),536/555 material partial;
+historical1992/1992 separate.Both proof tracks required;S9 unadmitted.
+
 ## M2 T69 S7 - closed physics/fireball/bubble consumer chain
 
 [All15 material relations/32 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
