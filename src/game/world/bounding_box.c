@@ -17,6 +17,12 @@ void mysmb_world_set_bounding_box(struct mysmb_game *game,
     };
     mysmb_u8 table_offset;
 
+    /* BoundingBoxCore retains the source SprObject offset and relative
+     * coordinates in scratch before computing the four corner bytes. */
+    game->ram[0U] = (mysmb_u8)((address - 0x04acU) >> 2U);
+    game->ram[2U] = y;
+    game->ram[1U] = x;
+
     /* The original uses ASL twice.  The admitted callers are constrained by
      * SprObj_BoundBoxCtrl to the 12-entry source table. */
     if (control >= 12U) control = 0U;
@@ -45,6 +51,9 @@ void mysmb_world_clip_bounding_box_to_screen(struct mysmb_game *game,
     middle_x = (mysmb_u8)(game->ram[0x071cU] + 0x80U);
     page_carry = game->ram[0x071cU] >= 0x80U ? 1U : 0U;
     middle_page = (mysmb_u8)(game->ram[0x071aU] + page_carry);
+    /* CheckRightScreenBBox writes the midpoint low byte, then its page. */
+    game->ram[2U] = middle_x;
+    game->ram[1U] = middle_page;
 
     if (((mysmb_u16)object_page << 8U | object_x) >=
         ((mysmb_u16)middle_page << 8U | middle_x)) {

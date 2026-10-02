@@ -4,6 +4,7 @@
 #include "game/area.h"
 #include "game/player.h"
 #include "game/terminal_modes.h"
+#include "game/fireball/fireball.h"
 #include <stdio.h>
 #include <string.h>
 #define RECORD_BYTES 4290U
@@ -11,6 +12,7 @@ int main(int argc,char **argv)
 {
     static struct mysmb_game game;
     static unsigned char prg[32768],record[RECORD_BYTES];
+    static unsigned int ram_failures[2048];
     unsigned char h[16];FILE *f;unsigned int count,n,i,pc,failures=0U;mysmb_u8 a;
     if(argc!=3)return 64;
     f=fopen(argv[2],"rb");if(!f||fread(h,1U,16U,f)!=16U||memcmp(h,"NES\032",4U)||h[4]!=2U||fread(prg,1U,32768U,f)!=32768U)return 65;fclose(f);
@@ -27,6 +29,9 @@ int main(int argc,char **argv)
         game.title_icon_data=prg;game.title_icon_data_size=1U;
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
+        case 0xb689U:mysmb_fireball_step_object(&game,record[3]);break;
+        case 0xb6f9U:mysmb_fireball_check_bubble(&game,record[3]);break;
+        case 0xb70bU:mysmb_fireball_setup_bubble(&game,record[3]);break;
         case 0xb450U:mysmb_player_physics_sub(&game);break;
         case 0xb3cfU:mysmb_player_climb(&game);break;
         case 0xb58fU:mysmb_player_update_animation_speed(&game,game.ram[0x06fcU]);break;
@@ -59,12 +64,12 @@ int main(int argc,char **argv)
         case 0xf3adU:a=mysmb_audio_set_freq_tri(&game,a);break;
         default:return 66;
         }
-        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&pc!=0xb689U&&pc!=0xb6f9U&&pc!=0xb70bU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
-            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU||pc==0x9131U||pc==0x91cdU||pc==0x9218U||pc==0x8808U||pc==0x9508U||pc==0xb450U||pc==0xb3cfU||pc==0xb58fU){
+            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU||pc==0x9131U||pc==0x91cdU||pc==0x9218U||pc==0x8808U||pc==0x9508U||pc==0xb450U||pc==0xb3cfU||pc==0xb58fU||pc==0xb689U||pc==0xb6f9U||pc==0xb70bU){
                 if(i>=0x1f0U&&i<=0x1ffU)continue;
             }else if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
-            if(game.ram[i]!=record[2088U+i]){if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}
+            if(game.ram[i]!=record[2088U+i]){++ram_failures[i];if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}
         }
         for(i=0U;i<24U;++i)if(game.apu_registers[i]!=record[4136U+i]){if(failures<10U)printf("root=%u APU=%u ROM=%02x C=%02x\n",n,i,record[4136U+i],game.apu_registers[i]);++failures;}
         if(game.apu_write_count!=record[6]){if(failures<10U)printf("root=%u writes ROM=%u C=%u\n",n,record[6],game.apu_write_count);++failures;}
@@ -72,5 +77,6 @@ int main(int argc,char **argv)
             if(failures<10U)printf("root=%u write=%u ROM=%u:%02x C=%u:%02x\n",n,i,record[4160U+2U*i],record[4161U+2U*i],game.apu_writes[i].index,game.apu_writes[i].value);++failures;
         }
     }
+    for(i=0U;i<2048U;++i)if(ram_failures[i])printf("ram-difference-address=%04x count=%u\n",i,ram_failures[i]);
     if(fgetc(f)!=EOF)return 66;fclose(f);printf("roots=%u differences=%u\n",count,failures);return failures?1:0;
 }

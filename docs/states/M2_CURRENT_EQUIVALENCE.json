@@ -1948,13 +1948,16 @@
       "consumer": "FireballObjCore",
       "storage": "PlayerFacingDir-1 indexed fireball horizontal-speed table",
       "feasiblePath": "Fireball creation selects the speed after PlayerFacingDir decrement.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_fireball_x_speed[PlayerFacingDir - 1]",
+      "status": "exact",
+      "currentCounterpart": "Shared fireball/fireball_core.c and fireball/bubble.c actual table consumers with canonical world/bounding_box.c scratch handoffs.",
       "semanticContract": "Preserves the source table selection and consumer write/order.",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link."
+      ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1967,13 +1970,16 @@
       "consumer": "MoveBubl",
       "storage": "pseudo-random-bit indexed bubble fractional-force table",
       "feasiblePath": "BubbleCheck writes $07 before MoveBubl reads Bubble_MForceData[$07].",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_bubble_force[ram[$07]]",
+      "status": "exact",
+      "currentCounterpart": "Shared fireball/fireball_core.c and fireball/bubble.c actual table consumers with canonical world/bounding_box.c scratch handoffs.",
       "semanticContract": "Preserves the source table selection and consumer write/order.",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link."
+      ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1986,13 +1992,16 @@
       "consumer": "SetupBubble",
       "storage": "pseudo-random-bit indexed bubble timer table",
       "feasiblePath": "BubbleCheck writes $07 before SetupBubble reads BubbleTimerData[$07].",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_bubble_timer[ram[$07]]",
+      "status": "exact",
+      "currentCounterpart": "Shared fireball/fireball_core.c and fireball/bubble.c actual table consumers with canonical world/bounding_box.c scratch handoffs.",
       "semanticContract": "Preserves the source table selection and consumer write/order.",
       "semanticEvidence": [
-        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link."
+      ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -25761,10 +25770,12 @@
       "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Binds facing indices right/left to $40/$c0 fireball speed bytes.",
       "currentSourcePaths": [
@@ -25780,10 +25791,12 @@
       "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Preserves explosion/inactive/new/active state partition and ObjectOffset handoff.",
       "currentSourcePaths": [
@@ -25897,11 +25910,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement.",
       "currentSourcePaths": [
@@ -25939,11 +25954,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y.",
       "currentSourcePaths": [
@@ -25999,10 +26016,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Binds pseudo-random bit to movement-force bytes $ff/$50.",
       "currentSourcePaths": [
@@ -26018,10 +26037,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Binds pseudo-random bit to timer bytes $40/$20.",
       "currentSourcePaths": [
@@ -41245,10 +41266,12 @@
       "currentCounterpart": "mysmb_world_get_fireball_bounding_box",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Offsets fireball slot by seven, selects relative-coordinate pair two and builds/clips its source bounding box.",
       "currentSourcePaths": [
@@ -41283,10 +41306,12 @@
       "currentCounterpart": "ordered mysmb_world_set_bounding_box then mysmb_world_clip_bounding_box_to_screen in fireball/misc owners",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Calls BoundingBoxCore then unconditionally applies right/left screen clipping.",
       "currentSourcePaths": [
@@ -41437,10 +41462,12 @@
       "currentOwner": "src/game/world/bounding_box.c",
       "currentCounterpart": "mysmb_world_set_bounding_box",
       "semanticEvidence": [
-        "M2 T64 S34 static $E29C-$E2DD audit: four CLC/ADC pairs become independent unsigned-byte additions; table indexing and UL-X/LR-X/UL-Y/LR-Y write order agree. Source caller/domain sweep covers PlayerCtrl, enemy initializers, cannon, hammer, power-up, fireball and Bowser control writers; all initialized values are 0..11. Defensive C >=12 fallback is unreachable in this source domain, not a ROM contract for corrupted RAM. CPU stack/flags are ABI-only; scratch $00/$01/$02 becomes object/relative-X/relative-Y arguments, with no persistent consumer omitted. S33 and T58 prove caller selection/continuation."
+        "M2 T64 S34 static $E29C-$E2DD audit: four CLC/ADC pairs become independent unsigned-byte additions; table indexing and UL-X/LR-X/UL-Y/LR-Y write order agree. Source caller/domain sweep covers PlayerCtrl, enemy initializers, cannon, hammer, power-up, fireball and Bowser control writers; all initialized values are 0..11. Defensive C >=12 fallback is unreachable in this source domain, not a ROM contract for corrupted RAM. CPU stack/flags are ABI-only; scratch $00/$01/$02 becomes object/relative-X/relative-Y arguments, with no persistent consumer omitted. S33 and T58 prove caller selection/continuation.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S34 tools/reference_bounding_box_core_probe.c runs 3072 original-ROM direct $E29C entries, with a restored boot machine per fixture (no accumulated NMI interference, no ROM modification), each completing in 36 instructions. All twelve controls exercise every X and Y byte (Y=255-X), all eighteen object offsets and seven relative indices. test/bounding_box_core_actual_check.c on fresh x86/x64 compares every 1784 persistent RAM byte unconditionally, and separately checks restored X, Y=object*4, scratch $00-$02 and unchanged $03-$07. Both widths: 3072/3072, zero differences. Focused core smoke and platform-purity checks pass on both widths. Original OpenNT DOS16 shared-core build/link succeeds; the existing OLDNAMES.LIB warning remains."
+        "M2 T64 S34 tools/reference_bounding_box_core_probe.c runs 3072 original-ROM direct $E29C entries, with a restored boot machine per fixture (no accumulated NMI interference, no ROM modification), each completing in 36 instructions. All twelve controls exercise every X and Y byte (Y=255-X), all eighteen object offsets and seven relative indices. test/bounding_box_core_actual_check.c on fresh x86/x64 compares every 1784 persistent RAM byte unconditionally, and separately checks restored X, Y=object*4, scratch $00-$02 and unchanged $03-$07. Both widths: 3072/3072, zero differences. Focused core smoke and platform-purity checks pass on both widths. Original OpenNT DOS16 shared-core build/link succeeds; the existing OLDNAMES.LIB warning remains.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "For source-reachable controls 0..11 and object offsets 0..17, independently add table UL-X/LR-X/UL-Y/LR-Y to byte-relative coordinates, storing at $04ac+4*object; restored X and box-offset Y are represented by explicit C address/coordinate arguments.",
       "currentSourcePaths": [
@@ -41455,10 +41482,12 @@
       "currentOwner": "src/game/world/bounding_box.c",
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Compares object world coordinate with screen middle and clips right-side box edges to $ff only when their signed relation requires it.",
       "currentSourcePaths": [
@@ -41509,10 +41538,12 @@
       "currentOwner": "src/game/world/bounding_box.c",
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
       ],
       "semanticContract": "Leaves $80-$9f wrapped near-left boxes visible, but changes $a0-$ff offscreen left edges and applicable right edge to zero.",
       "currentSourcePaths": [

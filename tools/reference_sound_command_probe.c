@@ -83,6 +83,38 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==70u){
+        static const unsigned char states[4]={2u,1u,0u,0x80u};
+        unsigned int slot=p&1u;
+        m->ram[0x24u+slot]=states[(p>>4u)&3u];
+        m->ram[0x86u]=(unsigned char)n;m->ram[0x6du]=3u;
+        m->ram[0xceu]=(unsigned char)(p*13u);
+        m->ram[0x33u]=(unsigned char)(((p>>1u)&1u)+1u);
+        m->ram[0x74u+slot]=3u;m->ram[0x8du+slot]=(unsigned char)n;
+        m->ram[0xd5u+slot]=(unsigned char)(p*13u);
+        m->ram[0xbcu+slot]=1u;m->ram[0xa6u+slot]=(unsigned char)((p&4u)?0xfdu:4u);
+        m->ram[0x5eu+slot]=(unsigned char)((p&2u)?0xc0u:0x40u);
+        m->ram[0x4a0u+slot]=7u;
+        m->ram[0x416u+7u+slot]=(unsigned char)n;
+        m->ram[0x433u+7u+slot]=(unsigned char)(p*17u);
+        m->ram[0x400u+7u+slot]=(unsigned char)(n*17u);
+        m->ram[0x71au]=(unsigned char)((p&8u)?2u:3u);
+        m->ram[0x71cu]=(unsigned char)(p*17u);
+        m->ram[0x71bu]=(unsigned char)(m->ram[0x71au]+(m->ram[0x71cu]?1u:0u));
+        m->ram[0x71du]=(unsigned char)(m->ram[0x71cu]-1u);
+        m->ram[0x6ecu]=0x20u;m->ram[0x6edu]=0x24u;
+        m->ram[9u]=(unsigned char)p;
+    }else if(mode==71u||mode==72u){
+        unsigned int j,slot=mode==71u?p%3u:p;
+        for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
+        m->ram[0x86u]=(unsigned char)n;m->ram[0x6du]=(unsigned char)p;
+        m->ram[0xceu]=(unsigned char)(n*7u+p);
+        m->ram[0x33u]=(unsigned char)((p&1u)+1u);
+        m->ram[(unsigned char)(0xe4u+slot)]=(unsigned char)((p&8u)?0xf8u:n);
+        m->ram[0x42cu+slot]=(unsigned char)(n*17u+p);
+        m->ram[0x792u]=(unsigned char)((p&16u)?1u:0u);
+        if(mode==71u)m->ram[0x7a8u+slot]=(unsigned char)(n+p*13u);
+        m->ram[7u]=(unsigned char)n;
     }else if(mode>=66u&&mode<=69u){
         unsigned int j;
         for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
@@ -350,6 +382,9 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
     if(mode==51u)m->y=(unsigned char)n;
     if(mode==53u)m->y=11u;
     if(mode==55u)m->y=(unsigned char)n;
+    if(mode==70u)m->x=(unsigned char)(p&1u);
+    if(mode==71u)m->x=(unsigned char)(p%3u);
+    if(mode==72u)m->x=(unsigned char)p;
 }
 int main(int argc,char **argv)
 {
@@ -361,7 +396,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>69u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>72u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -370,7 +405,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
     baseline=*d->machine;
-    if((mode>=55u&&mode<=59u)||mode==62u||mode==63u){
+    if((mode>=55u&&mode<=59u)||mode==62u||mode==63u||mode>=70u){
         /* These roots run inside NMI after its $2000 NMI-enable clear.
          * Match that hardware entry condition, so a long memory clear cannot
          * nest a new frame handler. No ROM, RAM, or child call is replaced. */
@@ -418,6 +453,9 @@ int main(int argc,char **argv)
         if(mode==67u)entry=0xb3cfu;
         if(mode==68u)entry=0xb58fu;
         if(mode==69u)entry=0xb450u;
+        if(mode==70u)entry=0xb689u;
+        if(mode==71u)entry=0xb6f9u;
+        if(mode==72u)entry=0xb70bu;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -438,6 +476,14 @@ int main(int argc,char **argv)
                 ++setup_reads[0][0x90e7u+d->machine->y];
             if(mode==62u&&pc==0x91f6u&&op==0xbcu)
                 ++setup_reads[0][0x91bdu+d->machine->x];
+            if(mode>=70u&&pc>=0xb689u&&pc<0xb74bu&&(op==0xb9u||op==0xf9u)){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                unsigned int kind=3u;
+                if(base==0xb687u)kind=0u;
+                else if(base==0xb74bu)kind=1u;
+                else if(base==0xb74du)kind=2u;
+                if(kind<3u)++lookup_reads[kind][base+d->machine->y];
+            }
             if(mode>=66u&&mode<=69u&&pc>=0xb3cfu&&pc<0xb5c6u&&(op==0xb9u||op==0xbdu||op==0xbeu||op==0x7du)){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 unsigned int offset=(op==0xbdu||op==0x7du)?d->machine->x:d->machine->y;
@@ -530,7 +576,7 @@ int main(int argc,char **argv)
                 record[4160u+writes*2u]=(unsigned char)(addr-0x4000u);
                 record[4161u+writes*2u]=(unsigned char)value;++writes;
             }
-            if(core_machine_debug_step(d->machine,1u,1024u,&result)!=LIB_STATUS_OK||result.trap_valid)return 67;
+            if(core_machine_debug_step(d->machine,1u,1024u,&result)!=LIB_STATUS_OK||result.trap_valid){fprintf(stderr,"reference trap mode=%u root=%u pc=%04x opcode=%02x next=%04x steps=%u stack=%02x\n",mode,n,pc,op,d->machine->pc,steps,d->machine->s);return 67;}
             if(op==0x20u||op==0x4cu||op==0x60u)++transfers[pc];
             key=(((unsigned long)pc<<16u)|d->machine->pc)+1u;
             bucket=(unsigned int)((key^(key>>13u))&8191u);

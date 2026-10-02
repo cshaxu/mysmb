@@ -433,3 +433,13 @@ partial;historical1992/1992 separate.67584 original roots per width equal,
 9 tests each/purity/current builds/OpenNT link pass,3 EXEs refreshed after
 shared text and parser-vector-state repair.T69 open,S7 next unadmitted;
 190 controls/34 material and earlier M alias scope plus integrated proof remain.
+
+## Current checkpoint after T69 S7
+
+[T69 S7](t69-cross-cohort-current-proof.md) closes15 material relations,32
+existing labels rechecked with zero fresh node/control credit.Current1992/1992
+scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),536/555 material
+partial;historical1992/1992 separate.458752 original roots per width equal,
+12 tests each/purity/current builds/OpenNT link pass,3 EXEs refreshed after
+shared player/canonical box scratch repair.T69 open,S8 next unadmitted;
+190 controls/19 material and earlier M alias scope plus integrated proof remain.

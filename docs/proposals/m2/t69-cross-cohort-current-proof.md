@@ -1065,3 +1065,68 @@ all existing player/enemy/platform/fireball/coin/hammer callers;their explicit
 box address identifies source SprObject offset and relative XY parameters.
 Focused geometry/clip integration tests join the S7 operational track;
 original FireballObjCore full return still compares all persistent RAM.
+
+## S7 P4 closure - original fireball/bubble consumers and box scratch
+
+All15 planned material relations00077-00091 exact (12 accepted P2,3 P4).
+All32 admitted already-exact labels retain bounded current proof;P2 rechecked21,
+P4 rechecked11:FireballXSpdData; FireballObjCore; SetupBubble; MoveBubl; Bubble_MForceData; BubbleTimerData; GetFireballBoundBox; FBallB; BoundingBoxCore; CheckRightScreenBBox; CheckLeftScreenBBox.Zero fresh node/control credit,no scoped
+deferral.Current1992/1992 scoped-exact nodes,4087/4277 feasible controls
+(raw4342,infeasible65),533->536/555 material partial.Historical1992/1992
+separate.T69 open,S8 next unadmitted;190 controls/19 material and earlier M
+alias scope plus integrated certification remain.No whole-game/all-state claim.
+
+Source-first original FireballObjCore B689-B6F8 preserves spawn low-byte+4
+carry to page,facing-minus1 speed lookup,then gravity,horizontal movement,
+relative position,offscreen bits,bounding box,background collision,CC erase,
+enemy collision and draw.Explosion uses separate relative/draw branch.
+Canonical BoundingBoxCore E29C stores SprObject offset00,relative Y02,X01
+before corners;CheckRightScreenBBox E2DE stores midpoint02/page01 before
+clipping.Native omitted these persistent stores;restored in shared owner,
+not a fireball wrapper.No platform edit. Similar-issue sweep:all7 set-box
+production call sites and5 clip sites in player_control.c,enemy_bounds.c,
+world/collision.c,objects.c use explicit04AC+4*SprObject addresses:player0,
+enemy/platform1+slot,fireball7+slot,misc9+slot.Legacy enemy helper also uses
+that layout;no duplicate scratch restore introduced.Existing geometry remains.
+
+BubbleCheck B6F9 selects random bit to07;F8/timer gate controls SetupBubble
+B70B. LSR-facing carry yields right+9/left+0 and page carry,then Y+8/high1,
+timer lookup,fall-through MoveBubl. Force subtraction propagates borrow into
+Y and sets F8 below20. Zero-page slot operands wrap;direct entrance alias
+writes require live07 before each table read,not a cached selector.
+
+Final196608 original returning roots each width zero difference:mode70
+FireballObjCore65536,mode71 BubbleCheck65536,mode72 SetupBubble65536.
+With retained P2 player262144 roots,S7 total458752 per width.The fixture
+matrix covers X byte,256 profiles,facing1/2,fireball slots0/1,state inactive/
+spawn/run/explosion,gravity direction,screen low/page and clipping;empty
+block buffers/no enemies bound this fireball consumer proof.Normal bubble
+slots0-2 cover setup/move/timer wait;direct SetupBubble X0-255 and07 byte
+exercise alias/beyond-two-entry bound PRG reads.These controlled inputs do
+not assert all combinations are ordinary gameplay;no inference of unseen
+control credit. Full2032 RAM bytes (including OAM),24 APU and ordered writes
+compared;only01F0-01FF physical stack/sentinel excluded,minSP F3 for fireball,
+FD for bubbles.CPU registers/flags outside native C ABI.No ROM/child patch.
+
+Six existing C table bytes independently equal original:FireballXSpdData
+B687/B688 read8192 each;Bubble_MForceData B74B/B74C read24544 each through
+normal BubbleCheck;BubbleTimerData B74D/B74E read8224 each there.Direct
+SetupBubble supplements full selector/alias reads.Probe arguments:owner-local
+ROM,ignored raw path,mode,first,count<=1024;current runner once per width per
+batch. Raw deleted per batch.Probe direct-fixture overflow at X>=88 was
+found and fixed:only normal BubbleCheck initializes07A8+slot;direct entry
+uses07 explicitly.Final mode72 rerun from0 after correction.No product
+change from that harness defect.Neutral RAM-difference histogram retained.
+
+Operational:12 focused tests each width pass(player climb/physics/animation,
+fireball dispatch/core,bubble,title boot,NMI,purity,player box,box core/clip);
+current x86/x64 products and original OpenNT DOS16 link pass.Inherited
+OLDNAMES.LIB link warning remains;no interactive DOS claim.Three EXEs
+refreshed under explicit owner authorization:
+
+- `mysmb16.exe`: 261399 bytes, SHA256 `3f38d3ea2492c19038504f6fbaf449c57be01bda6c563eff9806c965896c189d`.
+- `mysmb32.exe`: 374811 bytes, SHA256 `c16c5d0fe09dc1aaf0235706bb841f6a98ea2ad027d2355862dc8b3c6325c544`.
+- `mysmb64.exe`: 382348 bytes, SHA256 `4e1789121c7a57ba9d52557c1787b42f1e2228fbe376bb54c779c705fdcd88fe`.
+
+Registry/ledger/progress/documentation gates and diff check required before
+local P4 commit;unrelated queue/proposals/terrain preserved.No push.
