@@ -10667,15 +10667,15 @@
   ],
   "nodeCounts": {
     "exact": 1601,
-    "needs-evidence": 391,
+    "needs-evidence": 386,
     "unclassified": 0,
-    "mismatch": 0
+    "mismatch": 5
   },
   "controlEdgeCounts": {
     "exact": 3421,
-    "needs-evidence": 896,
+    "needs-evidence": 889,
     "infeasible": 25,
-    "mismatch": 0,
+    "mismatch": 7,
     "unclassified": 0
   },
   "controlEdgeTypeCounts": {
@@ -42284,11 +42284,12 @@
       "label": "DBlkLoop",
       "asmLine": 14133,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/block_gfx.c",
       "currentCounterpart": "mysmb_objects_draw_bouncing_block",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 source finding: Original calls DrawOneSpriteRow after RAM00 load; current native stores RAM01 then calls DrawSpriteObject directly. Restore the actual child entry and original X-driven loop. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Loads adjacent default tiles and calls DrawOneSpriteRow until both rows are emitted.",
@@ -42300,11 +42301,12 @@
       "label": "ChkRep",
       "asmLine": 14147,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/block_gfx.c",
       "currentCounterpart": "mysmb_objects_draw_bouncing_block",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 source finding: Original wraps Y+1 once before actual DumpFourSpr; current per-row tile loop wraps each row and omits meaningful call. Restore real child and saved offset. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Applies non-ground lineless tiles or used-block tile/attribute replacement.",
@@ -42316,11 +42318,12 @@
       "label": "SetBFlip",
       "asmLine": 14159,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/block_gfx.c",
       "currentCounterpart": "mysmb_objects_draw_bouncing_block",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 source finding: Original writes attributes first,second,fourth,third; current writes first,second,third,fourth. Restore ordered writes. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Builds the four source attribute variants for the used block by AreaType.",
@@ -42364,11 +42367,12 @@
       "label": "ChkLeftCo",
       "asmLine": 14175,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/block_gfx.c",
       "currentCounterpart": "mysmb_objects_draw_bouncing_block",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 source finding: Original meaningful mask8 entry is shared by block/chunks and falls through MoveColOffscreen; native duplicates direct clipping. Restore shared entry. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Hides the left column only for d3 and otherwise returns.",
@@ -42428,11 +42432,12 @@
       "label": "DChunks",
       "asmLine": 14197,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/block_gfx.c",
       "currentCounterpart": "mysmb_objects_draw_brick_chunks",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 source finding: Original real DumpFourSpr(tile), DumpFourSpr(attribute), DumpTwoSpr(Y), ChkLeftCo and optional DumpTwoSpr(offscreen) calls are replaced by interleaved loops/raw stores; Y+1/Y+2 wrapping differs at high OAM offsets. Restore original calls/order and carry-preserving arithmetic. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Writes four tiles/attributes, computes source carry-sensitive reflected X positions, writes both chunk rows and applies left/top hides.",
@@ -113066,10 +113071,11 @@
       "instruction": "jsr",
       "id": "control-02978",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 missing meaningful original call DBlkLoop -> DrawOneSpriteRow; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DBlkLoop -> DrawOneSpriteRow with source block/area/offscreen predicate, OAM handoff and return ordering.",
@@ -113162,10 +113168,11 @@
       "instruction": "jsr",
       "id": "control-02983",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 missing meaningful original call ChkRep -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation ChkRep -> DumpFourSpr with source block/area/offscreen predicate, OAM handoff and return ordering.",
@@ -113391,10 +113398,11 @@
       "instruction": "jsr",
       "id": "control-02995",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
@@ -113411,10 +113419,11 @@
       "instruction": "jsr",
       "id": "control-02996",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
@@ -113431,10 +113440,11 @@
       "instruction": "jsr",
       "id": "control-02997",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpTwoSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DChunks -> DumpTwoSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
@@ -113451,10 +113461,11 @@
       "instruction": "jsr",
       "id": "control-02998",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 missing meaningful original call DChunks -> ChkLeftCo; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DChunks -> ChkLeftCo with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
@@ -113489,10 +113500,11 @@
       "instruction": "jsr",
       "id": "control-03000",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpTwoSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DChunks -> DumpTwoSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",

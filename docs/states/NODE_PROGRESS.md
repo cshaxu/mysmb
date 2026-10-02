@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S10 - active block/chunk output audit
+
+[S10 exact scope and source findings](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+admits14 labels, intended fresh14, maximum1615/1992. Five node/seven child
+call mismatches registered, no exact additions. Current1601/1992 nodes,
+3421/4317 feasible controls(raw4342,infeasible25),389/492 material partial;
+historical1992/1992 distinct. Source-order S10 is active; S11 not admitted.
+
 ## M2 T65 S9 - closed flip/mirror/offscreen helper graph
 
 [T65 S9 original helper contracts and closure](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

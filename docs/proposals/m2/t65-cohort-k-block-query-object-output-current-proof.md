@@ -1207,3 +1207,52 @@ artifact exclusion.
 - mysmb64.exe: 381525 bytes; SHA-256 47b05673727b4a75a3a444cf13502f2dfc49f2c351614775c78f204dd46d4677.
 
 Historical ledger closure, documentation and whitespace gates are rerun. S9 closes its scope only; M2 and T65 remain open.
+
+## S10 admission - block and brick chunk output
+
+Scope14 is the unchanged S10 row: all incoming needs-evidence before this
+source audit; intended fresh14, maximum1615/1992 from1601. Historical
+expectedMatches empty; baseline/maximum1992. Maintenance custody remains
+unchanged. Entry DrawBlock/DrawBrickChunks, exit ExDBlk/ExBCDr. Shared owners
+block_gfx.c, sprite_row.c and sprite_dump.c; original row/dump leaves and the
+S9-restored MoveColOffscreen dependency are available. S9 closed; S11 may
+follow only after S10 has no unresolved scoped differences.
+
+Pending owned controls02977-03004 and04021-04028:36. Already exact02976 is
+retained. External caller boundaries01365/01375/03756/03760 remain named
+pending cross-cohort BlockObjectsCore/BouncingBlockHandler integration for
+the cross-cohort proof task; they are excluded from this callee-chain credit.
+Material00425 is the default tile table consumer relation, pending proof.
+
+ROM-logic track: static node/branch/read-write/table/carry/call-order audit,
+then original full output and independent child inputs/returns over byte OAM
+offsets/masks, area/replacement/end-level variants and reflected-X carries.
+Default table binding must match the owner ROM; correct the actual table-read
+consumer label if its material record is imprecise. Operational track is
+separate: focused block/dump/core/purity/audio/focus tests, x86/x64 C90 builds,
+original OpenNT DOS16 link and three refreshed packages for code-changing P.
+Owner ROM/local ASM remain nonredistributable research inputs. Ignored S10
+build directory owns192MiB raw cap,120seconds/run,524288steps/case, bounded
+chunks/checkpoints and coordinator cleanup; no raw snapshots tracked.
+
+### Initial source differences
+
+| Exact node | Difference and corrective direction |
+| --- | --- |
+| DBlkLoop | Original calls DrawOneSpriteRow after RAM00 load; current native stores RAM01 then calls DrawSpriteObject directly. Restore the actual child entry and original X-driven loop. |
+| ChkRep | Original wraps Y+1 once before actual DumpFourSpr; current per-row tile loop wraps each row and omits meaningful call. Restore real child and saved offset. |
+| SetBFlip | Original writes attributes first,second,fourth,third; current writes first,second,third,fourth. Restore ordered writes. |
+| ChkLeftCo | Original meaningful mask8 entry is shared by block/chunks and falls through MoveColOffscreen; native duplicates direct clipping. Restore shared entry. |
+| DChunks | Original real DumpFourSpr(tile), DumpFourSpr(attribute), DumpTwoSpr(Y), ChkLeftCo and optional DumpTwoSpr(offscreen) calls are replaced by interleaved loops/raw stores; Y+1/Y+2 wrapping differs at high OAM offsets. Restore original calls/order and carry-preserving arithmetic. |
+
+Five nodes and seven missing child calls register mismatch; the other nine
+labels remain needs-evidence. Full original comparison is still required;
+neither source findings nor existing tests grant exact credit. Current exact
+1601/1992 nodes,3421/4317 feasible controls(raw4342,infeasible25),389/492
+material partial; historical1992/1992 distinct.
+
+Similar-issue sweep covers bouncing-block and chunks consumers, actual row,
+dump and shared left-column entries, high-offset byte wrap and attribute/
+coordinate store order. Source two-ADC reflected-X carry must remain intact,
+not be replaced with simplified arithmetic. No product change by admission;
+the three committed S9 P3 packages remain current.
