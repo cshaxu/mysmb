@@ -1472,3 +1472,37 @@ owner artifact-delivery authorization overrides default output exclusions.
 
 Ledger admission/closure, documentation and whitespace gates rerun at closure.
 This S closes its exact scope; T65 and M2 remain open.
+
+## S12 admission - small platform ordered sprite rows
+
+Scope6 is the unchanged S12 row: DrawSmallPlatform, TopSP, BotSP, SOfs,
+SOfs2, ExSPl, all incoming needs-evidence. Intended fresh6; maximum1628/1992
+from1622. Historical baseline/maximum1992, expectedMatches empty; maintenance
+custody unchanged. Entry ED66, exit EDDE/RTS; shared small_platform_gfx.c
+owner and already-exact sprite_dump.c dependencies. S11 closed; S13 may
+follow only after S12 has no scoped unresolved difference.
+
+Owned controls03011-03023 plus04030-04032:16 pending. External original
+RunSmallPlatform call01697/return03814 already exact and retain prior credit.
+No scoped pending material relation. Current1622/1992 nodes,3464/4317
+feasible controls(raw4342,infeasible25),391/492 material partial; historical
+1992/1992 remains distinct. No admission exact credit.
+
+Source findings: DrawSmallPlatform raw per-column stores omit two actual
+DumpSixSpr calls; TopSP omits actual DumpThreeSpr. The column loop byte-wraps
+each sprite base unlike original absolute-indexed stores and changes original
+write order. Mark these two nodes and calls03011/03012/03015 mismatch; remaining
+labels need evidence. Corrective chain restores the actual dump sequence,
+byte INY offsets, relative-X store pairs, source Y/status clipping, then
+ordered d3/d2/d1 column clipping; no motion/collision/platform workaround.
+
+ROM track audits each branch/read/write/carry/order and executes bounded
+original ED66 fixtures, full and independently intercepted three dump calls.
+Cover byte OAM/Y, all offscreen masks and relative-X wrap. Operational track:
+focused platform/dump/core/audio/focus/purity tests, x86/x64 C90 build, original
+OpenNT DOS16 link; changed product code refreshes all three authorized EXEs.
+Owner ROM/local ASM remain nonredistributable research inputs. Ignored S12
+build output owns192MiB raw,2048-root chunks,120seconds/run,524288steps/case,
+checkpoints and coordinator cleanup. Similar-issue sweep includes both small/
+large platform entries and all production callers/dump dependencies; the
+already-exact large platform path is unchanged unless a concrete regression.
