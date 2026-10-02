@@ -53,20 +53,20 @@ void __wrap_mysmb_objects_erase_enemy(struct mysmb_game *g,mysmb_u8 x)
 mysmb_u8 __real_mysmb_oam_move_column_offscreen(struct mysmb_game *,mysmb_u8);
 mysmb_u8 __wrap_mysmb_oam_move_column_offscreen(struct mysmb_game *g,mysmb_u8 y)
 {
-    if(mode!=1U)return __real_mysmb_oam_move_column_offscreen(g,y);
+    if(mode!=1U&&mode!=8U)return __real_mysmb_oam_move_column_offscreen(g,y);
     (void)consume(g,4U,0U,0U,y,4U);return 0xf8U;
 }
 void __real_mysmb_oam_dump_two_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
 void __wrap_mysmb_oam_dump_two_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
 {
-    if(mode!=2U){__real_mysmb_oam_dump_two_sprites(g,a,y);return;}
+    if(mode!=2U&&mode!=7U&&mode!=9U){__real_mysmb_oam_dump_two_sprites(g,a,y);return;}
     (void)consume(g,5U,a,0U,y,5U);
 }
 void __real_mysmb_oam_draw_one_sprite_row(struct mysmb_game *,mysmb_u8,mysmb_u8 *,mysmb_u8 *);
 void __wrap_mysmb_oam_draw_one_sprite_row(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 *x,mysmb_u8 *y)
 {
     unsigned int pos;
-    if(mode!=3U){__real_mysmb_oam_draw_one_sprite_row(g,a,x,y);return;}
+    if(mode!=3U&&mode!=6U){__real_mysmb_oam_draw_one_sprite_row(g,a,x,y);return;}
     pos=consume(g,6U,a,*x,*y,7U);*x=record[pos+4U];*y=record[pos+5U];
 }
 void __real_mysmb_oam_draw_sprite_object(struct mysmb_game *,mysmb_u8 *,mysmb_u8 *);
@@ -82,6 +82,18 @@ void __wrap_mysmb_oam_dump_six_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 
     if(mode!=5U){__real_mysmb_oam_dump_six_sprites(g,a,y);return;}
     (void)consume(g,8U,a,0U,y,5U);
 }
+void __real_mysmb_oam_dump_four_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_dump_four_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
+{
+    if(mode!=6U&&mode!=7U&&mode!=9U){__real_mysmb_oam_dump_four_sprites(g,a,y);return;}
+    (void)consume(g,9U,a,0U,y,5U);
+}
+void __real_mysmb_oam_check_block_left_column(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_check_block_left_column(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
+{
+    if(mode!=6U&&mode!=7U&&mode!=9U){__real_mysmb_oam_check_block_left_column(g,a,y);return;}
+    (void)consume(g,10U,a,0U,y,5U);
+}
 #endif
 static unsigned long read32(const unsigned char *p)
 {
@@ -94,7 +106,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f)return 65;
     if(fread(h,1U,16U,f)!=16U||memcmp(h,"MSOH\1",5U))return 66;
     mode=h[5];count=(unsigned int)read32(h+8U);current=(unsigned int)read32(h+12U);
-    if(mode>5U||count==0U||count>2048U)return 66;
+    if(mode>9U||count==0U||count>2048U)return 66;
     for(i=0U;i<count;++i,++current){
         if(fread(record,1U,sizeof(record),f)!=sizeof(record))return 66;
         memset(&game,0,sizeof(game));memcpy(game.ram,record+16U,2048U);calls=0U;x=record[1];y=record[2];
@@ -104,6 +116,9 @@ int main(int argc,char **argv)
         if(mode==3U)mysmb_oam_draw_enemy_object_row(&game,&y,&x);
         if(mode==4U)mysmb_oam_draw_one_sprite_row(&game,record[0],&x,&y);
         if(mode==5U)(void)mysmb_objects_draw_normal_enemy_graphics(&game,x);
+        if(mode==6U)mysmb_objects_draw_bouncing_block(&game,x);
+        if(mode==7U||mode==9U)mysmb_objects_draw_brick_chunks(&game,x);
+        if(mode==8U)mysmb_oam_check_block_left_column(&game,record[0],y);
         if((mode==3U||mode==4U)&&(x!=record[4]||y!=record[5]))++failures;
 #ifdef MYSMB_OAM_HELPER_CHILD_CHECK
         if(calls!=record[3])++failures;

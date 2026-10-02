@@ -3567,4 +3567,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T65 S7 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md) |
 | M2 T65 S8 | 35 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md) |
 | M2 T65 S9 | 22 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md) |
-| M2 T65 S10 | 14 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md) |
+| M2 T65 S10 | 14 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md) |

@@ -14,7 +14,7 @@ set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
 set(MYSMB_GAME_SOURCES src/game/boot.c src/game/dispatcher.c src/game/engine.c src/game/engine_slots.c src/game/engine_tail.c src/game/frame_root.c src/game/title_modes.c src/game/terminal_modes.c src/game/game.c src/game/audio.c src/game/area.c src/game/status.c src/game/area/block_metatile.c src/game/enemy/stream.c src/game/enemy/group.c src/game/enemy/init.c src/game/enemy/init_targets.c src/game/enemy/loop.c src/game/enemy/core.c src/game/enemy/dispatch_targets.c src/game/enemy/movement.c src/game/enemy/frenzy.c src/game/player.c src/game/objects.c src/game/fireball/fireball_spawn.c src/game/fireball/fireball_core.c src/game/world/movement.c src/game/world/gravity.c src/game/world/collision.c src/game/world/block_buffer.c src/game/world/bounding_box.c src/game/world/geometry.c src/game/bridge.c src/game/oam/bullet_bill_gfx.c src/game/oam/hammer_gfx.c src/game/oam/firebar_gfx.c src/game/oam/vine_gfx.c src/game/oam/sprite_stacker.c src/game/oam/sprite_dump.c src/game/enemy_bounds.c src/game/oam/power_up_gfx.c src/game/oam/object_position.c src/game/oam/sprite_row.c src/game/oam/player_gfx.c src/game/oam/fireball_gfx.c src/game/oam/block_gfx.c src/game/oam/goomba_gfx.c src/game/fireball/bubble.c src/game/oam/piranha_gfx.c src/game/oam/cheep_gfx.c src/game/oam/bloober_gfx.c src/game/oam/podoboo_gfx.c src/game/oam/normal_enemy_gfx.c src/game/oam/spiny_gfx.c src/game/oam/hammer_bro_gfx.c src/game/oam/bowser_gfx.c src/game/oam/bowser_flame_gfx.c src/game/endgame_objects.c src/game/oam/flagpole_gfx.c src/game/oam/small_platform_gfx.c src/game/render.c src/game/ppu_frame.c src/game/frame_snapshot.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/oam/enemy_offscreen.c src/game/oam/sprite_draw.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/oam/enemy_offscreen.c src/game/oam/sprite_draw.c src/game/oam/block_offscreen.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player/terrain.c src/game/player/terrain_metatiles.c src/game/player/climbing.c src/game/player/pipe_entry.c src/game/player/impede.c src/game/world/metatiles.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/area/block_buffer.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/area/area_data.c)
@@ -464,6 +464,8 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
         "-Wl,--wrap=mysmb_objects_erase_enemy"
         "-Wl,--wrap=mysmb_oam_move_column_offscreen"
         "-Wl,--wrap=mysmb_oam_dump_two_sprites"
+        "-Wl,--wrap=mysmb_oam_dump_four_sprites"
+        "-Wl,--wrap=mysmb_oam_check_block_left_column"
         "-Wl,--wrap=mysmb_oam_draw_one_sprite_row"
         "-Wl,--wrap=mysmb_oam_draw_sprite_object"
         "-Wl,--wrap=mysmb_oam_dump_six_sprites")

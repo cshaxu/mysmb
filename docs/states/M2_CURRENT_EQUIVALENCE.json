@@ -9246,16 +9246,19 @@
     {
       "id": "material-00425",
       "producer": "DefaultBlockObjTiles",
-      "consumer": "DrawBlock",
+      "consumer": "DBlkLoop",
       "storage": "ROM DefaultBlockObjTiles pair to DrawOneSpriteRow scratch $00/$01",
-      "feasiblePath": "DrawBlock walks two pairs from DefaultBlockObjTiles and invokes DrawOneSpriteRow for each row.",
-      "status": "needs-evidence",
+      "feasiblePath": "DrawBlock initializes graphics X0; DBlkLoop reads original DefaultBlockObjTiles left/right pairs at X0/2, stores RAM00 and calls actual DrawOneSpriteRow with right-tile A, whose entry stores RAM01.",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/block_gfx.c default_tiles in mysmb_objects_draw_bouncing_block",
-      "semanticContract": "The two source tile pairs reach OAM rows in source order.",
+      "semanticContract": "The four statically bound bytes reach actual DrawOneSpriteRow in source pair order, with no premature RAM01 store in its caller.",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; consumer corrected from broad DrawBlock entry to actual DBlkLoop table-read label; identity and total unchanged."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10666,16 +10669,16 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1601,
-    "needs-evidence": 386,
+    "exact": 1615,
+    "needs-evidence": 377,
     "unclassified": 0,
-    "mismatch": 5
+    "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3421,
-    "needs-evidence": 889,
+    "exact": 3457,
+    "needs-evidence": 860,
     "infeasible": 25,
-    "mismatch": 7,
+    "mismatch": 0,
     "unclassified": 0
   },
   "controlEdgeTypeCounts": {
@@ -42252,14 +42255,17 @@
       "label": "DefaultBlockObjTiles",
       "asmLine": 14119,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Four bytes at EBCD match the owner ROM; DBlkLoop reads pairs at X0/2, loading RAM00 and passing right tile A to actual DrawOneSpriteRow."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the source two-row block tiles 85,85,86,86.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Four bytes at EBCD match the owner ROM; DBlkLoop reads pairs at X0/2, loading RAM00 and passing right tile A to actual DrawOneSpriteRow.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42268,14 +42274,17 @@
       "label": "DrawBlock",
       "asmLine": 14122,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes block OAM scratch and enters two-row default tile construction.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42284,15 +42293,18 @@
       "label": "DBlkLoop",
       "asmLine": 14133,
       "cohort": "K",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 source finding: Original calls DrawOneSpriteRow after RAM00 load; current native stores RAM01 then calls DrawSpriteObject directly. Restore the actual child entry and original X-driven loop. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 source finding: Original calls DrawOneSpriteRow after RAM00 load; current native stores RAM01 then calls DrawSpriteObject directly. Restore the actual child entry and original X-driven loop. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Actual DrawOneSpriteRow updates byte X/Y; loop while X!=4. Restore ObjectOffset/OAM, then non-ground replaces top row with86 before ChkRep."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Loads adjacent default tiles and calls DrawOneSpriteRow until both rows are emitted.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Actual DrawOneSpriteRow updates byte X/Y; loop while X!=4. Restore ObjectOffset/OAM, then non-ground replaces top row with86 before ChkRep.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42301,15 +42313,18 @@
       "label": "ChkRep",
       "asmLine": 14147,
       "cohort": "K",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 source finding: Original wraps Y+1 once before actual DumpFourSpr; current per-row tile loop wraps each row and omits meaningful call. Restore real child and saved offset. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 source finding: Original wraps Y+1 once before actual DumpFourSpr; current per-row tile loop wraps each row and omits meaningful call. Restore real child and saved offset. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Only metatileC4 invokes real DumpFourSpr with87 and byte-wrapped Y+1. Restore Y, then ground palette3/non-ground palette1 reaches SetBFlip."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies non-ground lineless tiles or used-block tile/attribute replacement.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Only metatileC4 invokes real DumpFourSpr with87 and byte-wrapped Y+1. Restore Y, then ground palette3/non-ground palette1 reaches SetBFlip.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42318,15 +42333,18 @@
       "label": "SetBFlip",
       "asmLine": 14159,
       "cohort": "K",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 source finding: Original writes attributes first,second,fourth,third; current writes first,second,third,fourth. Restore ordered writes. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 source finding: Original writes attributes first,second,fourth,third; current writes first,second,third,fourth. Restore ordered writes. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Reload ObjectOffset, store first attribute, horizontal second, both flips fourth, vertical third in original order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Builds the four source attribute variants for the used block by AreaType.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Reload ObjectOffset, store first attribute, horizontal second, both flips fourth, vertical third in original order.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42335,14 +42353,17 @@
       "label": "BlkOffscr",
       "asmLine": 14167,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Read and preserve mask; bit2 hides right column with two ordered absolute indexed stores."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Handles d2 right-column hiding before restoring the original offscreen bits.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Read and preserve mask; bit2 hides right column with two ordered absolute indexed stores.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42351,14 +42372,17 @@
       "label": "PullOfsB",
       "asmLine": 14174,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Resume with saved original mask and meaningful shared ChkLeftCo entry."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Restores bits and enters d3 left-column handling.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Resume with saved original mask and meaningful shared ChkLeftCo entry.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42367,63 +42391,79 @@
       "label": "ChkLeftCo",
       "asmLine": 14175,
       "cohort": "K",
-      "status": "mismatch",
-      "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "status": "exact",
+      "currentOwner": "src/game/oam/block_offscreen.c and src/game/oam/sprite_dump.c",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 source finding: Original meaningful mask8 entry is shared by block/chunks and falls through MoveColOffscreen; native duplicates direct clipping. Restore shared entry. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 source finding: Original meaningful mask8 entry is shared by block/chunks and falls through MoveColOffscreen; native duplicates direct clipping. Restore shared entry. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Mask bit3, return if clear, otherwise enter actual MoveColOffscreen with the same byte Y."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Hides the left column only for d3 and otherwise returns.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Mask bit3, return if clear, otherwise enter actual MoveColOffscreen with the same byte Y.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
       "label": "MoveColOffscreen",
       "asmLine": 14178,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "status": "exact",
+      "currentOwner": "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Load F8, store first then second row at absolute Sprite_Data+Y/+8+Y, return F8; both block and enemy column callers use this single leaf."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes f8 to the selected two-row/column OAM Y positions.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Load F8, store first then second row at absolute Sprite_Data+Y/+8+Y, return F8; both block and enemy column callers use this single leaf.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/block_offscreen.c"
       ]
     },
     {
       "label": "ExDBlk",
       "asmLine": 14182,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_bouncing_block",
+      "status": "exact",
+      "currentOwner": "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Shared block/column return follows the original conditional leaf stores, with no extra game writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns after replacement and offscreen processing.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Shared block/column return follows the original conditional leaf stores, with no extra game writes.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/block_offscreen.c"
       ]
     },
     {
       "label": "DrawBrickChunks",
       "asmLine": 14187,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "Additional S10 source-order finding repaired: native formerly omitted initial RAM00=2 on non-state5 path; current code preserves the write before testing engine state and possible palette3 replacement.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects end-level ball tile/palette or normal brick chunk tile/palette before common drawing.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42432,15 +42472,18 @@
       "label": "DChunks",
       "asmLine": 14197,
       "cohort": "K",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 source finding: Original real DumpFourSpr(tile), DumpFourSpr(attribute), DumpTwoSpr(Y), ChkLeftCo and optional DumpTwoSpr(offscreen) calls are replaced by interleaved loops/raw stores; Y+1/Y+2 wrapping differs at high OAM offsets. Restore original calls/order and carry-preserving arithmetic. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 source finding: Original real DumpFourSpr(tile), DumpFourSpr(attribute), DumpTwoSpr(Y), ChkLeftCo and optional DumpTwoSpr(offscreen) calls are replaced by interleaved loops/raw stores; Y+1/Y+2 wrapping differs at high OAM offsets. Restore original calls/order and carry-preserving arithmetic. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Actual tile/attribute DumpFourSpr calls use consecutive byte Y increments; restore Y and actual DumpTwoSpr for top Y. Preserve coordinate write order and SEC/SBC plus both ADC carries, then actual ChkLeftCo and optional offscreen DumpTwoSpr."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes four tiles/attributes, computes source carry-sensitive reflected X positions, writes both chunk rows and applies left/top hides.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Actual tile/attribute DumpFourSpr calls use consecutive byte Y increments; restore Y and actual DumpTwoSpr for top Y. Preserve coordinate write order and SEC/SBC plus both ADC carries, then actual ChkLeftCo and optional offscreen DumpTwoSpr.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42449,14 +42492,17 @@
       "label": "ChnkOfs",
       "asmLine": 14242,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Only negative original relative X compares left and right sprite X; left>=right hides right column in original ordered stores."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses signed original-relative X and source X comparison to hide the right chunk column only on the wrapped-left overlap case.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Only negative original relative X compares left and right sprite X; left>=right hides right column in original ordered stores.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -42465,14 +42511,17 @@
       "label": "ExBCDr",
       "asmLine": 14250,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_brick_chunks",
+      "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Return after selected column/top-row clipping; no additional native clipping rule."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns after brick-chunk OAM and offscreen handling.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Return after selected column/top-row clipping; no additional native clipping rule.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c"
       ]
@@ -113052,15 +113101,21 @@
       "instruction": "ldx",
       "id": "control-02977",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough DrawBlock -> DBlkLoop, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DrawBlock -> DBlkLoop with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough DrawBlock -> DBlkLoop, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113071,17 +113126,22 @@
       "instruction": "jsr",
       "id": "control-02978",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 missing meaningful original call DBlkLoop -> DrawOneSpriteRow; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 missing meaningful original call DBlkLoop -> DrawOneSpriteRow; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original call DBlkLoop -> DrawOneSpriteRow, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DBlkLoop -> DrawOneSpriteRow with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original call DBlkLoop -> DrawOneSpriteRow, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113092,15 +113152,21 @@
       "instruction": "bne",
       "id": "control-02979",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch DBlkLoop -> DBlkLoop, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DBlkLoop -> DBlkLoop with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch DBlkLoop -> DBlkLoop, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113111,15 +113177,21 @@
       "instruction": "beq",
       "id": "control-02980",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch DBlkLoop -> ChkRep, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DBlkLoop -> ChkRep with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch DBlkLoop -> ChkRep, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113130,15 +113202,21 @@
       "instruction": "sta",
       "id": "control-02981",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough DBlkLoop -> ChkRep, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DBlkLoop -> ChkRep with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough DBlkLoop -> ChkRep, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113149,15 +113227,21 @@
       "instruction": "bne",
       "id": "control-02982",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch ChkRep -> BlkOffscr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation ChkRep -> BlkOffscr with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch ChkRep -> BlkOffscr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113168,16 +113252,21 @@
       "instruction": "jsr",
       "id": "control-02983",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 missing meaningful original call ChkRep -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 missing meaningful original call ChkRep -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original call ChkRep -> DumpFourSpr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation ChkRep -> DumpFourSpr with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original call ChkRep -> DumpFourSpr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -113189,15 +113278,21 @@
       "instruction": "beq",
       "id": "control-02984",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch ChkRep -> SetBFlip, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation ChkRep -> SetBFlip with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch ChkRep -> SetBFlip, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113208,15 +113303,21 @@
       "instruction": "lsr",
       "id": "control-02985",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough ChkRep -> SetBFlip, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation ChkRep -> SetBFlip with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough ChkRep -> SetBFlip, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113227,15 +113328,21 @@
       "instruction": "sta",
       "id": "control-02986",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough SetBFlip -> BlkOffscr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SetBFlip -> BlkOffscr with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough SetBFlip -> BlkOffscr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113246,15 +113353,21 @@
       "instruction": "beq",
       "id": "control-02987",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch BlkOffscr -> PullOfsB, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation BlkOffscr -> PullOfsB with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch BlkOffscr -> PullOfsB, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113265,15 +113378,21 @@
       "instruction": "sta",
       "id": "control-02988",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough BlkOffscr -> PullOfsB, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation BlkOffscr -> PullOfsB with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough BlkOffscr -> PullOfsB, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113284,15 +113403,21 @@
       "instruction": "pla",
       "id": "control-02989",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough PullOfsB -> ChkLeftCo, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation PullOfsB -> ChkLeftCo with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough PullOfsB -> ChkLeftCo, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113303,15 +113428,21 @@
       "instruction": "beq",
       "id": "control-02990",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch ChkLeftCo -> ExDBlk, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation ChkLeftCo -> ExDBlk with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch ChkLeftCo -> ExDBlk, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113322,15 +113453,21 @@
       "instruction": "beq",
       "id": "control-02991",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough ChkLeftCo -> MoveColOffscreen, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation ChkLeftCo -> MoveColOffscreen with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough ChkLeftCo -> MoveColOffscreen, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113341,15 +113478,21 @@
       "instruction": "sta",
       "id": "control-02992",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough MoveColOffscreen -> ExDBlk, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation MoveColOffscreen -> ExDBlk with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough MoveColOffscreen -> ExDBlk, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113360,15 +113503,21 @@
       "instruction": "beq",
       "id": "control-02993",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch DrawBrickChunks -> DChunks, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DrawBrickChunks -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch DrawBrickChunks -> DChunks, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113379,15 +113528,21 @@
       "instruction": "lda",
       "id": "control-02994",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough DrawBrickChunks -> DChunks, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DrawBrickChunks -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough DrawBrickChunks -> DChunks, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113398,16 +113553,21 @@
       "instruction": "jsr",
       "id": "control-02995",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 missing meaningful original call DChunks -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original call DChunks -> DumpFourSpr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original call DChunks -> DumpFourSpr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -113419,16 +113579,21 @@
       "instruction": "jsr",
       "id": "control-02996",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 missing meaningful original call DChunks -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpFourSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original call DChunks -> DumpFourSpr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> DumpFourSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original call DChunks -> DumpFourSpr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -113440,16 +113605,21 @@
       "instruction": "jsr",
       "id": "control-02997",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 missing meaningful original call DChunks -> DumpTwoSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpTwoSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original call DChunks -> DumpTwoSpr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> DumpTwoSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original call DChunks -> DumpTwoSpr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -113461,16 +113631,22 @@
       "instruction": "jsr",
       "id": "control-02998",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 missing meaningful original call DChunks -> ChkLeftCo; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 missing meaningful original call DChunks -> ChkLeftCo; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original call DChunks -> ChkLeftCo, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> ChkLeftCo with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original call DChunks -> ChkLeftCo, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113481,15 +113657,21 @@
       "instruction": "bcc",
       "id": "control-02999",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch DChunks -> ChnkOfs, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DChunks -> ChnkOfs with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch DChunks -> ChnkOfs, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113500,16 +113682,21 @@
       "instruction": "jsr",
       "id": "control-03000",
       "cohort": "K",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 missing meaningful original call DChunks -> DumpTwoSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S10 missing meaningful original call DChunks -> DumpTwoSpr; restore actual shared entry and independent input/return proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original call DChunks -> DumpTwoSpr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DChunks -> DumpTwoSpr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original call DChunks -> DumpTwoSpr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -113521,15 +113708,21 @@
       "instruction": "jsr",
       "id": "control-03001",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough DChunks -> ChnkOfs, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DChunks -> ChnkOfs with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough DChunks -> ChnkOfs, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113540,15 +113733,21 @@
       "instruction": "bpl",
       "id": "control-03002",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch ChnkOfs -> ExBCDr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation ChnkOfs -> ExBCDr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch ChnkOfs -> ExBCDr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113559,15 +113758,21 @@
       "instruction": "bcc",
       "id": "control-03003",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original branch ChnkOfs -> ExBCDr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation ChnkOfs -> ExBCDr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original branch ChnkOfs -> ExBCDr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -113578,15 +113783,21 @@
       "instruction": "sta",
       "id": "control-03004",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original fallthrough ChnkOfs -> ExBCDr, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation ChnkOfs -> ExBCDr with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original fallthrough ChnkOfs -> ExBCDr, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -134749,16 +134960,21 @@
       "instruction": "rts/rti",
       "id": "control-04021",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam normal-enemy row/row-offscreen helper counterpart",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required."
+        "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return MoveColOffscreen -> MoveESprColOffscreen, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy OAM row return relation MoveColOffscreen \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 MoveESprColOffscreen, including tile/scratch, OAM offset and tail-transfer ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return MoveColOffscreen -> MoveESprColOffscreen, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
-        "src/game/oam/normal_enemy_gfx.c"
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -134769,16 +134985,21 @@
       "instruction": "rts/rti",
       "id": "control-04022",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return DrawOneSpriteRow -> DBlkLoop, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DrawOneSpriteRow -> DBlkLoop with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return DrawOneSpriteRow -> DBlkLoop, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -134789,15 +135010,20 @@
       "instruction": "rts/rti",
       "id": "control-04023",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_bouncing_block and shared row helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required."
+        "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return DumpFourSpr -> ChkRep, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpFourSpr -> ChkRep with source block/area/offscreen predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return DumpFourSpr -> ChkRep, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -134809,15 +135035,20 @@
       "instruction": "rts/rti",
       "id": "control-04024",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return DumpFourSpr -> DChunks, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return DumpFourSpr -> DChunks, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -134829,15 +135060,20 @@
       "instruction": "rts/rti",
       "id": "control-04025",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return DumpFourSpr -> DChunks, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return DumpFourSpr -> DChunks, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -134849,15 +135085,20 @@
       "instruction": "rts/rti",
       "id": "control-04026",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return DumpTwoSpr -> DChunks, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return DumpTwoSpr -> DChunks, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },
@@ -134869,15 +135110,21 @@
       "instruction": "rts/rti",
       "id": "control-04027",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return ChkLeftCo -> DChunks, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation ChkLeftCo -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return ChkLeftCo -> DChunks, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c"
+        "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -134888,15 +135135,20 @@
       "instruction": "rts/rti",
       "id": "control-04028",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/block_gfx.c:mysmb_objects_draw_brick_chunks and shared OAM helpers",
+      "status": "exact",
+      "currentCounterpart": "actual shared block/chunk row/dump/left-column sequence with original continuation",
       "semanticEvidence": [
-        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required."
+        "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Preserves original return DumpTwoSpr -> DChunks, including predicate, ordered state, child arguments and continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> DChunks with source mode/offscreen predicate, carry-sensitive coordinate handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Preserves original return DumpTwoSpr -> DChunks, including predicate, ordered state, child arguments and continuation.",
       "currentSourcePaths": [
         "src/game/oam/block_gfx.c",
+        "src/game/oam/block_offscreen.c",
+        "src/game/oam/sprite_row.c",
         "src/game/oam/sprite_dump.c"
       ]
     },

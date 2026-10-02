@@ -70,6 +70,8 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb
 void mysmb_oam_draw_enemy_object_row(struct mysmb_game *game,
     mysmb_u8 *oam_offset, mysmb_u8 *graphics_index);
 mysmb_u8 mysmb_oam_move_column_offscreen(struct mysmb_game *game, mysmb_u8 oam);
+void mysmb_oam_check_block_left_column(struct mysmb_game *game,
+    mysmb_u8 bits, mysmb_u8 oam);
 void mysmb_oam_move_enemy_column_offscreen(struct mysmb_game *game,
     mysmb_u8 slot, mysmb_u8 column);
 void mysmb_oam_move_enemy_row_offscreen(struct mysmb_game *game,

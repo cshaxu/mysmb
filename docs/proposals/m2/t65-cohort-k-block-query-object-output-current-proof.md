@@ -1256,3 +1256,101 @@ dump and shared left-column entries, high-offset byte wrap and attribute/
 coordinate store order. Source two-ADC reflected-X carry must remain intact,
 not be replaced with simplified arithmetic. No product change by admission;
 the three committed S9 P3 packages remain current.
+
+## S10 closure - original block/chunk call graph and byte arithmetic
+
+All14 planned labels are freshly current-exact, none deferred/transferred.
+Current nodes1601 ->1615/1992, feasible controls3421 ->3457/4317(raw4342,
+infeasible25 unchanged), material389 ->390/492 partial. All36 pending owned
+controls close; no new infeasible relation. Already exact02976 retains credit.
+The named external caller boundaries01365/01375/03756/03760 remain pending
+cross-cohort integration; no caller-node credit. T65 remains open with18
+pending nodes. S11 is next and not admitted by this closure. Historical
+expected/actual additions remain empty, historical mapping1992/1992 distinct.
+
+| Exact node | Original current contract |
+| --- | --- |
+| DefaultBlockObjTiles | Four bytes at EBCD match the owner ROM; DBlkLoop reads pairs at X0/2, loading RAM00 and passing right tile A to actual DrawOneSpriteRow. |
+| DrawBlock | Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop. |
+| DBlkLoop | Actual DrawOneSpriteRow updates byte X/Y; loop while X!=4. Restore ObjectOffset/OAM, then non-ground replaces top row with86 before ChkRep. |
+| ChkRep | Only metatileC4 invokes real DumpFourSpr with87 and byte-wrapped Y+1. Restore Y, then ground palette3/non-ground palette1 reaches SetBFlip. |
+| SetBFlip | Reload ObjectOffset, store first attribute, horizontal second, both flips fourth, vertical third in original order. |
+| BlkOffscr | Read and preserve mask; bit2 hides right column with two ordered absolute indexed stores. |
+| PullOfsB | Resume with saved original mask and meaningful shared ChkLeftCo entry. |
+| ChkLeftCo | Mask bit3, return if clear, otherwise enter actual MoveColOffscreen with the same byte Y. |
+| MoveColOffscreen | Load F8, store first then second row at absolute Sprite_Data+Y/+8+Y, return F8; both block and enemy column callers use this single leaf. |
+| ExDBlk | Shared block/column return follows the original conditional leaf stores, with no extra game writes. |
+| DrawBrickChunks | Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks. |
+| DChunks | Actual tile/attribute DumpFourSpr calls use consecutive byte Y increments; restore Y and actual DumpTwoSpr for top Y. Preserve coordinate write order and SEC/SBC plus both ADC carries, then actual ChkLeftCo and optional offscreen DumpTwoSpr. |
+| ChnkOfs | Only negative original relative X compares left and right sprite X; left>=right hides right column in original ordered stores. |
+| ExBCDr | Return after selected column/top-row clipping; no additional native clipping rule. |
+
+Before repair two controlled2048-root whole-output batches on x64 produced
+256 block and512 chunk differing byte comparisons, not distinct game bugs.
+The identical fixtures are regenerated after repair and both full and
+independent-child checkers now match on x86/x64. Broader matrices extend the
+same original entry contracts and preserve meaningful child input timing.
+
+tools/reference_oam_helper_probe.c and test/oam_helper_route_check.c reuse
+the bounded batch format with added block/chunk/left-column/carry modes.
+Nested dump fallthrough leaves are captured only when they are the selected
+root boundary; the parent dump snapshot is not confused with a second child.
+Each consumed raw chunk is at most2048 roots/58851344 bytes,120seconds and
+524288steps/case, below the192MiB S10 cap. Raw snapshots are removed after
+both widths/checkers pass; only neutral harnesses and summary evidence track.
+
+Full execution and independently intercepted child checking compare1841 RAM
+bytes/root, including aliases0109-0139 and all scratch/OAM; true CPU stack is
+excluded. Child checks assert relevant A/X/Y, compare input RAM, substitute
+original child output/row X/Y and verify caller continuation/final RAM. Row
+entry ABI is already proved by S9 and is unchanged. Volatile CPU flags and
+unused transient registers are not exposed as native game state. Actual
+original RTS continuation addresses are retained in the neutral summaries.
+
+| Route mode / entry | Roots | Actual child returns | Scope |
+| --- | ---: | ---: | --- |
+| 6 | 263168 | 921088 | DrawBlock: all256 OAM x all256 masks x area1/non1 x metatileC4/other; extra1024 area2/3 samples across offsets and used/normal variants. |
+| 7 | 131072 | 589824 | DrawBrickChunks: all256 OAM x all256 masks for engine5/non5; coordinate/frame inputs vary. |
+| 8 | 65536 | 32768 | ChkLeftCo: all256 incoming masks x all256 byte Y offsets. |
+| 9 | 131072 | 589824 | DrawBrickChunks carry matrix: all256 original-relative X x all256 current-relative X at both E8/FF OAM offsets; second X varies and source carry chains execute. |
+| 1 | 65536 | 65536 | MoveESprColOffscreen: all256 OAM offsets x all256 incoming A adders; current actual MoveColOffscreen return to EBC9 proves04021. |
+
+All656384 roots have zero differences on both widths under both checkers.
+Per-instruction visit/taken/fall evidence covers every13 code labels and all
+owned branch/call/fallthrough/return relations. DefaultBlockObjTiles is data,
+not an executed label: allfour bytes bind exactly at EBCD and both source
+X0/2 pair reads reach real DrawOneSpriteRow inputs. Material00425 consumer
+is corrected to DBlkLoop, preserving relation identity and total492.
+Mode6 actual continuations: 8001:263168, ebf2:526336, ec17:131584.
+Mode7 actual continuations: ec6c:131072, ec7a:131072, ec82:131072, ecbe:131072, ecc9:65536.
+Mode8 actual continuations: 8001:32768.
+Mode9 actual continuations: ec6c:131072, ec7a:131072, ec82:131072, ecbe:131072, ecc9:65536.
+Mode1 actual continuations: ebc9:65536.
+
+Similar-issue sweep: the two block/chunk entry owners now invoke actual
+DrawOneSpriteRow, DumpFourSpr, DumpTwoSpr and one shared ChkLeftCo. Its
+conditional logic resides in meaningful block_offscreen.c and calls the
+existing single MoveColOffscreen leaf; no forwarding-only wrapper or platform
+game logic. Original X-driven row loop and Y+1/Y+2 byte increments replace
+raw row loops. Attribute and coordinate store order is preserved. Additional
+initial palette2-before-test write is restored before possible palette3.
+The existing explicit SEC/SBC then two ADC carry translation is retained,
+not simplified. Other legacy facade dispositions from S9 remain unchanged.
+CMake/OpenNT lists include the same new shared owner.
+Production search finds only blocks/lifetime.c calling the two canonical block
+entries, plus their definitions and declared header. Both consumers reach the
+repaired owners; their four external original caller boundaries remain named
+pending cross-cohort proof, without inferred credit.
+
+Operational track: complete C90 x86/x64 builds pass,14/14 focused tests per
+width pass, including block/sprite/core/purity/audio/focus/product-self tests.
+Original OpenNT DOS16 link succeeds with existing OLDNAMES.LIB warning;
+no DOS gameplay/performance qualification claimed. Fresh three packages
+include audio/title/focus pause; explicit owner delivery authorization
+overrides default local-artifact exclusion.
+
+- mysmb16.exe: 261575 bytes; SHA-256 0c5b7ad83ebafd604923262c34f28927f1cf731da2f13a2fe1916ce6caba5420.
+- mysmb32.exe: 374302 bytes; SHA-256 61bbe8cf09cc0b5aef7256558394b54c4bba3307dadd16654cd60fd16c6b63cb.
+- mysmb64.exe: 381335 bytes; SHA-256 c5c6cc921dc1bdc6ace6af137e77993248b8d808168be07efcece990e7096d7d.
+
+Ledger admission/closure, documentation and whitespace gates are rerun; consumed raw recorder output is removed. S10 closes its scope only; M2 and T65 remain open.
