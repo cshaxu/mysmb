@@ -37861,13 +37861,16 @@
       "label": "HandlePipeEntry",
       "asmLine": 12295,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Requires Down and exact two-foot pipe tiles; starts vertical entry and optionally executes warp-zone world/area selection/reset.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -37877,13 +37880,16 @@
       "label": "GetWNum",
       "asmLine": 12326,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Selects warp pipe world by zone and player X region, then maps it to area offset and resets entry state.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -37893,13 +37899,16 @@
       "label": "ExPipeE",
       "asmLine": 12341,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Returns from pipe entry handling.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -37909,13 +37918,16 @@
       "label": "ImpedePlayerMove",
       "asmLine": 12343,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Stops motion only when movement points into collision side, adjusts X/page and clears matching collision bit.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -37925,13 +37937,16 @@
       "label": "RImpd",
       "asmLine": 12354,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Handles right-side collision direction test and adjustment choice.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -37941,13 +37956,16 @@
       "label": "NXSpd",
       "asmLine": 12358,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Sets side timer, clears horizontal speed and applies signed X/page displacement.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -37957,13 +37975,16 @@
       "label": "PlatF",
       "asmLine": 12365,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Stores page carry adjustment and applies position update.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -37973,13 +37994,16 @@
       "label": "ExIPM",
       "asmLine": 12372,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Clears appropriate collision bit and returns.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102468,12 +102492,15 @@
       "instruction": "beq",
       "id": "control-02562",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry Ã¢â€ â€™ ExPipeE with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102487,12 +102514,15 @@
       "instruction": "bne",
       "id": "control-02563",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry Ã¢â€ â€™ ExPipeE with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102506,12 +102536,15 @@
       "instruction": "bne",
       "id": "control-02564",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry Ã¢â€ â€™ ExPipeE with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102525,12 +102558,15 @@
       "instruction": "beq",
       "id": "control-02565",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry Ã¢â€ â€™ ExPipeE with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102544,12 +102580,15 @@
       "instruction": "bcc",
       "id": "control-02566",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry Ã¢â€ â€™ GetWNum with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102563,12 +102602,15 @@
       "instruction": "bcc",
       "id": "control-02567",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation HandlePipeEntry Ã¢â€ â€™ GetWNum with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102582,12 +102624,15 @@
       "instruction": "inx",
       "id": "control-02568",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede fallthrough relation HandlePipeEntry Ã¢â€ â€™ GetWNum with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102601,12 +102646,15 @@
       "instruction": "inc",
       "id": "control-02569",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede fallthrough relation GetWNum Ã¢â€ â€™ ExPipeE with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c"
@@ -102620,12 +102668,15 @@
       "instruction": "bne",
       "id": "control-02570",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation ImpedePlayerMove Ã¢â€ â€™ RImpd with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102639,12 +102690,15 @@
       "instruction": "bmi",
       "id": "control-02571",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation ImpedePlayerMove Ã¢â€ â€™ ExIPM with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102658,12 +102712,15 @@
       "instruction": "jmp",
       "id": "control-02572",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede jump relation ImpedePlayerMove Ã¢â€ â€™ NXSpd with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102677,12 +102734,15 @@
       "instruction": "bpl",
       "id": "control-02573",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation RImpd Ã¢â€ â€™ ExIPM with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102696,12 +102756,15 @@
       "instruction": "lda",
       "id": "control-02574",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede fallthrough relation RImpd Ã¢â€ â€™ NXSpd with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102715,12 +102778,15 @@
       "instruction": "bpl",
       "id": "control-02575",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede branch relation NXSpd Ã¢â€ â€™ PlatF with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102734,12 +102800,15 @@
       "instruction": "dey",
       "id": "control-02576",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede fallthrough relation NXSpd Ã¢â€ â€™ PlatF with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
@@ -102753,12 +102822,15 @@
       "instruction": "sta",
       "id": "control-02577",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/pipe_entry.c and terrain children",
       "semanticEvidence": [
-        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+      ],
       "semanticContract": "Preserves pipe/impede fallthrough relation PlatF Ã¢â€ â€™ ExIPM with source input, side and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c"
