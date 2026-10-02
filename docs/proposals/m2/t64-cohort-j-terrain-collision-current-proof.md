@@ -202,3 +202,29 @@ S4 marks three nodes, eight source-owned controls (`control-02236` through
 `material-00348`, `material-00349`) exact. Current totals: historical
 **1,992 / 1,992**; current exact nodes **1,252 / 1,992**; current exact
 feasible controls **2,529 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S5 admission — power-up pickup response
+
+S5 admits `HandlePowerUpCollision -> NoPUp` at `$D800-$D84C`:
+`HandlePowerUpCollision`, `Shroom_Flower_PUp`, `SetFor1Up`, `UpToSuper`,
+`UpToFiery` and `NoPUp`. Its shared owner is
+`src/game/world/powerup_collision.c`; S4 is the predecessor and S6 begins
+player/enemy contact. Erase, score, palette and routine children retain their
+separate owners while this chain proves their inputs, ordering and return paths.
+
+The ROM-logic track compares common erase/score/sound ordering, type carry and
+1UP equality dispatch, type three's modifier overwrite, star timer/music
+path, status zero/one/other routing, palette call before fiery routine setup,
+routine values nine/twelve and the return tails. The operational track replays
+retained controlled original-ROM pickup records in one x86 and one x64 process,
+then runs the focused pickup contract, platform-purity gate and OpenNT DOS16
+shared-source link.
+
+### S5 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,252 / 1,992**.
+- Current exact feasible controls: **2,529 / 4,324**.
+- Scope: **6** labels; expected fresh historical matches: **0**; maximum
+  historical complete: **1,992 / 1,992**.
+- Current-exact promotions are determined only after both audit tracks finish.
