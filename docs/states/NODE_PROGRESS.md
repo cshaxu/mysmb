@@ -1,16 +1,20 @@
 # M2 ROM conformance node progress
 
-## M2 T67 S6 - active census/integration
+## M2 T67 - closed sound-command cohort
 
-[Exact126-node census and combined original routes](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
-admits126 already-exact nodes, expected fresh0/max1842/1992. Current1842/1992
-nodes,3915/4286 controls(raw4342,infeasible56),408/493 material partial;
-historical1992/1992 separate. T67 remains open until member/cross-chain and
-integrated operational evidence agree; no later cohort admission.
+[Complete126-label/296-control/5-material census](../history/M2-T67-sound-command-current-proof.md)
+closes126 nodes/266 feasible controls/5 material exact,30 impossible retained.
+S6 fresh credit0; current1842/1992 nodes,3915/4286 controls(raw4342,infeasible56),
+408/493 material partial; historical1992/1992 separate.73728 new combined
+SoundEngine roots agree each width, four calls/returns each65536. Full builds/
+248 tests each/purity/original DOS16 link pass;3 S5 EXEs byte-identical retained.
+No owned deferral/transfer; external A/N joins remain explicitly pending.
+Remaining150 nodes/371 feasible controls/85 enumerated material rows; M2 open,
+T68 next unadmitted before cross-cohort/final certification.
 
 ## M2 T67 S5 - closed music-prefix chain
 
-[All27 labels/82 raw controls and repairs](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+[All27 labels/82 raw controls and repairs](../history/M2-T67-sound-command-current-proof.md)
 close27 nodes/78 feasible controls exact,4 impossible fallthroughs proven.
 Current1842/1992 nodes,3915/4286 controls(raw4342,infeasible56),408/493 material
 partial; historical1992/1992 separate.20736 final original/native roots match
@@ -20,7 +24,7 @@ open for S6 census/integration, next unadmitted.
 
 ## M2 T67 S4 - closed noise effect chain
 
-[All11 labels/17 controls and repair](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+[All11 labels/17 controls and repair](../history/M2-T67-sound-command-current-proof.md)
 close exact with material00442, no deferral/transfer/infeasible shortcut.
 Current1815/1992 nodes,3837/4290 feasible controls(raw4342,infeasible52),
 408/493 material partial; historical1992/1992 distinct.69760 original roots
@@ -31,7 +35,7 @@ original DOS16 link pass. All3 owner-authorized EXEs refreshed. T67 open with
 
 ## M2 T67 S3 - closed Square2 effect chain
 
-[Exact36 completed labels and71 raw control dispositions](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+[Exact36 completed labels and71 raw control dispositions](../history/M2-T67-sound-command-current-proof.md)
 closes36 expected nodes/60 feasible controls/material00439-00441;11 impossible
 controls retained raw with explicit source proofs. Current1804/1992 nodes,
 3820/4290 feasible controls(raw4342,infeasible52),407/493 material partial.
@@ -42,7 +46,7 @@ or transfer; T67 has38 pending nodes, S4 noise next unadmitted.
 
 ## M2 T67 S2 - closed Square1 effect chain
 
-[Exact30 completed labels and77 raw control dispositions](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+[Exact30 completed labels and77 raw control dispositions](../history/M2-T67-sound-command-current-proof.md)
 closes30 expected nodes/66 feasible controls/material00438;11 impossible
 fallthroughs retained raw with explicit source proofs. Current1768/1992 nodes,
 3760/4301 feasible controls(raw4342,infeasible41),404/493 material partial.
@@ -53,7 +57,7 @@ deferral or transfer; T67 has74 pending nodes, S3 next unadmitted.
 
 ## M2 T67 S1 - closed SoundEngine and register chain
 
-[Exact22 completed labels and owned edge evidence](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+[Exact22 completed labels and owned edge evidence](../history/M2-T67-sound-command-current-proof.md)
 closes22 expected nodes and45 feasible controls;4 instruction-proven impossible
 fallthroughs retained raw. Current1738/1992 nodes,3694/4312 controls(raw4342,
 infeasible30),403/493 material partial unchanged. Historical1992/1992 separate.

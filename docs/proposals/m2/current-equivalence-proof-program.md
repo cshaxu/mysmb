@@ -246,7 +246,7 @@ pending for cross-cohort/T69. T67 next unadmitted; M2 not complete.
 
 ## T67 admission checkpoint
 
-[T67 exact126-node plan](t67-cohort-m-sound-command-current-proof.md) follows the
+[T67 exact126-node plan](../../history/M2-T67-sound-command-current-proof.md) follows the
 actual M inventory, including its music selection and partial stream prefixes.
 S1 admits22 SoundEngine/register nodes, intended fresh22/max1738/1992; no
 admission credit. Current1716/1992 nodes,3649/4316 controls,403/493 material
@@ -254,7 +254,7 @@ partial. Remaining S follows source order; T68 owns N, T69 external joins.
 
 ## Current checkpoint after T67 S1
 
-[T67 S1](t67-cohort-m-sound-command-current-proof.md) closes22 nodes and45
+[T67 S1](../../history/M2-T67-sound-command-current-proof.md) closes22 nodes and45
 feasible controls, with four instruction-proven impossible fallthroughs retained.
 Current1738/1992 nodes,3694/4312 controls(raw4342,infeasible30),403/493 material
 partial; historical1992/1992 separate.15,360 original roots agree both widths
@@ -263,7 +263,7 @@ No product differences,3 existing EXEs retained; S2 next unadmitted, T67 open.
 
 ## Current checkpoint after T67 S2
 
-[T67 S2](t67-cohort-m-sound-command-current-proof.md) closes30 Square1 nodes,
+[T67 S2](../../history/M2-T67-sound-command-current-proof.md) closes30 Square1 nodes,
 66 feasible controls/material00438, with11 source-infeasible fallthroughs retained.
 Current1768/1992 nodes,3760/4301 controls(raw4342,infeasible41),404/493 material
 partial; historical1992/1992 separate.69,632 actual original roots agree both
@@ -272,7 +272,7 @@ No product repair,3 existing EXEs retained; S3 next unadmitted, T67 open.
 
 ## Current checkpoint after T67 S3
 
-[T67 S3](t67-cohort-m-sound-command-current-proof.md) closes36 Square2 nodes,
+[T67 S3](../../history/M2-T67-sound-command-current-proof.md) closes36 Square2 nodes,
 60 feasible controls and material00439-00441, with11 impossible controls retained.
 Current1804/1992 nodes,3820/4290 controls(raw4342,infeasible52),407/493 material
 partial; historical1992/1992 separate.135,168 actual original roots agree both
@@ -281,7 +281,7 @@ No product repair,3 existing EXEs retained; S4 next unadmitted, T67 open.
 
 ## Current checkpoint after T67 S4
 
-[T67 S4](t67-cohort-m-sound-command-current-proof.md) closes11 noise nodes,
+[T67 S4](../../history/M2-T67-sound-command-current-proof.md) closes11 noise nodes,
 17 feasible controls/material00442 after repairing zero-envelope stream
 fallthrough;69760 unchanged original roots agree each width. Current1815/1992
 nodes,3837/4290 controls(raw4342,infeasible52),408/493 material partial;
@@ -290,10 +290,21 @@ original DOS16 link pass; all3 EXEs refreshed. S5 next unadmitted, T67 open.
 
 ## Current checkpoint after T67 S5
 
-[T67 S5](t67-cohort-m-sound-command-current-proof.md) closes27 music-prefix
+[T67 S5](../../history/M2-T67-sound-command-current-proof.md) closes27 music-prefix
 nodes/78 controls after original ground-loop/victory-mask/header repairs;
 4 impossible raw fallthroughs retained. Current1842/1992 nodes,3915/4286
 controls(raw4342,infeasible56),408/493 material partial; historical1992/1992
 separate.20736 roots both widths zero differences;248 tests each/256 header
 selectors each/OpenNT link pass;3 EXEs refreshed. All126 T67 nodes exact;
 T67 open for S6 census/integration, next unadmitted.
+
+## Current checkpoint after T67 closure
+
+[Closed T67](../../history/M2-T67-sound-command-current-proof.md) proves all126
+M nodes/266 feasible controls/5 material rows;30 impossible raw controls retained.
+S6 adds73728 mixed/title/pause original roots each width, zero differences and
+actual four channel call/return joins. Current1842/1992 nodes,3915/4286 controls
+(raw4342,infeasible56),408/493 material partial; historical1992/1992 separate.
+Full builds/248 tests each/purity/OpenNT link pass;3 S5 products unchanged.
+M2 still open; remaining150 nodes/371 feasible controls/85 material rows.
+T68 next unadmitted, then cross-cohort/final certification.

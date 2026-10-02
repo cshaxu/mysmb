@@ -7029,13 +7029,13 @@
     {
       "id": "M2 T67",
       "evidence": [
-        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md"
+        "docs/history/M2-T67-sound-command-current-proof.md"
       ],
       "subtasks": [
         {
           "id": "M2 T67 S1",
           "evidence": [
-            "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md"
+            "docs/history/M2-T67-sound-command-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7048,7 +7048,7 @@
         {
           "id": "M2 T67 S2",
           "evidence": [
-            "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md"
+            "docs/history/M2-T67-sound-command-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7061,7 +7061,7 @@
         {
           "id": "M2 T67 S3",
           "evidence": [
-            "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md"
+            "docs/history/M2-T67-sound-command-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7074,7 +7074,7 @@
         {
           "id": "M2 T67 S4",
           "evidence": [
-            "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md"
+            "docs/history/M2-T67-sound-command-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7087,7 +7087,7 @@
         {
           "id": "M2 T67 S5",
           "evidence": [
-            "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md"
+            "docs/history/M2-T67-sound-command-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -7100,7 +7100,7 @@
         {
           "id": "M2 T67 S6",
           "evidence": [
-            "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md"
+            "docs/history/M2-T67-sound-command-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -677832,7 +677832,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md",
+      "evidence": "docs/history/M2-T67-sound-command-current-proof.md",
       "state": "closed"
     },
     {
@@ -679868,7 +679868,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md",
+      "evidence": "docs/history/M2-T67-sound-command-current-proof.md",
       "state": "closed"
     },
     {
@@ -681910,7 +681910,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md",
+      "evidence": "docs/history/M2-T67-sound-command-current-proof.md",
       "state": "closed"
     },
     {
@@ -683927,7 +683927,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md",
+      "evidence": "docs/history/M2-T67-sound-command-current-proof.md",
       "state": "closed"
     },
     {
@@ -685960,7 +685960,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md",
+      "evidence": "docs/history/M2-T67-sound-command-current-proof.md",
       "state": "closed"
     },
     {
@@ -688092,8 +688092,8 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md",
-      "state": "admitted"
+      "evidence": "docs/history/M2-T67-sound-command-current-proof.md",
+      "state": "closed"
     }
   ]
 }

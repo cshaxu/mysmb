@@ -851,3 +851,71 @@ queue clearing and common output-stream custody. Original owner-local ROM/ASM
 remain nonredistributable; all local evidence under ignored build/m2-t67-s6,
 128MiB raw budget,1024 roots/batch,120seconds/process,524288steps/root and
 per-batch raw cleanup. No platform gameplay change or third-party import.
+
+## S6 P2 and T67 closure - M census and command-stream integration
+
+All126 planned labels in the admission/receiving matrix are current exact;
+no deferred M label or transfer. S6 rechecks126 already-exact labels, expects
+fresh0 and credits0. M owns296 raw controls:266 feasible exact and30 impossible
+with instruction/path proofs retained; all5 M material rows exact. Current
+1842/1992 nodes,3915/4286 feasible controls(raw4342,infeasible56),408/493
+material partial unchanged in S6. T67 as a whole progresses1716->1842 nodes,
+3649->3915 exact feasible controls and403->408 exact material rows. Historical
+1992/1992 remains separate, historical expected/actualMatches empty.
+
+| Accepted member | Exact nodes | Raw controls | Original roots per width | Diffs x86/x64 |
+| --- | --- | --- | --- | --- |
+| S1 | 22 | 49 | 15360 | 0/0 |
+| S2 | 30 | 77 | 69632 | 0/0 |
+| S3 | 36 | 71 | 135168 | 0/0 |
+| S4 | 11 | 17 | 69760 | 0/0 |
+| S5 | 27 | 82 | 20736 | 0/0 |
+
+Accepted member roots total310656 per
+width; S6 does not repeat their individual matrices or infer unobserved labels.
+S6 newly runs73728 unchanged original complete SoundEngine roots each width:
+65536 paired Square1/Square2 queue-byte combinations with mixed noise/music,
+saved extra-life protection and counter profiles;8192 title/pause profiles.
+Full1841 RAM (including0109-0139),24 final APU and all ordered command counts/
+indices/values agree both widths. Only true CPU stack0100-0108/013A-01FF and
+unmapped transient registers excluded. No patched ROM or mocked child.
+
+Mixed roots record actual sequential JSRs from RunSoundSubroutines to
+Square1SfxHandler,Square2SfxHandler,NoiseSfxHandler,MusicHandler: each65536
+calls and65536 real RTS returns. Original opcode/operand verification ties
+those four source callsites to the recorded transitions. Current shared C
+calls the same four phases in source order, with the common ordered stream
+showing channel writes, music overwrite/protection, master control and final
+DAC. Header/event/death selection consumes effect buffers changed earlier in
+that invocation. Title/pause routes bypass normal channel work as original;
+final queue clearing belongs solely to SoundEngine. No scoped integration diff.
+
+S4 restored zero-flame-envelope ContinueMusic fallthrough. S5 restored ground
+reset re-entry (11 then increment12), masked victory4 and full byte header
+selectors/reset order. Earlier phase/priority/table proofs remain accepted;
+current mixed route checks their joins to these final music/noise owners.
+Similar-issue sweep found no duplicate phase, missing return, channel-order,
+pause bypass, effect protection or terminal-clear discrepancy after repairs.
+Shared audio.c remains sole game-command owner; host adapters only consume
+neutral ordered commands. No platform business logic or new product change
+in S6. Full current native builds/248 tests each pass, including purity;
+original OpenNT DOS16 link passes with inherited OLDNAMES.LIB warning, no
+interactive DOS/performance claim. Byte-identical S5 products retained:
+
+- `mysmb16.exe`: 260887 bytes, SHA256 `f0f539f9a4c687a25259325db9702c5a5974d05a9be0492a57b79c2224372a83`.
+- `mysmb32.exe`: 373920 bytes, SHA256 `deb1b52df54056b5480d282a87e79f6972872a1a662bf763446032cf80bea238`.
+- `mysmb64.exe`: 380951 bytes, SHA256 `7372175fca354684ab12fcecc166b6d1adda080a09d6481e6c0250b07ea14da8`.
+
+Incoming external controls remain explicitly owned and pending:
+control-00022 (A, InitBuffer -> SoundEngine); control-03442 (N, TriNoteHandler -> SetFreq_Tri); control-03489 (A, SoundEngine -> InitBuffer); control-04092 (N, SetFreq_Tri -> TriNoteHandler). A's NMI/SoundEngine join remains cross-cohort/T69 work;
+N's triangle/frequency call/return remains next source cohort work.26 external
+table/data consumers into M belong to N and remain pending, not promoted by
+their M callees: material-00443; material-00444; material-k36-01; material-k36-02; material-k36-03; material-k36-04; material-k36-05; material-k36-06; material-k36-07; material-k36-08; material-k36-09; material-k36-10; material-k36-11; material-k36-12; material-k36-13; material-k36-14; material-k36-15; material-k36-16; material-k36-17; material-k36-18; material-k36-19; material-k36-20; material-k36-21; material-k36-22; material-k36-23; material-k38-01. Global remaining150 nodes,371 feasible
+controls and85 currently enumerated material rows remain. The material census
+is partial. M2 stays open; T68 is next unadmitted, then T69/T70.
+
+Neutral ignored build/m2-t67-s6 evidence: census/join/route summaries,
+mode28/29 logs, full native builds/tests and DOS16 link. Raw deleted per batch,
+probe removed at closure. Ledger/registry/progress/documentation gates must
+pass; closed proposal moves to history and To-Do queue removes active T67
+status while preserving unrelated owner's I/O candidates/source work.

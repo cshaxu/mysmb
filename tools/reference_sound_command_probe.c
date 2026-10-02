@@ -112,6 +112,23 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0xf8u]=1u;m->ram[0x7b4u]=5u;m->ram[0x7b6u]=5u;
         m->ram[0x7b9u]=5u;m->ram[0x7bau]=5u;
         m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==28u){
+        m->ram[0xffu]=(unsigned char)n;m->ram[0xfeu]=(unsigned char)p;
+        m->ram[0xfdu]=(unsigned char)(n*17u+p*3u);
+        m->ram[0xfbu]=(unsigned char)(p<128u?1u<<(p&7u):0u);
+        m->ram[0xfcu]=(unsigned char)((n&7u)==0u?1u<<(p&7u):0u);
+        m->ram[0xf1u]=(unsigned char)((p&128u)?0x40u:0u);
+        m->ram[0xf2u]=(unsigned char)((n&128u)?0x40u:0u);
+        m->ram[0xf3u]=(unsigned char)(n^p);
+        m->ram[0x7bbu]=(unsigned char)n;m->ram[0x7bdu]=(unsigned char)p;
+        m->ram[0x7beu]=(unsigned char)(n+p);m->ram[0x7bfu]=(unsigned char)(n^p);
+        m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==29u){
+        m->ram[0x770u]=(unsigned char)((p&16u)?0u:1u);
+        m->ram[0x7c6u]=(unsigned char)(p&1u);
+        m->ram[0xfau]=(unsigned char)((p>>1u)&3u);
+        m->ram[0x7b2u]=(unsigned char)((p>>3u)&3u);
+        m->ram[0x7bbu]=(unsigned char)n;
     }
     m->a=(unsigned char)n;m->x=(unsigned char)(p%3u*4u);m->y=(unsigned char)(n*13u);
 }
@@ -125,7 +142,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>27u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>29u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
