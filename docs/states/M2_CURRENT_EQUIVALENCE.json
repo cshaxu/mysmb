@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3129,
-    "needs-evidence": 1194,
+    "exact": 3131,
+    "needs-evidence": 1192,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129129,13 +129129,16 @@
       "instruction": "rts/rti",
       "id": "control-03846",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/flying_cheep.c:mysmb_objects_step_flying_cheep_cheeps_slot with real shared horizontal and downward-gravity children.",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S45 static $CEDF-$CF24 and live return-consumer audit: MoveEnemyHorizontally returns at $CEF0 with X=ObjectOffset and signed nibble/fraction displacement A; FlyCC overwrites Y/A with $0d/$05 before real gravity, retaining moved page/X/force."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> FlyCC with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
+      "operationalEvidence": [
+        "M2 T64 S45 current x86/x64 each match 1536 real original-ROM roots, zero differences across 1800 bytes; 1344 returns per child, 192 defeated roots, all 16 priority indices and both threshold paths observed; focused tests/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "MoveEnemyHorizontally returns at $CEF0 with X=ObjectOffset and signed nibble/fraction displacement A; FlyCC overwrites Y/A with $0d/$05 before real gravity, retaining moved page/X/force.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c",
         "src/game/world/movement.c"
@@ -129149,13 +129152,16 @@
       "instruction": "rts/rti",
       "id": "control-03847",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Flying Cheep branch, table, child-call, fall-through and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/flying_cheep.c:mysmb_objects_step_flying_cheep_cheeps_slot with real shared horizontal and downward-gravity children.",
       "semanticEvidence": [
-        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S45 static $CEDF-$CF24 and live return-consumer audit: SetXMoveAmt returns at $CEF7 with X=ObjectOffset, force scratch $00=$0d and max $02=$05; FlyCC consumes the resulting Y force high nibble and Y position in indexed subtraction/priority output."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetXMoveAmt -> FlyCC with enemy state, Y force/index and source call/return ordering under valid PRG binding.",
+      "operationalEvidence": [
+        "M2 T64 S45 current x86/x64 each match 1536 real original-ROM roots, zero differences across 1800 bytes; 1344 returns per child, 192 defeated roots, all 16 priority indices and both threshold paths observed; focused tests/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SetXMoveAmt returns at $CEF7 with X=ObjectOffset, force scratch $00=$0d and max $02=$05; FlyCC consumes the resulting Y force high nibble and Y position in indexed subtraction/priority output.",
       "currentSourcePaths": [
         "src/game/enemy/flying_cheep.c",
         "src/game/enemy/movement.c"

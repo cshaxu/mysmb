@@ -2305,3 +2305,76 @@ unchanged. Exact feasible controls rise 3,125 to 3,129/4,323 (raw 4,342,
 infeasible 19). T64 remains open with 52 Cohort-J controls, zero pending
 material. Next source-order chain is Flying Cheep movement returns;
 T65 is not admitted.
+
+## Aggregate S45 admission - Flying Cheep real movement returns
+
+S45 owns control-03846/03847: MoveEnemyHorizontally and SetXMoveAmt
+return to FlyCC. Nine scoped labels, all already exact, are
+PRandomSubtracter, FlyCCBPriority, MoveFlyingCheepCheep, FlyCC,
+AddCCF, BPGet, MoveEnemyHorizontally, SetXMoveAmt and
+MoveJ_EnemyVertically. Expected new nodes are empty; historical
+1,992/1,992 and nodes 1,480/1,992 stay unchanged. Controls enter
+3,129/4,323 and can reach 3,131/4,323; material remains 368/487.
+
+Entry $CEDF through $CF24 is shared enemy/flying_cheep.c, with shared
+world/movement.c, enemy/movement.c and world/gravity.c descendants.
+S44 is predecessor; Lakitu distance-return chain follows. Existing node
+custody is retained. Missing evidence is real movement return and consumer
+behavior beyond prior child-substituted records.
+
+ROM logic track audits live/defeated call order, return X=ObjectOffset,
+$0d force/$05 maximum parameters, fractional/page movement and real
+high-nibble/table-adjacent priority consumer. Real ROM roots and current
+x86/x64 bind the same immutable owner PRG and compare persistent RAM and
+lower-stack game aliases, plus declared live scratch. Fixtures cover six
+slots, signed speeds, force carries, vertical saturation and defeated tail.
+Operational track builds C90 checkers, focused movement/frenzy/purity tests
+and original OpenNT DOS16. Any scoped diff remains here for repair/re-audit;
+product changes refresh all three approved EXEs.
+
+Owner ROM/disassembly are nonredistributable local research only. Ignored
+build/m2-t64-s45 contains raw output <=8 MiB, 524288 steps/case,
+120 seconds total; S45 owns cleanup. Only neutral harness/summary is tracked.
+Preserve unrelated changes; no generic node promotion or T65 admission.
+
+## Aggregate S45 closure - real Flying Cheep movement returns
+
+Both control-03846/03847 are exact. All nine admitted labels remain exact:
+PRandomSubtracter, FlyCCBPriority, MoveFlyingCheepCheep, FlyCC,
+AddCCF, BPGet, MoveEnemyHorizontally, SetXMoveAmt and
+MoveJ_EnemyVertically. No new node credit or ownership transfer.
+
+Static $CEDF-$CF24 audit preserves state-bit-5 defeated tail, horizontal
+then gravity order, source $0d force/$05 maximum, restored ObjectOffset,
+high-nibble indexed reads including table-adjacent PRG bytes, signed
+absolute subtraction, strict below-eight force update and priority output.
+Horizontal returned displacement A is observed at $CEF0 then overwritten
+by the caller's next LDY/LDA; gravity return at $CEF7 restores the slot
+before the force/Y consumer. Native C retains the slot argument and shared
+RAM outputs rather than exposing dead CPU registers.
+
+The 1,536 actual ROM roots cover six slots with 224 live and 32 defeated
+cases each. Real horizontal/gravity returns occur 1,344 times each; defeated
+tail occurs 192 times. Horizontal displacement zero/positive/negative counts
+are 48/720/576. Absolute difference below-eight/other counts are 108/1,236;
+all 16 priority indices occur. Maximum root execution is 115 instructions.
+All descendants execute without substitutions. Both freshly built current
+x86/x64 runners match 1,536/1,536, zero differences across 1,800 bytes:
+all non-stack persistent RAM, OAM and twelve lower-stack game aliases,
+plus $00/$01/$02/$07. Scratch $03-$06 and CPU stack are explicit exclusions.
+Return-register, parameter and indexed-consumer checks are separate source
+seam evidence. ROM bytes remain local, bound through the immutable PRG view.
+
+Each native width passes focused flying-cheep-movement, flying-cheep-smoke
+and platform-purity 3/3. C90 current runners and the original OpenNT DOS16
+build/link pass, retaining the existing OLDNAMES.LIB warning. Similar-issue
+sweep checks both live return slots, horizontal carry/page effects, defeated
+gravity parameters, saturated speed/force and adjacent-data consumer. No
+scoped discrepancy or host gameplay duplicate was found. Product C and
+three delivered EXEs remain unchanged. Raw records/probe are cleaned.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487
+remain unchanged. Exact feasible controls rise 3,129 to 3,131/4,323
+(raw 4,342, infeasible 19). T64 remains open with 50 Cohort-J controls,
+zero pending material; next source-order chain is Lakitu distance return.
+T65 is not admitted.
