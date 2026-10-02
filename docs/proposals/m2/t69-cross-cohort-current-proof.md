@@ -1714,3 +1714,37 @@ Raw bounded128MiB/1024 batch/120seconds process/524288steps root/deleted per
 batch;probe deleted at closure,neutral ignored logs retained.Registry,
 ledger/progress/documentation/diff gates required before local P2 commit;
 unrelated owner work preserved,no push,no S12 pre-credit.
+
+## S12 admission - flying/firebar initializer joins and actual consumers
+
+Scope27 already-exact labels:InitPodoboo; InitHorizFlySwimEnemy; SmallBBox; InitRedPTroopa; InitCheepCheep; SetupLakitu; KillLakitu; CreateL; DifLoop; SetSpSpd; ChpChpEx; InitLongFirebar; InitShortFirebar; InitFlyingCheepCheep; DuplicateEnemyObj; PutAtRightExtent; TallBBox2; EraseEnemyObject; MovePodoboo; MoveRedPTUpOrDown; PlayerLakituDiff; InitLakitu; LakituAndSpinyHandler; ProcMoveRedPTroopa; MoveSwimmingCheepCheep; CCSwim; ChkSwimYPos.Expected fresh0,
+maximum1992/1992;17 pending controls:control-01521; control-01524; control-01525; control-01526; control-01539; control-01546; control-01551; control-01555; control-01557; control-01558; control-01559; control-03772; control-03773; control-03775; control-03777; control-03778; control-03779.
+Three material targets:material-00126; material-00127; material-00181.Incoming1992/1992
+scoped-exact nodes,4239/4277 feasible controls(raw4342,infeasible65),543/555
+material partial;historical1992/1992 separate.S11 closed,S13 later unadmitted.
+Maintenance custody retained;expectedMatches empty,no admission credit.
+Six existing dependency labels explicitly add actual Lakitu parents and
+red/swimming consumer roots. material-00127's legacy SlowSwimCC name is
+not in reviewed ASM/inventory;source comparison must correct it to the actual
+CCSwim/ChkSwimYPos chain without inventing a node or accepting it early.
+Entry/exit:initializer through real helper/erase/duplicate/box tails;Lakitu
+respawn and Spiny difference/box path;flying-Cheep timer/slot gate through
+spawn;Podoboo reinitialization through post-return LFSR consumption/gravity;
+sequential red/swimming initialization through real movement consumption.
+Shared owners:enemy/init_targets.c,frenzy.c,lakitu.c,podoboo.c,paratroopa.c,
+swimming_cheep.c,movement.c and existing erase/gravity children.Platform
+excluded. Firebar runtime caller belongs S13 RunFirebarObj;S12 owns its
+initialization joins,not that separate later route.
+Predecessor:S11 accepted;successor:S13 frenzy/flame/group unadmitted.
+ROM track:Original InitLakitu C385,LakituAndSpinyHandler C3A4,InitLongFirebar C459,InitShortFirebar C45C,InitFlyingCheepCheep C4A8,MovePodoboo C9B0 and sequential InitRedPTroopa C34A to ProcMoveRedPTroopa CAFF,InitCheepCheep C375 to MoveSwimmingCheepCheep CC4A;actual children,unchanged persistent RAM across sequential roots,full persistent RAM/APU/ordered-write x86/x64 comparison.
+Operational:small/frenzy initializer,Podoboo,red paratroopa,swimming Cheep,
+Lakitu and gravity tests,x86/x64 builds,original OpenNT DOS16 link,purity.
+Product repairs refresh3 EXEs under standing owner authorization;pure audit
+retains current3 byte-identical. Any scoped diff remains in S12 until repaired
+and source/current-ROM audit repeated;no unobserved path promotion.
+Source policy:owner-local ROM/reviewed ASM nonredistributable,no imports.
+Ignored build/m2-t69-s12;128MiB raw,1024 roots/batch,120seconds/process,
+524288steps/root;coordinator deletes raw per batch/probe at closure.
+Similar-issue sweep:real parent slot reload,SmallBBox A destruction,random
+read order,table selectors,carry/borrow across page,duplicate allocation,
+height aliases and consumed initialized movement flags. Both tracks required.
