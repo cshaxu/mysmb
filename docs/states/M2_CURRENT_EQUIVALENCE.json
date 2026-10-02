@@ -36968,13 +36968,16 @@
       "label": "HeadChk",
       "asmLine": 11971,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_background_collision head path",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Gates head probe by size/crouch extent; handles coin, upward low-nibble, solid/climb and block-bounce paths before foot check.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -36984,13 +36987,16 @@
       "label": "SolidOrClimb",
       "asmLine": 11992,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_background_collision head path",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Suppresses bump sound for climbing tile; otherwise queues bump before vertical-speed nullification.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37000,13 +37006,16 @@
       "label": "NYSpd",
       "asmLine": 11997,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_background_collision head path",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Writes upward-nullifying player Y speed one then joins foot check.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37016,13 +37025,16 @@
       "label": "DoFootCheck",
       "asmLine": 12000,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Queries left then right feet, preserves source scratch ordering and routes coins or nonempty feet tile into foot processing.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37032,13 +37044,16 @@
       "label": "AwardTouchedCoin",
       "asmLine": 12019,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Tail-jumps coin handling after a head or foot coin hit.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37048,13 +37063,16 @@
       "label": "ChkFootMTile",
       "asmLine": 12022,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Applies climb, upward, axe and invisible-tile gates before jumpspring/landing decision.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37064,13 +37082,16 @@
       "label": "ContChk",
       "asmLine": 12030,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Processes invisible tile result, active jumpspring and low-nibble wall/landing threshold.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37080,13 +37101,16 @@
       "label": "LandPlyr",
       "asmLine": 12040,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Handles land-jumpspring and pipe entry, aligns Y, clears vertical motion/stomp chain and enters normal state.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -37097,13 +37121,16 @@
       "label": "InitSteP",
       "asmLine": 12049,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Writes normal player state before side collision checks.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37113,13 +37140,16 @@
       "label": "DoPlayerSideCheck",
       "asmLine": 12052,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Initializes side-probe adder and two-half counter after foot stage.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37129,13 +37159,16 @@
       "label": "SideCheckLoop",
       "asmLine": 12059,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Probes first half with top/bottom bounds and side-pipe exceptions, then routes climb or second half.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37145,13 +37178,16 @@
       "label": "BHalf",
       "asmLine": 12075,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Probes second half within its distinct vertical bounds and loops until both halves complete.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37161,13 +37197,16 @@
       "label": "ExSCH",
       "asmLine": 12086,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Returns from side collision processing.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37177,13 +37216,16 @@
       "label": "CheckSideMTiles",
       "asmLine": 12088,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c and terrain children",
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Gates invisible and climbable side tiles before common side metatile handling.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99714,12 +99756,15 @@
       "instruction": "bcc",
       "id": "control-02444",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ DoFootCheck including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99733,12 +99778,15 @@
       "instruction": "jsr",
       "id": "control-02445",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe call relation HeadChk Ã¢â€ â€™ BlockBufferColli_Head including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99752,12 +99800,15 @@
       "instruction": "beq",
       "id": "control-02446",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ DoFootCheck including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99771,12 +99822,15 @@
       "instruction": "jsr",
       "id": "control-02447",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe call relation HeadChk Ã¢â€ â€™ CheckForCoinMTiles including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -99791,12 +99845,15 @@
       "instruction": "bcs",
       "id": "control-02448",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ AwardTouchedCoin including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99810,12 +99867,15 @@
       "instruction": "bpl",
       "id": "control-02449",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ DoFootCheck including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99829,12 +99889,15 @@
       "instruction": "bcc",
       "id": "control-02450",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ DoFootCheck including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99848,12 +99911,15 @@
       "instruction": "jsr",
       "id": "control-02451",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe call relation HeadChk Ã¢â€ â€™ CheckForSolidMTiles including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -99869,12 +99935,15 @@
       "instruction": "bcs",
       "id": "control-02452",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ SolidOrClimb including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99888,12 +99957,15 @@
       "instruction": "beq",
       "id": "control-02453",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ NYSpd including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99907,12 +99979,15 @@
       "instruction": "bne",
       "id": "control-02454",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation HeadChk Ã¢â€ â€™ NYSpd including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99926,12 +100001,15 @@
       "instruction": "jsr",
       "id": "control-02455",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe call relation HeadChk Ã¢â€ â€™ PlayerHeadCollision including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/blocks/head.c",
@@ -99946,12 +100024,15 @@
       "instruction": "jmp",
       "id": "control-02456",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe jump relation HeadChk Ã¢â€ â€™ DoFootCheck including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99965,12 +100046,15 @@
       "instruction": "beq",
       "id": "control-02457",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe branch relation SolidOrClimb Ã¢â€ â€™ NYSpd including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -99984,12 +100068,15 @@
       "instruction": "sta",
       "id": "control-02458",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe fallthrough relation SolidOrClimb Ã¢â€ â€™ NYSpd including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100003,12 +100090,15 @@
       "instruction": "sta",
       "id": "control-02459",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe fallthrough relation NYSpd Ã¢â€ â€™ DoFootCheck including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100022,12 +100112,15 @@
       "instruction": "bcs",
       "id": "control-02460",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation DoFootCheck Ã¢â€ â€™ DoPlayerSideCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100041,12 +100134,15 @@
       "instruction": "jsr",
       "id": "control-02461",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation DoFootCheck Ã¢â€ â€™ BlockBufferColli_Feet including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100060,12 +100156,15 @@
       "instruction": "jsr",
       "id": "control-02462",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation DoFootCheck Ã¢â€ â€™ CheckForCoinMTiles including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100080,12 +100179,15 @@
       "instruction": "bcs",
       "id": "control-02463",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation DoFootCheck Ã¢â€ â€™ AwardTouchedCoin including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100099,12 +100201,15 @@
       "instruction": "jsr",
       "id": "control-02464",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation DoFootCheck Ã¢â€ â€™ BlockBufferColli_Feet including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100118,12 +100223,15 @@
       "instruction": "bne",
       "id": "control-02465",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation DoFootCheck Ã¢â€ â€™ ChkFootMTile including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100137,12 +100245,15 @@
       "instruction": "beq",
       "id": "control-02466",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation DoFootCheck Ã¢â€ â€™ DoPlayerSideCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100156,12 +100267,15 @@
       "instruction": "jsr",
       "id": "control-02467",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation DoFootCheck Ã¢â€ â€™ CheckForCoinMTiles including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100176,12 +100290,15 @@
       "instruction": "bcc",
       "id": "control-02468",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation DoFootCheck Ã¢â€ â€™ ChkFootMTile including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100195,12 +100312,15 @@
       "instruction": "bcc",
       "id": "control-02469",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing fallthrough relation DoFootCheck Ã¢â€ â€™ AwardTouchedCoin including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100214,12 +100334,15 @@
       "instruction": "jmp",
       "id": "control-02470",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing jump relation AwardTouchedCoin Ã¢â€ â€™ HandleCoinMetatile including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100234,12 +100357,15 @@
       "instruction": "jsr",
       "id": "control-02471",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation ChkFootMTile Ã¢â€ â€™ CheckForClimbMTiles including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100254,12 +100380,15 @@
       "instruction": "bcs",
       "id": "control-02472",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation ChkFootMTile Ã¢â€ â€™ DoPlayerSideCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100273,12 +100402,15 @@
       "instruction": "bmi",
       "id": "control-02473",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation ChkFootMTile Ã¢â€ â€™ DoPlayerSideCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100292,12 +100424,15 @@
       "instruction": "bne",
       "id": "control-02474",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation ChkFootMTile Ã¢â€ â€™ ContChk including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100311,12 +100446,15 @@
       "instruction": "jmp",
       "id": "control-02475",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing jump relation ChkFootMTile Ã¢â€ â€™ HandleAxeMetatile including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100331,12 +100469,15 @@
       "instruction": "jsr",
       "id": "control-02476",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation ContChk Ã¢â€ â€™ ChkInvisibleMTiles including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100351,12 +100492,15 @@
       "instruction": "beq",
       "id": "control-02477",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation ContChk Ã¢â€ â€™ DoPlayerSideCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100370,12 +100514,15 @@
       "instruction": "bne",
       "id": "control-02478",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation ContChk Ã¢â€ â€™ InitSteP including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100389,12 +100536,15 @@
       "instruction": "bcc",
       "id": "control-02479",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing branch relation ContChk Ã¢â€ â€™ LandPlyr including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100409,12 +100559,15 @@
       "instruction": "jmp",
       "id": "control-02480",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing jump relation ContChk Ã¢â€ â€™ ImpedePlayerMove including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c",
@@ -100429,12 +100582,15 @@
       "instruction": "jsr",
       "id": "control-02481",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation LandPlyr Ã¢â€ â€™ ChkForLandJumpSpring including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100450,12 +100606,15 @@
       "instruction": "jsr",
       "id": "control-02482",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing call relation LandPlyr Ã¢â€ â€™ HandlePipeEntry including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c",
@@ -100471,12 +100630,15 @@
       "instruction": "sta",
       "id": "control-02483",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing fallthrough relation LandPlyr Ã¢â€ â€™ InitSteP including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100491,12 +100653,15 @@
       "instruction": "sta",
       "id": "control-02484",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing fallthrough relation InitSteP Ã¢â€ â€™ DoPlayerSideCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100510,12 +100675,15 @@
       "instruction": "sta",
       "id": "control-02485",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe fallthrough relation DoPlayerSideCheck Ã¢â€ â€™ SideCheckLoop with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100529,12 +100697,15 @@
       "instruction": "bcc",
       "id": "control-02486",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation SideCheckLoop Ã¢â€ â€™ BHalf with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100548,12 +100719,15 @@
       "instruction": "bcs",
       "id": "control-02487",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation SideCheckLoop Ã¢â€ â€™ ExSCH with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100567,12 +100741,15 @@
       "instruction": "jsr",
       "id": "control-02488",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe call relation SideCheckLoop Ã¢â€ â€™ BlockBufferColli_Side with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100586,12 +100763,15 @@
       "instruction": "beq",
       "id": "control-02489",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation SideCheckLoop Ã¢â€ â€™ BHalf with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100605,12 +100785,15 @@
       "instruction": "beq",
       "id": "control-02490",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation SideCheckLoop Ã¢â€ â€™ BHalf with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100624,12 +100807,15 @@
       "instruction": "beq",
       "id": "control-02491",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation SideCheckLoop Ã¢â€ â€™ BHalf with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100643,12 +100829,15 @@
       "instruction": "jsr",
       "id": "control-02492",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe call relation SideCheckLoop Ã¢â€ â€™ CheckForClimbMTiles with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -100663,12 +100852,15 @@
       "instruction": "bcc",
       "id": "control-02493",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation SideCheckLoop Ã¢â€ â€™ CheckSideMTiles with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100682,12 +100874,15 @@
       "instruction": "bcc",
       "id": "control-02494",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe fallthrough relation SideCheckLoop Ã¢â€ â€™ BHalf with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100701,12 +100896,15 @@
       "instruction": "bcc",
       "id": "control-02495",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation BHalf Ã¢â€ â€™ ExSCH with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100720,12 +100918,15 @@
       "instruction": "bcs",
       "id": "control-02496",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation BHalf Ã¢â€ â€™ ExSCH with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100739,12 +100940,15 @@
       "instruction": "jsr",
       "id": "control-02497",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe call relation BHalf Ã¢â€ â€™ BlockBufferColli_Side with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100758,12 +100962,15 @@
       "instruction": "bne",
       "id": "control-02498",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation BHalf Ã¢â€ â€™ CheckSideMTiles with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100777,12 +100984,15 @@
       "instruction": "bne",
       "id": "control-02499",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe branch relation BHalf Ã¢â€ â€™ SideCheckLoop with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -100796,12 +101006,15 @@
       "instruction": "bne",
       "id": "control-02500",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe fallthrough relation BHalf Ã¢â€ â€™ ExSCH with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -129917,12 +130130,15 @@
       "instruction": "rts/rti",
       "id": "control-03946",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe return relation BlockBufferColli_Head Ã¢â€ â€™ HeadChk including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -129936,12 +130152,15 @@
       "instruction": "rts/rti",
       "id": "control-03947",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe return relation CheckForCoinMTiles Ã¢â€ â€™ HeadChk including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -129956,12 +130175,15 @@
       "instruction": "rts/rti",
       "id": "control-03948",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe return relation CheckForSolidMTiles Ã¢â€ â€™ HeadChk including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -129977,12 +130199,15 @@
       "instruction": "rts/rti",
       "id": "control-03949",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves head-probe return relation PlayerHeadCollision Ã¢â€ â€™ HeadChk including probe result, speed and sound ordering.",
       "currentSourcePaths": [
         "src/game/blocks/head.c",
@@ -129997,12 +130222,15 @@
       "instruction": "rts/rti",
       "id": "control-03950",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation BlockBufferColli_Feet Ã¢â€ â€™ DoFootCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -130016,12 +130244,15 @@
       "instruction": "rts/rti",
       "id": "control-03951",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation CheckForCoinMTiles Ã¢â€ â€™ DoFootCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130036,12 +130267,15 @@
       "instruction": "rts/rti",
       "id": "control-03952",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation BlockBufferColli_Feet Ã¢â€ â€™ DoFootCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -130055,12 +130289,15 @@
       "instruction": "rts/rti",
       "id": "control-03953",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation CheckForCoinMTiles Ã¢â€ â€™ DoFootCheck including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130075,12 +130312,15 @@
       "instruction": "rts/rti",
       "id": "control-03954",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation CheckForClimbMTiles Ã¢â€ â€™ ChkFootMTile including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130095,12 +130335,15 @@
       "instruction": "rts/rti",
       "id": "control-03955",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation ChkInvisibleMTiles Ã¢â€ â€™ ContChk including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130115,12 +130358,15 @@
       "instruction": "rts/rti",
       "id": "control-03956",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation ChkForLandJumpSpring Ã¢â€ â€™ LandPlyr including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130136,12 +130382,15 @@
       "instruction": "rts/rti",
       "id": "control-03957",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c feet probe and child handlers",
       "semanticEvidence": [
-        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required."
+        "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves feet/landing return relation HandlePipeEntry Ã¢â€ â€™ LandPlyr including dual-probe scratch and state ordering.",
       "currentSourcePaths": [
         "src/game/player/pipe_entry.c",
@@ -130157,12 +130406,15 @@
       "instruction": "rts/rti",
       "id": "control-03958",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe return relation BlockBufferColli_Side Ã¢â€ â€™ SideCheckLoop with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -130176,12 +130428,15 @@
       "instruction": "rts/rti",
       "id": "control-03959",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe return relation CheckForClimbMTiles Ã¢â€ â€™ SideCheckLoop with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130196,12 +130451,15 @@
       "instruction": "rts/rti",
       "id": "control-03960",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+      ],
       "semanticContract": "Preserves side-probe return relation BlockBufferColli_Side Ã¢â€ â€™ BHalf with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"

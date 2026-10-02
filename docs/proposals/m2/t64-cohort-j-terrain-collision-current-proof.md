@@ -400,3 +400,43 @@ All eight scoped nodes are current-exact: `PlayerBGUpperExtent`, `PlayerBGCollis
 The retained controlled original-ROM PlayerBGCollision root route replayed `terrain-0` through `terrain-7` against freshly compiled current x86 and x64 snapshot runners. Each width compared mapped RAM and recorded child-call arguments/returns with **8/8** zero-difference records. Focused `mysmb.player-terrain-chain` and `mysmb.platform-purity` CTests pass on both widths. The immediately preceding focus-pause product change already linked the unchanged shared terrain source through OpenNT DOS16; the reusable CMake configuration was no longer present for a redundant S11 relink. This audit changes no product C, so no package artifact refresh is required.
 
 S11 records eight nodes and 16 source-address-owned feasible controls (`control-02426` through `control-02441`) exact; no material handoff originates in this interval. Current totals: historical **1,992 / 1,992**; current exact nodes **1,338 / 1,992**; current exact feasible controls **2,761 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S12 admission — player terrain child chain
+
+S12 admits `$DC93-$DD5D`: `HeadChk`, `SolidOrClimb`, `NYSpd`, `DoFootCheck`, `AwardTouchedCoin`, `ChkFootMTile`, `ContChk`, `LandPlyr`, `InitSteP`, `DoPlayerSideCheck`, `SideCheckLoop`, `BHalf`, `ExSCH`, and `CheckSideMTiles`. Its shared game owner is `src/game/player/terrain.c`; S11 has closed the root and S13 begins the side-metatile continuation. This bounded chain includes only the caller-side control, RAM and child ABI behavior. Child interiors stay with their admitted owners.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,338 / 1,992** nodes and **2,761 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **14** labels, all `needs-evidence`; expected historical matches: **0**; maximum historical complete: **1,992 / 1,992**.
+- Graph scope: **72** source-address-owned feasible controls (`control-02444` through `control-02500`, and `control-03946` through `control-03960`); no material-handoff row originates in this interval.
+
+The ROM-logic track audits the head, feet and side callers against `$DC93-$DD5D`, including guard order, carry-equivalent child results, live scratch-byte effects, relative child call/return order, byte-wrapped offsets, coin/axe/jumpspring handling and terminal exits. The retained controlled `terrain-0` through `terrain-7` PlayerBGCollision roots will replay against freshly compiled current x86/x64 snapshot runners; focused `mysmb.player-terrain-chain` and platform-purity tests provide the operational track. Product artifacts refresh only if a shared-C repair is required.
+
+## S12 closure — player terrain child chain
+
+All 14 scoped nodes are current-exact: `HeadChk`, `SolidOrClimb`, `NYSpd`,
+`DoFootCheck`, `AwardTouchedCoin`, `ChkFootMTile`, `ContChk`, `LandPlyr`,
+`InitSteP`, `DoPlayerSideCheck`, `SideCheckLoop`, `BHalf`, `ExSCH`, and
+`CheckSideMTiles`. The static `$DC93-$DD5D` audit confirms the head, feet and
+side caller guards, carry-equivalent child results, scratch-byte ordering,
+wrapped offsets and terminal exits. Its 72 source-owned feasible controls
+(`control-02444` through `control-02500` and `control-03946` through
+`control-03960`) are exact.
+
+The controlled `terrain-0` through `terrain-7` root and child routes ran in
+fresh x86 and x64 native processes with full mapped-RAM comparisons and zero
+differences. Those child routes exposed a shared dependency mismatch:
+`RemoveCoin_Axe` must pass the ROM-loaded `AreaType` X value to
+`PutBlockMetatile`, whose first operation stores it to zero-page `$00`.
+`mysmb_area_remove_coin_axe` now preserves that byte instead of substituting
+zero. The child-route runner also now accumulates failures and returns nonzero,
+so a RAM mismatch cannot be misreported as a passing route. This repair does
+not credit unadmitted `HandleAxeMetatile` or `ErACM` interiors; S14 retains
+their independent ownership and audit.
+
+Focused terrain-chain, terrain-metatile, platform-purity, focus-pause and
+audio tests pass for x86 and x64. OpenNT16 rebuilt the same shared source and
+produced the DOS executable. Because shared product C changed, all three local
+package artifacts were refreshed. Current totals: historical mapping **1,992 /
+1,992**; current exact nodes **1,352 / 1,992**; current exact feasible
+controls **2,833 / 4,324** (raw **4,342**, infeasible **18**).

@@ -96,7 +96,11 @@ void mysmb_area_remove_coin_axe(struct mysmb_game *game, mysmb_u8 block_low,
     mysmb_u8 graphics_set;
 
     graphics_set = game->ram[MYSMB_AREA_TYPE] == 0U ? 4U : 3U;
-    mysmb_area_put_block_metatile(game, graphics_set, 0x41U, 0U, block_low,
+    /* RemoveCoin_Axe loads X from AreaType before PutBlockMetatile; that
+     * child stores X in zero-page $00.  This is observable by the axe and
+     * coin callers, so the control byte must not be replaced with zero. */
+    mysmb_area_put_block_metatile(game, graphics_set, 0x41U,
+                                  game->ram[MYSMB_AREA_TYPE], block_low,
                                   vertical_high);
     game->ram[0x0773U] = 6U;
 }
