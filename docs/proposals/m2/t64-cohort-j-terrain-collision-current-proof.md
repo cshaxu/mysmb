@@ -624,3 +624,36 @@ shared-source link.
   1,992 / 1,992.
 - Graph scope: 4 source-owned feasible controls (control-02558 through
   control-02561).
+
+
+## S16 closure — jumpspring terminal return pair
+
+Both scoped labels, JSFnd and NoJSFnd, are current-exact. Static $DEE6-$DEE7
+comparison confirms the carry-set matched return, the carry-clear unmatched
+return and the absence of input/RAM writes. The same freshly compiled x86/x64
+predicate checkers replayed all 177 source-reachable original-ROM records with
+zero differences. Hidden-spring and platform-purity checks pass. No product C
+changed, so executable artifacts were not refreshed.
+
+The four terminal controls (control-02558 through control-02561) are exact.
+Historical conformance remains 1,992 / 1,992; current exact totals are 1,385 /
+1,992 nodes and 2,898 / 4,324 feasible controls (raw 4,342, infeasible 18).
+
+## S17 admission — pipe entry and movement impedance
+
+S17 admits $DEE8-$DF8A: HandlePipeEntry, GetWNum, ExPipeE,
+ImpedePlayerMove, RImpd, NXSpd, PlatF and ExIPM. Shared owners are
+src/game/player/pipe_entry.c and src/game/player/impede.c. S16 supplies the
+jumpspring return; S18 begins world metatile predicates. ROM logic covers all
+pipe gates, raw table index arithmetic, transition writes, signed collision
+response, coordinate carry and collision-mask tail. The operational track uses
+controlled original-ROM pipe/impede routes per x86/x64 width, focused pipe and
+collision tests, platform purity and the OpenNT DOS16 shared-source link.
+
+- Historical mapping: 1,992 / 1,992.
+- Incoming current exact: 1,385 / 1,992 nodes and 2,898 / 4,324 feasible
+  controls (raw 4,342, infeasible 18).
+- Scope: 8 labels; historical expected matches: 0; maximum historical complete
+  1,992 / 1,992.
+- Graph scope: 19 source-owned feasible controls (control-02562 through
+  control-02577, control-03945, control-03957 and control-03965).

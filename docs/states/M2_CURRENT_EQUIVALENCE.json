@@ -37823,13 +37823,16 @@
       "label": "JSFnd",
       "asmLine": 12292,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c",
       "currentCounterpart": "mysmb_player_jumpspring_metatile true return",
       "semanticEvidence": [
-        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+      ],
       "semanticContract": "Sets carry-equivalent true result for either jumpspring metatile then returns.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37839,13 +37842,16 @@
       "label": "NoJSFnd",
       "asmLine": 12293,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c",
       "currentCounterpart": "mysmb_player_jumpspring_metatile false/true return",
       "semanticEvidence": [
-        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+      ],
       "semanticContract": "Returns final jumpspring predicate result.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -102371,12 +102377,15 @@
       "instruction": "beq",
       "id": "control-02558",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
       "semanticEvidence": [
-        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+      ],
       "semanticContract": "Preserves two-metatile predicate branch relation ChkJumpspringMetatiles Ã¢â€ â€™ JSFnd.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -102391,12 +102400,15 @@
       "instruction": "bne",
       "id": "control-02559",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
       "semanticEvidence": [
-        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+      ],
       "semanticContract": "Preserves two-metatile predicate branch relation ChkJumpspringMetatiles Ã¢â€ â€™ NoJSFnd.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -102411,12 +102423,15 @@
       "instruction": "bne",
       "id": "control-02560",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
       "semanticEvidence": [
-        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+      ],
       "semanticContract": "Preserves two-metatile predicate fallthrough relation ChkJumpspringMetatiles Ã¢â€ â€™ JSFnd.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -102431,12 +102446,15 @@
       "instruction": "sec",
       "id": "control-02561",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c mysmb_player_jumpspring_metatile",
       "semanticEvidence": [
-        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required."
+        "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+      ],
       "semanticContract": "Preserves two-metatile predicate fallthrough relation JSFnd Ã¢â€ â€™ NoJSFnd.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
