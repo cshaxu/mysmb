@@ -1138,3 +1138,43 @@ S31 records nodes `FireballBGCollision`, `ClearBounceFlag` and
 `control-02706`, `control-03991` and `control-03992`, exact. Current totals:
 historical **1,992 / 1,992**; current exact nodes **1,455 / 1,992**; current
 exact feasible controls **3,052 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S32 admission — bounding-box control data
+
+S32 admits `BoundBoxCtrlData` at `$E1FD-$E22C`, owned by
+`src/game/world/bounding_box.c:mysmb_world_set_bounding_box`. S31 is the
+source predecessor; S33 begins the caller and bounding-box paths. The ROM logic
+track reads all twelve four-byte records from the local ROM and verifies their
+left/top/right/bottom ordering. The operational track executes every control
+value through the shared C owner on x86/x64, runs focused table and purity
+checks, and links the shared DOS16 source. The material relation
+`BoundBoxCtrlData -> BoundingBoxCore` is in scope. Product artifacts refresh
+only if shared product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,455 / 1,992** nodes and **3,052 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: `BoundBoxCtrlData`; expected current matches: **1**; maximum
+  **1,456 / 1,992**.
+
+## S32 closure — bounding-box control data
+
+`BoundBoxCtrlData` is current-exact. A direct local-ROM PRG read located the
+48-byte record at `$E1FD-$E22C`; this corrected the stale `$E2A5` source
+comment without changing gameplay behavior. All twelve four-byte records
+match the shared C table in exact left/top/right/bottom order. The material
+relation `material-00403` (`BoundBoxCtrlData -> BoundingBoxCore`) is exact:
+every valid control selects its corresponding four source offsets before the
+later core consumes them.
+
+Fresh x86/x64 checks run all twelve controls with wrapping X/Y inputs and
+compare every produced box byte against the ignored ROM record; all pass.
+Platform purity passes on both widths and the OpenNT DOS16 shared-source link
+completes. The similar-issue sweep found no second bounding-box table or
+platform geometry branch. Only source provenance and test/build wiring changed,
+so package EXEs remain the S29 artifacts.
+
+S32 records node `BoundBoxCtrlData` and material relation `material-00403`
+exact. Current totals: historical **1,992 / 1,992**; current exact nodes
+**1,456 / 1,992**; current exact feasible controls **3,052 / 4,324** (raw
+**4,342**, infeasible **18**); exact material relations **359 / 487**.

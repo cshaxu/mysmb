@@ -8755,13 +8755,16 @@
       "consumer": "BoundingBoxCore",
       "storage": "control*4 selected four-byte bounding-box offsets",
       "feasiblePath": "Valid source control selects one UL-X/UL-Y/LR-X/LR-Y record.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/bounding_box.c bound_box_ctrl_data",
       "semanticContract": "Core adds the four source offsets in original coordinate order.",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S32 local-ROM table read at $E1FD: all 48 BoundBoxCtrlData bytes match the shared C table in twelve left/top/right/bottom records."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S32 x86/x64 bounding-box data checks execute all twelve controls with ROM-record outputs; platform-purity passes and OpenNT DOS16 shared-source link completes."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -39202,13 +39205,16 @@
       "label": "BoundBoxCtrlData",
       "asmLine": 12791,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
       "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S32 local-ROM table read at $E1FD: all 48 BoundBoxCtrlData bytes match the shared C table in twelve left/top/right/bottom records."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S32 x86/x64 bounding-box data checks execute all twelve controls with ROM-record outputs; platform-purity passes and OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Binds the twelve four-byte source bounding-box offset records in left/top/right/bottom order.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"

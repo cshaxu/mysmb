@@ -1709,6 +1709,9 @@ endif()
 add_executable(mysmb_fireball_background_actual_check
     test/fireball_background_actual_check.c)
 target_link_libraries(mysmb_fireball_background_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_bounding_box_data_check
+    test/bounding_box_data_check.c)
+target_link_libraries(mysmb_bounding_box_data_check PRIVATE mysmb_game)
 add_executable(mysmb_bounding_box_entry_actual_check
     test/bounding_box_entry_actual_check.c)
 target_link_libraries(mysmb_bounding_box_entry_actual_check PRIVATE mysmb_game)
