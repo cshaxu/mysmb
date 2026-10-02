@@ -1769,3 +1769,6 @@ target_link_libraries(mysmb_firebar_integration_route_check PRIVATE mysmb_game)
 
 add_executable(mysmb_flying_cheep_integration_route_check test/flying_cheep_integration_route_check.c)
 target_link_libraries(mysmb_flying_cheep_integration_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_lakitu_integration_route_check test/lakitu_integration_route_check.c)
+target_link_libraries(mysmb_lakitu_integration_route_check PRIVATE mysmb_game)

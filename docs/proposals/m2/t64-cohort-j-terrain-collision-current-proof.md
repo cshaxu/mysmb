@@ -2378,3 +2378,76 @@ remain unchanged. Exact feasible controls rise 3,129 to 3,131/4,323
 (raw 4,342, infeasible 19). T64 remains open with 50 Cohort-J controls,
 zero pending material; next source-order chain is Lakitu distance return.
 T65 is not admitted.
+
+## Aggregate S46 admission - Lakitu real distance return
+
+S46 owns control-03849 PlayerEnemyDiff -> PlayerLakituDiff. Scope is
+LakituDiffAdj, MoveLakitu, ChkLS, Fr12S, LdLDa, SetLSpd, SetLMov, PlayerLakituDiff, ChkLakDif, SetLMovD, ChkPSpeed, ChkSpinyO, ChkEmySpd, SubDifAdj, SPixelLak, ExMoveLak, PlayerEnemyDiff, MoveEnemyHorizontally, MoveD_EnemyVertically. All 19 labels are already exact; expected new nodes
+are empty. Historical 1,992/1,992 and current nodes 1,480/1,992 stay
+unchanged; feasible controls enter 3,131/4,323 and can reach 3,132/4,323;
+material remains 368/487. No custody transfer.
+
+Entry PlayerLakituDiff $CF6C-$CFDC plus outer MoveLakitu $CF28
+executes real shared distance and movement descendants. Owners are
+shared enemy/lakitu.c, distance.c, movement.c and world movement/gravity.
+S45 precedes; Bowser bridge movement returns follow. The missing proof
+is real distance return and caller consumption beyond substituted records.
+Static track checks low/page borrow, returned A/N/X/Y, absolute-low clamp,
+Lakitu direction-change deceleration, Spiny adjustment selection and exact
+subtraction-loop count. Actual ROM/native routes compare persistent RAM,
+$00-$03 and lower-stack game aliases, plus direct return A. Six slots and
+outer normal/special/defeated branches are included. Focused current x86/x64,
+platform purity and original OpenNT DOS16 form the operational track.
+
+Owner-local nonredistributable ROM/ASM are research only; ignored
+build/m2-t64-s46 owns <=8 MiB raw, 524288 steps/case, 120 seconds,
+and cleans records/probe at closure. A scoped discrepancy stays here for
+repair/re-audit. Product repairs refresh all three approved EXEs; preserve
+unrelated changes and do not admit T65.
+
+## Aggregate S46 closure - real Lakitu distance return
+
+Control-03849 is exact. All 19 admitted labels retain exact status:
+LakituDiffAdj, MoveLakitu, ChkLS, Fr12S, LdLDa, SetLSpd,
+SetLMov, PlayerLakituDiff, ChkLakDif, SetLMovD, ChkPSpeed,
+ChkSpinyO, ChkEmySpd, SubDifAdj, SPixelLak, ExMoveLak,
+PlayerEnemyDiff, MoveEnemyHorizontally and MoveD_EnemyVertically.
+No new nodes or custody transfers.
+
+Static $CF28-$CFDC and $E143 distance child audit preserves low-byte
+subtraction/borrow, page result A/N, unchanged X/Y at $CF71, sign-to-low
+absolute conversion, $3c clamp, direction-change deceleration and early
+return. Adjustment index predicates include player speed/scroll, Spiny ID
+and vertical-speed alias; the decrement loop executes distance+one times.
+The outer path loads the three adjustment bytes, consumes returned speed,
+sets direction and performs real horizontal movement; special/defeated
+states retain their original movement tails. Native retained slot replaces
+CPU X, and the returned page byte feeds the exact source BPL predicate.
+
+Real ROM roots total 1,920: 1,536 direct PlayerLakituDiff and 384 outer
+MoveLakitu. They observe 1,824 real distance returns with sign clear/set
+708/1,116 and borrow clear/set 1,014/810. Clamp executes 1,266 times;
+198 speed-decrement branches return early. Adjustment index 0/1/2 counts
+are 942/576/108; pixel loop executes 22,326 times. Outer normal/special/
+defeated counts are 288/48/48, across all six slots. Maximum root execution
+is 190 instructions. Branch counters use decoded instruction addresses,
+not operand-byte addresses.
+
+Fresh current x86/x64 each match 1,920/1,920, zero differences across
+1,800 RAM bytes and direct returned A. Compared bytes include $00-$03,
+all non-stack persistent RAM/OAM and twelve lower-stack game aliases.
+Other scratch $04-$07 and CPU stack are explicit exclusions. Source return
+register/flag checks independently cover the distance seam; no child is
+substituted. Focused Lakitu movement, Lakitu/Spiny and platform-purity
+pass 3/3 on each width. C90 runners and original OpenNT DOS16 build/link
+pass with the existing OLDNAMES.LIB warning. No game source or product
+EXE changes. Raw records/probe executable are cleaned after acceptance.
+
+Similar-issue sweep covers both borrow/sign directions, low wrapping,
+clamp boundary, zero/wrapped deceleration, three indices, adjustment loop
+and outer state tails. No scoped discrepancy or host gameplay copy found.
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487
+remain unchanged. Exact feasible controls rise 3,131 to 3,132/4,323
+(raw 4,342, infeasible 19). T64 remains open with 49 Cohort-J controls,
+zero pending material; Bowser bridge movement returns follow. T65 is
+not admitted.

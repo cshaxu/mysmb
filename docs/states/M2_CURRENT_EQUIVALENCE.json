@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3131,
-    "needs-evidence": 1192,
+    "exact": 3132,
+    "needs-evidence": 1191,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129197,13 +129197,16 @@
       "instruction": "rts/rti",
       "id": "control-03849",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "enemy/lakitu.c:mysmb_enemy_player_lakitu_difference consumes real enemy/distance.c low scratch and returned page byte, with portable slot retention.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S46 static $CF28-$CFDC and $E143-$E152 audit: real page/low/borrow return, source BPL, signed low negation, strict $3c clamp, direction deceleration, index predicates, exact pixel+one decrement and outer speed/direction/movement consumer."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> PlayerLakituDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S46 current x86/x64 each match 1920 real original-ROM roots (1536 direct, 384 outer), 1800 RAM bytes and direct returned A, zero differences; 1824 actual distance returns, both sign/borrow values, 198 early deceleration returns and all three adjustment indices observed. Focused Lakitu/purity tests and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PlayerEnemyDiff returns at $CF71 with X=ObjectOffset, Y=0, low subtraction in $00 and page-minus-borrow in A/N; PlayerLakituDiff consumes sign, clamps absolute low distance and preserves direction/deceleration, speed-index and pixel-subtraction-loop order.",
       "currentSourcePaths": [
         "src/game/cannon.c",
         "src/game/enemy/background.c",

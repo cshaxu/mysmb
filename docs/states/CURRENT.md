@@ -2,16 +2,16 @@
 
 **Idle.**
 
-M2 T64 S45 is closed. T64 remains open with 50 Cohort-J feasible controls
+M2 T64 S46 is closed. T64 remains open with 49 Cohort-J feasible controls
 and zero material relations needing connection evidence. Next source-order
-audit is Lakitu distance return; T65 is not admitted.
-S45 proves two real Flying Cheep movement return edges; current x86/x64
-each match 1,536 original-ROM roots with no scoped difference.
+audit is Bowser bridge movement returns; T65 is not admitted.
+S46 proves the real Lakitu distance return and consumer chain; current
+x86/x64 each match 1,920 original-ROM roots with no scoped difference.
 
 ## Current Technical Baseline
 
 - Historical mapping: **1,992 / 1,992**.
 - Current exact nodes: **1,480 / 1,992**.
-- Current exact feasible controls: **3,131 / 4,323** (raw **4,342**, infeasible **19**).
+- Current exact feasible controls: **3,132 / 4,323** (raw **4,342**, infeasible **19**).
 - Exact material relations: **368 / 487**, enumeration remains partial.
-- Latest product artifacts: `assets/mysmb16.exe`, `assets/mysmb32.exe`, `assets/mysmb64.exe` remain the S33 delivery including audio/title/focus-pause fixes. S45 changed no product behavior.
+- Latest product artifacts: `assets/mysmb16.exe`, `assets/mysmb32.exe`, `assets/mysmb64.exe` remain the S33 delivery including audio/title/focus-pause fixes. S46 changed no product behavior.
