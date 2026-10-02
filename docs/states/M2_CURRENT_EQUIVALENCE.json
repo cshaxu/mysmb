@@ -10533,13 +10533,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1433,
-    "needs-evidence": 559
+    "exact": 1437,
+    "needs-evidence": 555
   },
   "controlEdgeCounts": {
-    "exact": 3000,
+    "exact": 3010,
     "infeasible": 18,
-    "needs-evidence": 1324
+    "needs-evidence": 1314
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -38784,13 +38784,16 @@
       "label": "DoEnemySideCheck",
       "asmLine": 12617,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
-      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Skips status-bar coordinates, then probes only the moving-direction side at source offsets 0x16 and 0x17, and bumps on a solid metatile.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -38800,13 +38803,16 @@
       "label": "SdeCLoop",
       "asmLine": 12624,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
-      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Compares the source direction counter with Enemy_MovingDir before issuing the selected side block-buffer query.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -38816,13 +38822,16 @@
       "label": "NextSdeC",
       "asmLine": 12632,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
-      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Decrements the direction counter, advances the probe index, and loops only while the index remains below 0x18.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -38832,13 +38841,16 @@
       "label": "ExESdeC",
       "asmLine": 12636,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
-      "currentCounterpart": "mysmb_objects_check_enemy_side",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Returns after status-bar exclusion or both directional probes complete without a blocking solid.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104801,12 +104813,15 @@
       "instruction": "bcc",
       "id": "control-02659",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation DoEnemySideCheck Ã¢â€ â€™ ExESdeC, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104820,12 +104835,15 @@
       "instruction": "sta",
       "id": "control-02660",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain fallthrough relation DoEnemySideCheck Ã¢â€ â€™ SdeCLoop, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104839,12 +104857,15 @@
       "instruction": "bne",
       "id": "control-02661",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation SdeCLoop Ã¢â€ â€™ NextSdeC, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104858,12 +104879,15 @@
       "instruction": "jsr",
       "id": "control-02662",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain call relation SdeCLoop Ã¢â€ â€™ BlockBufferChk_Enemy, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104877,12 +104901,15 @@
       "instruction": "beq",
       "id": "control-02663",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation SdeCLoop Ã¢â€ â€™ NextSdeC, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104896,12 +104923,15 @@
       "instruction": "jsr",
       "id": "control-02664",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain call relation SdeCLoop Ã¢â€ â€™ ChkForNonSolids, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c",
@@ -104916,12 +104946,15 @@
       "instruction": "bne",
       "id": "control-02665",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation SdeCLoop Ã¢â€ â€™ ChkForBump_HammerBroJ, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c",
@@ -104936,12 +104969,15 @@
       "instruction": "bne",
       "id": "control-02666",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain fallthrough relation SdeCLoop Ã¢â€ â€™ NextSdeC, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104955,12 +104991,15 @@
       "instruction": "bcc",
       "id": "control-02667",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation NextSdeC Ã¢â€ â€™ SdeCLoop, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
@@ -104974,12 +105013,15 @@
       "instruction": "bcc",
       "id": "control-02668",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain fallthrough relation NextSdeC Ã¢â€ â€™ ExESdeC, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"

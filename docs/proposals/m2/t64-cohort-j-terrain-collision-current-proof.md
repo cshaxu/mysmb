@@ -766,7 +766,7 @@ Current totals: historical mapping **1,992 / 1,992**; current exact nodes
 
 ## S20 admission — enemy side collision loop
 
-S20 admits `$E0B0-$E0D7`: `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC` and
+S20 admits `$E0FE-$E123`: `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC` and
 `ExESdeC`. Its shared owner is `src/game/enemy/side_collision.c`; S19 provides
 the landing-side transfer and S21 begins the bump path. The ROM logic track
 will compare status-bar gate, moving-direction iteration, two horizontal
@@ -779,4 +779,45 @@ link. Product artifacts refresh only if shared product C changes.
 - Incoming current exact: **1,433 / 1,992** nodes and **3,000 / 4,324**
   feasible controls (raw **4,342**, infeasible **18**).
 - Scope: **4** labels; expected historical matches: **0**; maximum historical
+  complete **1,992 / 1,992**.
+
+
+## S20 closure — enemy side collision loop
+
+All four scoped labels are current-exact: `DoEnemySideCheck`, `SdeCLoop`,
+`NextSdeC` and `ExESdeC`. The corrected original span is `$E0FE-$E123`
+(the prior `$E0B0-$E0D7` admission text was a documentation address error;
+the labels and ownership were always correct). Static comparison confirms the
+status-bar return, `$eb` initial value/decrement and child-visible tail state,
+direction-selected `$16/$17` horizontal probes, zero result bypass, non-solid
+fallthrough, solid bump tail, and two-pass terminal return.
+
+The controlled original-ROM verifier reached all four side labels in 33
+original boundaries and checked 66 x86/x64 comparisons over 1,782 persistent
+bytes. It covers both outcomes of the side body branches at `$E102`, `$E10E`,
+`$E115` and `$E11A`. Fresh x86/x64 `mysmb.enemy-side-caller`,
+`mysmb.enemy-side-jump-hammer-chain` and `mysmb.platform-purity` tests pass.
+No product C changed, so the three product EXEs are intentionally unchanged.
+
+Current totals: historical mapping **1,992 / 1,992**; current exact nodes
+**1,437 / 1,992**; current exact feasible controls **3,010 / 4,324** (raw
+**4,342**, infeasible **18**); exact material relations **358 / 487**.
+
+
+## S21 admission — bump and Hammer Bro response entry
+
+S21 admits `$E124-$E131`: `ChkForBump_HammerBroJ` and `NoBump`. This is an
+audit-only continuation, preserving historical custody at M2 T43 S10 while
+current-equivalence evidence is refreshed. It starts at the S20 solid-bump
+handoff and stops before `InvEnemyDir` in S22. The shared owner is
+`src/game/objects.c:mysmb_objects_bump_enemy`. The ROM logic track compares
+slot-five sound suppression, state-bit-7 sound gate, Hammer Bro ID fork and
+the `$00`/Y handoff. The operational track uses controlled original-ROM
+bump/Hammer routes, current x86/x64 tests, platform purity and the shared
+DOS16 link. No product artifact refresh is due unless shared product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,437 / 1,992** nodes and **3,010 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **2** labels; expected historical matches: **0**; maximum historical
   complete **1,992 / 1,992**.

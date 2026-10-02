@@ -2353,3 +2353,17 @@ stun, landing and platform-purity tests pass. The registry is **1,433 exact
 nodes**, **3,000 exact feasible controls**, **18 infeasible raw controls** and
 **358 exact material relations**; historical conformance remains **1,992 /
 1,992**.
+
+
+### T64 S20 enemy side collision result
+
+`DoEnemySideCheck` through `ExESdeC` is current-exact: four labels and ten
+source-owned feasible controls. Static `$E0FE-$E123` comparison binds the
+status-bar gate, direction loop, selected side query, non-solid predicate,
+solid bump handoff and return. The controlled original-ROM verifier reaches
+all four labels in 33 boundaries and finds zero differences in 66 current
+x86/x64 comparisons across 1,782 persistent bytes; focused caller, jump/hammer
+and platform-purity tests pass on both widths. No product C changed, so no
+three-EXE refresh is due. Historical mapping remains **1,992 / 1,992**;
+current exact totals are **1,437 / 1,992** nodes and **3,010 / 4,324**
+feasible controls (raw **4,342**, infeasible **18**).
