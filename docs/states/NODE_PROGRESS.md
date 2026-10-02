@@ -2386,3 +2386,15 @@ feasible controls (raw **4,342**, infeasible **18**).
   purity checks pass. Product C did not change, so S26's artifacts remain valid.
 - Current exact progress: nodes **1,446 → 1,447 / 1,992**; feasible controls
   **3,031 → 3,033 / 4,324** (raw **4,342**, infeasible **18**).
+
+
+## M2 T64 S28 — Hammer Bro ground/no-ground state chain
+
+- Completed: `UnderHammerBro`, `NoUnderHammerBro`; no deferred node. Exact
+  controls: `control-02691` through `control-02693`, `control-03990`.
+- ROM logic: timer branch, state mask, landing/side tail and no-ground d0 write
+  agree with `$E191-$E19A`; current owner is corrected to `objects.c`.
+- Operational: five controlled Hammer ROM entries replayed with zero x86/x64
+  persistent-RAM differences; focused terrain-chain and platform-purity pass.
+- Current exact progress: nodes **1,447 → 1,449 / 1,992**; feasible controls
+  **3,033 → 3,037 / 4,324** (raw **4,342**, infeasible **18**).

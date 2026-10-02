@@ -10533,13 +10533,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1447,
-    "needs-evidence": 545
+    "exact": 1449,
+    "needs-evidence": 543
   },
   "controlEdgeCounts": {
-    "exact": 3033,
+    "exact": 3037,
     "infeasible": 18,
-    "needs-evidence": 1291
+    "needs-evidence": 1287
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -39047,32 +39047,36 @@
       "label": "UnderHammerBro",
       "asmLine": 12717,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
       "currentCounterpart": "mysmb_objects_step_hammer_terrain",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+      ],
       "semanticContract": "On an expired Hammer Bro frame timer preserves only state d7/d3, performs landing alignment, then tail-transfers to side checking.",
       "currentSourcePaths": [
-        "src/game/enemy/jump_terrain.c"
+        "src/game/objects.c"
       ]
     },
     {
       "label": "NoUnderHammerBro",
       "asmLine": 12726,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
       "currentCounterpart": "mysmb_objects_step_hammer_terrain",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+      ],
       "semanticContract": "Sets state d0 to mark Hammer Bro jumping or falling and returns.",
       "currentSourcePaths": [
-        "src/game/enemy/jump_terrain.c"
+        "src/game/objects.c"
       ]
     },
     {
@@ -105541,15 +105545,17 @@
       "instruction": "bne",
       "id": "control-02691",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation UnderHammerBro \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoUnderHammerBro, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
-        "src/game/enemy/jump_terrain.c"
+        "src/game/objects.c"
       ]
     },
     {
@@ -105560,15 +105566,17 @@
       "instruction": "jsr",
       "id": "control-02692",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain call relation UnderHammerBro \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 EnemyLanding, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
-        "src/game/enemy/jump_terrain.c",
+        "src/game/objects.c",
         "src/game/world/collision.c"
       ]
     },
@@ -105580,16 +105588,18 @@
       "instruction": "jmp",
       "id": "control-02693",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain jump relation UnderHammerBro \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DoEnemySideCheck, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
-        "src/game/enemy/jump_terrain.c",
-        "src/game/enemy/side_collision.c"
+        "src/game/enemy/side_collision.c",
+        "src/game/objects.c"
       ]
     },
     {
@@ -131908,15 +131918,17 @@
       "instruction": "rts/rti",
       "id": "control-03990",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain return relation EnemyLanding \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 UnderHammerBro, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
-        "src/game/enemy/jump_terrain.c",
+        "src/game/objects.c",
         "src/game/world/collision.c"
       ]
     },

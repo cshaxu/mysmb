@@ -997,3 +997,33 @@ The caller-owned return `control-03974` remains for its caller integration audit
 Current totals: historical **1,992 / 1,992**; current exact nodes **1,447 /
 1,992**; current exact feasible controls **3,033 / 4,324** (raw **4,342**,
 infeasible **18**).
+
+
+## S28 admission — Hammer Bro ground/no-ground state chain
+
+S28 admits `$E191-$E19A`: `UnderHammerBro` and `NoUnderHammerBro`, both owned
+by `src/game/objects.c:mysmb_objects_step_hammer_terrain`. S27 supplies the
+blank-block tail; S29 owns the ground-query leaf. The ROM track verifies timer
+fallthrough/branch, `$88` state mask, landing call/return, side-check tail and
+the no-ground state-d0 write. It extends the controlled Hammer direct route
+with the nonzero-timer path and replays it on x86/x64; focused terrain/purity
+checks and the OpenNT DOS16 shared-source build complete the operational track.
+
+- Incoming current exact: **1,447 / 1,992** nodes and **3,033 / 4,324** feasible controls.
+- Scope: `UnderHammerBro`, `NoUnderHammerBro`; expected current matches: **2**; maximum **1,449 / 1,992**.
+
+
+## S28 closure — Hammer Bro ground/no-ground state chain
+
+`UnderHammerBro` and `NoUnderHammerBro` are current-exact. Static `$E191-$E19A`
+comparison confirms the timer branch, `$88` state mask, ordered landing call and
+side-check tail, and state-d0 no-ground return. Five controlled original-ROM
+HammerBroBGColl records cover no ground, blank tile, timer-expired solid landing
+and timer-nonzero solid ground; x86/x64 full persistent-RAM replays have zero
+differences. Focused terrain-chain and platform-purity CTests pass. The registry
+now maps both nodes to their actual shared owner, `src/game/objects.c`.
+
+S28 records `UnderHammerBro`, `NoUnderHammerBro`, `control-02691` through
+`control-02693`, and `control-03990` exact. Current totals: historical **1,992 /
+1,992**; current exact nodes **1,449 / 1,992**; current exact feasible controls
+**3,037 / 4,324** (raw **4,342**, infeasible **18**).
