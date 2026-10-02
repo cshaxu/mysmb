@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T69 S11 - active enemy stream/init joins
+
+[Exact34 existing labels/38 pending controls](../proposals/m2/t69-cross-cohort-current-proof.md)
+expected fresh0,max1992/1992.Current1992/1992 scoped-exact nodes,
+4201/4277 controls(raw4342,infeasible65),543/555 material partial;
+historical1992/1992 separate.Both proof tracks required;S12 unadmitted.
+
 ## M2 T69 S10 - closed power-up/block/movement joins
 
 [All49 controls/3 material,36 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)

@@ -1561,3 +1561,33 @@ Raw bounded128MiB/1024 batch/120seconds process/524288steps root and deleted
 per batch;probe deleted at closure. Neutral ignored summaries/logs retained.
 Registry/ledger/progress/documentation/diff gates required before local P2
 commit.Unrelated owner work preserved,no push,no S11 pre-credit.
+
+## S11 admission - enemy stream/initializer vector joins
+
+Scope34 already-exact labels:Setup_Vine; PwrUpJmp; EnemiesAndLoopsCore; ProcLoopCommand; DoLpBack; ChkEnemyFrenzy; ProcessEnemyData; CheckPageCtrlRow; InitEnemyObject; DoGroup; CheckpointEnemyID; InitEnemyRoutines; InitBulletBill; InitCheepCheep; InitLakitu; InitLongFirebar; InitShortFirebar; InitBowser; HandleGroupEnemies; InitPiranhaPlant; InitEnemyFrenzy; EndFrenzy; InitJumpGPTroopa; InitBalPlatform; InitDropPlatform; InitHoriPlatform; InitVertPlatform; LargeLiftUp; LargeLiftDown; PlatLiftUp; PlatLiftDown; EndOfEnemyInitCode; RunEnemyObjectsCore; KillAllEnemies.Expected fresh nodes0,
+maximum1992/1992;38 planned controls pending,no material targets.
+Incoming1992/1992 scoped-exact nodes,4201/4277 feasible controls(raw4342,
+infeasible65),543/555 material partial;historical1992/1992 separate.S10
+closed,S12 and later unadmitted.Maintenance custody retained;expectedMatches
+empty. Concrete missing evidence:actual stream/loop/initializer joins and
+individual original initializer-vector selections,not new leaf credit.
+Entry/exit:C047 active/empty-slot selection through actual RunEnemyObjectsCore
+or ProcLoopCommand/ProcessEnemyData;loopback KillAllEnemies and frenzy queue
+handoff;page-row reentry and ordinary/group record initialization;Checkpoint
+through original C282-C2EF initializer vector and real children returning.
+Shared game enemy/core.c,loop.c,stream.c,init.c,init_targets.c,group.c,
+frenzy.c and listed power-up/vine children only;platform code excluded.
+Predecessor:S10 accepted;successor:S12 flying/firebar joins unadmitted.
+ROM track:Source-first original C047 EnemiesAndLoopsCore,C0CC ProcLoopCommand,C144 ProcessEnemyData,C26C CheckpointEnemyID roots with actual stream/loop/group/init/frenzy and listed initializer children;unchanged owner PRG stream records and per-selector vector reads;compare full persistent RAM/APU/ordered writes against actual x86/x64.
+Operational:enemy core/loop/stream/init-vector/group/frenzy,platform initializer,
+power-up/vine focused tests,purity,current x86/x64 products and original
+OpenNT DOS16 link. Product-code P refreshes3 EXEs under standing owner
+approval;pure audit retains products byte-identical. Any scoped diff repaired
+and both audits repeated before S12;no promotion from unobserved routes.
+Source policy:local owner ROM/reviewed ASM,nonredistributable,no third-party
+import. Ignored build/m2-t69-s11;raw<=128MiB,1024 roots/batch,120seconds/
+process,524288steps/root;coordinator deletes raw per batch/probe at closure.
+Similar-issue sweep:live slot reload,record-offset wrap,page-control reentry,
+queue versus buffer flag writes,CMP/ASL carry,vector alias/return scratch,
+duplicate allocation,platform page carries and actual child ordering.
+No admission credit.
