@@ -428,3 +428,45 @@ Neutral local evidence under ignored build/m2-t67-s2: route-summary.json,
 mode14/15 summaries/logs, coverage-summary.json, focused-x86/x64.log and
 dos16-link.log. Raw deleted after each batch; compiled probe cleaned on closure.
 Ledger/registry/progress/documentation gates required before P2 commit.
+
+## S3 admission - Square2 complete effect chain
+
+Scope36 pending nodes, intended current fresh36, maximum1804/1992:
+ExtraLifeFreqData; PowerUpGrabFreqData; PUp_VGrow_FreqData; PlayCoinGrab; PlayTimerTick; CGrab_TTickRegL; ContinueCGrabTTick; N2Tone; PlayBlast; ContinueBlast; SBlasJ; PlayPowerUpGrab; ContinuePowerUpGrab; LoadSqu2Regs; DecrementSfx2Length; EmptySfx2Buffer; StopSquare2Sfx; ExSfx2; Square2SfxHandler; CheckSfx2Buffer; ExS2H; Cont_CGrab_TTick; JumpToDecLength2; PlayBowserFall; BlstSJp; ContinueBowserFall; PBFRegs; EL_LRegs; PlayExtraLife; ContinueExtraLife; DivLLoop; PlayGrowPowerUp; PlayGrowVine; GrowItemRegs; ContinueGrowItems; StopGrowItems. Scope and intended current set are identical, each
+needs-evidence. Current1768/1992 nodes,3760/4301 feasible controls(raw4342,
+infeasible41),404/493 material partial. Historical1992/1992 separate with
+expectedMatches empty. Existing receiving map retained; no maintenance transfer.
+
+S3 consumes accepted S1 register/frequency writers. Shared owner audio.c:
+step_square2 priority/queue shifts, coin/timer/blast/power-up/Bowser/extra-life/
+grow helpers and independent secondary counter. Source entry ExtraLifeFreqData
+through StopGrowItems before BrickShatterFreqData; control scope
+is source-owned non-return edges and caller-owned returns as corrected in S1.
+Material00439-00441 requires actual index producer/read/write order for six
+extra-life,27 power-up plus three residual,32 growth bytes; arbitrary byte lengths
+are CPU-address semantics, not fabricated extra table membership.
+
+ROM track: Unchanged original F2D0 SoundEngine -> actual Square2SfxHandler -> real RTS. Start4096 roots all256 queues/16 saved-state profiles including extra-life protection; continuation65536 all256 buffers by all256 lengths; growth65536 independent primary/secondary byte pairs. Real inactive other channels/music, full1841 RAM/24 APU/ordered writes x86/x64; scoped transitions and three frequency-table reads. Source15369-15564; no later noise/music credit.
+The probe executes complete actual SoundEngine unchanged, with same controlled
+initial RAM passed to native public audio_step. No test-only entry into private
+Square2 helper, mocked children or patched ROM. Later inactive children return
+normally and are not promoted. Confirm existing buffer bit40 wins over all
+queued bits, then new bit7/bits0..6 priority, original buffer/live queue shifts,
+coin30/blast18/Bowser08 tone changes, every-eight extra-life and even power-up
+reads, secondary increment/wrap/equality with preserved primary growth length,
+decrement0->FF and1->0, stop4015=0D then0F. Compare1841 RAM including0109-0139, final APU24 bytes,
+all ordered write indices/values; exclude only true CPU stack/unmapped transient
+registers. Actual call/return/fallthrough recording and source impossibility
+proof required for every scoped edge. No absence-only infeasible classification.
+
+Operational track: focused audio/music/death/channel/purity tests both widths,
+minimal native checker builds and original OpenNT DOS16 link. Product-code
+repair publishes all3 owner-authorized EXEs in same P; audit/test-only retains
+byte-verified existing3 builds. Similar-issue sweep includes start-vs-continue
+double commands, queue precedence, terminal mute and byte-index/wrap behavior.
+Any feasible diff remains in S3 until repaired and reaudit clean; S4 unadmitted.
+
+Owner-local original ROM/reviewed ASM are nonredistributable research inputs;
+all probes/raw/scripts/logs under ignored build/m2-t67-s3,128MiB raw budget,
+1024 roots/batch,120seconds/process,524288 instructions/root. Coordinator deletes
+raw after comparison. No third-party code import or platform game logic.
