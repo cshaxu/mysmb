@@ -419,7 +419,7 @@ Historical mapping remains 1992/1992 and is not current end-to-end certification
 T65 and later source cohorts plus cross-cohort/final audits remain pending.
 
 
-## M2 T64 S23 â€” PlayerEnemyDiff
+## M2 T64 S23 — PlayerEnemyDiff
 
 - Planned and completed label: `PlayerEnemyDiff`; no transferred or incomplete
   label. Caller return edges remain under their call-site audits.
@@ -428,10 +428,10 @@ T65 and later source cohorts plus cross-cohort/final audits remain pending.
 - Operational verification: four direct original-ROM entries replay with zero
   x86/x64 A and `$00` differences; focused chain, terrain and purity CTests
   pass. No product C or artifact changed.
-- Current exact progress: nodes **1,440 â†’ 1,441 / 1,992**; feasible controls
+- Current exact progress: nodes **1,440 → 1,441 / 1,992**; feasible controls
   remain **3,016 / 4,324** (raw **4,342**, infeasible **18**).
 
-## M2 T64 S22 â€” InvEnemyDir tail
+## M2 T64 S22 — InvEnemyDir tail
 
 - Planned and completed label: `InvEnemyDir`; no transferred or incomplete
   label.
@@ -440,8 +440,8 @@ T65 and later source cohorts plus cross-cohort/final audits remain pending.
   without x86/x64 differences.
 - Operational verification: focused enemy-side/jump/Hammer, terrain-state and
   platform-purity CTests pass on x86 and x64. No product C or artifact changed.
-- Current exact progress: nodes **1,439 â†’ 1,440 / 1,992**; feasible controls
-  **3,015 â†’ 3,016 / 4,324** (raw **4,342**, infeasible **18**).
+- Current exact progress: nodes **1,439 → 1,440 / 1,992**; feasible controls
+  **3,015 → 3,016 / 4,324** (raw **4,342**, infeasible **18**).
 
 The [canonical inventory](../etc/architecture/smb1-rom-migration-inventory.md)
 contains 1,992 unique original label nodes. This is conformance accounting,
@@ -2488,7 +2488,7 @@ Every M2 P report also retains the existing delivery record: refreshed `assets/m
 
 T61 S2 closes `CannonBitmasks -> KillBB`: **710 / 1,992 current-exact nodes** and **1,417 / 4,324 current-exact feasible control relations**. Historical ROM-match accounting remains **1,992 / 1,992**.
 
-## Current re-audit progress â€” T61 S3
+## Current re-audit progress — T61 S3
 
 T61 S3 closes the hammer caller chain at **720 / 1,992 current-exact nodes** and **1,429 / 4,324 current-exact feasible control relations**. The `GetMiscBoundBox` child boundary remains `needs-evidence` with M2 T43 S13; historical accounting remains **1,992 / 1,992**.
 
@@ -2636,7 +2636,7 @@ original-ROM/current comparisons per x86/x64 width pass. Historical **1,992 /
 4,324**; raw **4,342**, infeasible **18**.
 
 
-## S17 closure â€” Bowser front/rear graphics and collision chain
+## S17 closure — Bowser front/rear graphics and collision chain
 
 All four scoped labels are current-exact: `BowserGfxHandler`, `CopyFToR`, `ExBGfxH` and `ProcessBowserHalf`. Static `$D17B-$D1D0` comparison binds 86 instruction bytes and confirms front-before-rear processing, `$10/$f0` direction wrapping, rear-slot state transfer, `ObjectOffset` save/restore, normal-state-only bounding box, collision tail and graphics-flag reset. All 11 feasible controls and five material handoffs are exact.
 
@@ -2645,7 +2645,7 @@ One current-source manifest runner per x86 and x64 width replays all 512 origina
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,138 / 1,992 nodes** and **2,266 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
 
 
-## S18 closure â€” Bowser flame timer table and selector chain
+## S18 closure — Bowser flame timer table and selector chain
 
 All three scoped labels are current-exact: `FlameTimerData`, `SetFlameTimer` and `ExFl`. Static `$D1DD-$D1E7` comparison binds all eight table bytes and eleven instruction bytes, including old-index read before mutation, increment then `$07` mask, stored successor and return. The two caller boundaries and all four previously pending feasible controls are exact; both material handoffs are exact.
 
@@ -2653,7 +2653,7 @@ One current-source route runner per x86 and x64 width extracts and replays all 2
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 1,992 nodes** and **2,270 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
 
-## M2 T63 S19 closure â€” Bowser-flame horizontal movement chain
+## M2 T63 S19 closure — Bowser-flame horizontal movement chain
 
 - Scope: `ProcBowserFlame`, `SFlmX`; both current-exact.
 - Exact controls: `control-02008` through `control-02012`; exact materials:
@@ -2667,7 +2667,7 @@ Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 
 - Totals: historical **1,992 / 1,992**; current exact **1,143 / 1,992** nodes,
   **2,275 / 4,324** feasible controls; raw **4,342**, infeasible **18**.
 
-## M2 T63 S20 closure â€” Bowser-flame OAM draw and offscreen chain
+## M2 T63 S20 closure — Bowser-flame OAM draw and offscreen chain
 
 - Scope: `SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs`,
   `ExFlmeD`; all current-exact.
@@ -2681,7 +2681,7 @@ Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 
 - Totals: historical **1,992 / 1,992**; current exact **1,150 / 1,992** nodes,
   **2,290 / 4,324** feasible controls; raw **4,342**, infeasible **18**.
 
-## M2 T63 S21 closure â€” fireworks lifetime, render and score chain
+## M2 T63 S21 closure — fireworks lifetime, render and score chain
 
 - Scope: `RunFireworks`, `SetupExpl`, `FireworksSoundScore`; all current-exact.
 - Exact controls: `control-02028` through `control-02033`; exact materials:
@@ -2694,15 +2694,15 @@ Historical mapping remains **1,992 / 1,992**; current exact status is **1,141 / 
 - Totals: historical **1,992 / 1,992**; current exact **1,153 / 1,992** nodes,
   **2,296 / 4,324** feasible controls; raw **4,342**, infeasible **18**.
 
-## M2 T63 S22 closure â€” star-flag, timer-score and end-area chain
+## M2 T63 S22 closure — star-flag, timer-score and end-area chain
 
 All 19 scoped labels, 37 pending feasible controls and 13 material handoffs are current-exact. Static `$D2CD-$D3AE`, one 1,024-record manifest per x86/x64 width, focused C90, platform purity and DOS16 link passed. Totals: historical **1,992 / 1,992**; current exact **1,172 / 1,992** nodes and **2,333 / 4,324** feasible controls; raw **4,342**, infeasible **18**. No product source changed.
 
-## M2 T63 S23 closure â€” star-flag terminal exit
+## M2 T63 S23 closure — star-flag terminal exit
 
 StarFlagExit2 is current-exact. Both incoming paths were exact in S22; the current x86/x64 1,024-record manifest remains zero-difference. Totals: historical **1,992 / 1,992**; current exact **1,173 / 1,992** nodes and **2,333 / 4,324** feasible controls.
 
-## M2 T63 S24 closure â€” piranha movement chain
+## M2 T63 S24 closure — piranha movement chain
 
 All six scoped labels, 16 feasible controls and four materials exact. ROM batch, focused C90, purity and DOS16 link passed. Totals: historical **1,992 / 1,992**; current **1,179 / 1,992** nodes, **2,349 / 4,324** controls.
 
@@ -2710,25 +2710,25 @@ All six scoped labels, 16 feasible controls and four materials exact. ROM batch,
 
 FirebarSpin and SpinCounterClockwise exact; totals **1,181 / 1,992**, **2,351 / 4,324**.
 
-## S26 closure â€” balance-platform movement, rope and fall chain
+## S26 closure — balance-platform movement, rope and fall chain
 
 All 26 scoped labels are current-exact: `BalancePlatform` through `ExPF`. Static `$D432-$D5D2` comparison covers the paired-platform entry and threshold gates, coupled movement and old-minus-new Y transfer, both rope-address calculations and complementary command tiles, fall setup, dual falling moves and conditional player placement. The 1,024-record original-ROM batch replays once per x86 and x64 process with full RAM and recorded child calls, zero differences. The focused C90 contract, platform-purity check and OpenNT DOS16 shared-source link pass. All 67 newly pending feasible controls and 16 material handoffs are exact. Test harness and evidence changed only; no product code changed, so no three-EXE refresh is due.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,207 / 1,992 nodes** and **2,418 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
 
-## S27 closure â€” moving and lift-platform chain
+## S27 closure — moving and lift-platform chain
 
 All 20 scoped labels are current-exact: `YMovingPlatform` through `ExLiftP`. Static `$D5D3-$D679` comparison binds the stationary dummy reset, every-eighth-frame increment, unsigned top/center gates, vertical rider tail, X-counter and movement child order, signed player page carry/borrow, drop and right-platform exits, and timer-gated large/small lift fixed-point movement with their distinct collision arguments. The three original-ROM route families replay 1,792 records once per x86 and x64 process with full RAM and recorded child calls, zero differences. Focused C90 vertical, horizontal and lift contracts, platform purity and OpenNT DOS16 shared-source link pass. All 42 source-owned pending feasible controls and 13 material handoffs are exact. Test harness/evidence only; product C is unchanged, so no three-EXE refresh is due.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,227 / 1,992 nodes** and **2,460 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
 
-## S28 closure â€” T63 cross-chain edge closure
+## S28 closure — T63 cross-chain edge closure
 
 This zero-node-credit audit closes all three residual T63 graph gaps. `control-03766` proves `KillAllEnemies -> DoLpBack` returns in source order after the descending erase loop and before the caller restores its slot. `material-00301` proves FirebarSpin direction and scratch speed feed the clockwise/counter-clockwise phase arithmetic; `material-00302` proves its updated low phase and returned high phase feed the separate caller-owned ProcFirebar mask/store. Static `$D071-$D07B` and `$D410-$D431`, terminal-Bowser and FirebarSpin x86/x64 record batches, and focused C90 loop/spin contracts all pass with zero differences. No product source changed, so no EXE refresh is due.
 
 Historical mapping remains **1,992 / 1,992**; current exact status is **1,227 / 1,992 nodes** and **2,461 / 4,324 feasible controls** (raw **4,342**, infeasible **18**).
 
-## M2 T63 S29 closure â€” integrated regression fixture correction
+## M2 T63 S29 closure — integrated regression fixture correction
 
 No ROM node or graph credit changed. `core-smoke` now supplies the
 source-predecessor pending flag and normal block-buffer column before it calls
@@ -2738,20 +2738,20 @@ DOS16 shared-source link pass. Historical **1,992 / 1,992**; current exact
 **1,227 / 1,992** nodes and **2,461 / 4,324** feasible controls; raw **4,342**,
 infeasible **18**.
 
-## M2 T63 closure â€” Cohort J actor-movement audit
+## M2 T63 closure — Cohort J actor-movement audit
 
 Completed target labels: **244 / 244**; no scoped label is deferred or
 transferred. The scoped graph has **534** exact feasible controls, **2**
 instruction-semantic infeasible controls, and **154 / 154** exact material
 handoffs. The ROM-logic track is the zero-difference per-chain static and
-original-ROM route evidence recorded in S1â€“S28. The final operational matrix
+original-ROM route evidence recorded in S1–S28. The final operational matrix
 passes **219 / 219** CTests on both x86 and x64, plus the OpenNT DOS16
 shared-source link. Historical **1,992 / 1,992**; global current exact
 **1,227 / 1,992** nodes and **2,461 / 4,324** feasible controls; raw **4,342**,
 infeasible **18**.
 
 
-## M2 T64 S20 closure â€” enemy side collision loop
+## M2 T64 S20 closure — enemy side collision loop
 
 `DoEnemySideCheck` through `ExESdeC` is current-exact: four labels and ten
 source-owned feasible controls. Static `$E0FE-$E123` comparison binds the
@@ -2765,20 +2765,20 @@ current exact totals are **1,437 / 1,992** nodes and **3,010 / 4,324**
 feasible controls (raw **4,342**, infeasible **18**).
 
 
-## M2 T64 S21 closure â€” bump and Hammer Bro response entry
+## M2 T64 S21 closure — bump and Hammer Bro response entry
 
 `ChkForBump_HammerBroJ` and `NoBump` are current-exact. Five controlled original-ROM `$E124` entries cover the slot-five BEQ, state-clear BCC, sound fallthrough, ordinary `InvEnemyDir` tail, and Hammer `SetHJ` handoff. The current x86/x64 checkers replay all five records with zero differences. Static `$E124-$E131`, focused jump/Hammer and terrain-state tests, and platform purity agree. S21 adds two nodes and five feasible controls: current **1,439 / 1,992** nodes and **3,015 / 4,324** feasible controls; historical mapping remains **1,992 / 1,992**. No product C changed, so package EXEs were not refreshed.
 
-## M2 T64 S24 â€” EnemyLanding
+## M2 T64 S24 — EnemyLanding
 
 - Completed: EnemyLanding; its InitVStf call relation is exact.
 - Direct original-ROM landing records and x86/x64 owner replay have zero Y speed, force or aligned-Y differences; focused chain and purity tests pass.
-- Current exact progress: nodes **1,441 â†’ 1,442 / 1,992**; feasible controls **3,016 â†’ 3,017 / 4,324** (raw **4,342**, infeasible **18**).
+- Current exact progress: nodes **1,441 → 1,442 / 1,992**; feasible controls **3,016 → 3,017 / 4,324** (raw **4,342**, infeasible **18**).
 
 - Current-equivalence audit M2 T64 S25 closed `SubtEnemyYPos -> EnemyJump -> DoSide`: historical mapping remains **1,992 / 1,992**; current exact registry is **1,445 / 1,992** nodes and **3,027 / 4,324** feasible controls (raw **4,342**, infeasible **18**). Four original-ROM chain routes replayed with zero non-stack RAM differences on x86 and x64; no product C changed.
 
 
-## M2 T64 S26 â€” Hammer Bro terrain entry
+## M2 T64 S26 — Hammer Bro terrain entry
 
 - Planned and completed label: `HammerBroBGColl`; no node is deferred. Exact
   source-owned controls: `control-02686` through `control-02689`.
@@ -2789,12 +2789,12 @@ feasible controls (raw **4,342**, infeasible **18**).
   zero x86/x64 non-stack-RAM differences; focused terrain/purity checks and
   x86/x64 product self-tests pass; the OpenNT DOS16 shared-source build passes.
   All three packaged EXEs were refreshed.
-- Current exact progress: nodes **1,445 â†’ 1,446 / 1,992**; feasible controls
-  **3,027 â†’ 3,031 / 4,324** (raw **4,342**, infeasible **18**). The registry
-  reconciliation also records the already-closed S21â€“S25 increments.
+- Current exact progress: nodes **1,445 → 1,446 / 1,992**; feasible controls
+  **3,027 → 3,031 / 4,324** (raw **4,342**, infeasible **18**). The registry
+  reconciliation also records the already-closed S21–S25 increments.
 
 
-## M2 T64 S27 â€” bumped-block enemy defeat tail
+## M2 T64 S27 — bumped-block enemy defeat tail
 
 - Planned and completed label: `KillEnemyAboveBlock`; no node is deferred.
   Exact source-owned controls: `control-02690` and `control-03989`.
@@ -2803,11 +2803,11 @@ feasible controls (raw **4,342**, infeasible **18**).
 - Operational verification: four controlled direct-ROM entries replayed with
   zero x86/x64 persistent-RAM differences; focused terrain-chain and platform
   purity checks pass. Product C did not change, so S26's artifacts remain valid.
-- Current exact progress: nodes **1,446 â†’ 1,447 / 1,992**; feasible controls
-  **3,031 â†’ 3,033 / 4,324** (raw **4,342**, infeasible **18**).
+- Current exact progress: nodes **1,446 → 1,447 / 1,992**; feasible controls
+  **3,031 → 3,033 / 4,324** (raw **4,342**, infeasible **18**).
 
 
-## M2 T64 S28 â€” Hammer Bro ground/no-ground state chain
+## M2 T64 S28 — Hammer Bro ground/no-ground state chain
 
 - Completed: `UnderHammerBro`, `NoUnderHammerBro`; no deferred node. Exact
   controls: `control-02691` through `control-02693`, `control-03990`.
@@ -2815,10 +2815,10 @@ feasible controls (raw **4,342**, infeasible **18**).
   agree with `$E191-$E19A`; current owner is corrected to `objects.c`.
 - Operational: five controlled Hammer ROM entries replayed with zero x86/x64
   persistent-RAM differences; focused terrain-chain and platform-purity pass.
-- Current exact progress: nodes **1,447 â†’ 1,449 / 1,992**; feasible controls
-  **3,033 â†’ 3,037 / 4,324** (raw **4,342**, infeasible **18**).
+- Current exact progress: nodes **1,447 → 1,449 / 1,992**; feasible controls
+  **3,033 → 3,037 / 4,324** (raw **4,342**, infeasible **18**).
 
-## M2 T64 S29 â€” ChkUnderEnemy
+## M2 T64 S29 — ChkUnderEnemy
 
 - Completed: `ChkUnderEnemy`; no deferred node. Exact control:
   `control-02694`.
@@ -2831,7 +2831,7 @@ feasible controls (raw **4,342**, infeasible **18**).
 - Current exact progress: nodes **1,449 -> 1,450 / 1,992**; feasible controls
   **3,037 -> 3,038 / 4,324** (raw **4,342**, infeasible **18**).
 
-## M2 T64 S30 â€” ChkForNonSolids and NSFnd
+## M2 T64 S30 — ChkForNonSolids and NSFnd
 
 - Completed: `ChkForNonSolids`, `NSFnd`; no deferred node. Exact controls:
   `control-02695` through `control-02699`.
