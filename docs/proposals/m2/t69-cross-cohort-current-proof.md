@@ -1748,3 +1748,15 @@ Ignored build/m2-t69-s12;128MiB raw,1024 roots/batch,120seconds/process,
 Similar-issue sweep:real parent slot reload,SmallBBox A destruction,random
 read order,table selectors,carry/borrow across page,duplicate allocation,
 height aliases and consumed initialized movement flags. Both tracks required.
+
+### S12 scope amendment - retained test ABI dependency
+
+Current all-target x86/x64 build exposes previous S10 BlockCode's missing
+JumpEngine dependency in test/block_bump_snapshot_check.c caller-only build.
+Coordinator adds this bounded test ABI repair under owner continuation mandate;
+no extra product/node/control/material scope or credit. Add the declared
+frame-root signature and caller-test boundary reading unchanged local PRG;
+rebuild actual targets and existing smoke. This caller fixture is operational
+only,never a substitute for the real-child original-ROM/current route proof.
+Source/product are unchanged;three EXEs retained. S12 stays active until build
+and dual-track closure gates pass;no scoped mismatch transferred forward.
