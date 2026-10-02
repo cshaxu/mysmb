@@ -758,3 +758,29 @@ Ignored build/m2-t68-s4 has modes48-50, natural/extended route and coverage
 summaries, source-unused decisions, focused tests/build/DOS16 logs. Raw removed
 per batch, recorder removed at closure. Registry/ledger/progress/docs gates
 required before P2 commit; unrelated owner changes preserved unstaged.
+
+## S5 admission - final frequency, length and envelope tables
+
+Scope/intended fresh7, all needs-evidence: FreqRegLookupTbl; MusicLengthLookupTbl; EndOfCastleMusicEnvData; AreaMusicEnvData; WaterEventMusEnvData; BowserFlameEnvData; BrickShatterEnvData.
+Current1912/1992 nodes,3964/4279 feasible controls(raw4342,infeasible63),
+493/555 material partial; maximum1919/1992. Historical1992/1992 separate,
+historical expectedMatches empty. Owned controls none; owned material7:
+material-00443,material-00444,material-k38-01 through05.
+Shared audio.c full PRG CPU reader and frequency/length/envelope/noise consumers.
+Adjacent original regions FF00-FFFA,250 bytes; vectors are outside scope.
+S1-S4 accepted consumers are predecessors; S6 integration remains unadmitted.
+Maintenance custody retained; no data import or substituted table contents.
+
+ROM track: Unchanged original frequency and length/envelope helper entries plus real SoundEngine noise consumers; actual absolute-indexed table reads and returned A/full1841 RAM/24 APU/ordered writes compared x86/x64. Source table bounds and original index/carry/wrap audited independently.
+Each node requires actual consumer evidence for declared bytes, indexed base,
+zero-read gate, two-ADC carry, event priority/area mask, counter shift and
+Bowser base one byte before its named region. No bounds clamp invented.
+Operational track: focused tests/current builds x86/x64, original OpenNT
+DOS16 link and purity. Refresh3 EXEs only if product code changes; otherwise
+verify byte-identical committed/current products. Any scoped difference keeps
+S5 active until repaired and re-audited. Earlier C/M debt is not promoted.
+Similar-issue sweep: adjacent table cross-reads, byte/CPU-address wrap,
+pre-decrement indices, zero envelope continuation and APU write ordering.
+Owner-local ROM/reviewed ASM research only, nonredistributable. Ignored
+build/m2-t68-s5,128MiB raw,1024 roots/batch,120seconds/process,524288steps/root;
+coordinator removes raw per batch and retains neutral summaries only.

@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T68 S5 - active final table chain
+
+[Exact7-node admission](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+scope/intended fresh7,max1919/1992; current1912/1992 nodes,3964/4279 controls
+(raw4342,infeasible63),493/555 material partial; historical1992/1992 separate.
+Actual indexed reads and consumer semantics plus operational proof required.
+
 ## M2 T68 S4 - closed stream-region chain
 
 [All21 regions/62 source-proven material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
