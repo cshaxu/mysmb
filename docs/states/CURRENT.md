@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T67 S1 Packet
+## M2 T67 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M2 T67 S1 P2 closed; T67 open, S2 next unadmitted. |
-| Admission And Approval | Owner approved source-order continuation; coordinator admits22-node SoundEngine/register chain. |
-| Objective | Audit/repair22 pending M nodes and their owned controls; original ordered APU output and source semantics. |
-| Non-goals | No downstream effect/music promotion, T68 admission, platform business logic or new presentation. |
+| Identifier Mode | Continuation: M2 T67 S2 P1 active; S1 closed, T67 open. |
+| Admission And Approval | Owner approved source-order continuation; coordinator admits30-node planned Square1 effect chain. |
+| Objective | Audit/repair30 pending Square1 nodes, their owned controls and material00438 against original source and ordered commands. |
+| Non-goals | No active Square2/noise/music promotion, S3 admission or platform logic. |
 | Reference Baseline | Historical1992/1992; current exact1738/1992 nodes,3694/4312 feasible controls(raw4342,infeasible30),403/493 material partial. |
-| Candidate Proposal | [T67 exact126-node plan](../proposals/m2/t67-cohort-m-sound-command-current-proof.md), S1 exact22-node scope. |
+| Candidate Proposal | [T67 exact126-node plan](../proposals/m2/t67-cohort-m-sound-command-current-proof.md), S2 exact30-node scope. |
 | Files And ABI Surface | src/game/audio.c and audio.h neutral APU ABI; test/tools probes and governance. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and admitted T67 proof program. |
-| Verification | Unchanged original SoundEngine F2D0 entry/real RTS controlled title, pause, unpause, empty normal dispatch and all-byte DAC states; original F381-F3B0 register/frequency helper entries. Compare1841 non-stack RAM bytes,24 final APU bytes and every ordered APU write; real calls/returns/branches and local frequency table reads, x86/x64. No downstream music/effect node credit. |
-| Expected Markers | Met:22 new current exact nodes,45 feasible controls and4 instruction-proven infeasible; historical1992/1992 expected/actualMatches empty. |
-| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable; ignored build/m2-t67-s1,128MiB raw,1024 roots/batch,120seconds/run,524288steps/root and cleanup. |
+| Verification | Unchanged original F2D0 SoundEngine -> actual Square1SfxHandler -> real RTS. Start matrix4096 inputs all256 queue bytes/16 initial profiles; continuation65536 inputs all256 buffer bytes by all256 lengths. Other channels/music inactive real callees; full1841 RAM,24 APU and ordered command sequence compare x86/x64, actual scoped transitions and SwimStompEnvelopeData reads. Static source15194-15365; no active Square2/noise/music credit. |
+| Expected Markers | Current scope30 pending/intended fresh30, maximum1768/1992; historical1992/1992 expectedMatches empty. |
+| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable; ignored build/m2-t67-s2,128MiB raw,1024 roots/batch,120seconds/run,524288steps/root and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | Scoped diff or missing dual/edge/write-order evidence keeps S1 open; no successor before closure. |
-| Exit Criteria | Met:22 source contracts/45 feasible controls exact,4 infeasible; ordered original/current output zero diff,7 tests each/purity/OpenNT link pass; no product change,3 EXEs retained. |
+| Stop Conditions | Any scoped feasible diff or missing dual/edge/table evidence keeps S2 open; S3 not admitted. |
+| Exit Criteria | 30 nodes and scoped feasible controls/material00438 exact with dual proof; original DOS16 link/tests/purity pass; repair refreshes3 EXEs, pure audit retains; ledger/tracker gates pass. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Queue priority, pause start/end/skip, old DAC write, helper zero/wrap and ordered APU writes. |
+| Similar-Issue Sweep | Queue priority and shifts, start/continue commands once, length thresholds/wrap, envelope indexing and ordered terminal mute. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **3694/4312** (raw4342,infeasible30).
 - Exact material relations: **403/493**, enumeration partial.
 - Latest three products are T66 S2 P2 builds including audio/title/focus pause.
-- T67 S1 closed:22 nodes/45 feasible controls,4 proven impossible fallthroughs;15,360 original roots zero differences each width; S2 next unadmitted.
+- T67 S2 active:30 pending Square1 nodes/intended fresh30; current counts unchanged at admission.

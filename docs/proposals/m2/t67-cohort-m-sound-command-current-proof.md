@@ -287,3 +287,44 @@ branches remain S2-S5; no global all-audio claim. Neutral local evidence:
 build/m2-t67-s1 route-summary.json, coverage-summary.json, mode logs, negative-
 summary.json, focused-x86/x64.log and dos16-link.log. Raw cleaned; probes
 removed after proof. Ledger/progress/registry/documentation gates required.
+
+## S2 admission - Square1 complete effect chain
+
+Scope30 pending nodes, intended current fresh30, maximum1768/1992:
+SwimStompEnvelopeData; PlayFlagpoleSlide; PlaySmallJump; PlayBigJump; JumpRegContents; ContinueSndJump; N2Prt; FPS2nd; DmpJpFPS; PlayFireballThrow; PlayBump; Fthrow; ContinueBumpThrow; DecJpFPS; Square1SfxHandler; CheckSfx1Buffer; ExS1H; PlaySwimStomp; ContinueSwimStomp; BranchToDecLength1; PlaySmackEnemy; ContinueSmackEnemy; SmSpc; SmTick; DecrementSfx1Length; StopSquare1Sfx; ExSfx1; PlayPipeDownInj; ContinuePipeDownInj; NoPDwnL. Scope and intended current set are identical, each
+needs-evidence. Current1738/1992 nodes,3694/4312 feasible controls(raw4342,
+infeasible30),403/493 material partial. Historical1992/1992 separate with
+expectedMatches empty. Existing receiving map retained; no maintenance transfer.
+
+S2 consumes accepted S1 register/frequency writers. Shared owner audio.c:
+step_square1 priority/queue shifts, play/continue jump/flagpole/throw helpers,
+length/stop paths and owner-local F3B0+length envelope reader. Source entry
+SwimStompEnvelopeData through NoPDwnL before Square2 tables; control scope
+is source-owned non-return edges and caller-owned returns as corrected in S1.
+Material00438 requires actual remaining-length table read before envelope
+write/decrement, including all14 valid table bytes; arbitrary byte lengths
+are CPU-address semantics, not fabricated extra table membership.
+
+ROM track: Unchanged original F2D0 SoundEngine -> actual Square1SfxHandler -> real RTS. Start matrix4096 inputs all256 queue bytes/16 initial profiles; continuation65536 inputs all256 buffer bytes by all256 lengths. Other channels/music inactive real callees; full1841 RAM,24 APU and ordered command sequence compare x86/x64, actual scoped transitions and SwimStompEnvelopeData reads. Static source15194-15365; no active Square2/noise/music credit.
+The probe executes complete actual SoundEngine unchanged, with same controlled
+initial RAM passed to native public audio_step. No test-only entry into private
+Square1 helper, mocked children or patched ROM. Later inactive children return
+normally and are not promoted. Confirm priority bit7 then bits0..6, unshifted
+buffer save/live queue shifts, starts falling into continuation exactly once,
+jump25/20 tones, bump6, swim6, smack8, pipe bit gate, decrement0->FF and1->0,
+stop4015=0E then0F. Compare1841 RAM including0109-0139, final APU24 bytes,
+all ordered write indices/values; exclude only true CPU stack/unmapped transient
+registers. Actual call/return/fallthrough recording and source impossibility
+proof required for every scoped edge. No absence-only infeasible classification.
+
+Operational track: focused audio/music/death/channel/purity tests both widths,
+minimal native checker builds and original OpenNT DOS16 link. Product-code
+repair publishes all3 owner-authorized EXEs in same P; audit/test-only retains
+byte-verified existing3 builds. Similar-issue sweep includes start-vs-continue
+double commands, queue precedence, terminal mute and byte-index/wrap behavior.
+Any feasible diff remains in S2 until repaired and reaudit clean; S3 unadmitted.
+
+Owner-local original ROM/reviewed ASM are nonredistributable research inputs;
+all probes/raw/scripts/logs under ignored build/m2-t67-s2,128MiB raw budget,
+1024 roots/batch,120seconds/process,524288 instructions/root. Coordinator deletes
+raw after comparison. No third-party code import or platform game logic.

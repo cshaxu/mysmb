@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T67 S2 - active Square1 effect chain
+
+[Exact30-node target and original route](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+admits30 pending nodes/intended fresh30/max1768/1992, zero admission credit.
+Current1738/1992 nodes,3694/4312 controls(raw4342,infeasible30),403/493 material
+partial. Historical1992/1992 separate; scoped controls/material00438 require
+source/RAM/branch/table audit and original ordered output before closure.
+
 ## M2 T67 S1 - closed SoundEngine and register chain
 
 [Exact22 completed labels and owned edge evidence](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
