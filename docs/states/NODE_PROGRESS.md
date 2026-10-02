@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S4 - flagpole output and dump leaves
+
+[T65 S4 current carry/output/graph proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes nine labels, thirteen controls and one material row, none deferred.
+Current nodes 1523/1992, feasible controls 3226/4321 (raw 4342, infeasible 21),
+material 381/492 partial; historical mapping 1992/1992 is separate.
+Each width matches 16896 original-ROM roots plus 4608 independent caller
+checks; 10/10 operational tests per width and original DOS16 link pass.
+Three products refreshed; T65 remains open, S5 next.
+
 ## M2 T65 S3 - hammer output and child edge
 
 [T65 S3 current indexed-output/call proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

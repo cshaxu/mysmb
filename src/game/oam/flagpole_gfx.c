@@ -43,6 +43,8 @@ void mysmb_objects_draw_flagpole_graphics(struct mysmb_game *game)
     mysmb_u8 slot;
     mysmb_u8 oam;
     mysmb_u8 x;
+    mysmb_u8 y;
+    mysmb_u8 carry;
     mysmb_u8 index;
     mysmb_u8 graphics_index;
     mysmb_u8 score_oam;
@@ -54,11 +56,13 @@ void mysmb_objects_draw_flagpole_graphics(struct mysmb_game *game)
     x = (mysmb_u8)(x + 8U);
     game->ram[(mysmb_u16)(0x0207U + oam)] = x;
     game->ram[(mysmb_u16)(0x020bU + oam)] = x;
+    carry = x >= 0xf4U ? 1U : 0U;
     game->ram[0x0005U] = (mysmb_u8)(x + 12U);
-    mysmb_oam_dump_two_sprites(game,
-        game->ram[MYSMB_FLAG_ENEMY_Y + slot], oam);
+    y = game->ram[MYSMB_FLAG_ENEMY_Y + slot];
+    mysmb_oam_dump_two_sprites(game, y, oam);
+    /* DumpTwoSpr preserves carry from the preceding X ADC #$0c. */
     game->ram[(mysmb_u16)(0x0208U + oam)] = (mysmb_u8)(
-        game->ram[MYSMB_FLAG_ENEMY_Y + slot] + 8U);
+        y + 8U + carry);
     /* $e56c-$e575 initializes DrawOneSpriteRow's scratch arguments before
      * testing FlagpoleCollisionYPos. */
     game->ram[0x0002U] = game->ram[MYSMB_FLAG_FNUM_Y];
@@ -73,10 +77,10 @@ void mysmb_objects_draw_flagpole_graphics(struct mysmb_game *game)
     if (game->ram[MYSMB_FLAG_COLLISION_Y] != 0U) {
         index = (mysmb_u8)(game->ram[MYSMB_FLAG_SCORE] << 1U);
         game->ram[0x0000U] = score_tiles[index];
-        game->ram[0x0001U] = score_tiles[index + 1U];
         graphics_index = index;
         score_oam = (mysmb_u8)(oam + 12U);
-        mysmb_oam_draw_sprite_object(game, &graphics_index, &score_oam);
+        mysmb_oam_draw_one_sprite_row(game, score_tiles[index + 1U],
+            &graphics_index, &score_oam);
     }
     slot = game->ram[MYSMB_FLAG_OBJECT_OFFSET];
     oam = game->ram[MYSMB_FLAG_ENEMY_SPRITE_OFFSET + slot];

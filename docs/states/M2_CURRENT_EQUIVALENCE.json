@@ -9051,13 +9051,16 @@
       "consumer": "FlagpoleGfxHandler",
       "storage": "ROM FlagpoleScoreNumTiles pair selected by FlagpoleScore*2 to $00/$01 then DrawOneSpriteRow",
       "feasiblePath": "FlagpoleGfxHandler doubles FlagpoleScore, loads the two selected table bytes to $00/$01, then calls DrawOneSpriteRow.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/flagpole_gfx.c score_tiles selected by mysmb_objects_draw_flagpole_graphics",
-      "semanticContract": "The selected score tile pair reaches DrawOneSpriteRow before the score row OAM write.",
+      "semanticContract": "Immutable ten-byte score table, five two-tile pairs, indexed by FlagpoleScore shifted left once; all ten entries observed.",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10676,14 +10679,14 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1514,
-    "needs-evidence": 478,
+    "exact": 1523,
+    "needs-evidence": 469,
     "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3213,
-    "needs-evidence": 1108,
+    "exact": 3226,
+    "needs-evidence": 1095,
     "infeasible": 21
   },
   "controlEdgeTypeCounts": {
@@ -40488,14 +40491,17 @@
       "label": "FlagpoleScoreNumTiles",
       "asmLine": 13277,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/flagpole_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_flagpole_graphics",
+      "currentCounterpart": "shared flagpole output phases",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Immutable ten-byte score table, five two-tile pairs, indexed by FlagpoleScore shifted left once; all ten entries observed."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds five ordered two-tile flagpole score pairs selected by FlagpoleScore times two.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Immutable ten-byte score table, five two-tile pairs, indexed by FlagpoleScore shifted left once; all ten entries observed.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
       ]
@@ -40504,30 +40510,38 @@
       "label": "FlagpoleGfxHandler",
       "asmLine": 13284,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/flagpole_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_flagpole_graphics",
+      "currentCounterpart": "shared flagpole output phases",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Original ordered X, Y, attributes, tiles and scratch writes; X+8 wraps then CLC X+12 carry survives DumpTwoSpr and contributes to third Y+8. Score path calls DrawOneSpriteRow with original pre-child RAM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the three flag sprites, initializes DrawOneSpriteRow scratch values, conditionally draws the score row, then applies the source d1-d3 offscreen hide decision.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original ordered X, Y, attributes, tiles and scratch writes; X+8 wraps then CLC X+12 carry survives DumpTwoSpr and contributes to third Y+8. Score path calls DrawOneSpriteRow with original pre-child RAM.",
       "currentSourcePaths": [
-        "src/game/oam/flagpole_gfx.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
       "label": "ChkFlagOffscreen",
       "asmLine": 13326,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/flagpole_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_flagpole_graphics",
+      "currentCounterpart": "shared flagpole output phases",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Reload ObjectOffset and its OAM offset, test Enemy_OffscreenBits AND $0e; zero exits, nonzero enters MoveSixSpritesOffscreen."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Reloads ObjectOffset/OAM and returns for clear Enemy_OffscreenBits d1-d3; otherwise enters six-sprite hide.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Reload ObjectOffset and its OAM offset, test Enemy_OffscreenBits AND $0e; zero exits, nonzero enters MoveSixSpritesOffscreen.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c"
       ]
@@ -40536,14 +40550,17 @@
       "label": "MoveSixSpritesOffscreen",
       "asmLine": 13335,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_dump.c",
-      "currentCounterpart": "mysmb_oam_move_six_sprites_offscreen",
+      "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Load $f8 as dump value then enter DumpSixSpr with unchanged OAM offset."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Supplies source A=$f8 to the six-sprite dump fall-through.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Load $f8 as dump value then enter DumpSixSpr with unchanged OAM offset.",
       "currentSourcePaths": [
         "src/game/oam/sprite_dump.c"
       ]
@@ -40552,14 +40569,17 @@
       "label": "DumpSixSpr",
       "asmLine": 13338,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_dump.c",
-      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Write value at absolute $0214+Y and $0210+Y, then continue DumpFourSpr without changing carry or index."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores A into sixth/fifth records and falls through to four-record dump.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Write value at absolute $0214+Y and $0210+Y, then continue DumpFourSpr without changing carry or index.",
       "currentSourcePaths": [
         "src/game/oam/sprite_dump.c"
       ]
@@ -40568,14 +40588,17 @@
       "label": "DumpFourSpr",
       "asmLine": 13342,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_dump.c",
-      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Write value at absolute $020c+Y then continue DumpThreeSpr."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores A into fourth record and falls through to three-record dump.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Write value at absolute $020c+Y then continue DumpThreeSpr.",
       "currentSourcePaths": [
         "src/game/oam/sprite_dump.c"
       ]
@@ -40584,14 +40607,17 @@
       "label": "DumpThreeSpr",
       "asmLine": 13345,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_dump.c",
-      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Write value at absolute $0208+Y then continue DumpTwoSpr."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores A into third record and falls through to two-record dump.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Write value at absolute $0208+Y then continue DumpTwoSpr.",
       "currentSourcePaths": [
         "src/game/oam/sprite_dump.c"
       ]
@@ -40600,14 +40626,17 @@
       "label": "DumpTwoSpr",
       "asmLine": 13348,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_dump.c",
-      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Write value at absolute $0204+Y then $0200+Y; preserve source carry and A/X/Y for caller continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores A into second then first OAM records and falls through to return.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Write value at absolute $0204+Y then $0200+Y; preserve source carry and A/X/Y for caller continuation.",
       "currentSourcePaths": [
         "src/game/oam/sprite_dump.c"
       ]
@@ -40616,14 +40645,17 @@
       "label": "ExitDumpSpr",
       "asmLine": 13352,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_dump.c",
-      "currentCounterpart": "mysmb_oam_dump_*_sprites",
+      "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Original RTS returns after the ordered dump writes; native void return retains explicit caller value/offset and carry variables."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns with the OAM writes completed.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original RTS returns after the ordered dump writes; native void return retains explicit caller value/offset and carry variables.",
       "currentSourcePaths": [
         "src/game/oam/sprite_dump.c"
       ]
@@ -107989,16 +108021,20 @@
       "instruction": "jsr",
       "id": "control-02783",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Call DumpTwoSpr with source Y and OAM offset, preserving preceding X carry."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation FlagpoleGfxHandler -> DumpTwoSpr with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Call DumpTwoSpr with source Y and OAM offset, preserving preceding X carry.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108009,15 +108045,20 @@
       "instruction": "beq",
       "id": "control-02784",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; No score branches directly to ChkFlagOffscreen after initial scratch and flag output."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation FlagpoleGfxHandler -> ChkFlagOffscreen with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "No score branches directly to ChkFlagOffscreen after initial scratch and flag output.",
       "currentSourcePaths": [
-        "src/game/oam/flagpole_gfx.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108028,15 +108069,19 @@
       "instruction": "jsr",
       "id": "control-02785",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Score path calls DrawOneSpriteRow with right tile in incoming A, RAM01 unchanged until child entry."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation FlagpoleGfxHandler -> DrawOneSpriteRow with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Score path calls DrawOneSpriteRow with right tile in incoming A, RAM01 unchanged until child entry.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
         "src/game/oam/sprite_row.c"
       ]
     },
@@ -108048,15 +108093,20 @@
       "instruction": "jsr",
       "id": "control-02786",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Score row completes before ChkFlagOffscreen reloads slot/OAM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation FlagpoleGfxHandler -> ChkFlagOffscreen with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Score row completes before ChkFlagOffscreen reloads slot/OAM.",
       "currentSourcePaths": [
-        "src/game/oam/flagpole_gfx.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108067,16 +108117,20 @@
       "instruction": "beq",
       "id": "control-02787",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Zero $0e offscreen mask branches to ExitDumpSpr without clearing sprites."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation ChkFlagOffscreen -> ExitDumpSpr with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Zero $0e offscreen mask branches to ExitDumpSpr without clearing sprites.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108087,16 +108141,20 @@
       "instruction": "beq",
       "id": "control-02788",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Nonzero mask falls through MoveSixSpritesOffscreen."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation ChkFlagOffscreen -> MoveSixSpritesOffscreen with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Nonzero mask falls through MoveSixSpritesOffscreen.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108107,15 +108165,20 @@
       "instruction": "lda",
       "id": "control-02789",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; MoveSixSpritesOffscreen enters DumpSixSpr with $f8."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation MoveSixSpritesOffscreen -> DumpSixSpr with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "MoveSixSpritesOffscreen enters DumpSixSpr with $f8.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108126,15 +108189,20 @@
       "instruction": "sta",
       "id": "control-02790",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; DumpSixSpr writes last two Y bytes before DumpFourSpr."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DumpSixSpr -> DumpFourSpr with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "DumpSixSpr writes last two Y bytes before DumpFourSpr.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108145,15 +108213,20 @@
       "instruction": "sta",
       "id": "control-02791",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; DumpFourSpr writes fourth Y before DumpThreeSpr."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DumpFourSpr -> DumpThreeSpr with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "DumpFourSpr writes fourth Y before DumpThreeSpr.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108164,15 +108237,20 @@
       "instruction": "sta",
       "id": "control-02792",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; DumpThreeSpr writes third Y before DumpTwoSpr."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DumpThreeSpr -> DumpTwoSpr with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "DumpThreeSpr writes third Y before DumpTwoSpr.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -108183,15 +108261,20 @@
       "instruction": "sta",
       "id": "control-02793",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; DumpTwoSpr writes second then first Y before ExitDumpSpr."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DumpTwoSpr -> ExitDumpSpr with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "DumpTwoSpr writes second then first Y before ExitDumpSpr.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -133017,16 +133100,20 @@
       "instruction": "rts/rti",
       "id": "control-04000",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Actual DumpTwoSpr RTS $E5C7 resumes flagpole at $E567; carry remains available to following ADC."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Actual DumpTwoSpr RTS $E5C7 resumes flagpole at $E567; carry remains available to following ADC.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -133037,15 +133124,19 @@
       "instruction": "rts/rti",
       "id": "control-04001",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_draw_flagpole_graphics and src/game/oam/sprite_dump.c OAM writer chain",
+      "status": "exact",
+      "currentCounterpart": "shared flagpole caller and ordered dump/row entries",
       "semanticEvidence": [
-        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required."
+        "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; DrawOneSpriteRow tail-child actual return resumes flagpole at $E5A7."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DrawOneSpriteRow -> FlagpoleGfxHandler with the source condition, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "DrawOneSpriteRow tail-child actual return resumes flagpole at $E5A7.",
       "currentSourcePaths": [
         "src/game/oam/flagpole_gfx.c",
+        "src/game/oam/sprite_dump.c",
         "src/game/oam/sprite_row.c"
       ]
     },

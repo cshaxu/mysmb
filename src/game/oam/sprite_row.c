@@ -1,5 +1,15 @@
 #include "game/oam/oam.h"
 
+/* ROM $ebb2 DrawOneSpriteRow stores incoming A before its tail call. */
+void mysmb_oam_draw_one_sprite_row(struct mysmb_game *game,
+                                    mysmb_u8 right_tile,
+                                    mysmb_u8 *graphics_index,
+                                    mysmb_u8 *oam_offset)
+{
+    game->ram[1U] = right_tile;
+    mysmb_oam_draw_sprite_object(game, graphics_index, oam_offset);
+}
+
 /* ROM DrawSpriteObject / NoHFlip / SetHFAt.  X is the caller's graphics
  * table index and Y is its OAM byte offset.  They are CPU registers, so
  * the C caller owns their variables; $00-$05 and OAM are game RAM. */

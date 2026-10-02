@@ -407,3 +407,116 @@ Totals: current nodes 1502 -> 1514/1992, controls 3204 -> 3213/4321
 Historical mapping remains 1992/1992. Cohort K has 35 exact and 119 pending
 nodes. S3 has no unresolved scoped feasible difference; T65 stays open and
 S4 flagpole/dump output is next.
+
+## S4 admission - flagpole graphics and dump leaves
+
+Nine labels enter needs-evidence, expected fresh exact nine: FlagpoleScoreNumTiles,
+FlagpoleGfxHandler, ChkFlagOffscreen, MoveSixSpritesOffscreen, DumpSixSpr,
+DumpFourSpr, DumpThreeSpr, DumpTwoSpr, ExitDumpSpr. Baseline current nodes
+1514/1992, controls 3213/4321, material 380/492 partial; maximum nodes 1523.
+Historical 1992/1992, expected new historical labels empty; custody unchanged.
+Scope controls 02783-02793 and 04000/04001, thirteen pending, and existing
+material-00416. Earlier/later source-owned incoming dump calls are not credited.
+
+Entries $E54B flagpole and $E5B3/$E5B5/$E5BB/$E5BE/$E5C1/$E5C7 dump
+leaves. Shared owners flagpole_gfx.c/sprite_dump.c; sprite_row.c/oam.h may
+restore the original DrawOneSpriteRow entry adapter (RAM01 store then tail
+call), an invoked S9-owned dependency with no premature node credit.
+Static audit finds source X+$08 then X+$0C carry survives DumpTwoSpr and is
+consumed by the third sprite Y ADC #8; current C omits it. Current score
+caller also writes RAM01 early and skips DrawOneSpriteRow directly to
+DrawSpriteObject. First establish original full/child-sequence failures,
+restore original semantics/edges and repeat the identical batch.
+
+Original flag roots cover all six slots, no-score/all five score indices,
+coordinate/carry boundaries and $0E mask alternatives, both real child inputs
+and RTS continuations. Direct dump roots cover all byte values and absolute
+indexed OAM/RAM boundary behavior; source carry/register preservation is
+explicit. All scratch, persistent RAM/OAM and lower-stack aliases compare;
+only true CPU stack excluded. Two independent native checkers prove final
+outputs and original child order/input/effects. Pure operation: focused
+flagpole/dump/sprite/core/purity/audio/self-tests, C90 x86/x64 and original
+OpenNT DOS16 link; shared repair refreshes all three EXEs.
+
+Owner-local nonredistributable ROM/ASM remain research-only, reference sibling
+read-only. Ignored build/m2-t65-s4 owns <=112 MiB raw, 524288 steps/case,
+120 seconds/probe, logs/checkpoints and cleanup. No protected fixture/import.
+S5 large platform follows only after scoped feasible differences are resolved.
+
+## S4 closure - flagpole carry and original row entry
+
+All nine admitted labels are current exact, with none deferred or transferred:
+FlagpoleScoreNumTiles, FlagpoleGfxHandler, ChkFlagOffscreen,
+MoveSixSpritesOffscreen, DumpSixSpr, DumpFourSpr, DumpThreeSpr, DumpTwoSpr,
+ExitDumpSpr. Historical expected/actual new matches remain empty.
+
+Static source audit identified a lost carry: wrapped X+8 is followed by
+CLC/ADC #12; its carry survives DumpTwoSpr and contributes to third sprite
+Y+8. Before repair both native widths showed 36 differing output bytes.
+The score caller also skipped DrawOneSpriteRow and stored RAM01 early.
+Shared flagpole output now preserves carry explicitly and calls the restored
+row entry; that entry stores incoming right-tile A into RAM01 before the
+original DrawSpriteObject tail. Caller/child ownership and order now match.
+The invoked S9 dependency is repaired without prematurely crediting its node.
+
+tools/reference_flagpole_output_probe.c and test/flagpole_output_route_check.c
+provide full actual-child output and independent child-input/order checks.
+Each current width matches 4608 flagpole roots and 12288 direct dump roots
+with zero differences across 1841 RAM bytes, including all scratch/OAM and
+$0109-$0139 game aliases; only remaining CPU stack is excluded. The independent
+4608-root caller checker also reports zero differences after repair.
+Source register-only contracts use native explicit value/offset/carry locals,
+not an emulated CPU. Full output equality does not substitute for child edges.
+
+Flag fixtures cover six slots, six score profiles and 128 seeds: no score and
+all five legal score indices, all byte X/Y/offscreen values across profiles,
+and legal six-sprite allocations including $E8. Original max steps/root 89.
+Dump returns to $E567: 4608; row returns to $E5A7: 3840. Preserved carry zero/
+one: 4392/216. Score skip: 768. Offscreen keep/hide: 576/4032. All ten score
+table indices are read 768 times each at the original table consumers.
+Direct dump fixtures use six entries, all 256 values and eight offsets
+0/1/$20/$7f/$e8/$f4/$fc/$ff, preserving both incoming carry values and absolute
+indexed writes that cross $0300. Original observed entry counts:
+MoveSixSpritesOffscreen 2048, DumpSixSpr 4096, DumpFourSpr 6144,
+DumpThreeSpr 8192, DumpTwoSpr 10240, ExitDumpSpr 12288.
+
+Thirteen controls become exact: control-02783 through control-02793 and
+control-04000/control-04001. Existing material-00416 becomes exact; no new
+material enumeration or infeasible classification. Out-of-scope registry rows
+are asserted identical to the preceding commit. External incoming dump callers
+retain their source owners and pending dispositions.
+
+Similar-issue sweep: all six dump entries are store-only continuations and
+preserve source carry; direct probes exercise both values and indexed borders.
+Hammer coordinate additions explicitly clear carry before each ADC, so S3
+remains valid. Flagpole's inherited X-to-Y carry is restored here. The row-entry
+RAM01 store now belongs to its actual callee. Later row/enemy caller audits
+retain S9 ownership, and block/player dump-call repairs retain S10/Cohort L.
+No later-scope repair or exact credit is inferred from this sweep.
+
+Operational track: C90 x86/x64 builds and 10/10 focused/product tests per width
+pass, including audio rendering/output, death audio, focus pause, product self
+test, flagpole/dump/core and platform purity. Original OpenNT DOS16 links the
+same shared source with its existing OLDNAMES.LIB warning; no new DOS runtime
+qualification is claimed. Updated three products retain committed audio,
+title pause and focus-loss pause (owner independently tested those features).
+The audio/focus commits are already ancestors of this P; no related candidate
+remains in the To-Do queue. Owner-approved artifacts:
+
+- mysmb16.exe: 265205 bytes; SHA-256 3fec2fa65a2c2fc8c3edd11cbdebae222204c79318482a89ae22ed8f23be6d8e.
+
+- mysmb32.exe: 376273 bytes; SHA-256 ec69f1400fe1067cce06527545c23dcc93fb88c38db296dfa9c7e88f150e3c51.
+
+- mysmb64.exe: 383200 bytes; SHA-256 657e73faf5aec4f5e627ca3178e5bbbb63cd517254fb5cd2c74b989893e63a1e.
+
+Owner-local ROM/ASM remain research-only; no protected fixture or third-party
+code import. Ignored raw records/probe binaries are removed after closure
+gates; neutral logs remain under build. Reproduction compiles the named probe
+against the read-only reference core, records owner-ROM roots to an ignored
+bounded directory, then runs both native checkers against the same batch.
+
+Totals: nodes 1514 -> 1523/1992; feasible controls 3213 -> 3226/4321
+(raw 4342, infeasible 21); material 380 -> 381/492 partial. Historical mapping
+remains 1992/1992. Cohort K has 44 exact and 110 pending nodes. S4 closes with
+no unresolved scoped feasible difference. T65 remains open; S5 large-platform
+output is next, with eleven scoped labels and ten expected fresh exact.
