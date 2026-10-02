@@ -10,10 +10,10 @@ void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 slot)
     if(calls++!=0U || slot!=5U) ++errors;
     g->ram[0x3b9U]=g->ram[0xd4U];
 }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 slot)
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 slot)
 {
     if(calls++!=1U || slot!=5U || g->ram[0x3b9U]!=g->ram[0xd4U]) ++errors;
-    return offscreen;
+    g->ram[0x3d1U]=offscreen;
 }
 void mysmb_objects_draw_vine(struct mysmb_game *g,mysmb_u8 index)
 {

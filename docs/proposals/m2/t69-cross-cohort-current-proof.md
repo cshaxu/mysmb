@@ -1154,3 +1154,110 @@ raw<=128MiB,1024 roots per batch,120seconds process,524288steps per root;
 coordinator deletes raw per batch and probe at closure. Similar-issue sweep:
 source slot restoration,temporary RAM stores,carry/borrow,child parameter and
 return handoffs,offscreen/growth thresholds,collision/OAM execution order.
+
+## S8 P2 closure - actual vine/cannon joins
+
+All29 planned control relations and material-00096 exact.All26 existing
+scope labels rechecked:VineHeightData; VineObjectHandler; RunVSubs; VDrawLoop; KillVine; WrCMTile; Chk_BB; BulletBillHandler; ChkDSte; BBFly; RunBBSubs; KillBB; MoveEnemyHorizontally; MoveD_EnemyVertically; EraseEnemyObject; OffscreenBoundsCheck; PlayerEnemyCollision; PlayerEnemyDiff; GetEnemyBoundBox; BlockBufferCollision; DrawVine; EnemyGfxHandler; RelativeEnemyPosition; GetEnemyOffscreenBits; ProcessCannons; BulletBillXSpdData.Zero fresh node credit,
+no scoped deferral.Current1992/1992 scoped-exact nodes,4087->4116/4277
+feasible controls(raw4342,infeasible65),536->537/555 material partial;
+historical1992/1992 separate.T69 open,S9 next unadmitted;161 controls/18
+material and earlier M alias scope plus integrated certification remain.
+
+Original VineObjectHandler B94B-B9B9 and ProcessCannons B9BC-BA30/
+BulletBillHandler BA33-BA88 source branches and actual child sequencing
+reviewed first. Vine uses slot5,VineFlagOffset1/2,height-table equality,
+FrameCounter bit1 and SBC1;relative then offscreen then one/two DrawVine,
+reverse EraseEnemyObject loop,reset flag/height,then height>=20 query1B,
+row<D0 and empty-byte metatile26 write. Cannon loops slots2..0;original
+random mask,nonzero page,timer SBC borrow,TimerControl spawn gate,source
+spawn fields,Chk_BB bounds/flag/offscreen/handler ordering preserved.
+Handler keeps page SBC carry through speed lookup and ADC28/compare50;
+state20 gravity then horizontal,or timer movement skip,then offscreen,
+relative,box,collision and EnemyGfxHandler tail in original order.
+
+Found integration defects:vine and both cannon offscreen sites called a
+const value-only helper and omitted actual RAM04-07 side effects;reconnected
+them to existing shared mysmb_oam_get_enemy_offscreen_bits. Cannon uses
+existing full mysmb_objects_draw_normal_enemy_graphics instead of special
+bullet renderer omitting scratch00-05;PlayerEnemyDiff now stores00 before
+page subtraction. First1024 pre-fix vine cases had3876 RAM differences;
+after offscreen repair first1024 bullet cases had4749 from graphics shortcut.
+No new algorithm/platform branch/table import. Similar-issue sweep:
+all3 admitted offscreen sites fixed;canonical enemy dispatch already calls
+real offscreen function. Other value-helper sites in jumpspring.c,power_up.c,
+enemy/normal.c,special_callers.c,platform_callers.c,firebar_children.c and
+OAM cheep/bloober/bowser_flame/flagpole/goomba/normal/podoboo/piranha remain
+separate source-contract obligations;some are value-only drawing queries.
+Do not mechanically replace them or credit unadmitted routes. Power-up/
+normal chains belong S10,firebar S12,frenzy/flame S13;remaining accepted
+cohorts need final cross-chain proof. The other bullet helper caller in
+objects.c remains its separately mapped renderer route. Existing source
+PlayerEnemyDiff inline copy in this admitted handler is restored;no other
+owner edit. Scoped child-order mock tests updated to canonical entry APIs;
+actual-ROM proof uses real shared children,not mocks.
+
+Final196608 unchanged original roots each width zero diff:mode73 vine,
+mode74 direct bullet,mode75 cannon process,65536 each. Vine varies height
+all256,flag1/2,frame bits,slot5/wrong slot4,positions/pages/screen extent,
+empty/occupied block buffer and OAM offsets. Bullet/cannon varies player/
+enemy byteX,slots0-2,spawn/active/defeated state,timer freeze,hard-mode masks,
+page crossing,offscreen/full mask,occupied/free slot and cannon timer.
+Player Y-high2 bounds collision to its source exit in this matrix;the
+call/return handoff is proven,not new collision branch coverage. Controlled
+input profiles do not assert every state occurs during normal play.
+
+Full2032 persistent RAM including OAM,24 APU and ordered writes compared;
+only01F0-01FF physical stack/sentinel excluded,minimum SP F2.CPU registers/
+flags outside native C ABI. Both vine table bytes B949/B94A read16384 times
+each and independently equal30/60;bullet speed BA31/BA32 equals18/E8.
+All29 original site/targets independently indexed against source/opcodes.
+Return evidence filters opcode60 transitions to the correct call-site+3;
+ordinary branch/fall-through to that address cannot count as child return.
+
+| ID | Original/shared join | Type | Original observations |
+| --- | --- | --- | --- |
+| `control-01173` | RunVSubs -> RelativeEnemyPosition | call | 31744 |
+| `control-01174` | RunVSubs -> GetEnemyOffscreenBits | call | 31744 |
+| `control-01176` | VDrawLoop -> DrawVine | call | 47616 |
+| `control-01180` | KillVine -> EraseEnemyObject | call | 25266 |
+| `control-01184` | WrCMTile -> BlockBufferCollision | call | 12096 |
+| `control-01198` | Chk_BB -> OffscreenBoundsCheck | call | 91392 |
+| `control-01200` | Chk_BB -> GetEnemyOffscreenBits | call | 38328 |
+| `control-01208` | BulletBillHandler -> PlayerEnemyDiff | call | 7999 |
+| `control-01214` | ChkDSte -> MoveD_EnemyVertically | call | 25990 |
+| `control-01216` | BBFly -> MoveEnemyHorizontally | call | 44751 |
+| `control-01218` | RunBBSubs -> GetEnemyOffscreenBits | call | 96059 |
+| `control-01219` | RunBBSubs -> RelativeEnemyPosition | call | 96059 |
+| `control-01220` | RunBBSubs -> GetEnemyBoundBox | call | 96059 |
+| `control-01221` | RunBBSubs -> PlayerEnemyCollision | call | 96059 |
+| `control-01222` | RunBBSubs -> EnemyGfxHandler | jump | 96059 |
+| `control-01223` | KillBB -> EraseEnemyObject | call | 7805 |
+| `control-03691` | RelativeEnemyPosition -> RunVSubs | return | 31744 |
+| `control-03692` | GetEnemyOffscreenBits -> RunVSubs | return | 31744 |
+| `control-03693` | DrawVine -> VDrawLoop | return | 47616 |
+| `control-03695` | BlockBufferCollision -> WrCMTile | return | 12096 |
+| `control-03696` | OffscreenBoundsCheck -> Chk_BB | return | 91392 |
+| `control-03697` | GetEnemyOffscreenBits -> Chk_BB | return | 38328 |
+| `control-03699` | PlayerEnemyDiff -> BulletBillHandler | return | 7999 |
+| `control-03700` | MoveD_EnemyVertically -> ChkDSte | return | 25990 |
+| `control-03701` | MoveEnemyHorizontally -> BBFly | return | 44751 |
+| `control-03702` | GetEnemyOffscreenBits -> RunBBSubs | return | 96059 |
+| `control-03703` | RelativeEnemyPosition -> RunBBSubs | return | 96059 |
+| `control-03704` | GetEnemyBoundBox -> RunBBSubs | return | 96059 |
+| `control-03705` | PlayerEnemyCollision -> RunBBSubs | return | 96059 |
+
+Operational:12 focused tests each width pass(vine actor/OAM,cannon dispatch/
+children,bullet output,enemy block query,player box,box core/clip,title,NMI,
+purity);current x86/x64 products/original OpenNT DOS16 link pass. Inherited
+OLDNAMES.LIB warning remains;no interactive DOS claim. All3 refreshed under
+explicit owner authorization:
+
+- `mysmb16.exe`: 261383 bytes, SHA256 `1d1de5e025116c03cfc69a7298fc72719de00c3a3f8800bac4adcdc9d103f77c`.
+- `mysmb32.exe`: 374811 bytes, SHA256 `584d48e75eca43f0a59989558d2d953f604312ce86cd6762a33fbf9d2c0ac600`.
+- `mysmb64.exe`: 382348 bytes, SHA256 `0fd90ebd4ba59b42571da291c5a4cc0e14a9f32cf9f805d7efd563db4b717e1a`.
+
+Raw bounded<=128MiB/1024 batch/120seconds process/524288steps root and deleted
+per batch;probe removed at closure,neutral ignored summaries/logs retained.
+Registry/ledger/progress/documentation/diff gates required before local P2
+commit;unrelated work preserved,no push,no S9 pre-credit.

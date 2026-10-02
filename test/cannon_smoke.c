@@ -16,8 +16,8 @@ void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot)
 { record(game,slot,9U); ++killed; game->ram[0xfU+slot]=0U; }
 void mysmb_objects_check_enemy_offscreen_bounds(struct mysmb_game *game, mysmb_u8 slot)
 { record(game,slot,1U); }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *game, mysmb_u8 slot)
-{ if(game->ram[8U]!=slot) failed=1U; calls[count++]=20U+slot; return offscreen; }
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
+{ if(game->ram[8U]!=slot) failed=1U; calls[count++]=20U+slot; game->ram[0x3d1U]=offscreen; }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *game, mysmb_u8 slot)
 { record(game,slot,3U); }
 void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
@@ -25,8 +25,8 @@ void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game, mysmb_u8 s
 mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
     mysmb_u8 slot, mysmb_u8 preserve)
 { record(game,slot,5U); if(preserve!=1U) failed=1U; return 0U; }
-void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
-{ record(game,slot,6U); }
+mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb_u8 slot)
+{ record(game,slot,6U); return 1U; }
 void mysmb_enemy_move_downward(struct mysmb_game *game,mysmb_u8 slot,
     mysmb_u8 amount,mysmb_u8 maximum)
 { record(game,slot,7U); if(amount!=0x3dU||maximum!=3U) failed=1U; }

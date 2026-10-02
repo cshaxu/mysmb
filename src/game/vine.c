@@ -41,7 +41,7 @@ void mysmb_objects_step_vine(struct mysmb_game *game, mysmb_u8 slot)
     }
     if (game->ram[0x0399U] < 8U) return;
     mysmb_oam_relative_enemy_position(game, slot);
-    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
     index = 0U;
     do {
         mysmb_objects_draw_vine(game, index);

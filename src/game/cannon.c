@@ -21,6 +21,7 @@ void mysmb_game_handle_cannon_bullet(struct mysmb_game *game, mysmb_u8 slot)
             /* PlayerEnemyDiff leaves its low difference and page SBC carry.
              * LDY/INY/DEY/LDA do not replace that carry before ADC #$28. */
             low = (mysmb_u8)(game->ram[0x0087U + slot] - game->ram[0x0086U]);
+            game->ram[0x0000U] = low;
             borrow = game->ram[0x0087U + slot] < game->ram[0x0086U] ? 1U : 0U;
             subtrahend = (mysmb_u16)game->ram[0x006dU] + borrow;
             high = (mysmb_u8)(game->ram[0x006eU + slot] - subtrahend);
@@ -41,11 +42,11 @@ void mysmb_game_handle_cannon_bullet(struct mysmb_game *game, mysmb_u8 slot)
             mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
         mysmb_world_move_enemy_horizontally(game, slot);
     }
-    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
     mysmb_oam_relative_enemy_position(game, slot);
     mysmb_objects_update_enemy_bounding_box(game, slot);
     (void)mysmb_objects_check_normal_enemy_collision(game, slot, 1U);
-    mysmb_objects_draw_bullet_bill(game, slot);
+    (void)mysmb_objects_draw_normal_enemy_graphics(game, slot);
 }
 
 /* ROM $b9bc ProcessCannons through ExCannon. CannonBitmasks ($b9ba)
@@ -85,7 +86,7 @@ void mysmb_game_process_cannons(struct mysmb_game *game)
         if (game->ram[0x0016U + slot] != 0x33U) continue;
         mysmb_objects_check_enemy_offscreen_bounds(game, slot);
         if (game->ram[0x000fU + slot] == 0U) continue;
-        game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+        mysmb_oam_get_enemy_offscreen_bits(game, slot);
         mysmb_game_handle_cannon_bullet(game, slot);
     }
 }

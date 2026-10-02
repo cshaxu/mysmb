@@ -1,4 +1,6 @@
 #include "game/audio.h"
+#include "game/objects.h"
+#include "game/dispatcher.h"
 #include "game/status.h"
 #include "game/frame_root.h"
 #include "game/area.h"
@@ -29,6 +31,9 @@ int main(int argc,char **argv)
         game.title_icon_data=prg;game.title_icon_data_size=1U;
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
+        case 0xb94bU:mysmb_objects_step_vine(&game,record[3]);break;
+        case 0xba33U:mysmb_game_handle_cannon_bullet(&game,record[3]);break;
+        case 0xb9bcU:mysmb_game_process_cannons(&game);break;
         case 0xb689U:mysmb_fireball_step_object(&game,record[3]);break;
         case 0xb6f9U:mysmb_fireball_check_bubble(&game,record[3]);break;
         case 0xb70bU:mysmb_fireball_setup_bubble(&game,record[3]);break;
@@ -64,9 +69,9 @@ int main(int argc,char **argv)
         case 0xf3adU:a=mysmb_audio_set_freq_tri(&game,a);break;
         default:return 66;
         }
-        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&pc!=0xb689U&&pc!=0xb6f9U&&pc!=0xb70bU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&pc!=0xb689U&&pc!=0xb6f9U&&pc!=0xb70bU&&pc!=0xb94bU&&pc!=0xba33U&&pc!=0xb9bcU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
-            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU||pc==0x9131U||pc==0x91cdU||pc==0x9218U||pc==0x8808U||pc==0x9508U||pc==0xb450U||pc==0xb3cfU||pc==0xb58fU||pc==0xb689U||pc==0xb6f9U||pc==0xb70bU){
+            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU||pc==0x9131U||pc==0x91cdU||pc==0x9218U||pc==0x8808U||pc==0x9508U||pc==0xb450U||pc==0xb3cfU||pc==0xb58fU||pc==0xb689U||pc==0xb6f9U||pc==0xb70bU||pc==0xb94bU||pc==0xba33U||pc==0xb9bcU){
                 if(i>=0x1f0U&&i<=0x1ffU)continue;
             }else if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
             if(game.ram[i]!=record[2088U+i]){++ram_failures[i];if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}

@@ -33,8 +33,8 @@ static void child(struct mysmb_game *game,unsigned int id,mysmb_u8 slot)
 }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 slot)
 {child(g,1U,slot);}
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 slot)
-{child((struct mysmb_game *)g,2U,slot);return g->ram[0x3d1U];}
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 slot)
+{child(g,2U,slot);}
 void mysmb_objects_draw_vine(struct mysmb_game *g,mysmb_u8 index)
 {child(g,3U,index);}
 void mysmb_objects_erase_enemy(struct mysmb_game *g,mysmb_u8 slot)

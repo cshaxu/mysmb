@@ -83,6 +83,43 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==73u){
+        unsigned int j;
+        m->ram[8u]=5u;m->ram[9u]=(unsigned char)p;
+        m->ram[0x398u]=(unsigned char)((p&1u)+1u);
+        m->ram[0x399u]=(unsigned char)n;m->ram[0x39au]=4u;m->ram[0x39bu]=5u;
+        m->ram[0x39du]=(unsigned char)(p*13u);
+        m->ram[0x6fu]=2u;m->ram[0x73u]=2u;
+        m->ram[0x8cu]=(unsigned char)(p*17u);m->ram[0xd4u]=(unsigned char)(p*7u);
+        m->ram[0xbbu]=1u;m->ram[0x14u]=1u;m->ram[0x13u]=1u;
+        m->ram[0x71au]=2u;m->ram[0x71cu]=(unsigned char)n;
+        m->ram[0x71bu]=(unsigned char)(2u+(n?1u:0u));m->ram[0x71du]=(unsigned char)(n-1u);
+        m->ram[0x6e9u]=0x20u;m->ram[0x6eau]=0x40u;
+        for(j=0u;j<416u;++j)m->ram[0x500u+j]=(unsigned char)((p&4u)?0x51u:0u);
+    }else if(mode==74u||mode==75u){
+        unsigned int j,slot=p%3u;
+        m->ram[8u]=(unsigned char)slot;m->ram[9u]=(unsigned char)p;
+        m->ram[0x747u]=(unsigned char)((p&8u)?1u:0u);m->ram[0x74eu]=1u;
+        m->ram[0x6ccu]=(unsigned char)((p&16u)?1u:0u);
+        m->ram[0x86u]=(unsigned char)n;m->ram[0x6du]=2u;
+        m->ram[0xceu]=0x70u;m->ram[0xb5u]=2u;
+        m->ram[0x71au]=2u;m->ram[0x71cu]=(unsigned char)(p*7u);
+        m->ram[0x71bu]=(unsigned char)(2u+(m->ram[0x71cu]?1u:0u));
+        m->ram[0x71du]=(unsigned char)(m->ram[0x71cu]-1u);
+        m->ram[0x3d1u]=(unsigned char)((p&32u)?0x0cu:0u);
+        for(j=0u;j<3u;++j){
+            m->ram[0xfu+j]=(unsigned char)((p&1u)?0u:1u);
+            m->ram[0x16u+j]=(unsigned char)((p&64u)?0u:0x33u);
+            m->ram[0x1eu+j]=(unsigned char)((p&4u)?0x20u:((p&2u)?1u:0u));
+            m->ram[0x6eu+j]=(unsigned char)((p&128u)?3u:2u);
+            m->ram[0x87u+j]=(unsigned char)(n*13u+j*32u);
+            m->ram[0xcfu+j]=(unsigned char)(0x60u+j*16u);m->ram[0xb6u+j]=1u;
+            m->ram[0x58u+j]=(unsigned char)((p&1u)?0xe8u:0x18u);
+            m->ram[0x46u+j]=(unsigned char)((p&1u)?2u:1u);
+            m->ram[0x49au+j]=9u;m->ram[0x6e5u+j]=(unsigned char)(0x20u+j*24u);
+            m->ram[0x7a8u+j]=(unsigned char)(n+j);
+        }
+        for(j=0u;j<6u;++j){m->ram[0x46bu+j]=2u;m->ram[0x471u+j]=(unsigned char)(n+j*32u);m->ram[0x477u+j]=0x90u;m->ram[0x47du+j]=(unsigned char)((p&2u)?1u:0u);}
     }else if(mode==70u){
         static const unsigned char states[4]={2u,1u,0u,0x80u};
         unsigned int slot=p&1u;
@@ -385,6 +422,8 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
     if(mode==70u)m->x=(unsigned char)(p&1u);
     if(mode==71u)m->x=(unsigned char)(p%3u);
     if(mode==72u)m->x=(unsigned char)p;
+    if(mode==73u)m->x=(unsigned char)((p&8u)?4u:5u);
+    if(mode==74u)m->x=(unsigned char)(p%3u);
 }
 int main(int argc,char **argv)
 {
@@ -396,7 +435,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>72u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>75u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -456,6 +495,9 @@ int main(int argc,char **argv)
         if(mode==70u)entry=0xb689u;
         if(mode==71u)entry=0xb6f9u;
         if(mode==72u)entry=0xb70bu;
+        if(mode==73u)entry=0xb94bu;
+        if(mode==74u)entry=0xba33u;
+        if(mode==75u)entry=0xb9bcu;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -476,6 +518,7 @@ int main(int argc,char **argv)
                 ++setup_reads[0][0x90e7u+d->machine->y];
             if(mode==62u&&pc==0x91f6u&&op==0xbcu)
                 ++setup_reads[0][0x91bdu+d->machine->x];
+            if(mode==73u&&pc==0xb956u&&op==0xd9u)++lookup_reads[0][0xb949u+d->machine->y];
             if(mode>=70u&&pc>=0xb689u&&pc<0xb74bu&&(op==0xb9u||op==0xf9u)){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 unsigned int kind=3u;

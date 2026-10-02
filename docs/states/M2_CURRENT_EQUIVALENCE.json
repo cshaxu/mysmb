@@ -2101,13 +2101,16 @@
       "consumer": "VineObjectHandler",
       "storage": "VineFlagOffset-1 indexed vine growth-height table",
       "feasiblePath": "VineObjectHandler decrements VineFlagOffset and compares VineHeight with the selected table byte before growth.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_vine_height_data[index] in mysmb_objects_step_vine",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c VineHeightData two-entry compare and FrameCounter bit1 growth branch followed by actual children.",
       "semanticContract": "Preserves threshold selection and source growth gate.",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 originalB949/B94A independently equal existing30/60;VineFlagOffset-minus1 index,exact-height stop and LSR carry-bit1 SBC1 growth preserved before children."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 actual original each height-table byte read16384 times;65536 VineObjectHandler roots per width zero persistent RAM/APU/write diff;12 tests each,current3 products/OpenNT link."
+      ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -26609,10 +26612,12 @@
       "currentCounterpart": "mysmb_objects_start_vine and mysmb_vine_height_data",
       "semanticEvidence": [
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
+        "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Binds active vine index to source growth-height limits $30 and $60.",
       "currentSourcePaths": [
@@ -26628,10 +26633,12 @@
       "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences."
+        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass."
+        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Restricts growth to slot five, selects VineFlagOffset-1 threshold, applies the source two-of-four-frame growth gate and restores ObjectOffset on exit.",
       "currentSourcePaths": [
@@ -26647,10 +26654,12 @@
       "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences."
+        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass."
+        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Gates rendering below height eight, computes relative/offscreen state, then enters the ordered vine draw loop.",
       "currentSourcePaths": [
@@ -26666,10 +26675,12 @@
       "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences."
+        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass."
+        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Draws each registered vine in ascending index order, then selects normal buffer write or offscreen cleanup.",
       "currentSourcePaths": [
@@ -26685,10 +26696,12 @@
       "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences."
+        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass."
+        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Erases registered vine slots in descending order and resets offset/height only after the final erase result.",
       "currentSourcePaths": [
@@ -26704,10 +26717,12 @@
       "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences."
+        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass."
+        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "At height at least $20, performs the source block-buffer probe and writes climbing metatile $26 only to an empty qualified cell.",
       "currentSourcePaths": [
@@ -26761,10 +26776,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Runs water gate and descending slots two through zero with source ObjectOffset ownership.",
       "currentSourcePaths": [
@@ -26818,10 +26835,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Bounds-checks only cannon bullets before offscreen bits and BulletBillHandler.",
       "currentSourcePaths": [
@@ -26875,10 +26894,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Binds direction to right/left speeds $18/$e8.",
       "currentSourcePaths": [
@@ -26894,10 +26915,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Preserves timer gate, initial direction/distance choice, defeated movement, common offscreen/relative/box/collision/draw order.",
       "currentSourcePaths": [
@@ -26932,10 +26955,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects defeated vertical movement only when bit five is set.",
       "currentSourcePaths": [
@@ -26951,10 +26976,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Runs horizontal movement.",
       "currentSourcePaths": [
@@ -26970,10 +26997,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Runs offscreen, relative position, bounding box, player collision then graphics in order.",
       "currentSourcePaths": [
@@ -26989,10 +27018,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Erases selected cannon Bullet Bill and returns.",
       "currentSourcePaths": [
@@ -28472,10 +28503,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects enemy SprObject offset by incrementing from ObjectOffset, runs horizontal movement, then restores ObjectOffset.",
       "currentSourcePaths": [
@@ -28624,10 +28657,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects $3d downward force except for exact Enemy_State five, which falls into falling-platform force $20.",
       "currentSourcePaths": [
@@ -32410,10 +32445,12 @@
       "currentCounterpart": "shared lifecycle and Podoboo slot path",
       "semanticEvidence": [
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Clears exactly Enemy_Flag, Enemy_ID, Enemy_State, FloateyNum_Control, EnemyIntervalTimer, ShellChainCounter, Enemy_SprAttrib and EnemyFrameTimer for the current slot, then returns.",
       "currentSourcePaths": [
@@ -36994,10 +37031,12 @@
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Immediately retains Flying Cheep; otherwise preserves CPY carry through special left-edge arithmetic, constructs extended bounds, performs source X/page subtract comparisons and applies right-side exception IDs before erase.",
       "currentSourcePaths": [
@@ -37627,10 +37666,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "On even frames only, rejects off-vertical/offscreen/non-control/d5 enemies, uses prepared enemy box and PlayerCollisionCore, reloads ObjectOffset, clears collision d0 on a miss and dispatches a hit by power-up ID or star timer.",
       "currentSourcePaths": [
@@ -40962,10 +41003,12 @@
       "currentOwner": "src/game/enemy/distance.c:mysmb_enemy_player_difference",
       "currentCounterpart": "mysmb_enemy_player_difference: low subtraction scratch and borrowed page return",
       "semanticEvidence": [
-        "M2 T64 S23 static audit: SMB1 $E143-$E14A loads enemy X, subtracts player X into $00, then subtracts page bytes with the preserved low-byte borrow; shared enemy/distance.c uses the identical byte arithmetic order."
+        "M2 T64 S23 static audit: SMB1 $E143-$E14A loads enemy X, subtracts player X into $00, then subtracts page bytes with the preserved low-byte borrow; shared enemy/distance.c uses the identical byte arithmetic order.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S23 controlled original-ROM probe: four direct PlayerEnemyDiff entries span low-byte borrow and no-borrow, including page wrap; current x86/x64 owner checks compare A and $00 with zero differences, and focused chain/purity CTests pass."
+        "M2 T64 S23 controlled original-ROM probe: four direct PlayerEnemyDiff entries span low-byte borrow and no-borrow, including page wrap; current x86/x64 owner checks compare A and $00 with zero differences, and focused chain/purity CTests pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Stores the low player/enemy X subtraction in $00 and returns the page subtraction with the original low-byte borrow.",
       "currentSourcePaths": [
@@ -41329,10 +41372,12 @@
       "currentCounterpart": "mysmb_objects_update_enemy_bounding_box -> enemy_masked_box",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects enemy offscreen masks $48/$44 and transfers to masked enemy-box routing.",
       "currentSourcePaths": [
@@ -41942,10 +41987,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A.",
       "currentSourcePaths": [
@@ -42021,10 +42068,12 @@
       "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
-        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Saves vine index to $00 and OAM base to $02, calls SixSpriteStacker, then writes original alternating X and attributes before tile, cap and clipping phases."
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Saves vine index to $00 and OAM base to $02, calls SixSpriteStacker, then writes original alternating X and attributes before tile, cap and clipping phases.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Saves vine index to $00 and OAM base to $02, calls SixSpriteStacker, then writes original alternating X and attributes before tile, cap and clipping phases.",
       "currentSourcePaths": [
@@ -43091,10 +43140,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Initializes RAM02/05/EB/0109/03/04, leaves early for Piranha only when speed is nonnegative and frame timer nonzero; all families share this actual entry."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Initializes RAM02/05/EB/0109/03/04, leaves early for Piranha only when speed is nonnegative and frame timer nonzero; all families share this actual entry.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Initializes RAM02/05/EB/0109/03/04, leaves early for Piranha only when speed is nonnegative and frame timer nonzero; all families share this actual entry.",
       "currentSourcePaths": [
@@ -45710,10 +45761,12 @@
       "currentCounterpart": "relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position",
       "semanticEvidence": [
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
-        "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells."
+        "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf152 observed65536 times."
+        "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf152 observed65536 times.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells.",
       "currentSourcePaths": [
@@ -45901,10 +45954,12 @@
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/history/M2-T66-player-relative-offscreen-current-proof.md Selects enemy array displacement and enemy offscreen destination before common calculation."
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/history/M2-T66-player-relative-offscreen-current-proof.md Selects enemy array displacement and enemy offscreen destination before common calculation.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
       ],
       "operationalEvidence": [
-        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entry/tablef1af, observations65536."
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entry/tablef1af, observations65536.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
       ],
       "semanticContract": "Selects enemy array displacement and enemy offscreen destination before common calculation.",
       "currentSourcePaths": [
@@ -75848,12 +75903,15 @@
       "instruction": "jsr",
       "id": "control-01173",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b971->f152 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'b971-f152': 31744},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation RunVSubs -> RelativeEnemyPosition with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -75867,12 +75925,15 @@
       "instruction": "jsr",
       "id": "control-01174",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b974->f1af site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'b974-f1af': 31744},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation RunVSubs -> GetEnemyOffscreenBits with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -75908,12 +75969,15 @@
       "instruction": "jsr",
       "id": "control-01176",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b979->e435 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'b979-e435': 47616},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation VDrawLoop -> DrawVine with source OAM loop and coordinate handoff.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -75993,12 +76057,15 @@
       "instruction": "jsr",
       "id": "control-01180",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b98d->c998 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'b98d-c998': 25266},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation KillVine -> EraseEnemyObject with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -76078,12 +76145,15 @@
       "instruction": "jsr",
       "id": "control-01184",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b9a6->e3f0 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'b9a6-e3f0': 12096},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation WrCMTile -> BlockBufferCollision with source query offset, table and scratch-state ordering.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -76383,12 +76453,15 @@
       "instruction": "jsr",
       "id": "control-01198",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba20->d67a site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba20-d67a': 91392},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation Chk_BB -> OffscreenBoundsCheck with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76424,12 +76497,15 @@
       "instruction": "jsr",
       "id": "control-01200",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba27->f1af site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba27-f1af': 38328},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation Chk_BB -> GetEnemyOffscreenBits with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76597,12 +76673,15 @@
       "instruction": "jsr",
       "id": "control-01208",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba47->e143 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba47-e143': 7999},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation BulletBillHandler -> PlayerEnemyDiff with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76726,12 +76805,15 @@
       "instruction": "jsr",
       "id": "control-01214",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba70->bf63 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba70-bf63': 25990},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation ChkDSte -> MoveD_EnemyVertically with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -76768,12 +76850,15 @@
       "instruction": "jsr",
       "id": "control-01216",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba73->bf02 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba73-bf02': 44751},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation BBFly -> MoveEnemyHorizontally with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -76810,12 +76895,15 @@
       "instruction": "jsr",
       "id": "control-01218",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba76->f1af site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba76-f1af': 96059},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation RunBBSubs -> GetEnemyOffscreenBits with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76829,12 +76917,15 @@
       "instruction": "jsr",
       "id": "control-01219",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba79->f152 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba79-f152': 96059},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation RunBBSubs -> RelativeEnemyPosition with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76848,12 +76939,15 @@
       "instruction": "jsr",
       "id": "control-01220",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba7c->e243 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba7c-e243': 96059},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation RunBBSubs -> GetEnemyBoundBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76867,12 +76961,15 @@
       "instruction": "jsr",
       "id": "control-01221",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba7f->d853 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba7f-d853': 96059},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation RunBBSubs -> PlayerEnemyCollision with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76886,12 +76983,15 @@
       "instruction": "jmp",
       "id": "control-01222",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba82->e87d site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual jump transitions {'ba82-e87d': 96059},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves ROM jump relation RunBBSubs -> EnemyGfxHandler with the source actor predicate, scratch-state handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -76905,12 +77005,15 @@
       "instruction": "jsr",
       "id": "control-01223",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba85->c998 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual call transitions {'ba85-c998': 7805},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original call relation KillBB -> EraseEnemyObject with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -132317,12 +132420,15 @@
       "instruction": "rts/rti",
       "id": "control-03691",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b971->f152 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'f170-b974': 31744},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunVSubs restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -132336,12 +132442,15 @@
       "instruction": "rts/rti",
       "id": "control-03692",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b974->f1af site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'f1d6-b977': 31744},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunVSubs exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -132355,12 +132464,15 @@
       "instruction": "rts/rti",
       "id": "control-03693",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b979->e435 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'e4ad-b97c': 47616},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation DrawVine -> VDrawLoop with source OAM loop and coordinate handoff.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -132396,12 +132508,15 @@
       "instruction": "rts/rti",
       "id": "control-03695",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original b9a6->e3f0 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'e431-b9a9': 12096},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation BlockBufferCollision -> WrCMTile with source query offset, table and scratch-state ordering.",
       "currentSourcePaths": [
         "src/game/vine.c"
@@ -132415,12 +132530,15 @@
       "instruction": "rts/rti",
       "id": "control-03696",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/actor_slots.c offscreen bounds sequence",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba20->d67a site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'d6d5-ba23': 91392},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation OffscreenBoundsCheck -> Chk_BB with ID/carry/page-bound predicate and call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -132434,12 +132552,15 @@
       "instruction": "rts/rti",
       "id": "control-03697",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba27->f1af site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'f1d6-ba2a': 38328},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Chk_BB exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -132475,12 +132596,15 @@
       "instruction": "rts/rti",
       "id": "control-03699",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba47->e143 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'e14e-ba4a': 7999},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyDiff -> BulletBillHandler with source predicate, ordering and state handoff.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -132494,12 +132618,15 @@
       "instruction": "rts/rti",
       "id": "control-03700",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba70->bf63 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'bf9e-ba73': 25990},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> ChkDSte with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -132514,12 +132641,15 @@
       "instruction": "rts/rti",
       "id": "control-03701",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared movement/gravity branch, call, tail and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba73->bf02 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'bf08-ba76': 44751},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> BBFly with source predicate, carry/order handoff and return semantics.",
       "currentSourcePaths": [
         "src/game/cannon.c",
@@ -132534,12 +132664,15 @@
       "instruction": "rts/rti",
       "id": "control-03702",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba76->f1af site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'f1d6-ba79': 96059},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunBBSubs exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -132553,12 +132686,15 @@
       "instruction": "rts/rti",
       "id": "control-03703",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba79->f152 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'f170-ba7c': 96059},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunBBSubs restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -132572,12 +132708,15 @@
       "instruction": "rts/rti",
       "id": "control-03704",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba7c->e243 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'e30b-ba7f': 28557, 'e324-ba7f': 30791, 'e29b-ba7f': 36711},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBBSubs with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
@@ -132591,12 +132730,15 @@
       "instruction": "rts/rti",
       "id": "control-03705",
       "cohort": "H",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "status": "exact",
+      "currentCounterpart": "Shared vine.c/cannon.c actual source-ordered child call/return;canonical OAM offscreen and normal EnemyGfxHandler plus existing world/lifecycle/movement/collision owners.",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 original ba7f->d853 site/target verified from ROM opcodes and reviewed ASM;source predicates,slot/parameter/scratch/store/call order mapped to current shared caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 original/native roots each width zero diff;actual return transitions {'d84c-ba82': 30080, 'd880-ba82': 65979},returns filtered to ROM RTS opcode60;12 tests each/purity/current builds/OpenNT link."
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBBSubs with source predicate, current slot and collision/state handoff ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c"
