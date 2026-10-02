@@ -895,13 +895,16 @@
       "consumer": "Entrance_GameTimerSetup",
       "storage": "AltEntranceControl-indexed X table to Player_X_Position",
       "feasiblePath": "The common entrance path reads the alternate selector after swimming initialization and writes the selected X before palette/timer work.",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
-      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "status": "exact",
+      "currentCounterpart": "player.c existing start/alternate/priority/timer tables and actual entry consumers",
+      "semanticContract": "Existing4 native bytes equal original9116-911A;source alternate0-3 indexes every actual horizontal entry.",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 independent original-region/native bytes/index/consumer and adjacent dummy alias audit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 all27 distinct producer bytes actually read by original consumers;65536 returning roots each width equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -914,13 +917,16 @@
       "consumer": "Entrance_GameTimerSetup",
       "storage": "alternate entrance two/three index override to entrance-table index",
       "feasiblePath": "Only alternate selector two or three reads this table; the resulting index selects Y and attribute entries.",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
-      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "status": "exact",
+      "currentCounterpart": "player.c existing start/alternate/priority/timer tables and actual entry consumers",
+      "semanticContract": "Existing2 native bytes equal original911A-911C;original LDX absolute-Y uses base9118 plus alternate2/3 to select8/0.",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 independent original-region/native bytes/index/consumer and adjacent dummy alias audit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 all27 distinct producer bytes actually read by original consumers;65536 returning roots each width equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -933,13 +939,16 @@
       "consumer": "Entrance_GameTimerSetup",
       "storage": "entrance-indexed Y table to Player_Y_Position",
       "feasiblePath": "The selected header or alternate-derived index reads Y before the matching attribute read.",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
-      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "status": "exact",
+      "currentCounterpart": "player.c existing start/alternate/priority/timer tables and actual entry consumers",
+      "semanticContract": "Existing9 native bytes equal original911C-9125;header0-7 or alternate index8/0 chooses exact vertical coordinate.",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 independent original-region/native bytes/index/consumer and adjacent dummy alias audit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 all27 distinct producer bytes actually read by original consumers;65536 returning roots each width equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -952,13 +961,16 @@
       "consumer": "Entrance_GameTimerSetup",
       "storage": "entrance-indexed attribute table to Player_SprAttrib",
       "feasiblePath": "The same source index that selected Y reads attribute, including the contiguous dummy byte at index eight.",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
-      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "status": "exact",
+      "currentCounterpart": "player.c existing start/alternate/priority/timer tables and actual entry consumers",
+      "semanticContract": "Original8 bytes9125-912D equal native first8;index8 deliberately reads adjacent GameTimerData dummy20,retained by native ninth byte.",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 independent original-region/native bytes/index/consumer and adjacent dummy alias audit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 all27 distinct producer bytes actually read by original consumers;65536 returning roots each width equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -971,13 +983,16 @@
       "consumer": "Entrance_GameTimerSetup",
       "storage": "GameTimerSetting-indexed first timer digit to GameTimerDisplay",
       "feasiblePath": "Only nonzero setting and fetch flag select a timer byte and then write the remaining digits/flags in source order.",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
-      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "status": "exact",
+      "currentCounterpart": "player.c existing start/alternate/priority/timer tables and actual entry consumers",
+      "semanticContract": "Original4 bytes912D-9131 equal native table;timer1-3 reads actual hundreds values,zero skips reset;dummy0 also read by priority index8.",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 independent original-region/native bytes/index/consumer and adjacent dummy alias audit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 all27 distinct producer bytes actually read by original consumers;65536 returning roots each width equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -14257,12 +14272,14 @@
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
-        "M2 T64 S56 full-scratch caller audit found omitted ClrGetLoop RAM00=$ff; shared area.c now restores the source terminal counter. Prior T54 output-region proof did not compare this scratch byte. Actual $D833 return and original GetPlayerColors loop confirm the correction. docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S56 full-scratch caller audit found omitted ClrGetLoop RAM00=$ff; shared area.c now restores the source terminal counter. Prior T54 output-region proof did not compare this scratch byte. Actual $D833 return and original GetPlayerColors loop confirm the correction. docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
-        "M2 T64 S56 before repair x86/x64 each have 96 RAM00 differences; after repair each matches 1536 actual pickup roots across 1841 bytes, including every scratch byte and 49 lower-stack game aliases. Ten operational regressions per width and original OpenNT DOS16 pass; three EXEs refreshed. docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S56 before repair x86/x64 each have 96 RAM00 differences; after repair each matches 1536 actual pickup roots across 1841 bytes, including every scratch byte and 49 lower-stack game aliases. Ten operational regressions per width and original OpenNT DOS16 pass; three EXEs refreshed. docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
       ],
       "semanticContract": "ROM $85F1 GetPlayerColors selects Mario/Luigi/fiery bytes and BackgroundColorCtrl-or-AreaType, preserves the four-color counter terminal RAM00=$ff, writes the $3f10 length-four Buffer1 packet and advances its offset by seven within the admitted table/buffer domain.",
       "currentSourcePaths": [
@@ -17364,14 +17381,17 @@
       "label": "PlayerStarting_X_Pos",
       "asmLine": 2840,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance:start_x",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Existing4 native bytes equal original9116-911A;source alternate0-3 indexes every actual horizontal entry."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Four-byte alternate-entrance indexed player X-position table retains ROM order.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Existing4 native bytes equal original9116-911A;source alternate0-3 indexes every actual horizontal entry.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17380,14 +17400,17 @@
       "label": "AltYPosOffset",
       "asmLine": 2844,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance:alternate_y",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Existing2 native bytes equal original911A-911C;original LDX absolute-Y uses base9118 plus alternate2/3 to select8/0."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Alternate entrances two and three replace header entrance index with source values $08 and $00.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Existing2 native bytes equal original911A-911C;original LDX absolute-Y uses base9118 plus alternate2/3 to select8/0.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17396,14 +17419,17 @@
       "label": "PlayerStarting_Y_Pos",
       "asmLine": 2847,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance:start_y",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Existing9 native bytes equal original911C-9125;header0-7 or alternate index8/0 chooses exact vertical coordinate."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Nine contiguous source Y-position bytes, including the adjacent dummy-derived index eight, select player Y.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Existing9 native bytes equal original911C-9125;header0-7 or alternate index8/0 chooses exact vertical coordinate.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17412,14 +17438,17 @@
       "label": "PlayerBGPriorityData",
       "asmLine": 2851,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance:background_priority",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Original8 bytes9125-912D equal native first8;index8 deliberately reads adjacent GameTimerData dummy20,retained by native ninth byte."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Eight priority bytes plus the adjacent GameTimerData dummy byte select Player_SprAttrib at the same source index.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original8 bytes9125-912D equal native first8;index8 deliberately reads adjacent GameTimerData dummy20,retained by native ninth byte.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17428,14 +17457,17 @@
       "label": "GameTimerData",
       "asmLine": 2854,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance:game_timer_data",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Original4 bytes912D-9131 equal native table;timer1-3 reads actual hundreds values,zero skips reset;dummy0 also read by priority index8."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Timer-setting indices one through three select first display digits 4, 3 and 2; index zero remains the adjacent dummy byte.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original4 bytes912D-9131 equal native table;timer1-3 reads actual hundreds values,zero skips reset;dummy0 also read by priority index8.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17444,14 +17476,17 @@
       "label": "Entrance_GameTimerSetup",
       "asmLine": 2858,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Original9131-91BD:page/force/facing/high/state/DEC-collision/halfway/swim setup,positions,real palette child,timer gates,vine/block/bubble children,subroutine7 in source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes player page/state/swimming and delegates coordinate, palette, timer, override/vine, water-bubble and task-seven sequencing in ROM order.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original9131-91BD:page/force/facing/high/state/DEC-collision/halfway/swim setup,positions,real palette child,timer gates,vine/block/bubble children,subroutine7 in source order.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17460,14 +17495,17 @@
       "label": "ChkStPos",
       "asmLine": 2874,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance swimming/entrance selection",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Store water swimming1 versus other0;alternate0/1 retains header index,2/3 loads original alternate8/0."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Sets SwimmingFlag from AreaType and preserves alternate-entrance zero/one header-index versus two/three override routing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store water swimming1 versus other0;alternate0/1 retains header index,2/3 loads original alternate8/0.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17476,14 +17514,17 @@
       "label": "SetStPos",
       "asmLine": 2881,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance coordinate/palette/timer section",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Store original X/Y/priority selections then actual GetPlayerColors;retain its returned X as original buffer offset,not entrance index;timer resets only nonzero setting and fetch."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies X/Y/attribute tables, queues player palette, and only reloads timer digits when both source flags are nonzero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store original X/Y/priority selections then actual GetPlayerColors;retain its returned X as original buffer offset,not entrance index;timer resets only nonzero setting and fetch.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17492,14 +17533,17 @@
       "label": "ChkOverR",
       "asmLine": 2900,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance override/vine section",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Joypad override nonzero stores climbing3,actual InitBlock_XY_Pos slot0 then block-Y F0 and Setup_Vine slot5/block0;zero keeps palette-return X."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "When JoypadOverride is nonzero, sets climb state and calls the source-equivalent block-position then slot-five vine setup sequence.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Joypad override nonzero stores climbing3,actual InitBlock_XY_Pos slot0 then block-Y F0 and Setup_Vine slot5/block0;zero keeps palette-return X.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17508,14 +17552,17 @@
       "label": "ChkSwimE",
       "asmLine": 2911,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance water-bubble section",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Water calls actual SetupBubble with retained X;other areas skip. Zero-page object operands wrap as original;alias-modified07 uses original PRG absolute-Y table reads."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Calls SetupBubble only in water areas, using entrance index or override-selected slot five.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Water calls actual SetupBubble with retained X;other areas skip. Zero-page object operands wrap as original;alias-modified07 uses original PRG absolute-Y table reads.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -17524,14 +17571,17 @@
       "label": "SetPESub",
       "asmLine": 2914,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player.c",
-      "currentCounterpart": "mysmb_player_initialize_entrance task handoff",
+      "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: After all actual children,store7 in GameEngineSubroutine and return;CPU transient registers/flags have no exported void-C ABI."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores GameEngineSubroutine seven only after all entrance side effects and returns to its caller.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "After all actual children,store7 in GameEngineSubroutine and return;CPU transient registers/flags have no exported void-C ABI.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -25623,10 +25673,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
       ],
       "semanticContract": "Selects pseudo-random bit, moves active bubbles, blocks inactive bubbles while timer is nonzero, otherwise creates one.",
       "currentSourcePaths": [
@@ -25642,10 +25694,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
       ],
       "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement.",
       "currentSourcePaths": [
@@ -25661,10 +25715,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
       ],
       "semanticContract": "Uses zero or eight plus retained facing carry before player X/page placement.",
       "currentSourcePaths": [
@@ -25680,10 +25736,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
       ],
       "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y.",
       "currentSourcePaths": [
@@ -25699,10 +25757,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
       ],
       "semanticContract": "Stores moved Y or the offscreen $f8 sentinel.",
       "currentSourcePaths": [
@@ -59350,13 +59410,16 @@
       "instruction": "bne",
       "id": "control-00430",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c non-water path branches directly to entrance-index selection with SwimmingFlag zero.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c non-water path branches directly to entrance-index selection with SwimmingFlag zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=49152;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch Entrance_GameTimerSetup -> ChkStPos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59369,13 +59432,16 @@
       "instruction": "iny",
       "id": "control-00431",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c water path increments the source Y value before the common SwimmingFlag/index path.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c water path increments the source Y value before the common SwimmingFlag/index path.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=16384;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough Entrance_GameTimerSetup -> ChkStPos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59388,13 +59454,16 @@
       "instruction": "beq",
       "id": "control-00432",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c preserves alternate entrance zero header-index selection.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c preserves alternate entrance zero header-index selection.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=16384;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ChkStPos -> SetStPos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59407,13 +59476,16 @@
       "instruction": "beq",
       "id": "control-00433",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c preserves alternate entrance one header-index selection.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c preserves alternate entrance one header-index selection.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=16384;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ChkStPos -> SetStPos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59426,13 +59498,16 @@
       "instruction": "ldx",
       "id": "control-00434",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c alternate entrances two/three fall from override-index selection into common coordinates.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c alternate entrances two/three fall from override-index selection into common coordinates.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=32768;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough ChkStPos -> SetStPos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59445,13 +59520,16 @@
       "instruction": "jsr",
       "id": "control-00435",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c calls the shared player-palette producer after X/Y/attribute stores and before timer handling.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c calls the shared player-palette producer after X/Y/attribute stores and before timer handling.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=65536;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call SetStPos -> GetPlayerColors retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/player.c"
@@ -59465,13 +59543,16 @@
       "instruction": "beq",
       "id": "control-00436",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c bypasses timer reload when GameTimerSetting is zero.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c bypasses timer reload when GameTimerSetting is zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=16384;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SetStPos -> ChkOverR retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59484,13 +59565,16 @@
       "instruction": "beq",
       "id": "control-00437",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c bypasses timer reload when FetchNewGameTimerFlag is zero.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c bypasses timer reload when FetchNewGameTimerFlag is zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=24576;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch SetStPos -> ChkOverR retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59503,13 +59587,16 @@
       "instruction": "sta",
       "id": "control-00438",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c timer reset writes all three display digits and clears fetch/star state before override handling.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c timer reset writes all three display digits and clears fetch/star state before override handling.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=24576;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough SetStPos -> ChkOverR retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59522,13 +59609,16 @@
       "instruction": "beq",
       "id": "control-00439",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c no-override path bypasses climbing/vine construction.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c no-override path bypasses climbing/vine construction.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=32768;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ChkOverR -> ChkSwimE retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59541,13 +59631,16 @@
       "instruction": "jsr",
       "id": "control-00440",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "objects.c entrance-vine helper first performs InitBlock_XY_Pos for slot zero.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "objects.c entrance-vine helper first performs InitBlock_XY_Pos for slot zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=32768;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call ChkOverR -> InitBlock_XY_Pos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59560,13 +59653,16 @@
       "instruction": "jsr",
       "id": "control-00441",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "objects.c entrance-vine helper then invokes Setup_Vine with source slot-five/block-zero registers.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "objects.c entrance-vine helper then invokes Setup_Vine with source slot-five/block-zero registers.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=32768;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original call ChkOverR -> Setup_Vine retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59579,13 +59675,16 @@
       "instruction": "jsr",
       "id": "control-00442",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c override/vine completion falls into water check.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c override/vine completion falls into water check.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=32768;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough ChkOverR -> ChkSwimE retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59598,13 +59697,16 @@
       "instruction": "bne",
       "id": "control-00443",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c non-water path bypasses SetupBubble.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c non-water path bypasses SetupBubble.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=49152;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original branch ChkSwimE -> SetPESub retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -59639,13 +59741,16 @@
       "instruction": "jsr",
       "id": "control-00445",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "player.c water setup return falls to task-seven handoff.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "player.c water setup return falls to task-seven handoff.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=16384;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original fallthrough ChkSwimE -> SetPESub retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]
@@ -128651,13 +128756,16 @@
       "instruction": "rts/rti",
       "id": "control-03546",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_area_queue_player_palette returns to entrance setup before timer checks.",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "mysmb_area_queue_player_palette returns to entrance setup before timer checks.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=65536;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original return GetPlayerColors -> SetStPos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/player.c"
@@ -128671,13 +128779,16 @@
       "instruction": "rts/rti",
       "id": "control-03547",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitBlock_XY_Pos -> ChkOverR with its predicate, ordered state handoff and return/dispatch semantics.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 transition observations=32768;65536 original/current roots both widths equal."
+      ],
+      "semanticContract": "Original return InitBlock_XY_Pos -> ChkOverR retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
         "src/game/player.c"
       ]

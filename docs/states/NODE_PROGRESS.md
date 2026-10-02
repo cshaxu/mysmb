@@ -1,12 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S4 - active player-entry initialization chain
+## M2 T69 S4 - closed player-entry initialization chain
 
-[Exact11 pending targets/3 exact dependencies](../proposals/m2/t69-cross-cohort-current-proof.md)
-scope14,intended fresh11,max1975/1992;17 controls/5 material. Current1964/1992
-nodes,4043/4278 controls(raw4342,infeasible64),505/555 material partial;
-historical1992/1992 separate. Both proof tracks required before credit.
-S5 remains unadmitted.
+[All11 intended labels/17 controls/5 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+exact after source entry/palette/bubble repairs and65536 original returning
+roots each width zero diff. Current1975/1992 nodes,4060/4278 controls
+(raw4342,infeasible64),510/555 material partial;historical1992/1992 separate.
+5 focused tests each/purity/current builds/OpenNT link pass;3 final EXEs
+refreshed.3 investigated dependencies no fresh credit;no scoped deferral/
+transfer. T69 open,S5 next unadmitted. Remaining17 nodes/218 feasible controls/
+45 enumerated material and earlier M alias debt;S7 bubble material still pending.
 
 ## M2 T69 S3 - closed area-music selection chain
 

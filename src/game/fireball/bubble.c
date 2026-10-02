@@ -33,18 +33,35 @@ enum {
 static const mysmb_u8 mysmb_bubble_force[2] = { 0xffU, 0x50U };
 static const mysmb_u8 mysmb_bubble_timer[2] = { 0x40U, 0x20U };
 
+/* An entrance caller's X can alias the zero-page random selector. Preserve
+ * the original absolute-Y read beyond the two normal random-bit entries
+ * through the already-bound full PRG, rather than indexing a two-byte C array. */
+static mysmb_u8 mysmb_bubble_lookup(const struct mysmb_game *game,
+                                  mysmb_u16 base, const mysmb_u8 *normal)
+{
+    mysmb_u8 index;
+    index = game->ram[0x0007U];
+    if (index < 2U) return normal[index];
+    if (game->area_prg != 0 && game->area_prg_size > base + index)
+        return game->area_prg[base + index];
+    return 0U;
+}
+
+/* Original bubble position arrays use zero-page indexed operands, so their
+ * base plus caller X wraps within page zero even on the entrance path. */
+
 /* MoveBubl/Y_Bubl: SetupBubble falls through here even if initial Y is F8. */
 static void mysmb_bubble_move(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 force;
     mysmb_u8 old_value;
     mysmb_u8 y;
-    force = mysmb_bubble_force[game->ram[0x0007U]];
+    force = mysmb_bubble_lookup(game, 0x374bU, mysmb_bubble_force);
     old_value = game->ram[MYSMB_BUBBLE_Y_DUMMY + slot];
     game->ram[MYSMB_BUBBLE_Y_DUMMY + slot] = (mysmb_u8)(old_value - force);
-    y = (mysmb_u8)(game->ram[MYSMB_BUBBLE_Y + slot] -
+    y = (mysmb_u8)(game->ram[(mysmb_u8)(MYSMB_BUBBLE_Y + slot)] -
                    (old_value < force ? 1U : 0U));
-    game->ram[MYSMB_BUBBLE_Y + slot] = y < 0x20U ? 0xf8U : y;
+    game->ram[(mysmb_u8)(MYSMB_BUBBLE_Y + slot)] = y < 0x20U ? 0xf8U : y;
 }
 
 /* Direct entry used by Entrance_GameTimerSetup and by BubbleCheck after the
@@ -60,14 +77,15 @@ void mysmb_fireball_setup_bubble(struct mysmb_game *game, mysmb_u8 slot)
      * facing right (Y = 8 plus carry = 1), and zero while facing left. */
     x_adder = (game->ram[MYSMB_BUBBLE_PLAYER_FACING] & 1U) != 0U ? 9U : 0U;
     old_x = game->ram[MYSMB_BUBBLE_PLAYER_X];
-    game->ram[MYSMB_BUBBLE_X + slot] = (mysmb_u8)(old_x + x_adder);
-    game->ram[MYSMB_BUBBLE_PAGE + slot] = (mysmb_u8)(
+    game->ram[(mysmb_u8)(MYSMB_BUBBLE_X + slot)] = (mysmb_u8)(old_x + x_adder);
+    game->ram[(mysmb_u8)(MYSMB_BUBBLE_PAGE + slot)] = (mysmb_u8)(
         game->ram[MYSMB_BUBBLE_PLAYER_PAGE] +
-        (game->ram[MYSMB_BUBBLE_X + slot] < old_x ? 1U : 0U));
-    game->ram[MYSMB_BUBBLE_Y + slot] =
+        (game->ram[(mysmb_u8)(MYSMB_BUBBLE_X + slot)] < old_x ? 1U : 0U));
+    game->ram[(mysmb_u8)(MYSMB_BUBBLE_Y + slot)] =
         (mysmb_u8)(game->ram[MYSMB_BUBBLE_PLAYER_Y] + 8U);
-    game->ram[MYSMB_BUBBLE_Y_HIGH + slot] = 1U;
-    game->ram[MYSMB_BUBBLE_TIMER] = mysmb_bubble_timer[game->ram[0x0007U]];
+    game->ram[(mysmb_u8)(MYSMB_BUBBLE_Y_HIGH + slot)] = 1U;
+    game->ram[MYSMB_BUBBLE_TIMER] = mysmb_bubble_lookup(game, 0x374dU,
+                                                    mysmb_bubble_timer);
     mysmb_bubble_move(game, slot);
 }
 
@@ -76,7 +94,7 @@ void mysmb_fireball_check_bubble(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 random_bit;
     random_bit = (mysmb_u8)(game->ram[MYSMB_BUBBLE_RANDOM + 1U + slot] & 1U);
     game->ram[0x0007U] = random_bit;
-    if (game->ram[MYSMB_BUBBLE_Y + slot] != 0xf8U)
+    if (game->ram[(mysmb_u8)(MYSMB_BUBBLE_Y + slot)] != 0xf8U)
         mysmb_bubble_move(game, slot);
     else if (game->ram[MYSMB_BUBBLE_TIMER] == 0U)
         mysmb_fireball_setup_bubble(game, slot);

@@ -587,3 +587,102 @@ palette/vine/block/bubble call order and child-return X selection.
 Owner-local ROM/reviewed ASM research only,nonredistributable,no import.
 Ignored build/m2-t69-s4,128MiB raw/1024 roots batch/120seconds process/
 524288steps root;coordinator removes raw per batch and retains neutral summaries.
+
+## S4 P2 closure - player entry full child handoff repair
+
+All11 intended labels exact:PlayerStarting_X_Pos; AltYPosOffset; PlayerStarting_Y_Pos; PlayerBGPriorityData; GameTimerData; Entrance_GameTimerSetup; ChkStPos; SetStPos; ChkOverR; ChkSwimE; SetPESub;17 controls/5 material exact.
+3 investigated dependency labels retain prior exact,zero new credit;no scoped
+deferral/transfer. Current1964->1975/1992 nodes,4043->4060/4278 controls
+(raw4342,infeasible64),505->510/555 material partial. Historical1992/1992
+separate,expected/actualMatches empty. T69 open,S5 next unadmitted;17 nodes/
+218 feasible controls/45 enumerated material plus earlier M alias debt remain.
+Material-00090/00091 bubble force/timer contracts stay pending in planned S7,
+not prematurely credited by this entry repair. No whole-game equivalence claim.
+
+| Node | Original/current source contract |
+| --- | --- |
+| `PlayerStarting_X_Pos` | Existing4 native bytes equal original9116-911A;source alternate0-3 indexes every actual horizontal entry. |
+| `AltYPosOffset` | Existing2 native bytes equal original911A-911C;original LDX absolute-Y uses base9118 plus alternate2/3 to select8/0. |
+| `PlayerStarting_Y_Pos` | Existing9 native bytes equal original911C-9125;header0-7 or alternate index8/0 chooses exact vertical coordinate. |
+| `PlayerBGPriorityData` | Original8 bytes9125-912D equal native first8;index8 deliberately reads adjacent GameTimerData dummy20,retained by native ninth byte. |
+| `GameTimerData` | Original4 bytes912D-9131 equal native table;timer1-3 reads actual hundreds values,zero skips reset;dummy0 also read by priority index8. |
+| `Entrance_GameTimerSetup` | Original9131-91BD:page/force/facing/high/state/DEC-collision/halfway/swim setup,positions,real palette child,timer gates,vine/block/bubble children,subroutine7 in source order. |
+| `ChkStPos` | Store water swimming1 versus other0;alternate0/1 retains header index,2/3 loads original alternate8/0. |
+| `SetStPos` | Store original X/Y/priority selections then actual GetPlayerColors;retain its returned X as original buffer offset,not entrance index;timer resets only nonzero setting and fetch. |
+| `ChkOverR` | Joypad override nonzero stores climbing3,actual InitBlock_XY_Pos slot0 then block-Y F0 and Setup_Vine slot5/block0;zero keeps palette-return X. |
+| `ChkSwimE` | Water calls actual SetupBubble with retained X;other areas skip. Zero-page object operands wrap as original;alias-modified07 uses original PRG absolute-Y table reads. |
+| `SetPESub` | After all actual children,store7 in GameEngineSubroutine and return;CPU transient registers/flags have no exported void-C ABI. |
+
+Final65536 unchanged original Entrance_GameTimerSetup9131 returning roots
+each width zero differences. Fixtures vary source-valid alternate0-3,area0-3,
+header entrance0-7,timer0-3,fetch0/FF,joypad override0/FF,player/status,
+all256 palette buffer offsets,collision byte and screen-left-page byte. These
+are controlled combinations,not a claim of every Cartesian state. Real original
+GetPlayerColors,InitBlock_XY_Pos,Setup_Vine and SetupBubble execute;native
+uses actual shared children. Compare2032 RAM,24 APU,ordered writes/counts;
+only1F0-1FF CPU sentinel/stack excluded,actual minimum SP>=EF. CPU registers
+and flags excluded from void C ABI,not persistent RAM. Original unchanged PRG
+binds actual palettes and alias table fetches;no patched ROM,mocked original
+child,imported protected table or C-generated expected state. Actual11 nodes,
+17 control transitions and all27 distinct entry-table bytes observed. Native
+existing tables independently equal ROM,including priority index8 adjacent
+dummy byte. Source routine ends91BD;admission's inherited9196 endpoint was
+an old comment error,not an execution boundary used by the recorder.
+
+First1024 roots exposed1760 RAM differences:original GetPlayerColors retains
+X=old VRAM offset,while native supplied entrance index to SetupBubble. Repair
+captures actual caller buffer offset before palette child;vine path sets5.
+Widened offsets exposed original zero-page indexed wrap versus native
+next-page stores;all bubble zero-page PAGE/X/Y/Y_HIGH accesses now cast the
+indexed address to8 bits,absolute042C+X dummy remains full-width. All256
+offsets also expose coordinate alias into07;original reads beyond normal
+two-byte force/timer arrays are now fetched through already-bound full PRG at
+original374B/374D+07. Normal random0/1 retains existing equal arrays;unbound
+standalone facade returns0 only outside those entries,not a product route.
+The source palette child was also reordered back to four color copies,
+background overwrite,header/terminator,and byte offset+7. Source absolute
+base+3 stays outside wrapped color-loop X;invented F8 offset rejection removed.
+Final complete matrix rerun after all product edits and table-read counters.
+
+Similar-issue sweep covers all zero-page indexed accesses in bubble.c,all
+entry uses of the retained X,alternate/priority alias,timer skip/reset stores,
+and palette cursor/store order. BubbleCheck's normal slots0-2 retain behavior;
+zero-credit dependency records updated. Existing S7 pending force/timer
+material rows receive no credit from this partial child-use context.
+Platform code unchanged,all repairs in shared game owners. A default file
+write to bubble.c failed permissions;owner-authorized elevated replacement
+completed without changing ACL or creating external temporary artifacts.
+
+| Control | Original PC | Actual transition observations | Result |
+| --- | --- | --- | --- |
+| `control-00430` | `9150` | 49152 | exact |
+| `control-00431` | `9152` | 16384 | exact |
+| `control-00432` | `915c` | 16384 | exact |
+| `control-00433` | `9160` | 16384 | exact |
+| `control-00434` | `9162` | 32768 | exact |
+| `control-00435` | `9175` | 65536 | exact |
+| `control-00436` | `917b` | 16384 | exact |
+| `control-00437` | `9180` | 24576 | exact |
+| `control-00438` | `9194` | 24576 | exact |
+| `control-00439` | `919a` | 32768 | exact |
+| `control-00440` | `91a2` | 32768 | exact |
+| `control-00441` | `91ad` | 32768 | exact |
+| `control-00442` | `91ad` | 32768 | exact |
+| `control-00443` | `91b3` | 49152 | exact |
+| `control-00445` | `91b5` | 16384 | exact |
+| `control-03546` | `9175` | 65536 | exact |
+| `control-03547` | `91a2` | 32768 | exact |
+
+Operational:current x86/x64 product/checker builds and5 focused tests each
+(area-entry,title-bootstrap,bubble-core-chain,bubble-OAM,purity) pass. Original
+OpenNT DOS16 link exits0 with inherited OLDNAMES.LIB warning;no interactive
+DOS claim. Product source changed,all3 final EXEs published under authorization:
+
+- `mysmb16.exe`: 261127 bytes, SHA256 `bde1a87b939fc5dc24895fb84f84469c1e77fe461162ec74c94ae0e3f44dd4e2`; final build published.
+- `mysmb32.exe`: 374745 bytes, SHA256 `e6d05a25bbb6ff29b70f359e542bf86f93f23904cec260582a06ceb3dfb81648`; final build published.
+- `mysmb64.exe`: 381771 bytes, SHA256 `0bfb3d658fc180355368895dacbba8a6860218e70e0696cccac6bdc4d5d08e54`; final build published.
+
+Raw deleted per1024-root batch;bounded ignored output retains neutral
+summaries/pre-fix diagnostics/build logs only,probe deleted at closure.
+Registry/ledger/progress/docs gates required before commit;unrelated queue,
+terrain line-endings and proposals preserved unstaged. S5 unadmitted.

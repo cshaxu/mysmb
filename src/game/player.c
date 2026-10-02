@@ -533,7 +533,9 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     game->ram[MYSMB_PLAYER_Y] = start_y[entrance];
     game->ram[MYSMB_PLAYER_ATTRIBUTES] = background_priority[entrance];
     /* ROM Entrance_GameTimerSetup calls GetPlayerColors even when the four
-     * colors already match the committed palette. */
+     * colors already match the committed palette. Its returned X is the
+     * original VRAM buffer offset, used by the later SetupBubble call. */
+    bubble_slot = game->ram[0x0300U];
     (void)mysmb_area_queue_player_palette(game);
     if (game->ram[MYSMB_GAME_TIMER_SETTING] != 0U &&
         game->ram[MYSMB_FETCH_NEW_GAME_TIMER] != 0U) {
@@ -549,7 +551,6 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
         mysmb_objects_start_entrance_vine(game);
         bubble_slot = 5U;
     }
-    else bubble_slot = entrance;
     if (game->ram[MYSMB_AREA_TYPE] == 0U) {
         mysmb_fireball_setup_bubble(game, bubble_slot);
     }
