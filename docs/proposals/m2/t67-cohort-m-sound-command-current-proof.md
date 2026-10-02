@@ -328,3 +328,103 @@ Owner-local original ROM/reviewed ASM are nonredistributable research inputs;
 all probes/raw/scripts/logs under ignored build/m2-t67-s2,128MiB raw budget,
 1024 roots/batch,120seconds/process,524288 instructions/root. Coordinator deletes
 raw after comparison. No third-party code import or platform game logic.
+
+## S2 P2 closure - Square1 source chain and full ordered output
+
+Completed all30 expected labels by exact name: SwimStompEnvelopeData; PlayFlagpoleSlide; PlaySmallJump; PlayBigJump; JumpRegContents; ContinueSndJump; N2Prt; FPS2nd; DmpJpFPS; PlayFireballThrow; PlayBump; Fthrow; ContinueBumpThrow; DecJpFPS; Square1SfxHandler; CheckSfx1Buffer; ExS1H; PlaySwimStomp; ContinueSwimStomp; BranchToDecLength1; PlaySmackEnemy; ContinueSmackEnemy; SmSpc; SmTick; DecrementSfx1Length; StopSquare1Sfx; ExSfx1; PlayPipeDownInj; ContinuePipeDownInj; NoPDwnL.
+No deferred owned nodes/feasible relations, no transfers, no product-code diff.
+Owned77 raw controls:66 exact feasible and11 source-infeasible retained raw.
+Material00438 exact. Current1738->1768/1992 nodes,3694->3760 feasible controls;
+denominator4312->4301 solely from instruction/path impossibility proofs,
+raw4342/infeasible41. Material403->404/493, enumeration partial. Historical
+1992/1992 separate; historical actualMatches empty. T67 remains open with74
+pending nodes; S3 next unadmitted, no later effect/music node promotion.
+
+| Inventory label | Shared counterpart | Manual source/state/control contract |
+| --- | --- | --- |
+| `SwimStompEnvelopeData` | `mysmb_audio_swim_stomp_envelope` | Owner-local CPU F3B0+remaining length, fourteen actual table entries at lengths1..14; byte length0/15..255 keeps original neighboring CPU-byte semantics. |
+| `PlayFlagpoleSlide` | `mysmb_audio_square1_play_flagpole` | Length40; SetFreq_Squ1(62) before control pair X99/YBC; then decrement exactly once in step_square1. |
+| `PlaySmallJump` | `mysmb_audio_square1_play_jump small!=0` | A26, unconditional branch to common jump control load. |
+| `PlayBigJump` | `mysmb_audio_square1_play_jump small==0` | A18, falls into common jump control load. |
+| `JumpRegContents` | `mysmb_audio_square1_play_jump` | Real PlaySqu1Sfx X82/YA7, then length28 before same-frame continuation/decrement. |
+| `ContinueSndJump` | `mysmb_audio_square1_continue_jump` | Length25 emits X5F/YF6; otherwise length20 emits X48/YBC; other bytes emit nothing before decrement. |
+| `N2Prt` | `mysmb_audio_square1_continue_jump` | Second comparison length20; length25 already emitted second-phase controls. |
+| `FPS2nd` | `mysmb_audio_square1_play_flagpole / continue_jump` | YBC shared between flagpole X99 and jump-third X48. |
+| `DmpJpFPS` | `mysmb_audio_dump_squ1_regs called by Square1 phases` | Actual ordered Y then X stores, flag-preserving original helper; nonzero Y constants make BNE to decrement. |
+| `PlayFireballThrow` | `mysmb_audio_square1_play_throw fireball!=0` | Length05/Y99; same common fixed frequency0C/controlX9E. |
+| `PlayBump` | `mysmb_audio_square1_play_throw fireball==0` | Length0A/Y93; same common fixed frequency0C/controlX9E. |
+| `Fthrow` | `mysmb_audio_square1_play_throw` | Save selected length before actual PlaySqu1Sfx(0C,9E,selectedY). |
+| `ContinueBumpThrow` | `mysmb_audio_square1_continue_throw` | Only length06 writes4001=BB, then decrement once. |
+| `DecJpFPS` | `mysmb_audio_step_square1 shared decrement after jump/throw` | CMP6!=0 or LDA BB guarantees nonzero Z on throw; jump phase comparators/nonzero control loads also guarantee branch to decrement. |
+| `Square1SfxHandler` | `mysmb_audio_step_square1` | Store original nonzero queue to F1, prioritize bit7 then bits0..6 while shifting live FF; start chosen phase once; queue0 checks buffer. |
+| `CheckSfx1Buffer` | `mysmb_audio_first_square1 used by step_square1` | Zero buffer returns; otherwise bit7 then bits0..6 select matching continuation; no live queue shifts on continuation. |
+| `ExS1H` | `mysmb_audio_step_square1 buffer==0 return` | No active buffer means no Square1 writes, length change or terminal mute. |
+| `PlaySwimStomp` | `mysmb_audio_step_square1 effect04 start` | Length0E then PlaySqu1Sfx(26,9E,9C), immediately one envelope continuation in same frame. |
+| `ContinueSwimStomp` | `mysmb_audio_step_square1 effect04 continuation` | Read envelope using old remaining length before4000 write; length06 additionally writes4002=9E before decrement. |
+| `BranchToDecLength1` | `mysmb_audio_step_square1 shared length tail` | All original incoming paths have Z0: non-equal CPY6/CMP branches or fixed LDA9E, so continuation always reaches one decrement. |
+| `PlaySmackEnemy` | `mysmb_audio_step_square1 effect08 start` | Length0E then PlaySqu1Sfx(28,9F,CB); fixed original nonzero frequency high|8 makes BNE directly to decrement, no same-frame smack continuation. |
+| `ContinueSmackEnemy` | `mysmb_audio_step_square1 effect08 queue==0` | Length08 writes4002=A0 then4000=9F; other lengths write4000=90; one decrement. |
+| `SmSpc` | `mysmb_audio_step_square1 smack non8 branch` | Spaces write90, without frequency rewrite. |
+| `SmTick` | `mysmb_audio_step_square1 smack4000 write` | Writes chosen90/9F before shared decrement. |
+| `DecrementSfx1Length` | `mysmb_audio_step_square1 final length--` | Unsigned byte decrement; zero length wrapsFF, length1 reaches zero and stops. |
+| `StopSquare1Sfx` | `mysmb_audio_step_square1 terminal branch` | Clear only F1 then ordered4015=0E,4015=0F; terminal mute does not reorder same-value/retrigger commands. |
+| `ExSfx1` | `mysmb_audio_step_square1 return after decrement/stop` | Return preserves result; unrelated queue clear/DAC belong actual SoundEngine caller. |
+| `PlayPipeDownInj` | `mysmb_audio_step_square1 effect10 start` | Length2F, then pipe continuation gate and decrement in same frame. |
+| `ContinuePipeDownInj` | `mysmb_audio_step_square1 effect10 continuation` | Original two LSR/carry tests and AND2 correspond exactly to (length&0B)==08; eligible frame calls PlaySqu1Sfx(44,9A,91). |
+| `NoPDwnL` | `mysmb_audio_step_square1 pipe shared tail` | Both write and skip phases reach one common decrement; no double phase or extra command. |
+
+4096 complete unchanged original SoundEngine start roots vary every queue byte
+and16 prior-state profiles.65536 continuation roots exhaust every buffered byte
+by every length byte; all other channels/music inactive but actual callees run.
+Actual original Square1 caller entry/RTS and all feasible phase transfers
+observed. Same RAM feeds public real C audio_step, not a private test clone.
+Compare1841 RAM bytes including0109-0139 aliases,24 final APU registers and
+the complete ordered command count/index/value sequence. Only true CPU stack
+0100-0108/013A-01FF and unmapped transient registers excluded. Zero differences
+in69,632 roots on both x86/x64. Queue shifts/priority and source-order state
+writes additionally have the explicit static proof above; final queue clearing
+is never used as a substitute for that transient-state audit.
+
+Original indexed B9 read observation covers all14 valid envelope members at
+lengths1..14 before control write/decrement, and all256 CPU-offset cases.
+Offsets0/15..255 access neighboring original program bytes, not extra declared
+envelope members; they are not table-extension credit. Native owner-local
+F3B0+length reader and ordered4000/4002 writes match. No protected bytes retained
+as tracked fixture or data array; no dependency/music-table node promotion.
+
+Every unobserved raw fallthrough is separately proven impossible:
+
+- `control-03208`: LDX99 before BNE FPS2nd sets Z0.
+- `control-03210`: LDA26 before BNE JumpRegContents sets Z0.
+- `control-03216`: LDYF6 before BNE DmpJpFPS sets Z0.
+- `control-03222`: DmpJpFPS receives YF6/BC set by nonzero LDY; real Dump_Squ1_Regs only STY/STX/RTS preserves Z0.
+- `control-03224`: LDY99 before BNE Fthrow sets Z0.
+- `control-03231`: Every DecJpFPS entry has Z0: throw CMP6 unequal or LDA BB, jump CMP20 unequal or nonzero LDY on25/20 phases.
+- `control-03241`: Queue0 already branched to buffer; any remaining positive nonzero byte has a winning bit0..6, bit7 already branched. Last BCS cannot fall through.
+- `control-03251`: Buffer0 already branched ExS1H; any nonzero byte has bit7 or one winning bit0..6. Last BCS cannot fall through.
+- `control-03257`: BranchToDecLength1 inputs carry Z0 from unequal CPY6/DecJpFPS branch or fixed LDA9E; BNE always taken.
+- `control-03260`: Actual bound ROM FF29 frequency low for A28 is nonzero; high|08 is nonzero, so PlaySqu1Sfx returns Z0 and BNE always taken.
+- `control-03263`: LDA9F before BNE SmTick sets Z0.
+
+Immediate loads, the flag-preserving real store helper and fixed frequency
+binding were checked against unchanged PRG/source index; queue/buffer proofs
+exhaust the unsigned-byte bit cases. Absence of runtime hits alone is not the
+basis. Source listing index has no mismatch in admitted range. Actual feasible
+call returns include all seven caller-owned helper continuations listed for S2.
+
+Operational native checker builds pass;7/7 focused tests each include audio,
+header/death/channel smoke and platform purity. Original OpenNT DOS16 link
+passes with existing OLDNAMES.LIB warning; no interactive DOS claim. No current
+Square1 product repair required. Similar-issue sweep found no extra/double start
+or continuation command, wrong selected queue bit, incorrect pipe gate, old/new
+length index, byte wrap or reordered stop writes. Later active Square2/noise/
+music remain S3-S5. Three T66 S2 products retained byte-identical:
+
+- `mysmb16.exe`: 260839 bytes, SHA256 `1f99e8e864fcd5da449f3a643eab4f82e550b5b2229e71e167dd77ac96025fa0`.
+- `mysmb32.exe`: 373854 bytes, SHA256 `efb2534dc2bb7074afb4c79db301431ef47beb18d09cd99c7f73a3ee631bed8b`.
+- `mysmb64.exe`: 380886 bytes, SHA256 `87c198fc900fe0a4b744dd70459117c19d711ecf67957ebf7894374c6f0fdc84`.
+
+Neutral local evidence under ignored build/m2-t67-s2: route-summary.json,
+mode14/15 summaries/logs, coverage-summary.json, focused-x86/x64.log and
+dos16-link.log. Raw deleted after each batch; compiled probe cleaned on closure.
+Ledger/registry/progress/documentation gates required before P2 commit.

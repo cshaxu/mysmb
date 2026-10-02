@@ -9537,13 +9537,16 @@
       "consumer": "ContinueSwimStomp",
       "storage": "ROM SwimStompEnvelopeData remaining-length index to square-one envelope register",
       "feasiblePath": "ContinueSwimStomp indexes SwimStompEnvelopeData-1 using the active square-one length before its source decrement path.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_swim_stomp_envelope owner-local ROM binding",
       "semanticContract": "The remaining-length index selects the same ordered envelope byte before the square-one control write.",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 old length Y reads F3B0+Y then4000 envelope before decrement; actual current reader/function order matches, all14 table bytes owner-local."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 actual original B9 B0 F3 read logs cover indexes1..14 and all byte offsets0..255; full native ordered envelope writes match69,632 roots both widths."
+      ],
       "cohort": "M",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -44920,14 +44923,17 @@
       "label": "SwimStompEnvelopeData",
       "asmLine": 15194,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_swim_stomp_envelope",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Owner-local CPU F3B0+remaining length, fourteen actual table entries at lengths1..14; byte length0/15..255 keeps original neighboring CPU-byte semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds fourteen ordered square-one envelope bytes indexed by remaining swim/stomp length minus one.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Owner-local CPU F3B0+remaining length, fourteen actual table entries at lengths1..14; byte length0/15..255 keeps original neighboring CPU-byte semantics.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44936,14 +44942,17 @@
       "label": "PlayFlagpoleSlide",
       "asmLine": 15198,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_flagpole",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length40; SetFreq_Squ1(62) before control pair X99/YBC; then decrement exactly once in step_square1."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes flagpole length, writes its initial frequency, then enters the shared third-jump-part register path.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length40; SetFreq_Squ1(62) before control pair X99/YBC; then decrement exactly once in step_square1.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44952,14 +44961,17 @@
       "label": "PlaySmallJump",
       "asmLine": 15206,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_jump small!=0",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: A26, unconditional branch to common jump control load."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the small-jump initial frequency before shared jump register setup.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "A26, unconditional branch to common jump control load.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44968,14 +44980,17 @@
       "label": "PlayBigJump",
       "asmLine": 15210,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_jump small==0",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: A18, falls into common jump control load."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the big-jump initial frequency before shared jump register setup.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "A18, falls into common jump control load.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44984,14 +44999,17 @@
       "label": "JumpRegContents",
       "asmLine": 15213,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_jump",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Real PlaySqu1Sfx X82/YA7, then length28 before same-frame continuation/decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes initial jump controls/frequency then initializes the shared jump sound length.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Real PlaySqu1Sfx X82/YA7, then length28 before same-frame continuation/decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45000,14 +45018,17 @@
       "label": "ContinueSndJump",
       "asmLine": 15220,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_continue_jump",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length25 emits X5F/YF6; otherwise length20 emits X48/YBC; other bytes emit nothing before decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Changes jump tone at the two source length thresholds, otherwise proceeds to shared decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length25 emits X5F/YF6; otherwise length20 emits X48/YBC; other bytes emit nothing before decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45016,14 +45037,17 @@
       "label": "N2Prt",
       "asmLine": 15227,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_continue_jump",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Second comparison length20; length25 already emitted second-phase controls."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the third jump tone at its threshold or proceeds to shared decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Second comparison length20; length25 already emitted second-phase controls.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45032,14 +45056,17 @@
       "label": "FPS2nd",
       "asmLine": 15230,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_flagpole / continue_jump",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: YBC shared between flagpole X99 and jump-third X48."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Supplies the shared third-part control byte for jump or flagpole slide.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "YBC shared between flagpole X99 and jump-third X48.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45048,14 +45075,17 @@
       "label": "DmpJpFPS",
       "asmLine": 15231,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_dump_squ1_regs called by Square1 phases",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Actual ordered Y then X stores, flag-preserving original helper; nonzero Y constants make BNE to decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the selected square-one control registers before shared decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Actual ordered Y then X stores, flag-preserving original helper; nonzero Y constants make BNE to decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45064,14 +45094,17 @@
       "label": "PlayFireballThrow",
       "asmLine": 15234,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_throw fireball!=0",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length05/Y99; same common fixed frequency0C/controlX9E."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects fireball length/control values and joins shared fireball/bump setup.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length05/Y99; same common fixed frequency0C/controlX9E.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45080,14 +45113,17 @@
       "label": "PlayBump",
       "asmLine": 15239,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_throw fireball==0",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length0A/Y93; same common fixed frequency0C/controlX9E."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects bump length/control values and joins shared fireball/bump setup.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length0A/Y93; same common fixed frequency0C/controlX9E.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45096,14 +45132,17 @@
       "label": "Fthrow",
       "asmLine": 15242,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_play_throw",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Save selected length before actual PlaySqu1Sfx(0C,9E,selectedY)."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores fireball/bump length, writes initial frequency/control registers and continues timing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Save selected length before actual PlaySqu1Sfx(0C,9E,selectedY).",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45112,14 +45151,17 @@
       "label": "ContinueBumpThrow",
       "asmLine": 15247,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_square1_continue_throw",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Only length06 writes4001=BB, then decrement once."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the second bump/throw control byte only at remaining length six, then proceeds to shared decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Only length06 writes4001=BB, then decrement once.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45128,14 +45170,17 @@
       "label": "DecJpFPS",
       "asmLine": 15253,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_square1_play_flagpole / mysmb_audio_square1_play_jump / mysmb_audio_square1_continue_jump / mysmb_audio_square1_play_throw / mysmb_audio_square1_continue_throw",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 shared decrement after jump/throw",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: CMP6!=0 or LDA BB guarantees nonzero Z on throw; jump phase comparators/nonzero control loads also guarantee branch to decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Transfers to the source shared square-one SFX length-decrement routine.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "CMP6!=0 or LDA BB guarantees nonzero Z on throw; jump phase comparators/nonzero control loads also guarantee branch to decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45144,14 +45189,17 @@
       "label": "Square1SfxHandler",
       "asmLine": 15256,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Store original nonzero queue to F1, prioritize bit7 then bits0..6 while shifting live FF; start chosen phase once; queue0 checks buffer."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Copies a nonzero queue into buffer, scans priority bits in source order while mutating the live queue, and dispatches the selected new effect.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Store original nonzero queue to F1, prioritize bit7 then bits0..6 while shifting live FF; start chosen phase once; queue0 checks buffer.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45160,14 +45208,17 @@
       "label": "CheckSfx1Buffer",
       "asmLine": 15276,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_first_square1 used by step_square1",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Zero buffer returns; otherwise bit7 then bits0..6 select matching continuation; no live queue shifts on continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Dispatches the active buffered effect to its continuation using the same source priority-bit scan without mutating the buffer.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Zero buffer returns; otherwise bit7 then bits0..6 select matching continuation; no live queue shifts on continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45176,14 +45227,17 @@
       "label": "ExS1H",
       "asmLine": 15294,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 buffer==0 return",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: No active buffer means no Square1 writes, length change or terminal mute."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns when no square-one buffered effect is active.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "No active buffer means no Square1 writes, length change or terminal mute.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45192,14 +45246,17 @@
       "label": "PlaySwimStomp",
       "asmLine": 15296,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect04 start",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length0E then PlaySqu1Sfx(26,9E,9C), immediately one envelope continuation in same frame."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes swim/stomp length and registers, then enters its continuation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length0E then PlaySqu1Sfx(26,9E,9C), immediately one envelope continuation in same frame.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45208,14 +45265,17 @@
       "label": "ContinueSwimStomp",
       "asmLine": 15304,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect04 continuation",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Read envelope using old remaining length before4000 write; length06 additionally writes4002=9E before decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes remaining-length indexed envelope, writes the frequency LSB at length six and transfers to common decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Read envelope using old remaining length before4000 write; length06 additionally writes4002=9E before decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45224,14 +45284,17 @@
       "label": "BranchToDecLength1",
       "asmLine": 15313,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 shared length tail",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: All original incoming paths have Z0: non-equal CPY6/CMP branches or fixed LDA9E, so continuation always reaches one decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Tail-transfers to common square-one length decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "All original incoming paths have Z0: non-equal CPY6/CMP branches or fixed LDA9E, so continuation always reaches one decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45240,14 +45303,17 @@
       "label": "PlaySmackEnemy",
       "asmLine": 15316,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect08 start",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length0E then PlaySqu1Sfx(28,9F,CB); fixed original nonzero frequency high|8 makes BNE directly to decrement, no same-frame smack continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes smack length/registers and enters common decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length0E then PlaySqu1Sfx(28,9F,CB); fixed original nonzero frequency high|8 makes BNE directly to decrement, no same-frame smack continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45256,14 +45322,17 @@
       "label": "ContinueSmackEnemy",
       "asmLine": 15325,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect08 queue==0",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length08 writes4002=A0 then4000=9F; other lengths write4000=90; one decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "At length eight writes the second smack tone; otherwise selects the source spacing envelope before common decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length08 writes4002=A0 then4000=9F; other lengths write4000=90; one decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45272,14 +45341,17 @@
       "label": "SmSpc",
       "asmLine": 15333,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 smack non8 branch",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Spaces write90, without frequency rewrite."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the spacing envelope byte for non-threshold smack frames.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Spaces write90, without frequency rewrite.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45288,14 +45360,17 @@
       "label": "SmTick",
       "asmLine": 15334,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 smack4000 write",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Writes chosen90/9F before shared decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes selected smack envelope then enters common decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Writes chosen90/9F before shared decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45304,14 +45379,17 @@
       "label": "DecrementSfx1Length",
       "asmLine": 15336,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 final length--",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Unsigned byte decrement; zero length wrapsFF, length1 reaches zero and stops."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Decrements square-one effect length and either returns while active or enters terminal stop.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Unsigned byte decrement; zero length wrapsFF, length1 reaches zero and stops.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45320,14 +45398,17 @@
       "label": "StopSquare1Sfx",
       "asmLine": 15340,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 terminal branch",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Clear only F1 then ordered4015=0E,4015=0F; terminal mute does not reorder same-value/retrigger commands."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Clears the square-one buffer and toggles master channel enable through 0x0e then 0x0f.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Clear only F1 then ordered4015=0E,4015=0F; terminal mute does not reorder same-value/retrigger commands.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45336,14 +45417,17 @@
       "label": "ExSfx1",
       "asmLine": 15347,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 return after decrement/stop",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Return preserves result; unrelated queue clear/DAC belong actual SoundEngine caller."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns after active decrement or terminal square-one stop.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Return preserves result; unrelated queue clear/DAC belong actual SoundEngine caller.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45352,14 +45436,17 @@
       "label": "PlayPipeDownInj",
       "asmLine": 15349,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect10 start",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length2F, then pipe continuation gate and decrement in same frame."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Initializes pipe-down/injury length then enters its bit-timed continuation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Length2F, then pipe continuation gate and decrement in same frame.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45368,14 +45455,17 @@
       "label": "ContinuePipeDownInj",
       "asmLine": 15353,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect10 continuation",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Original two LSR/carry tests and AND2 correspond exactly to (length&0B)==08; eligible frame calls PlaySqu1Sfx(44,9A,91)."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses source bit tests on remaining length to write pipe-down tone only at eligible frames, then decrements.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Original two LSR/carry tests and AND2 correspond exactly to (length&0B)==08; eligible frame calls PlaySqu1Sfx(44,9A,91).",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -45384,14 +45474,17 @@
       "label": "NoPDwnL",
       "asmLine": 15365,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step_square1 and square-one SFX helper paths",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 pipe shared tail",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Both write and skip phases reach one common decrement; no double phase or extra command."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Tail-transfers a non-tone pipe-down frame to common square-one decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+      ],
+      "semanticContract": "Both write and skip phases reach one common decrement; no double phase or extra command.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -118841,12 +118934,15 @@
       "instruction": "jsr",
       "id": "control-03206",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=16; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source call PlayFlagpoleSlide \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetFreq_Squ1 writes its required APU state before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118860,12 +118956,15 @@
       "instruction": "bne",
       "id": "control-03207",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=16; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch PlayFlagpoleSlide \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 FPS2nd preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118879,12 +118978,15 @@
       "instruction": "bne",
       "id": "control-03208",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 LDX99 before BNE FPS2nd sets Z0."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlayFlagpoleSlide \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySmallJump preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118898,12 +119000,15 @@
       "instruction": "bne",
       "id": "control-03209",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=2048; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch PlaySmallJump \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 JumpRegContents preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118917,12 +119022,15 @@
       "instruction": "bne",
       "id": "control-03210",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 LDA26 before BNE JumpRegContents sets Z0."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlaySmallJump \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayBigJump preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118936,12 +119044,15 @@
       "instruction": "lda",
       "id": "control-03211",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=1024; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlayBigJump \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 JumpRegContents preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118955,12 +119066,15 @@
       "instruction": "jsr",
       "id": "control-03212",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=3072; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source call JumpRegContents \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu1Sfx writes its required APU state before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118974,12 +119088,15 @@
       "instruction": "sta",
       "id": "control-03213",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=3072; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through JumpRegContents \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueSndJump preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118993,12 +119110,15 @@
       "instruction": "bne",
       "id": "control-03214",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=52036; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinueSndJump \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 N2Prt preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119012,12 +119132,15 @@
       "instruction": "bne",
       "id": "control-03215",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=192; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinueSndJump \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DmpJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119031,12 +119154,15 @@
       "instruction": "bne",
       "id": "control-03216",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 LDYF6 before BNE DmpJpFPS sets Z0."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through ContinueSndJump \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 N2Prt preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119050,12 +119176,15 @@
       "instruction": "bne",
       "id": "control-03217",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=51844; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch N2Prt \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119069,12 +119198,15 @@
       "instruction": "ldx",
       "id": "control-03218",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=192; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through N2Prt \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 FPS2nd preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119088,12 +119220,15 @@
       "instruction": "ldy",
       "id": "control-03219",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=208; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through FPS2nd \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DmpJpFPS preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119107,12 +119242,15 @@
       "instruction": "jsr",
       "id": "control-03220",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=400; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source call DmpJpFPS \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Dump_Squ1_Regs writes its required APU state before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119126,12 +119264,15 @@
       "instruction": "bne",
       "id": "control-03221",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=400; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch DmpJpFPS \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119145,12 +119286,15 @@
       "instruction": "bne",
       "id": "control-03222",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 DmpJpFPS receives YF6/BC set by nonzero LDY; real Dump_Squ1_Regs only STY/STX/RTS preserves Z0."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through DmpJpFPS \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayFireballThrow preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119164,12 +119308,15 @@
       "instruction": "bne",
       "id": "control-03223",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=32; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch PlayFireballThrow \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Fthrow preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119183,12 +119330,15 @@
       "instruction": "bne",
       "id": "control-03224",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 LDY99 before BNE Fthrow sets Z0."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlayFireballThrow \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayBump preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119202,12 +119352,15 @@
       "instruction": "ldy",
       "id": "control-03225",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=512; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlayBump \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Fthrow preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119221,12 +119374,15 @@
       "instruction": "jsr",
       "id": "control-03226",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=544; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source call Fthrow \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu1Sfx writes its required APU state before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119240,12 +119396,15 @@
       "instruction": "jsr",
       "id": "control-03227",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=544; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through Fthrow \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueBumpThrow preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119259,12 +119418,15 @@
       "instruction": "bne",
       "id": "control-03228",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=9218; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinueBumpThrow \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecJpFPS preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119278,12 +119440,15 @@
       "instruction": "sta",
       "id": "control-03229",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=34; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through ContinueBumpThrow \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecJpFPS preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119297,12 +119462,15 @@
       "instruction": "bne",
       "id": "control-03230",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=61496; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch DecJpFPS \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BranchToDecLength1 preserves its SFX type or remaining-length predicate before the alternate tone/decrement path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119316,12 +119484,15 @@
       "instruction": "bne",
       "id": "control-03231",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c square-one basic SFX control flow",
       "semanticEvidence": [
-        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required."
+        "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Every DecJpFPS entry has Z0: throw CMP6 unequal or LDA BB, jump CMP20 unequal or nonzero LDY on25/20 phases."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through DecJpFPS \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Square1SfxHandler preserves prior SFX length/register state before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119335,12 +119506,15 @@
       "instruction": "beq",
       "id": "control-03232",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=65552; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 CheckSfx1Buffer preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119354,12 +119528,15 @@
       "instruction": "bmi",
       "id": "control-03233",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=2048; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySmallJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119373,12 +119550,15 @@
       "instruction": "bcs",
       "id": "control-03234",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=1024; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayBigJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119392,12 +119572,15 @@
       "instruction": "bcs",
       "id": "control-03235",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=512; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayBump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119411,12 +119594,15 @@
       "instruction": "bcs",
       "id": "control-03236",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=256; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySwimStomp preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119430,12 +119616,15 @@
       "instruction": "bcs",
       "id": "control-03237",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=128; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySmackEnemy preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119449,12 +119638,15 @@
       "instruction": "bcs",
       "id": "control-03238",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=64; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayPipeDownInj preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119468,12 +119660,15 @@
       "instruction": "bcs",
       "id": "control-03239",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=32; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayFireballThrow preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119487,12 +119682,15 @@
       "instruction": "bcs",
       "id": "control-03240",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=16; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayFlagpoleSlide preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119506,12 +119704,15 @@
       "instruction": "bcs",
       "id": "control-03241",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Queue0 already branched to buffer; any remaining positive nonzero byte has a winning bit0..6, bit7 already branched. Last BCS cannot fall through."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 CheckSfx1Buffer preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119525,12 +119726,15 @@
       "instruction": "beq",
       "id": "control-03242",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=256; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExS1H preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119544,12 +119748,15 @@
       "instruction": "bmi",
       "id": "control-03243",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=32770; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueSndJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119563,12 +119770,15 @@
       "instruction": "bcs",
       "id": "control-03244",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=16386; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueSndJump preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119582,12 +119792,15 @@
       "instruction": "bcs",
       "id": "control-03245",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=8194; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueBumpThrow preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119601,12 +119814,15 @@
       "instruction": "bcs",
       "id": "control-03246",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=4098; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueSwimStomp preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119620,12 +119836,15 @@
       "instruction": "bcs",
       "id": "control-03247",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=2050; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueSmackEnemy preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119639,12 +119858,15 @@
       "instruction": "bcs",
       "id": "control-03248",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=1026; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinuePipeDownInj preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119658,12 +119880,15 @@
       "instruction": "bcs",
       "id": "control-03249",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=514; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueBumpThrow preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119677,12 +119902,15 @@
       "instruction": "bcs",
       "id": "control-03250",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=258; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecrementSfx1Length preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119696,12 +119924,15 @@
       "instruction": "bcs",
       "id": "control-03251",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Buffer0 already branched ExS1H; any nonzero byte has bit7 or one winning bit0..6. Last BCS cannot fall through."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through CheckSfx1Buffer \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExS1H preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119715,12 +119946,15 @@
       "instruction": "jsr",
       "id": "control-03252",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=256; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source call PlaySwimStomp \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu1Sfx writes required APU state before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119734,12 +119968,15 @@
       "instruction": "jsr",
       "id": "control-03253",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=256; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlaySwimStomp \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueSwimStomp preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119753,12 +119990,15 @@
       "instruction": "bne",
       "id": "control-03254",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=4338; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinueSwimStomp \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BranchToDecLength1 preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119772,12 +120012,15 @@
       "instruction": "sta",
       "id": "control-03255",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=16; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through ContinueSwimStomp \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BranchToDecLength1 preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119791,12 +120034,15 @@
       "instruction": "bne",
       "id": "control-03256",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=65850; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch BranchToDecLength1 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecrementSfx1Length preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119810,12 +120056,15 @@
       "instruction": "bne",
       "id": "control-03257",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 BranchToDecLength1 inputs carry Z0 from unequal CPY6/DecJpFPS branch or fixed LDA9E; BNE always taken."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through BranchToDecLength1 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySmackEnemy preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119829,12 +120078,15 @@
       "instruction": "jsr",
       "id": "control-03258",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=128; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source call PlaySmackEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu1Sfx writes required APU state before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119848,12 +120100,15 @@
       "instruction": "bne",
       "id": "control-03259",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=128; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch PlaySmackEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecrementSfx1Length preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119867,12 +120122,15 @@
       "instruction": "bne",
       "id": "control-03260",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual bound ROM FF29 frequency low for A28 is nonzero; high|08 is nonzero, so PlaySqu1Sfx returns Z0 and BNE always taken."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlaySmackEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinueSmackEnemy preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119886,12 +120144,15 @@
       "instruction": "bne",
       "id": "control-03261",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=2042; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinueSmackEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SmSpc preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119905,12 +120166,15 @@
       "instruction": "bne",
       "id": "control-03262",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=8; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinueSmackEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SmTick preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119924,12 +120188,15 @@
       "instruction": "bne",
       "id": "control-03263",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 LDA9F before BNE SmTick sets Z0."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=0; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through ContinueSmackEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SmSpc preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119943,12 +120210,15 @@
       "instruction": "lda",
       "id": "control-03264",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=2042; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through SmSpc \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SmTick preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119962,12 +120232,15 @@
       "instruction": "sta",
       "id": "control-03265",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=2050; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through SmTick \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecrementSfx1Length preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -119981,12 +120254,15 @@
       "instruction": "bne",
       "id": "control-03266",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=69121; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch DecrementSfx1Length \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExSfx1 preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120000,12 +120276,15 @@
       "instruction": "bne",
       "id": "control-03267",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=255; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through DecrementSfx1Length \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 StopSquare1Sfx preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120019,12 +120298,15 @@
       "instruction": "stx",
       "id": "control-03268",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=255; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through StopSquare1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ExSfx1 preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120038,12 +120320,15 @@
       "instruction": "sta",
       "id": "control-03269",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=64; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through PlayPipeDownInj \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinuePipeDownInj preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120057,12 +120342,15 @@
       "instruction": "bcs",
       "id": "control-03270",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=576; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinuePipeDownInj \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoPDwnL preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120076,12 +120364,15 @@
       "instruction": "bcs",
       "id": "control-03271",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=256; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinuePipeDownInj \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoPDwnL preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120095,12 +120386,15 @@
       "instruction": "beq",
       "id": "control-03272",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=129; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source branch ContinuePipeDownInj \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoPDwnL preserves its queue priority, active-buffer, length or bit-timing predicate before the alternate SFX path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120114,12 +120408,15 @@
       "instruction": "jsr",
       "id": "control-03273",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=129; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source call ContinuePipeDownInj \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu1Sfx writes required APU state before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120133,12 +120430,15 @@
       "instruction": "jsr",
       "id": "control-03274",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=129; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source fall-through ContinuePipeDownInj \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoPDwnL preserves prior square-one state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -120152,12 +120452,15 @@
       "instruction": "jmp",
       "id": "control-03275",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=1090; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source tail transfer NoPDwnL \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecrementSfx1Length preserves the selected SFX state without local continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137233,12 +137536,15 @@
       "instruction": "rts/rti",
       "id": "control-04068",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=16; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source return relation SetFreq_Squ1 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlayFlagpoleSlide exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137252,12 +137558,15 @@
       "instruction": "rts/rti",
       "id": "control-04069",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=3072; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source return relation PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 JumpRegContents exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137271,12 +137580,15 @@
       "instruction": "rts/rti",
       "id": "control-04070",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=400; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source return relation Dump_Squ1_Regs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DmpJpFPS exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137290,12 +137602,15 @@
       "instruction": "rts/rti",
       "id": "control-04071",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=544; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source return relation PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Fthrow exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137309,12 +137624,15 @@
       "instruction": "rts/rti",
       "id": "control-04072",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=256; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source return relation PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySwimStomp exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137328,12 +137646,15 @@
       "instruction": "rts/rti",
       "id": "control-04073",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=128; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source return relation PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySmackEnemy exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137347,12 +137668,15 @@
       "instruction": "rts/rti",
       "id": "control-04074",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 Actual source predicate/call/tail/return/fallthrough corresponds to Square1 phase and shared helper audit; caller-owned return scope."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S2 P2 original transition observations=129; ordered native output equal; infeasible requires independent instruction/path proof."
+      ],
       "semanticContract": "The source return relation PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContinuePipeDownInj exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -143525,12 +143849,23 @@
     "control-03184",
     "control-03203",
     "control-03205",
+    "control-03208",
+    "control-03210",
+    "control-03216",
+    "control-03222",
+    "control-03224",
+    "control-03231",
+    "control-03241",
+    "control-03251",
+    "control-03257",
+    "control-03260",
+    "control-03263",
     "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 30,
-  "feasibleControlEdgeTotal": 4312
+  "infeasibleControlEdgeTotal": 41,
+  "feasibleControlEdgeTotal": 4301
 }
