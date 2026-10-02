@@ -498,3 +498,85 @@ shared product C changed, so the three packaged EXEs remain the tested S12
 artifacts and are intentionally not refreshed. Current totals: historical
 mapping **1,992 / 1,992**; current exact nodes **1,361 / 1,992**; current
 exact feasible controls **2,861 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S14 admission — coin, axe and flagpole climbing chain
+
+S14 admits `$DDC3-$DE5C`: `HandleCoinMetatile`, `HandleAxeMetatile`, `ErACM`,
+`ClimbXPosAdder`, `ClimbPLocAdder`, `FlagpoleYPosData`, `HandleClimbing`,
+`ExHC`, `ChkForFlagpole`, `FlagpoleCollision`, `ChkFlagpoleYPosLoop`, and
+`MtchF`. Shared owners are `src/game/player/terrain_metatiles.c` and
+`src/game/player/climbing.c`. S13 supplies the side-metatile caller;
+`VineCollision -> PutPlayerOnVine` and its internal tail begin in S15.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,361 / 1,992** nodes and **2,861 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **12** labels, all `needs-evidence`; historical expected matches:
+  **0**; maximum historical complete **1,992 / 1,992**.
+- Graph scope: **20** source-owned feasible controls (`control-02527` through
+  `control-02544`, `control-03966`, `control-03967`) and three material
+  handoffs: `material-k51-01` through `material-k51-03`.
+
+The ROM-logic track checks the erase/tally/coin call order; axe mode and speed
+stores; all nine table bytes; climbing's nibble boundaries; flagpole versus
+vine selection; flagpole state/sound/enemy-clear ordering; all five score
+thresholds; and the exact run/return handoffs. The operational track runs
+current x86/x64 route records and focused terrain-metatile, climbing and
+platform-purity tests. Product artifacts refresh only if shared product C
+changes.
+
+## S14 closure — coin, axe and flagpole climbing chain
+
+All twelve scoped labels are current-exact: `HandleCoinMetatile`,
+`HandleAxeMetatile`, `ErACM`, `ClimbXPosAdder`, `ClimbPLocAdder`,
+`FlagpoleYPosData`, `HandleClimbing`, `ExHC`, `ChkForFlagpole`,
+`FlagpoleCollision`, `ChkFlagpoleYPosLoop`, and `MtchF`.
+
+The static audit maps the two coin/axe entries through their common erase
+tail, including the post-child coin-tally increment and the axe task/mode/
+speed stores. It binds all nine adjacent climbing-table bytes, the two
+contact-nibble exits, both flagpole metatiles, the vine successor edge,
+engine-four/five gates, `KillEnemies($33)` call/return, and all five descending
+flagpole-score thresholds. The 20 scoped feasible controls are exact; one
+(`control-02530`) was already exact before this S, so 19 newly receive current
+evidence. Material relations `material-k51-01`, `material-k51-02` and
+`material-k51-03` are exact.
+
+Controlled original-ROM routes use coin and axe roots plus climbing fixtures
+for `$24`, `$25`, the non-flagpole vine handoff, engines 4 and 5, and player-Y
+values crossing `$18`, `$22`, `$50`, `$68` and `$90`. Current x86 and x64
+caller checkers replay every captured parent state and inject each recorded
+child return only after comparing its full input RAM; all comparisons have
+zero differences. The independent x86/x64 `climbing` smoke covers 515 cases;
+`terrain-metatile` covers 6,144; platform purity passes. No product C changed,
+so artifact refresh is not applicable.
+
+Historical conformance remains **1,992 / 1,992**. Current exact totals are
+**1,373 / 1,992 nodes** and **2,880 / 4,324 feasible controls** (raw
+**4,342**, infeasible **18**); exact material relations are **356 / 487**.
+
+## S15 admission — climbing tail and metatile predicates
+
+S15 admits `$DE5D-$DEA6`: `RunFR`, `VineCollision`, `PutPlayerOnVine`,
+`SetVXPl`, `ExPVne`, `ChkInvisibleMTiles`, `ExCInvT`, `ChkForLandJumpSpring`,
+`ExCJSp`, and `ChkJumpspringMetatiles`. The shared owners are
+`src/game/player/climbing.c` and `src/game/player/terrain_metatiles.c`.
+S14 supplies the flagpole predecessor and its already-exact two table handoffs;
+S16 begins the `JSFnd` / `NoJSFnd` return pair.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,373 / 1,992** nodes and **2,880 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **10** labels, all `needs-evidence`; historical expected matches:
+  **0**; maximum historical complete **1,992 / 1,992**.
+- Graph scope: **14** source-owned feasible controls (`control-02545` through
+  `control-02557`, `control-03968`). `material-k51-01` and
+  `material-k51-02` are incoming exact producer-to-consumer handoffs.
+
+The ROM-logic track covers `RunFR`'s engine store and tail transfer;
+metatile-`$26` automatic-climb gating; state, speed, wrapped relative-X and
+page-adjust ordering in common vine placement; both invisible metatiles; and
+the two jumpspring metatiles and their no-match return. The operational track
+uses controlled original-ROM climbing and predicate routes with current x86/x64
+callers, then focused climbing, hidden-spring and platform-purity tests.
+Product artifacts refresh only if shared product C changes.

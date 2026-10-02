@@ -10319,13 +10319,15 @@
       "consumer": "PutPlayerOnVine",
       "storage": "ROM ClimbXPosAdder indexed climb/flag data",
       "feasiblePath": "PutPlayerOnVine indexes ClimbXPosAdder on its source climbing/flagpole route.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/climbing.c climbing_byte binding",
       "semanticContract": "Source index selects the same ordered table value before climb/flag state write.",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10338,13 +10340,15 @@
       "consumer": "PutPlayerOnVine",
       "storage": "ROM ClimbPLocAdder indexed climb/flag data",
       "feasiblePath": "PutPlayerOnVine indexes ClimbPLocAdder on its source climbing/flagpole route.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/climbing.c climbing_byte binding",
       "semanticContract": "Source index selects the same ordered table value before climb/flag state write.",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10357,13 +10361,15 @@
       "consumer": "ChkFlagpoleYPosLoop",
       "storage": "ROM FlagpoleYPosData indexed climb/flag data",
       "feasiblePath": "ChkFlagpoleYPosLoop indexes FlagpoleYPosData on its source climbing/flagpole route.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/climbing.c climbing_byte binding",
       "semanticContract": "Source index selects the same ordered table value before climb/flag state write.",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -37410,13 +37416,15 @@
       "label": "HandleCoinMetatile",
       "asmLine": 12147,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Erases coin metatile, increments one-up tally and gives one coin.",
       "currentSourcePaths": [
         "src/game/player/terrain_metatiles.c"
@@ -37426,13 +37434,15 @@
       "label": "HandleAxeMetatile",
       "asmLine": 12152,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Sets victory operating modes and speed before common axe erase.",
       "currentSourcePaths": [
         "src/game/player/terrain_metatiles.c"
@@ -37442,13 +37452,15 @@
       "label": "ErACM",
       "asmLine": 12159,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Erases metatile at caller-provided block-buffer address then updates screen.",
       "currentSourcePaths": [
         "src/game/player/terrain_metatiles.c"
@@ -37458,13 +37470,15 @@
       "label": "ClimbXPosAdder",
       "asmLine": 12169,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Supplies facing-indexed X alignment adjusters.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37474,13 +37488,15 @@
       "label": "ClimbPLocAdder",
       "asmLine": 12172,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Supplies facing-indexed page adjustment.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37490,13 +37506,15 @@
       "label": "FlagpoleYPosData",
       "asmLine": 12175,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Supplies five flagpole score height thresholds.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37506,13 +37524,15 @@
       "label": "HandleClimbing",
       "asmLine": 12178,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Requires narrow collision nibble, dispatches flagpole/vine behavior and positions player on climbable object.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37522,13 +37542,15 @@
       "label": "ExHC",
       "asmLine": 12184,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Returns for out-of-band collision nibble.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37538,13 +37560,15 @@
       "label": "ChkForFlagpole",
       "asmLine": 12186,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Distinguishes flag ball/shaft from vine metatile.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37554,13 +37578,15 @@
       "label": "FlagpoleCollision",
       "asmLine": 12192,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Locks scroll, silences/kills enemies, starts flag music and finds score-height index before slide routine.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37570,13 +37596,15 @@
       "label": "ChkFlagpoleYPosLoop",
       "asmLine": 12212,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Walks score thresholds downward until player Y qualifies.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -37586,13 +37614,15 @@
       "label": "MtchF",
       "asmLine": 12217,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Stores selected flagpole score index.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101638,12 +101668,14 @@
       "instruction": "jsr",
       "id": "control-02527",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb call relation HandleCoinMetatile Ã¢â€ â€™ ErACM including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain_metatiles.c"
@@ -101657,12 +101689,14 @@
       "instruction": "jmp",
       "id": "control-02528",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb jump relation HandleCoinMetatile Ã¢â€ â€™ GiveOneCoin including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain_metatiles.c",
@@ -101677,12 +101711,14 @@
       "instruction": "sta",
       "id": "control-02529",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb fallthrough relation HandleAxeMetatile Ã¢â€ â€™ ErACM including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain_metatiles.c"
@@ -101702,7 +101738,8 @@
         "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
       ],
       "semanticContract": "Preserves coin/axe/climb jump relation ErACM Ã¢â€ â€™ RemoveCoin_Axe including source metatile/state/table ordering.",
       "currentSourcePaths": [
@@ -101718,12 +101755,14 @@
       "instruction": "bcc",
       "id": "control-02531",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation HandleClimbing Ã¢â€ â€™ ExHC including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101737,12 +101776,14 @@
       "instruction": "bcc",
       "id": "control-02532",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation HandleClimbing Ã¢â€ â€™ ChkForFlagpole including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101756,12 +101797,14 @@
       "instruction": "bcc",
       "id": "control-02533",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb fallthrough relation HandleClimbing Ã¢â€ â€™ ExHC including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101775,12 +101818,14 @@
       "instruction": "beq",
       "id": "control-02534",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation ChkForFlagpole Ã¢â€ â€™ FlagpoleCollision including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101794,12 +101839,14 @@
       "instruction": "bne",
       "id": "control-02535",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation ChkForFlagpole Ã¢â€ â€™ VineCollision including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101813,12 +101860,14 @@
       "instruction": "bne",
       "id": "control-02536",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb fallthrough relation ChkForFlagpole Ã¢â€ â€™ FlagpoleCollision including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101832,12 +101881,14 @@
       "instruction": "beq",
       "id": "control-02537",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation FlagpoleCollision Ã¢â€ â€™ PutPlayerOnVine including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101851,12 +101902,14 @@
       "instruction": "beq",
       "id": "control-02538",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation FlagpoleCollision Ã¢â€ â€™ RunFR including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101870,12 +101923,14 @@
       "instruction": "jsr",
       "id": "control-02539",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb call relation FlagpoleCollision Ã¢â€ â€™ KillEnemies including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -101890,12 +101945,14 @@
       "instruction": "sta",
       "id": "control-02540",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb fallthrough relation FlagpoleCollision Ã¢â€ â€™ ChkFlagpoleYPosLoop including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101909,12 +101966,14 @@
       "instruction": "bcs",
       "id": "control-02541",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation ChkFlagpoleYPosLoop Ã¢â€ â€™ MtchF including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101928,12 +101987,14 @@
       "instruction": "bne",
       "id": "control-02542",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb branch relation ChkFlagpoleYPosLoop Ã¢â€ â€™ ChkFlagpoleYPosLoop including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101947,12 +102008,14 @@
       "instruction": "bne",
       "id": "control-02543",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb fallthrough relation ChkFlagpoleYPosLoop Ã¢â€ â€™ MtchF including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -101966,12 +102029,14 @@
       "instruction": "stx",
       "id": "control-02544",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb fallthrough relation MtchF Ã¢â€ â€™ RunFR including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -130687,12 +130752,14 @@
       "instruction": "rts/rti",
       "id": "control-03966",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb return relation ErACM Ã¢â€ â€™ HandleCoinMetatile including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain_metatiles.c"
@@ -130706,12 +130773,14 @@
       "instruction": "rts/rti",
       "id": "control-03967",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain_metatiles.c and climbing.c",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+      ],
       "semanticContract": "Preserves coin/axe/climb return relation KillEnemies Ã¢â€ â€™ FlagpoleCollision including source metatile/state/table ordering.",
       "currentSourcePaths": [
         "src/game/area.c",

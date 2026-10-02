@@ -37,6 +37,20 @@ edge records its C integration counterpart and both evidence tracks.
 rejects an `exact` disposition lacking either track and rejects duplicate or
 incomplete node/control-edge identities.
 
+### T64 S14 coin, axe and flagpole result
+
+The twelve-label `$DDC3-$DE5C` chain is current-exact. Controlled original-ROM
+coin/axe and climbing records cover both coin/axe entries, both flagpole tiles,
+the vine handoff, engine-four/five gates and all five flagpole score bands.
+Current x86/x64 caller replays compare every captured parent state and the
+`KillEnemies($33)` child boundary with zero differences. Static evidence binds
+the three adjacent tables and all 20 scoped feasible controls; the three
+associated material-table relations are exact. Focused climbing (515 cases),
+terrain-metatile (6,144 cases) and platform-purity checks pass on both native
+widths where applicable. The registry is **1,373 exact nodes**, **2,880 exact
+feasible controls**, **18 infeasible raw controls**, and **356 exact material
+relations**; historical conformance remains **1,992 / 1,992**.
+
 ### T54 S1 screen-initialization and palette result
 
 The 20 labels from `InitScreen` through `NoAltPal`, 25 internal executable
