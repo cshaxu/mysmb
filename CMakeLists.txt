@@ -1763,3 +1763,6 @@ target_link_libraries(mysmb_x_counter_integration_route_check PRIVATE mysmb_game
 
 add_executable(mysmb_bloober_integration_route_check test/bloober_integration_route_check.c)
 target_link_libraries(mysmb_bloober_integration_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_firebar_integration_route_check test/firebar_integration_route_check.c)
+target_link_libraries(mysmb_firebar_integration_route_check PRIVATE mysmb_game)

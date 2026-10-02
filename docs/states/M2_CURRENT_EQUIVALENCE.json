@@ -10561,11 +10561,9 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3125,
-    "needs-evidence": 1198,
-    "infeasible": 19,
-    "unclassified": 0,
-    "mismatch": 0
+    "exact": 3129,
+    "needs-evidence": 1194,
+    "infeasible": 19
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -128929,13 +128927,16 @@
       "instruction": "rts/rti",
       "id": "control-03837",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/firebar.c and its real position, OAM and injury descendants; portable caller slot and explicit OAM/loop saves.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: GetEnemyOffscreenBits returns at $CD3F with X=ObjectOffset and A=$03D1; ProcFirebar consumes bit 3 before any relative/draw child."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ProcFirebar exposes the completed offscreen byte and restored caller ObjectOffset.",
+      "operationalEvidence": [
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "GetEnemyOffscreenBits returns at $CD3F with X=ObjectOffset and A=$03D1; ProcFirebar consumes bit 3 before any relative/draw child.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
         "src/game/enemy/firebar_children.c"
@@ -128972,13 +128973,16 @@
       "instruction": "rts/rti",
       "id": "control-03839",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/firebar.c and its real position, OAM and injury descendants; portable caller slot and explicit OAM/loop saves.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: RelativeEnemyPosition returns at $CD6F with X=ObjectOffset and A=$03AE; residual lookup consumes that A before center OAM output."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetupGFB restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "operationalEvidence": [
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "RelativeEnemyPosition returns at $CD6F with X=ObjectOffset and A=$03AE; residual lookup consumes that A before center OAM output.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
       ]
@@ -129079,13 +129083,16 @@
       "instruction": "rts/rti",
       "id": "control-03844",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/firebar.c and its real position, OAM and injury descendants; portable caller slot and explicit OAM/loop saves.",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: DrawFirebar returns at $CE0B with X and OAM Y unchanged; FirebarCollision consumes original center/segment coordinates after tile/attribute writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DrawFirebar -> FirebarCollision with source frame/state predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "DrawFirebar returns at $CE0B with X and OAM Y unchanged; FirebarCollision consumes original center/segment coordinates after tile/attribute writes.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c"
       ]
@@ -129098,13 +129105,16 @@
       "instruction": "rts/rti",
       "id": "control-03845",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/firebar.c and its real position, OAM and injury descendants; portable caller slot and explicit OAM/loop saves.",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: InjurePlayer returns at $CE82 with X=ObjectOffset on guard, death and demotion paths; saved loop $00 is restored at $CE85 only after injury; saved OAM advances by four before the final slot reload."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InjurePlayer -> SetSDir with source signed/timer/status predicate and current-slot state handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "InjurePlayer returns at $CE82 with X=ObjectOffset on guard, death and demotion paths; saved loop $00 is restored at $CE85 only after injury; saved OAM advances by four before the final slot reload.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
         "src/game/enemy/firebar_children.c",

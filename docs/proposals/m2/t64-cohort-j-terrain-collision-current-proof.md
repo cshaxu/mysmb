@@ -2220,3 +2220,88 @@ Historical **1,992/1,992**, exact nodes **1,480/1,992**, material
 T64 remains open with **56 Cohort-J controls**, zero pending material.
 Next source-order branch is Firebar position/draw/injury returns.
 T65 is not admitted.
+
+## Aggregate S44 admission - Firebar real child returns
+
+S44 owns `control-03837`, `control-03839`, `control-03844`,
+`control-03845`. The 36 scoped labels are FirebarPosLookupTbl,
+FirebarMirrorData, FirebarTblOffsets, FirebarYPos, ProcFirebar, SusFbar,
+SkpFSte, SetupGFB, SetMFbar, DrawFbar, NextFbar, SkipFBar,
+DrawFirebar_Collision, AddHA, SubtR1, ChkFOfs, VAHandl, AddVA,
+SetVFbr, FirebarCollision, AdjSm, BigJp, FBCLoop, ChkVFBD, ChkFBCl,
+Chk2Ofs, ChgSDir, SetSDir, NoColFB, GetFirebarPosition, GetHAdder,
+GetVAdder, GetEnemyOffscreenBits, RelativeEnemyPosition, DrawFirebar,
+InjurePlayer. Thirty-three are exact; the three generic position/drawing
+children remain needs-evidence under their later owners. Expected node
+promotions are empty; no inference of their unobserved generic paths.
+Historical 1,992/1,992 and nodes 1,480/1,992 stay unchanged; controls
+enter 3,125/4,323 and can reach 3,129/4,323; material stays 368/487.
+
+Entry ProcFirebar $CD3C reaches real offscreen, spin, relative, position,
+draw/collision, injury and return. Shared owners are enemy/firebar.c,
+firebar_children.c, OAM position/firebar and shared player injury/palette.
+The missing evidence is real descendant return/consumer behavior beyond
+earlier substituted child records. S43 is predecessor; flying Cheep-Cheep
+movement returns follow. Child status/custody stays with its existing owner.
+
+Static audit checks offscreen return slot/mask, relative returned X position
+used by residual lookup, OAM Y preservation, injury loop/OAM stack saves
+and guard/active/death continuation. Actual ROM roots restore boot state
+and execute every child; native x86/x64 bind the same local PRG data and
+compare persistent RAM/OAM including lower-stack game aliases. $00 loop
+counter is compared on entered drawing paths; early-offscreen query scratch
+is explicitly child-owned, not silently treated as persistent. Fixtures
+cover short/long bars, six slots, phase/spin/timer/offscreen, small/big
+players, injury/star gates and real palette/death output.
+
+Owner ROM/disassembly are nonredistributable local research. Ignored
+build/m2-t64-s44 owns <=8 MiB raw, 524288 steps/case, 120 seconds total;
+S44 cleans raw records/probe. Neutral tools/summaries only are tracked.
+Focused Firebar/spin/purity and original OpenNT DOS16 are operational
+gates. Any scoped difference stays here for bounded repair/re-audit;
+product repair refreshes three approved EXEs. Preserve unrelated work.
+
+## Aggregate S44 closure - real Firebar return integration
+
+The four admitted returns control-03837/03839/03844/03845 are exact.
+All 36 admitted labels retain their incoming status: 33 exact, with
+GetEnemyOffscreenBits, RelativeEnemyPosition and DrawFirebar still
+needs-evidence under later generic owners. No node credit or custody transfer.
+
+Static $CD3C-$CED4 comparison preserves offscreen-before-relative order,
+relative A consumed by residual lookup, immutable PRG table binding,
+center/segment OAM output, and loop/OAM saves around guarded injury.
+Return checks at $CD3F/$CD6F/$CE0B/$CE82 observe restored slot/mask,
+relative A, unchanged drawing X/Y, and injury X=ObjectOffset on every
+exit, including invincibility. The source reloads X even on the guard exit;
+the probe was corrected to reflect that instruction rather than assume X=0.
+$CE85 also receives no-injury paths, so its saved-loop check applies only
+after an observed $CE7F call. Neither probe correction changes product C.
+
+The 512 real ROM roots execute 368 visible paths, 3,312 drawing returns,
+102 injury returns and 102 loop restores. Injury cases include 69 guarded,
+11 deaths and 22 demotions. Six slots, short/long bars, phase/spin/timer,
+screen boundaries, player size/crouch, star/injury gates and palettes are
+covered. Both current x86/x64 runners match 512/512 with zero differences.
+Each compares 1,796 persistent bytes (including OAM and twelve lower-stack
+game aliases), plus $00 on visible paths. Other scratch and CPU stack are
+explicit ABI exclusions; return-register and OAM/loop consumers are checked
+separately at real source seams. This does not certify unobserved generic
+position/drawing paths.
+
+Focused Firebar, spin and platform-purity tests pass 3/3 per width. Fresh
+C90 checker builds and the original OpenNT DOS16 link pass; the pre-existing
+OLDNAMES.LIB warning remains. Audio/pause/purity checks also pass 7/7 per
+width. No product source changes or artifact refresh: current three EXEs
+continue to include the committed audio, title and focus-pause fixes.
+
+Similar-issue sweep checks all four returns, skipped-injury convergence,
+invincibility/death/demotion exits, OAM saves, loop restoration and long-bar
+second OAM selection. No scoped difference or platform gameplay duplicate
+was found. Raw records and probe executable are cleaned after acceptance.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 remain
+unchanged. Exact feasible controls rise 3,125 to 3,129/4,323 (raw 4,342,
+infeasible 19). T64 remains open with 52 Cohort-J controls, zero pending
+material. Next source-order chain is Flying Cheep movement returns;
+T65 is not admitted.
