@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T67 S5 - active music-prefix chain
+
+[Exact27 pending labels and original routes](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+admits27 intended fresh nodes/max1842/1992, zero admission credit. Current
+1815/1992 nodes,3837/4290 feasible controls(raw4342,infeasible52),408/493
+material partial; historical1992/1992 separate.82 owned raw controls and
+actual material paths need source and ROM proof; S6 unadmitted.
+
 ## M2 T67 S4 - closed noise effect chain
 
 [All11 labels/17 controls and repair](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)

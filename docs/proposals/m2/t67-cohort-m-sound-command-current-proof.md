@@ -689,3 +689,38 @@ Neutral evidence under ignored build/m2-t67-s4: pre-fix-difference, modes19-21,
 route/coverage summaries, full/focused tests and builds, dos16-link. Raw deleted
 per batch; probe removed at closure. Ledger/registry/progress/docs gates must
 pass before P2 commit. Unrelated owner I/O proposal/queue/source work preserved.
+
+## S5 admission - M-owned music selection and stream prefixes
+
+Scope27 pending/intended current fresh27, maximum1842/1992:
+ContinueMusic; MusicHandler; LoadEventMusic; NoStopSfx; LoadAreaMusic; NoStop1; GMLoopB; HandleAreaMusicLoopB; FindAreaMusicHeader; FindEventMusicHeader; LoadHeader; HandleSquare2Music; EndOfMusicData; NotTRO; MusicLoopBack; VictoryMLoopBack; Squ2LengthHandler; Squ2NoteHandler; Rest; SkipFqL1; MiscSqu2MusicTasks; NoDecEnv1; HandleSquare1Music; FetchSqu1MusicData; Squ1NoteHandler; SkipCtrlL; MiscSqu1MusicTasks. Sets identical, every node needs-evidence.
+Incoming current1815/1992 nodes,3837/4290 feasible controls(raw4342,
+infeasible52),408/493 material partial. Historical1992/1992 separate with
+expectedMatches empty; maintenance receiving map retained.
+
+Shared owner audio.c, ContinueMusic through MiscSqu1MusicTasks in actual M
+inventory/source15632-15826.82 owned raw controls03361-03430/04078-04089;
+no currently enumerated M material row remains. Accepted command/frequency
+helpers and exact noise stream boundary are predecessors. Header/music/
+envelope tables, AlternateLengthHandler and triangle/noise continuation are
+explicit actual N dependencies: execute original/current real callees and
+audit input/output/order, but do not promote their nodes or own later scope.
+
+ROM track: Unchanged F2D0 SoundEngine -> real MusicHandler/header/stream callees -> real RTS. Exhaust256 queue bytes with saved-state profiles, then sequential real music playback for all8 event and8 area selectors. Full1841 RAM/24 APU/ordered commands x86/x64; scoped actual transitions, pointer/header/note/envelope consumer audit; uncovered feasible paths get controlled original inputs, never inferred credit.
+Static contracts: event priority/death stops/area save/time-out length adder;
+area underground stop/ground header advance32->11; header bit scan and exact
+CPU reads; all six header fields/counter resets/master writes; Square2
+length/note/rest/effect priority/envelope old index; EndOfMusicData timeout,
+victory,area loop and terminal return; Square1 zero-prefix loop/alternate
+register/note-length/control/effect gating and actual N tail handoffs.
+Header loader guards and current return classifications are reviewed against
+source, not justified only by happy-path songs. Any scoped feasible diff
+must be repaired and reaudited here before S6. No synthetic ROM patch/mock.
+
+Operational: focused tests/checker x86/x64, original OpenNT DOS16 link/purity.
+Product repair refreshes all3 owner-authorized EXEs; audit/test-only retains
+byte-identical S4 products. Sweep source predicates and RAM/APU write order
+in the complete admitted music chain. Source policy: owner-local original
+ROM/reviewed ASM nonredistributable, no third-party import. All local scripts,
+logs/raw under ignored build/m2-t67-s5,128MiB raw budget,1024 roots/batch,
+120seconds/process,524288steps/root; coordinator deletes raw after comparison.
