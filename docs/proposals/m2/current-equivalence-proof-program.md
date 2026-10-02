@@ -30,7 +30,7 @@ original-ROM route and dual verification packet at admission.
 | T63 | Cohort J first half: enemy loop and movement | enemy loop dispatch; normal/special actors; movement/gravity; platform/hammer/Bowser routes. |
 | T64 | Cohort J second half: enemy terrain and collisions | enemy terrain state; player/enemy collision; projectile collision; star-flag/end-level actor routes. |
 | T65 | Cohort K: block queries and object/OAM output | shared block-buffer entries/tables; vine/hammer/flagpole/platform/coin/power-up/enemy/block/fireball/bubble output; player graphics tables. |
-| T66 | Cohort L: relative position, offscreen and OAM | relative/offscreen bit chains; player/enemy/object OAM; title/endgame sprite output; scanline split state. |
+| T66 | Cohort L: player graphics, relative position, offscreen and OAM | PlayerGfxHandler/action/change-size/attributes; relative object entries; offscreen wrappers and X/Y tables; DrawSpriteObject flip/output. Exact83-node scope follows inventory. |
 | T67 | Cohort M: sound effects | sound dispatcher; square/noise effect handlers; queue priority; effect tables and APU command order. |
 | T68 | Cohort N: music and music data | music selection/header load; square/triangle/noise streams; loop and envelope handling; data-table consumers. |
 | T69 | Cross-cohort integration | all caller-to-callee and producer-to-consumer relations that cross the T53–T68 ownership boundaries; recorder route matrix and shared-frame state. |
@@ -172,3 +172,10 @@ material rows. Current full/independent integration and248/248 native tests
 per width plus original DOS16 link pass. Ten external incoming controls
 retain their named pending owners. T66 actual Cohort L inventory is next,
 not admitted; no milestone-wide proof inferred from this closure.
+
+## T66 admission checkpoint
+
+[T66 exact83-node plan](t66-cohort-l-player-relative-offscreen-proof.md) is admitted
+with S1 player graphics44 nodes active. No exact credit at admission; current
+1633/1992 nodes and3485/4317 feasible controls. Remaining S chains follow
+original source order; accepted historical mapping1992/1992 stays separate.
