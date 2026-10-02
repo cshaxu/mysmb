@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 493,
+    "enumeratedCount": 555,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -10727,6 +10727,1308 @@
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
+      ]
+    },
+    {
+      "id": "material-k37-01",
+      "producer": "Star_CloudMData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM Star_CloudMData [f9b8,fa01) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [f9b8,fa01); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [f9b8,fa01)/73 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=280;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-02",
+      "producer": "Star_CloudMData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM Star_CloudMData [f9b8,fa01) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [f9b8,fa01); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [f9b8,fa01)/73 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=212;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-03",
+      "producer": "Star_CloudMData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM Star_CloudMData [f9b8,fa01) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [f9b8,fa01); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [f9b8,fa01)/73 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=194;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-04",
+      "producer": "Star_CloudMData",
+      "consumer": "HandleNoiseMusic",
+      "storage": "ROM Star_CloudMData [f9b8,fa01) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleNoiseMusic byte offset reach [f9b8,fa01); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [f9b8,fa01)/73 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=372;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-05",
+      "producer": "GroundM_P1Data",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P1Data [fa01,fa1c) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fa01,fa1c); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa01,fa1c)/27 bytes binds through full PRG/MusicData to HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=793;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-06",
+      "producer": "SilenceData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM SilenceData [fa1c,fa49) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fa1c,fa49); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa1c,fa49)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. First byte is silence terminator; remaining declared interval contains GroundP1 Square1/triangle fields, not an independent45-byte silence song. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=29;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-07",
+      "producer": "SilenceData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM SilenceData [fa1c,fa49) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fa1c,fa49); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa1c,fa49)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. First byte is silence terminator; remaining declared interval contains GroundP1 Square1/triangle fields, not an independent45-byte silence song. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=499;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-08",
+      "producer": "SilenceData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM SilenceData [fa1c,fa49) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fa1c,fa49); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa1c,fa49)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. First byte is silence terminator; remaining declared interval contains GroundP1 Square1/triangle fields, not an independent45-byte silence song. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=793;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-09",
+      "producer": "GroundM_P2AData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P2AData [fa49,fa75) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fa49,fa75); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa49,fa75)/44 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=440;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-10",
+      "producer": "GroundM_P2AData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P2AData [fa49,fa75) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fa49,fa75); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa49,fa75)/44 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=340;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-11",
+      "producer": "GroundM_P2AData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundM_P2AData [fa49,fa75) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fa49,fa75); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa49,fa75)/44 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=296;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-12",
+      "producer": "GroundM_P2BData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P2BData [fa75,fa9d) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fa75,fa9d); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa75,fa9d)/40 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=196;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-13",
+      "producer": "GroundM_P2BData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P2BData [fa75,fa9d) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fa75,fa9d); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa75,fa9d)/40 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=134;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-14",
+      "producer": "GroundM_P2BData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundM_P2BData [fa75,fa9d) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fa75,fa9d); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa75,fa9d)/40 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=160;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-15",
+      "producer": "GroundM_P2CData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P2CData [fa9d,fac2) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fa9d,fac2); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa9d,fac2)/37 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=124;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-16",
+      "producer": "GroundM_P2CData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P2CData [fa9d,fac2) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fa9d,fac2); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa9d,fac2)/37 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=86;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-17",
+      "producer": "GroundM_P2CData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundM_P2CData [fa9d,fac2) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fa9d,fac2); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa9d,fac2)/37 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=136;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-18",
+      "producer": "GroundM_P2CData",
+      "consumer": "HandleNoiseMusic",
+      "storage": "ROM GroundM_P2CData [fa9d,fac2) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleNoiseMusic byte offset reach [fa9d,fac2); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fa9d,fac2)/37 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=1849;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-19",
+      "producer": "GroundM_P3AData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P3AData [fac2,fadb) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fac2,fadb); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fac2,fadb)/25 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=464;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-20",
+      "producer": "GroundM_P3AData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P3AData [fac2,fadb) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fac2,fadb); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fac2,fadb)/25 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=260;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-21",
+      "producer": "GroundM_P3BData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P3BData [fadb,faf9) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fadb,faf9); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fadb,faf9)/30 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=188;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-22",
+      "producer": "GroundM_P3BData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P3BData [fadb,faf9) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fadb,faf9); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fadb,faf9)/30 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=102;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-23",
+      "producer": "GroundM_P3BData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundM_P3BData [fadb,faf9) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fadb,faf9); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fadb,faf9)/30 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=432;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-24",
+      "producer": "GroundMLdInData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundMLdInData [faf9,fb25) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [faf9,fb25); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [faf9,fb25)/44 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=229;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-25",
+      "producer": "GroundMLdInData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundMLdInData [faf9,fb25) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [faf9,fb25); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [faf9,fb25)/44 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=140;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-26",
+      "producer": "GroundMLdInData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundMLdInData [faf9,fb25) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [faf9,fb25); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [faf9,fb25)/44 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=212;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-27",
+      "producer": "GroundMLdInData",
+      "consumer": "HandleNoiseMusic",
+      "storage": "ROM GroundMLdInData [faf9,fb25) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleNoiseMusic byte offset reach [faf9,fb25); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [faf9,fb25)/44 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=600;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-28",
+      "producer": "GroundM_P4AData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P4AData [fb25,fb4b) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fb25,fb4b); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb25,fb4b)/38 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=608;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-29",
+      "producer": "GroundM_P4AData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P4AData [fb25,fb4b) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fb25,fb4b); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb25,fb4b)/38 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=304;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-30",
+      "producer": "GroundM_P4AData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundM_P4AData [fb25,fb4b) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fb25,fb4b); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb25,fb4b)/38 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=526;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-31",
+      "producer": "GroundM_P4BData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P4BData [fb4b,fb72) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fb4b,fb72); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb4b,fb72)/39 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=279;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-32",
+      "producer": "GroundM_P4BData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P4BData [fb4b,fb72) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fb4b,fb72); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb4b,fb72)/39 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=186;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-33",
+      "producer": "GroundM_P4BData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundM_P4BData [fb4b,fb72) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fb4b,fb72); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb4b,fb72)/39 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=258;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-34",
+      "producer": "DeathMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM DeathMusData [fb72,fb74) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fb72,fb74); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb72,fb74)/2 bytes binds through full PRG/MusicData to HandleSquare2Music. Two-byte death prefix shares following GroundP4C storage; original pointer remains DeathMusData with source offsets. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=2;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-35",
+      "producer": "GroundM_P4CData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GroundM_P4CData [fb74,fba4) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fb74,fba4); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb74,fba4)/48 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Ground fourth-C and death share Square2/Square1/triangle fields and fourth-part noise bytes; retain cross-region original addressing. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=269;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-36",
+      "producer": "GroundM_P4CData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GroundM_P4CData [fb74,fba4) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fb74,fba4); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb74,fba4)/48 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Ground fourth-C and death share Square2/Square1/triangle fields and fourth-part noise bytes; retain cross-region original addressing. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=211;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-37",
+      "producer": "GroundM_P4CData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GroundM_P4CData [fb74,fba4) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fb74,fba4); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb74,fba4)/48 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Ground fourth-C and death share Square2/Square1/triangle fields and fourth-part noise bytes; retain cross-region original addressing. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=268;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-38",
+      "producer": "GroundM_P4CData",
+      "consumer": "HandleNoiseMusic",
+      "storage": "ROM GroundM_P4CData [fb74,fba4) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleNoiseMusic byte offset reach [fb74,fba4); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fb74,fba4)/48 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Ground fourth-C and death share Square2/Square1/triangle fields and fourth-part noise bytes; retain cross-region original addressing. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=676;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-39",
+      "producer": "CastleMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM CastleMusData [fba4,fc45) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fba4,fc45); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fba4,fc45)/161 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=210;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-40",
+      "producer": "CastleMusData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM CastleMusData [fba4,fc45) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fba4,fc45); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fba4,fc45)/161 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=105;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-41",
+      "producer": "CastleMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM CastleMusData [fba4,fc45) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fba4,fc45); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fba4,fc45)/161 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=30;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-42",
+      "producer": "GameOverMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM GameOverMusData [fc45,fc72) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fc45,fc72); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fc45,fc72)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=40;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-43",
+      "producer": "GameOverMusData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM GameOverMusData [fc45,fc72) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fc45,fc72); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fc45,fc72)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=20;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-44",
+      "producer": "GameOverMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM GameOverMusData [fc45,fc72) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fc45,fc72); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fc45,fc72)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=30;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-45",
+      "producer": "TimeRunOutMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM TimeRunOutMusData [fc72,fcb0) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fc72,fcb0); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fc72,fcb0)/62 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=24;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-46",
+      "producer": "TimeRunOutMusData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM TimeRunOutMusData [fc72,fcb0) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fc72,fcb0); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fc72,fcb0)/62 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=15;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-47",
+      "producer": "TimeRunOutMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM TimeRunOutMusData [fc72,fcb0) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fc72,fcb0); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fc72,fcb0)/62 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=23;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-48",
+      "producer": "WinLevelMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM WinLevelMusData [fcb0,fd11) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fcb0,fd11); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fcb0,fd11)/97 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. One source-explicit unused byte at FCEC retained as storage; all other declared bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=33;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-49",
+      "producer": "WinLevelMusData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM WinLevelMusData [fcb0,fd11) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fcb0,fd11); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fcb0,fd11)/97 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. One source-explicit unused byte at FCEC retained as storage; all other declared bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=27;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-50",
+      "producer": "WinLevelMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM WinLevelMusData [fcb0,fd11) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fcb0,fd11); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fcb0,fd11)/97 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. One source-explicit unused byte at FCEC retained as storage; all other declared bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=36;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-51",
+      "producer": "UndergroundMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM UndergroundMusData [fd11,fd52) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fd11,fd52); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fd11,fd52)/65 bytes binds through full PRG/MusicData to HandleSquare2Music; HandleTriangleMusic. Source Square2/triangle share the same data; original zero Square1 offset disables that stream, no fabricated Square1/noise pair. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=90;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-52",
+      "producer": "UndergroundMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM UndergroundMusData [fd11,fd52) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fd11,fd52); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fd11,fd52)/65 bytes binds through full PRG/MusicData to HandleSquare2Music; HandleTriangleMusic. Source Square2/triangle share the same data; original zero Square1 offset disables that stream, no fabricated Square1/noise pair. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=89;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-53",
+      "producer": "WaterMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM WaterMusData [fd52,fe51) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fd52,fe51); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fd52,fe51)/255 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=141;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-54",
+      "producer": "WaterMusData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM WaterMusData [fd52,fe51) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fd52,fe51); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fd52,fe51)/255 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=69;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-55",
+      "producer": "WaterMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM WaterMusData [fd52,fe51) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fd52,fe51); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fd52,fe51)/255 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=123;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-56",
+      "producer": "WaterMusData",
+      "consumer": "HandleNoiseMusic",
+      "storage": "ROM WaterMusData [fd52,fe51) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleNoiseMusic byte offset reach [fd52,fe51); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fd52,fe51)/255 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=169;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-57",
+      "producer": "EndOfCastleMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM EndOfCastleMusData [fe51,fec8) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fe51,fec8); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fe51,fec8)/119 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=36;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-58",
+      "producer": "EndOfCastleMusData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM EndOfCastleMusData [fe51,fec8) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fe51,fec8); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fe51,fec8)/119 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=40;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-59",
+      "producer": "EndOfCastleMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM EndOfCastleMusData [fe51,fec8) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fe51,fec8); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fe51,fec8)/119 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=43;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-60",
+      "producer": "VictoryMusData",
+      "consumer": "HandleSquare2Music",
+      "storage": "ROM VictoryMusData [fec8,ff00) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare2Music byte offset reach [fec8,ff00); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fec8,ff00)/56 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Source-explicit unused space FEFD-FEFF retained as storage; all musical bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=54;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-61",
+      "producer": "VictoryMusData",
+      "consumer": "HandleSquare1Music",
+      "storage": "ROM VictoryMusData [fec8,ff00) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleSquare1Music byte offset reach [fec8,ff00); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fec8,ff00)/56 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Source-explicit unused space FEFD-FEFF retained as storage; all musical bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=44;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-k37-62",
+      "producer": "VictoryMusData",
+      "consumer": "HandleTriangleMusic",
+      "storage": "ROM VictoryMusData [fec8,ff00) music stream",
+      "feasiblePath": "Original selected header MusicData and HandleTriangleMusic byte offset reach [fec8,ff00); recorded LDA (MusicData),Y instruction reads actual producer bytes before original note/control/length/loop processing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c MusicData / mysmb_audio_read_cpu and channel consumer",
+      "semanticContract": "Original region [fec8,ff00)/56 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Source-explicit unused space FEFD-FEFF retained as storage; all musical bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 source header/offset, actual indirect consumer and original encoding manually audited; no cartesian inference."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 original reads=46;51201 actual original/current roots x86/x64 persistent/output equality."
+      ],
+      "cohort": "N",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
       ]
     }
   ],
@@ -47911,14 +49213,17 @@
       "label": "Star_CloudMData",
       "asmLine": 16077,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [f9b8,fa01)/73 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [f9b8,fa01)/73 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47927,14 +49232,17 @@
       "label": "GroundM_P1Data",
       "asmLine": 16089,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fa01,fa1c)/27 bytes binds through full PRG/MusicData to HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fa01,fa1c)/27 bytes binds through full PRG/MusicData to HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47943,14 +49251,17 @@
       "label": "SilenceData",
       "asmLine": 16094,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fa1c,fa49)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. First byte is silence terminator; remaining declared interval contains GroundP1 Square1/triangle fields, not an independent45-byte silence song. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fa1c,fa49)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. First byte is silence terminator; remaining declared interval contains GroundP1 Square1/triangle fields, not an independent45-byte silence song. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47959,14 +49270,17 @@
       "label": "GroundM_P2AData",
       "asmLine": 16104,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fa49,fa75)/44 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fa49,fa75)/44 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47975,14 +49289,17 @@
       "label": "GroundM_P2BData",
       "asmLine": 16114,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fa75,fa9d)/40 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fa75,fa9d)/40 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47991,14 +49308,17 @@
       "label": "GroundM_P2CData",
       "asmLine": 16124,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fa9d,fac2)/37 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fa9d,fac2)/37 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48007,14 +49327,17 @@
       "label": "GroundM_P3AData",
       "asmLine": 16134,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fac2,fadb)/25 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fac2,fadb)/25 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48023,14 +49346,17 @@
       "label": "GroundM_P3BData",
       "asmLine": 16140,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fadb,faf9)/30 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fadb,faf9)/30 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48039,14 +49365,17 @@
       "label": "GroundMLdInData",
       "asmLine": 16148,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [faf9,fb25)/44 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [faf9,fb25)/44 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48055,14 +49384,17 @@
       "label": "GroundM_P4AData",
       "asmLine": 16158,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fb25,fb4b)/38 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fb25,fb4b)/38 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48071,14 +49403,17 @@
       "label": "GroundM_P4BData",
       "asmLine": 16167,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fb4b,fb72)/39 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fb4b,fb72)/39 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48087,14 +49422,17 @@
       "label": "DeathMusData",
       "asmLine": 16176,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fb72,fb74)/2 bytes binds through full PRG/MusicData to HandleSquare2Music. Two-byte death prefix shares following GroundP4C storage; original pointer remains DeathMusData with source offsets. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fb72,fb74)/2 bytes binds through full PRG/MusicData to HandleSquare2Music. Two-byte death prefix shares following GroundP4C storage; original pointer remains DeathMusData with source offsets. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48103,14 +49441,17 @@
       "label": "GroundM_P4CData",
       "asmLine": 16179,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fb74,fba4)/48 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Ground fourth-C and death share Square2/Square1/triangle fields and fourth-part noise bytes; retain cross-region original addressing. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fb74,fba4)/48 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Ground fourth-C and death share Square2/Square1/triangle fields and fourth-part noise bytes; retain cross-region original addressing. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48119,14 +49460,17 @@
       "label": "CastleMusData",
       "asmLine": 16193,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fba4,fc45)/161 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fba4,fc45)/161 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48135,14 +49479,17 @@
       "label": "GameOverMusData",
       "asmLine": 16217,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fc45,fc72)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fc45,fc72)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48151,14 +49498,17 @@
       "label": "TimeRunOutMusData",
       "asmLine": 16226,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fc72,fcb0)/62 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fc72,fcb0)/62 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48167,14 +49517,17 @@
       "label": "WinLevelMusData",
       "asmLine": 16236,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fcb0,fd11)/97 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. One source-explicit unused byte at FCEC retained as storage; all other declared bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fcb0,fd11)/97 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. One source-explicit unused byte at FCEC retained as storage; all other declared bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48183,14 +49536,17 @@
       "label": "UndergroundMusData",
       "asmLine": 16253,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fd11,fd52)/65 bytes binds through full PRG/MusicData to HandleSquare2Music; HandleTriangleMusic. Source Square2/triangle share the same data; original zero Square1 offset disables that stream, no fabricated Square1/noise pair. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fd11,fd52)/65 bytes binds through full PRG/MusicData to HandleSquare2Music; HandleTriangleMusic. Source Square2/triangle share the same data; original zero Square1 offset disables that stream, no fabricated Square1/noise pair. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48199,14 +49555,17 @@
       "label": "WaterMusData",
       "asmLine": 16264,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fd52,fe51)/255 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fd52,fe51)/255 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48215,14 +49574,17 @@
       "label": "EndOfCastleMusData",
       "asmLine": 16295,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fe51,fec8)/119 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fe51,fec8)/119 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -48231,14 +49593,17 @@
       "label": "VictoryMusData",
       "asmLine": 16313,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "area_prg stream bytes via mysmb_audio_read_cpu and header-selected MusicData pointer",
+      "currentCounterpart": "src/game/audio.c MusicData PRG binding and four channel readers",
       "semanticEvidence": [
-        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required."
+        "Td S9 K37 labeled music-stream data audit: SMB1 lines 16077-16313 compared with src/game/audio.c shared area_prg CPU-pointer stream reads; controlled original-ROM/x86/x64 music-stream routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 manual region/header/channel/type contract: Original region [fec8,ff00)/56 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Source-explicit unused space FEFD-FEFF retained as storage; all musical bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves labeled source music stream bytes and their header-selected channel offsets through owner-local PRG reads.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S4 P2 unchanged original51201 roots both widths full RAM/APU/order equal;1348 actual byte reads plus4 explicit source-unused storage bytes;4 tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Original region [fec8,ff00)/56 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Source-explicit unused space FEFD-FEFF retained as storage; all musical bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]

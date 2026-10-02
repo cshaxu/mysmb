@@ -16,9 +16,9 @@ resolve them and all earlier pending relations before final certification.
 | S1 | Square1 envelope/alternate tail -> triangle stream -> noise beats/return | 17/17 | NoDecEnv2; DeathMAltReg; DoAltLoad; HandleTriangleMusic; TriNoteHandler; NotDOrD4; MediN; LongN; LoadTriCtrlReg; HandleNoiseMusic; FetchNoiseBeatData; NoiseBeatHandler; StrongBeat; LongBeat; SilentBeat; PlayBeat; ExitMusicHandler | control-03431, control-03432, control-03433, control-03434, control-03435, control-03436, control-03437, control-03438, control-03439, control-03440, control-03441, control-03442, control-03443, control-03444, control-03445, control-03446, control-03447, control-03448, control-03449, control-03450, control-03451, control-03452, control-03453, control-03454, control-03455, control-03456, control-03457, control-03458, control-03459, control-03460, control-03461, control-03462, control-03463, control-03464, control-03465, control-03466, control-03467, control-03468, control-03469, control-03470, control-03471, control-03472, control-04090, control-04091, control-04092, control-04093 | none |
 | S2 | Alternate length -> length lookup, control register and envelope helpers | 9/9 | AlternateLengthHandler; ProcessLengthData; LoadControlRegs; NotECstlM; WaterMus; AllMus; LoadEnvelopeData; LoadUsualEnvData; LoadWaterEventMusEnvData | control-03473, control-03474, control-03475, control-03476, control-03477, control-03478, control-03479, control-03480, control-03481, control-03482 | none |
 | S3 | Music header offsets and23 header/field regions through actual LoadHeader | 23/23 | MusicHeaderData; TimeRunningOutHdr; Star_CloudHdr; EndOfLevelMusHdr; ResidualHeaderData; UndergroundMusHdr; SilenceHdr; CastleMusHdr; VictoryMusHdr; GameOverMusHdr; WaterMusHdr; WinCastleMusHdr; GroundLevelPart1Hdr; GroundLevelPart2AHdr; GroundLevelPart2BHdr; GroundLevelPart2CHdr; GroundLevelPart3AHdr; GroundLevelPart3BHdr; GroundLevelLeadInHdr; GroundLevelPart4AHdr; GroundLevelPart4BHdr; GroundLevelPart4CHdr; DeathMusHdr | none | material-k36-01, material-k36-02, material-k36-03, material-k36-04, material-k36-05, material-k36-06, material-k36-07, material-k36-08, material-k36-09, material-k36-10, material-k36-11, material-k36-12, material-k36-13, material-k36-14, material-k36-15, material-k36-16, material-k36-17, material-k36-18, material-k36-19, material-k36-20, material-k36-21, material-k36-22, material-k36-23 |
-| S4 | Twenty-one music stream regions through actual channel fetch/loop consumers | 21/21 | Star_CloudMData; GroundM_P1Data; SilenceData; GroundM_P2AData; GroundM_P2BData; GroundM_P2CData; GroundM_P3AData; GroundM_P3BData; GroundMLdInData; GroundM_P4AData; GroundM_P4BData; DeathMusData; GroundM_P4CData; CastleMusData; GameOverMusData; TimeRunOutMusData; WinLevelMusData; UndergroundMusData; WaterMusData; EndOfCastleMusData; VictoryMusData | none | none |
+| S4 | Twenty-one music stream regions through actual channel fetch/loop consumers | 21/21 | Star_CloudMData; GroundM_P1Data; SilenceData; GroundM_P2AData; GroundM_P2BData; GroundM_P2CData; GroundM_P3AData; GroundM_P3BData; GroundMLdInData; GroundM_P4AData; GroundM_P4BData; DeathMusData; GroundM_P4CData; CastleMusData; GameOverMusData; TimeRunOutMusData; WinLevelMusData; UndergroundMusData; WaterMusData; EndOfCastleMusData; VictoryMusData | none | material-k37-01 through62 (source-proven S4 census) |
 | S5 | Frequency/length/envelope and noise-effect tables through actual indexed consumers | 7/7 | FreqRegLookupTbl; MusicLengthLookupTbl; EndOfCastleMusicEnvData; AreaMusicEnvData; WaterEventMusEnvData; BowserFlameEnvData; BrickShatterEnvData | none | material-00443, material-00444, material-k38-01, material-k38-02, material-k38-03, material-k38-04, material-k38-05 |
-| S6 | Full77-node census, recorded header-to-stream/table joins and integrated three-target regression | 77/0 | All77 above, already-exact prerequisite | Full56 census and explicit external boundaries | Full30 plus admitted feasible enumeration |
+| S6 | Full77-node census, recorded header-to-stream/table joins and integrated three-target regression | 77/0 | All77 above, already-exact prerequisite | Full56 census and explicit external boundaries | Full92 (original30 plus source-proven62 stream relations) |
 
 Control returns belong to their caller label (`to`); nonreturns to source
 label (`from`). Every N control is assigned exactly once. Material rows are
@@ -589,3 +589,172 @@ section bounds, indirect reads/offset/write order and original zero branches.
 Owner-local ROM/reviewed ASM nonredistributable research; no import. Ignored
 build/m2-t68-s4,128MiB raw,1024 roots/batch,120seconds/process,524288steps/root;
 coordinator deletes raw per batch and retains neutral summaries only.
+
+## S4 P2 closure - typed streams and source-proven material census
+
+All21 intended labels complete: Star_CloudMData; GroundM_P1Data; SilenceData; GroundM_P2AData; GroundM_P2BData; GroundM_P2CData; GroundM_P3AData; GroundM_P3BData; GroundMLdInData; GroundM_P4AData; GroundM_P4BData; DeathMusData; GroundM_P4CData; CastleMusData; GameOverMusData; TimeRunOutMusData; WinLevelMusData; UndergroundMusData; WaterMusData; EndOfCastleMusData; VictoryMusData.
+No scoped deferral or transfer, no owned control changes. Current1891->1912/1992
+nodes,3964/4279 controls(raw4342,infeasible63). Newly proved62 producer/consumer
+relations material-k37-01..62 expand material enumeration493->555 and exact
+431->493/555. Enumeration remains partial; denominator growth records actual
+new feasible paths, not reclassification of existing rows or a Cartesian matrix.
+T68's admitted material footprint now92(original30 plus62), S5's7 still pending.
+Historical1992/1992 distinct, expected/actualMatches empty. T68 open;S5 next
+unadmitted. Remaining7 N plus73 earlier C nodes need proof; M2 not complete.
+
+| Region | Half-open CPU bounds | Bytes | Actually read bytes | Manual header/type/consumer contract |
+| --- | --- | --- | --- | --- |
+| `Star_CloudMData` | `f9b8`-`fa01` | 73 | 73 | Original region [f9b8,fa01)/73 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P1Data` | `fa01`-`fa1c` | 27 | 27 | Original region [fa01,fa1c)/27 bytes binds through full PRG/MusicData to HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `SilenceData` | `fa1c`-`fa49` | 45 | 45 | Original region [fa1c,fa49)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. First byte is silence terminator; remaining declared interval contains GroundP1 Square1/triangle fields, not an independent45-byte silence song. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P2AData` | `fa49`-`fa75` | 44 | 44 | Original region [fa49,fa75)/44 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P2BData` | `fa75`-`fa9d` | 40 | 40 | Original region [fa75,fa9d)/40 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P2CData` | `fa9d`-`fac2` | 37 | 37 | Original region [fa9d,fac2)/37 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P3AData` | `fac2`-`fadb` | 25 | 25 | Original region [fac2,fadb)/25 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P3BData` | `fadb`-`faf9` | 30 | 30 | Original region [fadb,faf9)/30 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundMLdInData` | `faf9`-`fb25` | 44 | 44 | Original region [faf9,fb25)/44 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P4AData` | `fb25`-`fb4b` | 38 | 38 | Original region [fb25,fb4b)/38 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P4BData` | `fb4b`-`fb72` | 39 | 39 | Original region [fb4b,fb72)/39 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `DeathMusData` | `fb72`-`fb74` | 2 | 2 | Original region [fb72,fb74)/2 bytes binds through full PRG/MusicData to HandleSquare2Music. Two-byte death prefix shares following GroundP4C storage; original pointer remains DeathMusData with source offsets. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GroundM_P4CData` | `fb74`-`fba4` | 48 | 48 | Original region [fb74,fba4)/48 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Ground fourth-C and death share Square2/Square1/triangle fields and fourth-part noise bytes; retain cross-region original addressing. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `CastleMusData` | `fba4`-`fc45` | 161 | 161 | Original region [fba4,fc45)/161 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `GameOverMusData` | `fc45`-`fc72` | 45 | 45 | Original region [fc45,fc72)/45 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `TimeRunOutMusData` | `fc72`-`fcb0` | 62 | 62 | Original region [fc72,fcb0)/62 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `WinLevelMusData` | `fcb0`-`fd11` | 97 | 96 | Original region [fcb0,fd11)/97 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. One source-explicit unused byte at FCEC retained as storage; all other declared bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `UndergroundMusData` | `fd11`-`fd52` | 65 | 65 | Original region [fd11,fd52)/65 bytes binds through full PRG/MusicData to HandleSquare2Music; HandleTriangleMusic. Source Square2/triangle share the same data; original zero Square1 offset disables that stream, no fabricated Square1/noise pair. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `WaterMusData` | `fd52`-`fe51` | 255 | 255 | Original region [fd52,fe51)/255 bytes binds through full PRG/MusicData to HandleNoiseMusic; HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `EndOfCastleMusData` | `fe51`-`fec8` | 119 | 119 | Original region [fe51,fec8)/119 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Original channel types are determined by header pointer plus byte offset, not label name. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+| `VictoryMusData` | `fec8`-`ff00` | 56 | 53 | Original region [fec8,ff00)/56 bytes binds through full PRG/MusicData to HandleSquare1Music; HandleSquare2Music; HandleTriangleMusic. Source-explicit unused space FEFD-FEFF retained as storage; all musical bytes have actual typed reads. No arbitrary-RAM unreachability claim. Native indirect address, counter/length/rest/zero/loopback and ordered channel output follow audited shared consumers. |
+
+### Original semantics and actual current proof
+
+Reviewed listing matches unchanged owner ROM and all adjacent region bounds.
+Full original PRG binding is the current storage counterpart; no music bytes
+copied into tracked code, no song reconstruction or substituted synthesizer.
+MusicData little-endian pointer plus byte F7/F8/F9/7B0 selects actual CPU
+addresses. LDA indirect-Y reads are counted at their real source instructions
+and assigned to Square2 F73A-F7BC, Square1 F7BC-F81A, triangle F81A-F86D,
+noise F86D-F8C4. Counts therefore prove actual consumers, not address guesses.
+All62 observed producer/consumer pairs reviewed against source headers/offsets
+and shared channel semantics; missing cartesian pairs are not manufactured.
+
+Square2/triangle high-bit lengths use low3 bits and actual length lookup before
+the next note; frequency offsets remain original bytes. Square2 zero ends or
+loops through original event/area/header selection before later channels.
+Triangle zero writes control0 and continues noise. Square1 length bits0/7/6
+retain original note bits5..1; zero prefix writes83/94, saves alternate flag and
+fetches again. Noise same length selector retains original X/Y; zero restores
+actual loopback with zero predicate, nonzero selects original silent/short/
+strong/long ordered output. Counter wraps, original source pointers and cross-
+region shared sections remain intact. Native typed consumer counterparts are
+the already-audited shared audio.c routines, not a platform or emulator path.
+
+51201 returned roots each width compare full1841 RAM (including0109-0139),
+24 APU and every ordered write count/index/value with zero differences:
+mode48 has49 actual LoadHeader boundaries, each followed by1023 real F2D0
+SoundEngine/RTS calls,50176 roots total. Each1024-root batch begins at an
+original named selector1..49, then carries actual original prior RAM/APU;
+recorder timing baseline alone resets. State is never produced by native C.
+Mode49 extends Water after1023 unchanged original warmup calls with1024
+compared continuation calls; its initial state is generated by actual original
+LoadHeader/SoundEngine, not a second implementation. Warmup outputs alone
+receive no new credit. Mode50 actual header17 plus controlled source noise
+counter/offset exercises the lead-in last noise terminator, real loopback and
+RTS; existing Square2/Square1/triangle counters5 keep this focused read valid.
+
+Declared stream footprint is exactly1352 bytes.1348 bytes have
+actual original channel reads and native output proof. Remaining4 bytes are
+explicit source-unused storage: WinLevel FCEC at source16245 and Victory
+FEFD-FEFF at source16323-16324. Reviewed listing/ROM/binding retain these bytes;
+no functional consumer is invented, and no global arbitrary-RAM unreachable
+claim is made. The ordinary source data roles distinguish these padding bytes
+from the controlled, feasible lead-in noise terminator. Every other declared
+byte is actually exercised, including the87 Water bytes missing at1023 frames.
+
+Only true CPU stack0100-0108/013A-01FF and unmapped transient registers excluded.
+Header boundary has no C A-register ABI, so transient A excluded there; all
+persistent/output state compared. No ROM patch, mocked child or protected
+fixture import. Similar-issue sweep reviewed pointer/offset encoding, aliases,
+short header cross-reads, first/second fetch, zero control/terminator/loopback,
+source unused storage and actual typed material paths. Earlier M Square1/
+Square2 RAM-alias fetch-order question remains explicitly owned cross-cohort
+debt; immutable original PRG stream proof does not silently resolve that scope.
+
+| New material relation | Actual region/consumer | Original read observations | Disposition |
+| --- | --- | --- | --- |
+| `material-k37-01` | `Star_CloudMData` -> `HandleSquare2Music` | 280 | exact |
+| `material-k37-02` | `Star_CloudMData` -> `HandleSquare1Music` | 212 | exact |
+| `material-k37-03` | `Star_CloudMData` -> `HandleTriangleMusic` | 194 | exact |
+| `material-k37-04` | `Star_CloudMData` -> `HandleNoiseMusic` | 372 | exact |
+| `material-k37-05` | `GroundM_P1Data` -> `HandleSquare2Music` | 793 | exact |
+| `material-k37-06` | `SilenceData` -> `HandleSquare2Music` | 29 | exact |
+| `material-k37-07` | `SilenceData` -> `HandleSquare1Music` | 499 | exact |
+| `material-k37-08` | `SilenceData` -> `HandleTriangleMusic` | 793 | exact |
+| `material-k37-09` | `GroundM_P2AData` -> `HandleSquare2Music` | 440 | exact |
+| `material-k37-10` | `GroundM_P2AData` -> `HandleSquare1Music` | 340 | exact |
+| `material-k37-11` | `GroundM_P2AData` -> `HandleTriangleMusic` | 296 | exact |
+| `material-k37-12` | `GroundM_P2BData` -> `HandleSquare2Music` | 196 | exact |
+| `material-k37-13` | `GroundM_P2BData` -> `HandleSquare1Music` | 134 | exact |
+| `material-k37-14` | `GroundM_P2BData` -> `HandleTriangleMusic` | 160 | exact |
+| `material-k37-15` | `GroundM_P2CData` -> `HandleSquare2Music` | 124 | exact |
+| `material-k37-16` | `GroundM_P2CData` -> `HandleSquare1Music` | 86 | exact |
+| `material-k37-17` | `GroundM_P2CData` -> `HandleTriangleMusic` | 136 | exact |
+| `material-k37-18` | `GroundM_P2CData` -> `HandleNoiseMusic` | 1849 | exact |
+| `material-k37-19` | `GroundM_P3AData` -> `HandleSquare2Music` | 464 | exact |
+| `material-k37-20` | `GroundM_P3AData` -> `HandleSquare1Music` | 260 | exact |
+| `material-k37-21` | `GroundM_P3BData` -> `HandleSquare2Music` | 188 | exact |
+| `material-k37-22` | `GroundM_P3BData` -> `HandleSquare1Music` | 102 | exact |
+| `material-k37-23` | `GroundM_P3BData` -> `HandleTriangleMusic` | 432 | exact |
+| `material-k37-24` | `GroundMLdInData` -> `HandleSquare2Music` | 229 | exact |
+| `material-k37-25` | `GroundMLdInData` -> `HandleSquare1Music` | 140 | exact |
+| `material-k37-26` | `GroundMLdInData` -> `HandleTriangleMusic` | 212 | exact |
+| `material-k37-27` | `GroundMLdInData` -> `HandleNoiseMusic` | 600 | exact |
+| `material-k37-28` | `GroundM_P4AData` -> `HandleSquare2Music` | 608 | exact |
+| `material-k37-29` | `GroundM_P4AData` -> `HandleSquare1Music` | 304 | exact |
+| `material-k37-30` | `GroundM_P4AData` -> `HandleTriangleMusic` | 526 | exact |
+| `material-k37-31` | `GroundM_P4BData` -> `HandleSquare2Music` | 279 | exact |
+| `material-k37-32` | `GroundM_P4BData` -> `HandleSquare1Music` | 186 | exact |
+| `material-k37-33` | `GroundM_P4BData` -> `HandleTriangleMusic` | 258 | exact |
+| `material-k37-34` | `DeathMusData` -> `HandleSquare2Music` | 2 | exact |
+| `material-k37-35` | `GroundM_P4CData` -> `HandleSquare2Music` | 269 | exact |
+| `material-k37-36` | `GroundM_P4CData` -> `HandleSquare1Music` | 211 | exact |
+| `material-k37-37` | `GroundM_P4CData` -> `HandleTriangleMusic` | 268 | exact |
+| `material-k37-38` | `GroundM_P4CData` -> `HandleNoiseMusic` | 676 | exact |
+| `material-k37-39` | `CastleMusData` -> `HandleSquare2Music` | 210 | exact |
+| `material-k37-40` | `CastleMusData` -> `HandleSquare1Music` | 105 | exact |
+| `material-k37-41` | `CastleMusData` -> `HandleTriangleMusic` | 30 | exact |
+| `material-k37-42` | `GameOverMusData` -> `HandleSquare2Music` | 40 | exact |
+| `material-k37-43` | `GameOverMusData` -> `HandleSquare1Music` | 20 | exact |
+| `material-k37-44` | `GameOverMusData` -> `HandleTriangleMusic` | 30 | exact |
+| `material-k37-45` | `TimeRunOutMusData` -> `HandleSquare2Music` | 24 | exact |
+| `material-k37-46` | `TimeRunOutMusData` -> `HandleSquare1Music` | 15 | exact |
+| `material-k37-47` | `TimeRunOutMusData` -> `HandleTriangleMusic` | 23 | exact |
+| `material-k37-48` | `WinLevelMusData` -> `HandleSquare2Music` | 33 | exact |
+| `material-k37-49` | `WinLevelMusData` -> `HandleSquare1Music` | 27 | exact |
+| `material-k37-50` | `WinLevelMusData` -> `HandleTriangleMusic` | 36 | exact |
+| `material-k37-51` | `UndergroundMusData` -> `HandleSquare2Music` | 90 | exact |
+| `material-k37-52` | `UndergroundMusData` -> `HandleTriangleMusic` | 89 | exact |
+| `material-k37-53` | `WaterMusData` -> `HandleSquare2Music` | 141 | exact |
+| `material-k37-54` | `WaterMusData` -> `HandleSquare1Music` | 69 | exact |
+| `material-k37-55` | `WaterMusData` -> `HandleTriangleMusic` | 123 | exact |
+| `material-k37-56` | `WaterMusData` -> `HandleNoiseMusic` | 169 | exact |
+| `material-k37-57` | `EndOfCastleMusData` -> `HandleSquare2Music` | 36 | exact |
+| `material-k37-58` | `EndOfCastleMusData` -> `HandleSquare1Music` | 40 | exact |
+| `material-k37-59` | `EndOfCastleMusData` -> `HandleTriangleMusic` | 43 | exact |
+| `material-k37-60` | `VictoryMusData` -> `HandleSquare2Music` | 54 | exact |
+| `material-k37-61` | `VictoryMusData` -> `HandleSquare1Music` | 44 | exact |
+| `material-k37-62` | `VictoryMusData` -> `HandleTriangleMusic` | 46 | exact |
+
+Operational: current Win32 products and focused binaries build x86/x64; each4
+tests(header-table,audio-smoke,local-death-music-smoke,purity) pass. Original
+OpenNT DOS16 link passes with inherited OLDNAMES.LIB warning, no interactive
+DOS claim. No product code change;3 products equal committed S2/current builds:
+
+- `mysmb16.exe`: 260967 bytes, SHA256 `08027088cb6789482a9f7d20a7a5d3ac6f549ffe1ee56f746425c8f4f1c045d8`, byte-identical S2 product retained.
+- `mysmb32.exe`: 373988 bytes, SHA256 `dd09059aed071d96d73caad9c3203f7556f1c34ca1b1d674f920e7035e3c2f28`, byte-identical S2 product retained.
+- `mysmb64.exe`: 381530 bytes, SHA256 `e6c3cbee528e79ee4b3404ae869f60ab79101b01b5a4cdb8bc5899b537043520`, byte-identical S2 product retained.
+
+Ignored build/m2-t68-s4 has modes48-50, natural/extended route and coverage
+summaries, source-unused decisions, focused tests/build/DOS16 logs. Raw removed
+per batch, recorder removed at closure. Registry/ledger/progress/docs gates
+required before P2 commit; unrelated owner changes preserved unstaged.

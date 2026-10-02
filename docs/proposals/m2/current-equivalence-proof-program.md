@@ -339,3 +339,13 @@ native consumers proven. Current1891/1992 nodes,3964/4279 controls
 12544 original roots both widths zero diff; current builds/4 focused tests each/
 purity/OpenNT link pass;3 S2 products byte-identical retained. T68 open,S4 next
 unadmitted;28 N plus73 earlier C nodes remain pending, no final certification.
+
+## Current checkpoint after T68 S4
+
+[T68 S4](t68-cohort-n-music-data-current-proof.md) closes21 streams and adds62
+actual typed material relations. Current1912/1992 nodes,3964/4279 controls
+(raw4342,infeasible63),493/555 material partial; denominator493->555 reflects
+new source-path enumeration.1348 bytes actually read,4 explicit source-unused
+storage retained;51201 original roots each width zero diff. Current builds/
+4 focused tests each/purity/OpenNT link pass;3 S2 products unchanged. T68 open,
+S5 next unadmitted;7 N plus73 C labels and external relations remain pending.

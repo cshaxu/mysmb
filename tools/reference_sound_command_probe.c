@@ -15,6 +15,7 @@ static unsigned long envelope_reads[256];
 static unsigned long square2_table_reads[3][256];
 static unsigned long noise_table_reads[3][256];
 static unsigned long header_reads[7][256];
+static unsigned long music_reads[4][65536];
 static int ready(core_machine *m)
 {
     core_run_result r;unsigned int i;
@@ -23,6 +24,17 @@ static int ready(core_machine *m)
         if(core_machine_debug_step(m,1u,1024u,&r)!=LIB_STATUS_OK||r.trap_valid)return 0;
     }
     return 0;
+}
+static int advance_audio(core_machine *m,unsigned int entry,unsigned int stop,unsigned int y)
+{
+    core_run_result r;unsigned int steps;
+    memcpy(live_ram,m->ram,2048u);memcpy(live_apu,m->apu.registers,24u);
+    *m=baseline;memcpy(m->ram,live_ram,2048u);memcpy(m->apu.registers,live_apu,24u);
+    m->pc=(unsigned short)entry;m->y=(unsigned char)y;m->s=0xfdu;
+    m->ram[0x1feu]=0u;m->ram[0x1ffu]=0x80u;
+    for(steps=0;steps<524288u&&m->pc!=stop;++steps)
+        if(core_machine_debug_step(m,1u,1024u,&r)!=LIB_STATUS_OK||r.trap_valid)return 0;
+    return m->pc==stop;
 }
 static void fixture(core_machine *m,unsigned int n,unsigned int mode)
 {
@@ -130,6 +142,14 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0xfau]=(unsigned char)((p>>1u)&3u);
         m->ram[0x7b2u]=(unsigned char)((p>>3u)&3u);
         m->ram[0x7bbu]=(unsigned char)n;
+    }else if(mode>=48u&&mode<=50u){
+        unsigned int selector=mode==49u?10u:(mode==50u?17u:n/1024u+1u);
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
+        m->ram[0xf4u]=(unsigned char)(selector<=8u?0u:(selector<=16u?1u<<(selector-9u):1u));
+        m->ram[0x7b1u]=(unsigned char)(selector<=8u?1u<<(selector-1u):0u);
+        m->ram[0x7c7u]=(unsigned char)(selector>=17u?selector:16u);
+        m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
     }else if(mode>=36u&&mode<=43u){
         m->ram[0xf0u]=(unsigned char)n;
         m->ram[0x7c4u]=(unsigned char)p;
@@ -194,14 +214,17 @@ int main(int argc,char **argv)
 {
     static const unsigned short entries[10]={0xf2d0u,0xf381u,0xf388u,0xf38bu,0xf38du,0xf39eu,0xf39fu,0xf3a6u,0xf3a9u,0xf3adu};
     core_driver *d=0;core_driver_options opts={0u,LIB_FALSE};core_run_result result;
-    FILE *f;unsigned int mode,first,count,n,i,pc,op,addr,value,writes,steps,entry,index,bucket,attempt;
+    FILE *f;unsigned int mode,first,count,n,i,pc,op,addr,value,writes,steps,entry,index,bucket,attempt,boundary;
     unsigned long key;
     time_t start=time(0);
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>47u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>50u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
+    if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
+    if(mode==49u&&(first!=0u||count!=1024u))return 64;
+    if(mode==50u&&(first!=0u||count!=1u))return 64;
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
     baseline=*d->machine;
@@ -209,23 +232,35 @@ int main(int argc,char **argv)
     f=fopen(argv[2],"wb");if(!f||fwrite(h,1,16,f)!=16)return 65;
     for(n=first;n<first+count;++n){
         *d->machine=baseline;
-        if(mode!=24u||n%256u==0u)fixture(d->machine,n,mode);
+        if((mode!=24u&&mode!=48u&&mode!=49u)||(mode==24u&&n%256u==0u)||(mode==48u&&n%1024u==0u)||(mode==49u&&n==0u))fixture(d->machine,n,mode);
         else{
             memcpy(d->machine->ram,live_ram,2048u);
             memcpy(d->machine->apu.registers,live_apu,24u);
         }
+        if(mode==49u&&n==0u){
+            if(!advance_audio(d->machine,0xf6f5u,0xf73au,10u))return 67;
+            for(i=0;i<1023u;++i)if(!advance_audio(d->machine,0xf2d0u,0x8001u,0u))return 67;
+        }
+        if(mode==50u){
+            if(!advance_audio(d->machine,0xf6f5u,0xf73au,17u))return 67;
+            d->machine->ram[0x7b4u]=5u;d->machine->ram[0x7b6u]=5u;
+            d->machine->ram[0x7b9u]=5u;d->machine->ram[0x7bau]=1u;
+            d->machine->ram[0x7b0u]=43u;
+        }
         memset(record,0,sizeof(record));
         index=mode<5u||mode>=14u?0u:mode-4u;
-        entry=mode>=36u&&mode<=43u?0xf8cbu:(mode==27u?0xf6f5u:entries[index]);
+        boundary=mode==27u||(mode==48u&&n%1024u==0u);
+        entry=mode>=36u&&mode<=43u?0xf8cbu:(boundary?0xf6f5u:entries[index]);
         if(mode>=36u&&mode<=43u)d->machine->a=(unsigned char)(mode-36u);
         if(mode==27u)d->machine->y=(unsigned char)n;
+        if(mode==48u&&boundary)d->machine->y=(unsigned char)(n/1024u+1u);
         d->machine->pc=(unsigned short)entry;d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
         record[0]=(unsigned char)entry;record[1]=(unsigned char)(entry>>8u);
         record[2]=d->machine->a;record[3]=d->machine->x;record[4]=d->machine->y;
         memcpy(record+16,d->machine->ram,2048u);memcpy(record+2064,d->machine->apu.registers,24u);
         writes=0;
-        for(steps=0;steps<524288u&&d->machine->pc!=(mode==27u?0xf73au:0x8001u);++steps){
+        for(steps=0;steps<524288u&&d->machine->pc!=(boundary?0xf73au:0x8001u);++steps){
             pc=d->machine->pc;if(pc<0x8000u)return 67;op=prg[pc-0x8000u];++visits[pc];
             if(op==0xb9u&&prg[pc-0x8000u+1u]==0xb0u&&prg[pc-0x8000u+2u]==0xf3u)++envelope_reads[d->machine->y];
             if(op==0xb9u&&prg[pc-0x8000u+2u]==0xf4u){
@@ -242,6 +277,11 @@ int main(int argc,char **argv)
             if(pc>=0xf6f5u&&pc<0xf73au&&op==0xb9u){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 if(base>=0xf90cu&&base<=0xf912u)++header_reads[base-0xf90cu][d->machine->y];
+            }
+            if(pc>=0xf73au&&pc<0xf8c4u&&op==0xb1u&&prg[pc-0x8000u+1u]==0xf5u){
+                unsigned int channel=pc<0xf7bcu?0u:(pc<0xf81au?1u:(pc<0xf86du?2u:3u));
+                unsigned int base=d->machine->ram[0xf5u]|((unsigned int)d->machine->ram[0xf6u]<<8u);
+                ++music_reads[channel][(base+d->machine->y)&65535u];
             }
             addr=0;value=0;
             if(op==0x8du||op==0x8eu||op==0x8cu||op==0x9du||op==0x99u){
@@ -266,10 +306,10 @@ int main(int argc,char **argv)
             if(attempt==8192u)return 68;
             if(time(0)-start>110)return 69;
         }
-        if(d->machine->pc!=(mode==27u?0xf73au:0x8001u))return 67;
+        if(d->machine->pc!=(boundary?0xf73au:0x8001u))return 67;
         record[5]=d->machine->a;record[6]=(unsigned char)writes;
         memcpy(record+2088,d->machine->ram,2048u);memcpy(record+4136,d->machine->apu.registers,24u);
-        if(mode==24u){
+        if(mode==24u||mode==48u||mode==49u){
             memcpy(live_ram,d->machine->ram,2048u);
             memcpy(live_apu,d->machine->apu.registers,24u);
         }
@@ -286,5 +326,6 @@ int main(int argc,char **argv)
     for(n=0;n<3u;++n)for(i=0;i<256u;++i)if(square2_table_reads[n][i])printf("square2-table=%u index=%u reads=%lu\n",n,i,square2_table_reads[n][i]);
     for(n=0;n<3u;++n)for(i=0;i<256u;++i)if(noise_table_reads[n][i])printf("noise-table=%u index=%u reads=%lu\n",n,i,noise_table_reads[n][i]);
     for(n=0;n<7u;++n)for(i=0;i<256u;++i)if(header_reads[n][i])printf("header-field=%u index=%u reads=%lu\n",n,i,header_reads[n][i]);
+    for(n=0;n<4u;++n)for(i=0;i<65536u;++i)if(music_reads[n][i])printf("music-channel=%u address=%04x reads=%lu\n",n,i,music_reads[n][i]);
     core_driver_destroy(d);return 0;
 }
