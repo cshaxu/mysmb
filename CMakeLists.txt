@@ -1751,3 +1751,6 @@ target_link_libraries(mysmb_platform_integration_route_check PRIVATE mysmb_game)
 
 add_executable(mysmb_podoboo_integration_route_check test/podoboo_integration_route_check.c)
 target_link_libraries(mysmb_podoboo_integration_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_hammer_bro_integration_route_check test/hammer_bro_integration_route_check.c)
+target_link_libraries(mysmb_hammer_bro_integration_route_check PRIVATE mysmb_game)

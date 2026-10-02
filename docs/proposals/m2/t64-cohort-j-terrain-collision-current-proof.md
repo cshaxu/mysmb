@@ -1841,3 +1841,100 @@ Historical **1,992/1,992**, current exact nodes **1,480/1,992**, material
 T64 remains open with **64 Cohort-J controls**, zero pending material.
 Next source-order branch is Hammer Bro throw/relative-position returns.
 T65 is not admitted.
+
+## Aggregate S40 admission - Hammer Bro real child returns
+
+S40 owns `control-03825` SpawnHammerObj-to-ChkJH and `control-03826`
+PlayerEnemyDiff-to-Shimmy. Seventeen exact labels in scope are
+HammerThrowTmrData, XSpeedAdderData, RevivedXSpeed, ProcHammerBro, ChkJH,
+DecHT, HammerBroJumpLData, HammerBroJumpCode, SetHJ, HJump,
+MoveHammerBroXDir, Shimmy, SetShim, SpawnHammerObj, PlayerEnemyDiff,
+MoveNormalEnemy, MoveDefeatedEnemy. Expected new node set is empty.
+Historical 1,992/1,992 and exact nodes 1,480/1,992 remain unchanged;
+controls enter at 3,117/4,323 and can reach 3,119/4,323; material 368/487.
+
+Entry ProcHammerBro $C9D8 reaches throw/jump/shimmy and normal movement,
+or defeated movement, then returns. Shared owners are enemy/hammer_bro.c,
+hammer.c, enemy/distance.c, enemy/movement.c and world movement/gravity.
+The missing dependency is real child return evidence beyond the earlier
+caller-only substituted returns. S39 is the predecessor; normal/defeated
+movement return integration follows. All children already have node evidence.
+
+Static proof audits carry-to-throw-state/timer, X slot restoration and
+page subtraction/sign-to-facing/speed, including low-byte borrow and Y=1.
+Actual ROM roots and native real descendants compare all persistent RAM.
+Fixtures cover six slots, allocation success and both failure predicates,
+all nine hammer slots, hard mode, offscreen/throw/jump timer gates, facing,
+page borrow and defeated movement. Explicit CPU scratch/stack exclusions
+do not exclude return carry/sign/slot contracts. Focused caller, allocation,
+normal movement, purity and original OpenNT DOS16 are operational gates.
+
+Owner ROM/disassembly are local nonredistributable research. Ignored
+build/m2-t64-s40 owns <=16 MiB raw, 524288 steps/case and 120 seconds
+total; S40 cleans raw records/probe after proof. Neutral harnesses and
+summaries alone are tracked. Scoped mismatch stays here for repair/re-audit;
+product repair refreshes all three approved EXEs. Preserve unrelated work.
+
+## Aggregate S40 closure - Hammer Bro real child returns exact
+
+`control-03825` and `control-03826` are exact. All seventeen scoped labels
+retain exact status: HammerThrowTmrData, XSpeedAdderData, RevivedXSpeed,
+ProcHammerBro, ChkJH, DecHT, HammerBroJumpLData, HammerBroJumpCode,
+SetHJ, HJump, MoveHammerBroXDir, Shimmy, SetShim, SpawnHammerObj,
+PlayerEnemyDiff, MoveNormalEnemy, MoveDefeatedEnemy. Expected/actual new
+node sets are empty; no deferral or transfer and custody remains unchanged.
+
+Original ProcHammerBro $C9D8 calls SpawnHammerObj $BA94 at $C9FC and
+continues at $C9FF. Both failures reload ObjectOffset and clear carry;
+success reloads it, stores parent/current hammer state/control and sets
+carry. The shared C helper returns the same carry byte and the caller
+consumes it to set enemy bit 3 or decrement the newly set throw timer.
+The consumer does not re-test eligibility after the return. Dependency
+table selection includes zero low bits selecting either misc slot 0 or 8.
+
+At $CA66 the shimmy caller calls PlayerEnemyDiff $E143; $CA69 consumes
+N to choose facing and walking speed. The helper's low subtraction borrow,
+scratch low result, page subtraction and high sign match the shared byte
+helper. Source X retains the original enemy slot and Y stays 1 before the
+consumer increment. Native immutable slot and local direction preserve
+those values. Both tails execute the actual current normal/defeated
+movement and shared gravity/horizontal children.
+
+Neutral `tools/reference_hammer_bro_integration_probe.c` and
+`test/hammer_bro_integration_route_check.c` execute **3,072 actual ROM
+roots** from restored boot state with no child substitution. Four fixture
+phases (throw, timer/offscreen gate, jump, defeated) each have **768** cases,
+covering all six enemy slots, nine misc allocation slots, both hard modes,
+frame directions, walking timers, page ordering and low-byte borrow.
+Source ABI checks **960 spawn returns**: carry clear **675**, set **285**;
+allocation reasons are success **285**, misc occupied **320**, enemy
+occupied **355**. Every return preserves X and selected Y. At each return
+all **1,784 persistent bytes** match the pre-child state except the three
+original success stores. **2,304 distance returns** check A, X, Y, scratch
+low result, N and carry; signs split **1,152 / 1,152**.
+
+Current x86/x64 real roots each match **3,072/3,072**, zero differences
+over every **1,784 persistent RAM byte**, including unchanged RAM/OAM.
+CPU scratch $00-$07 and stack are declared ABI exclusions; original
+child return carry/sign/slot are checked separately and mapped to native
+return values/consumer branches by the static audit. The routes change
+**17,814 persistent bytes** in aggregate; maximum **179 instructions**.
+Both widths pass focused hammer-movement-caller, hammer-chain,
+normal-enemy-movement and platform-purity tests. Original OpenNT DOS16
+builds/links with the existing OLDNAMES.LIB warning.
+
+The similar-issue sweep checks both actual child seams, all allocation
+blockers and nine dependency offsets, immutable/current slot use, source
+subtraction borrow and sign consumption, and real movement tails. Bowser
+uses the same hammer child and remains its later explicit return-audit
+owner; other distance consumers remain their scoped connection tasks.
+No duplicate host gameplay owner or scoped difference was found. No
+product source changes or artifact refresh are needed. Raw records and
+probe executable are cleaned after verification.
+
+Historical **1,992/1,992**, exact nodes **1,480/1,992** and material
+**368/487** remain unchanged. Exact feasible controls rise
+**3,117 -> 3,119 / 4,323** (raw **4,342**, infeasible **19**).
+T64 remains open with **62 Cohort-J controls**, zero pending material.
+Next source-order group is normal/defeated/jumping movement return
+integration. T65 is not admitted.

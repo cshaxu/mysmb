@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3117,
-    "needs-evidence": 1206,
+    "exact": 3119,
+    "needs-evidence": 1204,
     "infeasible": 19,
     "unclassified": 0,
     "mismatch": 0
@@ -128646,12 +128646,15 @@
       "instruction": "rts/rti",
       "id": "control-03825",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/hammer_bro.c actual SpawnHammerObj child result consumed by ChkJH continuation",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S40: Actual SpawnHammerObj $BA94 returns to $C9FF with original ObjectOffset X, selected misc Y and carry. Real success writes only parent/state/box; each failure preserves all persistent RAM. Current helper returns equivalent carry byte; ChkJH consumes it for throw state bit or timer decrement without rechecking eligibility. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S40: neutral reference_hammer_bro_integration_probe and mysmb_hammer_bro_integration_route_check run 3072 actual ProcHammerBro roots and current x86/x64 real children; each width zero differences over every 1784 persistent RAM byte. Source ABI checks 960 allocation returns (285 success, 320 misc blocked, 355 enemy blocked), all nine selected slots, and 2304 distance returns with both signs 1152 each. CPU scratch/stack excluded explicitly; carry/sign/slot outputs checked. Focused caller/allocation/normal/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation SpawnHammerObj -> ChkJH with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c",
@@ -128666,12 +128669,15 @@
       "instruction": "rts/rti",
       "id": "control-03826",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Hammer Bro branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/hammer_bro.c actual PlayerEnemyDiff child result consumed by Shimmy continuation",
       "semanticEvidence": [
-        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S40: Actual PlayerEnemyDiff $E143 returns to $CA69 with X=slot, Y=1, low result in $00 and page result in A/N, including low-byte borrow and high subtraction carry. Native distance helper has the same byte subtraction and caller consumes high sign for facing and walking speed before the real normal movement tail. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S40: neutral reference_hammer_bro_integration_probe and mysmb_hammer_bro_integration_route_check run 3072 actual ProcHammerBro roots and current x86/x64 real children; each width zero differences over every 1784 persistent RAM byte. Source ABI checks 960 allocation returns (285 success, 320 misc blocked, 355 enemy blocked), all nine selected slots, and 2304 distance returns with both signs 1152 each. CPU scratch/stack excluded explicitly; carry/sign/slot outputs checked. Focused caller/allocation/normal/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation PlayerEnemyDiff -> Shimmy with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
         "src/game/cannon.c",
