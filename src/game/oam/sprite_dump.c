@@ -39,3 +39,11 @@ void mysmb_oam_move_six_sprites_offscreen(struct mysmb_game *game,
 {
     mysmb_oam_dump_six_sprites(game, 0xf8U, oam);
 }
+
+/* ROM $ec4a MoveColOffscreen; Y is a byte, absolute indexed stores are not. */
+mysmb_u8 mysmb_oam_move_column_offscreen(struct mysmb_game *game, mysmb_u8 oam)
+{
+    game->ram[0x0200U + oam] = 0xf8U;
+    game->ram[0x0208U + oam] = 0xf8U;
+    return 0xf8U;
+}

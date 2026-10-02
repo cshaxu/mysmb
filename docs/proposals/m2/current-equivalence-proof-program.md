@@ -115,3 +115,11 @@ nodes,83 feasible controls and five material rows; two raw fallthroughs are
 source-infeasible. Current nodes1579/1992, controls3359/4319(raw4342,
 infeasible23), material389/492 partial. Historical1992/1992 separate.
 T65 remains open with54 pending nodes; S9 next, not yet admitted.
+
+## Current checkpoint after T65 S9
+
+[T65 S9](t65-cohort-k-block-query-object-output-current-proof.md) closes22
+nodes and62 feasible controls; two raw controls are source-infeasible.
+Current nodes1601/1992, controls3421/4317(raw4342,infeasible25), material389/492
+partial; historical1992/1992 separate. T65 stays open with32 pending nodes;
+S10 next, not yet admitted. External block/player caller returns remain pending.

@@ -1,0 +1,116 @@
+/* Full helper output and independently intercepted child contracts. */
+#include <stdio.h>
+#include <string.h>
+#include "game/oam/oam.h"
+#include "game/objects.h"
+static struct mysmb_game game;
+static unsigned char record[28736];
+static unsigned int current,mode,calls,failures;
+static void compare(const mysmb_u8 *actual,const unsigned char *expected,const char *phase)
+{
+    unsigned int i;
+    for(i=0U;i<2048U;++i){
+        if(i>=0x100U&&i<0x200U&&(i<0x109U||i>0x139U))continue;
+        if(actual[i]!=expected[i]){
+            if(failures<12U)printf("mode=%u root=%u %s RAM=%04x ROM=%02x C=%02x\n",mode,current,phase,i,expected[i],actual[i]);
+            ++failures;
+        }
+    }
+}
+#ifdef MYSMB_OAM_HELPER_CHILD_CHECK
+static unsigned int consume(struct mysmb_game *g,unsigned int kind,mysmb_u8 a,mysmb_u8 x,mysmb_u8 y,unsigned int mask)
+{
+    unsigned int pos;
+    if(calls>=record[3]){++failures;return 4112U;}
+    pos=4112U+calls*4104U;++calls;
+    if(kind!=record[pos]||((mask&1U)&&a!=record[pos+1U])||
+       ((mask&2U)&&x!=record[pos+2U])||((mask&4U)&&y!=record[pos+3U])){
+        if(failures<12U)printf("mode=%u root=%u child=%u ROM-kind=%u input mismatch\n",mode,current,kind,record[pos]);
+        ++failures;
+    }
+    compare(g->ram,record+pos+8U,"child-input");
+    memcpy(g->ram,record+pos+2056U,2048U);
+    return pos;
+}
+void __real_mysmb_oam_move_enemy_column_offscreen(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_move_enemy_column_offscreen(struct mysmb_game *g,mysmb_u8 x,mysmb_u8 a)
+{
+    if(mode!=0U){__real_mysmb_oam_move_enemy_column_offscreen(g,x,a);return;}
+    (void)consume(g,1U,a,x,0U,3U);
+}
+void __real_mysmb_oam_move_enemy_row_offscreen(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_move_enemy_row_offscreen(struct mysmb_game *g,mysmb_u8 x,mysmb_u8 a)
+{
+    if(mode!=0U){__real_mysmb_oam_move_enemy_row_offscreen(g,x,a);return;}
+    (void)consume(g,2U,a,x,0U,3U);
+}
+void __real_mysmb_objects_erase_enemy(struct mysmb_game *,mysmb_u8);
+void __wrap_mysmb_objects_erase_enemy(struct mysmb_game *g,mysmb_u8 x)
+{
+    if(mode!=0U){__real_mysmb_objects_erase_enemy(g,x);return;}
+    (void)consume(g,3U,0U,x,0U,2U);
+}
+mysmb_u8 __real_mysmb_oam_move_column_offscreen(struct mysmb_game *,mysmb_u8);
+mysmb_u8 __wrap_mysmb_oam_move_column_offscreen(struct mysmb_game *g,mysmb_u8 y)
+{
+    if(mode!=1U)return __real_mysmb_oam_move_column_offscreen(g,y);
+    (void)consume(g,4U,0U,0U,y,4U);return 0xf8U;
+}
+void __real_mysmb_oam_dump_two_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_dump_two_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
+{
+    if(mode!=2U){__real_mysmb_oam_dump_two_sprites(g,a,y);return;}
+    (void)consume(g,5U,a,0U,y,5U);
+}
+void __real_mysmb_oam_draw_one_sprite_row(struct mysmb_game *,mysmb_u8,mysmb_u8 *,mysmb_u8 *);
+void __wrap_mysmb_oam_draw_one_sprite_row(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 *x,mysmb_u8 *y)
+{
+    unsigned int pos;
+    if(mode!=3U){__real_mysmb_oam_draw_one_sprite_row(g,a,x,y);return;}
+    pos=consume(g,6U,a,*x,*y,7U);*x=record[pos+4U];*y=record[pos+5U];
+}
+void __real_mysmb_oam_draw_sprite_object(struct mysmb_game *,mysmb_u8 *,mysmb_u8 *);
+void __wrap_mysmb_oam_draw_sprite_object(struct mysmb_game *g,mysmb_u8 *x,mysmb_u8 *y)
+{
+    unsigned int pos;
+    if(mode!=4U){__real_mysmb_oam_draw_sprite_object(g,x,y);return;}
+    pos=consume(g,7U,0U,*x,*y,6U);*x=record[pos+4U];*y=record[pos+5U];
+}
+void __real_mysmb_oam_dump_six_sprites(struct mysmb_game *,mysmb_u8,mysmb_u8);
+void __wrap_mysmb_oam_dump_six_sprites(struct mysmb_game *g,mysmb_u8 a,mysmb_u8 y)
+{
+    if(mode!=5U){__real_mysmb_oam_dump_six_sprites(g,a,y);return;}
+    (void)consume(g,8U,a,0U,y,5U);
+}
+#endif
+static unsigned long read32(const unsigned char *p)
+{
+    return (unsigned long)p[0]|((unsigned long)p[1]<<8U)|((unsigned long)p[2]<<16U)|((unsigned long)p[3]<<24U);
+}
+int main(int argc,char **argv)
+{
+    unsigned char h[16];FILE *f;unsigned int count,i;mysmb_u8 x,y;
+    if(argc!=2)return 64;
+    f=fopen(argv[1],"rb");if(!f)return 65;
+    if(fread(h,1U,16U,f)!=16U||memcmp(h,"MSOH\1",5U))return 66;
+    mode=h[5];count=(unsigned int)read32(h+8U);current=(unsigned int)read32(h+12U);
+    if(mode>5U||count==0U||count>2048U)return 66;
+    for(i=0U;i<count;++i,++current){
+        if(fread(record,1U,sizeof(record),f)!=sizeof(record))return 66;
+        memset(&game,0,sizeof(game));memcpy(game.ram,record+16U,2048U);calls=0U;x=record[1];y=record[2];
+        if(mode==0U)mysmb_oam_sprite_object_offscreen_check(&game,record[2]);
+        if(mode==1U)mysmb_oam_move_enemy_column_offscreen(&game,x,record[0]);
+        if(mode==2U)mysmb_oam_move_enemy_row_offscreen(&game,x,record[0]);
+        if(mode==3U)mysmb_oam_draw_enemy_object_row(&game,&y,&x);
+        if(mode==4U)mysmb_oam_draw_one_sprite_row(&game,record[0],&x,&y);
+        if(mode==5U)(void)mysmb_objects_draw_normal_enemy_graphics(&game,x);
+        if((mode==3U||mode==4U)&&(x!=record[4]||y!=record[5]))++failures;
+#ifdef MYSMB_OAM_HELPER_CHILD_CHECK
+        if(calls!=record[3])++failures;
+#endif
+        compare(game.ram,record+2064U,"root-output");
+    }
+    if(fgetc(f)!=EOF)return 66;fclose(f);
+    printf("oam-helper mode=%u roots=%u compared-bytes=1841 failures=%u\n",mode,count,failures);
+    return failures?1:0;
+}

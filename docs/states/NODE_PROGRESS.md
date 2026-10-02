@@ -1,14 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T65 S9 - active flip/mirror/offscreen helper audit
+## M2 T65 S9 - closed flip/mirror/offscreen helper graph
 
-[T65 S9 exact scope and findings](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
-registers22 pending labels, intended fresh22, maximum1601/1992. P2 repairs
-eleven node/eight control findings; they remain needs-evidence pending full
-OAM/mask and helper graph proof. Sampled8192 roots match on x86/x64; three
-products refreshed. No new exact credit. Current exact
-1579/1992 nodes,3359/4319 feasible controls(raw4342,infeasible23),
-389/492 material partial; historical1992/1992 separate. S9 stays active.
+[T65 S9 original helper contracts and closure](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes22 fresh nodes and62 feasible controls, none deferred. Two raw relations
+are source-infeasible. Current exact1601/1992 nodes,3421/4317 feasible controls
+(raw4342,infeasible25),389/492 material partial; historical1992/1992 separate.
+337408 original roots and432630 child returns match under full/independent
+checks per width. Complete builds,16/16 tests per width and original DOS16
+link pass; three products refreshed. T65 remains open; S10 is next.
 
 ## M2 T65 S8 - enemy graphics selection and actual rows
 

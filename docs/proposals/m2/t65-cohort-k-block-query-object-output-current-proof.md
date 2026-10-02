@@ -25,7 +25,7 @@ custody; the following S plan owns audit/repair participation, not silent transf
 | S6 | Floating coin number and jumping coin output; src/game/objects.c | 5 / 5 | DrawFloateyNumber_Coin; NotRsNum; JumpingCoinTiles; JCoinGfxHandler; ExJCGfx |
 | S7 | Power-up tile/attribute/flip output; src/game/oam/power_up_gfx.c | 6 / 6 | PowerUpGfxTable; PowerUpAttributes; DrawPowerUp; PUpDrawLoop; FlipPUpRightSide; PUpOfs |
 | S8 | Enemy graphics data/selection/animation and drawing; src/game/oam/normal_enemy_gfx.c and specialized actor owners | 35 / 35 | EnemyGraphicsTable; EnemyGfxTableOffsets; EnemyAttributeData; EnemyAnimTimingBMask; JumpspringFrameOffsets; EnemyGfxHandler; CheckForRetainerObj; CheckForBulletBillCV; SBBAt; CheckForJumpspring; CheckForPodoboo; CheckBowserGfxFlag; SBwsrGfxOfs; CheckForGoomba; GmbaAnim; CheckBowserFront; ChkFrontSte; FlipBowserOver; DrawBowser; CheckBowserRear; ChkRearSte; CheckForSpiny; NotEgg; CheckForLakitu; NoLAFr; CheckUpsideDownShell; CheckRightSideUpShell; CheckForDefdGoomba; CheckForHammerBro; CheckForBloober; CheckToAnimateEnemy; CheckForSecondFrame; CheckAnimationStop; CheckDefeatedState; DrawEnemyObject |
-| S9 | Enemy flip/mirror/offscreen and row/column helpers; src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h | 22 / 22 | SkipToOffScrChk; CheckForVerticalFlip; FlipEnemyVertically; CheckForESymmetry; ContES; ESRtnr; SpnySC; MirrorEnemyGfx; EggExc; CheckToMirrorLakitu; NVFLak; CheckToMirrorJSpring; SprObjectOffscrChk; LcChk; Row3C; Row23C; AllRowC; ExEGHandler; DrawEnemyObjRow; DrawOneSpriteRow; MoveESprRowOffscreen; MoveESprColOffscreen |
+| S9 | Enemy flip/mirror/offscreen and row/column helpers; src/game/oam/normal_enemy_gfx.c, sprite_row.c, enemy_offscreen.c and sprite_dump.c | 22 / 22 | SkipToOffScrChk; CheckForVerticalFlip; FlipEnemyVertically; CheckForESymmetry; ContES; ESRtnr; SpnySC; MirrorEnemyGfx; EggExc; CheckToMirrorLakitu; NVFLak; CheckToMirrorJSpring; SprObjectOffscrChk; LcChk; Row3C; Row23C; AllRowC; ExEGHandler; DrawEnemyObjRow; DrawOneSpriteRow; MoveESprRowOffscreen; MoveESprColOffscreen |
 | S10 | Block and brick chunk sprite output; src/game/oam/block_gfx.c | 14 / 14 | DefaultBlockObjTiles; DrawBlock; DBlkLoop; ChkRep; SetBFlip; BlkOffscr; PullOfsB; ChkLeftCo; MoveColOffscreen; ExDBlk; DrawBrickChunks; DChunks; ChnkOfs; ExBCDr |
 | S11 | Fireball/firebar and shared explosion output; src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c | 7 / 7 | DrawFireball; DrawFirebar; FireA; ExplosionTiles; DrawExplosion_Fireball; DrawExplosion_Fireworks; KillFireBall |
 | S12 | Small platform sprite rows; src/game/oam/small_platform_gfx.c | 6 / 6 | DrawSmallPlatform; TopSP; BotSP; SOfs; SOfs2; ExSPl |
@@ -1108,3 +1108,102 @@ The active original raw batch remains ignored under the S9 build directory,
 134545420 bytes within the192MiB cap. It remains needed for unfinished proof;
 no raw ROM, trace or generated data is added to tracked evidence. Documentation
 and admission checks are rerun for this P. T65 and S9 remain open.
+
+## S9 closure - original helper graph, byte boundaries and ordered output
+
+All22 planned labels are freshly exact; none deferred or transferred.
+Historical expected/actual additions remain empty. Current nodes1579 ->1601/1992,
+feasible controls3359 ->3421/4317(raw4342,infeasible23 ->25), material389/492
+unchanged and partial. Internal64 raw relations yield62 feasible exact and two
+source-infeasible. Already exact04001/04010 retain credit; external04022/04041
+stay pending with S10/T66 callers. T65 remains open with32 pending nodes; S10
+is next, not admitted by this closure.
+
+The following per-node source contracts accompany actual controlled original
+entry/branch/child proof, not a promotion from a sampled screen or adjacent label.
+
+| Exact node | Current original contract |
+| --- | --- |
+| SkipToOffScrChk | BulletBill or Bowser flag takes the original tail to shared SprObjectOffscrChk, without a duplicate erase path. |
+| CheckForVerticalFlip | Zero flip skips exchange; otherwise read first attribute, wrap Y+2 before actual DumpSixSpr and restore Y, then select first/second row by actor code. |
+| FlipEnemyVertically | Read both saved first/second-row tiles before stores, move third-row left/right into them, then restore saved right/left into the third row. |
+| CheckForESymmetry | Read Bowser flag before symmetry; nonzero skips to offscreen. Reload alternate state EC and skip HammerBro before type-specific checks. |
+| ContES | Bloober/Piranha/Podoboo mirror; Spiny non-egg skips retainer/state mirror gate; all other types reach ESRtnr. |
+| ESRtnr | Retainer writes bottom-right attribute42 before SpnySC, including paths where mirror later overwrites it. |
+| SpnySC | Alternate states0/1 skip mirror; states>=2 continue into MirrorEnemyGfx. |
+| MirrorEnemyGfx | Read Bowser guard; reachable source has flag0. Read/mask first attribute, store all three left rows before setting horizontal flip and possible egg vertical flip. |
+| EggExc | Store all three right rows, then state4 changes second/third left rows before corresponding right rows; other states continue to Lakitu check. |
+| CheckToMirrorLakitu | Only code17 enters Lakitu stores; vertical flip selects NVFLak. Nonvertical path changes bottom attributes; timer>=16 exits, timer<16 also changes second row then exits unconditionally. |
+| NVFLak | Set first left attribute AND81 and right OR41 in order, then continue to spring test. |
+| CheckToMirrorJSpring | Code<24 exits to offscreen; spring codes set second/third left82 then rightC2. |
+| SprObjectOffscrChk | Load ObjectOffset and offscreen bits; bit2 calls right-column helper before continuing with saved mask. |
+| LcChk | Bit3 calls left-column helper; continue with original saved mask. |
+| Row3C | Bit5 calls row helper with10; continue with original saved mask. |
+| Row23C | Bit6 calls row helper with08; continue with original saved mask. |
+| AllRowC | Bit7 calls row helper with00; only non-Podoboo with highY2 calls EraseEnemyObject. Otherwise exit unchanged. |
+| ExEGHandler | Return after original helper/erase sequence; caller state observes original stores. |
+| DrawEnemyObjRow | Load graphics base+X into RAM00 and base+1+X into A (no per-index wrap), then meaningful DrawOneSpriteRow entry. |
+| DrawOneSpriteRow | Store incoming A in RAM01 and tail to actual DrawSpriteObject; preserve original X+2,Y+8 byte return values. |
+| MoveESprRowOffscreen | Wrap A+Enemy_SprDataOffset once into Y, then tail to actual DumpTwoSpr with F8; leaf stores absolute indexed offsets without wrapping each store. |
+| MoveESprColOffscreen | Wrap A+Enemy_SprDataOffset once into Y, call actual MoveColOffscreen, then store its returned F8 at absolute Sprite_Data+16,Y. |
+
+Original helper routes use tools/reference_oam_helper_probe.c. Every chunk
+is at most2048 roots/58851344 bytes,120seconds,524288steps/case. One active
+chunk plus the earlier134545420-byte enemy batch stay below192MiB. Only
+neutral harnesses and summaries are tracked; raw snapshots are consumed and
+removed after both widths pass. Full and independent-child checkers compare
+1841 RAM bytes/root, including game aliases0109-0139; true CPU stack is
+excluded. Child checks assert passed A/X/Y where present, compare input RAM,
+substitute original child return RAM/row register results, and verify caller
+continuation and final RAM. Full checks execute every real shared child.
+DrawEnemy/DrawOne root checks also assert final byte X/Y return values.
+
+| Original entry | Roots | Observed child returns | Coverage |
+| --- | ---: | ---: | --- |
+| SprObjectOffscrChk | 67072 | 167936 | All256 OAM offsets x all256 masks, plus1536 Podoboo/high-Y guards at E8/FF. |
+| MoveESprColOffscreen | 65536 | 65536 | All256 OAM offsets x all256 incoming A adders, slots0-5. |
+| MoveESprRowOffscreen | 65536 | 65536 | All256 OAM offsets x all256 incoming A adders, slots0-5. |
+| DrawEnemyObjRow | 65536 | 65536 | All256 OAM offsets x all256 graphics X indices. |
+| DrawOneSpriteRow | 65536 | 65536 | All256 OAM offsets x all256 graphics X indices, varied right A. |
+| EnemyGfxHandler/DumpSixSpr | 8192 | 2550 | 8192 actor/state/profile roots and all256 OAM offsets; actual DumpSixSpr input and return. |
+
+Total337408 original roots and432630 actual child returns match with zero
+differences under full and independent child checking on both x86/x64.
+Per-instruction visit/taken/fall counts prove every scoped label and all
+feasible scoped branches/calls. The earlier8192 whole-enemy roots and24351
+independent real row returns at EA50/EA53/EA56 also pass after file separation;
+these prove04011-04013. Parent helper return checkpoints prove04015-04019.
+Mode0 actual original continuations: eb74:33536, eb7e:33536, eb89:33536, eb93:33536, eb9a:33536, eba9:256.
+Mode1 actual original continuations: ebc9:65536.
+Mode2 actual original continuations: 8001:65536.
+Mode3 actual original continuations: 8001:65536.
+Mode4 actual original continuations: 8001:65536.
+Mode5 actual original continuations: ea73:2550.
+
+control-02942: Source MirrorEnemyGfx is entered only through CheckForESymmetry after BowserGfxFlag036A==0. Intervening stores are stack/OAM up to0315, never036A; no source caller jumps directly into MirrorEnemyGfx. BNE atEADA cannot take this edge. The original matrix never observes this raw edge.
+
+control-02951: CPX FrenzyEnemyTimer with10 branches out atEB32 when carry1. Remaining timer<16 path has carry0; STA/AND/STA do not modify carry, so BCC atEB3C always exits and cannot fall through to NVFLak. The original matrix never observes this raw edge.
+
+Source organization separates meaningful row/column helpers into
+enemy_offscreen.c, DrawSpriteObject's writes into sprite_draw.c and the
+MoveColOffscreen leaf into sprite_dump.c; entry signatures and game semantics
+are preserved. CMake and original DOS16 source lists include the same owners.
+Independent interception now reaches actual cross-file calls instead of
+trying to intercept compiler-local references. No forwarding-only wrapper or
+platform game logic is added. The prior repair sweep dispositions of retained
+legacy aggregate facades remain unchanged; no facade earns original-node credit.
+
+Operational evidence: complete C90 x86/x64 builds pass,16/16 focused tests
+per width pass, including audio/focus/title behavior checks. Original OpenNT
+DOS16 links after adding the two new shared files to its explicit source list;
+the initial unresolved-symbol failure is repaired, not skipped. Existing
+OLDNAMES.LIB warning remains. DOS gameplay/performance qualification is not
+claimed. Three fresh owner-authorized packages include prior audio/title/focus
+pause changes; their explicit owner delivery authorization overrides default
+artifact exclusion.
+
+- mysmb16.exe: 261815 bytes; SHA-256 04b5c6b4502642c2c2724bf0eaa3d2a1839a02599528bd5bf150ec360b79b5cc.
+- mysmb32.exe: 374015 bytes; SHA-256 9403fe974f89f8de7b4e241d4fa29ef4c645d6ffb6e6587543609d898473c03a.
+- mysmb64.exe: 381525 bytes; SHA-256 47b05673727b4a75a3a444cf13502f2dfc49f2c351614775c78f204dd46d4677.
+
+Historical ledger closure, documentation and whitespace gates are rerun. S9 closes its scope only; M2 and T65 remain open.
