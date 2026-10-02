@@ -67,17 +67,16 @@ mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_spiny(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_hammer_bro(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_oam_draw_enemy_object_row(struct mysmb_game *game,
+    mysmb_u8 *oam_offset, mysmb_u8 *graphics_index);
 void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
 /* Existing retainer graphics child; caller owns relative/offscreen work. */
-void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
 /* Existing EnemyGfxHandler jumpspring branch; actor prepares relative/bits. */
-void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot);
 
 void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bowsers(struct mysmb_game *game);
 /* Existing EnemyGfxHandler Bowser rows, selected by BowserGfxFlag. */
-void mysmb_oam_draw_bowser_half(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot);
 /* DrawExplosion_Fireworks child takes source A and Y explicitly. */
 void mysmb_oam_draw_fireworks_explosion(struct mysmb_game *game,

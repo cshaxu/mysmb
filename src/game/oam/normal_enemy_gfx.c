@@ -150,9 +150,8 @@ mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_normal_apply_offscreen(game, oam, offscreen);
     return 1U;
 }
-
-/* ROM $e87d-$eaf2 EnemyGfxHandler: the ordinary enemy branch.  The final
- * two bytes are the start of EnemyGfxTableOffsets, reached by offset $ff. */
+/* ROM $e73e EnemyGraphicsTable: 258 bytes. DrawEnemyObjRow's right load
+ * uses base+1+X, so X=$ff reads byte256 without wrapping the effective address. */
 static const mysmb_u8 mysmb_enemy_graphics_table[] = {
     0xfcU,0xfcU,0xaaU,0xabU,0xacU,0xadU, 0xfcU,0xfcU,0xaeU,0xafU,0xb0U,0xb1U,
     0xfcU,0xa5U,0xa6U,0xa7U,0xa8U,0xa9U, 0xfcU,0xa0U,0xa1U,0xa2U,0xa3U,0xa4U,
@@ -175,7 +174,7 @@ static const mysmb_u8 mysmb_enemy_graphics_table[] = {
     0xc4U,0xc3U,0xc6U,0xc5U,0xc8U,0xc7U, 0xbfU,0xbeU,0xcaU,0xc9U,0xc2U,0xfcU,
     0xc4U,0xc3U,0xc6U,0xc5U,0xccU,0xcbU, 0xfcU,0xfcU,0xe8U,0xe7U,0xeaU,0xe9U,
     0xf2U,0xf2U,0xf3U,0xf3U,0xf2U,0xf2U, 0xf1U,0xf1U,0xf1U,0xf1U,0xfcU,0xfcU,
-    0xf0U,0xf0U,0xfcU,0xfcU,0xfcU,0xfcU, 0x0cU,0x0cU,0x00U,0x0cU
+    0xf0U,0xf0U,0xfcU,0xfcU,0xfcU,0xfcU
 };
 /* These 6502 indexed loads may read past the named table.  Preserve the
  * contiguous following bytes through ID $35 instead of indexing C memory
@@ -194,17 +193,23 @@ static const mysmb_u8 mysmb_enemy_attribute_data[54] = {
     0xb5U,0xcfU,0x85U,0x02U,0xadU,0xaeU,0x03U,0x85U,0x05U,
     0xbcU,0xe5U,0x06U,0x84U,0xebU,0xa9U,0x00U,0x8dU,0x09U,0x01U,0xb5U
 };
+/* ROM $e876 EnemyAnimTimingBMask: index1 is residual. The retainer branch
+ * exits before CheckForSecondFrame, leaving only Y=0 at the actual consumer. */
+static const mysmb_u8 mysmb_enemy_animation_timing_mask[2] = {8U, 0x18U};
 
-static void mysmb_enemy_draw_row(struct mysmb_game *g, mysmb_u8 *oam,
-                                 mysmb_u8 *tile_offset)
+/* ROM $ebaa DrawEnemyObjRow loads the left tile into RAM00 and passes
+ * the right tile as A to DrawOneSpriteRow. The +1 address does not wrap X. */
+void mysmb_oam_draw_enemy_object_row(struct mysmb_game *g, mysmb_u8 *oam,
+                                      mysmb_u8 *tile_offset)
 {
+    mysmb_u8 right_tile;
     g->ram[0U] = mysmb_enemy_graphics_table[*tile_offset];
-    g->ram[1U] = mysmb_enemy_graphics_table[(mysmb_u8)(*tile_offset + 1U)];
-    mysmb_oam_draw_sprite_object(g, tile_offset, oam);
+    right_tile = mysmb_enemy_graphics_table[(mysmb_u16)*tile_offset + 1U];
+    mysmb_oam_draw_one_sprite_row(g, right_tile, tile_offset, oam);
 }
 
-/* ROM $e87d-$eaf2 ordinary EnemyGfxHandler control flow and OAM tail.
- * The caller continues the remaining normal-enemy phases after this call. */
+/* ROM $e87d EnemyGfxHandler: one selection/drawing path for ordinary
+ * enemies, retainers, cannon bills, jumpsprings and both Bowser halves. */
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
                                                    mysmb_u8 slot)
 {
@@ -223,10 +228,10 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
 
     state = game->ram[MYSMB_NORMAL_STATE + slot];
     game->ram[0x00edU] = state;
-    game->ram[0x00ecU] = (mysmb_u8)(state & 0x1fU);
+    y = (mysmb_u8)(state & 0x1fU);
     code = id;
     if (id == 53U) {
-        game->ram[0x00ecU] = 0U;
+        y = 0U;
         game->ram[3U] = 1U;
         code = 0x15U;
     }
@@ -234,31 +239,51 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
         --game->ram[2U];
         game->ram[4U] = game->ram[0x078aU + slot] == 0U ? 3U : 0x23U;
         game->ram[0x00edU] = 0U;
-        game->ram[0x00ecU] = 0U;
+        y = 0U;
         code = 8U;
     }
     if (code == 50U) {
         static const mysmb_u8 spring[5] = {0x18U,0x19U,0x1aU,0x19U,0x18U};
-        game->ram[0x00ecU] = 3U;
+        y = 3U;
         code = spring[game->ram[0x070eU]];
     }
     game->ram[0x00efU] = code;
+    game->ram[0x00ecU] = y;
+    slot = game->ram[8U];
     if (code == 12U && (game->ram[0x00a0U+slot] & 0x80U) == 0U)
         ++game->ram[0x0109U];
-    if (game->ram[0x036aU] != 0U) return 0U;
+    if (game->ram[0x036aU] != 0U) {
+        code = game->ram[0x036aU] == 1U ? 0x16U : 0x17U;
+        game->ram[0x00efU] = code;
+    }
 
+    if (code == 6U) state = game->ram[MYSMB_NORMAL_STATE + slot];
+    if (code == 6U && state >= 2U) game->ram[0x00ecU] = 4U;
     if (code == 6U && (state & 0x20U) == 0U &&
         game->ram[MYSMB_NORMAL_TIMER_CONTROL] == 0U &&
         (game->ram[MYSMB_NORMAL_FRAME_COUNTER] & 8U) == 0U)
         game->ram[3U] ^= 3U;
-    if (code == 6U && state >= 2U) game->ram[0x00ecU] = 4U;
     game->ram[4U] = (mysmb_u8)(game->ram[4U] |
                                   mysmb_enemy_attribute_data[code]);
     tile = mysmb_enemy_graphics_offsets[code];
-    if (tile == 0x24U && game->ram[0x00ecU] == 5U) {
-        tile = 0x30U;
-        game->ram[3U] = 2U;
-        game->ram[0x00ecU] = 5U;
+    if (game->ram[0x036aU] != 0U) {
+        if (game->ram[0x036aU] == 1U) {
+            if ((game->ram[0x0363U] & 0x80U) != 0U) tile = 0xdeU;
+        } else {
+            if ((game->ram[0x0363U] & 1U) != 0U) tile = 0xe4U;
+            if ((game->ram[0x00edU] & 0x20U) != 0U)
+                game->ram[2U] = (mysmb_u8)(game->ram[2U] - 0x10U);
+        }
+        if ((game->ram[0x00edU] & 0x20U) != 0U)
+            game->ram[0x0109U] = tile;
+        goto draw;
+    }
+    if (tile == 0x24U) {
+        if (game->ram[0x00ecU] == 5U) {
+            tile = 0x30U;
+            game->ram[3U] = 2U;
+            game->ram[0x00ecU] = 5U;
+        }
         goto hammer;
     }
     if (tile == 0x90U) {
@@ -286,7 +311,8 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
         }
     }
 hammer:
-    if (code == 5U && game->ram[0x00edU] != 0U) {
+    if (code == 5U) {
+        if (game->ram[0x00edU] == 0U) goto animate;
         if ((game->ram[0x00edU] & 8U) == 0U) goto defeated;
         tile = 0xb4U;
         goto animate;
@@ -309,7 +335,8 @@ animate:
         game->ram[0x00ecU] = 3U;
         goto defeated;
     }
-    if ((game->ram[MYSMB_NORMAL_FRAME_COUNTER] & 8U) != 0U)
+    if ((game->ram[MYSMB_NORMAL_FRAME_COUNTER] &
+         mysmb_enemy_animation_timing_mask[0U]) != 0U)
         goto defeated;
 animation_stop:
     if ((game->ram[0x00edU] & 0xa0U) == 0U &&
@@ -320,9 +347,12 @@ defeated:
         game->ram[0x0109U] = 1U;
         game->ram[0x00ecU] = 0U;
     }
-    oam = game->ram[MYSMB_NORMAL_SPRITE + slot];
+draw:
+    oam = game->ram[0x00ebU];
     first = oam;
-    for (row=0U;row<3U;++row) mysmb_enemy_draw_row(game,&oam,&tile);
+    mysmb_oam_draw_enemy_object_row(game,&oam,&tile);
+    mysmb_oam_draw_enemy_object_row(game,&oam,&tile);
+    mysmb_oam_draw_enemy_object_row(game,&oam,&tile);
 
     if (code != 8U && game->ram[0x0109U] != 0U) {
         a = (mysmb_u8)(game->ram[0x0202U+first] | 0x80U);
@@ -339,7 +369,7 @@ defeated:
         game->ram[0x0205U+y]=game->ram[0x0215U+first];
         game->ram[0x0215U+first]=a;
     }
-    if (code != 8U && code != 5U) {
+    if (code != 8U && code != 5U && game->ram[0x036aU] == 0U) {
         if ((code != 18U || game->ram[0x00ecU] == 5U) &&
             (code == 7U || code == 13U || code == 12U ||
              game->ram[0x00ecU] >= 2U)) {
@@ -384,122 +414,4 @@ defeated:
         id != 12U && game->ram[0x00b6U+slot] == 2U)
         mysmb_objects_erase_enemy(game,slot);
     return 1U;
-}
-
-/* ROM EnemyGfxHandler: RunRetainerObj reaches the same branch tree. */
-void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
-{
-    if (game->ram[0x036aU] != 0U)
-        mysmb_oam_draw_bowser_half(game, slot);
-    else
-        (void)mysmb_objects_draw_normal_enemy_graphics(game, slot);
-}
-
-/* ROM $e87d-$eaf2 EnemyGfxHandler, spring route through EggExc.
- * DrawJSpr has already written relative position and offscreen bits. */
-void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
-{
-    static const mysmb_u8 graphics[18] = {
-        0xf2U, 0xf2U, 0xf3U, 0xf3U, 0xf2U, 0xf2U,
-        0xf1U, 0xf1U, 0xf1U, 0xf1U, 0xfcU, 0xfcU,
-        0xf0U, 0xf0U, 0xfcU, 0xfcU, 0xfcU, 0xfcU
-    };
-    static const mysmb_u8 frame_offsets[5] = { 0U, 1U, 2U, 1U, 0U };
-    const mysmb_u8 *tiles;
-    mysmb_u8 animation;
-    mysmb_u8 row;
-    mysmb_u8 offset;
-    mysmb_u8 bits;
-    mysmb_u8 attributes;
-    mysmb_u8 left;
-    mysmb_u8 right;
-    mysmb_u8 x;
-    mysmb_u8 y;
-    mysmb_u8 state;
-    mysmb_u8 direction;
-    mysmb_u8 first;
-    mysmb_u8 last;
-
-    /* EnemyGfxHandler entry and CheckForJumpspring use these work bytes. */
-    game->ram[2U] = game->ram[MYSMB_NORMAL_Y + slot];
-    game->ram[5U] = game->ram[MYSMB_NORMAL_REL_X];
-    game->ram[0x00ebU] = game->ram[MYSMB_NORMAL_SPRITE + slot];
-    game->ram[0x0109U] = 0U;
-    game->ram[3U] = game->ram[MYSMB_NORMAL_DIRECTION + slot];
-    game->ram[4U] = game->ram[MYSMB_NORMAL_ATTRIBUTES + slot];
-    state = game->ram[MYSMB_NORMAL_STATE + slot];
-    game->ram[0x00edU] = state;
-    animation = game->ram[0x070eU];
-    game->ram[0x00efU] = (mysmb_u8)(0x18U + frame_offsets[animation]);
-    game->ram[0x00ecU] = 3U;
-    tiles = graphics + frame_offsets[animation] * 6U;
-    x = game->ram[5U];
-    y = game->ram[2U];
-    bits = game->ram[MYSMB_NORMAL_OFFSCREEN];
-    attributes = (mysmb_u8)(game->ram[4U] | 2U);
-    game->ram[4U] = attributes;
-    direction = game->ram[3U];
-    if ((state & 0x20U) != 0U) {
-        game->ram[0x0109U] = 1U;
-        game->ram[0x00ecU] = 0U;
-    }
-    offset = game->ram[MYSMB_NORMAL_SPRITE + slot];
-    for (row = 0U; row < 3U; ++row) {
-        left = tiles[row * 2U];
-        right = tiles[row * 2U + 1U];
-        game->ram[0U] = left;
-        game->ram[1U] = right;
-        if ((direction & 2U) != 0U) {
-            game->ram[0x0201U + offset] = right;
-            game->ram[0x0205U + offset] = left;
-            game->ram[0x0202U + offset] = (mysmb_u8)(attributes | 0x40U);
-            game->ram[0x0206U + offset] = (mysmb_u8)(attributes | 0x40U);
-        } else {
-            game->ram[0x0201U + offset] = left;
-            game->ram[0x0205U + offset] = right;
-            game->ram[0x0202U + offset] = attributes;
-            game->ram[0x0206U + offset] = attributes;
-        }
-        game->ram[0x0200U + offset] = y;
-        game->ram[0x0204U + offset] = game->ram[0x0200U + offset];
-        game->ram[0x0203U + offset] = x;
-        game->ram[0x0207U + offset] = (mysmb_u8)(x + 8U);
-        y = (mysmb_u8)(y + 8U);
-        offset = (mysmb_u8)(offset + 8U);
-    }
-    game->ram[2U] = y;
-    offset = game->ram[MYSMB_NORMAL_SPRITE + slot];
-    if (game->ram[0x0109U] != 0U) {
-        for (row = 0U; row < 3U; ++row) {
-            mysmb_u8 row_offset = (mysmb_u8)(offset + row * 8U);
-            game->ram[0x0202U + row_offset] |= 0x80U;
-            game->ram[0x0206U + row_offset] |= 0x80U;
-        }
-        first = game->ram[0x0201U + offset];
-        last = game->ram[0x0211U + offset];
-        game->ram[0x0201U + offset] = last;
-        game->ram[0x0211U + offset] = first;
-        first = game->ram[0x0205U + offset];
-        last = game->ram[0x0215U + offset];
-        game->ram[0x0205U + offset] = last;
-        game->ram[0x0215U + offset] = first;
-    }
-    if (game->ram[0x00ecU] >= 2U && game->ram[0x036aU] == 0U) {
-        attributes = (mysmb_u8)(game->ram[0x0202U + offset] & 0xa3U);
-        for (row = 0U; row < 3U; ++row) {
-            mysmb_u8 row_offset = (mysmb_u8)(offset + row * 8U);
-            game->ram[0x0202U + row_offset] = attributes;
-            game->ram[0x0206U + row_offset] = (mysmb_u8)(attributes | 0x40U);
-        }
-    }
-    /* CheckToMirrorJSpring overwrites the lower two attribute rows. */
-    game->ram[0x020aU + offset] = 0x82U;
-    game->ram[0x0212U + offset] = 0x82U;
-    game->ram[0x020eU + offset] = 0xc2U;
-    game->ram[0x0216U + offset] = 0xc2U;
-    mysmb_normal_apply_offscreen(game, game->ram[MYSMB_NORMAL_SPRITE + slot], bits);
-    if ((bits & 0x80U) != 0U && game->ram[MYSMB_NORMAL_ID + slot] != 12U &&
-        game->ram[0x00b5U + slot] == 2U) {
-        mysmb_objects_erase_enemy(game, slot);
-    }
 }

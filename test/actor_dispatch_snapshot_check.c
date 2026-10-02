@@ -35,8 +35,8 @@ mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *game,my
 { child((struct mysmb_game *)game,1U,slot);return game->ram[0x3d1U]; }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *game,mysmb_u8 slot)
 { child(game,2U,slot); }
-void mysmb_oam_draw_retainer(struct mysmb_game *game,mysmb_u8 slot)
-{ child(game,3U,slot); }
+mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,mysmb_u8 slot)
+{ child(game,3U,slot); return 1U; }
 void mysmb_objects_step_platforms_slot(struct mysmb_game *game,mysmb_u8 slot)
 { (void)game;(void)slot;++failures; }
 void mysmb_objects_step_bowsers_slot(struct mysmb_game *game,mysmb_u8 slot)

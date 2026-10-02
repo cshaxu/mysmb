@@ -12,8 +12,8 @@ void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 s)
 { check(s,1U);g->ram[0x3d1U]=0x63U; }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 s)
 { if (g->ram[0x3d1U]!=0x63U) ++failures;check(s,2U);g->ram[0x3aeU]=0x24U; }
-void mysmb_oam_draw_retainer(struct mysmb_game *g,mysmb_u8 s)
-{ if (g->ram[0x3aeU]!=0x24U) ++failures;check(s,3U); }
+mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *g,mysmb_u8 s)
+{ if (g->ram[0x3aeU]!=0x24U) ++failures;check(s,3U); return 1U; }
 void mysmb_objects_step_platforms_slot(struct mysmb_game *g,mysmb_u8 s)
 { (void)g;(void)s;++failures; }
 void mysmb_objects_step_bowsers_slot(struct mysmb_game *g,mysmb_u8 s)

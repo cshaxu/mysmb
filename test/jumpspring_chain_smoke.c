@@ -23,10 +23,11 @@ void mysmb_oam_relative_enemy_position(struct mysmb_game *g, mysmb_u8 slot)
     if (g->ram[0x03d1U] != 0x5aU) ++errors;
     g->ram[0x03aeU] = 0x39U;
 }
-void mysmb_oam_draw_jumpspring(struct mysmb_game *g, mysmb_u8 slot)
+mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *g, mysmb_u8 slot)
 {
     check_child(2U, slot);
     if (g->ram[0x03aeU] != 0x39U) ++errors;
+    return 1U;
 }
 void mysmb_objects_check_enemy_offscreen_bounds(struct mysmb_game *g,
                                                mysmb_u8 slot)

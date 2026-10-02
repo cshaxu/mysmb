@@ -8,5 +8,5 @@ void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_oam_get_enemy_offscreen_bits(game, slot);
     mysmb_oam_relative_enemy_position(game, slot);
-    mysmb_oam_draw_retainer(game, slot);
+    (void)mysmb_objects_draw_normal_enemy_graphics(game, slot);
 }

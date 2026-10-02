@@ -20,10 +20,11 @@ void mysmb_oam_relative_enemy_position(struct mysmb_game *game, mysmb_u8 slot)
     (void)slot;
 }
 
-void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
+mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb_u8 slot)
 {
     (void)game;
     (void)slot;
+    return 1U;
 }
 
 void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot)

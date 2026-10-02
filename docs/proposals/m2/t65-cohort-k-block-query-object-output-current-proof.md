@@ -909,3 +909,73 @@ The flag-zero branch02850 remains needs-evidence because the generic C still
 reaches ordinary selection on that condition; it is not mislabeled a mismatch.
 No product code changes, so no executable refresh is required for this P.
 S8 remains admitted, with repair and ROM/native evidence unfinished.
+
+## S8 closure - shared enemy selection and actual row contracts
+
+All35 planned labels in the S8 row are freshly current-exact, none deferred
+or transferred. Historical expected/actual additions are empty. Current
+nodes1544 ->1579/1992, feasible controls3276 ->3359/4319, raw4342,
+infeasible21 ->23; material384 ->389/492, enumeration partial. T65 has54
+pending nodes, S9 next. Both already exact source-return edges remain unchanged.
+
+Repairs restore original Bowser flag/front/rear selection in the common
+EnemyGfxHandler, Spiny's unconditional NotEgg continuation, HammerBro state0
+animation entry, saved CPU-Y/EC write stage, Goomba state-before-animation order and three
+independent original row call sites (no invented row loop).
+The meaningful row entry loads RAM00, then passes right-tile A to the existing
+DrawOneSpriteRow entry. Right effective address is base+1+X, not wrapped X+1.
+Bowser/retainer and jumpspring production callers now invoke this actual shared
+entry; parallel Bowser-half/spring renderers and forwarding-only APIs are
+removed. No platform or audio business logic changes.
+
+Similar-issue sweep: ordinary RunNormalEnemies already invokes the canonical
+entry; RunRetainerObj and DrawJSpr now do too. Three row sites use the real
+row entry. Retained aggregate/test-only actor drawing facades are not promoted
+or silently claimed as current ROM entries; S9's internal flip/row/offscreen
+labels remain pending. Tests with child interception use the actual new target
+and unchanged original child order/output contracts, not relaxed expectations.
+
+tools/reference_enemy_graphics_output_probe.c records8192 controlled original
+$E87D roots over32 type families and16 states/16 profiles, real $EBB2 row
+inputs and RTS continuations $EA50/$EA53/$EA56. Actual original ObjectOffset
+matches incoming slot. Per root compare1841 RAM bytes including all scratch,
+OAM and game-owned stack aliases0109-0139; only true CPU stack is excluded.
+75 Piranha early exits,24351 row returns, all30 code labels and83 feasible
+owned controls are observed. Static instruction predicates agree with C;
+both full and independent row-input/return checkers match every root on x86
+and x64 with zero differences. Before repair x86 full roots produced16229
+differing byte comparisons, not16229 distinct gameplay bugs.
+
+Source-only infeasible raw edges02895/02908 retain identities and proofs:
+LDX #$B4/BNE and LDA #$03/STA/BNE necessarily take their branches. Neither
+fallthrough executes in the original batch. They explain the denominator
+change; no feasible relation is dropped. Source-owned83 feasible controls
+newly exact; two pre-existing return edges retain credit, S9 row-return edges
+remain with S9. Registry control counts now explicitly include mismatch and
+unclassified categories, including zeros, and sum to raw4342.
+
+Static byte binding compares258 graphics bytes,54 explicit offset/attribute
+adjacency bytes each, both timing bytes and five spring bytes with original
+ROM. Actual selected-code indices0-26 and allfive spring indices are observed;
+timing index0 is read3445 times. Index1 is source-residual: retainer Y1 always
+leaves via WorldNumber or constant nonzero branch before CheckForSecondFrame.
+Graphics byte257 is unreachable through the only original row consumer,
+whose8-bit X permits maximum base+1+255. Residual bytes are preserved by static
+binding, never falsely credited as dynamic reads. Material00423's consumer
+is corrected from predecessor CheckToAnimateEnemy to actual CheckForSecondFrame;
+the relation identity and total492 remain unchanged.
+
+Operational track: C90 x86/x64 products and neutral checkers build,17/17
+focused OAM/retainer/spring/core/purity/audio/focus/product-self tests pass per
+width. Original OpenNT DOS16 shared-source link passes with the existing
+OLDNAMES.LIB warning; no DOS gameplay/performance qualification is claimed.
+Three refreshed owner-approved packages retain audio/title/focus pause:
+
+- mysmb16.exe: 261607 bytes; SHA-256 17d337245f572697b84beaae1b5e1ebe8026e09e0bbb3b31d4a4ba27be3c77e4.
+- mysmb32.exe: 372891 bytes; SHA-256 4ca15ff201f7f97c8c14ea9ed2b6316b9d436af41fc9e4b8b3b94d73774fab60.
+- mysmb64.exe: 379820 bytes; SHA-256 d26629c4453c89eb6ab5f0cdd794fa3ece15a281adc6307cc17271caff2c973f.
+
+Admission/closure ledger and documentation gates are rerun. Raw134545420-byte
+records and local probe executable are removed after successful checks;
+only neutral source harnesses and summaries are retained. S8 closes only its
+own35 labels/83 feasible controls/five material rows. M2 and T65 remain open.

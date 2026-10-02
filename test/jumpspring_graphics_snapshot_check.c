@@ -26,7 +26,7 @@ int main(int argc,char **argv)
             ++cases;
             memset(&game,0,sizeof(game));
             memcpy(game.ram,record+2U,2048U);
-            mysmb_oam_draw_jumpspring(&game,(mysmb_u8)slot);
+            (void)mysmb_objects_draw_normal_enemy_graphics(&game,(mysmb_u8)slot);
             differences=0U;
             for(byte=0U;byte<2048U;++byte) {
                 if(byte>=0x100U && byte<0x200U) continue;

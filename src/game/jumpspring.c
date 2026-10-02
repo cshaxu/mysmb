@@ -27,7 +27,7 @@ void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
         }
     }
     mysmb_oam_relative_enemy_position(game, slot);
-    mysmb_oam_draw_jumpspring(game, slot);
+    (void)mysmb_objects_draw_normal_enemy_graphics(game, slot);
     mysmb_objects_check_enemy_offscreen_bounds(game, slot);
     if (game->ram[0x070eU] != 0U && game->ram[0x0786U] == 0U) {
         game->ram[0x0786U] = 4U;

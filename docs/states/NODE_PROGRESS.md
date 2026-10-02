@@ -1,15 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T65 S8 - active enemy graphics source audit
+## M2 T65 S8 - enemy graphics selection and actual rows
 
-[T65 S8 admission and source findings](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
-admits the planned35 labels, intended fresh current35, maximum1579/1992.
-Four source-node mismatches and eight control mismatches are recorded;
-repair and current original-ROM replay are pending. No new exact credit.
-Current exact nodes1544/1992, feasible controls3276/4321(raw4342,infeasible21),
-material384/492 partial; historical1992/1992 remains separate.
-S8 stays active until scoped differences are repaired and re-audited.
-This audit P changes no product code and retains committed S7 products.
+[T65 S8 current source/graph/output proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes35 freshly exact nodes,83 feasible controls and five material rows,
+none deferred. Two raw fallthroughs proved infeasible. Current nodes1579/1992,
+feasible controls3359/4319(raw4342,infeasible23),material389/492 partial;
+historical1992/1992 separate. Full and independent row-input/return checks
+match8192 original roots per width;17/17 operational tests per width and
+original DOS16 link pass. Three products refreshed. T65 stays open, S9 next.
 
 ## M2 T65 S7 - power-up rows and tail handoff
 

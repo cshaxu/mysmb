@@ -451,6 +451,18 @@ target_link_libraries(mysmb_bowser_half_graphics_snapshot_check PRIVATE mysmb_ga
 add_executable(mysmb_normal_enemy_graphics_snapshot_check
     test/normal_enemy_graphics_snapshot_check.c)
 target_link_libraries(mysmb_normal_enemy_graphics_snapshot_check PRIVATE mysmb_game)
+add_executable(mysmb_enemy_graphics_output_route_check
+    test/enemy_graphics_output_route_check.c)
+target_link_libraries(mysmb_enemy_graphics_output_route_check PRIVATE mysmb_game)
+if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    add_executable(mysmb_enemy_graphics_output_caller_check
+        test/enemy_graphics_output_route_check.c)
+    target_compile_definitions(mysmb_enemy_graphics_output_caller_check PRIVATE
+        MYSMB_ENEMY_GFX_CHILD_CHECK=1)
+    target_link_libraries(mysmb_enemy_graphics_output_caller_check PRIVATE mysmb_game)
+    target_link_options(mysmb_enemy_graphics_output_caller_check PRIVATE
+        "-Wl,--wrap=mysmb_oam_draw_one_sprite_row")
+endif()
 add_executable(mysmb_retainer_graphics_snapshot_check
     test/retainer_graphics_snapshot_check.c)
 target_link_libraries(mysmb_retainer_graphics_snapshot_check PRIVATE mysmb_game)
