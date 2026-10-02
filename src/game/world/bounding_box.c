@@ -1,6 +1,6 @@
 #include "game/world/world.h"
 
-/* ROM $e1fd BoundBoxCtrlData and $dc71 BoundingBoxCore.
+/* ROM $e1fd BoundBoxCtrlData and $e29c-$e2dd BoundingBoxCore.
  * Each control value selects four original bytes: UL-X, UL-Y, LR-X and
  * LR-Y.  All source callers select the valid 0..11 control domain. */
 void mysmb_world_set_bounding_box(struct mysmb_game *game,

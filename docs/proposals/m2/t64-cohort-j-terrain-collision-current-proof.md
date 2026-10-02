@@ -1233,3 +1233,78 @@ assets/mysmb16.exe, mysmb32.exe and mysmb64.exe are refreshed from their
 matching build outputs. The owner-approved local EXE submission continues;
 no raw records, ROM bytes or generated data are staged. Unrelated working-tree
 source/proposal/queue changes are preserved.
+
+## S34 admission - bounding-box coordinate core
+
+S34 admits `BoundingBoxCore` at $E29C-$E2DD, owned exclusively by
+`src/game/world/bounding_box.c:mysmb_world_set_bounding_box`. S33 supplies
+object/relative/control/address selection; S35 owns screen clipping. The
+source has no internal control branch or child call. All six incident control
+relations already have exact caller evidence; no new control credit is planned.
+
+Incoming current exact nodes are **1,466/1,992**; `BoundingBoxCore` is
+needs-evidence and the sole expected current promotion, maximum **1,467/1,992**.
+Historical mapping remains **1,992/1,992**, with zero new historical credit.
+Current exact feasible controls are **3,071/4,323**; material **359/487**.
+
+Static proof covers four independent CLC/ADC byte additions, table/index
+selection, UL-X/LR-X/UL-Y/LR-Y store order and restored X/box-offset Y.
+Direct original-ROM entries cover twelve valid controls, all byte coordinates,
+eighteen object slots and seven relative offsets. Native checks compare every
+persistent RAM byte, including unchanged bytes, and explicitly check original
+scratch/register contracts at the C argument seam. CPU stack and flags are
+ABI-only, not persistent game outputs. Focused x86/x64 tests and platform
+purity supply operational proof; product EXEs refresh only for behavior changes.
+
+Owner ROM and disassembly remain nonredistributable local research inputs.
+Raw records and probes stay below ignored build/m2-t64-s34, bounded to 20 MiB
+and 524,288 steps per case; S34 owns cleanup. Only neutral harnesses and
+conclusions are tracked. Review includes caller control-domain writes and
+similar coordinate/box implementations in shared and platform code.
+
+## S34 closure - bounding-box coordinate core
+
+`BoundingBoxCore` is current-exact. The $E29C-$E2DD source has four
+independent CLC/ADC operations and writes UL-X, LR-X, UL-Y, LR-Y in that
+order. C casts each sum separately to the original byte width, with no carried
+X addition affecting Y. Caller-selected address $04ac+4*object, relative
+coordinates and control map to explicit C arguments; ROM restores X and
+returns Y=4*object. The stale $DC71 provenance comment is corrected.
+
+The similar-issue sweep reviews player, enemy initializer, cannon, hammer,
+power-up, fireball and Bowser control writers: source-reachable initialized
+controls remain 0..11. C's defensive >=12 fallback is outside that domain;
+this evidence does not claim equivalence for arbitrary corrupted control RAM.
+No duplicate platform geometry implementation was found. The rectangle test
+and clipping helper are distinct successor owners, not credited by this proof.
+
+The new neutral `tools/reference_bounding_box_core_probe.c` directly executes
+$E29C without modifying ROM. Its ignored MSBC records are consumed by
+`mysmb_bounding_box_core_actual_check` built from
+`test/bounding_box_core_actual_check.c`. There are 3,072 fixtures: twelve
+controls times all 256 X values, Y=255-X (thus all Y byte values), rotating
+eighteen object slots and seven relative-coordinate indices. This is not the
+Cartesian product of X and Y: independence is established by the four source
+CLC instructions and separate C sums. Each fixture restores the same booted
+reference machine, preventing unrelated accumulated NMI timing from entering
+the isolated core route. Every route completes in 36 instructions.
+
+Fresh x86 and x64 checks each compare all 1,784 persistent RAM bytes including
+unchanged bytes: **3,072/3,072, zero differences** per width. Separately they
+validate returned X/Y, original scratch $00/$01/$02 against the explicit
+argument seam, and unchanged $03-$07. The CPU stack and flags have no C
+register counterpart and are explicitly excluded. Core smoke and platform
+purity pass on both widths. The unchanged shared core also builds and links
+with the original OpenNT DOS16 toolchain (the pre-existing OLDNAMES.LIB
+warning remains). No behavior changed, so existing three EXEs
+remain the committed S33 delivery; no package refresh is required. Raw records
+and the reference probe executable are cleaned after evidence review.
+
+The six incident controls retain prior exact evidence: `control-00871`,
+`control-02710`, `control-02722`, `control-03647`, `control-03993`,
+`control-03995`. No new control or material credit is claimed. Material
+`material-00403` retains the S32 table-binding proof; `material-00404` is
+still consumer-owned, not promoted by this producer audit. Historical mapping
+remains **1,992/1,992**; current exact nodes **1,467/1,992** (+1), current
+exact feasible controls **3,071/4,323** (raw 4,342, infeasible 19), exact
+material relations **359/487**. S35 owns the next screen-clipping chain.

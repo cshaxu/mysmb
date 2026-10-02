@@ -10537,8 +10537,8 @@
   ],
   "nodeCounts": {
     "unclassified": 0,
-    "exact": 1466,
-    "needs-evidence": 526,
+    "exact": 1467,
+    "needs-evidence": 525,
     "mismatch": 0
   },
   "controlEdgeCounts": {
@@ -39417,16 +39417,17 @@
       "label": "BoundingBoxCore",
       "asmLine": 12878,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/bounding_box.c and src/game/world/geometry.c",
-      "currentCounterpart": "mysmb_world_set_bounding_box / mysmb_world_boxes_collide",
+      "status": "exact",
+      "currentOwner": "src/game/world/bounding_box.c",
+      "currentCounterpart": "mysmb_world_set_bounding_box",
       "semanticEvidence": [
-        "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S34 static $E29C-$E2DD audit: four CLC/ADC pairs become independent unsigned-byte additions; table indexing and UL-X/LR-X/UL-Y/LR-Y write order agree. Source caller/domain sweep covers PlayerCtrl, enemy initializers, cannon, hammer, power-up, fireball and Bowser control writers; all initialized values are 0..11. Defensive C >=12 fallback is unreachable in this source domain, not a ROM contract for corrupted RAM. CPU stack/flags are ABI-only; scratch $00/$01/$02 becomes object/relative-X/relative-Y arguments, with no persistent consumer omitted. S33 and T58 prove caller selection/continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses unmasked control*4 to add source offsets to relative X/Y and writes UL/LR X/Y at selected box slot while restoring caller X/Y.",
+      "operationalEvidence": [
+        "M2 T64 S34 tools/reference_bounding_box_core_probe.c runs 3072 original-ROM direct $E29C entries, with a restored boot machine per fixture (no accumulated NMI interference, no ROM modification), each completing in 36 instructions. All twelve controls exercise every X and Y byte (Y=255-X), all eighteen object offsets and seven relative indices. test/bounding_box_core_actual_check.c on fresh x86/x64 compares every 1784 persistent RAM byte unconditionally, and separately checks restored X, Y=object*4, scratch $00-$02 and unchanged $03-$07. Both widths: 3072/3072, zero differences. Focused core smoke and platform-purity checks pass on both widths. Original OpenNT DOS16 shared-core build/link succeeds; the existing OLDNAMES.LIB warning remains."
+      ],
+      "semanticContract": "For source-reachable controls 0..11 and object offsets 0..17, independently add table UL-X/LR-X/UL-Y/LR-Y to byte-relative coordinates, storing at $04ac+4*object; restored X and box-offset Y are represented by explicit C address/coordinate arguments.",
       "currentSourcePaths": [
-        "src/game/objects.c",
         "src/game/world/bounding_box.c"
       ]
     },
