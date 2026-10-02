@@ -10297,13 +10297,16 @@
       "consumer": "SetCATmr",
       "storage": "ROM AreaChangeTimerData page index",
       "feasiblePath": "Sideways pipe entry selects timer by ScreenLeft_PageLoc.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c terrain_byte page-selected timer",
       "semanticContract": "Page index selects same change-area timer before entry routine transition.",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -37235,13 +37238,16 @@
       "label": "ContSChk",
       "asmLine": 12094,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Routes coin/jumpspring results into normal side tile logic.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37251,13 +37257,16 @@
       "label": "ChkPBtm",
       "asmLine": 12101,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Requires normal state and right-facing direction before accepting bottom-side pipe tiles; otherwise impedes movement.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37267,13 +37276,16 @@
       "label": "PipeDwnS",
       "asmLine": 12111,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Queues pipe sound only before priority bit is already set.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -37284,13 +37296,16 @@
       "label": "PlyrPipe",
       "asmLine": 12115,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Sets player background priority and chooses change-area timer source from X low nibble/page.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37300,13 +37315,16 @@
       "label": "SetCATmr",
       "asmLine": 12124,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Loads page-dependent area-change timer.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37316,13 +37334,16 @@
       "label": "ChkGERtn",
       "asmLine": 12126,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Changes to sideways-pipe entry only from permitted engine routines.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37332,13 +37353,16 @@
       "label": "StopPlayerMove",
       "asmLine": 12140,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Invokes horizontal impedance using current collision side.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37348,13 +37372,16 @@
       "label": "ExCSM",
       "asmLine": 12142,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Returns from side metatile processing.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -37364,13 +37391,16 @@
       "label": "AreaChangeTimerData",
       "asmLine": 12144,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/player/terrain.c",
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Supplies page-zero and nonzero area-change timer values.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101048,12 +101078,15 @@
       "instruction": "beq",
       "id": "control-02502",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-probe branch relation CheckSideMTiles Ã¢â€ â€™ ExCSM with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101067,12 +101100,15 @@
       "instruction": "jsr",
       "id": "control-02503",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-probe call relation CheckSideMTiles Ã¢â€ â€™ CheckForClimbMTiles with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -101087,12 +101123,15 @@
       "instruction": "bcc",
       "id": "control-02504",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-probe branch relation CheckSideMTiles Ã¢â€ â€™ ContSChk with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101106,12 +101145,15 @@
       "instruction": "jmp",
       "id": "control-02505",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side probes and children",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-probe jump relation CheckSideMTiles Ã¢â€ â€™ HandleClimbing with half-loop, bounds and tile ordering.",
       "currentSourcePaths": [
         "src/game/player/climbing.c",
@@ -101126,12 +101168,15 @@
       "instruction": "jsr",
       "id": "control-02506",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede call relation ContSChk Ã¢â€ â€™ CheckForCoinMTiles and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -101146,12 +101191,15 @@
       "instruction": "bcs",
       "id": "control-02507",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ContSChk Ã¢â€ â€™ HandleCoinMetatile and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -101166,12 +101214,15 @@
       "instruction": "jsr",
       "id": "control-02508",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede call relation ContSChk Ã¢â€ â€™ ChkJumpspringMetatiles and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -101186,12 +101237,15 @@
       "instruction": "bcc",
       "id": "control-02509",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ContSChk Ã¢â€ â€™ ChkPBtm and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101205,12 +101259,15 @@
       "instruction": "bne",
       "id": "control-02510",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ContSChk Ã¢â€ â€™ ExCSM and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101224,12 +101281,15 @@
       "instruction": "jmp",
       "id": "control-02511",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede jump relation ContSChk Ã¢â€ â€™ StopPlayerMove and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101243,12 +101303,15 @@
       "instruction": "bne",
       "id": "control-02512",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm Ã¢â€ â€™ StopPlayerMove and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101262,12 +101325,15 @@
       "instruction": "bne",
       "id": "control-02513",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm Ã¢â€ â€™ StopPlayerMove and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101281,12 +101347,15 @@
       "instruction": "beq",
       "id": "control-02514",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm Ã¢â€ â€™ PipeDwnS and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -101301,12 +101370,15 @@
       "instruction": "bne",
       "id": "control-02515",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ChkPBtm Ã¢â€ â€™ StopPlayerMove and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101320,12 +101392,15 @@
       "instruction": "bne",
       "id": "control-02516",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede fallthrough relation ChkPBtm Ã¢â€ â€™ PipeDwnS and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -101340,12 +101415,15 @@
       "instruction": "bne",
       "id": "control-02517",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation PipeDwnS Ã¢â€ â€™ PlyrPipe and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -101360,12 +101438,15 @@
       "instruction": "sty",
       "id": "control-02518",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede fallthrough relation PipeDwnS Ã¢â€ â€™ PlyrPipe and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player.c",
@@ -101380,12 +101461,15 @@
       "instruction": "beq",
       "id": "control-02519",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation PlyrPipe Ã¢â€ â€™ ChkGERtn and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101399,12 +101483,15 @@
       "instruction": "beq",
       "id": "control-02520",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation PlyrPipe Ã¢â€ â€™ SetCATmr and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101418,12 +101505,15 @@
       "instruction": "iny",
       "id": "control-02521",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede fallthrough relation PlyrPipe Ã¢â€ â€™ SetCATmr and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101437,12 +101527,15 @@
       "instruction": "sta",
       "id": "control-02522",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede fallthrough relation SetCATmr Ã¢â€ â€™ ChkGERtn and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101456,12 +101549,15 @@
       "instruction": "beq",
       "id": "control-02523",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ChkGERtn Ã¢â€ â€™ ExCSM and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101475,12 +101571,15 @@
       "instruction": "bne",
       "id": "control-02524",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede branch relation ChkGERtn Ã¢â€ â€™ ExCSM and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -101494,12 +101593,15 @@
       "instruction": "jsr",
       "id": "control-02525",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede call relation StopPlayerMove Ã¢â€ â€™ ImpedePlayerMove and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c",
@@ -101514,12 +101616,15 @@
       "instruction": "jsr",
       "id": "control-02526",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede fallthrough relation StopPlayerMove Ã¢â€ â€™ ExCSM and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -130513,12 +130618,15 @@
       "instruction": "rts/rti",
       "id": "control-03963",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede return relation CheckForCoinMTiles Ã¢â€ â€™ ContSChk and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130533,12 +130641,15 @@
       "instruction": "rts/rti",
       "id": "control-03964",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede return relation ChkJumpspringMetatiles Ã¢â€ â€™ ContSChk and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
@@ -130553,12 +130664,15 @@
       "instruction": "rts/rti",
       "id": "control-03965",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/player/terrain.c side metatile path",
       "semanticEvidence": [
-        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required."
+        "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+      ],
       "semanticContract": "Preserves side-pipe/impede return relation ImpedePlayerMove Ã¢â€ â€™ StopPlayerMove and source state/timer ordering.",
       "currentSourcePaths": [
         "src/game/player/impede.c",

@@ -440,3 +440,61 @@ produced the DOS executable. Because shared product C changed, all three local
 package artifacts were refreshed. Current totals: historical mapping **1,992 /
 1,992**; current exact nodes **1,352 / 1,992**; current exact feasible
 controls **2,833 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S13 admission — side pipe and movement-stop chain
+
+S13 admits `$DD5E-$DDC1`: `ContSChk`, `ChkPBtm`, `PipeDwnS`, `PlyrPipe`,
+`SetCATmr`, `ChkGERtn`, `StopPlayerMove`, `ExCSM`, and
+`AreaChangeTimerData`. The shared game owner is `src/game/player/terrain.c`.
+S12 supplies the `CheckSideMTiles` predecessor; S14 owns the metatile-child
+interiors reached from this caller chain. This chain ends before
+`HandleCoinMetatile`.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,352 / 1,992** nodes and **2,833 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **9** labels, all `needs-evidence`; planned current-exact promotions:
+  **9**; maximum current exact nodes: **1,361 / 1,992**.
+- Graph scope: **28** source-owned feasible controls (`control-02502` through
+  `control-02526`, plus `control-03963` through `control-03965`) and one
+  material handoff, `material-k50-01` (`AreaChangeTimerData -> SetCATmr`).
+
+The ROM-logic track compares the invisible/climb/coin/jumpspring child-result
+paths; normal-state and facing gates; the `6c` and `1f` pipe choices; the
+first-only pipe sound write; attributes, low-nibble and screen-page timer
+paths; engine-subroutine transition; and the impeded-movement tail. The
+controlled `terrain-0` through `terrain-7` roots and child manifests provide
+the original-ROM route baseline in freshly compiled x86/x64 processes.
+Operational proof runs terrain, collision and platform-purity tests, cross-width
+builds and the OpenNT16 shared-source link. Product artifacts refresh only if
+shared product C changes.
+## S13 closure — side pipe and movement-stop chain
+
+All nine scoped labels are current-exact: `ContSChk`, `ChkPBtm`, `PipeDwnS`,
+`PlyrPipe`, `SetCATmr`, `ChkGERtn`, `StopPlayerMove`, `ExCSM`, and
+`AreaChangeTimerData`. Static comparison of `$DD5E-$DDC1` confirms the
+invisible/climb/coin/jumpspring result order; normal-state/right-facing gates;
+both pipe metatiles; first-only pipe sound; priority-bit write; low-nibble and
+page-selected timer table read; engine-routine `8 -> 2` transition; and the
+movement-stop return. The initial review question around the upper climbing
+probe was resolved against an actual ROM route: its carry path must continue to
+the second half probe, which is exactly the existing shared-C filter behavior;
+no product logic change was needed.
+
+Eleven fresh controlled original-ROM PlayerBGCollision routes covered invisible,
+coin, jumpspring, ordinary wall and seven pipe combinations. Fresh x86 and x64
+caller runners compared full mapped RAM plus recorded child calls/returns for
+**22** executions with zero differences. The seven pipe routes include both
+`$1f`/`$6c`, zero/nonzero X low nibble, both screen-page timer values,
+pre-set/clear attributes, engine routine 7/8, and left/right-facing paths.
+The four side routes exercise the terminal non-pipe paths. Focused terrain,
+collision-regression, pipe-entry and platform-purity CTests pass on both
+widths.
+
+The registry records all nine nodes, 28 source-owned feasible controls
+(`control-02502` through `control-02526`, `control-03963` through
+`control-03965`) and `material-k50-01` as exact. This is an audit-only P: no
+shared product C changed, so the three packaged EXEs remain the tested S12
+artifacts and are intentionally not refreshed. Current totals: historical
+mapping **1,992 / 1,992**; current exact nodes **1,361 / 1,992**; current
+exact feasible controls **2,861 / 4,324** (raw **4,342**, infeasible **18**).
