@@ -9294,19 +9294,20 @@
       "consumer": "PlayerGfxHandler",
       "storage": "ROM PlayerGfxTblOffsets indexed action/size selection to player graphics offset",
       "feasiblePath": "PlayerGfxHandler reaches ProcessPlayerAction, HandleChangeSize, death and throw selections that index PlayerGfxTblOffsets before PlayerGfxProcessing.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/player_gfx.c MYSMB_PLAYER_GFX_TABLE_OFFSETS reads in selection helpers and render continuation",
       "semanticContract": "The same selected table byte becomes PlayerGfxOffset before row rendering, preserving the source branches and index choices.",
       "semanticEvidence": [
-        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required.",
+        "M2 T65 S14 P2 table/source audit: local owner PRG6E07/6E17/6EE7 binds original EE07/EE17/EEE7; all16/208/2 bytes reach actual source-indexed selection/row/swim-foot consumers. Both row loops restore actual DrawOneSpriteRow and original scratch order; absolute-indexed attribute/swim-foot corrections preserve source bases without early byte wrap. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S14 P2:1312 original player/intermediate/throw roots match current x86/x64 across1841 RAM bytes, zero differences. Original table read coverage16/16 offsets,208/208 graphics,2/2 kick;4224 actual row inputs A/X/Y and RAM/returned X/Y independently match current row seam. Separate9/9 tests per width, current products, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/frame_root.c",
-        "src/game/oam/player_gfx.c",
-        "src/game/player.c"
+        "src/game/oam/player_gfx.c"
       ]
     },
     {
@@ -9315,19 +9316,21 @@
       "consumer": "DrawPlayerLoop",
       "storage": "ROM PlayerGraphicsTable tile-pair rows to DrawPlayerLoop OAM scratch",
       "feasiblePath": "RenderPlayerSub and DrawPlayer_Intermediate load adjacent tile bytes from the selected PlayerGraphicsTable row before each DrawPlayerLoop iteration.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_player_render_rows and mysmb_oam_draw_intermediate_player owner-local PRG reads",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/player_gfx.c two indexed row loops -> actual mysmb_oam_draw_one_sprite_row A/tile-index/OAM-index",
       "semanticContract": "Each selected source row supplies its adjacent tile pair in row order before the shared sprite-object draw.",
       "semanticEvidence": [
         "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required.",
-        "M2 T65 S14 source finding: both indexed row consumers skip meaningful original DrawOneSpriteRow and write its scratch inline; repair indexed pair handoff before proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S14 source finding: both indexed row consumers skip meaningful original DrawOneSpriteRow and write its scratch inline; repair indexed pair handoff before proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S14 P2 table/source audit: local owner PRG6E07/6E17/6EE7 binds original EE07/EE17/EEE7; all16/208/2 bytes reach actual source-indexed selection/row/swim-foot consumers. Both row loops restore actual DrawOneSpriteRow and original scratch order; absolute-indexed attribute/swim-foot corrections preserve source bases without early byte wrap. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S14 P2:1312 original player/intermediate/throw roots match current x86/x64 across1841 RAM bytes, zero differences. Original table read coverage16/16 offsets,208/208 graphics,2/2 kick;4224 actual row inputs A/X/Y and RAM/returned X/Y independently match current row seam. Separate9/9 tests per width, current products, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/oam/player_gfx.c",
-        "src/game/player.c"
+        "src/game/oam/player_gfx.c"
       ]
     },
     {
@@ -9336,13 +9339,16 @@
       "consumer": "BigKTS",
       "storage": "ROM SwimKickTileNum indexed replacement tile to swimming foot OAM tile",
       "feasiblePath": "The swimming continuation reaches BigKTS only after its frame, facing, size and existing-tile predicates, then indexes SwimKickTileNum into sprite 7/8.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/player_gfx.c swimming continuation using MYSMB_SWIM_KICK_TILE_NUM",
       "semanticContract": "The guarded size-derived index selects the same replacement tile and writes the corresponding foot sprite tile.",
       "semanticEvidence": [
-        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required.",
+        "M2 T65 S14 P2 table/source audit: local owner PRG6E07/6E17/6EE7 binds original EE07/EE17/EEE7; all16/208/2 bytes reach actual source-indexed selection/row/swim-foot consumers. Both row loops restore actual DrawOneSpriteRow and original scratch order; absolute-indexed attribute/swim-foot corrections preserve source bases without early byte wrap. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S14 P2:1312 original player/intermediate/throw roots match current x86/x64 across1841 RAM bytes, zero differences. Original table read coverage16/16 offsets,208/208 graphics,2/2 kick;4224 actual row inputs A/X/Y and RAM/returned X/Y independently match current row seam. Separate9/9 tests per width, current products, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10673,8 +10679,8 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1630,
-    "needs-evidence": 362
+    "exact": 1633,
+    "needs-evidence": 359
   },
   "controlEdgeCounts": {
     "exact": 3483,
@@ -42821,46 +42827,54 @@
       "label": "PlayerGfxTblOffsets",
       "asmLine": 14418,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/player_gfx.c",
       "currentCounterpart": "MYSMB_PLAYER_GFX_TABLE_OFFSETS owner-local PRG binding read by graphics selection helpers",
       "semanticEvidence": [
-        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required.",
+        "M2 T65 S14 P2 table/source audit: local owner PRG6E07/6E17/6EE7 binds original EE07/EE17/EEE7; all16/208/2 bytes reach actual source-indexed selection/row/swim-foot consumers. Both row loops restore actual DrawOneSpriteRow and original scratch order; absolute-indexed attribute/swim-foot corrections preserve source bases without early byte wrap. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S14 P2:1312 original player/intermediate/throw roots match current x86/x64 across1841 RAM bytes, zero differences. Original table read coverage16/16 offsets,208/208 graphics,2/2 kick;4224 actual row inputs A/X/Y and RAM/returned X/Y independently match current row seam. Separate9/9 tests per width, current products, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Binds sixteen ordered player-action/size offsets; source-selected index determines the PlayerGraphicsTable row offset.",
       "currentSourcePaths": [
-        "src/game/player.c"
+        "src/game/oam/player_gfx.c"
       ]
     },
     {
       "label": "PlayerGraphicsTable",
       "asmLine": 14424,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/player_gfx.c",
       "currentCounterpart": "MYSMB_PLAYER_GRAPHICS_TABLE owner-local PRG binding read by mysmb_oam_player_render_rows and intermediate rendering",
       "semanticEvidence": [
-        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required.",
+        "M2 T65 S14 P2 table/source audit: local owner PRG6E07/6E17/6EE7 binds original EE07/EE17/EEE7; all16/208/2 bytes reach actual source-indexed selection/row/swim-foot consumers. Both row loops restore actual DrawOneSpriteRow and original scratch order; absolute-indexed attribute/swim-foot corrections preserve source bases without early byte wrap. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S14 P2:1312 original player/intermediate/throw roots match current x86/x64 across1841 RAM bytes, zero differences. Original table read coverage16/16 offsets,208/208 graphics,2/2 kick;4224 actual row inputs A/X/Y and RAM/returned X/Y independently match current row seam. Separate9/9 tests per width, current products, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Binds the ordered big, small and intermediate player tile-pair rows consumed two bytes per OAM row.",
       "currentSourcePaths": [
-        "src/game/oam/player_gfx.c",
-        "src/game/player.c"
+        "src/game/oam/player_gfx.c"
       ]
     },
     {
       "label": "SwimKickTileNum",
       "asmLine": 14457,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/player_gfx.c",
       "currentCounterpart": "MYSMB_SWIM_KICK_TILE_NUM owner-local PRG binding read by swimming kick continuation",
       "semanticEvidence": [
-        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required.",
+        "M2 T65 S14 P2 table/source audit: local owner PRG6E07/6E17/6EE7 binds original EE07/EE17/EEE7; all16/208/2 bytes reach actual source-indexed selection/row/swim-foot consumers. Both row loops restore actual DrawOneSpriteRow and original scratch order; absolute-indexed attribute/swim-foot corrections preserve source bases without early byte wrap. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S14 P2:1312 original player/intermediate/throw roots match current x86/x64 across1841 RAM bytes, zero differences. Original table read coverage16/16 offsets,208/208 graphics,2/2 kick;4224 actual row inputs A/X/Y and RAM/returned X/Y independently match current row seam. Separate9/9 tests per width, current products, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Binds the two ordered swim-kick replacement tile numbers selected by player size after the source sprite-tile guard.",
       "currentSourcePaths": [
         "src/game/oam/player_gfx.c"

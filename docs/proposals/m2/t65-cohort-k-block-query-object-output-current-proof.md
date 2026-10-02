@@ -1693,3 +1693,94 @@ focused player/row/core/purity/audio/focus tests, original OpenNT DOS16 link;
 code changes refresh all three authorized EXEs. Ignored S14 owns192MiB raw,
 2048-root chunks,120seconds/run,524288steps/case, checkpoints and coordinator
 cleanup. ROM/local ASM remain nonredistributable research inputs.
+
+### S14 controlled-route findings and scoped dependency correction
+
+Pre-repair full original/current x64 routes show541 RAM-byte differences in
+1024 main fixtures and26 in256 throw fixtures; intermediate32 outputs match
+but all32 lack the actual row call. Independent row seam counts also detect
+missing ordinary calls. Original ChkForPlayerAttrib uses fixed absolute
++16/+20/+24/+28 bases with original Y, and BigKTS uses tile+24 with only
+facing-adjusted byte Y; native wrongly wraps added16/24 before indexing.
+This is a controlled high-OAM source-semantic difference, not proof of a
+visible ordinary-player defect. Coordinator admits the minimal same-owner
+indexed-consumer address corrections needed to prove the scoped table routes:
+restore actual DrawOneSpriteRow in both row loops, original RenderPlayerSub
+scratch order, absolute attribute bases and original swim-foot Y adjustment.
+No new table/consumer/control node enters scope or receives exact credit;
+T66 still owns comprehensive player-control proof. No broad state rewrite.
+
+## S14 P2 indexed table/consumer proof and closure
+
+All3 admitted table labels become current exact, none deferred/transferred:
+PlayerGfxTblOffsets, PlayerGraphicsTable, SwimKickTileNum. Nodes1630->1633/
+1992; controls3483/4317 unchanged(raw4342,infeasible25); material391->394/492
+partial. Historical1992/1992 separate. Material00427-00429 close, no control
+or later consumer-node credit. T65 has no remaining unproved planned node;
+S15 cross-chain census remains required before T closure.
+
+| Table | Original / bound PRG | Byte/read coverage and actual consumer |
+| --- | --- | --- |
+| PlayerGfxTblOffsets | EE07 /6E07 | 16/16: both sizes and seven actions, death, grow/shrink and throwing supply selected graphics offsets before actual row output. |
+| PlayerGraphicsTable | EE17 /6E17 | 208/208: ordered adjacent tile pairs reach actual DrawOneSpriteRow in ordinary and intermediate loops; its source A/X/Y and scratch input/return are checked. |
+| SwimKickTileNum | EEE7 /6EE7 | 2/2: frame/facing/size/existing-tile gates select and store the original kick tile at fixed tile+24 base with only original facing INY adjustment. |
+
+Both widths bind the same owner-local full PRG through the canonical area
+binding; current product builds use that owner ROM and composition roots bind
+the generated local PRG. No table bytes copied to tracked C/test fixtures.
+Original source LDA abs,X/abs,Y and ADC abs,Y reads are counted by effective
+address/index, not inferred from branch visitation. All226 bytes have actual
+read coverage. The tracked checker takes an explicit local owner-ROM argument
+for these modes; absent local input fails, no default ROM loading.
+
+Pre-repair x64: main1024 roots show541 differing RAM-byte comparisons,
+throw256 roots26, intermediate32 final outputs match but its meaningful row
+calls are absent. Whole-output equality therefore did not substitute for
+original call/input proof. Minimal same-owner corrections restore actual
+DrawOneSpriteRow in both loops and source RenderPlayerSub scratch order.
+Attributes keep original byte Y and absolute +16/+20/+24/+28 bases, swim
+foot adjusts byte Y only for facing before absolute tile+24 access. Previous
+early byte wrapping put reads/writes on the wrong page at high OAM values.
+This is a controlled source-address discrepancy; no ordinary gameplay defect
+is inferred from unusual offsets. No broad action/state/motion rewrite.
+
+| Mode / original entry | Roots | Actual row returns | Evidence |
+| --- | ---: | ---: | --- |
+| 16 / EEE9 | 1024 | 4096 | Two sizes, seven action kinds and animations, death, grow/shrink, both facings, OAM00/04/E8/FF, byte relative XY and both kick indices/guard behavior. |
+| 17 / EFA4 | 32 | 128 | Original intermediate data loop and actual four rows, local PRG pair reads and following-sprite attribute transfer. |
+| 18 / EEE9 | 256 | 0 selected | All byte OAM offsets for actual throwing redraw, both sizes, moving/standing and byte coordinates; full output proof without claiming independently intercepted extra rows. |
+
+All1312 roots match full current C on x86/x64, zero differences across1841
+RAM bytes including scratch, OAM and aliases0109-0139. Main/intermediate
+routes also match all4224 actual DrawOneSpriteRow A/X/Y/input RAM and returned
+X/Y/RAM independently; the original child output is substituted, then caller
+continuation and final RAM checked. Full mode runs real row descendants.
+Only true CPU stack, volatile flags and unused temporary registers are excluded.
+No later player-control branch/node/edge is inferred exact from these routes;
+T66 retains full selection/timer/offscreen/attribute-control audit ownership.
+
+Recorder chunks at most2048 roots/58851344 bytes,120seconds/run,524288steps/
+case and192MiB raw. Consumed raw snapshots and diagnostic binaries removed;
+neutral local table-index/visit/return summaries remain ignored. No reference
+emulator or owner ROM enters product logic or tracked test fixture.
+
+Similar-issue sweep: player_gfx.c has exactly two PlayerGraphicsTable row
+loops; both now call actual DrawOneSpriteRow, no inline scratch substitute.
+All action/death/change-size/throw offset reads use one local PRG binding.
+The sole kick-table consumer has corrected original facing-adjusted Y/base.
+The sole attribute helper has the source absolute bases. Source selectors and
+motion/relative/offscreen owners remain unchanged; deferred T66 control proof
+is explicit. No new platform business logic, audio or pause change.
+
+Operational track: current C90 x86/x64 products, helper/row/player/core targets
+build;9/9 focused tests per width pass including player OAM/route, core,
+purity, audio/focus and product self-test. Original OpenNT DOS16 link exits0
+with existing OLDNAMES.LIB warning; no DOS gameplay/performance claim. All
+three owner-authorized products include committed audio/title/focus pause;
+explicit artifact delivery overrides default local-output exclusion.
+
+- mysmb16.exe: 260935 bytes; SHA-256 30c43e13da351cd5007bbe7f907710d557ce2dae15e6272c6b18f2324e6dac75.
+- mysmb32.exe: 373790 bytes; SHA-256 b947f5a716148df518c6eb5a7549216453c299908c96f15be1783b15cab5785d.
+- mysmb64.exe: 381335 bytes; SHA-256 15d9987de20db09f96bb9a665b9b9f75238ebfe2832a957fcc48b9d9c120abb5.
+
+Ledger admission/closure, documentation and whitespace gates rerun; S14 closes, T65/M2 remain open pending cross-chain/full milestone proof.

@@ -214,18 +214,18 @@ static void mysmb_oam_player_render_rows(struct mysmb_game *game,
     tile_index = graphics_offset;
     /* RenderPlayerSub publishes these source scratch bytes before
      * DrawPlayerLoop consumes the indexed PlayerGraphicsTable rows. */
+    game->ram[7U] = row_count;
     game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = game->ram[MYSMB_PLAYER_RELATIVE_X];
     game->ram[5U] = game->ram[MYSMB_PLAYER_RELATIVE_X];
     game->ram[2U] = game->ram[MYSMB_PLAYER_RELATIVE_Y];
     game->ram[3U] = game->ram[MYSMB_PLAYER_FACING];
     game->ram[4U] = game->ram[MYSMB_PLAYER_SPRITE_ATTRIBUTES];
-    game->ram[7U] = row_count;
     for (row = 0U; row < row_count; ++row) {
         game->ram[0U] = game->area_prg[(mysmb_u16)(
             MYSMB_PLAYER_GRAPHICS_TABLE + tile_index)];
-        game->ram[1U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)];
-        mysmb_oam_draw_sprite_object(game, &tile_index, &oam_offset);
+        mysmb_oam_draw_one_sprite_row(game, game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)],
+            &tile_index, &oam_offset);
         game->ram[7U]--;
     }
 }
@@ -240,19 +240,17 @@ void mysmb_oam_check_player_attributes(struct mysmb_game *game)
     oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
     if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         graphics_offset == 0xc8U) {
-        oam_offset = (mysmb_u8)(oam_offset + 16U);
-        game->ram[(mysmb_u16)(0x0202U + oam_offset)] &= 0x3fU;
-        game->ram[(mysmb_u16)(0x0206U + oam_offset)] =
-            (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
+        game->ram[(mysmb_u16)(0x0212U + oam_offset)] &= 0x3fU;
+        game->ram[(mysmb_u16)(0x0216U + oam_offset)] =
+            (mysmb_u8)((game->ram[(mysmb_u16)(0x0216U + oam_offset)] & 0x3fU) |
                       0x40U);
     }
     if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         graphics_offset == 0x50U || graphics_offset == 0xb8U ||
         graphics_offset == 0xc0U || graphics_offset == 0xc8U) {
-        oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U);
-        game->ram[(mysmb_u16)(0x0202U + oam_offset)] &= 0x3fU;
-        game->ram[(mysmb_u16)(0x0206U + oam_offset)] =
-            (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
+        game->ram[(mysmb_u16)(0x021aU + oam_offset)] &= 0x3fU;
+        game->ram[(mysmb_u16)(0x021eU + oam_offset)] =
+            (mysmb_u8)((game->ram[(mysmb_u16)(0x021eU + oam_offset)] & 0x3fU) |
                       0x40U);
     }
 }
@@ -315,15 +313,15 @@ void mysmb_oam_render_player(struct mysmb_game *game)
         game->area_prg_size >= MYSMB_SWIM_KICK_TABLE_END) {
         mysmb_u8 kick_offset;
         mysmb_u8 tile_index;
-        kick_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U +
+        kick_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] +
             ((game->ram[MYSMB_PLAYER_FACING] & 1U) == 0U ? 4U : 0U));
         tile_index = 0U;
         if (game->ram[MYSMB_PLAYER_SIZE] != 0U) {
-            if (game->ram[(mysmb_u16)(0x0201U + kick_offset)] ==
+            if (game->ram[(mysmb_u16)(0x0219U + kick_offset)] ==
                 game->area_prg[MYSMB_SWIM_TILE_REP_OFFSET]) return;
             tile_index = 1U;
         }
-        game->ram[(mysmb_u16)(0x0201U + kick_offset)] =
+        game->ram[(mysmb_u16)(0x0219U + kick_offset)] =
             game->area_prg[MYSMB_SWIM_KICK_TILE_NUM + tile_index];
     }
 }
@@ -358,9 +356,9 @@ void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)
     for (row = 0U; row < 4U; ++row) {
         game->ram[0U] = game->area_prg[(mysmb_u16)(
             MYSMB_PLAYER_GRAPHICS_TABLE + tile_index)];
-        game->ram[1U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)];
-        mysmb_oam_draw_sprite_object(game, &tile_index, &oam_offset);
+        mysmb_oam_draw_one_sprite_row(game, game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)],
+            &tile_index, &oam_offset);
         game->ram[7U]--;
     }
     /* The source reads the next sprite's attribute at +36 and stores its
