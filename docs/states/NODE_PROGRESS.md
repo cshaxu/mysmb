@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T68 S2 - active helper chain
+
+[Exact9-node helper admission](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+scope/intended fresh9, maximum1868/1992; current1859/1992 nodes,3956/4281
+controls(raw4342,infeasible61),408/493 material partial; historical1992/1992
+distinct.10 raw owned controls; no premature node/data promotion.
+
 ## M2 T68 S1 - closed music-tail chain
 
 [All17 nodes and46 raw control dispositions](../proposals/m2/t68-cohort-n-music-data-current-proof.md)

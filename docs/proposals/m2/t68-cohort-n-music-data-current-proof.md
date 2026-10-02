@@ -304,3 +304,27 @@ Neutral ignored evidence: build/m2-t68-s1 route/coverage summaries, modes30-35,
 pre-fix-difference and pre-fix-alias-difference, final build/test/DOS16 logs.
 Raw removed after comparisons; recorder executable removed at closure.
 Ledger, registry, progress and documentation gates required before P2 commit.
+
+## S2 admission - length, control and envelope helper chain
+
+Scope/intended fresh9, all needs-evidence: AlternateLengthHandler; ProcessLengthData; LoadControlRegs; NotECstlM; WaterMus; AllMus; LoadEnvelopeData; LoadUsualEnvData; LoadWaterEventMusEnvData.
+Current1859/1992 nodes,3956/4281 feasible controls(raw4342,infeasible61),
+408/493 material partial; maximum1868/1992. Historical1992/1992 distinct,
+expectedMatches empty. Owned controls03473-03482,10 raw, no material rows.
+Source15934-15983, shared audio.c; accepted M/N music callers are real
+dependencies. Later N table producers uncredited. Entry AlternateLengthHandler
+and caller-visible ProcessLengthData/LoadControlRegs/LoadEnvelopeData, exit real
+helper RTS and actual caller continuation. No maintenance custody transfer.
+
+ROM track: Unchanged original ProcessLengthData helper with all8 low-bit selectors/all256 header offsets/all256 adders; actual SoundEngine callers exercise alternate length, ADC carry, event/area control and envelope indexed reads. Full1841 RAM/24 APU/ordered writes both widths; direct helper returned A compared, Y contract audited through noise writes.
+Manual audit covers three ROL selector bits0/7/6, first ADC carry into second
+ADC, byte wrap and CPU table indexing, event08 precedence, area7D masks,
+fixed X82/Y7F, unchanged envelope Y and ordered caller writes/returns.
+Operational: focused tests/current builds x86/x64, original OpenNT DOS16 link,
+purity;3 products refresh only if product code changes. Scoped diff requires
+repair/reaudit before S3. Similar-issue sweep includes duplicate alternate
+length consumers and original carry semantics across shared audio.c.
+
+Owner-local ROM/reviewed ASM are nonredistributable research, no imports.
+Ignored build/m2-t68-s2,128MiB raw,1024 roots/batch,120seconds/process,
+524288steps/root; raw deleted per batch. Tracked neutral metadata only.
