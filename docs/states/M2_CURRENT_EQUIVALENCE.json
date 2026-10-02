@@ -1005,13 +1005,16 @@
       "consumer": "GetHalfway",
       "storage": "world/level-indexed checkpoint byte to HalfwayPage",
       "feasiblePath": "Death with nonnegative lives computes world*2 plus level bit one, selects a nibble and compares it with ScreenLeft_PageLoc.",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c:mysmb_game_halfway_page_nybbles / mysmb_game_get_halfway_page",
-      "semanticContract": "The table byte, nibble selection, screen-page gate and resulting HalfwayPage agree for every valid world/level route.",
+      "status": "exact",
+      "currentCounterpart": "terminal_modes.c existing checkpoint table and actual descending seven-byte record exchange",
+      "semanticContract": "Existing16 native bytes equal original91BD-91CD;actual GetHalfway indexes world0-7 times2 plus level bit1 and consumes all bytes.",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 independent byte/index/consumer/record-boundary/write-order audit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 all16 checkpoint bytes and actual complete two-player record exchanges observed;original/current roots both widths equal."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1024,13 +1027,16 @@
       "consumer": "TransposePlayers",
       "storage": "seven-byte on-screen/off-screen player record exchange",
       "feasiblePath": "Only two-player routes with nonnegative offscreen lives exchange matching offsets six through zero before ContinueGame selection.",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c:mysmb_game_transpose_players",
-      "semanticContract": "Eligibility predicate, CurrentPlayer toggle and all seven exchanged bytes agree before the carry-equivalent successor branch.",
+      "status": "exact",
+      "currentCounterpart": "terminal_modes.c existing checkpoint table and actual descending seven-byte record exchange",
+      "semanticContract": "Offsets6 down0:save on-screen byte,write off-screen to on-screen,write saved to off-screen;source stack temporary replaced by C byte,record write order retained.",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 independent byte/index/consumer/record-boundary/write-order audit."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 all16 checkpoint bytes and actual complete two-player record exchanges observed;original/current roots both widths equal."
+      ],
       "cohort": "E",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
       "currentSourcePaths": [
@@ -14041,10 +14047,12 @@
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ScreenRoutineTask switch cases 0..14",
       "semanticEvidence": [
-        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed."
+        "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner."
       ],
       "operationalEvidence": [
-        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass."
+        "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family."
       ],
       "semanticContract": "ROM $8567: reads ScreenRoutineTask and JumpEngine-dispatches selectors 0..14 to the inline screen task table; each selected leaf has its own successor/return semantics.",
       "currentSourcePaths": [
@@ -16212,10 +16220,12 @@
       "currentOwner": "src/game/dispatcher.c",
       "currentCounterpart": "shared C vector dispatch at each source-owned caller",
       "semanticEvidence": [
-        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision."
+        "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass."
+        "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family."
       ],
       "semanticContract": "ROM $8d91: selector-indexed inline jump-table dispatch preserving caller return continuation.",
       "currentSourcePaths": [
@@ -17590,14 +17600,17 @@
       "label": "HalfwayPageNybbles",
       "asmLine": 2921,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_halfway_page_nybbles",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Existing16 native bytes equal original91BD-91CD;actual GetHalfway indexes world0-7 times2 plus level bit1 and consumes all bytes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Sixteen source-ordered half-page nybbles select death-restart checkpoints by world and level bits.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Existing16 native bytes equal original91BD-91CD;actual GetHalfway indexes world0-7 times2 plus level bit1 and consumes all bytes.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17606,14 +17619,17 @@
       "label": "PlayerLoseLife",
       "asmLine": 2931,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_lose_life",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: INC disable;hit0;event Silence80;DEC lives as byte;negative sets task0/mode3,nonnegative follows exact checkpoint/transpose/restart children."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Disables output/sprite-zero, queues silence, decrements lives, then selects game-over or the halfway/restart continuation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "INC disable;hit0;event Silence80;DEC lives as byte;negative sets task0/mode3,nonnegative follows exact checkpoint/transpose/restart children.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17622,14 +17638,17 @@
       "label": "StillInGame",
       "asmLine": 2944,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_get_halfway_page",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Index byte world<<1 plus1 only level bit1;source-valid world0-7 and levels0-3 produce0-15."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Computes world*2 plus level bit one before reading the corresponding checkpoint byte.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Index byte world<<1 plus1 only level bit1;source-valid world0-7 and levels0-3 produce0-15.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17638,14 +17657,17 @@
       "label": "GetHalfway",
       "asmLine": 2951,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_get_halfway_page",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Read actual table byte;level bit0 chooses low nibble or four LSRs for high nibble."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the lower nibble for even-numbered source areas and shifts the upper nibble down for odd-numbered areas.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Read actual table byte;level bit0 chooses low nibble or four LSRs for high nibble.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17654,14 +17676,17 @@
       "label": "MaskHPNyb",
       "asmLine": 2960,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_get_halfway_page",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Mask0F;retain checkpoint only when <=ScreenLeft_PageLoc,otherwise0;unsigned source equality/less/greater branches retained."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Masks the selected checkpoint and replaces it with zero only when it lies after ScreenLeft_PageLoc.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Mask0F;retain checkpoint only when <=ScreenLeft_PageLoc,otherwise0;unsigned source equality/less/greater branches retained.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17670,14 +17695,17 @@
       "label": "SetHalfway",
       "asmLine": 2965,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_lose_life",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Store selected HalfwayPage then actual TransposePlayers then ContinueGame tail successor regardless transpose carry."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Stores the selected page, calls player-record transposition, then tail-enters the common restart sequence.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store selected HalfwayPage then actual TransposePlayers then ContinueGame tail successor regardless transpose carry.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17686,14 +17714,17 @@
       "label": "GameOverMode",
       "asmLine": 2971,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_step_game_over",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Dispatches OperMode_Task zero, one and two to setup, screen routines and input/timer termination respectively.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17702,14 +17733,17 @@
       "label": "SetupGameOver",
       "asmLine": 2981,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_setup_game_over",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Screen task0/hit0/event game-over2;INC disable and mode-task bytes,not fixed1 assignment."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Resets screen task and sprite-zero gate, queues game-over music, disables output and advances the mode task.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Screen task0/hit0/event game-over2;INC disable and mode-task bytes,not fixed1 assignment.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17718,14 +17752,17 @@
       "label": "RunGameOver",
       "asmLine": 2993,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_run_game_over",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Disable0;START set terminates immediately,otherwise nonzero screen timer returns and zero timer enters termination."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Re-enables output then terminates for Start or zero ScreenTimer, otherwise returns without changing terminal state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Disable0;START set terminates immediately,otherwise nonzero screen timer returns and zero timer enters termination.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17734,14 +17771,17 @@
       "label": "TerminateGame",
       "asmLine": 3001,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_terminate_game",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Queues silence; a successful player transpose tail-enters restart, otherwise records ContinueWorld and resets title mode/task/timer.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17750,14 +17790,17 @@
       "label": "ContinueGame",
       "asmLine": 3015,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_continue_game",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual LoadAreaPointer before size1/fetch INC/timer-control0/status0/engine-subroutine0/mode-task0/mode1 in source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Loads the area pointer before resetting player size, timer reload/status, engine task, mode task and game mode.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Actual LoadAreaPointer before size1/fetch INC/timer-control0/status0/engine-subroutine0/mode-task0/mode1 in source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17766,14 +17809,17 @@
       "label": "GameIsOn",
       "asmLine": 3027,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_run_game_over / mysmb_game_continue_game return",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Common return after ContinueGame or wait path;no added persistent writes or invented reset."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Shared terminal return leaves the non-terminating game-over path and completed restart path without extra writes.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Common return after ContinueGame or wait path;no added persistent writes or invented reset.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17782,14 +17828,17 @@
       "label": "TransposePlayers",
       "asmLine": 3029,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_transpose_players",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: One-player or negative offscreen lives returns carry-set equivalent0 without swap;otherwise CurrentPlayer XOR1 then seven-byte descending exchange and carry-clear equivalent1."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns failure for one player or dead offscreen player; otherwise toggles CurrentPlayer and swaps seven consecutive player-record bytes.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "One-player or negative offscreen lives returns carry-set equivalent0 without swap;otherwise CurrentPlayer XOR1 then seven-byte descending exchange and carry-clear equivalent1.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17798,14 +17847,17 @@
       "label": "TransLoop",
       "asmLine": 3039,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_transpose_players record loop",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Offsets6 down0:save on-screen byte,write off-screen to on-screen,write saved to off-screen;source stack temporary replaced by C byte,record write order retained."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Copies/swallows corresponding on/off-screen record bytes for offsets six down through zero before success return.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Offsets6 down0:save on-screen byte,write off-screen to on-screen,write saved to off-screen;source stack temporary replaced by C byte,record write order retained.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17814,14 +17866,17 @@
       "label": "ExTrans",
       "asmLine": 3048,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/terminal_modes.c",
-      "currentCounterpart": "mysmb_game_transpose_players return",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Return preserves no-swap/swap carry-equivalent result consumed only by termination branch;PlayerLoseLife ignores result as source."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Carries source failure/success distinction into callers as a boolean return with no further record mutation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Return preserves no-swap/swap carry-equivalent result consumed only by termination branch;PlayerLoseLife ignores result as source.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -17830,14 +17885,17 @@
       "label": "DoNothing1",
       "asmLine": 3052,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_secondary_setup residual store",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual game.c residual-store leaf writes6C9FF then common return point corresponding to DoNothing2;secondary calls empty leaf then residual leaf."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes $ff to residual RAM $06c9 then falls through to return.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Actual game.c residual-store leaf writes6C9FF then common return point corresponding to DoNothing2;secondary calls empty leaf then residual leaf.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17846,14 +17904,17 @@
       "label": "DoNothing2",
       "asmLine": 3055,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_secondary_setup residual store",
+      "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
-        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual empty leaf/common residual-leaf return;no persistent write;source CPU AFF from DoNothing1 is not a C return ABI."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns without additional state change.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Actual empty leaf/common residual-leaf return;no persistent write;source CPU AFF from DoNothing1 is not a C return ABI.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59763,13 +59824,16 @@
       "instruction": "bpl",
       "id": "control-00446",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c branches to restart checkpoint work only when decremented lives remains nonnegative.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c branches to restart checkpoint work only when decremented lives remains nonnegative.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=32768;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch PlayerLoseLife -> StillInGame retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59782,13 +59846,16 @@
       "instruction": "beq",
       "id": "control-00447",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c leaves the world*2 checkpoint index unchanged when LevelNumber bit one is clear.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c leaves the world*2 checkpoint index unchanged when LevelNumber bit one is clear.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=16384;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch StillInGame -> GetHalfway retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59801,13 +59868,16 @@
       "instruction": "inx",
       "id": "control-00448",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c increments the checkpoint index only when LevelNumber bit one is set.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c increments the checkpoint index only when LevelNumber bit one is set.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=16384;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough StillInGame -> GetHalfway retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59820,13 +59890,16 @@
       "instruction": "bcs",
       "id": "control-00449",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c selects the source low nibble for LevelNumber bit zero set.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c selects the source low nibble for LevelNumber bit zero set.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=16384;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch GetHalfway -> MaskHPNyb retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59839,13 +59912,16 @@
       "instruction": "lsr",
       "id": "control-00450",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c shifts the source high nibble four times before common masking when that bit is clear.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c shifts the source high nibble four times before common masking when that bit is clear.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=16384;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough GetHalfway -> MaskHPNyb retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59858,13 +59934,16 @@
       "instruction": "beq",
       "id": "control-00451",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c retains a checkpoint equal to ScreenLeft_PageLoc.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c retains a checkpoint equal to ScreenLeft_PageLoc.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=2048;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch MaskHPNyb -> SetHalfway retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59877,13 +59956,16 @@
       "instruction": "bcc",
       "id": "control-00452",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c retains a checkpoint before ScreenLeft_PageLoc.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c retains a checkpoint before ScreenLeft_PageLoc.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=23232;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch MaskHPNyb -> SetHalfway retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59896,13 +59978,16 @@
       "instruction": "lda",
       "id": "control-00453",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c falls through with checkpoint zero when it lies after ScreenLeft_PageLoc.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c falls through with checkpoint zero when it lies after ScreenLeft_PageLoc.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=7488;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough MaskHPNyb -> SetHalfway retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59915,13 +60000,16 @@
       "instruction": "jsr",
       "id": "control-00454",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c invokes the seven-byte record swap after storing HalfwayPage.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c invokes the seven-byte record swap after storing HalfwayPage.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=32768;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original call SetHalfway -> TransposePlayers retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59934,13 +60022,16 @@
       "instruction": "jmp",
       "id": "control-00455",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c completes the death path through the common restart state sequence.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c completes the death path through the common restart state sequence.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=32768;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original jump SetHalfway -> ContinueGame retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59975,13 +60066,16 @@
       "instruction": "jsr",
       "id": "control-00457",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c selector zero reaches setup without a spurious return-side state mutation.",
+      "status": "infeasible",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c selector zero reaches setup without a spurious return-side state mutation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=0;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original JSR JumpEngine pops its return address with two PLA and JMP($06);no RTS to inline vector table at921E,so this extracted fallthrough is impossible.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -59994,13 +60088,16 @@
       "instruction": "bne",
       "id": "control-00458",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c Start bit path terminates before ScreenTimer inspection.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c Start bit path terminates before ScreenTimer inspection.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=2729;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch RunGameOver -> TerminateGame retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60013,13 +60110,16 @@
       "instruction": "bne",
       "id": "control-00459",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c nonzero ScreenTimer path returns with output re-enabled.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c nonzero ScreenTimer path returns with output re-enabled.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=1367;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch RunGameOver -> GameIsOn retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60032,13 +60132,16 @@
       "instruction": "bne",
       "id": "control-00460",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c zero ScreenTimer path falls into termination.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c zero ScreenTimer path falls into termination.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=1365;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough RunGameOver -> TerminateGame retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60051,13 +60154,16 @@
       "instruction": "jsr",
       "id": "control-00461",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c termination calls record transposition after queuing silence.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c termination calls record transposition after queuing silence.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=4094;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original call TerminateGame -> TransposePlayers retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60070,13 +60176,16 @@
       "instruction": "bcc",
       "id": "control-00462",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c successful transposition enters common restart rather than title reset.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c successful transposition enters common restart rather than title reset.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=2048;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch TerminateGame -> ContinueGame retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60110,13 +60219,16 @@
       "instruction": "sta",
       "id": "control-00464",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c restart state writes fall into the common terminal return.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c restart state writes fall into the common terminal return.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=34816;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough ContinueGame -> GameIsOn retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60129,13 +60241,16 @@
       "instruction": "beq",
       "id": "control-00465",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c one-player condition produces the source failure return.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c one-player condition produces the source failure return.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=17407;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch TransposePlayers -> ExTrans retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60148,13 +60263,16 @@
       "instruction": "bmi",
       "id": "control-00466",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c negative offscreen lives produces the source failure return.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c negative offscreen lives produces the source failure return.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=9215;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch TransposePlayers -> ExTrans retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60167,13 +60285,16 @@
       "instruction": "ldx",
       "id": "control-00467",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c eligible two-player path falls into seven-byte record exchange.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c eligible two-player path falls into seven-byte record exchange.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=10240;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough TransposePlayers -> TransLoop retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60186,13 +60307,16 @@
       "instruction": "bpl",
       "id": "control-00468",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c record exchange repeats exactly through offset zero.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c record exchange repeats exactly through offset zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=61440;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original branch TransLoop -> TransLoop retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60205,13 +60329,16 @@
       "instruction": "clc",
       "id": "control-00469",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "terminal_modes.c successful exchange falls into the source success return.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "terminal_modes.c successful exchange falls into the source success return.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=10240;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough TransLoop -> ExTrans retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -60224,13 +60351,16 @@
       "instruction": "sta",
       "id": "control-00470",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/game.c mysmb_game_secondary_setup startup sequence",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required."
+        "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves residual leaf fallthrough relation DoNothing1 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DoNothing2 without reordering surrounding initialization.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=256;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original fallthrough DoNothing1 -> DoNothing2 retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -128845,13 +128975,16 @@
       "instruction": "rts/rti",
       "id": "control-03550",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_transpose_players returns to death restart before common restart state writes.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "mysmb_game_transpose_players returns to death restart before common restart state writes.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=32768;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original return TransposePlayers -> SetHalfway retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -128886,13 +129019,16 @@
       "instruction": "rts/rti",
       "id": "control-03552",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_transpose_players returns to TerminateGame before carry-equivalent restart/title choice.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "mysmb_game_transpose_players returns to TerminateGame before carry-equivalent restart/title choice.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=4094;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original return TransposePlayers -> TerminateGame retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -141763,13 +141899,16 @@
       "selector": 0,
       "id": "control-04124",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_step_game_over task zero dispatches only to setup.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "mysmb_game_step_game_over task zero dispatches only to setup.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=5463;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original jump-engine-dispatch GameOverMode -> SetupGameOver retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -141783,13 +141922,16 @@
       "selector": 1,
       "id": "control-04125",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_step_game_over task one dispatches only to ScreenRoutines.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "mysmb_game_step_game_over task one dispatches only to ScreenRoutines.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=5460;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original jump-engine-dispatch GameOverMode -> ScreenRoutines retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/game.c",
         "src/game/terminal_modes.c"
@@ -141804,13 +141946,16 @@
       "selector": 2,
       "id": "control-04126",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_game_step_game_over task two dispatches only to RunGameOver.",
+      "status": "exact",
+      "currentCounterpart": "Shared terminal/no-op owners and actual native jump-state helper/child branches",
       "semanticEvidence": [
-        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required."
+        "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 manual original opcode/flag/return-stack/control and actual shared C audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "mysmb_game_step_game_over task two dispatches only to RunGameOver.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 observations=5461;82176 original/current roots each width equal;zero observation only accepted with independent PLA/PLA/JMP opcode proof."
+      ],
+      "semanticContract": "Original jump-engine-dispatch GameOverMode -> RunGameOver retains actual native child/branch/return and source order.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -146863,6 +147008,7 @@
     "control-00076",
     "control-00081",
     "control-00372",
+    "control-00457",
     "control-01339",
     "control-01405",
     "control-01408",
@@ -146925,6 +147071,6 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 64,
-  "feasibleControlEdgeTotal": 4278
+  "infeasibleControlEdgeTotal": 65,
+  "feasibleControlEdgeTotal": 4277
 }

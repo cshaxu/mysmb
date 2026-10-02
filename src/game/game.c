@@ -122,12 +122,37 @@ static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
 /* Translation of the game-mode portion of ScreenRoutines.  The original
  * advances one task per main-loop frame; command-producing tasks wait for
  * the following NMI to consume VRAM_Buffer1 before writing another stream. */
+/* Original JumpEngine persists its popped return address and selected target
+ * in $04-$07. Native owners still execute fixed C branches; the bound source
+ * table is read only to preserve the original observable scratch state. */
+void mysmb_game_jump_engine_state(struct mysmb_game *game,
+                                 mysmb_u16 return_address,
+                                 mysmb_u8 selector)
+{
+    mysmb_u8 offset;
+    mysmb_u16 address;
+    game->ram[4U] = (mysmb_u8)return_address;
+    game->ram[5U] = (mysmb_u8)(return_address >> 8U);
+    offset = (mysmb_u8)(selector << 1U);
+    offset++;
+    address = (mysmb_u16)(return_address + offset);
+    if (game->area_prg == 0 || address < 0x8000U ||
+        game->area_prg_size <= address - 0x8000U) return;
+    game->ram[6U] = game->area_prg[address - 0x8000U];
+    offset++;
+    address = (mysmb_u16)(return_address + offset);
+    if (address < 0x8000U || game->area_prg_size <= address - 0x8000U) return;
+    game->ram[7U] = game->area_prg[address - 0x8000U];
+}
+
 void mysmb_game_step_screen_routine(struct mysmb_game *game)
 {
     mysmb_u16 index;
     mysmb_u8 saved_background_color;
     mysmb_u8 saved_player_status;
 
+    mysmb_game_jump_engine_state(game, 0x856cU,
+                                game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK]);
     switch (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK]) {
     case 0U:
         mysmb_game_move_all_sprites_offscreen(game);

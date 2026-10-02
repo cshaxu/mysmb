@@ -9,6 +9,9 @@ void mysmb_frame_root_step(struct mysmb_game *game,
 void mysmb_game_step_victory(struct mysmb_game *game);
 void mysmb_game_step_game_over(struct mysmb_game *game);
 void mysmb_game_step_screen_routine(struct mysmb_game *game);
+void mysmb_game_jump_engine_state(struct mysmb_game *game,
+                                 mysmb_u16 return_address,
+                                 mysmb_u8 selector);
 void mysmb_game_primary_setup(struct mysmb_game *game);
 void mysmb_game_secondary_setup(struct mysmb_game *game);
 void mysmb_game_lose_life(struct mysmb_game *game);

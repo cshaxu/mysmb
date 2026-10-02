@@ -63,11 +63,12 @@ static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game)
     if (game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] == 0U ||
         game->ram[MYSMB_RAM_OFFSCREEN_LIVES] >= 0x80U) return 0U;
     game->ram[MYSMB_RAM_CURRENT_PLAYER] ^= 1U;
-    for (offset = 0U; offset < 7U; ++offset) {
+    for (offset = 6U;; --offset) {
         saved = game->ram[MYSMB_RAM_NUMBER_OF_LIVES + offset];
         game->ram[MYSMB_RAM_NUMBER_OF_LIVES + offset] =
             game->ram[MYSMB_RAM_OFFSCREEN_LIVES + offset];
         game->ram[MYSMB_RAM_OFFSCREEN_LIVES + offset] = saved;
+        if (offset == 0U) break;
     }
     return 1U;
 }
@@ -146,7 +147,7 @@ static void mysmb_game_setup_game_over(struct mysmb_game *game)
     game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
     game->ram[MYSMB_RAM_EVENT_MUSIC] = 2U;
     game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
-    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
 }
 
 /* ROM TerminateGame, including its TransposePlayers result branch. */
@@ -175,6 +176,8 @@ static void mysmb_game_run_game_over(struct mysmb_game *game)
 /* ROM GameOverMode JumpEngine dispatch. */
 void mysmb_game_step_game_over(struct mysmb_game *game)
 {
+    mysmb_game_jump_engine_state(game, 0x921dU,
+                                game->ram[MYSMB_RAM_OPER_MODE_TASK]);
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
         mysmb_game_setup_game_over(game);
         return;

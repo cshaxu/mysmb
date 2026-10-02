@@ -83,6 +83,26 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==62u||mode==63u){
+        unsigned int j;
+        for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
+        m->ram[0x770u]=3u;
+        m->ram[0x75au]=(unsigned char)n;
+        m->ram[0x75fu]=(unsigned char)(p&7u);
+        m->ram[0x75cu]=(unsigned char)((p>>3u)&3u);
+        m->ram[0x760u]=(unsigned char)((p>>3u)&3u);
+        m->ram[0x77au]=(unsigned char)((p&32u)?0xffu:0u);
+        m->ram[0x761u]=(unsigned char)((p&64u)?0xffu:2u);
+        m->ram[0x766u]=(unsigned char)((p+3u)&7u);
+        m->ram[0x767u]=(unsigned char)((p+1u)&3u);
+        m->ram[0x753u]=(unsigned char)((p>>7u)&1u);
+        m->ram[0x71au]=(unsigned char)((n>>1u)&15u);
+        if(mode==63u){
+            m->ram[0x772u]=(unsigned char)(n%3u);
+            m->ram[0x73cu]=13u;
+            m->ram[0x6fcu]=(unsigned char)n;
+            m->ram[0x7a0u]=(unsigned char)((n&256u)?0u:3u);
+        }
     }else if(mode==61u){
         m->ram[0x752u]=(unsigned char)(n&3u);
         m->ram[0x74eu]=(unsigned char)((n>>2u)&3u);
@@ -283,7 +303,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>61u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>63u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -292,7 +312,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1,32768u,f)!=32768u)return 65;fclose(f);
     if(core_driver_create(&d,&opts)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
     baseline=*d->machine;
-    if(mode>=55u&&mode<=59u){
+    if((mode>=55u&&mode<=59u)||mode==62u||mode==63u){
         /* These roots run inside NMI after its $2000 NMI-enable clear.
          * Match that hardware entry condition, so a long memory clear cannot
          * nest a new frame handler. No ROM, RAM, or child call is replaced. */
@@ -332,6 +352,8 @@ int main(int argc,char **argv)
         if(mode>=52u&&mode<=54u)entry=mode==52u?0x8f06u:(mode==53u?0x8f5fu:0x8f97u);
         if(mode==60u)entry=0x90edu;
         if(mode==61u)entry=0x9131u;
+        if(mode==62u)entry=0x91cdu;
+        if(mode==63u)entry=0x9218u;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -350,6 +372,8 @@ int main(int argc,char **argv)
             if(d->machine->s<minimum_stack)minimum_stack=d->machine->s;
             if(mode==60u&&pc==0x9110u&&op==0xb9u)
                 ++setup_reads[0][0x90e7u+d->machine->y];
+            if(mode==62u&&pc==0x91f6u&&op==0xbcu)
+                ++setup_reads[0][0x91bdu+d->machine->x];
             if(mode==61u&&pc>=0x9131u&&pc<0x91beu&&(op==0xb9u||op==0xbdu||op==0xbeu)){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 unsigned int offset=op==0xbdu?d->machine->x:d->machine->y;

@@ -411,3 +411,15 @@ Current1975/1992 nodes,4060/4278 feasible controls(raw4342,infeasible64),
 roots each width zero diff;5 focused tests each/purity/current builds/OpenNT
 link pass,3 EXEs refreshed. T69 open,S5 next unadmitted;17 nodes/218 controls/
 45 enumerated material and earlier M alias debt remain before certification.
+
+## Current checkpoint after T69 S5
+
+[T69 S5](t69-cross-cohort-current-proof.md) closes17 nodes/27 feasible controls/
+2 material,1 impossible retained. Current1992/1992 scoped-exact nodes,
+4087/4277 feasible controls(raw4342,infeasible65),512/555 material partial;
+historical1992/1992 separate.82176 original returning roots each width zero
+diff after original dispatch scratch/descending swap/task INC repairs;
+4 focused tests each/purity/current builds/OpenNT link pass,3 EXEs refreshed.
+T69 open,S6 next unadmitted.190 feasible controls/43 enumerated material plus
+explicit M alias fetch-order scope and integrated certification remain;node
+numerator alone cannot close M2 or assert whole-game/all-state equivalence.

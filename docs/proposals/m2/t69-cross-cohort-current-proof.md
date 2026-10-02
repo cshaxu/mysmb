@@ -717,3 +717,117 @@ mocked child. Existing ScreenRoutines dependency likewise needs original
 dispatch scratch state. Focused test name corrected to mysmb.mode-smoke;
 the earlier terminal-modes-smoke name was not an existing CTest entry.
 No credit yet;S5 remains active until same routes prove repaired equivalence.
+
+## S5 P4 closure - life/game-over/player swap and dispatch scratch
+
+All17 intended labels exact:HalfwayPageNybbles; PlayerLoseLife; StillInGame; GetHalfway; MaskHPNyb; SetHalfway; GameOverMode; SetupGameOver; RunGameOver; TerminateGame; ContinueGame; GameIsOn; TransposePlayers; TransLoop; ExTrans; DoNothing1; DoNothing2.27 feasible controls exact,
+1 independently impossible inline-table fallthrough;2 material exact.2 exact
+dependencies receive zero fresh credit;no scoped deferral/transfer. Current
+1975->1992/1992 nodes,4060->4087 controls,feasible4278->4277(raw4342,
+infeasible65),510->512/555 material partial. Historical1992/1992 separate.
+All registered nodes now have their accepted current scoped proof;this does
+not certify all joins,all machine states or whole-game equivalence. T69 open,
+S6 next unadmitted;190 feasible controls/43 enumerated material and earlier
+explicit M alias fetch-order scope remain before integrated certification.
+
+| Node | Original/current source contract |
+| --- | --- |
+| `HalfwayPageNybbles` | Existing16 native bytes equal original91BD-91CD;actual GetHalfway indexes world0-7 times2 plus level bit1 and consumes all bytes. |
+| `PlayerLoseLife` | INC disable;hit0;event Silence80;DEC lives as byte;negative sets task0/mode3,nonnegative follows exact checkpoint/transpose/restart children. |
+| `StillInGame` | Index byte world<<1 plus1 only level bit1;source-valid world0-7 and levels0-3 produce0-15. |
+| `GetHalfway` | Read actual table byte;level bit0 chooses low nibble or four LSRs for high nibble. |
+| `MaskHPNyb` | Mask0F;retain checkpoint only when <=ScreenLeft_PageLoc,otherwise0;unsigned source equality/less/greater branches retained. |
+| `SetHalfway` | Store selected HalfwayPage then actual TransposePlayers then ContinueGame tail successor regardless transpose carry. |
+| `GameOverMode` | Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners. |
+| `SetupGameOver` | Screen task0/hit0/event game-over2;INC disable and mode-task bytes,not fixed1 assignment. |
+| `RunGameOver` | Disable0;START set terminates immediately,otherwise nonzero screen timer returns and zero timer enters termination. |
+| `TerminateGame` | Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title. |
+| `ContinueGame` | Actual LoadAreaPointer before size1/fetch INC/timer-control0/status0/engine-subroutine0/mode-task0/mode1 in source order. |
+| `GameIsOn` | Common return after ContinueGame or wait path;no added persistent writes or invented reset. |
+| `TransposePlayers` | One-player or negative offscreen lives returns carry-set equivalent0 without swap;otherwise CurrentPlayer XOR1 then seven-byte descending exchange and carry-clear equivalent1. |
+| `TransLoop` | Offsets6 down0:save on-screen byte,write off-screen to on-screen,write saved to off-screen;source stack temporary replaced by C byte,record write order retained. |
+| `ExTrans` | Return preserves no-swap/swap carry-equivalent result consumed only by termination branch;PlayerLoseLife ignores result as source. |
+| `DoNothing1` | Actual game.c residual-store leaf writes6C9FF then common return point corresponding to DoNothing2;secondary calls empty leaf then residual leaf. |
+| `DoNothing2` | Actual empty leaf/common residual-leaf return;no persistent write;source CPU AFF from DoNothing1 is not a C return ABI. |
+
+Final82176 unchanged original returning roots each width zero differences:
+PlayerLoseLife91CD65536 fixtures vary all256 life bytes,all8 worlds/4 levels,
+screen-page thresholds0-15,both player/current states and eligible/ineligible
+offscreen lives. GameOverMode921816384 fixtures:4096 cases0-4095,8192
+cases8192-16383,4096 cases24576-28671 cover tasks0-2,START/timer exits,
+one-player and eligible/ineligible two-player routes. Screen task13 dispatch
+executes actual ClearBuffersDrawIcon/IncModeTask_B;no mocked screen child.
+SecondaryGameSetup9071256 roots recheck actual DoNothing2 then DoNothing1.
+Source comparison distinguishes returning carry via C0/1 facade;CPU A/X/Y,
+flags and physical stack layout are not exported C ABI. Compare2032 RAM,
+24 APU and ordered writes/counts;only1F0-1FF CPU sentinel/stack excluded,
+actual minimum SP>=EF. All17 nodes/16 checkpoint bytes/27 feasible controls
+observed;existing checkpoint bytes independently equal original. Real
+LoadAreaPointer/TransposePlayers/ContinueGame/ScreenRoutines children and
+unchanged owner PRG used. No patched ROM,imported table or fabricated oracle.
+
+Pre-fix life matrix already equal;first1024 GameOverMode cases had4083 RAM
+differences from missing04-07 JumpEngine stores. Shared helper now records
+actual popped return address and reads original selected target from bound
+PRG;native fixed C branch executes the routine,without a CPU interpreter.
+Nested screen dispatch writes its own original856C/target state. Guards for
+unbound standalone facades are outside product ROM-bound equivalence.
+Source audit restores TransLoop descending6->0 and SetupGameOver byte INC,
+even where old bounded final-state tests could not detect changed write order.
+Similar-issue sweep covers both admitted dispatch sites,all player record
+stores,halfway nibble/threshold,carry successor,no-op leaves and restart order.
+Other dispatcher families remain their earlier scoped proofs and later S15
+integrated audit;no broad fresh credit for unexecuted dispatcher callers.
+
+Control-00457 is impossible independently of observed coverage:original
+921B JSR8E04 enters helper;8E06/8E09 PLA consume its saved return address,
+then8E16 JMP($06),so child RTS returns to caller of GameOverMode rather
+than inline vector data921E.28 raw control rows retained,one infeasible.
+
+| Control | Original PC | Actual transition observations | Result |
+| --- | --- | --- | --- |
+| `control-00446` | `91dc` | 32768 | exact |
+| `control-00447` | `91f3` | 16384 | exact |
+| `control-00448` | `91f5` | 16384 | exact |
+| `control-00449` | `91fe` | 16384 | exact |
+| `control-00450` | `9203` | 16384 | exact |
+| `control-00451` | `9209` | 2048 | exact |
+| `control-00452` | `920b` | 23232 | exact |
+| `control-00453` | `920d` | 7488 | exact |
+| `control-00454` | `9212` | 32768 | exact |
+| `control-00455` | `9215` | 32768 | exact |
+| `control-00457` | `921b` | 0 | infeasible |
+| `control-00458` | `9241` | 2729 | exact |
+| `control-00459` | `9246` | 1367 | exact |
+| `control-00460` | `9246` | 1365 | exact |
+| `control-00461` | `924c` | 4094 | exact |
+| `control-00462` | `924f` | 2048 | exact |
+| `control-00464` | `927e` | 34816 | exact |
+| `control-00465` | `9286` | 17407 | exact |
+| `control-00466` | `928b` | 9215 | exact |
+| `control-00467` | `9295` | 10240 | exact |
+| `control-00468` | `92a6` | 61440 | exact |
+| `control-00469` | `92a8` | 10240 | exact |
+| `control-00470` | `92ac` | 256 | exact |
+| `control-03550` | `9212` | 32768 | exact |
+| `control-03552` | `924c` | 4094 | exact |
+| `control-04124` | `921b` | 5463 | exact |
+| `control-04125` | `921b` | 5460 | exact |
+| `control-04126` | `921b` | 5461 | exact |
+
+Operational:current x86/x64 product/checker builds and4 focused tests each
+(mode,boot-NMI,title-bootstrap,purity) pass;original OpenNT DOS16 link exits0
+with inherited OLDNAMES.LIB warning,no interactive DOS claim. All fixes in
+shared game code,platform unchanged. Product edits publish3 EXEs together:
+
+- `mysmb16.exe`: 261415 bytes, SHA256 `0b5f0a5678a789f9347f6b68ee81499c7f01737f0547a93c6eaa123376ab47ec`; final build published.
+- `mysmb32.exe`: 374811 bytes, SHA256 `0c2968c489bb1d2dcac04db079e45e4aa9adea9d1aff86de8e8a8e0d19b3515a`; final build published.
+- `mysmb64.exe`: 382348 bytes, SHA256 `d4fedf3756db10e3719c047cf6c5ed3b9c7d5549418f934f1e4dd3a657ecc706`; final build published.
+
+The dependency-amendment documentation gate detected default-codepage
+corruption in historical NODE_PROGRESS text after P2;P3 restored exact prior
+UTF-8 content and the corrected gate passes. No semantic history rewritten.
+All new scripts explicitly decode/write UTF-8. Raw deleted per1024-root
+batch and probe deleted at closure;only neutral ignored summaries/logs remain.
+Registry/ledger/progress/docs gates required before P4 commit. Unrelated
+queue/terrain line-endings/proposals preserved unstaged. S6 unadmitted.
