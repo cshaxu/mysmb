@@ -2823,3 +2823,89 @@ Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 remain
 unchanged. Exact feasible controls rise 3,142 to 3,143/4,323 (raw 4,342,
 infeasible 19). T64 remains open with 38 Cohort-J controls and zero pending
 material; star-flag/end-level control returns follow. T65 is not admitted.
+
+## Aggregate S52 admission - end-level actor child returns
+
+S52 owns control-03867/03869/03870/03871 across the contiguous $D295-$D3AF
+end-level actor family, including the preceding fireworks drawing return.
+Its 26 scoped labels in source order are:
+RunFireworks, SetupExpl, FireworksSoundScore, RelativeEnemyPosition, DrawExplosion_Fireworks, EndAreaPoints, StarFlagYPosAdder, StarFlagXPosAdder, StarFlagTileData, RunStarFlagObj, GameTimerFireworks, SetFWC, IncrementSFTask1, StarFlagExit, AwardGameTimerPoints, NoTTick, ELPGive, RaiseFlagSetoffFWorks, SetoffF, DrawStarFlag, DSFLoop, DrawFlagSetTimer, IncrementSFTask2, DelayToAreaEnd, StarFlagExit2, DigitsMathRoutine.
+Twenty-three are already exact. DigitsMathRoutine, RelativeEnemyPosition
+and DrawExplosion_Fireworks retain needs-evidence under later generic
+owners. Expected new nodes empty; no custody transfer. Historical 1992/1992,
+exact nodes 1480/1992 and material 368/487 stay unchanged; feasible controls
+enter 3143/4323 and can reach 3147/4323. S51 precedes; piranha distance
+return follows. T64 stays open; no T65 admission.
+
+Common shared owner is the end-level actor family in enemy/fireworks.c and
+star_flag.c. The same batch covers adjacent fireworks/star-flag entries that
+share EndAreaPoints and position/OAM children; it reuses the accepted S51
+fixture design instead of repeating separate lifecycles per leaf return.
+Static track checks draw-return completion, timer decrement before score
+award, digit-modifier reset between calls, player score selection, real
+relative return before OAM selection, vector dispatch and flag/timer exits.
+Real ROM/native roots cover six slots, fireworks phases, all valid star-flag
+tasks and out-of-range exit, timer borrow/score carry, both players,
+flag rise/frenzy/delay branches and wrapped OAM offsets. Compare persistent
+RAM/OAM/VRAM and $0109-$0139; transient scratch/CPU-stack exclusions and
+actual seam outputs are explicit. Generic unobserved contracts gain no credit.
+
+Focused x86/x64 chain tests/purity and original OpenNT DOS16 are operational
+gates. Owner-local nonredistributable ROM/ASM stay research-only. Ignored
+build/m2-t64-s52 owns <=8 MiB raw, 524288 steps/case, 120 seconds and
+cleanup. Scoped differences stay here for repair/re-audit. Product repairs
+refresh three approved EXEs; preserve unrelated work.
+
+## Aggregate S52 closure - real end-level actor child returns
+
+Control-03867/03869/03870/03871 are exact. Twenty-three scoped labels retain
+exact: RunFireworks, SetupExpl, FireworksSoundScore, EndAreaPoints,
+StarFlagYPosAdder, StarFlagXPosAdder, StarFlagTileData, RunStarFlagObj,
+GameTimerFireworks, SetFWC, IncrementSFTask1, StarFlagExit,
+AwardGameTimerPoints, NoTTick, ELPGive, RaiseFlagSetoffFWorks, SetoffF,
+DrawStarFlag, DSFLoop, DrawFlagSetTimer, IncrementSFTask2, DelayToAreaEnd
+and StarFlagExit2. DigitsMathRoutine, RelativeEnemyPosition and
+DrawExplosion_Fireworks retain needs-evidence with later generic owners.
+No new node credit, custody transfer or inferred generic path coverage.
+
+Static $D295-$D3AF audit checks the fireworks draw return at $D2BC restoring
+the slot before the root RTS; the timer math return at $D331 clears all seven
+modifier bytes before loading five into modifier +5; the player-selected
+score math return at $D342 precedes selector formation and UpdateNumber
+tail. Relative return at $D368 restores the slot before OAM lookup; the
+four-sprite reverse-index loop uses source adders, wrapped OAM stepping,
+absolute indexed field writes and final ObjectOffset restoration. Source
+JumpEngine vectors, task guard, timer zero exit, firework digit selection,
+flag rise/frenzy and interval/music delay exits are retained.
+
+A single 1,536-case manifest includes 768 real RunFireworks and 768 real
+RunStarFlagObj roots across six slots. Real explosion/timer/score/flag
+returns execute 702/102/168/252 times, with seam checks for restored X and
+relative A, and all-seven-byte digit-modifier clearing. Star task 0/1/2/3/4/5
+fixture counts are 132/132/126/126/126/126; task five exercises the guarded
+exit. Timer subtraction executes 102 times and zero timer exits account
+for the remaining 24 task-two cases. Fireworks terminal tails occur 66
+times; drawing phases occur 204/258/240 times. Maximum root execution is
+381 instructions. Real descendants run without substituted child outputs.
+
+Fixtures span timer borrow (001/010/100), zero/999 displays, both players,
+mode-dependent decimal score carry, fireworks digit 1/3/6/other selection,
+flag Y below/at/above $72, positive/zero/negative frenzy count, interval and
+music gates, page wrapping and aligned OAM $20/$f0/$f8/$fc. Current x86/x64
+each match 1,536/1,536 with zero differences across 1,833 compared bytes:
+all non-stack persistent RAM, OAM and score VRAM output plus $0109-$0139.
+Transient scratch $00-$07 and other CPU-stack bytes are explicit exclusions;
+generic unobserved child contracts retain their later owner scope.
+
+Fresh C90 checkers and fireworks/star-flag/purity tests pass 3/3 per width.
+Original OpenNT DOS16 builds/links with the existing OLDNAMES.LIB warning.
+Similar-issue sweep checks draw/relative slot restoration, consecutive math
+modifier clearing and consumer order, vector guard, flag/interval/music
+branches, OAM boundary addressing and terminal score handoff. No scoped
+difference or platform gameplay duplicate found. Product C and the three
+approved EXEs remain unchanged. Raw records/probe are cleaned after gates.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
+unchanged. Exact feasible controls rise 3,143 to 3,147/4,323 (raw 4,342,
+infeasible 19). T64 remains open with 34 Cohort-J controls, zero pending
+material. The piranha distance return follows; T65 remains unadmitted.

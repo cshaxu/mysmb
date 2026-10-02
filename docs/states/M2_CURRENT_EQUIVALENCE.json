@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3143,
-    "needs-evidence": 1180,
+    "exact": 3147,
+    "needs-evidence": 1176,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129620,13 +129620,16 @@
       "instruction": "rts/rti",
       "id": "control-03867",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared fireball/firebar/explosion OAM path",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/fireworks.c and star_flag.c end-level actors with real drawing/math/relative returns and source caller consumers.",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: DrawExplosion_Fireworks returns at $D2BC with X=ObjectOffset after all four sprite tile, coordinate and attribute writes; SetupExpl immediately returns."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DrawExplosion_Fireworks -> SetupExpl with source frame/state predicate, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "DrawExplosion_Fireworks returns at $D2BC with X=ObjectOffset after all four sprite tile, coordinate and attribute writes; SetupExpl immediately returns.",
       "currentSourcePaths": [
         "src/game/enemy/fireworks.c"
       ]
@@ -129662,13 +129665,16 @@
       "instruction": "rts/rti",
       "id": "control-03869",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/fireworks.c and star_flag.c end-level actors with real drawing/math/relative returns and source caller consumers.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: DigitsMathRoutine returns at $D331 after timer subtraction and clearing $0133-$0139; NoTTick sets modifier +5 to five before EndAreaPoints awards score."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DigitsMathRoutine -> NoTTick with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "DigitsMathRoutine returns at $D331 after timer subtraction and clearing $0133-$0139; NoTTick sets modifier +5 to five before EndAreaPoints awards score.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c",
         "src/game/status.c"
@@ -129682,13 +129688,16 @@
       "instruction": "rts/rti",
       "id": "control-03870",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/star_flag.c endgame task switch/draw loop with named score and OAM children",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/fireworks.c and star_flag.c end-level actors with real drawing/math/relative returns and source caller consumers.",
       "semanticEvidence": [
-        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: DigitsMathRoutine returns at $D342 after applying the selected player score modifier and clearing $0133-$0139; ELPGive forms the current-player high-nibble and timer selector before UpdateNumber tail."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation DigitsMathRoutine -> ELPGive with timer/flag/music predicate, table/OAM state handoff and branch, call, loop, tail or return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "DigitsMathRoutine returns at $D342 after applying the selected player score modifier and clearing $0133-$0139; ELPGive forms the current-player high-nibble and timer selector before UpdateNumber tail.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c",
         "src/game/status.c"
@@ -129702,13 +129711,16 @@
       "instruction": "rts/rti",
       "id": "control-03871",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/fireworks.c and star_flag.c end-level actors with real drawing/math/relative returns and source caller consumers.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: RelativeEnemyPosition returns at $D368 with X=ObjectOffset and A=$03AE; DrawStarFlag reloads the current-slot OAM offset and draws the four source-ordered flag sprites before restoring ObjectOffset."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DrawStarFlag restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "operationalEvidence": [
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "RelativeEnemyPosition returns at $D368 with X=ObjectOffset and A=$03AE; DrawStarFlag reloads the current-slot OAM offset and draws the four source-ordered flag sprites before restoring ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/star_flag.c"
       ]

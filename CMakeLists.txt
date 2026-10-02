@@ -1787,3 +1787,6 @@ target_link_libraries(mysmb_flame_integration_route_check PRIVATE mysmb_game)
 
 add_executable(mysmb_fireworks_integration_route_check test/fireworks_integration_route_check.c)
 target_link_libraries(mysmb_fireworks_integration_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_end_level_integration_route_check test/end_level_integration_route_check.c)
+target_link_libraries(mysmb_end_level_integration_route_check PRIVATE mysmb_game)
