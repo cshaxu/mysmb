@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S11 - active projectile/firebar/shared explosion output audit
+
+[S11 exact scope and findings](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+admits7 labels, intended fresh7, maximum1622/1992. Three node/one child-call
+source mismatches registered, no exact additions. Current1615/1992 nodes,
+3457/4317 feasible controls(raw4342,infeasible25),390/492 material partial;
+historical1992/1992 separate. S11 is active, S12 not admitted.
+
 ## M2 T65 S10 - closed original block/chunk output chain
 
 [S10 node/child/carry proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

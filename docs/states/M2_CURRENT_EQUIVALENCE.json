@@ -10670,15 +10670,15 @@
   ],
   "nodeCounts": {
     "exact": 1615,
-    "needs-evidence": 377,
+    "needs-evidence": 374,
     "unclassified": 0,
-    "mismatch": 0
+    "mismatch": 3
   },
   "controlEdgeCounts": {
     "exact": 3457,
-    "needs-evidence": 860,
+    "needs-evidence": 859,
     "infeasible": 25,
-    "mismatch": 0,
+    "mismatch": 1,
     "unclassified": 0
   },
   "controlEdgeTypeCounts": {
@@ -42530,11 +42530,12 @@
       "label": "DrawFireball",
       "asmLine": 14254,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
       "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T65 S11 source finding: Native duplicates DrawFirebar and stores X after tile/attributes; original stores Y then X and enters shared DrawFirebar. Consolidate to actual shared entry/order. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Writes fireball relative Y/X then falls through to the common firebar tile/attribute phase.",
@@ -42595,11 +42596,12 @@
       "label": "DrawExplosion_Fireball",
       "asmLine": 14283,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
       "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T65 S11 source finding: Native duplicates shared explosion layout and bypasses original ExplosionTiles/DumpFourSpr entry. Preserve offset/state increment/kill selection and use the canonical shared body. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Uses pre-increment state bits d3-d1 to select a three-frame explosion or clear Fireball_State.",
@@ -42611,11 +42613,12 @@
       "label": "DrawExplosion_Fireworks",
       "asmLine": 14292,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c",
       "currentCounterpart": "mysmb_oam_draw_fireball / mysmb_oam_draw_firebar / mysmb_oam_draw_fireball_explosion",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T65 S11 source finding: Native raw tile stores omit DumpFourSpr with byte-wrapped Y+1, and coordinate/attribute store order differs. Restore actual child and ordered original stores. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Writes four identical tiles and source +/-4 coordinates with the four flip/palette attributes.",
@@ -113907,10 +113910,11 @@
       "instruction": "jsr",
       "id": "control-03010",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared fireball/firebar/explosion OAM path",
       "semanticEvidence": [
-        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
+        "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
+        "M2 T65 S11 meaningful DrawExplosion_Fireworks -> DumpFourSpr call missing; actual call and original input/return proof required. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DrawExplosion_Fireworks -> DumpFourSpr with source frame/state predicate, OAM handoff and return ordering.",

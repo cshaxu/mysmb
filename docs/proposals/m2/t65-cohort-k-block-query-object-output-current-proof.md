@@ -1354,3 +1354,41 @@ overrides default local-artifact exclusion.
 - mysmb64.exe: 381335 bytes; SHA-256 c5c6cc921dc1bdc6ace6af137e77993248b8d808168be07efcece990e7096d7d.
 
 Ledger admission/closure, documentation and whitespace gates are rerun; consumed raw recorder output is removed. S10 closes its scope only; M2 and T65 remain open.
+
+## S11 admission - fireball/firebar and shared explosion output
+
+Scope7 is the unchanged S11 row, all incoming needs-evidence; intended fresh7,
+maximum1622/1992 from1615. Historical expectedMatches empty, baseline/maximum
+1992; maintenance custody unchanged. Original entries ECDE/ECED/ED09/ED17,
+exits FireA, shared explosion RTS or KillFireBall. Shared owners fireball_gfx.c,
+firebar_gfx.c, fireworks_gfx.c and existing DumpFourSpr dependency. S10 closed;
+S12 may follow only after S11 has no scoped unresolved difference.
+
+Pending owned controls03005-03010 and04029:7. Incoming original caller
+relations01090/01093/01866/02032 and returns03844/03867 are already exact,
+retained with prior caller proof; no new caller credit. Pending material00426
+binds ExplosionTiles to the actual shared explosion consumer. Exact count
+1615/1992 nodes,3457/4317 feasible controls(raw4342,infeasible25),390/492
+material partial; historical1992/1992 remains separate.
+
+ROM-logic track: node/branch/state-increment/kill/table/store-order audit,
+then full original and independent DumpFourSpr input/return proof covering
+byte OAM/frame/state, valid explosion indices0-2 and relative XY wrap cases.
+Operational track is separate: focused projectile/firebar/fireworks/dump/core/
+audio/pause/purity tests, x86/x64 C90 builds and original OpenNT DOS16 link;
+code-changing P refreshes three products. Owner ROM/local ASM remain local
+nonredistributable research inputs. Ignored S11 build directory owns192MiB
+raw,120seconds/run,524288steps/case, bounded chunks and coordinator cleanup.
+
+| Exact node | Source finding and corrective direction |
+| --- | --- |
+| DrawFireball | Native duplicates DrawFirebar and stores X after tile/attributes; original stores Y then X and enters shared DrawFirebar. Consolidate to actual shared entry/order. |
+| DrawExplosion_Fireball | Native duplicates shared explosion layout and bypasses original ExplosionTiles/DumpFourSpr entry. Preserve offset/state increment/kill selection and use the canonical shared body. |
+| DrawExplosion_Fireworks | Native raw tile stores omit DumpFourSpr with byte-wrapped Y+1, and coordinate/attribute store order differs. Restore actual child and ordered original stores. |
+
+Three nodes and one call relation register mismatch; the other four labels
+remain needs-evidence. No product change by admission, no exact credit.
+Similar-issue sweep covers fireball/firebar duplicate frame logic and two
+explosion bodies, all actual production callers, byte Y+1 dump offsets and
+ordered coordinate/attribute stores. Do not alter fireball range, physics,
+sound or platform presentation to disguise an output-node difference.
