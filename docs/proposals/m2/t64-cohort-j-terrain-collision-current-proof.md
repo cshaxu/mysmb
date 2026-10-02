@@ -821,3 +821,43 @@ DOS16 link. No product artifact refresh is due unless shared product C changes.
   feasible controls (raw **4,342**, infeasible **18**).
 - Scope: **2** labels; expected historical matches: **0**; maximum historical
   complete **1,992 / 1,992**.
+
+
+## S21 closure — bump and Hammer Bro response entry
+
+Both scoped labels are current-exact: `ChkForBump_HammerBroJ` and `NoBump`.
+Static `$E124-$E131` comparison confirms that slot five bypasses the sound
+write, state bit 7 alone enables `Sfx_Bump`, and the Hammer Bro fork clears
+`$00`, loads Y with `$FA`, and jumps to the separately owned `SetHJ` entry.
+The ordinary ID path reaches the separately owned `InvEnemyDir` tail.
+
+The project-owned controlled ROM probe records five `$E124` entries after reset:
+slot-five BEQ, state-clear BCC, sound-write fallthrough, ordinary BNE to the
+`RXSpd` return sentinel, and both Hammer variants at the original `$CA37`
+`SetHJ` boundary. The x86 and x64 current checkers replay all five with zero
+differences. Focused jump/Hammer, terrain-state, and platform-purity CTests
+pass on both widths. The existing OpenNT DOS16 shared-source configuration is
+currently blocked by an unrelated pre-existing `enemy/movement.h` compiler EOF
+failure; no product C changed in this S, and no package EXE refresh is due.
+
+S21 records `ChkForBump_HammerBroJ`, `NoBump`, and five source-owned feasible
+controls (`control-02669` through `control-02673`) exact. Current totals:
+historical mapping **1,992 / 1,992**; current exact nodes **1,439 / 1,992**;
+current exact feasible controls **3,015 / 4,324** (raw **4,342**, infeasible
+**18**); exact material relations **358 / 487**.
+
+## S22 admission — enemy direction inversion tail
+
+S22 admits `$E132-$E140`: `InvEnemyDir`. It is the one-instruction ROM tail
+from the ordinary `NoBump` path to the separately owned `RXSpd` routine. Its
+shared owner is `src/game/objects.c:mysmb_objects_bump_enemy`. The ROM logic
+track compares the original tail jump and its preceding signed X-speed/direction
+state; the operational track reuses the controlled ordinary-bump route, current
+x86/x64 checker, focused jump/Hammer test and platform-purity checks. This is
+audit-only work: no product artifact refresh is due unless product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,439 / 1,992** nodes and **3,015 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **1** label (`InvEnemyDir`); expected historical matches: **0**;
+  maximum historical complete **1,992 / 1,992**.

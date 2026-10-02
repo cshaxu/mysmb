@@ -2320,3 +2320,8 @@ and platform-purity tests pass on both widths. No product C changed, so no
 three-EXE refresh is due. Historical mapping remains **1,992 / 1,992**;
 current exact totals are **1,437 / 1,992** nodes and **3,010 / 4,324**
 feasible controls (raw **4,342**, infeasible **18**).
+
+
+## M2 T64 S21 closure — bump and Hammer Bro response entry
+
+`ChkForBump_HammerBroJ` and `NoBump` are current-exact. Five controlled original-ROM `$E124` entries cover the slot-five BEQ, state-clear BCC, sound fallthrough, ordinary `InvEnemyDir` tail, and Hammer `SetHJ` handoff. The current x86/x64 checkers replay all five records with zero differences. Static `$E124-$E131`, focused jump/Hammer and terrain-state tests, and platform purity agree. S21 adds two nodes and five feasible controls: current **1,439 / 1,992** nodes and **3,015 / 4,324** feasible controls; historical mapping remains **1,992 / 1,992**. No product C changed, so package EXEs were not refreshed.

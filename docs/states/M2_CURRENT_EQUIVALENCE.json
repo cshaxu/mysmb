@@ -38860,14 +38860,16 @@
       "label": "ChkForBump_HammerBroJ",
       "asmLine": 12638,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy",
       "currentCounterpart": "mysmb_objects_bump_enemy",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Suppresses bump sound in slot five or without state d7, then selects Hammer Bro jump setup or ordinary direction inversion.",
+      "operationalEvidence": [
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+      ],
+      "semanticContract": "Slot-five and state-d7 sound gating, followed by Hammer $00/Y handoff or ordinary inversion tail.",
       "currentSourcePaths": [
         "src/game/objects.c"
       ]
@@ -38876,14 +38878,16 @@
       "label": "NoBump",
       "asmLine": 12646,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy",
       "currentCounterpart": "mysmb_objects_bump_enemy",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects Hammer Bro SetHJ with $00 clear and vertical speed $fa, otherwise preserves the ordinary direction-inversion successor.",
+      "operationalEvidence": [
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+      ],
+      "semanticContract": "Slot-five and state-d7 sound gating, followed by Hammer $00/Y handoff or ordinary inversion tail.",
       "currentSourcePaths": [
         "src/game/objects.c"
       ]
@@ -105035,12 +105039,14 @@
       "instruction": "beq",
       "id": "control-02669",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_bump_enemy branch/tail counterpart",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation ChkForBump_HammerBroJ Ã¢â€ â€™ NoBump, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -105054,12 +105060,14 @@
       "instruction": "bcc",
       "id": "control-02670",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_bump_enemy branch/tail counterpart",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation ChkForBump_HammerBroJ Ã¢â€ â€™ NoBump, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -105073,12 +105081,14 @@
       "instruction": "sta",
       "id": "control-02671",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_bump_enemy branch/tail counterpart",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+      ],
       "semanticContract": "Preserves enemy side/terrain fallthrough relation ChkForBump_HammerBroJ Ã¢â€ â€™ NoBump, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -105092,12 +105102,14 @@
       "instruction": "bne",
       "id": "control-02672",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_bump_enemy branch/tail counterpart",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation NoBump Ã¢â€ â€™ InvEnemyDir, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -105111,12 +105123,14 @@
       "instruction": "jmp",
       "id": "control-02673",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_bump_enemy branch/tail counterpart",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+      ],
       "semanticContract": "Preserves enemy side/terrain jump relation NoBump Ã¢â€ â€™ SetHJ, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c"

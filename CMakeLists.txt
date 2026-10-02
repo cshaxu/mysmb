@@ -1678,6 +1678,9 @@ add_test(NAME mysmb.enemy-side-jump-hammer-chain COMMAND mysmb_enemy_side_jump_h
 add_executable(mysmb_enemy_side_jump_hammer_actual_check
     test/enemy_side_jump_hammer_actual_check.c)
 target_link_libraries(mysmb_enemy_side_jump_hammer_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_enemy_bump_entry_actual_check
+    test/enemy_bump_entry_actual_check.c)
+target_link_libraries(mysmb_enemy_bump_entry_actual_check PRIVATE mysmb_game)
 add_executable(mysmb_enemy_ground_query_nonsolids_smoke
     test/enemy_ground_query_nonsolids_smoke.c)
 target_link_libraries(mysmb_enemy_ground_query_nonsolids_smoke PRIVATE mysmb_game)
