@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T68 S6 Packet
+## M2 T69 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T68 S6 P2 closed; T68 closed,T69 next unadmitted. |
-| Admission And Approval | Owner approved continued source-order proof; coordinator admits77 already-exact N nodes/56 raw controls/92 material census and cross-chain integration. |
-| Objective | Census every N node/relation proof and validate actual shared audio cross-chain joins with integrated regression. |
-| Non-goals | No fresh node credit, earlier C73/M alias debt repair, platform gameplay or unrelated work. |
+| Identifier Mode | New: M2 T69 S1 P1 active; T68 closed,later S unadmitted. |
+| Admission And Approval | Owner approved ongoing source-order M2 proof;coordinator admits T69 residual/cross-cohort plan and19 pending status nodes. |
+| Objective | Audit/repair original status output,decimal modifiers and both-player top-score chain with actual ROM proof. |
+| Non-goals | No later bootstrap/object/enemy/audio promotions,host gameplay or unrelated owner work. |
 | Reference Baseline | Historical1992/1992; current exact1919/1992 nodes,3964/4279 feasible controls(raw4342,infeasible63),500/555 material partial. |
-| Candidate Proposal | [Closed T68 exact77-node proof](../history/M2-T68-music-data-current-proof.md), S6 census/integration. |
-| Files And ABI Surface | src/game/audio.c and audio.h neutral APU ABI; test/tools probes and governance. |
+| Candidate Proposal | [T69 exact residual/cross-cohort plan](../proposals/m2/t69-cross-cohort-current-proof.md),S1 exact19 status labels. |
+| Files And ABI Surface | src/game/status.c/frame_root.c shared status entry; neutral test/tools probes and governance. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
-| Verification | 77 nodes/49 feasible controls/7 impossible/92 material census;16384 new original/current roots both widths zero full RAM/APU/ordered differences; actual header/channel/helper joins. |
-| Expected Markers | Met:77 already-exact nodes/56 raw controls/92 material accounted;zero fresh credit;historical expected/actualMatches empty. |
-| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable; ignored build/m2-t68-s6,128MiB raw,1024 roots/batch,120seconds/process,524288steps/root and cleanup. |
+| Verification | Unchanged original PrintStatusBarNumbers/OutputNumbers, DigitsMathRoutine and UpdateTopScore entries with real children, return to controlled sentinel; selectors/buffer boundaries, arithmetic borrow/carry/mode gates and both player scores. Compare persistent RAM including zero-page scratch against current shared C x86/x64; original table reads and source control transitions independently recorded. |
+| Expected Markers | Scope19 pending/intended fresh19,max1938/1992;30 pending controls and2 material;historical expectedMatches empty. |
+| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable;ignored build/m2-t69-s1,128MiB raw,1024 roots/batch,120seconds/process,524288steps/root and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | Any scoped discrepancy or missing accepted proof/boundary custody keeps S6/T68 open. |
-| Exit Criteria | Met: accepted census/actual cross-chain proof,248 tests each/full builds/purity/original OpenNT link;3 S2 products byte-identical;tracker/history updated. |
+| Stop Conditions | Any scoped diff or missing source/real-child/table/dual proof keeps S1 active. |
+| Exit Criteria | 19 nodes and owned feasible controls/material exact after source and actual ROM/native proof;focused tests/current builds/OpenNT link/purity;3 EXEs refreshed on product change. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Selection/header offsets, stream/table consumers, original queue priority/pause/zero/loopback and ordered channel boundaries. |
+| Similar-Issue Sweep | Decimal carry/borrow,byte indices/buffer wrap,selector order,scratch state and actual indexed table reads. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **3964/4279** (raw4342,infeasible63).
 - Exact material relations: **500/555**, enumeration partial.
 - Latest three products are T68 S2 P2 builds with original two-ADC length carry and prior noise/fetch-order/audio/title/focus pause fixes.
-- T68 closed:77 nodes/49 feasible controls/92 material exact,7 impossible retained;T69 next unadmitted,M2 open.
+- T69 S1 active:19 pending status nodes,intended fresh19,max1938/1992;zero admission credit.
