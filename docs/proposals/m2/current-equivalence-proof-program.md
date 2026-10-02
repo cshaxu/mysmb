@@ -251,3 +251,12 @@ actual M inventory, including its music selection and partial stream prefixes.
 S1 admits22 SoundEngine/register nodes, intended fresh22/max1738/1992; no
 admission credit. Current1716/1992 nodes,3649/4316 controls,403/493 material
 partial. Remaining S follows source order; T68 owns N, T69 external joins.
+
+## Current checkpoint after T67 S1
+
+[T67 S1](t67-cohort-m-sound-command-current-proof.md) closes22 nodes and45
+feasible controls, with four instruction-proven impossible fallthroughs retained.
+Current1738/1992 nodes,3694/4312 controls(raw4342,infeasible30),403/493 material
+partial; historical1992/1992 separate.15,360 original roots agree both widths
+including ordered APU writes;7 focused tests each and original DOS16 link pass.
+No product differences,3 existing EXEs retained; S2 next unadmitted, T67 open.

@@ -44502,14 +44502,17 @@
       "label": "SoundEngine",
       "asmLine": 15070,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Title OperMode=0 writes only master disable, returns without clearing queues or touching DAC; non-title enters normal/pause control."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Silences title mode; otherwise initializes APU frame/master control and dispatches pause or normal sound processing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Title OperMode=0 writes only master disable, returns without clearing queues or touching DAC; non-title enters normal/pause control.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44518,14 +44521,17 @@
       "label": "SndOn",
       "asmLine": 15075,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Ordered4017=FF then4015=0F; PauseMode!=0 wins; otherwise PauseQueue==1 enters pause, other queues enter normal dispatch."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Enables the first four channels then enters pause handling when PauseModeFlag is set or PauseSoundQueue equals one, else normal sound processing.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Ordered4017=FF then4015=0F; PauseMode!=0 wins; otherwise PauseQueue==1 enters pause, other queues enter normal dispatch.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44534,14 +44540,17 @@
       "label": "InPause",
       "asmLine": 15084,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Existing pause buffer continues; empty buffer/empty queue skips; nonzero queue copies both flags, disables, clears three effect buffers, enables, length2A."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Starts a queued pause only when buffer is empty, clears sound buffers during the APU reset and initializes pause tone length; empty queue skips subroutines.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Existing pause buffer continues; empty buffer/empty queue skips; nonzero queue copies both flags, disables, clears three effect buffers, enables, length2A.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44550,14 +44559,17 @@
       "label": "PTone1F",
       "asmLine": 15099,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_pause_tone",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Initial/repeated first tone44 uses X84/Y7F via actual PlaySqu1Sfx; LDA44 forces BNE taken."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the first pause-tone register value and transfers it to the common square-one write sequence.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Initial/repeated first tone44 uses X84/Y7F via actual PlaySqu1Sfx; LDA44 forces BNE taken.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44566,14 +44578,17 @@
       "label": "ContPau",
       "asmLine": 15101,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Length24/18 chooses64,1E chooses44; all other byte lengths skip tone then decrement modulo256."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects pause-tone timing transitions at lengths 36, 30 and 24, otherwise decrements pause length without an APU tone write.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Length24/18 chooses64,1E chooses44; all other byte lengths skip tone then decrement modulo256.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44582,14 +44597,17 @@
       "label": "PTone2F",
       "asmLine": 15108,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_pause_tone",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Second tone64 reaches same ordered controls/frequency path."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects the second pause-tone register value and enters common square-one write sequence.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Second tone64 reaches same ordered controls/frequency path.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44598,14 +44616,17 @@
       "label": "PTRegC",
       "asmLine": 15109,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_pause_tone -> mysmb_audio_play_squ1_sfx",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Calls actual square-one helper with tone A,X84,Y7F before decrement."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the selected pause tone through PlaySqu1Sfx before pause-length decrement.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Calls actual square-one helper with tone A,X84,Y7F before decrement.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44614,14 +44635,17 @@
       "label": "DecPauC",
       "asmLine": 15112,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Decrement modulo256; zero disables; saved buffer2 clears pause flag, other buffers retain it; pause buffer clears."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Decrements pause length; on expiry disables APU, conditionally clears PauseModeFlag, clears pause buffer and joins queue-clear tail.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Decrement modulo256; zero disables; saved buffer2 clears pause flag, other buffers retain it; pause buffer clears.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44630,14 +44654,17 @@
       "label": "SkipPIn",
       "asmLine": 15121,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Zero clears pause buffer, unconditional BEQ skip; never dispatches normal children in this frame."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Clears the pause sound buffer then transfers to the common queue-clear tail.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Zero clears pause buffer, unconditional BEQ skip; never dispatches normal children in this frame.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44646,14 +44673,17 @@
       "label": "RunSoundSubroutines",
       "asmLine": 15125,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Real Square1,Square2,Noise,Music calls in original order, then clear FB/FC; empty children tested, no child node promotion."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Calls square-one, square-two, noise and music handlers in source order, then clears both music queues.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Real Square1,Square2,Noise,Music calls in original order, then clear FB/FC; empty children tested, no child node promotion.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44662,14 +44692,17 @@
       "label": "SkipSoundSubroutines",
       "asmLine": 15134,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Clear FF/FE/FD/FA, capture old7C0, inspect F4&3; update counter before storing original old value to4011."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Clears all sound queues and updates DAC_Counter according to AreaMusicBuffer low bits and the prior DAC counter.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Clear FF/FE/FD/FA, capture old7C0, inspect F4&3; update counter before storing original old value to4011.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44678,14 +44711,17 @@
       "label": "NoIncDAC",
       "asmLine": 15147,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Old DAC zero remains zero; otherwise decrement; active music at old>=30 increments then decrements netzero."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses the pre-update DAC value to preserve the source decrement/no-decrement behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Old DAC zero remains zero; otherwise decrement; active music at old>=30 increments then decrements netzero.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44694,14 +44730,17 @@
       "label": "StrWave",
       "asmLine": 15150,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_step and its square/noise/music helper dispatches",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write old DAC, never post-update counter, as final command."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the source prior DAC-counter register value to the DMC load register and returns.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Write old DAC, never post-update counter, as final command.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44710,14 +44749,17 @@
       "label": "Dump_Squ1_Regs",
       "asmLine": 15155,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_dump_squ1_regs",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write Y to4001 then X to4000, retaining same-value writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes square-one control register one from Y before control register zero from X.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Write Y to4001 then X to4000, retaining same-value writes.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44726,14 +44768,17 @@
       "label": "PlaySqu1Sfx",
       "asmLine": 15160,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_play_squ1_sfx",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Actual dump then square-one frequency, return frequency A."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Calls square-one control-register writer, then enters square-one frequency writer.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Actual dump then square-one frequency, return frequency A.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44742,14 +44787,17 @@
       "label": "SetFreq_Squ1",
       "asmLine": 15163,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_set_freq_squ1",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Frequency writer X offset0."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Sets base APU frequency-register offset zero before common frequency lookup/output.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Frequency writer X offset0.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44758,14 +44806,17 @@
       "label": "Dump_Freq_Regs",
       "asmLine": 15166,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_dump_freq_regs",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Y=A; low CPU FF01+Y wrapped16 first; zero returns A0 without writes; otherwise low to4002+X then (FF00+Y|08) to4003+X, returned high A."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Reads FreqRegLookupTbl low byte at index plus one; on nonzero writes divider low then high-byte-or-length bit at selected channel base.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Y=A; low CPU FF01+Y wrapped16 first; zero returns A0 without writes; otherwise low to4002+X then (FF00+Y|08) to4003+X, returned high A.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44774,14 +44825,17 @@
       "label": "NoTone",
       "asmLine": 15174,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_dump_freq_regs zero return / native no-op at direct RTS",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Zero-low path returns without command; direct original RTS does not mutate RAM/APU/A."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns without frequency-divider writes when the lookup low byte is zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Zero-low path returns without command; direct original RTS does not mutate RAM/APU/A.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44790,14 +44844,17 @@
       "label": "Dump_Sq2_Regs",
       "asmLine": 15176,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_dump_sq2_regs",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write X to4004 then Y to4005, preserving order difference from Square1."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes square-two control register zero from X before control register one from Y.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Write X to4004 then Y to4005, preserving order difference from Square1.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44806,14 +44863,17 @@
       "label": "PlaySqu2Sfx",
       "asmLine": 15181,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_play_sq2_sfx",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Actual dump then square-two frequency, return frequency A."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Calls square-two control-register writer, then enters square-two frequency writer.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "Actual dump then square-two frequency, return frequency A.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44822,14 +44882,17 @@
       "label": "SetFreq_Squ2",
       "asmLine": 15184,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_set_freq_sq2",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: X offset4, original nonzero LDX makes BNE unconditional."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Sets base APU frequency-register offset four and tail-transfers to common frequency lookup/output.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "X offset4, original nonzero LDX makes BNE unconditional.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -44838,14 +44901,17 @@
       "label": "SetFreq_Tri",
       "asmLine": 15188,
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "currentCounterpart": "src/game/audio.c mysmb_audio_set_freq_tri",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: X offset8, original nonzero LDX makes BNE unconditional."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Sets base APU frequency-register offset eight and tail-transfers to common frequency lookup/output.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+      ],
+      "semanticContract": "X offset8, original nonzero LDX makes BNE unconditional.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -117851,12 +117917,15 @@
       "instruction": "bne",
       "id": "control-03164",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 6400; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch SoundEngine \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SndOn preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -117870,12 +117939,15 @@
       "instruction": "bne",
       "id": "control-03165",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 5120; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch SndOn \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InPause preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -117889,12 +117961,15 @@
       "instruction": "bne",
       "id": "control-03166",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch SndOn \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -117908,12 +117983,15 @@
       "instruction": "bne",
       "id": "control-03167",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 1024; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through SndOn \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InPause preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -117927,12 +118005,15 @@
       "instruction": "bne",
       "id": "control-03168",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2048; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch InPause \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContPau preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -117946,12 +118027,15 @@
       "instruction": "beq",
       "id": "control-03169",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2048; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch InPause \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -117965,12 +118049,15 @@
       "instruction": "sta",
       "id": "control-03170",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2048; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through InPause \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PTone1F preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -117984,12 +118071,15 @@
       "instruction": "bne",
       "id": "control-03171",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2056; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch PTone1F \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PTRegC preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118003,12 +118093,15 @@
       "instruction": "bne",
       "id": "control-03172",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 F312 LDA#$44 immediately precedes BNE PTRegC; Z=0."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 0; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through PTone1F \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ContPau preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118022,12 +118115,15 @@
       "instruction": "beq",
       "id": "control-03173",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 8; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch ContPau \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PTone2F preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118041,12 +118137,15 @@
       "instruction": "beq",
       "id": "control-03174",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 8; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch ContPau \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PTone1F preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118060,12 +118159,15 @@
       "instruction": "bne",
       "id": "control-03175",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2024; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch ContPau \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecPauC preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118079,12 +118181,15 @@
       "instruction": "bne",
       "id": "control-03176",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 8; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through ContPau \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PTone2F preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118098,12 +118203,15 @@
       "instruction": "lda",
       "id": "control-03177",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 16; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through PTone2F \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PTRegC preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118117,12 +118225,15 @@
       "instruction": "jsr",
       "id": "control-03178",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2072; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source call PTRegC \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu1Sfx occurs in the original audio-handler order before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118136,12 +118247,15 @@
       "instruction": "jsr",
       "id": "control-03179",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2072; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through PTRegC \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DecPauC preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118155,12 +118269,15 @@
       "instruction": "bne",
       "id": "control-03180",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 4088; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch DecPauC \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118174,12 +118291,15 @@
       "instruction": "bne",
       "id": "control-03181",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 4; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch DecPauC \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipPIn preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118193,12 +118313,15 @@
       "instruction": "sta",
       "id": "control-03182",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 4; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through DecPauC \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipPIn preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118212,12 +118335,15 @@
       "instruction": "beq",
       "id": "control-03183",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 8; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch SkipPIn \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipSoundSubroutines preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118231,12 +118357,15 @@
       "instruction": "beq",
       "id": "control-03184",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 SkipPIn LDA#0; STA PauseSoundBuffer preserves Z=1; BEQ skips normal dispatch."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 0; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through SkipPIn \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSoundSubroutines preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118250,12 +118379,15 @@
       "instruction": "jsr",
       "id": "control-03185",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source call RunSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Square1SfxHandler occurs in the original audio-handler order before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118269,12 +118401,15 @@
       "instruction": "jsr",
       "id": "control-03186",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source call RunSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Square2SfxHandler occurs in the original audio-handler order before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118288,12 +118423,15 @@
       "instruction": "jsr",
       "id": "control-03187",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source call RunSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoiseSfxHandler occurs in the original audio-handler order before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118307,12 +118445,15 @@
       "instruction": "jsr",
       "id": "control-03188",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source call RunSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 MusicHandler occurs in the original audio-handler order before the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118326,12 +118467,15 @@
       "instruction": "sta",
       "id": "control-03189",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through RunSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipSoundSubroutines preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118345,12 +118489,15 @@
       "instruction": "beq",
       "id": "control-03190",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 1792; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch SkipSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoIncDAC preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118364,12 +118511,15 @@
       "instruction": "bcc",
       "id": "control-03191",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 864; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch SkipSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 StrWave preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118383,12 +118533,15 @@
       "instruction": "bcc",
       "id": "control-03192",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 3744; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through SkipSoundSubroutines \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoIncDAC preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118402,12 +118555,15 @@
       "instruction": "beq",
       "id": "control-03193",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 7; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source conditional branch NoIncDAC \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 StrWave preserves its operating-mode, pause, timer or DAC predicate before the alternate path.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118421,12 +118577,15 @@
       "instruction": "dec",
       "id": "control-03194",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 5529; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through NoIncDAC \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 StrWave preserves prior audio-buffer/APU state writes before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118440,12 +118599,15 @@
       "instruction": "jsr",
       "id": "control-03195",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2840; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source call PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Dump_Squ1_Regs completes its APU register writes before the caller frequency continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118459,12 +118621,15 @@
       "instruction": "jsr",
       "id": "control-03196",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2840; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetFreq_Squ1 preserves prior channel-base/control-register setup before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118478,12 +118643,15 @@
       "instruction": "ldx",
       "id": "control-03197",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 3608; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through SetFreq_Squ1 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Dump_Freq_Regs preserves prior channel-base/control-register setup before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118497,12 +118665,15 @@
       "instruction": "beq",
       "id": "control-03198",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 576; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source branch Dump_Freq_Regs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoTone preserves its frequency-lookup zero/nonzero or unconditional channel-selection condition.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118516,12 +118687,15 @@
       "instruction": "sta",
       "id": "control-03199",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 6104; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through Dump_Freq_Regs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoTone preserves prior channel-base/control-register setup before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118535,12 +118709,15 @@
       "instruction": "jsr",
       "id": "control-03200",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 768; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source call PlaySqu2Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Dump_Sq2_Regs completes its APU register writes before the caller frequency continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118554,12 +118731,15 @@
       "instruction": "jsr",
       "id": "control-03201",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 768; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through PlaySqu2Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetFreq_Squ2 preserves prior channel-base/control-register setup before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118573,12 +118753,15 @@
       "instruction": "bne",
       "id": "control-03202",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 1536; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source branch SetFreq_Squ2 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Dump_Freq_Regs preserves its frequency-lookup zero/nonzero or unconditional channel-selection condition.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118592,12 +118775,15 @@
       "instruction": "bne",
       "id": "control-03203",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 SetFreq_Squ2 LDX#4 sets Z=0 before BNE Dump_Freq_Regs."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 0; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through SetFreq_Squ2 \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetFreq_Tri preserves prior channel-base/control-register setup before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118611,12 +118797,15 @@
       "instruction": "bne",
       "id": "control-03204",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 768; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source branch SetFreq_Tri \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 Dump_Freq_Regs preserves its frequency-lookup zero/nonzero or unconditional channel-selection condition.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -118630,12 +118819,15 @@
       "instruction": "bne",
       "id": "control-03205",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "infeasible",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 SetFreq_Tri LDX#8 sets Z=0 before BNE Dump_Freq_Regs."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 0; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source fall-through SetFreq_Tri \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SwimStompEnvelopeData preserves prior channel-base/control-register setup before the successor.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -136887,12 +137079,15 @@
       "instruction": "rts/rti",
       "id": "control-04061",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2072; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source return relation PlaySqu1Sfx \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PTRegC exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -136906,12 +137101,15 @@
       "instruction": "rts/rti",
       "id": "control-04062",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 queue and SFX control flow",
       "semanticEvidence": [
-        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required."
+        "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source return relation Square1SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSoundSubroutines exposes the completed square-one state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -136925,12 +137123,15 @@
       "instruction": "rts/rti",
       "id": "control-04063",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2 and effect-helper control flow",
       "semanticEvidence": [
-        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required."
+        "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source return relation Square2SfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSoundSubroutines exposes completed square-two state to the caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -136944,12 +137145,15 @@
       "instruction": "rts/rti",
       "id": "control-04064",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c noise queue and effect helper control flow",
       "semanticEvidence": [
-        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required."
+        "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source return relation NoiseSfxHandler \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSoundSubroutines exposes completed noise/APU state to caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -136963,12 +137167,15 @@
       "instruction": "rts/rti",
       "id": "control-04065",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared music selection/header helpers",
       "semanticEvidence": [
-        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required."
+        "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 256; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "MusicHandler returns to SoundEngine after both queues and active buffers are clear.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -136982,12 +137189,15 @@
       "instruction": "rts/rti",
       "id": "control-04066",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 2840; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source return relation Dump_Squ1_Regs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu1Sfx exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -137001,12 +137211,15 @@
       "instruction": "rts/rti",
       "id": "control-04067",
       "cohort": "M",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
       "semanticEvidence": [
-        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 Source predicate/call/return/fallthrough maps to audited actual shared audio owner; caller-scoped return ownership retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t67-cohort-m-sound-command-current-proof.md S1 P2 actual original transition count 768; full RAM/APU and ordered native output agree; unreachable disposition also requires explicit instruction proof."
+      ],
       "semanticContract": "The source return relation Dump_Sq2_Regs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 PlaySqu2Sfx exposes completed channel register state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -143308,12 +143521,16 @@
     "control-02942",
     "control-02951",
     "control-03162",
+    "control-03172",
+    "control-03184",
+    "control-03203",
+    "control-03205",
     "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 26,
-  "feasibleControlEdgeTotal": 4316
+  "infeasibleControlEdgeTotal": 30,
+  "feasibleControlEdgeTotal": 4312
 }

@@ -1,12 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T67 S1 - admitted SoundEngine and register chain
+## M2 T67 S1 - closed SoundEngine and register chain
 
-[Exact22-node admission and126-node task plan](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
-retains current1716/1992 nodes,3649/4316 controls(raw4342,infeasible26),403/493
-material partial. All22 scope labels needs-evidence, intended fresh22/max1738;
-no admission credit. Historical1992/1992 separate. Original ordered APU stores,
-RAM/branches/table/call audit and operational proof required before closure.
+[Exact22 completed labels and owned edge evidence](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+closes22 expected nodes and45 feasible controls;4 instruction-proven impossible
+fallthroughs retained raw. Current1738/1992 nodes,3694/4312 controls(raw4342,
+infeasible30),403/493 material partial unchanged. Historical1992/1992 separate.
+15,360 original roots compare full RAM/APU/ordered commands with zero differences
+each width; deliberate write-order corruption rejected;7 focused tests each and
+original DOS16 link pass. No code difference/deferral/transfer;3 EXEs retained.
+T67 remains open with104 pending nodes; S2 next unadmitted.
 
 ## M2 T66 S7 and T66 - closed census and integrated joins
 
