@@ -127,7 +127,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f)return 65;
     if(fread(h,1U,16U,f)!=16U||memcmp(h,"MSOH\1",5U))return 66;
     mode=h[5];count=(unsigned int)read32(h+8U);current=(unsigned int)read32(h+12U);
-    if(mode>26U||count==0U||count>2048U)return 66;
+    if(mode>32U||count==0U||count>2048U)return 66;
     if(mode>=16U){
         FILE *rom;
         if(argc!=3)return 64;
@@ -162,6 +162,12 @@ int main(int argc,char **argv)
         if(mode==24U)mysmb_oam_relative_misc_position(&game,x);
         if(mode==25U)mysmb_oam_relative_enemy_position(&game,x);
         if(mode==26U)mysmb_oam_relative_block_position(&game,x);
+        if(mode==27U)mysmb_oam_get_player_offscreen_bits(&game);
+        if(mode==28U)mysmb_oam_get_fireball_offscreen_bits(&game,x);
+        if(mode==29U)mysmb_oam_get_bubble_offscreen_bits(&game,x);
+        if(mode==30U)mysmb_oam_get_misc_offscreen_bits(&game,x);
+        if(mode==31U)mysmb_oam_get_enemy_offscreen_bits(&game,x);
+        if(mode==32U)mysmb_oam_get_block_offscreen_bits(&game,x);
         if((mode==3U||mode==4U)&&(x!=record[4]||y!=record[5]))++failures;
 #ifdef MYSMB_OAM_HELPER_CHILD_CHECK
         if(calls!=record[3])++failures;

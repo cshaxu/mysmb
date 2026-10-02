@@ -122,7 +122,7 @@ Pure audit/test/evidence P retains latest products. No platform business logic.
 - S2: Original player/bubble/fireball/misc/enemy/block relative entries, world-page/byte-borrow domains and paired block continuation. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
 - S3: Original object-family offsets and real GetX/GetYOffscreenBits input/return plus composed mask scratch. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
 - S4: Original F1F6 horizontal roots, both boundary loops, page difference and all table consumers. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
-- S5: Original F282 vertical roots, high-page differences, both boundary loops and actual DividePDiff path. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
+- S5: Original F239 vertical roots, high-page differences, both boundary loops and actual DividePDiff path. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
 - S6: Original DrawSpriteObject with all byte X/Y and facing/attribute/carry domains, actual return and OAM order. Owner src/game/oam/sprite_row.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
 
 Material00430 IntermediatePlayerData and00431 ChangeSizeOffsetAdder belong
@@ -619,3 +619,102 @@ and logs stay below ignored build/m2-t66-s3,192MiB aggregate raw budget,
 2048 roots/chunk,120seconds/run,524288steps/case; coordinator deletes raw
 after comparison. Sweep all six wrappers and composition. No successor
 admission with scoped diff/unproved edge; repair and re-audit within S3.
+
+## S3 P2 offscreen composition audit and closure
+
+All11 intended labels and18 controls close exact, no deferred/transferred
+names. Nodes1686 ->1697/1992; controls3606 ->3624/4317(raw4342,
+infeasible25); material00432 closes,397 ->398/493 enumeration partial.
+Historical1992/1992 expected/actualMatches remain empty and separate.
+T66 remains open with19 pending nodes; S4 next unadmitted.
+
+### Static per-node and integration conclusions
+
+No scoped production discrepancy found. Player source/destination0 is set
+by its player_gfx.c wrapper. Fireball/bubble/misc use existing proper-offset
+helper with selector0/1/2 and fixed destination2/3/6. Enemy/block preserve
+incoming slot in scratch00, add displacement1/9 in byte width and select
+fixed destination1/4. GetProperObjOffset uses cleared carry byte addition;
+existing offset table matches original local PRG and every entry is read.
+GetOffScreenBitsSet saves destination across its real child calls, shifts
+Y result four times, ORs saved X nibble, writes00 then fixed offscreen cell.
+RunOffscrBitsSubs calls real X helper, shifts its result right four times,
+writes00 and tail-enters real Y helper; the Y return resumes the composition
+caller. Native functions preserve that data/control sequence via shared C
+calls and return values. X/Y arithmetic/table nodes stay S4/S5 dependencies,
+without fresh credit. There is no platform branch or host API in this path.
+
+Similar-issue sweep covers all six wrappers, both slot-plus-displacement
+routes, shared nibble composition and proper-offset helper relative users.
+No correction required in that scope; original CPU restored ObjectOffset
+is unused by these void native roots and excluded as a register, not RAM.
+Destination save on CPU stack is represented by an immutable native value;
+all game RAM/scratch remains compared. Source visits alone do not establish
+native equivalence: each current counterpart/contract below was inspected.
+
+### Controlled original/native route and table evidence
+
+Modes27-32 enter original F180/F187/F191/F19B/F1AF/F1B6,65536 roots each.
+Each family covers all byte X/Y pairs, distributed valid slots, independently
+valid ObjectOffset and selected page/high/screen-edge states. These latter
+dimensions are not claimed as exhaustive extra Cartesian combinations.
+All393216 roots match real x86/x64 shared C across1841 RAM bytes, including
+scratch/OAM/aliases0109-0139; true CPU stack0100-0108/013A-01FF and unused
+CPU A/X/Y/flags excluded. No mock or substitute helper output is used.
+Proper-offset indexed reads0/1/2 each occur65536 times; original ROM binding
+checks existing constants without importing protected bytes or raw fixtures.
+Material00432 shares that helper with S2's already accepted relative roots.
+Actual original PC transfers/RTS continuations observe every listed control
+relation. Source opcode/index agrees locally; non-code directives outside
+the admitted range remain indexing exclusions. Helper dependency execution
+does not certify later nodes. No end-to-end game/DOS performance claim.
+
+| Node | Original address | Visits or table reads | Current counterpart / semantic audit |
+| --- | --- | ---: | --- |
+| GetPlayerOffscreenBits | f180 | 65536 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Selects player SprObject source and player offscreen destination offsets before common offscreen-bit calculation. |
+| GetFireballOffscreenBits | f187 | 65536 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Applies fireball ObjOffsetData displacement then selects the fixed fireball offscreen destination before common calculation. |
+| GetBubbleOffscreenBits | f191 | 65536 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Applies bubble ObjOffsetData displacement then selects the bubble offscreen destination before common calculation. |
+| GetMiscOffscreenBits | f19b | 65536 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Applies misc ObjOffsetData displacement then selects the misc offscreen destination before common calculation. |
+| ObjOffsetData | f1a5 | 196608 | mysmb_obj_offset_data and mysmb_oam_proper_source_offset; Binds ordered fireball, bubble and misc SprObject array displacements used by both relative-position and offscreen wrappers. |
+| GetProperObjOffset | f1a8 | 196608 | mysmb_obj_offset_data and mysmb_oam_proper_source_offset; Adds the selected ObjOffsetData displacement to the input object slot. |
+| GetEnemyOffscreenBits | f1af | 65536 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Selects enemy array displacement and enemy offscreen destination before common calculation. |
+| GetBlockOffscreenBits | f1b6 | 65536 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Selects block array displacement and block offscreen destination before common calculation. |
+| SetOffscrBitsOffset | f1ba | 131072 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Preserves ObjectOffset in scratch, adds the supplied array displacement, and enters common offscreen-bit calculation. |
+| GetOffScreenBitsSet | f1c0 | 393216 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Calls the X/Y offscreen chain, combines X low and Y high nibbles, stores the composite to the selected offscreen byte and restores ObjectOffset. |
+| RunOffscrBitsSubs | f1d7 | 393216 | mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset; Obtains X offscreen bits, shifts them into scratch low nibble, then tail-transfers to Y offscreen calculation. |
+
+| Control | Original relation | Instruction PC | Actual transfers/returns |
+| --- | --- | --- | ---: |
+| control-03127 | GetPlayerOffscreenBits -> GetOffScreenBitsSet (jump) | f184 | 65536 |
+| control-03128 | GetFireballOffscreenBits -> GetProperObjOffset (call) | f189 | 65536 |
+| control-03129 | GetFireballOffscreenBits -> GetOffScreenBitsSet (jump) | f18e | 65536 |
+| control-03130 | GetBubbleOffscreenBits -> GetProperObjOffset (call) | f193 | 65536 |
+| control-03131 | GetBubbleOffscreenBits -> GetOffScreenBitsSet (jump) | f198 | 65536 |
+| control-03132 | GetMiscOffscreenBits -> GetProperObjOffset (call) | f19d | 65536 |
+| control-03133 | GetMiscOffscreenBits -> GetOffScreenBitsSet (jump) | f1a2 | 65536 |
+| control-03134 | GetEnemyOffscreenBits -> SetOffscrBitsOffset (jump) | f1b3 | 65536 |
+| control-03135 | GetBlockOffscreenBits -> SetOffscrBitsOffset (fallthrough) | f1b8 | 65536 |
+| control-03136 | SetOffscrBitsOffset -> GetOffScreenBitsSet (fallthrough) | f1bf | 131072 |
+| control-03137 | GetOffScreenBitsSet -> RunOffscrBitsSubs (call) | f1c2 | 393216 |
+| control-03138 | RunOffscrBitsSubs -> GetXOffscreenBits (call) | f1d7 | 393216 |
+| control-03139 | RunOffscrBitsSubs -> GetYOffscreenBits (jump) | f1e0 | 393216 |
+| control-04054 | GetProperObjOffset -> GetFireballOffscreenBits (return) | f189 | 65536 |
+| control-04055 | GetProperObjOffset -> GetBubbleOffscreenBits (return) | f193 | 65536 |
+| control-04056 | GetProperObjOffset -> GetMiscOffscreenBits (return) | f19d | 65536 |
+| control-04057 | RunOffscrBitsSubs -> GetOffScreenBitsSet (return) | f1c2 | 393216 |
+| control-04058 | GetXOffscreenBits -> RunOffscrBitsSubs (return) | f1d7 | 393216 |
+
+### Operational verification and retained delivery
+
+Current checker builds x86/x64;14/14 focused tests each pass including
+offscreen bounds/chain, player OAM/route/core, platform purity and Win32
+audio/focus/self tests. Original OpenNT DOS16 shared-source link exit0,
+existing OLDNAMES.LIB warning retained. No production source changed; all
+three S2 P2 assets EXEs are byte-for-byte equal to committed HEAD and retained
+under the owner's explicit delivery authorization. Audio/title/focus pause
+remains included. Neutral harness extensions only, no product runtime probe.
+
+Raw/probe artifacts cleaned from the ignored admitted path; neutral summaries
+and logs retained. Limits192MiB aggregate/2048 roots per chunk/120seconds per
+run/524288steps per case enforced. Ledger/admission/closure/current registry,
+documentation and whitespace gates pass. S3 closes; T66/M2 remain open.

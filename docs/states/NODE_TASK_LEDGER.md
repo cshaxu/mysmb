@@ -3584,4 +3584,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T65 S15 | 154 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T65-block-query-object-output-current-proof.md) |
 | M2 T66 S1 | 44 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md) |
 | M2 T66 S2 | 9 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md) |
-| M2 T66 S3 | 11 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md) |
+| M2 T66 S3 | 11 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md) |

@@ -197,3 +197,12 @@ Current1686/1992 nodes,3606/4317 feasible controls(raw4342,infeasible25),
 397/493 material partial; historical1992/1992 separate. All393216 original
 roots match both widths;12/12 focused tests each and original DOS16 link
 pass,3 products refreshed. T66 has30 pending nodes; S3 next unadmitted.
+
+## Current checkpoint after T66 S3
+
+[T66 S3](t66-cohort-l-player-relative-offscreen-proof.md) closes11 nodes,
+18 controls/material00432 without production differences. Current1697/1992
+nodes,3624/4317 controls(raw4342,infeasible25),398/493 material partial;
+historical1992/1992 separate.393216 original roots match both widths,14/14
+focused tests each and original DOS16 link pass. Three S2 products retained;
+T66 has19 pending nodes and S4 next unadmitted.

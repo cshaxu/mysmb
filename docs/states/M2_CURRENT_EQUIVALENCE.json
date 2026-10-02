@@ -9405,18 +9405,20 @@
       "consumer": "GetProperObjOffset",
       "storage": "ROM ObjOffsetData indexed object-family displacement to SprObject source-slot selection",
       "feasiblePath": "Bubble, fireball and misc relative-position wrappers select one ObjOffsetData entry before the common relative-coordinate routine.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c mysmb_obj_offset_data and mysmb_oam_proper_source_offset",
       "semanticContract": "Each source object-family selector yields the same ordered SprObject array displacement before coordinate reads.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Each source object-family selector yields the same ordered SprObject array displacement before coordinate reads."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Existing three table bytes bound locally to original PRG; same proper-offset helper serves S2 accepted relative roots and current S3 offscreen roots."
+      ],
       "cohort": "L",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/oam/object_position.c",
-        "src/game/world/collision.c"
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -10706,12 +10708,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1686,
-    "needs-evidence": 306
+    "exact": 1697,
+    "needs-evidence": 295
   },
   "controlEdgeCounts": {
-    "exact": 3606,
-    "needs-evidence": 711,
+    "exact": 3624,
+    "needs-evidence": 693,
     "infeasible": 25
   },
   "controlEdgeTypeCounts": {
@@ -43918,30 +43920,36 @@
       "label": "GetPlayerOffscreenBits",
       "asmLine": 14846,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Selects player SprObject source and player offscreen destination offsets before common offscreen-bit calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef180, observations65536."
+      ],
       "semanticContract": "Selects player SprObject source and player offscreen destination offsets before common offscreen-bit calculation.",
       "currentSourcePaths": [
-        "src/game/frame_root.c",
-        "src/game/oam/player_gfx.c"
+        "src/game/oam/player_gfx.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
       "label": "GetFireballOffscreenBits",
       "asmLine": 14851,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Applies fireball ObjOffsetData displacement then selects the fixed fireball offscreen destination before common calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef187, observations65536."
+      ],
       "semanticContract": "Applies fireball ObjOffsetData displacement then selects the fixed fireball offscreen destination before common calculation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -43951,13 +43959,16 @@
       "label": "GetBubbleOffscreenBits",
       "asmLine": 14857,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Applies bubble ObjOffsetData displacement then selects the bubble offscreen destination before common calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef191, observations65536."
+      ],
       "semanticContract": "Applies bubble ObjOffsetData displacement then selects the bubble offscreen destination before common calculation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -43967,16 +43978,18 @@
       "label": "GetMiscOffscreenBits",
       "asmLine": 14863,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Applies misc ObjOffsetData displacement then selects the misc offscreen destination before common calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef19b, observations65536."
+      ],
       "semanticContract": "Applies misc ObjOffsetData displacement then selects the misc offscreen destination before common calculation.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c",
         "src/game/oam/object_position.c"
       ]
     },
@@ -43984,13 +43997,16 @@
       "label": "ObjOffsetData",
       "asmLine": 14869,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_obj_offset_data and mysmb_oam_proper_source_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Binds ordered fireball, bubble and misc SprObject array displacements used by both relative-position and offscreen wrappers."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1a5, observations196608."
+      ],
       "semanticContract": "Binds ordered fireball, bubble and misc SprObject array displacements used by both relative-position and offscreen wrappers.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -44000,34 +44016,37 @@
       "label": "GetProperObjOffset",
       "asmLine": 14872,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_obj_offset_data and mysmb_oam_proper_source_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Adds the selected ObjOffsetData displacement to the input object slot."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1a8, observations196608."
+      ],
       "semanticContract": "Adds the selected ObjOffsetData displacement to the input object slot.",
       "currentSourcePaths": [
-        "src/game/oam/object_position.c",
-        "src/game/world/collision.c"
+        "src/game/oam/object_position.c"
       ]
     },
     {
       "label": "GetEnemyOffscreenBits",
       "asmLine": 14879,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Selects enemy array displacement and enemy offscreen destination before common calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1af, observations65536."
+      ],
       "semanticContract": "Selects enemy array displacement and enemy offscreen destination before common calculation.",
       "currentSourcePaths": [
-        "src/game/enemy/balance_platform.c",
-        "src/game/enemy_bounds.c",
         "src/game/oam/object_position.c"
       ]
     },
@@ -44035,13 +44054,16 @@
       "label": "GetBlockOffscreenBits",
       "asmLine": 14884,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Selects block array displacement and block offscreen destination before common calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1b6, observations65536."
+      ],
       "semanticContract": "Selects block array displacement and block offscreen destination before common calculation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -44051,13 +44073,16 @@
       "label": "SetOffscrBitsOffset",
       "asmLine": 14888,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Preserves ObjectOffset in scratch, adds the supplied array displacement, and enters common offscreen-bit calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1ba, observations131072."
+      ],
       "semanticContract": "Preserves ObjectOffset in scratch, adds the supplied array displacement, and enters common offscreen-bit calculation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -44067,16 +44092,18 @@
       "label": "GetOffScreenBitsSet",
       "asmLine": 14894,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Calls the X/Y offscreen chain, combines X low and Y high nibbles, stores the composite to the selected offscreen byte and restores ObjectOffset."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1c0, observations393216."
+      ],
       "semanticContract": "Calls the X/Y offscreen chain, combines X low and Y high nibbles, stores the composite to the selected offscreen byte and restores ObjectOffset.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
         "src/game/oam/object_position.c"
       ]
     },
@@ -44084,13 +44111,16 @@
       "label": "RunOffscrBitsSubs",
       "asmLine": 14911,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/object_position.c",
       "currentCounterpart": "mysmb_oam_get_offscreen_bits_set and mysmb_oam_set_offscreen_bits_offset",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Obtains X offscreen bits, shifts them into scratch low nibble, then tail-transfers to Y offscreen calculation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entry/tablef1d7, observations393216."
+      ],
       "semanticContract": "Obtains X offscreen bits, shifts them into scratch low nibble, then tail-transfers to Y offscreen calculation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -116925,12 +116955,15 @@
       "instruction": "jmp",
       "id": "control-03127",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source tail transfer GetPlayerOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf184, actual transfers/returns65536."
+      ],
       "semanticContract": "The source tail transfer GetPlayerOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -116947,12 +116980,15 @@
       "instruction": "jsr",
       "id": "control-03128",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source call GetFireballOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf189, actual transfers/returns65536."
+      ],
       "semanticContract": "The source call GetFireballOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c",
@@ -116967,12 +117003,15 @@
       "instruction": "jmp",
       "id": "control-03129",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source tail transfer GetFireballOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf18e, actual transfers/returns65536."
+      ],
       "semanticContract": "The source tail transfer GetFireballOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -116987,12 +117026,15 @@
       "instruction": "jsr",
       "id": "control-03130",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source call GetBubbleOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf193, actual transfers/returns65536."
+      ],
       "semanticContract": "The source call GetBubbleOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c",
@@ -117007,12 +117049,15 @@
       "instruction": "jmp",
       "id": "control-03131",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source tail transfer GetBubbleOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf198, actual transfers/returns65536."
+      ],
       "semanticContract": "The source tail transfer GetBubbleOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -117027,12 +117072,15 @@
       "instruction": "jsr",
       "id": "control-03132",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source call GetMiscOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf19d, actual transfers/returns65536."
+      ],
       "semanticContract": "The source call GetMiscOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetProperObjOffset receives the selected source/destination offsets and completes before the caller continuation.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c",
@@ -117048,12 +117096,15 @@
       "instruction": "jmp",
       "id": "control-03133",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source tail transfer GetMiscOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1a2, actual transfers/returns65536."
+      ],
       "semanticContract": "The source tail transfer GetMiscOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the selected source/destination offsets without a local continuation.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -117069,12 +117120,15 @@
       "instruction": "jmp",
       "id": "control-03134",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source tail transfer GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetOffscrBitsOffset preserves the selected source/destination offsets without a local continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1b3, actual transfers/returns65536."
+      ],
       "semanticContract": "The source tail transfer GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetOffscrBitsOffset preserves the selected source/destination offsets without a local continuation.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c",
@@ -117090,12 +117144,15 @@
       "instruction": "ldy",
       "id": "control-03135",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source fall-through GetBlockOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetOffscrBitsOffset preserves the preceding offset/scratch setup before entering the successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1b8, actual transfers/returns65536."
+      ],
       "semanticContract": "The source fall-through GetBlockOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetOffscrBitsOffset preserves the preceding offset/scratch setup before entering the successor.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -117109,12 +117166,15 @@
       "instruction": "tax",
       "id": "control-03136",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source fall-through SetOffscrBitsOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the preceding offset/scratch setup before entering the successor."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1bf, actual transfers/returns131072."
+      ],
       "semanticContract": "The source fall-through SetOffscrBitsOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet preserves the preceding offset/scratch setup before entering the successor.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -117129,12 +117189,15 @@
       "instruction": "jsr",
       "id": "control-03137",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source call GetOffScreenBitsSet \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunOffscrBitsSubs receives the selected source/destination offsets and completes before the caller continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1c2, actual transfers/returns393216."
+      ],
       "semanticContract": "The source call GetOffScreenBitsSet \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunOffscrBitsSubs receives the selected source/destination offsets and completes before the caller continuation.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -117149,12 +117212,15 @@
       "instruction": "jsr",
       "id": "control-03138",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source call RunOffscrBitsSubs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetXOffscreenBits receives the selected source/destination offsets and completes before the caller continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1d7, actual transfers/returns393216."
+      ],
       "semanticContract": "The source call RunOffscrBitsSubs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetXOffscreenBits receives the selected source/destination offsets and completes before the caller continuation.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -117170,12 +117236,15 @@
       "instruction": "jmp",
       "id": "control-03139",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source tail transfer RunOffscrBitsSubs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetYOffscreenBits preserves the selected source/destination offsets without a local continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1e0, actual transfers/returns393216."
+      ],
       "semanticContract": "The source tail transfer RunOffscrBitsSubs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetYOffscreenBits preserves the selected source/destination offsets without a local continuation.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -136525,12 +136594,15 @@
       "instruction": "rts/rti",
       "id": "control-04054",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source return relation GetProperObjOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetFireballOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf189, actual transfers/returns65536."
+      ],
       "semanticContract": "The source return relation GetProperObjOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetFireballOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c",
@@ -136545,12 +136617,15 @@
       "instruction": "rts/rti",
       "id": "control-04055",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source return relation GetProperObjOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetBubbleOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf193, actual transfers/returns65536."
+      ],
       "semanticContract": "The source return relation GetProperObjOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetBubbleOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/oam/object_position.c",
@@ -136565,12 +136640,15 @@
       "instruction": "rts/rti",
       "id": "control-04056",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source return relation GetProperObjOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetMiscOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf19d, actual transfers/returns65536."
+      ],
       "semanticContract": "The source return relation GetProperObjOffset \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetMiscOffscreenBits exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c",
@@ -136586,12 +136664,15 @@
       "instruction": "rts/rti",
       "id": "control-04057",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source return relation RunOffscrBitsSubs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet exposes the completed offscreen byte and restored caller ObjectOffset."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1c2, actual transfers/returns393216."
+      ],
       "semanticContract": "The source return relation RunOffscrBitsSubs \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GetOffScreenBitsSet exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
@@ -136606,12 +136687,15 @@
       "instruction": "rts/rti",
       "id": "control-04058",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source return relation GetXOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunOffscrBitsSubs exposes the resolved partition index or offscreen mask to its caller continuation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original instructionf1d7, actual transfers/returns393216."
+      ],
       "semanticContract": "The source return relation GetXOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunOffscrBitsSubs exposes the resolved partition index or offscreen mask to its caller continuation.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
