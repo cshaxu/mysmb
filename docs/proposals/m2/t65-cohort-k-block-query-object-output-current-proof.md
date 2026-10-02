@@ -1784,3 +1784,37 @@ explicit artifact delivery overrides default local-output exclusion.
 - mysmb64.exe: 381335 bytes; SHA-256 15d9987de20db09f96bb9a665b9b9f75238ebfe2832a957fcc48b9d9c120abb5.
 
 Ledger admission/closure, documentation and whitespace gates rerun; S14 closes, T65/M2 remain open pending cross-chain/full milestone proof.
+
+## S15 admission - cross-chain census and remaining return proofs
+
+Scope154, all incoming exact; intended fresh nodes0, maximum1633/1992.
+Historical baseline/maximum1992, expectedMatches empty; custody unchanged.
+Exact source-order scope: BlockBufferChk_Enemy; ResidualMiscObjectCode; BlockBufferChk_FBall; ResJmpM; BBChk_E; BlockBufferAdderData; BlockBuffer_X_Adder; BlockBuffer_Y_Adder; BlockBufferColli_Feet; BlockBufferColli_Head; BlockBufferColli_Side; BlockBufferCollision; RetXC; RetYC; VineYPosAdder; DrawVine; VineTL; SkpVTop; ChkFTop; NextVSp; SixSpriteStacker; StkLp; FirstSprXPos; FirstSprYPos; SecondSprXPos; SecondSprYPos; FirstSprTilenum; SecondSprTilenum; HammerSprAttrib; DrawHammer; ForceHPose; GetHPose; RenderH; NoHOffscr; FlagpoleScoreNumTiles; FlagpoleGfxHandler; ChkFlagOffscreen; MoveSixSpritesOffscreen; DumpSixSpr; DumpFourSpr; DumpThreeSpr; DumpTwoSpr; ExitDumpSpr; DrawLargePlatform; ShrinkPlatform; SetLast2Platform; SetPlatformTilenum; SChk2; SChk3; SChk4; SChk5; SChk6; SLChk; ExDLPl; DrawFloateyNumber_Coin; NotRsNum; JumpingCoinTiles; JCoinGfxHandler; ExJCGfx; PowerUpGfxTable; PowerUpAttributes; DrawPowerUp; PUpDrawLoop; FlipPUpRightSide; PUpOfs; EnemyGraphicsTable; EnemyGfxTableOffsets; EnemyAttributeData; EnemyAnimTimingBMask; JumpspringFrameOffsets; EnemyGfxHandler; CheckForRetainerObj; CheckForBulletBillCV; SBBAt; CheckForJumpspring; CheckForPodoboo; CheckBowserGfxFlag; SBwsrGfxOfs; CheckForGoomba; GmbaAnim; CheckBowserFront; ChkFrontSte; FlipBowserOver; DrawBowser; CheckBowserRear; ChkRearSte; CheckForSpiny; NotEgg; CheckForLakitu; NoLAFr; CheckUpsideDownShell; CheckRightSideUpShell; CheckForDefdGoomba; CheckForHammerBro; CheckForBloober; CheckToAnimateEnemy; CheckForSecondFrame; CheckAnimationStop; CheckDefeatedState; DrawEnemyObject; SkipToOffScrChk; CheckForVerticalFlip; FlipEnemyVertically; CheckForESymmetry; ContES; ESRtnr; SpnySC; MirrorEnemyGfx; EggExc; CheckToMirrorLakitu; NVFLak; CheckToMirrorJSpring; SprObjectOffscrChk; LcChk; Row3C; Row23C; AllRowC; ExEGHandler; DrawEnemyObjRow; DrawOneSpriteRow; MoveESprRowOffscreen; MoveESprColOffscreen; DefaultBlockObjTiles; DrawBlock; DBlkLoop; ChkRep; SetBFlip; BlkOffscr; PullOfsB; ChkLeftCo; MoveColOffscreen; ExDBlk; DrawBrickChunks; DChunks; ChnkOfs; ExBCDr; DrawFireball; DrawFirebar; FireA; ExplosionTiles; DrawExplosion_Fireball; DrawExplosion_Fireworks; KillFireBall; DrawSmallPlatform; TopSP; BotSP; SOfs; SOfs2; ExSPl; DrawBubble; ExDBub; PlayerGfxTblOffsets; PlayerGraphicsTable; SwimKickTileNum.
+
+Two owned controls remain needs-evidence: control-04007 MoveSixSpritesOffscreen
+-> SLChk (actual RTS continuation E654), control-04014 DumpSixSpr ->
+CheckForVerticalFlip (actual RTS continuation EA73). Re-record actual child
+input/return and caller output against current x86/x64, not old run results.
+Shared small_platform_gfx.c and normal_enemy_gfx.c/sprite_dump.c own these
+joins. All26 owned material rows are already exact. Current1633/1992 nodes,
+3483/4317 feasible controls(raw4342,infeasible25),394/492 material partial.
+Maximum feasible control exact3485; no later cohort credit.
+
+Original E5C8 large-platform6144 roots and E87D enemy8192 roots compare full
+output plus independently captured actual children; EEE9/EFA4 player1312
+roots recheck the repaired indexed-row join. Each route compares1841 RAM
+bytes including OAM/scratch/aliases and the selected ABI. T census checks
+every owned node/control/material disposition and named external boundaries,
+combines accepted S1-S14 proof in a cross-chain matrix and runs complete
+current x86/x64 native regressions plus original OpenNT DOS16 link. Test
+dependency binding repairs are permitted only when they preserve real scoped
+calls and explicitly reject unexpected calls; no production workaround.
+
+Owner ROM/local ASM are nonredistributable research inputs. All raw records,
+logs and scripts stay in ignored build/m2-t65-s15;192MiB raw aggregate,
+120seconds/run,524288steps/case, sequential recorders, chunked helper routes
+and coordinator cleanup. Pure audit/test-only work retains S14 products,
+including audio/title/focus pause; product-code repairs refresh all3 EXEs
+under prior owner authorization. T65 cannot close with a pending owned edge
+or scoped difference. T66 remains unadmitted. Similar-issue sweep covers
+actual return continuations, child ABI and isolated checker dependency guards.

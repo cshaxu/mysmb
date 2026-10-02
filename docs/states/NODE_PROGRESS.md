@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S15 - active cross-chain closure audit
+
+[S15 exact scope and dual proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+audits154 already-exact nodes, fresh0. Two pending owned actual return edges
+must pass current original/full/independent replay before closure. Current
+1633/1992 nodes,3483/4317 controls(raw4342,infeasible25),394/492 material
+partial; historical1992/1992 separate. T65 stays open; T66 unadmitted.
+
 ## M2 T65 S14 - closed player tables and indexed consumers
 
 [S14 actual table/row proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
