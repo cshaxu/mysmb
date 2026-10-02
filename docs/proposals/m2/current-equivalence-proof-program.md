@@ -329,3 +329,13 @@ in TODO before whole-domain certification; earlier PRG evidence remains bounded.
 248 tests each/purity/OpenNT link pass,3 EXEs refreshed. T68 open, S3 next
 unadmitted;51 N plus73 earlier C nodes remain pending. Earlier Square1/Square2
 RAM-alias fetch order remains explicit cross-cohort debt, not silently closed.
+
+## Current checkpoint after T68 S3
+
+[T68 S3](t68-cohort-n-music-data-current-proof.md) closes23 music-header nodes/
+23 material relations after all171 region bytes are actually indexed/read and
+native consumers proven. Current1891/1992 nodes,3964/4279 controls
+(raw4342,infeasible63),431/493 material partial; historical1992/1992 distinct.
+12544 original roots both widths zero diff; current builds/4 focused tests each/
+purity/OpenNT link pass;3 S2 products byte-identical retained. T68 open,S4 next
+unadmitted;28 N plus73 earlier C nodes remain pending, no final certification.

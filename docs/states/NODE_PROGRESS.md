@@ -1,11 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T68 S3 - active header-data chain
+## M2 T68 S3 - closed header-data chain
 
-[Exact23-node/23-material admission](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
-scope/intended fresh23, maximum1891/1992; current1868/1992 nodes,3964/4279
-controls(raw4342,infeasible63),408/493 material partial; historical1992/1992
-distinct. Original indexed reads and actual shared consumer required before credit.
+[All23 regions/23 material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+close exact after all171 bytes have original indexed reads and native consumer
+proof. Current1891/1992 nodes,3964/4279 controls(raw4342,infeasible63),431/493
+material partial; historical1992/1992 distinct.12544 current original/native
+roots both widths zero differences; current builds/4 focused tests each/purity/
+OpenNT link pass; no product code change,3 S2 EXEs byte-identical retained.
+No scoped deferral/transfer; T68 open,S4 next unadmitted.28 N plus73 C nodes
+remain pending, material enumeration still partial.
 
 ## M2 T68 S2 - closed helper chain
 

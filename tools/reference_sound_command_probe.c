@@ -14,6 +14,7 @@ static unsigned long transition_keys[8192],transition_counts[8192];
 static unsigned long envelope_reads[256];
 static unsigned long square2_table_reads[3][256];
 static unsigned long noise_table_reads[3][256];
+static unsigned long header_reads[7][256];
 static int ready(core_machine *m)
 {
     core_run_result r;unsigned int i;
@@ -238,6 +239,10 @@ int main(int argc,char **argv)
                 if(prg[pc-0x8000u+1u]==0xeau)++noise_table_reads[1][d->machine->y];
                 if(prg[pc-0x8000u+1u]==0xc9u)++noise_table_reads[2][d->machine->y];
             }
+            if(pc>=0xf6f5u&&pc<0xf73au&&op==0xb9u){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                if(base>=0xf90cu&&base<=0xf912u)++header_reads[base-0xf90cu][d->machine->y];
+            }
             addr=0;value=0;
             if(op==0x8du||op==0x8eu||op==0x8cu||op==0x9du||op==0x99u){
                 addr=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
@@ -280,5 +285,6 @@ int main(int argc,char **argv)
     for(i=0;i<256u;++i)if(envelope_reads[i])printf("envelope-index=%u reads=%lu\n",i,envelope_reads[i]);
     for(n=0;n<3u;++n)for(i=0;i<256u;++i)if(square2_table_reads[n][i])printf("square2-table=%u index=%u reads=%lu\n",n,i,square2_table_reads[n][i]);
     for(n=0;n<3u;++n)for(i=0;i<256u;++i)if(noise_table_reads[n][i])printf("noise-table=%u index=%u reads=%lu\n",n,i,noise_table_reads[n][i]);
+    for(n=0;n<7u;++n)for(i=0;i<256u;++i)if(header_reads[n][i])printf("header-field=%u index=%u reads=%lu\n",n,i,header_reads[n][i]);
     core_driver_destroy(d);return 0;
 }

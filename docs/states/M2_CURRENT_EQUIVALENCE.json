@@ -9684,14 +9684,17 @@
       "producer": "MusicHeaderData",
       "consumer": "LoadHeader",
       "storage": "ROM MusicHeaderData music header selection/data",
-      "feasiblePath": "LoadHeader selects MusicHeaderData through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared MusicHeaderData region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "49-byte selector-offset region:8 event,8 area,33 ground layout entries; actual F90C+selector byte selects F90D+offset. Source indices1..49 address this region; controlled0/50..255 retain original neighboring read semantics.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=8243; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9703,14 +9706,17 @@
       "producer": "TimeRunningOutHdr",
       "consumer": "LoadHeader",
       "storage": "ROM TimeRunningOutHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects TimeRunningOutHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared TimeRunningOutHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f93e,f943) with original little-endian stream binding TimeRunOutMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=204; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9722,14 +9728,17 @@
       "producer": "Star_CloudHdr",
       "consumer": "LoadHeader",
       "storage": "ROM Star_CloudHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects Star_CloudHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared Star_CloudHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f943,f949) with original little-endian stream binding Star_CloudMData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=1031; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9741,14 +9750,17 @@
       "producer": "EndOfLevelMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM EndOfLevelMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects EndOfLevelMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared EndOfLevelMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f949,f94e) with original little-endian stream binding WinLevelMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=339; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9760,14 +9772,17 @@
       "producer": "ResidualHeaderData",
       "consumer": "LoadHeader",
       "storage": "ROM ResidualHeaderData music header selection/data",
-      "feasiblePath": "LoadHeader selects ResidualHeaderData through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared ResidualHeaderData region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f94e,f953) with original little-endian stream binding literal residual pointer (no fabricated song label); LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=84; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9779,14 +9794,17 @@
       "producer": "UndergroundMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM UndergroundMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects UndergroundMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared UndergroundMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f953,f958) with original little-endian stream binding UndergroundMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=2591; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9798,14 +9816,17 @@
       "producer": "SilenceHdr",
       "consumer": "LoadHeader",
       "storage": "ROM SilenceHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects SilenceHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared SilenceHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source4-byte region [f958,f95c) with original little-endian stream binding SilenceData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=671; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9817,14 +9838,17 @@
       "producer": "CastleMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM CastleMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects CastleMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared CastleMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f95c,f961) with original little-endian stream binding CastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=1377; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9836,14 +9860,17 @@
       "producer": "VictoryMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM VictoryMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects VictoryMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared VictoryMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f961,f966) with original little-endian stream binding VictoryMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=2842; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9855,14 +9882,17 @@
       "producer": "GameOverMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GameOverMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GameOverMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GameOverMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f966,f96b) with original little-endian stream binding GameOverMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=6300; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9874,14 +9904,17 @@
       "producer": "WaterMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM WaterMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects WaterMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared WaterMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f96b,f971) with original little-endian stream binding WaterMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=7342; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9893,14 +9926,17 @@
       "producer": "WinCastleMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM WinCastleMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects WinCastleMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared WinCastleMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source5-byte region [f971,f976) with original little-endian stream binding EndOfCastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=1297; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9912,14 +9948,17 @@
       "producer": "GroundLevelPart1Hdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart1Hdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart1Hdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart1Hdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f976,f97c) with original little-endian stream binding GroundM_P1Data; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=12533; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9931,14 +9970,17 @@
       "producer": "GroundLevelPart2AHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart2AHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart2AHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart2AHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f97c,f982) with original little-endian stream binding GroundM_P2AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=41; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9950,14 +9992,17 @@
       "producer": "GroundLevelPart2BHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart2BHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart2BHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart2BHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f982,f988) with original little-endian stream binding GroundM_P2BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=32; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9969,14 +10014,17 @@
       "producer": "GroundLevelPart2CHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart2CHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart2CHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart2CHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f988,f98e) with original little-endian stream binding GroundM_P2CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=17; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9988,14 +10036,17 @@
       "producer": "GroundLevelPart3AHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart3AHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart3AHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart3AHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f98e,f994) with original little-endian stream binding GroundM_P3AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=69; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10007,14 +10058,17 @@
       "producer": "GroundLevelPart3BHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart3BHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart3BHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart3BHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f994,f99a) with original little-endian stream binding GroundM_P3BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=63; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10026,14 +10080,17 @@
       "producer": "GroundLevelLeadInHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelLeadInHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelLeadInHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelLeadInHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f99a,f9a0) with original little-endian stream binding GroundMLdInData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=522; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10045,14 +10102,17 @@
       "producer": "GroundLevelPart4AHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart4AHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart4AHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart4AHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f9a0,f9a6) with original little-endian stream binding GroundM_P4AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=60; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10064,14 +10124,17 @@
       "producer": "GroundLevelPart4BHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart4BHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart4BHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart4BHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f9a6,f9ac) with original little-endian stream binding GroundM_P4BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=42; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10083,14 +10146,17 @@
       "producer": "GroundLevelPart4CHdr",
       "consumer": "LoadHeader",
       "storage": "ROM GroundLevelPart4CHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects GroundLevelPart4CHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared GroundLevelPart4CHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f9ac,f9b2) with original little-endian stream binding GroundM_P4CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=36; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10102,14 +10168,17 @@
       "producer": "DeathMusHdr",
       "consumer": "LoadHeader",
       "storage": "ROM DeathMusHdr music header selection/data",
-      "feasiblePath": "LoadHeader selects DeathMusHdr through MusicHeaderData and copies its declared header bytes into music state.",
-      "status": "needs-evidence",
+      "feasiblePath": "Actual LoadHeader selection/field indexed read addresses overlap declared DeathMusHdr region; short-header adjacent reads and controlled selector extension retain CPU addressing without fabricated target membership.",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
-      "semanticContract": "Selected header bytes retain source offset, stream pointer and channel-offset ordering before music processing.",
+      "semanticContract": "Source6-byte region [f9b2,f9b8) with original little-endian stream binding DeathMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 original region/selector/consumer mapping manually audited; six fields and actual state-write order preserved."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 region observations=12306; each byte observed, native output equality after real original header consumer and stream handoff."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -47405,14 +47474,17 @@
       "label": "MusicHeaderData",
       "asmLine": 15989,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: 49-byte selector-offset region:8 event,8 area,33 ground layout entries; actual F90C+selector byte selects F90D+offset. Source indices1..49 address this region; controlled0/50..255 retain original neighboring read semantics."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "49-byte selector-offset region:8 event,8 area,33 ground layout entries; actual F90C+selector byte selects F90D+offset. Source indices1..49 address this region; controlled0/50..255 retain original neighboring read semantics.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47421,14 +47493,17 @@
       "label": "TimeRunningOutHdr",
       "asmLine": 16027,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f93e,f943) with original little-endian stream binding TimeRunOutMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f93e,f943) with original little-endian stream binding TimeRunOutMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47437,14 +47512,17 @@
       "label": "Star_CloudHdr",
       "asmLine": 16028,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f943,f949) with original little-endian stream binding Star_CloudMData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f943,f949) with original little-endian stream binding Star_CloudMData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47453,14 +47531,17 @@
       "label": "EndOfLevelMusHdr",
       "asmLine": 16029,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f949,f94e) with original little-endian stream binding WinLevelMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f949,f94e) with original little-endian stream binding WinLevelMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47469,14 +47550,17 @@
       "label": "ResidualHeaderData",
       "asmLine": 16030,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f94e,f953) with original little-endian stream binding literal residual pointer (no fabricated song label); LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f94e,f953) with original little-endian stream binding literal residual pointer (no fabricated song label); LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47485,14 +47569,17 @@
       "label": "UndergroundMusHdr",
       "asmLine": 16031,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f953,f958) with original little-endian stream binding UndergroundMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f953,f958) with original little-endian stream binding UndergroundMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47501,14 +47588,17 @@
       "label": "SilenceHdr",
       "asmLine": 16032,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source4-byte region [f958,f95c) with original little-endian stream binding SilenceData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source4-byte region [f958,f95c) with original little-endian stream binding SilenceData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47517,14 +47607,17 @@
       "label": "CastleMusHdr",
       "asmLine": 16033,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f95c,f961) with original little-endian stream binding CastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f95c,f961) with original little-endian stream binding CastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47533,14 +47626,17 @@
       "label": "VictoryMusHdr",
       "asmLine": 16034,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f961,f966) with original little-endian stream binding VictoryMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f961,f966) with original little-endian stream binding VictoryMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47549,14 +47645,17 @@
       "label": "GameOverMusHdr",
       "asmLine": 16035,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f966,f96b) with original little-endian stream binding GameOverMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f966,f96b) with original little-endian stream binding GameOverMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47565,14 +47664,17 @@
       "label": "WaterMusHdr",
       "asmLine": 16036,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f96b,f971) with original little-endian stream binding WaterMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f96b,f971) with original little-endian stream binding WaterMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47581,14 +47683,17 @@
       "label": "WinCastleMusHdr",
       "asmLine": 16037,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source5-byte region [f971,f976) with original little-endian stream binding EndOfCastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source5-byte region [f971,f976) with original little-endian stream binding EndOfCastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47597,14 +47702,17 @@
       "label": "GroundLevelPart1Hdr",
       "asmLine": 16038,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f976,f97c) with original little-endian stream binding GroundM_P1Data; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f976,f97c) with original little-endian stream binding GroundM_P1Data; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47613,14 +47721,17 @@
       "label": "GroundLevelPart2AHdr",
       "asmLine": 16039,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f97c,f982) with original little-endian stream binding GroundM_P2AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f97c,f982) with original little-endian stream binding GroundM_P2AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47629,14 +47740,17 @@
       "label": "GroundLevelPart2BHdr",
       "asmLine": 16040,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f982,f988) with original little-endian stream binding GroundM_P2BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f982,f988) with original little-endian stream binding GroundM_P2BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47645,14 +47759,17 @@
       "label": "GroundLevelPart2CHdr",
       "asmLine": 16041,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f988,f98e) with original little-endian stream binding GroundM_P2CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f988,f98e) with original little-endian stream binding GroundM_P2CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47661,14 +47778,17 @@
       "label": "GroundLevelPart3AHdr",
       "asmLine": 16042,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f98e,f994) with original little-endian stream binding GroundM_P3AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f98e,f994) with original little-endian stream binding GroundM_P3AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47677,14 +47797,17 @@
       "label": "GroundLevelPart3BHdr",
       "asmLine": 16043,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f994,f99a) with original little-endian stream binding GroundM_P3BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f994,f99a) with original little-endian stream binding GroundM_P3BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47693,14 +47816,17 @@
       "label": "GroundLevelLeadInHdr",
       "asmLine": 16044,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f99a,f9a0) with original little-endian stream binding GroundMLdInData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f99a,f9a0) with original little-endian stream binding GroundMLdInData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47709,14 +47835,17 @@
       "label": "GroundLevelPart4AHdr",
       "asmLine": 16045,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f9a0,f9a6) with original little-endian stream binding GroundM_P4AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f9a0,f9a6) with original little-endian stream binding GroundM_P4AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47725,14 +47854,17 @@
       "label": "GroundLevelPart4BHdr",
       "asmLine": 16046,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f9a6,f9ac) with original little-endian stream binding GroundM_P4BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f9a6,f9ac) with original little-endian stream binding GroundM_P4BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47741,14 +47873,17 @@
       "label": "GroundLevelPart4CHdr",
       "asmLine": 16047,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f9ac,f9b2) with original little-endian stream binding GroundM_P4CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f9ac,f9b2) with original little-endian stream binding GroundM_P4CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -47757,14 +47892,17 @@
       "label": "DeathMusHdr",
       "asmLine": 16048,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "MYSMB_ROM_MUSIC_HEADER_DATA area_prg binding and mysmb_audio_load_music_header",
+      "currentCounterpart": "src/game/audio.c area_prg binding / mysmb_audio_load_music_header",
       "semanticEvidence": [
-        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required."
+        "Td S9 K36 music-header table node/material audit: SMB1 lines 15989-16048 compared with src/game/audio.c area_prg header binding and mysmb_audio_load_music_header; controlled original-ROM/x86/x64 selector/header routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 manual original data/consumer contract: Source6-byte region [f9b2,f9b8) with original little-endian stream binding DeathMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original music-header table/header bytes at their PRG offsets and exposes the selected six-byte header fields to the shared music state.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S3 P2 actual indexed reads cover every declared byte;12544 unchanged original/current roots both widths full RAM/APU/order equal;4 focused tests each/current builds/purity/OpenNT link."
+      ],
+      "semanticContract": "Source6-byte region [f9b2,f9b8) with original little-endian stream binding DeathMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]

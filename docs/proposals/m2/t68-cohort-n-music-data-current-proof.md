@@ -441,3 +441,121 @@ short header adjacency, pointer endian and counter/write/handoff order.
 Owner-local ROM/reviewed ASM nonredistributable research; ignored
 build/m2-t68-s3,128MiB raw budget,1024 roots/batch,120seconds/process,
 524288steps/root. Raw deleted per batch, neutral metadata only tracked.
+
+## S3 P2 closure - actual header-region consumers
+
+All23 intended labels completed: MusicHeaderData; TimeRunningOutHdr; Star_CloudHdr; EndOfLevelMusHdr; ResidualHeaderData; UndergroundMusHdr; SilenceHdr; CastleMusHdr; VictoryMusHdr; GameOverMusHdr; WaterMusHdr; WinCastleMusHdr; GroundLevelPart1Hdr; GroundLevelPart2AHdr; GroundLevelPart2BHdr; GroundLevelPart2CHdr; GroundLevelPart3AHdr; GroundLevelPart3BHdr; GroundLevelLeadInHdr; GroundLevelPart4AHdr; GroundLevelPart4BHdr; GroundLevelPart4CHdr; DeathMusHdr.
+All23 material-k36 producer-to-LoadHeader relations exact; no owned controls,
+no scoped deferral/transfer. Current1868->1891/1992 nodes;3964/4279 feasible
+controls unchanged(raw4342,infeasible63); material408->431/493, enumeration
+still partial. Historical1992/1992 distinct; expected/actualMatches empty.
+T68 open; S4 next unadmitted. Remaining28 N plus73 earlier C labels pending.
+
+| Data node | Half-open CPU region | Bytes | Actual selected/field reads | Manual binding/consumer contract |
+| --- | --- | --- | --- | --- |
+| `MusicHeaderData` | `f90d`-`f93e` | 49 | 8243 | 49-byte selector-offset region:8 event,8 area,33 ground layout entries; actual F90C+selector byte selects F90D+offset. Source indices1..49 address this region; controlled0/50..255 retain original neighboring read semantics. |
+| `TimeRunningOutHdr` | `f93e`-`f943` | 5 | 204 | Source5-byte region [f93e,f943) with original little-endian stream binding TimeRunOutMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `Star_CloudHdr` | `f943`-`f949` | 6 | 1031 | Source6-byte region [f943,f949) with original little-endian stream binding Star_CloudMData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `EndOfLevelMusHdr` | `f949`-`f94e` | 5 | 339 | Source5-byte region [f949,f94e) with original little-endian stream binding WinLevelMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `ResidualHeaderData` | `f94e`-`f953` | 5 | 84 | Source5-byte region [f94e,f953) with original little-endian stream binding literal residual pointer (no fabricated song label); LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `UndergroundMusHdr` | `f953`-`f958` | 5 | 2591 | Source5-byte region [f953,f958) with original little-endian stream binding UndergroundMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `SilenceHdr` | `f958`-`f95c` | 4 | 671 | Source4-byte region [f958,f95c) with original little-endian stream binding SilenceData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `CastleMusHdr` | `f95c`-`f961` | 5 | 1377 | Source5-byte region [f95c,f961) with original little-endian stream binding CastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `VictoryMusHdr` | `f961`-`f966` | 5 | 2842 | Source5-byte region [f961,f966) with original little-endian stream binding VictoryMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GameOverMusHdr` | `f966`-`f96b` | 5 | 6300 | Source5-byte region [f966,f96b) with original little-endian stream binding GameOverMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `WaterMusHdr` | `f96b`-`f971` | 6 | 7342 | Source6-byte region [f96b,f971) with original little-endian stream binding WaterMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `WinCastleMusHdr` | `f971`-`f976` | 5 | 1297 | Source5-byte region [f971,f976) with original little-endian stream binding EndOfCastleMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart1Hdr` | `f976`-`f97c` | 6 | 12533 | Source6-byte region [f976,f97c) with original little-endian stream binding GroundM_P1Data; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart2AHdr` | `f97c`-`f982` | 6 | 41 | Source6-byte region [f97c,f982) with original little-endian stream binding GroundM_P2AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart2BHdr` | `f982`-`f988` | 6 | 32 | Source6-byte region [f982,f988) with original little-endian stream binding GroundM_P2BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart2CHdr` | `f988`-`f98e` | 6 | 17 | Source6-byte region [f988,f98e) with original little-endian stream binding GroundM_P2CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart3AHdr` | `f98e`-`f994` | 6 | 69 | Source6-byte region [f98e,f994) with original little-endian stream binding GroundM_P3AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart3BHdr` | `f994`-`f99a` | 6 | 63 | Source6-byte region [f994,f99a) with original little-endian stream binding GroundM_P3BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelLeadInHdr` | `f99a`-`f9a0` | 6 | 522 | Source6-byte region [f99a,f9a0) with original little-endian stream binding GroundMLdInData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart4AHdr` | `f9a0`-`f9a6` | 6 | 60 | Source6-byte region [f9a0,f9a6) with original little-endian stream binding GroundM_P4AData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart4BHdr` | `f9a6`-`f9ac` | 6 | 42 | Source6-byte region [f9a6,f9ac) with original little-endian stream binding GroundM_P4BData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `GroundLevelPart4CHdr` | `f9ac`-`f9b2` | 6 | 36 | Source6-byte region [f9ac,f9b2) with original little-endian stream binding GroundM_P4CData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+| `DeathMusHdr` | `f9b2`-`f9b8` | 6 | 12306 | Source6-byte region [f9b2,f9b8) with original little-endian stream binding DeathMusData; LoadHeader reads six absolute-Y fields, preserving neighboring bytes beyond short regions. F0 length/F5-F6 pointer/F9 triangle/F8 Square1/7B0 noise and7C1 loopback receive source values in order. |
+
+No protected data/table bytes imported. Original listing/ROM independently
+agree on these adjacent bounds and symbolic stream pointers. F6F5 header
+consumer's seven LDA absolute-Y operands assert actual F90C..F912 bases.
+Selector base is one byte before MusicHeaderData; the six subsequent reads
+use the same loaded Y offset with increasing base operands, not incremented
+or wrapped Y between fields. Shared C reads the identical complete-ROM PRG
+binding and addresses. Existing missing/short-binding guards are outside the
+admitted complete-ROM ABI and never counted as translated source branches.
+
+F0 length, F5/F6 little-endian stream pointer, F9 triangle, F8 Square1,
+7B0 noise/7C1 loopback receive each field immediately after its read, then
+four note counters1, F7/alternate0, ordered master0B->0F. These state writes
+and the actual following Square2/channel handoff agree with original source.
+Data region length does not limit the six-field reader:5-byte heads consume
+the next region's first byte, Silence's4 bytes consume two following bytes.
+ResidualHeaderData's5 bytes have actual field-read observations; it is not
+invented as a normal selector song. Existing material path annotations that
+assumed every region is a directly selected header were corrected to the
+actual indexed region-overlap path. No product repair needed.
+
+ROM track:12544 unchanged original roots each width, zero full1841 RAM,
+24 APU and ordered-command count/index/value differences. Direct256 byte
+selectors run real F6F5 to F73A boundary, observing each selector read and
+all six field reads. Recorded field-index histogram exactly equals original
+offset-byte histogram for each field. Every171 declared bytes observed:
+selector reads for49-byte offset region, actual field reads for22 header
+regions.4096 event profiles,4096 area profiles and4096 continuous original
+music states exercise actual F2D0/root RTS and header/channel joins.
+Continuous mode uses actual prior original RAM/APU, resetting recorder timing
+only; reference inputs are never native output. Later stream/table consumers
+execute but receive no S3 credit. Controlled selector0/50..255 is a CPU-level
+boundary proof, not a claim that all those indices are game-selected songs.
+
+Only true CPU stack0100-0108/013A-01FF and unmapped transient CPU registers
+excluded;0109-0139 compared. Direct header has no C A-register ABI, so transient
+A excluded; all persistent/output state compared. No ROM patch or mocked child.
+Neutral indexed-read recorder counts addresses/indices only; raw batches
+deleted. Similar-issue sweep covers source selector bases, all short regions,
+residual adjacency, little-endian pointers and counter/master/handoff order.
+Native header table smoke alone mirrors source arithmetic and is secondary
+operational evidence; independent actual ROM execution is acceptance evidence.
+
+| Material relation | Actual producer/consumer | Observations | Status |
+| --- | --- | --- | --- |
+| `material-k36-01` | `MusicHeaderData` -> `LoadHeader` | 8243 | exact |
+| `material-k36-02` | `TimeRunningOutHdr` -> `LoadHeader` | 204 | exact |
+| `material-k36-03` | `Star_CloudHdr` -> `LoadHeader` | 1031 | exact |
+| `material-k36-04` | `EndOfLevelMusHdr` -> `LoadHeader` | 339 | exact |
+| `material-k36-05` | `ResidualHeaderData` -> `LoadHeader` | 84 | exact |
+| `material-k36-06` | `UndergroundMusHdr` -> `LoadHeader` | 2591 | exact |
+| `material-k36-07` | `SilenceHdr` -> `LoadHeader` | 671 | exact |
+| `material-k36-08` | `CastleMusHdr` -> `LoadHeader` | 1377 | exact |
+| `material-k36-09` | `VictoryMusHdr` -> `LoadHeader` | 2842 | exact |
+| `material-k36-10` | `GameOverMusHdr` -> `LoadHeader` | 6300 | exact |
+| `material-k36-11` | `WaterMusHdr` -> `LoadHeader` | 7342 | exact |
+| `material-k36-12` | `WinCastleMusHdr` -> `LoadHeader` | 1297 | exact |
+| `material-k36-13` | `GroundLevelPart1Hdr` -> `LoadHeader` | 12533 | exact |
+| `material-k36-14` | `GroundLevelPart2AHdr` -> `LoadHeader` | 41 | exact |
+| `material-k36-15` | `GroundLevelPart2BHdr` -> `LoadHeader` | 32 | exact |
+| `material-k36-16` | `GroundLevelPart2CHdr` -> `LoadHeader` | 17 | exact |
+| `material-k36-17` | `GroundLevelPart3AHdr` -> `LoadHeader` | 69 | exact |
+| `material-k36-18` | `GroundLevelPart3BHdr` -> `LoadHeader` | 63 | exact |
+| `material-k36-19` | `GroundLevelLeadInHdr` -> `LoadHeader` | 522 | exact |
+| `material-k36-20` | `GroundLevelPart4AHdr` -> `LoadHeader` | 60 | exact |
+| `material-k36-21` | `GroundLevelPart4BHdr` -> `LoadHeader` | 42 | exact |
+| `material-k36-22` | `GroundLevelPart4CHdr` -> `LoadHeader` | 36 | exact |
+| `material-k36-23` | `DeathMusHdr` -> `LoadHeader` | 12306 | exact |
+
+Operational: current x86/x64 full builds pass; each4 focused tests
+(music-header-table,audio-smoke,local-death-music-smoke,platform-purity) passes.
+Original OpenNT DOS16 link passes with inherited OLDNAMES.LIB warning, no
+interactive DOS claim. No product code change; all3 existing products compare
+byte-for-byte with current builds and committed S2 products:
+
+- `mysmb16.exe`: 260967 bytes, SHA256 `08027088cb6789482a9f7d20a7a5d3ac6f549ffe1ee56f746425c8f4f1c045d8`, byte-identical S2 product retained.
+- `mysmb32.exe`: 373988 bytes, SHA256 `dd09059aed071d96d73caad9c3203f7556f1c34ca1b1d674f920e7035e3c2f28`, byte-identical S2 product retained.
+- `mysmb64.exe`: 381530 bytes, SHA256 `e6c3cbee528e79ee4b3404ae869f60ab79101b01b5a4cdb8bc5899b537043520`, byte-identical S2 product retained.
+
+Ignored build/m2-t68-s3 contains route/coverage summaries, modes22-24/27,
+indexed header-read counts, current build/focused-test/DOS16 logs. Raw and
+recorder executable removed at closure. Registry/ledger/progress/docs gates
+required before P2 commit; unrelated owner work preserved unstaged.
