@@ -1,5 +1,14 @@
 # M2 ROM conformance node progress
 
+## M2 T66 S7 - active cross-chain census and closure
+
+[Exact S7 scope and current integration contract](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+audits83 existing exact labels/164 feasible controls/10 material rows, one
+source-infeasible raw relation, zero fresh credit. Current1716/1992 nodes,
+3649/4316 controls(raw4342,infeasible26),403/493 material partial; historical
+1992/1992 separate. GameEngine/victory/row/paired-block joins and full native
+regressions required before T66 closure; outside pending boundaries retained.
+
 ## M2 T66 S6 - closed two-sprite output chain
 
 [Individual S6 node/edge proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)

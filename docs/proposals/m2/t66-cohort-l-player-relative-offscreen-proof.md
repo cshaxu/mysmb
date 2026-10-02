@@ -1180,3 +1180,47 @@ audio/title/focus pause. Neutral probe/checker extensions only. Ledger,
 admission/closure/current registry/documentation/whitespace gates pass.
 S6 closes; T66 remains open for S7, M2 remains open for later cohorts/full
 cross-cohort and final equivalence certification.
+
+## S7 admission - complete cohort census and cross-chain integration
+
+Scope83, every label already exact, intended fresh0/maximum1716/1992.
+Exact source-order names: PlayerGfxHandler; CntPl; SwimKT; BigKTS; ExPGH; FindPlayerAction; DoChangeSize; PlayerKilled; PlayerGfxProcessing; SUpdR; PlayerOffscreenChk; PROfsLoop; NPROffscr; IntermediatePlayerData; DrawPlayer_Intermediate; PIntLoop; RenderPlayerSub; DrawPlayerLoop; ProcessPlayerAction; ProcOnGroundActs; NonAnimatedActs; ActionFalling; ActionWalkRun; ActionClimbing; ActionSwimming; GetCurrentAnimOffset; FourFrameExtent; ThreeFrameExtent; AnimationControl; SetAnimC; ExAnimC; GetGfxOffsetAdder; SzOfs; ChangeSizeOffsetAdder; HandleChangeSize; CSzNext; GorSLog; GetOffsetFromAnimCtrl; ShrinkPlayer; ShrPlF; ChkForPlayerAttrib; KilledAtt; C_S_IGAtt; ExPlyrAt; RelativePlayerPosition; RelativeBubblePosition; RelativeFireballPosition; RelWOfs; RelativeMiscPosition; RelativeEnemyPosition; RelativeBlockPosition; VariableObjOfsRelPos; GetObjRelativePosition; GetPlayerOffscreenBits; GetFireballOffscreenBits; GetBubbleOffscreenBits; GetMiscOffscreenBits; ObjOffsetData; GetProperObjOffset; GetEnemyOffscreenBits; GetBlockOffscreenBits; SetOffscrBitsOffset; GetOffScreenBitsSet; RunOffscrBitsSubs; XOffscreenBitsData; DefaultXOnscreenOfs; GetXOffscreenBits; XOfsLoop; XLdBData; ExXOfsBS; YOffscreenBitsData; DefaultYOnscreenOfs; HighPosUnitData; GetYOffscreenBits; YOfsLoop; YLdBData; ExYOfsBS; DividePDiff; SetOscrO; ExDivPD; DrawSpriteObject; NoHFlip; SetHFAt.
+Current1716/1992 nodes,3649/4316 feasible controls(raw4342,infeasible26),
+403/493 material partial. Historical1992/1992 expectedMatches empty; no
+maintenance transfer. S1-S6 closed. T66 owned census83 nodes,164 feasible
+exact controls/1 source-infeasible raw control,10 exact material rows.
+
+S7 combines accepted per-node/member-chain proofs and reruns current joins:
+original GameEngine AF10-AF19 segment calls F180 GetPlayerOffscreenBits,
+F12A RelativePlayerPosition, EEE9 PlayerGfxHandler in sequence, stopping
+before BlockObjMT_Updater. Native sequence is read directly in engine.c;
+the checker runs those same three real shared functions, not a full-engine
+emulation claim. Original AutoPlayer839A calls relative position then tail-
+jumps graphics without recomputing offscreen; native frame_root.c victory
+tail has that same order.8192 controlled roots each vary16 graphics profiles,
+selected page/high/scroll, OAM/coordinates and source masks, full1841 RAM
+including0109-0139. True CPU stack/unused transient registers excluded;
+scratch/results remain mandatory. Source actual calls/RTS continuations and
+native static composition prove joins; no extra external-edge promotion.
+
+Intermediate32 real EFA4 roots recheck shared row writer; paired-block4096
+real F159 roots recheck consumed ObjectOffset+2 second-phase dependency.
+These supplement accepted S1-S6 full/independent routes, not repeat every
+member recording or replace original per-node semantic audit. Every scoped
+counterpart, contract, source path and dual evidence must pass census.
+Fifteen pending H-owned incoming controls remain named and pending for the
+cross-cohort program. No inferred closure of outside ownership boundaries.
+
+Operational track runs complete current x86/x64 builds and all native tests,
+platform purity, original OpenNT DOS16 link. Only product-code repair refreshes
+three EXEs; pure audit/test work retains verified S2 products with audio/title/
+focus pause. Scope objections/diffs stay active until resolved, no T closure
+with pending owned nodes/controls/material or unresolved integration output.
+Sweep actual offscreen/relative/mask/OAM joins, victory omission and paired
+block restored index. No platform/audio/new presentation changes.
+
+Owner ROM/reviewed local ASM nonredistributable research inputs, all raw/logs/
+scripts under ignored build/m2-t66-s7,192MiB aggregate,2048 roots/chunk,
+120seconds/run,524288steps/case; coordinator cleans raw/probe after proof.
+T67 remains unadmitted; M2 completion requires later cohorts/cross-cohort/
+final certification and is not claimed by T66 closure.
