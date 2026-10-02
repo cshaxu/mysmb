@@ -2451,3 +2451,78 @@ remain unchanged. Exact feasible controls rise 3,131 to 3,132/4,323
 (raw 4,342, infeasible 19). T64 remains open with 49 Cohort-J controls,
 zero pending material; Bowser bridge movement returns follow. T65 is
 not admitted.
+
+## Aggregate S47 admission - bridge vertical and initialization returns
+
+S47 owns control-03850/03853: MoveEnemySlowVert -> MoveD_Bowser
+and InitVStf -> RemoveBridge. Scoped labels are BridgeCollapseData, BridgeCollapse, SetM2, MoveD_Bowser, RemoveBridge, NoBFall, MoveEnemySlowVert, SetMdMax, SetXMoveAmt, InitVStf, RemBridge, MoveVOffset, BowserGfxHandler.
+All 13 are already exact; expected node promotions empty. Historical
+1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
+unchanged; feasible controls enter 3,132/4,323 and can reach 3,134/4,323.
+No ownership transfer. S46 precedes; normal Bowser control returns follow.
+
+Shared bridge.c owns $CFEC-$D060, with real shared movement/gravity,
+area/block_metatile.c, init_targets.c and Bowser OAM descendants.
+Static track checks restored slot after slow gravity, source force/max,
+bridge countdown, preserved VRAM Y, last-section InitVStf return A/X,
+state $40 and fall sound before drawing. Original-ROM and native roots
+execute real descendants; compare persistent RAM/OAM and lower-stack
+aliases plus documented live scratch. Six slots, signed vertical speeds,
+force carry/saturation, bridge offsets, timer and last-section paths are
+covered. Focused x86/x64 bridge/purity and original OpenNT DOS16 are
+operational gates. Scoped differences stay here for repair and repeated
+proof; broader unobserved nodes gain no inferred credit.
+
+Owner-local ROM/ASM are nonredistributable research only. Ignored
+build/m2-t64-s47 owns <=8 MiB raw, 524288 steps/case, 120 seconds,
+and cleanup. Any product repair refreshes all three approved EXEs.
+Preserve unrelated changes; T64 remains open and T65 is not admitted.
+
+## Aggregate S47 closure - real bridge vertical/init returns
+
+Control-03850/03853 are exact. The 13 scoped labels retain exact status:
+BridgeCollapseData, BridgeCollapse, SetM2, MoveD_Bowser, RemoveBridge,
+NoBFall, MoveEnemySlowVert, SetMdMax, SetXMoveAmt, InitVStf,
+RemBridge, MoveVOffset and BowserGfxHandler. No node credit or custody
+transfer. This scoped proof does not infer unobserved generic descendants.
+
+Static $CFEC-$D060 audit and current shared owners preserve the slow
+vertical return at $D012, force $0f/max two, ObjectOffset reload and real
+drawing tail. Bridge removal decrements the feet timer, toggles body control,
+selects the original low-address table, writes real VRAM metatile data,
+retains Y for MoveVOffset, increments collapse index and sets blast/shatter
+sounds. At index fifteen, real InitVStf returns at $D056 with A=0 and
+restored slot, clearing speed/force; source state $40 and fall sound $80
+precede real drawing. Source stack/CPU registers are represented by explicit
+slot arguments and shared RAM, without platform logic.
+
+576 real ROM roots comprise 384 direct MoveD_Bowser and 192 bridge roots
+across six slots. They observe 384 slow vertical returns, 12 final-section
+initialization returns and 576 actual Bowser drawing entries. All gravity,
+metatile, offset, initializer and drawing descendants execute without
+substitutions. Maximum root execution is 976 instructions. Signed speed,
+force/fraction carry, saturation, both body phases, all fifteen bridge offsets,
+VRAM offset choices and expired/unexpired feet timers are represented.
+
+Current x86/x64 each match 576/576 with zero differences across 1,796
+persistent bytes, including OAM, VRAM and twelve lower-stack game aliases.
+Transient drawing scratch $00-$07 and CPU stack are explicit exclusions;
+return slot, gravity force/max and initialized speed/force are independently
+checked at their real source seams before the drawing child overwrites
+scratch. Products and oracle bind the same immutable owner-local PRG data.
+This route covers the declared vertical/init handoffs, not a new generic
+Bowser graphics certification.
+
+Fresh C90 checkers and bridge-collapse/purity CTests pass 2/2 per width;
+original OpenNT DOS16 builds/links with the existing OLDNAMES.LIB warning.
+Similar-issue sweep checks both returns, signed vertical movement, slot
+restoration, bridge VRAM Y retention, last-section reset and following
+state/sound/draw consumption. No scoped difference or platform gameplay
+copy found. Product C and three delivered EXEs remain unchanged. Raw
+records/probe executable are cleaned after acceptance.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487
+remain unchanged. Exact feasible controls rise 3,132 to 3,134/4,323
+(raw 4,342, infeasible 19). T64 remains open with 47 Cohort-J controls,
+zero pending material; normal Bowser control returns follow. T65 remains
+unadmitted.

@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3132,
-    "needs-evidence": 1191,
+    "exact": 3134,
+    "needs-evidence": 1189,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129224,13 +129224,16 @@
       "instruction": "rts/rti",
       "id": "control-03850",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_move_slow_vertically return to mysmb_enemy_move_d_bowser",
+      "status": "exact",
+      "currentCounterpart": "src/game/bridge.c with real shared movement/gravity, area bridge writes, init_targets.c and Bowser drawing descendants.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S47 static $CFEC-$D060 and shared child return audit: MoveEnemySlowVert returns at $D012 with X=ObjectOffset after force $0f/max two gravity; MoveD_Bowser tail-jumps to real BowserGfxHandler using the updated vertical arrays and same slot."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return relation MoveEnemySlowVert -> MoveD_Bowser with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
+      "operationalEvidence": [
+        "M2 T64 S47 current x86/x64 each match 576 real original-ROM roots, zero differences across 1796 persistent bytes; 384 slow vertical returns, 12 final-section InitVStf returns and 576 actual drawing continuations. Focused bridge/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "MoveEnemySlowVert returns at $D012 with X=ObjectOffset after force $0f/max two gravity; MoveD_Bowser tail-jumps to real BowserGfxHandler using the updated vertical arrays and same slot.",
       "currentSourcePaths": [
         "src/game/bridge.c",
         "src/game/enemy/movement.c"
@@ -129288,13 +129291,16 @@
       "instruction": "rts/rti",
       "id": "control-03853",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_init_vertical_state return to bridge collapse body",
+      "status": "exact",
+      "currentCounterpart": "src/game/bridge.c with real shared movement/gravity, area bridge writes, init_targets.c and Bowser drawing descendants.",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S47 static $CFEC-$D060 and shared child return audit: InitVStf returns at $D056 with A=0 and X=ObjectOffset, clearing enemy Y speed/force; RemoveBridge then stores state $40 and sound $80 before its real Bowser drawing tail."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original return relation InitVStf -> RemoveBridge with its source predicate, slot/scratch handoff, child ordering and return or tail behavior.",
+      "operationalEvidence": [
+        "M2 T64 S47 current x86/x64 each match 576 real original-ROM roots, zero differences across 1796 persistent bytes; 384 slow vertical returns, 12 final-section InitVStf returns and 576 actual drawing continuations. Focused bridge/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "InitVStf returns at $D056 with A=0 and X=ObjectOffset, clearing enemy Y speed/force; RemoveBridge then stores state $40 and sound $80 before its real Bowser drawing tail.",
       "currentSourcePaths": [
         "src/game/bridge.c",
         "src/game/enemy/init.c",
