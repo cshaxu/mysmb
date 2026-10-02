@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T69 S4 - active player-entry initialization chain
+
+[Exact11 pending targets/3 exact dependencies](../proposals/m2/t69-cross-cohort-current-proof.md)
+scope14,intended fresh11,max1975/1992;17 controls/5 material. Current1964/1992
+nodes,4043/4278 controls(raw4342,infeasible64),505/555 material partial;
+historical1992/1992 separate. Both proof tracks required before credit.
+S5 remains unadmitted.
+
 ## M2 T69 S3 - closed area-music selection chain
 
 [All5 labels/8 controls/1 material](../proposals/m2/t69-cross-cohort-current-proof.md)

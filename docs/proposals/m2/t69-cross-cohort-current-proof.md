@@ -565,3 +565,25 @@ all3 S2 binaries retained byte-identically and checked against current outputs:
 Ignored bounded build output retains only neutral summaries/logs;raw removed
 per batch and probe deleted at closure. Registry/ledger/progress/docs gates
 required before commit;unrelated queue/source/proposals preserved unstaged.
+
+## S4 admission - player entry and timer initialization
+
+Scope14/intended fresh11 pending:PlayerStarting_X_Pos; AltYPosOffset; PlayerStarting_Y_Pos; PlayerBGPriorityData; GameTimerData; Entrance_GameTimerSetup; ChkStPos; SetStPos; ChkOverR; ChkSwimE; SetPESub.
+Investigated already-exact dependencies:GetPlayerColors,Setup_Vine,
+InitBlock_XY_Pos,no fresh credit.17 controls/5 material remain pending.
+Current1964/1992 nodes,4043/4278 controls(raw4342,infeasible64),505/555
+material partial;max1975/1992. Historical1992/1992 separate,expectedMatches
+empty;maintenance custody retained. Shared player.c entrance owner and real
+area palette/objects vine/fireball bubble children. Source9131 entry ends9196
+RTS;source-valid alternate0-3/header entrance0-7/timer0-3/area0-3,plus
+alternate2 selecting vertical index8 and priority table's adjacent dummy byte.
+ROM track:Unchanged original Entrance_GameTimerSetup9131 returning roots with actual GetPlayerColors/InitBlock_XY_Pos/Setup_Vine/SetupBubble children;vary all source-valid alternate/header entrance/timer/area fields,palette buffer offsets,collision byte,fetch flag and joypad override;observe5 table regions/source transitions and compare persistent RAM/APU/order x86/x64.
+Operational:focused area-entry/boot/title tests,current x86/x64 builds,purity
+and original OpenNT DOS16 link. Product edits refresh3 EXEs under owner
+authorization;pure audit preserves accepted outputs. Every scoped difference
+repaired and re-audited before S5 admission. Similar-issue sweep:byte DEC,
+retained table selectors,priority/table alias,timer skip/reset writes,actual
+palette/vine/block/bubble call order and child-return X selection.
+Owner-local ROM/reviewed ASM research only,nonredistributable,no import.
+Ignored build/m2-t69-s4,128MiB raw/1024 roots batch/120seconds process/
+524288steps root;coordinator removes raw per batch and retains neutral summaries.
