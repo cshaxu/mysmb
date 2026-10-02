@@ -17,7 +17,7 @@ this task registers audit/repair participation, not silent ownership transfers.
 | S3 | Object offscreen wrappers and shared X/Y call composition; src/game/oam/object_position.c | 11 / 11 | GetPlayerOffscreenBits; GetFireballOffscreenBits; GetBubbleOffscreenBits; GetMiscOffscreenBits; ObjOffsetData; GetProperObjOffset; GetEnemyOffscreenBits; GetBlockOffscreenBits; SetOffscrBitsOffset; GetOffScreenBitsSet; RunOffscrBitsSubs | control-03127, control-03128, control-03129, control-03130, control-03131, control-03132, control-03133, control-03134, control-03135, control-03136, control-03137, control-03138, control-03139, control-04054, control-04055, control-04056, control-04057, control-04058 |
 | S4 | Horizontal offscreen data, page difference and loop; src/game/oam/object_position.c | 6 / 6 | XOffscreenBitsData; DefaultXOnscreenOfs; GetXOffscreenBits; XOfsLoop; XLdBData; ExXOfsBS | control-03140, control-03141, control-03142, control-03143, control-03144, control-03145, control-03146, control-03147, control-04059 |
 | S5 | Vertical offscreen data, page difference and shared division; src/game/oam/object_position.c | 10 / 10 | YOffscreenBitsData; DefaultYOnscreenOfs; HighPosUnitData; GetYOffscreenBits; YOfsLoop; YLdBData; ExYOfsBS; DividePDiff; SetOscrO; ExDivPD | control-03148, control-03149, control-03150, control-03151, control-03152, control-03153, control-03154, control-03155, control-03156, control-03157, control-03158, control-03159, control-04060 |
-| S6 | Shared two-sprite row emission and flip attributes; src/game/oam/sprite_row.c | 3 / 3 | DrawSpriteObject; NoHFlip; SetHFAt | control-03160, control-03161, control-03162, control-03163 |
+| S6 | Shared two-sprite row emission and flip attributes; src/game/oam/sprite_draw.c | 3 / 3 | DrawSpriteObject; NoHFlip; SetHFAt | control-03160, control-03161, control-03162, control-03163 |
 | S7 | Cross-chain evidence census and current integration matrix, full native regressions and original DOS16 link | 83 / 0 | All83 labels above, already exact required | Remaining owned controls/material census, no inferred fresh credit. |
 
 Every S admits only its exact source-order set; a mismatch is repaired and
@@ -123,7 +123,7 @@ Pure audit/test/evidence P retains latest products. No platform business logic.
 - S3: Original object-family offsets and real GetX/GetYOffscreenBits input/return plus composed mask scratch. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
 - S4: Original F1F6 horizontal roots, both boundary loops, page difference and all table consumers. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
 - S5: Original F239 vertical roots, high-page differences, both boundary loops and actual DividePDiff path. Owner src/game/oam/object_position.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
-- S6: Original DrawSpriteObject with all byte X/Y and facing/attribute/carry domains, actual return and OAM order. Owner src/game/oam/sprite_row.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
+- S6: Original DrawSpriteObject with all byte X/Y and facing/attribute/carry domains, actual return and OAM order. Owner src/game/oam/sprite_draw.c; preceding source cohort/S must close first. Existing shared helpers are tested dependencies, no unobserved dependency-node credit. Later S owns any relation outside this exact ASM/caller range.
 
 Material00430 IntermediatePlayerData and00431 ChangeSizeOffsetAdder belong
 to S1 and must prove actual indexed consumers. Material00432 ObjOffsetData
@@ -1052,3 +1052,41 @@ warning retained. No product source changed. All3 S2 P2 EXEs verified against
 committed HEAD byte-for-byte and retained, including audio/title/focus pause.
 Only neutral probe/checker extensions. Node ledger/admission/closure/current
 registry/documentation/whitespace gates pass. S5 closes; T66/M2 remain open.
+
+## S6 admission - shared two-sprite OAM emission
+
+Scope3/intended fresh3, all incoming needs-evidence: DrawSpriteObject; NoHFlip; SetHFAt.
+Current1713/1992 nodes,3646/4317 feasible controls(raw4342,infeasible25),
+403/493 material partial. Maximum1716/1992 nodes. Exact raw controls03160-
+03163: three expected feasible/exact;03162 is a discovered extractor
+fall-through after LDA40/BNE, which always branches and must be marked
+infeasible with source proof. Maximum3649/4316 feasible controls(raw4342,
+infeasible26) if proof confirms; no material promotion. No classification
+at admission. Historical1992/1992 expectedMatches empty; custody unchanged.
+
+Entry F282 DrawSpriteObject through its final RTS. Actual shared owner is
+sprite_draw.c, called from sprite_row.c; plan's owner path is corrected to
+the existing actual implementation, not a code move. S5 closed; S7 integration
+remains unadmitted. Static audit checks flip bit1 via two LSR, normal/swapped
+tile store order, base attribute OR, paired Y/X stores, explicit carry clear
+before each plus8, absolute-indexed OAM addresses across page and byte-wrapped
+coordinate/OAM/graphics increments. Caller-consumed returned X/Y compare.
+
+Controlled original roots cover all byte flip-control xbase-attribute pairs,
+every coordinate/OAM offset/graphics byte, distinct tile inputs and both
+initial carry states. Correlated coordinates are not claimed as independent
+extra Cartesian dimensions. Full1841 RAM bytes include aliases0109-0139 and
+OAM writes spilling past02FF when absolute-indexed Y requires it. Only true
+CPU stack/unused A/flags excluded. No mock or production test hook. Branch
+03160 both paths,03161 taken,03163 join observed; impossible03162 retains
+raw ledger with explicit instruction proof and zero transfer count.
+
+Operational track: current x86/x64 checker builds, focused player/OAM/core/
+offscreen/purity/audio/focus tests; original OpenNT DOS16 link. Product-only
+correction refreshes3 EXEs, otherwise S2 products retained. Sweep public
+sprite caller and shared scratch/OAM stores. No platform/audio/new feature.
+Scoped feasible diff repaired/re-audited within S6 before S7 admission.
+
+Owner-local ROM/reviewed ASM nonredistributable inputs. All scripts/raw/logs
+under ignored build/m2-t66-s6;192MiB aggregate,2048 roots/chunk,120seconds/
+run,524288steps/case; coordinator cleans raw/probe after proof.
