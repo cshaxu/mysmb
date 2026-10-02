@@ -10689,13 +10689,13 @@
   ],
   "nodeCounts": {
     "exact": 1544,
-    "needs-evidence": 448,
+    "needs-evidence": 444,
     "unclassified": 0,
-    "mismatch": 0
+    "mismatch": 4
   },
   "controlEdgeCounts": {
     "exact": 3276,
-    "needs-evidence": 1045,
+    "needs-evidence": 1037,
     "infeasible": 21
   },
   "controlEdgeTypeCounts": {
@@ -41292,11 +41292,12 @@
       "label": "CheckBowserGfxFlag",
       "asmLine": 13704,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized actor OAM owners",
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific draw entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static source finding, original-ROM replay and repair pending: Generic EnemyGfxHandler returns0 for nonzero Bowser flag; source selects EF22/23 and continues shared selection/drawing. Specialized dispatch duplicates the original branch. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Overrides the selected code with Bowser front/rear code $16/$17 when BowserGfxFlag is nonzero.",
@@ -41468,11 +41469,12 @@
       "label": "NotEgg",
       "asmLine": 13780,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Goomba/Spiny/Bowser OAM owners",
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
       "semanticEvidence": [
-        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static source finding, original-ROM replay and repair pending: Original Spiny offset24 always jumps to HammerBro, including non-egg states; native non-egg path falls into Lakitu/shell selection. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Transfers the selected Spiny path to the Hammer-Bro continuation.",
@@ -41564,11 +41566,12 @@
       "label": "CheckForHammerBro",
       "asmLine": 13829,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
       "semanticEvidence": [
-        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static source finding, original-ROM replay and repair pending: Original HammerBro state0 branches directly to animation; native falls into Bloober interval gate and can suppress animation. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Routes Hammer Bro state zero/d3 paths to normal animation, defeated state or its alternate graphics offset.",
@@ -41660,11 +41663,12 @@
       "label": "DrawEnemyObject",
       "asmLine": 13905,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentOwner": "src/game/oam/normal_enemy_gfx.c with specialized Hammer/Bloober/Cheep OAM owners",
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics and actor-specific render entrypoints",
       "semanticEvidence": [
-        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static source finding, original-ROM replay and repair pending: Original three DrawEnemyObjRow calls are replaced with direct DrawSpriteObject calls and premature RAM01 stores. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Calls the three source rows in order, reloads ObjectOffset/OAM and routes Bullet Bill directly to offscreen processing.",
@@ -109704,10 +109708,11 @@
       "instruction": "beq",
       "id": "control-02851",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM branch relation CheckBowserGfxFlag -> SBwsrGfxOfs with the source actor predicate, scratch-state handoff and return ordering.",
@@ -109723,10 +109728,11 @@
       "instruction": "iny",
       "id": "control-02852",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM fallthrough relation CheckBowserGfxFlag -> SBwsrGfxOfs with the source actor predicate, scratch-state handoff and return ordering.",
@@ -109742,10 +109748,11 @@
       "instruction": "sty",
       "id": "control-02853",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy OAM front-dispatch path and specialized actor entrypoints",
       "semanticEvidence": [
-        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM fallthrough relation SBwsrGfxOfs -> CheckForGoomba with the source actor predicate, scratch-state handoff and return ordering.",
@@ -110167,10 +110174,11 @@
       "instruction": "jmp",
       "id": "control-02875",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared normal-enemy graphics path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM jump relation NotEgg -> CheckForHammerBro with source state/ID predicate, graphics selection and control handoff.",
@@ -110500,10 +110508,11 @@
       "instruction": "beq",
       "id": "control-02892",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM branch relation CheckForHammerBro -> CheckToAnimateEnemy with source actor/state predicate, graphics-offset handoff and row ordering.",
@@ -110991,10 +111000,11 @@
       "instruction": "jsr",
       "id": "control-02916",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DrawEnemyObject -> DrawEnemyObjRow with source actor/state predicate, graphics-offset handoff and row ordering.",
@@ -111017,10 +111027,11 @@
       "instruction": "jsr",
       "id": "control-02917",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DrawEnemyObject -> DrawEnemyObjRow with source actor/state predicate, graphics-offset handoff and row ordering.",
@@ -111043,10 +111054,11 @@
       "instruction": "jsr",
       "id": "control-02918",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
       "semanticEvidence": [
-        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
+        "M2 T65 S8 static predecessor/call mismatch; corrective shared path and current ROM proof pending. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "semanticContract": "Preserves ROM call relation DrawEnemyObject -> DrawEnemyObjRow with source actor/state predicate, graphics-offset handoff and row ordering.",

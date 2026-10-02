@@ -837,3 +837,75 @@ Totals: nodes1538 ->1544/1992; controls3266 ->3276/4321 (raw4342,
 infeasible21); material382 ->384/492 partial. Historical1992/1992 is separate.
 Cohort K has65 exact and89 pending nodes. T65 remains open; S8 enemy graphics
 selection's35-node chain is next. No scoped feasible difference remains.
+
+
+## S8 admission - enemy graphics selection and original row calls
+
+Scope is exactly the35 labels in the unchanged S8 plan above, source order,
+all incoming needs-evidence. Intended fresh current promotions35; maximum
+1579/1992 from1544. Historical expected/actual new matches remain empty,
+1992/1992 is historical mapping only. Maintenance receivers retain custody.
+
+Entry is original EnemyGfxHandler $E87D; exit is DrawEnemyObject's three
+DrawEnemyObjRow calls and handoff to CheckForVerticalFlip or SkipToOffScrChk.
+Shared normal_enemy_gfx.c and specialized actor owners implement selection.
+S7 is closed; S9 owns the downstream flip/mirror/offscreen internal proof.
+Invoking or repairing a row dependency does not promote S9 nodes by inference.
+Source-owned controls are control-02836 through control-02920 (85 pending)
+plus already exact return edges control-03689 and control-03796. Material
+rows00420-00424 remain pending. Raw fallthroughs02895 and02908 require explicit
+infeasibility review: LDX #$B4/BNE and LDA #$03/STA/BNE respectively; no
+denominator change or infeasible disposition is made before the full proof.
+
+ROM-logic track: audit each node's branch, RAM/table binding and call/return,
+then record the original selection boundary, indexed reads, three real row
+inputs/returns and full output. Run one bounded family batch per width, not
+one process per micro-label. Compare mapped RAM including game stack aliases;
+document actual CPU-stack exclusion. Operational track separately checks
+normal/Bowser/spring/OAM/core/purity/audio/pause/self tests, current x86/x64
+builds and original OpenNT DOS16 link. Code changes refresh three products.
+
+Original ROM and ASM remain owner-local nonredistributable research inputs.
+Ignored build/m2-t65-s8 owns raw outputs:192MiB cap,120seconds/run,
+524288steps/case, checkpoint summaries, coordinator cleanup after closure.
+
+### S8 initial source audit - findings awaiting repair and ROM replay
+
+This is an active corrective S, not a closure or completion claim.
+
+| Source phase / exact labels | Native comparison and remaining proof |
+| --- | --- |
+| EnemyGraphicsTable; EnemyGfxTableOffsets; EnemyAttributeData | Indexed native arrays exist; audit original extents, adjacent-byte/wrapping reads and all reachable consumers in the controlled batch. Specialized Bowser/spring arrays must not replace original binding without proof. |
+| EnemyAnimTimingBMask; JumpspringFrameOffsets | Native mask8 and spring5 values match visible source constants. Original second timing-mask index is residual; prove unreachable before accepting its contract. All five spring indices require actual reads. |
+| EnemyGfxHandler; CheckForRetainerObj | Prefix and Piranha early return present. Audit ObjectOffset reload versus explicit slot and scratch write stage. Retainer normalizes code21/direction1/state0. |
+| CheckForBulletBillCV; SBBAt; CheckForJumpspring; CheckForPodoboo | Cannon code8, Y decrement and priority; spring code24-26/state3; Podoboo nonnegative velocity flip are present. Prove timer/sign and rewritten-code branches. |
+| CheckBowserGfxFlag; SBwsrGfxOfs | **Mismatch:** generic C returns0 on nonzero flag instead of selecting code22/front or23/rear. Specialized retainer dispatch bypasses this original shared branch. |
+| CheckForGoomba; GmbaAnim | Native state>=2, state bit5/timer/frame gate and direction XOR exist; audit ordering and all branch combinations. |
+| CheckBowserFront; ChkFrontSte; FlipBowserOver; DrawBowser; CheckBowserRear; ChkRearSte | Specialized bowser_gfx.c duplicates tile selection/front-mouth/rear-step/defeat-Y logic; generic path never reaches it. Rejoin the original shared selection and drawing path, then prove exact scratch and row effects. No visual-equivalence assumption. |
+| CheckForSpiny; NotEgg | **Mismatch:** native jumps to hammer only for egg state5; original offset24 always jumps through NotEgg, bypassing shell selection even for ordinary Spiny. State4 can select a shell and alter height incorrectly. |
+| CheckForLakitu; NoLAFr | Native alternate offset96 and defeated jump exist; prove bit5 and timer boundary16. |
+| CheckUpsideDownShell; CheckRightSideUpShell; CheckForDefdGoomba | Native shell/Goomba offset and Y adjustments exist; need corrected Spiny predecessor and controlled state/type branches. |
+| CheckForHammerBro | **Mismatch:** original HammerBro state0 branches directly to animation; current C falls into Bloober interval checks. Interval>=5 can suppress the expected frame change. State-bit3 paths also need proof. |
+| CheckForBloober | Offset48 bypass, interval>=5, Bloober interval1 and three Y increments are present; prove actual entry and exits. |
+| CheckToAnimateEnemy; CheckForSecondFrame; CheckAnimationStop; CheckDefeatedState | Native exclusion, retainer/world, mask8, ED A0/timer gates and defeated flip/state clear exist; prove each branch, wrap and original residual infeasibility. |
+| DrawEnemyObject | **Mismatch:** three native helper calls go directly to DrawSpriteObject after prematurely writing RAM01; original calls DrawEnemyObjRow then DrawOneSpriteRow. Restore meaningful indexed row entry and actual three returns, not just equal final pixels. |
+
+Similar-issue sweep covers ordinary generic rendering, retainer/Bowser
+dispatch and spring specialization plus all three row sites. Specialized
+consumers remain pending until a shared canonical route and original-ROM
+contracts are demonstrated. S9 internals stay pending, with no custody transfer.
+Current exact counts remain1544/1992 nodes,3276/4321 feasible controls and
+384/492 material(partial). Existing three S7 products are unchanged.
+
+### S8 P1 admission review
+
+Verify-NodeProgress accepts audit scope35 with historical baseline/maximum1992,
+zero expected historical additions and no custody transfer. The generated
+ledger validates1992 receivers, no orphan nodes,81 tasks and475 subtasks.
+Documentation governance and diff whitespace checks pass. Registry review
+changes only the four named source findings and controls02851,02852,02853,
+02875,02892,02916,02917,02918; exact counters are unchanged.
+The flag-zero branch02850 remains needs-evidence because the generic C still
+reaches ordinary selection on that condition; it is not mislabeled a mismatch.
+No product code changes, so no executable refresh is required for this P.
+S8 remains admitted, with repair and ROM/native evidence unfinished.
