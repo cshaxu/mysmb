@@ -70,3 +70,11 @@ T65 is open and S2 is next. Current exact nodes 1494/1992, feasible controls
 T65 is open and S3 is next. Current exact nodes 1502/1992, feasible controls
 3204/4322 (raw 4342, infeasible 20), material 373/492 partial. Historical
 1992/1992 remains separate. Earlier checkpoint paragraphs retain their facts.
+
+## Current checkpoint after T65 S3
+
+[T65 S3](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+T65 is open, S4 next. Current nodes 1514/1992, feasible controls 3213/4321
+(raw 4342, infeasible 21), material 380/492 partial; historical 1992/1992
+remains separate. Planned Cohort L must restore PlayerOffscreenChk's actual
+DumpTwoSpr call instead of direct stores before claiming that graph contract.

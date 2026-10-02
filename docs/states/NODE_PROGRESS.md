@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S3 - hammer output and child edge
+
+[T65 S3 current indexed-output/call proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes twelve named labels, none deferred. Current nodes 1514/1992, feasible
+controls 3213/4321 (raw 4342, infeasible 21), material 380/492 partial.
+Historical mapping remains 1992/1992. Full and child-sequence checkers replay
+13824 original-ROM roots per width with zero differences after restoring
+DumpTwoSpr; 9/9 operational tests per width and original DOS16 link pass.
+Three products refreshed. T65 stays open, S4 next.
+
 ## M2 T65 S2 - vine output chain
 
 [T65 S2 current vine/stacker proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

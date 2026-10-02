@@ -8897,17 +8897,19 @@
       "consumer": "DrawHammer",
       "storage": "ROM pose-indexed FirstSprXPos table to DrawHammer OAM write",
       "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads FirstSprXPos, then writes the corresponding hammer OAM byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
-      "semanticContract": "The selected FirstSprXPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticContract": "The selected immutable $E4C0 four-entry byte is added to relative X with a cleared carry before first sprite X.",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4C0 four-entry byte is added to relative X with a cleared carry before first sprite X."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -8917,17 +8919,19 @@
       "consumer": "DrawHammer",
       "storage": "ROM pose-indexed FirstSprYPos table to DrawHammer OAM write",
       "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads FirstSprYPos, then writes the corresponding hammer OAM byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
-      "semanticContract": "The selected FirstSprYPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticContract": "The selected immutable $E4C4 four-entry byte is added to relative Y with a cleared carry before first sprite Y.",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4C4 four-entry byte is added to relative Y with a cleared carry before first sprite Y."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -8937,17 +8941,19 @@
       "consumer": "DrawHammer",
       "storage": "ROM pose-indexed SecondSprXPos table to DrawHammer OAM write",
       "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads SecondSprXPos, then writes the corresponding hammer OAM byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
-      "semanticContract": "The selected SecondSprXPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticContract": "The selected immutable $E4C8 four-entry byte is added to the already wrapped first sprite X after CLC for second sprite X.",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4C8 four-entry byte is added to the already wrapped first sprite X after CLC for second sprite X."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -8957,17 +8963,19 @@
       "consumer": "DrawHammer",
       "storage": "ROM pose-indexed SecondSprYPos table to DrawHammer OAM write",
       "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads SecondSprYPos, then writes the corresponding hammer OAM byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
-      "semanticContract": "The selected SecondSprYPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticContract": "The selected immutable $E4CC four-entry byte is added to the already wrapped first sprite Y after CLC for second sprite Y.",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4CC four-entry byte is added to the already wrapped first sprite Y after CLC for second sprite Y."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -8977,17 +8985,19 @@
       "consumer": "DrawHammer",
       "storage": "ROM pose-indexed FirstSprTilenum table to DrawHammer OAM write",
       "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads FirstSprTilenum, then writes the corresponding hammer OAM byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
-      "semanticContract": "The selected FirstSprTilenum byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticContract": "Selected immutable $E4D0 tile is stored at first sprite tile byte after coordinate writes.",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Selected immutable $E4D0 tile is stored at first sprite tile byte after coordinate writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -8997,17 +9007,19 @@
       "consumer": "DrawHammer",
       "storage": "ROM pose-indexed SecondSprTilenum table to DrawHammer OAM write",
       "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads SecondSprTilenum, then writes the corresponding hammer OAM byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
-      "semanticContract": "The selected SecondSprTilenum byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticContract": "Selected immutable $E4D4 tile is stored at second sprite tile byte after first tile.",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Selected immutable $E4D4 tile is stored at second sprite tile byte after first tile."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -9017,17 +9029,19 @@
       "consumer": "DrawHammer",
       "storage": "ROM pose-indexed HammerSprAttrib table to DrawHammer OAM write",
       "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads HammerSprAttrib, then writes the corresponding hammer OAM byte.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
-      "semanticContract": "The selected HammerSprAttrib byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticContract": "Selected immutable $E4D8 attribute is written to both hammer sprites after tile output.",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Selected immutable $E4D8 attribute is written to both hammer sprites after tile output."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -10662,15 +10676,15 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1502,
-    "needs-evidence": 490,
+    "exact": 1514,
+    "needs-evidence": 478,
     "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3204,
-    "needs-evidence": 1118,
-    "infeasible": 20
+    "exact": 3213,
+    "needs-evidence": 1108,
+    "infeasible": 21
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -40244,14 +40258,17 @@
       "label": "FirstSprXPos",
       "asmLine": 13203,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4C0 four-entry byte is added to relative X with a cleared carry before first sprite X."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four source first-sprite X pose adders (04,00,04,00) used by DrawHammer.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "The selected immutable $E4C0 four-entry byte is added to relative X with a cleared carry before first sprite X.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40260,14 +40277,17 @@
       "label": "FirstSprYPos",
       "asmLine": 13206,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4C4 four-entry byte is added to relative Y with a cleared carry before first sprite Y."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four source first-sprite Y pose adders (00,04,00,04) used by DrawHammer.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "The selected immutable $E4C4 four-entry byte is added to relative Y with a cleared carry before first sprite Y.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40276,14 +40296,17 @@
       "label": "SecondSprXPos",
       "asmLine": 13209,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4C8 four-entry byte is added to the already wrapped first sprite X after CLC for second sprite X."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four source second-sprite X pose adders (00,08,00,08) used by DrawHammer.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "The selected immutable $E4C8 four-entry byte is added to the already wrapped first sprite X after CLC for second sprite X.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40292,14 +40315,17 @@
       "label": "SecondSprYPos",
       "asmLine": 13212,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; The selected immutable $E4CC four-entry byte is added to the already wrapped first sprite Y after CLC for second sprite Y."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four source second-sprite Y pose adders (08,00,08,00) used by DrawHammer.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "The selected immutable $E4CC four-entry byte is added to the already wrapped first sprite Y after CLC for second sprite Y.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40308,14 +40334,17 @@
       "label": "FirstSprTilenum",
       "asmLine": 13215,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Selected immutable $E4D0 tile is stored at first sprite tile byte after coordinate writes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four source first-sprite hammer tiles (80,82,81,83).",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Selected immutable $E4D0 tile is stored at first sprite tile byte after coordinate writes.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40324,14 +40353,17 @@
       "label": "SecondSprTilenum",
       "asmLine": 13218,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Selected immutable $E4D4 tile is stored at second sprite tile byte after first tile."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four source second-sprite hammer tiles (81,83,80,82).",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Selected immutable $E4D4 tile is stored at second sprite tile byte after first tile.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40340,14 +40372,17 @@
       "label": "HammerSprAttrib",
       "asmLine": 13221,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Selected immutable $E4D8 attribute is written to both hammer sprites after tile output."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds the four source shared hammer attributes (03,03,c3,c3).",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Selected immutable $E4D8 attribute is written to both hammer sprites after tile output.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40356,16 +40391,18 @@
       "label": "DrawHammer",
       "asmLine": 13224,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Loads incoming-slot OAM offset; TimerControl and masked Misc_State select forced or animated pose before original Y/X/tile/attribute stages and offscreen tail."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Reads timer/state/frame and prepared relative/offscreen bytes, selects source pose, writes two OAM records and clears state/hides both rows only for offscreen bits d2-d7.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Loads incoming-slot OAM offset; TimerControl and masked Misc_State select forced or animated pose before original Y/X/tile/attribute stages and offscreen tail.",
       "currentSourcePaths": [
-        "src/game/misc.c",
         "src/game/oam/hammer_gfx.c"
       ]
     },
@@ -40373,14 +40410,17 @@
       "label": "ForceHPose",
       "asmLine": 13232,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Source LDX #0 establishes zero and forces BEQ RenderH. Native forced pose is zero and bypasses frame-index calculation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Forces pose zero for nonzero TimerControl or a masked Misc_State other than one, then transfers to rendering.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Source LDX #0 establishes zero and forces BEQ RenderH. Native forced pose is zero and bypasses frame-index calculation.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40389,14 +40429,17 @@
       "label": "GetHPose",
       "asmLine": 13234,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Only timer zero and masked state one use FrameCounter bits 3-2 to select one of four pose indices."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Derives the source pose from FrameCounter bits d3-d2 when TimerControl is clear and masked Misc_State is one.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Only timer zero and masked state one use FrameCounter bits 3-2 to select one of four pose indices.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c"
       ]
@@ -40405,32 +40448,40 @@
       "label": "RenderH",
       "asmLine": 13239,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Writes coordinates, tiles and attributes in original order, restores ObjectOffset and tests $FC offscreen mask. Hidden path clears state then calls actual shared DumpTwoSpr with A=$F8 and source OAM Y."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes Y/X/tile/attribute bytes in source order for both hammer OAM records, then performs the d2-d7 offscreen nullify/hide path.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Writes coordinates, tiles and attributes in original order, restores ObjectOffset and tests $FC offscreen mask. Hidden path clears state then calls actual shared DumpTwoSpr with A=$F8 and source OAM Y.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
       "label": "NoHOffscr",
       "asmLine": 13268,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Visible path and actual DumpTwoSpr return both finish without further game-state writes. Register-only native ABI is explicit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns after visible rendering or after the two OAM Y bytes have been hidden.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Visible path and actual DumpTwoSpr return both finish without further game-state writes. Register-only native ABI is explicit.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107731,16 +107782,19 @@
       "instruction": "bne",
       "id": "control-02774",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Nonzero TimerControl bypasses state/frame animation and forces zero pose."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DrawHammer -> ForceHPose with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Nonzero TimerControl bypasses state/frame animation and forces zero pose.",
       "currentSourcePaths": [
-        "src/game/misc.c",
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107751,16 +107805,19 @@
       "instruction": "beq",
       "id": "control-02775",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Timer zero and masked state one branch to original frame-index calculation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DrawHammer -> GetHPose with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Timer zero and masked state one branch to original frame-index calculation.",
       "currentSourcePaths": [
-        "src/game/misc.c",
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107771,16 +107828,19 @@
       "instruction": "beq",
       "id": "control-02776",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Other masked states fall through to ForceHPose."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DrawHammer -> ForceHPose with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Other masked states fall through to ForceHPose.",
       "currentSourcePaths": [
-        "src/game/misc.c",
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107791,15 +107851,19 @@
       "instruction": "beq",
       "id": "control-02777",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; LDX #0 makes BEQ RenderH unconditional, bypassing GetHPose."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation ForceHPose -> RenderH with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "LDX #0 makes BEQ RenderH unconditional, bypassing GetHPose.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107810,15 +107874,19 @@
       "instruction": "beq",
       "id": "control-02778",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "infeasible",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Lexical ForceHPose-to-GetHPose fall-through is impossible: $E4EC LDX #0 sets Z and $E4EE BEQ always reaches $E4F7."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation ForceHPose -> GetHPose with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Lexical ForceHPose-to-GetHPose fall-through is impossible: $E4EC LDX #0 sets Z and $E4EE BEQ always reaches $E4F7.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107829,15 +107897,19 @@
       "instruction": "tax",
       "id": "control-02779",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Animated index calculation completes before common coordinate/attribute rendering."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation GetHPose -> RenderH with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Animated index calculation completes before common coordinate/attribute rendering.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107848,15 +107920,19 @@
       "instruction": "beq",
       "id": "control-02780",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Offscreen bits AND $FC equal zero skips state clearing and sprite dumping."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation RenderH -> NoHOffscr with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Offscreen bits AND $FC equal zero skips state clearing and sprite dumping.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -107867,13 +107943,16 @@
       "instruction": "jsr",
       "id": "control-02781",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Hidden path clears restored-offset Misc_State before calling shared DumpTwoSpr with $F8 and original OAM offset."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation RenderH -> DumpTwoSpr with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Hidden path clears restored-offset Misc_State before calling shared DumpTwoSpr with $F8 and original OAM offset.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c",
         "src/game/oam/sprite_dump.c"
@@ -107887,15 +107966,19 @@
       "instruction": "jsr",
       "id": "control-02782",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Hidden path reaches NoHOffscr only after actual child return."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation RenderH -> NoHOffscr with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Hidden path reaches NoHOffscr only after actual child return.",
       "currentSourcePaths": [
-        "src/game/oam/hammer_gfx.c"
+        "src/game/oam/hammer_gfx.c",
+        "src/game/oam/sprite_dump.c"
       ]
     },
     {
@@ -132911,13 +132994,16 @@
       "instruction": "rts/rti",
       "id": "control-03999",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "status": "exact",
+      "currentCounterpart": "shared hammer pose/output stages with actual mysmb_oam_dump_two_sprites child",
       "semanticEvidence": [
-        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Original DumpTwoSpr RTS $E5C7 resumes RenderH/NoHOffscr at $E540, preserving restored object and OAM offsets."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> RenderH with the source predicate, OAM write order and return handoff.",
+      "operationalEvidence": [
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original DumpTwoSpr RTS $E5C7 resumes RenderH/NoHOffscr at $E540, preserving restored object and OAM offsets.",
       "currentSourcePaths": [
         "src/game/oam/hammer_gfx.c",
         "src/game/oam/sprite_dump.c"
@@ -140576,12 +140662,13 @@
     "control-02036",
     "control-02708",
     "control-02757",
+    "control-02778",
     "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 20,
-  "feasibleControlEdgeTotal": 4322
+  "infeasibleControlEdgeTotal": 21,
+  "feasibleControlEdgeTotal": 4321
 }

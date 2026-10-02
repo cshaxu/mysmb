@@ -1822,3 +1822,9 @@ target_link_libraries(mysmb_block_query_integration_route_check PRIVATE mysmb_ga
 
 add_executable(mysmb_vine_output_route_check test/vine_output_route_check.c)
 target_link_libraries(mysmb_vine_output_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_hammer_output_route_check test/hammer_output_route_check.c)
+target_link_libraries(mysmb_hammer_output_route_check PRIVATE mysmb_game)
+add_executable(mysmb_hammer_output_caller_check test/hammer_output_route_check.c src/game/oam/hammer_gfx.c)
+target_include_directories(mysmb_hammer_output_caller_check PRIVATE src)
+target_compile_definitions(mysmb_hammer_output_caller_check PRIVATE MYSMB_HAMMER_CHILD_CHECK=1)

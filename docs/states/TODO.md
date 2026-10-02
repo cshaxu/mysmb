@@ -2,6 +2,15 @@
 
 ## Translation Debt
 
+- [ ] **Original dump-child graph fidelity (High):** T65 S3's similar-issue
+  sweep found DrawBrickChunks and PlayerOffscreenChk duplicate original
+  DumpTwoSpr stores. Final RAM equality alone does not close their call edges.
+  Admission paths: existing T65 S10 block/chunk chain and planned Cohort L
+  T66 player output chain; retain original maintenance custody, restore child
+  calls and prove actual child input/return alongside full output. Source
+  column-only writes retain their own distinct paths.
+  [Finding and scope](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md#s3-closure---indexed-hammer-output-and-real-child-edge).
+
 - [x] **Legacy core, title/demo, end-to-end, and local-area smoke fixtures:** T51 S5 P8 completed the remaining source-route adjudications. The core fixture now supplies only the table windows and caller state read by its selected ROM children; the title/demo case follows `PlayerLoseLife -> ContinueGame`; the ROM-free end-to-end case stops at the source-valid title-to-game handoff; and the local-area case runs against owner-local generated data. Native x86/x64 matrices pass 218/218. This resolves the former legacy-suite blocker only; it does not waive the separate active discrepancies below. [T51 S5 P8](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p8-legacy-suite-source-route-closure).
 
 - [x] **KillEnemies entry store:** The earlier T43 finding is superseded by T51 S3: the shared `$9716` owner now stores the incoming identifier in RAM00 before its five-slot zero/load loop, and controlled WarpNum/flagpole callers verify the selective result. The current x86/x64 primitive check also passes. [T51 S3 closure](../proposals/m2/t51-residual-equivalence-and-certification.md#t51-s3-closure-killenemies-shared-primitive).

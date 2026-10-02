@@ -290,3 +290,120 @@ Current totals: nodes 1494 -> 1502/1992, feasible controls 3192 -> 3204/4322
 (raw 4342, infeasible 20 unchanged), material 371/490 -> 373/492 partial.
 Historical mapping stays 1992/1992. Cohort K has 23 exact and 131 pending
 nodes. T65 remains open; S3 hammer pose/output is next, not admitted here.
+
+## S3 admission - hammer pose and two-sprite output
+
+All twelve S3 labels enter needs-evidence, expected fresh exact twelve:
+FirstSprXPos, FirstSprYPos, SecondSprXPos, SecondSprYPos, FirstSprTilenum,
+SecondSprTilenum, HammerSprAttrib, DrawHammer, ForceHPose, GetHPose,
+RenderH, NoHOffscr. Baseline exact nodes 1502/1992, controls 3204/4322,
+material 373/492 partial; maximum nodes 1514. Historical 1992/1992, expected
+new historical labels empty and custody unchanged. Scope controls 02774-02782
+and 03999, ten pending; material-00409 through material-00415, seven pending.
+External H caller edges remain in their original source-order audit scope.
+
+Entry $E4DC and exit $E540; source table range $E4C0-$E4DB. Shared owner
+hammer_gfx.c; prepared relative/offscreen state is an accepted input dependency,
+not a fresh offscreen promotion. Actual DumpTwoSpr $E5C1 child and $E540
+return are integrated without pre-crediting its S4-owned internal nodes.
+Static audit identifies two graph issues before code work: ForceHPose LDX #0
+makes its BEQ unconditional, so lexical control-02778 cannot reach GetHPose;
+current C duplicates DumpTwoSpr stores instead of calling the shared source
+child. The S will restore the native child edge and prove call input/output,
+all four table indices, both timer/state gates, coordinate byte wrap and $FC
+mask outcomes against original-ROM roots. Any feasible difference remains
+here until repaired/re-audited. Expected controls: nine exact, one infeasible.
+
+All scratch/OAM, persistent RAM and lower-stack aliases are compared; true
+CPU stack excluded. Native register-only A/X/Y contracts are explicit, not
+emulated. One complete product/native checker plus a child-sequence checker
+separates final output equality from graph-call proof. Independent operation:
+C90 x86/x64 focused misc/hammer/purity/audio/focus tests, Win32 self-tests and
+original OpenNT DOS16 link. Product repair refreshes all three EXEs.
+
+Owner-local nonredistributable ROM/ASM are research-only; reference sibling
+is read-only. Ignored build/m2-t65-s3 owns <=96 MiB raw, <=524288 steps/case,
+120 seconds/probe, checkpoint logs and cleanup. No ROM fixture or derived
+implementation is imported; neutral harnesses record local inputs/output.
+S4 flagpole/dump chain is next only after this bounded chain closes.
+
+## S3 closure - indexed hammer output and real child edge
+
+All twelve admitted labels become current exact, no scoped deferred label or
+custody transfer: FirstSprXPos, FirstSprYPos, SecondSprXPos, SecondSprYPos,
+FirstSprTilenum, SecondSprTilenum, HammerSprAttrib, DrawHammer, ForceHPose,
+GetHPose, RenderH, NoHOffscr. Historical expected/actual new matches remain
+empty; current exact credit is twelve.
+
+Static audit found the hidden tail duplicated DumpTwoSpr's writes rather
+than preserving the source child edge. Before repair, full output replay was
+zero-difference but the independent child-sequence checker reported 13608
+missing calls on each width. Shared hammer_gfx.c now invokes the existing
+shared dump helper after clearing source Misc_State, and loads OAM, pose,
+relative Y/X and offscreen input in original phase order. Both full output
+and actual child-input/sequence checkers now report zero differences for
+13824 original-ROM roots per width. The full checker links the actual child;
+the separate caller checker validates pre-child RAM/arguments then replays
+the original child's effects. Thus identical output cannot mask a missing
+native graph edge. The child's internal S4 nodes are not pre-credited.
+
+Neutral tools/reference_hammer_output_probe.c records original $E4DC roots,
+actual $E5C1 child entry and $E5C7 RTS continuation $E540.
+test/hammer_output_route_check.c supplies both native acceptance tracks.
+Nine miscellaneous slots, six timer/state profiles and all 256 frame seeds
+give 13824 roots. Profiles include timer zero/nonzero/high-bit and state
+zero/one/high-bit-one/other/high-bit-other. Seed multipliers 17/13/29 each
+cover all relative X/Y/offscreen byte values; two-sprite OAM allocations
+include the final $F8 boundary. Each replay compares 1841 RAM bytes:
+all scratch/OAM and $0109-$0139 game aliases, excluding only remaining CPU
+stack. Original register-only returns restore X=ObjectOffset and Y=OAM;
+native void ABI uses explicit slot/OAM values and does not emulate registers.
+
+Original max instructions/root 45. ForceHPose 9216, GetHPose 4608,
+RenderH 13824. Timer skips 4608; state animated/forced alternatives 4608
+each. $FC-mask visible/hidden alternatives 216/13608. Actual child returns
+13608. Each of all seven tables reads indices 0/1/2/3 10368/1152/1152/1152
+times; native immutable table entries and indexed outputs agree with source.
+Byte additions retain separate source CLC semantics before both coordinates.
+
+Nine controls exact: control-02774, control-02775, control-02776,
+control-02777, control-02779, control-02780, control-02781, control-02782,
+control-03999. control-02778 is source-infeasible: original LDX #0 sets
+Z and following BEQ always reaches RenderH; the probe rejects any non-render
+continuation and any forced entry reaching GetHPose. Its raw identity remains
+in the ledger, excluded only from feasible denominator. Seven original material
+rows material-00409 through material-00415 become exact, no new enumeration.
+
+Similar-issue sweep inspected direct paired $F8 stores and shared dump callers
+under game/oam. Hammer was repaired; flagpole/small-platform/sprite-dump call
+sites already use the shared helper (their complete contracts retain planned
+audit ownership). Source DrawBrickChunks and PlayerOffscreenChk also use
+DumpTwoSpr where current block_gfx/player_gfx duplicate stores; these pending
+graph repairs are explicitly assigned to T65 S10 and planned Cohort L T66,
+respectively, with historical custody unchanged. Block column-specific stores
+are not conflated with the horizontal DumpTwoSpr call. No later node or
+call-site is promoted by this sweep.
+
+Independent operational track: final C90 x86/x64 builds each pass 9/9
+focused misc/hammer/core/platform-purity and Win32 audio/focus/product-self
+tests. Original OpenNT DOS16 shared-source product links with its existing
+OLDNAMES.LIB warning. Three refreshed owner-approved local artifacts:
+
+- mysmb16.exe: 265141 bytes; SHA-256 3e00e1d55627b60c4727c9badee31cc1401bfefec5bb2a5895d2e4bfb3cbecdd.
+
+- mysmb32.exe: 376206 bytes; SHA-256 3706e247040e61e12cd0380b9fd126965bcfb19c285d769610cd8646ee205a69.
+
+- mysmb64.exe: 383134 bytes; SHA-256 abb06196e17f5e962fa7c9efdf05d24954106f7de062334c8eae95a0824d209e.
+
+They retain committed audio/title/focus-pause behavior. Only neutral harness
+logic is added; no protected input fixture or third-party code import.
+Ignored raw records/probe binaries are removed after accepted gates; neutral
+logs stay under build. Reproduction compiles the named project probe against
+the read-only local reference core, records owner-ROM roots to an ignored
+output, then runs both native checkers on the same batch for each width.
+
+Totals: current nodes 1502 -> 1514/1992, controls 3204 -> 3213/4321
+(raw 4342, infeasible 20 -> 21), material 373 -> 380/492 partial.
+Historical mapping remains 1992/1992. Cohort K has 35 exact and 119 pending
+nodes. S3 has no unresolved scoped feasible difference; T65 stays open and
+S4 flagpole/dump output is next.
