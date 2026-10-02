@@ -2357,3 +2357,19 @@ feasible controls (raw **4,342**, infeasible **18**).
 - Current exact progress: nodes **1,441 → 1,442 / 1,992**; feasible controls **3,016 → 3,017 / 4,324** (raw **4,342**, infeasible **18**).
 
 - Current-equivalence audit M2 T64 S25 closed `SubtEnemyYPos -> EnemyJump -> DoSide`: historical mapping remains **1,992 / 1,992**; current exact registry is **1,445 / 1,992** nodes and **3,027 / 4,324** feasible controls (raw **4,342**, infeasible **18**). Four original-ROM chain routes replayed with zero non-stack RAM differences on x86 and x64; no product C changed.
+
+
+## M2 T64 S26 — Hammer Bro terrain entry
+
+- Planned and completed label: `HammerBroBGColl`; no node is deferred. Exact
+  source-owned controls: `control-02686` through `control-02689`.
+- ROM logic-equivalence: `$E185` directly calls `ChkUnderEnemy`; C no longer
+  carries `EnemyToBGCollisionDet` caller guards into that leaf. Empty, blank,
+  nonblank, landing and side-tail outcomes retain the original ordering.
+- Operational verification: four controlled original-ROM entries replay with
+  zero x86/x64 non-stack-RAM differences; focused terrain/purity checks and
+  x86/x64 product self-tests pass; the OpenNT DOS16 shared-source build passes.
+  All three packaged EXEs were refreshed.
+- Current exact progress: nodes **1,445 → 1,446 / 1,992**; feasible controls
+  **3,027 → 3,031 / 4,324** (raw **4,342**, infeasible **18**). The registry
+  reconciliation also records the already-closed S21–S25 increments.

@@ -10533,13 +10533,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1437,
-    "needs-evidence": 555
+    "exact": 1446,
+    "needs-evidence": 546
   },
   "controlEdgeCounts": {
-    "exact": 3010,
+    "exact": 3031,
     "infeasible": 18,
-    "needs-evidence": 1314
+    "needs-evidence": 1293
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -39011,13 +39011,15 @@
       "label": "HammerBroBGColl",
       "asmLine": 12705,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
       "currentCounterpart": "mysmb_objects_step_hammer_terrain",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S26 static direct-entry audit: original SMB1 $E185 begins with ChkUnderEnemy; caller-owned state/Y guards remain solely at the EnemyToBGCollisionDet caller, followed by the exact empty/blank/landing/side-tail order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S26 controlled original-ROM $E185 probe: four direct entries cover inherited state/Y, empty terrain, blank $23 and solid landing; current x86/x64 replays have zero non-stack RAM differences, focused terrain/purity and product checks pass."
+      ],
       "semanticContract": "Queries the under-metatile; no tile/fresh timer sets state d0, blank $23 kills above-block, otherwise lands and checks side blockage.",
       "currentSourcePaths": [
         "src/game/objects.c"
@@ -105428,12 +105430,14 @@
       "instruction": "jsr",
       "id": "control-02686",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S26 static direct-entry audit: original SMB1 $E185 begins with ChkUnderEnemy; caller-owned state/Y guards remain solely at the EnemyToBGCollisionDet caller, followed by the exact empty/blank/landing/side-tail order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S26 controlled original-ROM $E185 probe: four direct entries cover inherited state/Y, empty terrain, blank $23 and solid landing; current x86/x64 replays have zero non-stack RAM differences, focused terrain/purity and product checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain call relation HammerBroBGColl \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ChkUnderEnemy, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c",
@@ -105448,12 +105452,14 @@
       "instruction": "beq",
       "id": "control-02687",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S26 static direct-entry audit: original SMB1 $E185 begins with ChkUnderEnemy; caller-owned state/Y guards remain solely at the EnemyToBGCollisionDet caller, followed by the exact empty/blank/landing/side-tail order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S26 controlled original-ROM $E185 probe: four direct entries cover inherited state/Y, empty terrain, blank $23 and solid landing; current x86/x64 replays have zero non-stack RAM differences, focused terrain/purity and product checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation HammerBroBGColl \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoUnderHammerBro, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/jump_terrain.c",
@@ -105468,12 +105474,14 @@
       "instruction": "bne",
       "id": "control-02688",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S26 static direct-entry audit: original SMB1 $E185 begins with ChkUnderEnemy; caller-owned state/Y guards remain solely at the EnemyToBGCollisionDet caller, followed by the exact empty/blank/landing/side-tail order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S26 controlled original-ROM $E185 probe: four direct entries cover inherited state/Y, empty terrain, blank $23 and solid landing; current x86/x64 replays have zero non-stack RAM differences, focused terrain/purity and product checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation HammerBroBGColl \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 UnderHammerBro, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/jump_terrain.c",
@@ -105488,12 +105496,14 @@
       "instruction": "bne",
       "id": "control-02689",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "M2 T64 S26 static direct-entry audit: original SMB1 $E185 begins with ChkUnderEnemy; caller-owned state/Y guards remain solely at the EnemyToBGCollisionDet caller, followed by the exact empty/blank/landing/side-tail order."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S26 controlled original-ROM $E185 probe: four direct entries cover inherited state/Y, empty terrain, blank $23 and solid landing; current x86/x64 replays have zero non-stack RAM differences, focused terrain/purity and product checks pass."
+      ],
       "semanticContract": "Preserves enemy side/terrain fallthrough relation HammerBroBGColl \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 KillEnemyAboveBlock, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/objects.c"

@@ -935,3 +935,29 @@ S25 admits `$E15B-$E182`: `SubtEnemyYPos`, `EnemyJump`, and `DoSide`, owned by `
 All three scoped labels are current-exact: `SubtEnemyYPos`, `EnemyJump` and `DoSide`. Static `$E15B-$E182` comparison confirms wrapped `Y+$3e` carry gating, the signed-speed threshold, ordered `ChkUnderEnemy`/`ChkForNonSolids`/`EnemyLanding` calls, post-landing `$fd` write and unconditional `DoEnemySideCheck` tail. Four controlled original-ROM `$E163` entries cover the Y-tail, speed-tail, empty-ground and solid-landing paths; current x86 and x64 owner replays have zero non-stack RAM differences. Focused landing/jump/Hammer and platform-purity tests pass on both widths. No product C changed, so package EXEs are intentionally unchanged.
 
 S25 records nodes `SubtEnemyYPos`, `EnemyJump`, `DoSide`, and source-owned feasible controls `control-02676` through `control-02685` exact. Current totals: historical **1,992 / 1,992**; current exact nodes **1,445 / 1,992**; current exact feasible controls **3,027 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S26 admission — Hammer Bro terrain entry
+
+S26 admits `$E185-$E18A` `HammerBroBGColl`, owned by `src/game/objects.c:mysmb_objects_step_hammer_terrain`. S25 supplies the preceding jumping-enemy tail; S27 owns the blank-metatile fallthrough. Static audit found caller-owned state/Y guards duplicated in this direct C entry, although the ROM begins with `ChkUnderEnemy`. The ROM logic track proves that direct query and its empty, `$23` and other-tile targets. The operational track replays controlled direct entries on x86/x64, focused chains and platform purity; product C changes require all three EXE artifacts.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,445 / 1,992** nodes and **3,027 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **1** label; expected historical matches: **0**; maximum historical complete **1,992 / 1,992**.
+
+
+## S26 closure — Hammer Bro terrain entry
+
+`HammerBroBGColl` is current-exact. The original direct entry `$E185` begins with
+`ChkUnderEnemy`; shared C now does likewise, with the caller-only state/Y guards
+remaining solely in `EnemyToBGCollisionDet`. Four controlled original-ROM direct
+entries cover inherited state/Y, empty terrain, blank `$23`, and a solid landing
+path. Current x86 and x64 replay all four with zero non-stack RAM differences.
+Focused terrain/purity checks, Win32 x86/x64 product self-tests and the existing
+OpenNT DOS16 build complete successfully. Because shared product C changed,
+`assets/mysmb16.exe`, `assets/mysmb32.exe` and `assets/mysmb64.exe` were rebuilt.
+
+S26 records `HammerBroBGColl` and `control-02686` through `control-02689` exact.
+This closure also reconciles the previously closed S21-S25 registry entries, so
+current totals are historical **1,992 / 1,992**; current exact nodes **1,446 /
+1,992**; current exact feasible controls **3,031 / 4,324** (raw **4,342**,
+infeasible **18**).

@@ -604,7 +604,7 @@ mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
     return tile != 0U && mysmb_world_enemy_metatile_is_non_solid(tile) == 0U;
 }
 
-/* ROM $d9bd HammerBroBGColl.  This is deliberately run before the Hammer
+/* ROM $e185 HammerBroBGColl.  This is deliberately run before the Hammer
  * movement route, matching RunNormalEnemies' EnemyToBGCollisionDet order. */
 void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
                                               mysmb_u8 slot)
@@ -612,8 +612,6 @@ void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
     struct mysmb_enemy_terrain terrain;
     mysmb_u8 tile;
 
-    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-        game->ram[MYSMB_ENEMY_Y + slot] < 6U) return;
     tile = mysmb_world_query_enemy_under(game, slot, &terrain) != 0U ?
         terrain.metatile : 0U;
     if (tile == 0U) {
