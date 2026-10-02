@@ -2391,3 +2391,9 @@ feasible controls (raw **4,342**, infeasible **18**).
 ## M2 T64 S24 — EnemyLanding
 
 EnemyLanding and control-02675 are current-exact after two controlled ROM landing entries replayed on x86/x64 with zero differences. Totals: **1,442 / 1,992** nodes and **3,017 / 4,324** feasible controls exact.
+
+## S25 closure — jumping enemy terrain chain
+
+`SubtEnemyYPos`, `EnemyJump` and `DoSide` are current-exact. Four direct original-ROM `$E163` routes (Y-tail, speed-tail, empty-ground and landing) have zero non-stack RAM differences against x86/x64 current C. Source-owned controls `control-02676` through `control-02685` are exact; focused chain and platform-purity tests pass. No product C changed and no EXE refresh is due.
+
+Current totals: historical **1,992 / 1,992**; current exact nodes **1,445 / 1,992**; current exact feasible controls **3,027 / 4,324** (raw **4,342**, infeasible **18**).

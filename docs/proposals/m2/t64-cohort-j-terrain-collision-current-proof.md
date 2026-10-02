@@ -921,3 +921,17 @@ current exact nodes **1,441 / 1,992**; current exact feasible controls
 S24 admits $E14F-: EnemyLanding, owned by src/game/world/collision.c:mysmb_world_land_enemy; control-02675 is its InitVStf call. Static comparison shows the shared C implementation clears vertical speed and force before setting Y to its high nibble plus 8. Two controlled original-ROM landing entries with distinct Y low nibbles replay with zero x86/x64 differences in those outputs. Focused chain, terrain-state and platform-purity CTests pass. No product C changed, so no EXE refresh is due.
 
 S24 records EnemyLanding and control-02675 exact. Current totals: historical **1,992 / 1,992**; current exact nodes **1,442 / 1,992**; current exact feasible controls **3,017 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S25 admission — jumping enemy terrain chain
+
+S25 admits `$E15B-$E182`: `SubtEnemyYPos`, `EnemyJump`, and `DoSide`, owned by `src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain`. S24 supplies the landing child; S26 begins Hammer Bro terrain. The ROM logic track proves the wrapped `Y+$3e` compare, both early DoSide branches, ordered under/non-solid/landing calls, `$fd` speed assignment and unconditional side tail. The operational track replays controlled original-ROM chain entries on x86/x64, then runs focused terrain-chain and purity checks. Product artifacts refresh only if shared product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,442 / 1,992** nodes and **3,017 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+- Scope: **3** labels; expected historical matches: **0**; maximum historical complete **1,992 / 1,992**.
+
+## S25 closure — jumping enemy terrain chain
+
+All three scoped labels are current-exact: `SubtEnemyYPos`, `EnemyJump` and `DoSide`. Static `$E15B-$E182` comparison confirms wrapped `Y+$3e` carry gating, the signed-speed threshold, ordered `ChkUnderEnemy`/`ChkForNonSolids`/`EnemyLanding` calls, post-landing `$fd` write and unconditional `DoEnemySideCheck` tail. Four controlled original-ROM `$E163` entries cover the Y-tail, speed-tail, empty-ground and solid-landing paths; current x86 and x64 owner replays have zero non-stack RAM differences. Focused landing/jump/Hammer and platform-purity tests pass on both widths. No product C changed, so package EXEs are intentionally unchanged.
+
+S25 records nodes `SubtEnemyYPos`, `EnemyJump`, `DoSide`, and source-owned feasible controls `control-02676` through `control-02685` exact. Current totals: historical **1,992 / 1,992**; current exact nodes **1,445 / 1,992**; current exact feasible controls **3,027 / 4,324** (raw **4,342**, infeasible **18**).

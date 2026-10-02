@@ -2355,3 +2355,5 @@ feasible controls (raw **4,342**, infeasible **18**).
 - Completed: EnemyLanding; its InitVStf call relation is exact.
 - Direct original-ROM landing records and x86/x64 owner replay have zero Y speed, force or aligned-Y differences; focused chain and purity tests pass.
 - Current exact progress: nodes **1,441 → 1,442 / 1,992**; feasible controls **3,016 → 3,017 / 4,324** (raw **4,342**, infeasible **18**).
+
+- Current-equivalence audit M2 T64 S25 closed `SubtEnemyYPos -> EnemyJump -> DoSide`: historical mapping remains **1,992 / 1,992**; current exact registry is **1,445 / 1,992** nodes and **3,027 / 4,324** feasible controls (raw **4,342**, infeasible **18**). Four original-ROM chain routes replayed with zero non-stack RAM differences on x86 and x64; no product C changed.

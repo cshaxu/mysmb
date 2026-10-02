@@ -1709,3 +1709,5 @@ target_link_libraries(mysmb_platform_bounding_box_entry_actual_check PRIVATE mys
 add_executable(mysmb_misc_bounding_box_entry_actual_check
     test/misc_bounding_box_entry_actual_check.c)
 target_link_libraries(mysmb_misc_bounding_box_entry_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_enemy_jump_actual_check test/enemy_jump_actual_check.c)
+target_link_libraries(mysmb_enemy_jump_actual_check PRIVATE mysmb_game)
