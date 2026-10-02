@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3176,
-    "needs-evidence": 1147,
+    "exact": 3181,
+    "needs-evidence": 1142,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -30526,12 +30526,14 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "M2 T64 S58 repairs earlier entry-boundary omission: Shared jump entry now includes the horizontal/normal movement continuation; the normal ProcHammerBro caller returns after that entry so movement occurs once."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "semanticContract": "Prioritizes defeated state; otherwise applies jump-timer, offscreen, throw-timer and hammer-spawn logic before tail-entering horizontal Hammer Bro movement.",
+      "semanticContract": "Shared jump entry now includes the horizontal/normal movement continuation; the normal ProcHammerBro caller returns after that entry so movement occurs once.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
       ]
@@ -30621,12 +30623,14 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "M2 T64 S58 repairs earlier entry-boundary omission: ROM $CA37 jump initialization falls through MoveHammerBroXDir and MoveNormalEnemy before returning, including the direct side-bump entry."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "semanticContract": "Writes jump Y speed, marks jumping state, selects jump length and writes high-bit jump timer before falling through horizontal movement.",
+      "semanticContract": "ROM $CA37 jump initialization falls through MoveHammerBroXDir and MoveNormalEnemy before returning, including the direct side-bump entry.",
       "currentSourcePaths": [
         "src/game/enemy/hammer_bro.c"
       ]
@@ -132285,13 +132289,16 @@
       "instruction": "rts/rti",
       "id": "control-03984",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared jump_terrain.c/objects.c with actual query/landing/side/hammer movement descendants; SubtEnemyYPos returns at $E166 with wrapped Y+$3E and CMP flags before the byte speed+$02 eligibility gate.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: SubtEnemyYPos returns at $E166 with wrapped Y+$3E and CMP flags before the byte speed+$02 eligibility gate."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation SubtEnemyYPos \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 EnemyJump, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E166 actual RTS observed 9216; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SubtEnemyYPos returns at $E166 with wrapped Y+$3E and CMP flags before the byte speed+$02 eligibility gate.",
       "currentSourcePaths": [
         "src/game/enemy/jump_terrain.c"
       ]
@@ -132304,13 +132311,16 @@
       "instruction": "rts/rti",
       "id": "control-03985",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared jump_terrain.c/objects.c with actual query/landing/side/hammer movement descendants; ChkUnderEnemy returns at $E174 with metatile A, pointer/row and low-nibble scratch; empty skips landing but still tails to side check.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: ChkUnderEnemy returns at $E174 with metatile A, pointer/row and low-nibble scratch; empty skips landing but still tails to side check."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation ChkUnderEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 EnemyJump, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E174 actual RTS observed 7254; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "ChkUnderEnemy returns at $E174 with metatile A, pointer/row and low-nibble scratch; empty skips landing but still tails to side check.",
       "currentSourcePaths": [
         "src/game/enemy/jump_terrain.c",
         "src/game/world/block_buffer.c"
@@ -132324,13 +132334,16 @@
       "instruction": "rts/rti",
       "id": "control-03986",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared jump_terrain.c/objects.c with actual query/landing/side/hammer movement descendants; ChkForNonSolids returns at $E179 with original metatile/equality; rejected metatiles skip landing and still tail to side check.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: ChkForNonSolids returns at $E179 with original metatile/equality; rejected metatiles skip landing and still tail to side check."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 EnemyJump, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E179 actual RTS observed 6912; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "ChkForNonSolids returns at $E179 with original metatile/equality; rejected metatiles skip landing and still tail to side check.",
       "currentSourcePaths": [
         "src/game/enemy/jump_terrain.c",
         "src/game/world/metatiles.c"
@@ -132344,13 +132357,16 @@
       "instruction": "rts/rti",
       "id": "control-03987",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared jump_terrain.c/objects.c with actual query/landing/side/hammer movement descendants; EnemyLanding returns at $E17E with speed/force zero and Y alignment before the caller overwrites speed $FD and tails to side check.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: EnemyLanding returns at $E17E with speed/force zero and Y alignment before the caller overwrites speed $FD and tails to side check."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation EnemyLanding \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 EnemyJump, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E17E actual RTS observed 2304; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "EnemyLanding returns at $E17E with speed/force zero and Y alignment before the caller overwrites speed $FD and tails to side check.",
       "currentSourcePaths": [
         "src/game/enemy/jump_terrain.c",
         "src/game/world/collision.c"
@@ -132364,13 +132380,16 @@
       "instruction": "rts/rti",
       "id": "control-03988",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared jump_terrain.c/objects.c with actual query/landing/side/hammer movement descendants; ChkUnderEnemy returns at $E188 with original metatile/scratch; hammer distinguishes zero, $23 defeat and timer/state-mask/landing before real side descendants.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: ChkUnderEnemy returns at $E188 with original metatile/scratch; hammer distinguishes zero, $23 defeat and timer/state-mask/landing before real side descendants."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation ChkUnderEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 HammerBroBGColl, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E188 actual RTS observed 6144; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "ChkUnderEnemy returns at $E188 with original metatile/scratch; hammer distinguishes zero, $23 defeat and timer/state-mask/landing before real side descendants.",
       "currentSourcePaths": [
         "src/game/objects.c",
         "src/game/world/block_buffer.c"

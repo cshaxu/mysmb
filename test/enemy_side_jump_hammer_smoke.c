@@ -21,8 +21,9 @@ int main(void)
     game.ram[0x07a8U + 5U] = 0x12U;
     game.ram[0x06ccU] = 1U;
     mysmb_objects_bump_enemy(&game, 5U);
-    if (game.ram[0x00ffU] != 0U || game.ram[0x0058U + 5U] != 0x10U ||
-        game.ram[0x0046U + 5U] != 1U || game.ram[0x00a0U + 5U] != 0xfaU ||
+    /* SetHJ continues through facing and normal movement before returning. */
+    if (game.ram[0x00ffU] != 0U || game.ram[0x0058U + 5U] != 0xf8U ||
+        game.ram[0x0046U + 5U] != 2U || game.ram[0x00a0U + 5U] != 0xfaU ||
         (game.ram[0x001eU + 5U] & 1U) == 0U || game.ram[0x078aU + 5U] != 0x20U ||
         game.ram[0x003cU + 5U] != 0xd2U) return 2;
     game.ram[0x0087U] = 2U; game.ram[0x0086U] = 3U;

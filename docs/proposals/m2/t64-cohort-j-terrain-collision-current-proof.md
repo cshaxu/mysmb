@@ -3366,3 +3366,111 @@ Historical 1992/1992, exact nodes 1480/1992, material 368/487 unchanged.
 Exact feasible controls rise 3163 to 3176/4323 (raw 4342, infeasible 19).
 T64 stays open with five pending Cohort-J controls: control-03984 through
 control-03988, all jump/hammer returns. T65 is not admitted.
+
+## Aggregate S58 admission - final jump/hammer return chain
+
+S58 owns control-03984 through control-03988 (five needs-evidence returns).
+Scope (12 source-ordered labels): InitVStf (exact), DoEnemySideCheck (exact), EnemyLanding (exact), SubtEnemyYPos (exact), EnemyJump (exact), DoSide (exact), HammerBroBGColl (exact), KillEnemyAboveBlock (exact), UnderHammerBro (exact), NoUnderHammerBro (exact), ChkUnderEnemy (exact), ChkForNonSolids (exact).
+All scoped nodes already exact; expected new labels empty, custody retained.
+Historical 1992/1992, exact nodes 1480/1992, material 368/487 unchanged;
+controls enter 3176/4323 and can reach 3181/4323. S57 precedes. T64's
+aggregate cross-chain review follows; no T65 admission before T64 closure.
+
+Shared enemy/jump_terrain.c and objects.c own $E163-$E1AD with real query,
+non-solid, landing, kill and side descendants. Audit wrapped Y+$3E and
+speed+$02 gates, metatile/flags, landing return followed by speed $FD,
+unconditional side tail, hammer zero/tile-$23/timer/state-mask branches,
+and real query returns. Original roots vary byte inputs and all six slots;
+compare all scratch, persistent RAM and $0109-$0139 on current x86/x64.
+Scoped differences remain here for repair/re-audit; no generic child credit.
+Focused C90 tests, platform purity and original OpenNT DOS16 are independent
+operational gates. Refresh three approved EXEs only on product changes.
+
+Owner-local nonredistributable ROM/ASM remain research-only. Ignored
+build/m2-t64-s58 owns <=64 MiB raw, 524288 steps/case, 120 seconds/probe,
+checkpoint logs and cleanup. Preserve unrelated work.
+
+### S58 corrective descendant scope
+
+Actual side bump tail reaches SetHJ $CA37 and falls into MoveHammerBroXDir
+and MoveNormalEnemy. The shared hammer_bro.c helper omitted this continuation.
+S58 repairs that real descendant and preserves ProcHammerBro's single movement
+execution; no new node credit or custody transfer. Repeat the same complete
+RAM route and focused Hammer Bro movement regression, then refresh three EXEs.
+
+S58 corrective scope adds seven already-exact descendant/caller labels:
+ProcHammerBro, SetHJ, HJump, MoveHammerBroXDir, Shimmy, SetShim, MoveNormalEnemy.
+Total scope 19, expected new nodes zero. Their custody/status remain unchanged.
+Re-run the prior 3072-root ProcHammerBro integration to prove no double movement.
+Raw budget is 96 MiB for both bounded record batches under this S owner.
+
+## Aggregate S58 closure - final jump/hammer returns and repaired SetHJ tail
+
+All five scoped controls, control-03984 through control-03988, are exact.
+All 19 scoped labels retain exact: InitVStf, DoEnemySideCheck, EnemyLanding,
+SubtEnemyYPos, EnemyJump, DoSide, HammerBroBGColl, KillEnemyAboveBlock,
+UnderHammerBro, NoUnderHammerBro, ChkUnderEnemy, ChkForNonSolids,
+ProcHammerBro, SetHJ, HJump, MoveHammerBroXDir, Shimmy, SetShim,
+MoveNormalEnemy. Expected/actual new node matches are empty; no custody
+transfer. Existing generic descendants gain no inferred new coverage.
+
+Static review preserves wrapped Y+$3E / speed+$02 comparisons, original
+query A/scratch, five non-solid equality alternatives, landing before $FD
+speed overwrite and unconditional side tail. Hammer query zero sets state d0;
+$23 tail defeats then writes speed $FC; other nonzero tiles test frame timer,
+mask state $88, land and tail to side. No Hammer non-solid filter is invented.
+Original query pointers/rows, landing init speed/force and byte outputs remain.
+
+The original route has 15,360 roots (six slots x 2,560): 9,216 EnemyJump and
+6,144 HammerBroBGColl. Per slot, jump cases include all 256 Y bytes, all
+256 speed bytes, then 1,024 low-nibble/speed/tile combinations. Hammer cases
+include all 256 state bytes, all 256 timer bytes, then 512 low-nibble/tile/state
+variants. Eight tiles are 0/$61/$23/$26/$C2/$C3/$5F/$60. Both directions,
+relative player signs and area types vary. All descendants execute in ROM
+without child-output replacement. Maximum root execution 344 instructions.
+
+Initial x86/x64 each had 15,018 differing RAM byte fields. The real side bump
+jumps to SetHJ $CA37, which falls into horizontal facing and normal movement;
+the C helper omitted that continuation. Shared hammer_bro.c now owns one
+movement continuation used by the jump entry and ordinary non-jump paths;
+ProcHammerBro's jump caller returns after it to avoid duplicate movement.
+After repair each width matches all 15,360 roots across 1,841 bytes: scratch,
+persistent non-stack RAM and $0109-$0139 aliases; only other CPU-stack bytes
+are excluded. The following actual preceding-RTS returns were observed:
+- control-03984: $E166, 9216 returns. SubtEnemyYPos returns at $E166 with wrapped Y+$3E and CMP flags before the byte speed+$02 eligibility gate.
+- control-03985: $E174, 7254 returns. ChkUnderEnemy returns at $E174 with metatile A, pointer/row and low-nibble scratch; empty skips landing but still tails to side check.
+- control-03986: $E179, 6912 returns. ChkForNonSolids returns at $E179 with original metatile/equality; rejected metatiles skip landing and still tail to side check.
+- control-03987: $E17E, 2304 returns. EnemyLanding returns at $E17E with speed/force zero and Y alignment before the caller overwrites speed $FD and tails to side check.
+- control-03988: $E188, 6144 returns. ChkUnderEnemy returns at $E188 with original metatile/scratch; hammer distinguishes zero, $23 defeat and timer/state-mask/landing before real side descendants.
+
+The prior actual ProcHammerBro integration is also regenerated and passes
+3,072 roots/width with zero differences across its 1,784 persistent-byte
+contract (scratch and CPU stack excluded in that pre-existing regression).
+It covers jump initialization, allocation success/rejection, offscreen throw,
+normal and defeated movement, proving the retained normal caller does not
+move twice. This broader regression does not expand its old ABI claim.
+
+Eight focused tests per width pass: Hammer movement caller, Hammer Bro,
+side/jump/Hammer, terrain state, background entry, platform purity, focus
+pause and audio renderer. C90 builds and original OpenNT DOS16 build/link pass
+with the existing OLDNAMES.LIB warning. The old direct bump smoke expected
+jump setup without movement; its horizontal speed/direction assertions now
+include source SetHJ continuation. Platform sources remain untouched.
+Three refreshed approved products retain audio/title/focus-pause fixes:
+- mysmb16.exe: 264869 bytes; SHA256 `11ce30bba07458978aaf159deb754e9d737c383e5d54b231c1ddb3eda31344d7`.
+- mysmb32.exe: 375694 bytes; SHA256 `c9a519f707afcc36ec8f13c9a0e3e6ffbb134c1c00aaf4f3db68d434c9fddd3a`.
+- mysmb64.exe: 382622 bytes; SHA256 `417fa86a34d753169571b70cf2288f1f1adaa0dbfb90b1f7fcf4336b1e83e251`.
+
+Similar-issue sweep finds exactly two calls to the SetHJ C entry: objects.c's
+side-bump tail and hammer_bro.c's normal jump path. The former now executes
+source movement; the latter returns after that movement. The remaining
+non-jump/throw continuation uses the same movement owner. Both caller paths
+are verified by original-ROM routes; no additional product hit is deferred.
+Raw records and probe binaries are cleaned after governance/registry gates;
+neutral logs remain beneath this S build owner.
+
+Historical 1992/1992, exact nodes 1480/1992 and material 368/487 unchanged.
+Exact feasible controls rise 3176 to 3181/4323 (raw 4342, infeasible 19).
+Cohort J now has zero pending control/material relations and 497 exact nodes.
+T64 remains open for its required cross-chain matrix and integrated regression;
+T65 is not admitted merely because the last individual return is exact.

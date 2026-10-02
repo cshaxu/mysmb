@@ -6,6 +6,19 @@
 /* ROM $C9CE HammerThrowTmrData, $CA10 HammerBroJumpLData and
  * $C9D8-$CA76 ProcHammerBro through SetShim. Original fallthroughs share
  * the normal/defeated movement owners rather than copying their bodies. */
+static void hammer_bro_move(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 direction;
+    game->ram[0x0058U + slot] = (game->ram[9U] & 0x40U) != 0U ? 0xfcU : 4U;
+    direction = 1U;
+    if ((mysmb_enemy_player_difference(game, slot) & 0x80U) == 0U) {
+        ++direction;
+        if (game->ram[0x0796U + slot] == 0U) game->ram[0x0058U + slot] = 0xf8U;
+    }
+    game->ram[0x0046U + slot] = direction;
+    mysmb_enemy_move_normal(game, slot);
+}
+
 void mysmb_enemy_hammer_bro_set_jump(struct mysmb_game *game, mysmb_u8 slot,
                                      mysmb_u8 vertical_speed)
 {
@@ -18,12 +31,14 @@ void mysmb_enemy_hammer_bro_set_jump(struct mysmb_game *game, mysmb_u8 slot,
     if (game->ram[0x06ccU] == 0U) index = 0U;
     game->ram[0x078aU + slot] = jump_lengths[index];
     game->ram[0x003cU + slot] = (mysmb_u8)(game->ram[0x07a8U + slot] | 0xc0U);
+    /* ROM SetHJ falls through MoveHammerBroXDir and MoveNormalEnemy. */
+    hammer_bro_move(game, slot);
 }
 
 void mysmb_objects_step_hammer_bros_slot(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 throw_timers[2] = {0x30U, 0x1cU};
-    mysmb_u8 speed, direction;
+    mysmb_u8 speed;
 
     if ((game->ram[0x001eU + slot] & 0x20U) != 0U) {
         mysmb_enemy_move_defeated(game, slot);
@@ -54,14 +69,8 @@ void mysmb_objects_step_hammer_bros_slot(struct mysmb_game *game, mysmb_u8 slot)
             }
         }
         mysmb_enemy_hammer_bro_set_jump(game, slot, speed);
+        return;
     }
 move:
-    game->ram[0x0058U + slot] = (game->ram[9U] & 0x40U) != 0U ? 0xfcU : 4U;
-    direction = 1U;
-    if ((mysmb_enemy_player_difference(game, slot) & 0x80U) == 0U) {
-        ++direction;
-        if (game->ram[0x0796U + slot] == 0U) game->ram[0x0058U + slot] = 0xf8U;
-    }
-    game->ram[0x0046U + slot] = direction;
-    mysmb_enemy_move_normal(game, slot);
+    hammer_bro_move(game, slot);
 }
