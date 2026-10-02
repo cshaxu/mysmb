@@ -718,3 +718,40 @@ Raw/probe artifacts cleaned from the ignored admitted path; neutral summaries
 and logs retained. Limits192MiB aggregate/2048 roots per chunk/120seconds per
 run/524288steps per case enforced. Ledger/admission/closure/current registry,
 documentation and whitespace gates pass. S3 closes; T66/M2 remain open.
+
+## S4 admission - horizontal offscreen partition loop
+
+Scope6/intended fresh6, all incoming needs-evidence: XOffscreenBitsData; DefaultXOnscreenOfs; GetXOffscreenBits; XOfsLoop; XLdBData; ExXOfsBS.
+Current1697/1992 nodes,3624/4317 feasible controls(raw4342,infeasible25),
+398/493 material partial. Maximum1703/1992 nodes,3633/4317 controls,
+400/493 material partial. Controls03140-03147 and04059 and material00433/
+00434 are the exact receiving set. Historical1992/1992 expectedMatches
+empty; audit participation preserves existing maintenance custody.
+
+Entry GetXOffscreenBits F1F6 through ExXOfsBS; owner object_position.c.
+S3 is closed. DividePDiff is executed as a real dependency, with own node
+credit reserved for S5. Static audit checks saved source offset04, right
+edge before left, byte subtraction borrow into page subtraction, signed
+page partitions, default offsets, real division call/return, table index,
+source reload, nonzero mask early exit and both loop continuations.
+
+Controlled roots cover all256 object X x256 object pages with viewport
+left0/right255/page0; additional wrapped scrolling viewport variants cover
+carry changes. Returned A mask is consumed by native API and compared,
+not excluded. All1841 RAM bytes compare including0109-0139; true CPU stack
+and unused CPU X/Y/flags excluded. Source branch outcomes, actual transfers/
+returns and indexed table reads accompany per-node native source inspection.
+Calls' fall-through joins require actual child RTS continuation, not a
+fictional direct JSR fall-through instruction. Existing constants are bound
+locally to owner PRG; no protected data imported into new tracked fixtures.
+
+Operational track: x86/x64 checker builds, focused offscreen/player/core/
+purity/audio/focus/self tests, original OpenNT DOS16 shared-source link.
+Products retained for audit/test-only work; refresh3 EXEs if code correction.
+Sweep covers common horizontal implementation and every public caller.
+No S5/later promotion or platform rewrite. Scoped diff must be repaired and
+re-audited within S4 before successor admission.
+
+Owner-local ROM/reviewed ASM nonredistributable research inputs. Raw/logs/
+scripts stay below ignored build/m2-t66-s4;192MiB aggregate,2048 roots/chunk,
+120seconds/run,524288steps/case; coordinator deletes raw/probe after proof.
