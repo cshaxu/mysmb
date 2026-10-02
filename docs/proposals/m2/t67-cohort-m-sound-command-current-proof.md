@@ -578,3 +578,35 @@ Neutral local evidence under ignored build/m2-t67-s3: route/coverage summaries,
 mode16/17/18 indexed-read/transition logs, checker-build and focused native
 logs, dos16-link.log. Raw deleted per batch, probe removed at closure. Ledger,
 registry, admission/progress and documentation gates required before P2 commit.
+
+## S4 admission - noise effects and exact stream boundary
+
+Scope11 pending/intended current fresh11, maximum1815/1992:
+BrickShatterFreqData; PlayBrickShatter; ContinueBrickShatter; PlayNoiseSfx; DecrementSfx3Length; ExSfx3; NoiseSfxHandler; CheckNoiseBuffer; ExNH; PlayBowserFlame; ContinueBowserFlame. Both sets identical; each needs-evidence.
+Incoming current1804/1992 nodes,3820/4290 feasible controls(raw4342,
+infeasible52),407/493 material partial; historical1992/1992 separate with
+expectedMatches empty. Maintenance receiving map retained.
+
+Shared owner audio.c; source15569-15629, BrickShatterFreqData through
+ContinueBowserFlame. Owned controls03344-03360 and material00442.
+Accepted S1 command writer and SoundEngine entry/return are predecessors.
+BrickShatterEnvData/BowserFlameEnvData are owner-local consumer bindings;
+their later N nodes receive no promotion. ContinueMusic/real music-stream
+callees are an explicit output/return boundary dependency, not S5 admission.
+The source BNE after flame table read may fall through for controlled byte
+lengths outside the normal64-count phase: audit the actual predicate, do not
+declare impossible merely because normal playback reads nonzero members.
+
+ROM track: Unchanged F2D0 SoundEngine, actual NoiseSfxHandler and real RTS:4096 starts (256 queues by16 profiles),65536 continuations (256 buffers by256 lengths). Full1841 RAM/24 APU/ordered commands x86/x64, actual transitions and noise table reads. Zero flame envelope must fall through ContinueMusic to stream processing, not queue selection; real boundary callees run without S5 credit.
+Static node audit covers queue precedence and mutation, odd brick index,
+flame preceding-byte index, 16-bit address wrap, decrement0->FF/1->0,
+terminal mute/clear and exact stream fallthrough. Every feasible difference
+is repaired and rerun in S4 before S5. No mocked children or patched ROM.
+
+Operational track: focused audio/music/channel/purity tests x86/x64, original
+OpenNT DOS16 link; product repair refreshes all3 authorized assets EXEs,
+audit-only retains byte-identical products. Sweep similar table-result
+unconditional-branch translations and queue-vs-stream boundaries in audio.c.
+Owner-local original ROM/reviewed ASM remain nonredistributable inputs;
+ignored build/m2-t67-s4 contains logs/raw,128MiB raw budget,1024 roots/batch,
+120seconds/process,524288steps/root; coordinator deletes raw after comparison.
