@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T68 S4 - active stream-region chain
+
+[Exact21-node admission and actual material census](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+scope/intended fresh21,max1912/1992; current1891/1992 nodes,3964/4279 controls
+(raw4342,infeasible63),431/493 material partial; historical1992/1992 distinct.
+Actual source-typed channel reads and feasible material paths required before
+credit; no cartesian relation inference or premature data promotion.
+
 ## M2 T68 S3 - closed header-data chain
 
 [All23 regions/23 material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)

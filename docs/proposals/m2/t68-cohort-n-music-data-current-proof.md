@@ -559,3 +559,33 @@ Ignored build/m2-t68-s3 contains route/coverage summaries, modes22-24/27,
 indexed header-read counts, current build/focused-test/DOS16 logs. Raw and
 recorder executable removed at closure. Registry/ledger/progress/docs gates
 required before P2 commit; unrelated owner work preserved unstaged.
+
+## S4 admission - original music stream regions and consumers
+
+Exact21 pending scope/intended fresh21, maximum1912/1992:
+Star_CloudMData; GroundM_P1Data; SilenceData; GroundM_P2AData; GroundM_P2BData; GroundM_P2CData; GroundM_P3AData; GroundM_P3BData; GroundMLdInData; GroundM_P4AData; GroundM_P4BData; DeathMusData; GroundM_P4CData; CastleMusData; GameOverMusData; TimeRunOutMusData; WinLevelMusData; UndergroundMusData; WaterMusData; EndOfCastleMusData; VictoryMusData.
+Current1891/1992 nodes,3964/4279 controls(raw4342,infeasible63),431/493 material
+partial; historical1992/1992 distinct, expectedMatches empty. No currently
+enumerated owned control/material rows; S4 explicitly owns source-proven
+stream-producer/real-channel-consumer material enumeration as discovered.
+No cartesian producer/consumer pairs inferred from arbitrary probe pointers.
+Shared audio.c MusicData/F7/F8/F9/7B0 reader chain and full owner-local PRG.
+Source16077-16313; header/stream caller already exact, S5 table dependencies
+execute actually but receive no premature credit. Header boundary F6F5-F73A
+then real F2D0 SoundEngine/RTS, no mocked child. Maintenance custody retained.
+
+ROM track: Unchanged original49 named-selector header boundaries followed by1023 actual SoundEngine calls per header; actual original prior RAM/APU only, recorder timing reset. Record indirect MusicData reads by actual channel instruction/address, compare full1841 RAM/24 APU/ordered writes x86/x64. Controlled consumer-state routes fill explicit source-typed coverage gaps without fabricating cartesian material edges.
+Manual contracts: adjacent region bounds and header/channel-offset bindings,
+first/second length byte, note/rest and terminators, Square1 zero control prefix,
+noise loopback, byte offset/carry and source cross-region shared sections.
+SilenceData includes later GroundP1 fields within its label interval; Death
+shares subsequent GroundP4C bytes. No label-to-song or one-channel assumption.
+All required feasible paths need proof; missing coverage keeps S4 active.
+Operational: focused tests/current builds both widths, original OpenNT DOS16
+link/purity. Refresh3 products only on product code change; otherwise compare
+byte-identical committed/build artifacts. Similar-issue sweep covers shared
+section bounds, indirect reads/offset/write order and original zero branches.
+
+Owner-local ROM/reviewed ASM nonredistributable research; no import. Ignored
+build/m2-t68-s4,128MiB raw,1024 roots/batch,120seconds/process,524288steps/root;
+coordinator deletes raw per batch and retains neutral summaries only.
