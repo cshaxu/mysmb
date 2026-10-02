@@ -2603,3 +2603,76 @@ remain unchanged. Exact feasible controls rise 3,134 to 3,138/4,323
 (raw 4,342, infeasible 19). T64 remains open with 43 Cohort-J controls,
 zero pending material; front/rear Bowser graphics and box returns follow.
 T65 is not admitted.
+
+## Aggregate S49 admission - Bowser half graphics/box returns
+
+S49 owns control-03862/03863. Seven scoped labels are
+BowserGfxHandler, CopyFToR, ExBGfxH, ProcessBowserHalf,
+RunRetainerObj, GetEnemyBoundBox and PlayerEnemyCollision.
+All already exact; expected new nodes empty, custody unchanged.
+Historical 1,992/1,992 and exact nodes 1,480/1,992 stay unchanged;
+controls enter 3,138/4,323 and can reach 3,140/4,323; material 368/487.
+S48 precedes; flame/explosion position returns follow.
+
+Shared oam/bowser_gfx.c owns $D17B-$D1D0, with real retainer,
+relative/offscreen/OAM, enemy bounds and player collision descendants.
+Static track checks retainer return slot before state test, control ten before
+box child, box return slot before collision tail, front-to-rear coordinate/
+state/direction copying, saved front ObjectOffset and graphics flag reset.
+Real ROM/native roots cover six front slots, rear selection, direction/body
+phases, edge masking, state gates and enabled collision. Persistent RAM/OAM,
+box output and lower-stack game aliases are compared; transient scratch/CPU
+stack exclusions and real return consumers are explicit. x86/x64 graphics/
+OAM/purity plus original OpenNT DOS16 provide operational gates.
+
+Owner-local nonredistributable ROM/ASM remain research only. Ignored
+build/m2-t64-s49 owns <=8 MiB raw, 524288 steps/case, 120 seconds,
+and cleanup. Scoped differences stay here for repair/re-audit; product
+repairs refresh all three approved EXEs. Preserve unrelated work; no T65.
+
+## Aggregate S49 closure - real front/rear retainer and box returns
+
+Control-03862/03863 are exact. Seven admitted labels retain exact:
+BowserGfxHandler, CopyFToR, ExBGfxH, ProcessBowserHalf,
+RunRetainerObj, GetEnemyBoundBox and PlayerEnemyCollision.
+No node credit or custody transfer; no inference of unobserved generic paths.
+
+Static $D17B-$D1D0 audit preserves active front/rear slot after retainer
+return at $D1C2, state predicate, control-ten box generation and same-slot
+collision tail after $D1CE. The outer routine uses source direction bit to
+select wrapped rear X displacement, adds eight to Y, copies state/direction,
+saves front ObjectOffset, switches to DuplicateObj_Offset, assigns Bowser
+ID, runs the rear and restores front slot/graphics flag. C reloads RAM[8]
+at child boundaries rather than assuming the incoming argument survived.
+
+1,536 actual BowserGfxHandler roots span six front slots, four distinct
+rear choices, facing/body phases, horizontal/page and vertical edges,
+normal/defeated states, player size/status/injury/star and overlap/non-overlap
+fixtures. They observe 3,072 real retainer returns (1,536 front and rear
+each), 2,100 real box returns and exactly 2,100 following collision tails.
+Box mask clear/set counts are 132/1,968; injury entry executes 24 times.
+Maximum root execution is 1,063 instructions. All graphics, relative/
+offscreen, box/clip and collision descendants execute without substitution.
+
+Current x86/x64 each match 1,536/1,536 with zero differences across
+1,833 bytes: every non-stack persistent byte, OAM/box outputs and the
+full 49-byte game region $0109-$0139. Initial narrower twelve-alias
+comparison was broadened and rerun on both widths before closure.
+Transient scratch $00-$07 and other CPU-stack bytes are explicit exclusions;
+active slot, box control and final front-slot/graphics-flag restoration are
+independently checked at real source seams. Same immutable owner-local
+PRG supplies resources, with no runtime emulation in the native product.
+
+Fresh C90 checkers and graphics/OAM/platform-purity tests pass 3/3 per
+width. Original OpenNT DOS16 builds/links with the existing OLDNAMES.LIB
+warning. Similar-issue sweep checks front/rear slot handoff, erase/defeated
+state gate, masked/visible box generation, collision tail, copied coordinates/
+state and saved front slot. No scoped difference or host gameplay duplicate
+found. Product C and three delivered EXEs remain unchanged. Raw records
+and probe are cleaned after acceptance.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487
+remain unchanged. Exact feasible controls rise 3,138 to 3,140/4,323
+(raw 4,342, infeasible 19). T64 remains open with 41 Cohort-J controls,
+zero pending material; flame relative/offscreen returns follow before
+explosion positioning. T65 is not admitted.

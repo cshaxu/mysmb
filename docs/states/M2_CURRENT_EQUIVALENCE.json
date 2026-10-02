@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3138,
-    "needs-evidence": 1185,
+    "exact": 3140,
+    "needs-evidence": 1183,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129507,13 +129507,16 @@
       "instruction": "rts/rti",
       "id": "control-03862",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared oam/bowser_gfx.c front/rear half sequence with named OAM/collision child",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/bowser_gfx.c:process_half with real retainer, enemy_bounds.c and world/player_enemy_collision.c, reloading shared ObjectOffset at original handoffs.",
       "semanticEvidence": [
-        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S49 static $D17B-$D1D0 and actual return-consumer audit: RunRetainerObj returns at $D1C2 with X=ObjectOffset for the active front/rear half; ProcessBowserHalf tests that slot state before control-ten box generation or early return."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation RunRetainerObj -> ProcessBowserHalf with front/rear slot selection, state predicate, OAM/collision handoff and call, tail or return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S49 current x86/x64 each match 1536 actual BowserGfxHandler roots, zero differences across 1833 bytes including all $0109-$0139 game aliases; 3072 retainer returns, 2100 box returns/tail collisions, 24 injury entries; graphics/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "RunRetainerObj returns at $D1C2 with X=ObjectOffset for the active front/rear half; ProcessBowserHalf tests that slot state before control-ten box generation or early return.",
       "currentSourcePaths": [
         "src/game/enemy/dispatch_targets.c",
         "src/game/oam/bowser_gfx.c",
@@ -129528,13 +129531,16 @@
       "instruction": "rts/rti",
       "id": "control-03863",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/bowser_gfx.c:process_half with real retainer, enemy_bounds.c and world/player_enemy_collision.c, reloading shared ObjectOffset at original handoffs.",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S49 static $D17B-$D1D0 and actual return-consumer audit: GetEnemyBoundBox returns at $D1CE with X=ObjectOffset after masked/clipped four-byte box output and control ten; ProcessBowserHalf immediately tail-jumps to PlayerEnemyCollision with that same box/slot."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> ProcessBowserHalf with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S49 current x86/x64 each match 1536 actual BowserGfxHandler roots, zero differences across 1833 bytes including all $0109-$0139 game aliases; 3072 retainer returns, 2100 box returns/tail collisions, 24 injury entries; graphics/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "GetEnemyBoundBox returns at $D1CE with X=ObjectOffset after masked/clipped four-byte box output and control ten; ProcessBowserHalf immediately tail-jumps to PlayerEnemyCollision with that same box/slot.",
       "currentSourcePaths": [
         "src/game/enemy_bounds.c",
         "src/game/oam/bowser_gfx.c"
