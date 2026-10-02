@@ -10672,13 +10672,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1628,
-    "needs-evidence": 363,
-    "mismatch": 1
+    "exact": 1630,
+    "needs-evidence": 362
   },
   "controlEdgeCounts": {
-    "exact": 3480,
-    "needs-evidence": 837,
+    "exact": 3483,
+    "needs-evidence": 834,
     "infeasible": 25
   },
   "controlEdgeTypeCounts": {
@@ -42782,15 +42781,18 @@
       "label": "DrawBubble",
       "asmLine": 14397,
       "cohort": "K",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/fireball/bubble.c",
       "currentCounterpart": "mysmb_fireball_draw_bubble",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S13 source-only finding: native X store comes after Y/tile/attributes; source X/Y/tile/attributes order must be restored. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "M2 T65 S13 source-only finding: native X store comes after Y/tile/attributes; source X/Y/tile/attributes order must be restored. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Draws a bubble only when Player_Y_HighPos is one and Bubble_OffscreenBits d3 is clear.",
+      "operationalEvidence": [
+        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original high-position and offscreen-d3 gates short circuit; if drawable, stores relative X, relative Y, tile74 and attributes2 in source order.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
       ]
@@ -42799,13 +42801,16 @@
       "label": "ExDBub",
       "asmLine": 14413,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/fireball/bubble.c",
       "currentCounterpart": "mysmb_fireball_draw_bubble",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Returns after bubble draw or either early gate.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -114282,12 +114287,15 @@
       "instruction": "bne",
       "id": "control-03024",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM branch relation DrawBubble -> ExDBub with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -114301,12 +114309,15 @@
       "instruction": "bne",
       "id": "control-03025",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM branch relation DrawBubble -> ExDBub with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"
@@ -114320,12 +114331,15 @@
       "instruction": "sta",
       "id": "control-03026",
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "small-platform/bubble shared OAM paths",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM fallthrough relation DrawBubble -> ExDBub with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/fireball/bubble.c"

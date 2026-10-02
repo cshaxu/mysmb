@@ -1,11 +1,13 @@
 # M2 ROM conformance node progress
 
-## M2 T65 S13 - active bubble output audit
+## M2 T65 S13 - closed ordered bubble output leaf
 
-[S13 scope/source finding](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
-admits2 labels, intended fresh2, maximum1630/1992. One source-order mismatch;
-current1628/1992 nodes,3480/4317 controls(raw4342,infeasible25),391/492
-material partial. Historical1992/1992 separate; S14 not admitted.
+[S13 source/branch/output proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes2 fresh nodes and3 feasible controls, none deferred. Current1630/1992
+nodes,3483/4317 controls(raw4342,infeasible25),391/492 material partial;
+historical1992/1992 separate. All131072 original roots match both widths;
+current builds,9/9 tests per width and original DOS16 link pass. Three EXEs
+refreshed; T65 open with3 pending table nodes, S14 next, not admitted.
 
 ## M2 T65 S12 - closed ordered small-platform output
 

@@ -1607,3 +1607,56 @@ purity tests and original OpenNT DOS16 link; product-code changes refresh all
 three authorized EXEs. Owner ROM/local ASM remain nonredistributable research
 inputs; ignored S13 build output owns192MiB raw,2048-root chunks,120seconds/
 run,524288steps/case, checkpoints and coordinator cleanup.
+
+## S13 P2 ordered leaf proof and closure
+
+Both DrawBubble and ExDBub close current exact, none deferred/transferred.
+Current nodes1628->1630/1992, controls3480->3483/4317(raw4342,infeasible25),
+material391/492 partial unchanged. Historical1992/1992 remains separate.
+All3 owned controls03024-03026 close; already-exact BublLoop caller01075 and
+return03672 keep prior credit. No material or unadmitted caller credit added.
+T65 remains open with3 pending table nodes; S14 next, not admitted.
+
+Original EDE1 gates: DEY/BNE is equivalent to high-position!=1 for all byte
+values; Bubble_OffscreenBits d3 is read only when that gate passes. Drawable
+output loads offset, stores relative X, relative Y, tile74, attributes2 then
+returns EE06. Native originally stored X last; source-order repair moves
+that store first. This source-only difference is not reported as an observed
+visible defect. Source absolute indexed addresses remain unchanged.
+
+Mode15 executes131072 original roots:65536 all256 high-position x all256
+mask combinations, then65536 drawable all256 OAM x all256 relative X with
+Y=(X*13+7) byte-wrapped, so every byte relative Y also occurs. Three bubble
+slots vary. Full current x86/x64 routes compare1841 RAM bytes/root including
+all scratch/OAM and aliases0109-0139, zero differences. The leaf has no child
+calls; no independent-child coverage is claimed. True CPU stack, volatile
+flags and unused temporary CPU-Y are excluded from native ABI. Original X
+is preserved and native slot is immutable. Both original branch alternatives
+and EE06 exit after drawing/each early path are visited:
+
+- EDE4: taken65280, fall65792.
+- EDEB: taken128, fall65664.
+
+Static source inspection proves the changed read/store order independently
+of final snapshot equality. Recorder chunks are at most2048 roots/58851344
+bytes,120seconds and524288steps/case below192MiB raw; consumed snapshots and
+probe executable are removed, neutral summaries remain ignored/local.
+
+Similar-issue sweep: fireball_spawn.c is the sole production caller of the
+canonical bubble leaf. Bubble relative/offscreen functions and motion/creation
+owners are unchanged; their established caller proof retains its own scope.
+Only the leaf output order changed; no extra draw gate, hidden renderer,
+platform business logic or audio/pause change is introduced.
+
+Operational track: current C90 x86/x64 product/helper/bubble/core targets
+build and9/9 focused tests per width pass, including bubble OAM/core, native
+core, purity, audio/focus and product self-test. Original OpenNT DOS16 link
+exits0 with existing OLDNAMES.LIB warning; no DOS gameplay/performance claim.
+All three fresh owner-authorized products include committed audio/title/focus
+pause; explicit artifact delivery authorization overrides default exclusion.
+
+- mysmb16.exe: 260967 bytes; SHA-256 d21275c3de4dbd604ceefd1104d23052f8ef00e5aaed6e9978b854468da84a35.
+- mysmb32.exe: 373790 bytes; SHA-256 0227fce3c0ed06fcf6d257f7b747160d1187d3ea87a284e683655e5893e937cf.
+- mysmb64.exe: 381335 bytes; SHA-256 8ddefac58baf697bcc53feb46a2ea900d542a55da189069bd64ceba8907a3ab1.
+
+Ledger admission/closure, documentation and whitespace gates rerun. S13 closes only its scope; T65 and M2 remain open.

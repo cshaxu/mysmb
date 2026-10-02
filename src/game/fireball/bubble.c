@@ -98,9 +98,10 @@ void mysmb_fireball_draw_bubble(struct mysmb_game *game, mysmb_u8 slot)
     if (game->ram[MYSMB_BUBBLE_PLAYER_Y_HIGH] == 1U &&
         (game->ram[MYSMB_BUBBLE_OFFSCREEN] & 8U) == 0U) {
         oam = game->ram[MYSMB_BUBBLE_SPRITE_OFFSET + slot];
+        /* ROM DrawBubble stores X, Y, tile and attributes in that order. */
+        game->ram[0x0203U + oam] = game->ram[MYSMB_BUBBLE_REL_X];
         game->ram[0x0200U + oam] = game->ram[MYSMB_BUBBLE_REL_Y];
         game->ram[0x0201U + oam] = 0x74U;
         game->ram[0x0202U + oam] = 2U;
-        game->ram[0x0203U + oam] = game->ram[MYSMB_BUBBLE_REL_X];
     }
 }

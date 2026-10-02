@@ -3,6 +3,7 @@
 #include <string.h>
 #include "game/oam/oam.h"
 #include "game/objects.h"
+#include "game/fireball/fireball.h"
 static struct mysmb_game game;
 static unsigned char record[28736];
 static unsigned int current,mode,calls,failures;
@@ -125,7 +126,7 @@ int main(int argc,char **argv)
     f=fopen(argv[1],"rb");if(!f)return 65;
     if(fread(h,1U,16U,f)!=16U||memcmp(h,"MSOH\1",5U))return 66;
     mode=h[5];count=(unsigned int)read32(h+8U);current=(unsigned int)read32(h+12U);
-    if(mode>14U||count==0U||count>2048U)return 66;
+    if(mode>15U||count==0U||count>2048U)return 66;
     for(i=0U;i<count;++i,++current){
         if(fread(record,1U,sizeof(record),f)!=sizeof(record))return 66;
         memset(&game,0,sizeof(game));memcpy(game.ram,record+16U,2048U);calls=0U;x=record[1];y=record[2];
@@ -143,6 +144,7 @@ int main(int argc,char **argv)
         if(mode==12U)mysmb_oam_draw_fireball_explosion(&game,x);
         if(mode==13U)mysmb_oam_draw_fireworks_explosion(&game,record[0],y);
         if(mode==14U)mysmb_objects_draw_small_platform(&game,x);
+        if(mode==15U)mysmb_fireball_draw_bubble(&game,x);
         if((mode==3U||mode==4U)&&(x!=record[4]||y!=record[5]))++failures;
 #ifdef MYSMB_OAM_HELPER_CHILD_CHECK
         if(calls!=record[3])++failures;

@@ -62,14 +62,14 @@ int main(int argc,char **argv)
     static core_machine baseline;
     static unsigned char rec[RECORD_BYTES],prg[32768];
     static unsigned int hits[1536],taken[1536],fell[1536],events[14],continuations[65536];
-    static const unsigned int entries[15]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u};
+    static const unsigned int entries[16]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u,0xede1u};
     unsigned char h[16]={'M','S','O','H',1u};
     core_driver *d=NULL;core_driver_options options={0u,LIB_FALSE};core_run_result r;
     unsigned int mode,first,count,n,i,slot,pc,steps,k,pos,pending,continuation,maxsteps=0u,returns=0u;
     int ok=1;FILE *f;time_t start=time(NULL);
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],NULL,0);first=(unsigned int)strtoul(argv[4],NULL,0);count=(unsigned int)strtoul(argv[5],NULL,0);
-    if(mode>14u||count==0u||count>2048u||first+count>(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u)))))))return 64;
+    if(mode>15u||count==0u||count>2048u||first+count>(mode==15u?131072u:(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u))))))))return 64;
     h[5]=(unsigned char)mode;for(i=0u;i<4u;++i){h[8u+i]=(unsigned char)(count>>(i*8u));h[12u+i]=(unsigned char)(first>>(i*8u));}
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1u,sizeof(prg),f)!=sizeof(prg))return 65;fclose(f);
     if(core_driver_create(&d,&options)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
@@ -141,6 +141,15 @@ int main(int argc,char **argv)
                 d->machine->ram[0x3aeu]=(unsigned char)(k>>4u);
                 d->machine->ram[0x3d1u]=(unsigned char)(k&15u);
             }
+        }
+        if(mode==15u){
+            slot=n%3u;d->machine->x=(unsigned char)slot;d->machine->ram[8u]=(unsigned char)slot;
+            d->machine->ram[0x6eeu+slot]=(unsigned char)n;
+            d->machine->ram[0xb5u]=(unsigned char)(n>>8u);
+            d->machine->ram[0x3d3u]=(unsigned char)n;
+            d->machine->ram[0x3b0u]=(unsigned char)(n>>8u);
+            d->machine->ram[0x3bbu]=(unsigned char)((n>>8u)*13u+7u);
+            if(n>=65536u){d->machine->ram[0xb5u]=1u;d->machine->ram[0x3d3u]=(unsigned char)(n&0xf7u);}
         }
         d->machine->pc=(unsigned short)entries[mode];d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
