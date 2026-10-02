@@ -23,7 +23,7 @@ all 1,992 labels. The separate current-equivalence baseline and its
 source-order cohort results are authoritative in
 [M2 current-equivalence re-audit](M2_CURRENT_EQUIVALENCE.md).
 
-Latest task review: M2 T64 S6 closes `ResidualXSpdData -> ExSFN`: 34 labels, 92 source-address-owned feasible controls and 28 material handoffs are current-exact after static and 1,024-record original-ROM/x86/x64 caller replay. The current registry records 1,292 exact labels and 2,632 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
+Latest task review: M2 T64 S7 closes `SetBitsMask -> ExTA`: 16 labels, 58 source-address-owned feasible controls and nine material handoffs are current-exact after static and 1,024-record original-ROM/x86/x64 pair replay. The current registry records 1,308 exact labels and 2,690 exact feasible control relations. Historical conformance remains 1,992 / 1,992.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

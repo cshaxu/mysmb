@@ -253,7 +253,7 @@ current exact nodes **1,258 / 1,992**; current exact feasible controls
 
 ## S6 admission — player/enemy collision response
 
-S6 admits the contiguous `$D84D-$D965` player/enemy collision chain: the 34
+S6 admits the contiguous `$D84D-$DA24` player/enemy collision chain: the 34
 source-order labels assigned to S6 in the plan table, from `ResidualXSpdData`
 through `ExSFN`. The shared owner is `src/game/world/player_enemy_collision.c`;
 S5 is the predecessor and S7 starts enemy/enemy collision. Geometry, power-up,
@@ -283,3 +283,42 @@ All 34 scoped nodes from `ResidualXSpdData` through `ExSFN` are current-exact. S
 The retained controlled original-ROM contact route replayed 1,024 records in one x86 and one x64 native process. Each compared mapped RAM and the recorded geometry, power-up, defeat, palette, stun, vertical-state, direction and routine child calls; both widths reported zero differences. The focused contact contract, platform-purity gate and OpenNT DOS16 shared-source link pass. The audio output and title-pause CTests also pass on both widths, with the owner separately confirming their interactive behavior. Product C did not change, so the three package artifacts were not refreshed.
 
 S6 records 34 nodes, 92 source-address-owned control relations and 28 material handoffs as current-exact. Five edges carrying S6 label names but emitted at other ROM source addresses remain with their owning cohorts and were not claimed here. Current totals: historical **1,992 / 1,992**; current exact nodes **1,292 / 1,992**; current exact feasible controls **2,632 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S7 admission — enemy/enemy collision response
+
+S7 admits the contiguous `$DA25-$DB44` chain from `SetBitsMask` through `ExTA`: `SetBitsMask`, `ClearBitsMask`, `EnemiesCollision`, `ECLoop`, `YesEC`, `NoEnemyCollision`, `ReadyNextEnemy`, `ExitECRoutine`, `ProcEnemyCollisions`, `ShellCollisions`, `ExitProcessEColl`, `ProcSecondEnemyColl`, `MoveEOfs`, `EnemyTurnAround`, `RXSpd`, and `ExTA`. Its shared owner is `src/game/world/enemy_collision.c`; S6 is closed and S8 begins platform collision.
+
+The ROM-logic track checks the two seven-byte masks, frame/water/object/offscreen gates, descending candidate scan and live `$01`/`ObjectOffset` reloads, candidate-first box ordering, hit/miss latches, every shell state/score path and turnaround ID predicates. The retained original-ROM pair-root family covers all 134 instructions and 54 feasible branch outcomes; it will replay once per x86/x64 process with recorded child calls. The operational track runs the pair and collision contracts, platform purity and the OpenNT DOS16 shared-source link.
+
+### S7 admission totals
+
+- Historical mapping: **1,992 / 1,992**.
+- Current exact nodes: **1,292 / 1,992**.
+- Current exact feasible controls: **2,632 / 4,324**.
+- Scope: **16** labels; expected fresh historical matches: **0**; maximum historical complete: **1,992 / 1,992**.
+- Expected graph scope: **58** source-address-owned feasible controls and **9** material handoffs.
+
+## S7 closure — enemy/enemy collision response
+
+All 16 scoped nodes are current-exact: `SetBitsMask`, `ClearBitsMask`,
+`EnemiesCollision`, `ECLoop`, `YesEC`, `NoEnemyCollision`,
+`ReadyNextEnemy`, `ExitECRoutine`, `ProcEnemyCollisions`,
+`ShellCollisions`, `ExitProcessEColl`, `ProcSecondEnemyColl`, `MoveEOfs`,
+`EnemyTurnAround`, `RXSpd`, and `ExTA`. Static `$DA25-$DB44` comparison found
+no shared-C difference in pair filtering, geometry ordering, collision latches,
+shell response, score paths, or signed turnaround handling.
+
+The retained original-ROM pair route executed all 134 instructions and 54
+feasible branch outcomes across 1,024 roots. One x86 and one x64 native batch
+replay compared full mapped RAM plus recorded geometry, defeat and score-child
+calls with zero differences. The taken exits at `$DB20` and `$DB24` are
+unreachable from a valid pair root because prior ID gates reject IDs 13 and 17;
+the source condition remains present and full-byte native leaf tests cover it.
+Focused pair/collision contracts, platform purity, and the OpenNT DOS16 shared
+source link pass. Product C did not change, so no package artifact refresh was
+required.
+
+S7 records 16 nodes, 58 source-address-owned feasible controls and nine
+material handoffs exact. Current totals: historical **1,992 / 1,992**; current
+exact nodes **1,308 / 1,992**; current exact feasible controls **2,690 /
+4,324** (raw **4,342**, infeasible **18**).

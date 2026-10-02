@@ -2,35 +2,38 @@
 
 ## Current Work
 
-## M2 T64 S6 Packet
+## M2 T64 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T64 S6 closed — player/enemy collision response. |
-| Admission And Approval | Owner-approved T64 source-order continuation after closed S5. |
-| Objective | Audit `$D84D-$DA24`: player/enemy collision dispatch, power-up handoff, shell response, injury and death routes, stomp/demotion/revival behavior, facing response and floating-score setup. |
-| Non-goals | Geometry, power-up, enemy and palette children retain their independently admitted owners; this S proves caller contracts across the contiguous shared owner. |
-| Reference Baseline | Historical 1,992 / 1,992; incoming current exact 1,258 / 1,992 nodes and 2,540 / 4,324 feasible controls. |
+| Identifier Mode | M2 T64 S7 closed — enemy/enemy collision response. |
+| Admission And Approval | Owner-approved T64 source-order continuation after closed S6. |
+| Objective | Audit `$DA25-$DB44`: mask tables, pair scan, collision latches, shell response, score paths and enemy turnaround. |
+| Non-goals | Geometry, defeat, floating-score and bound-box children retain independently admitted owners; this S proves caller-side contracts and ordering. |
+| Reference Baseline | Historical 1,992 / 1,992; incoming current exact 1,292 / 1,992 nodes and 2,632 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md. |
-| Files And ABI Surface | `src/game/world/player_enemy_collision.c` and project-owned C90 test/oracle harnesses. |
+| Files And ABI Surface | `src/game/world/enemy_collision.c` and project-owned C90 test/oracle harnesses. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation governance and source policy. |
-| Verification | Static `$D84D-$DA24` audit, retained original-ROM contact routes per x86/x64 width, focused contact contract, platform purity and DOS16 link. |
-| Expected Markers | 34 nodes, 92 source-address-owned controls and 28 material handoffs. |
+| Verification | Static `$DA25-$DB44` audit, retained original-ROM pair routes per x86/x64 width, focused pair/collision contracts, platform purity and DOS16 link. |
+| Expected Markers | 16 nodes, 58 source-address-owned controls and 9 material handoffs. |
 | Asset Needs | Refresh all three artifacts only if shared product C changes. |
 | Reporting Requirements | Exact labels and relation dispositions plus historical/current totals. |
 | Stop Conditions | Any mismatch or missing route blocks closure. |
 | Exit Criteria | Every scoped feasible path has identical C counterpart and original-ROM route evidence. |
 | Original Owner Request | Faithful shared original-ROM C logic for DOS16, Win32 x86 and Win32 x64. |
-| Similar-Issue Sweep | Slot reloads, signed speed paths, carry predicates, damage timers, tail jumps, status transitions, score control and all child mutation boundaries. |
+| Similar-Issue Sweep | Cached slots, box argument order, pair latches, shell score order, child result reloads and signed turnaround speed. |
 
 ## Current Technical Baseline
 
-T64 S6 closed at **1,292 / 1,992** current-exact nodes and **2,632 /
+T64 S7 closed at **1,308 / 1,992** current-exact nodes and **2,690 /
 4,324** current-exact feasible controls. Historical conformance remains **1,992 /
-1,992**. The exact 34-label scope is in the admitted node record.
+1,992**. The exact 16-label scope is in the admitted node record.
 
-## S6 closure
+## Closure Record
 
-The S6 chain is current-exact: all 34 scoped nodes, 92 control relations whose source instructions lie in `$D84D-$DA24`, and 28 material handoffs. One x86 and one x64 process replayed 1,024 retained original-ROM records with full mapped-RAM and child-call comparison and zero differences. The focused contact, audio, pause, platform-purity and DOS16-link checks pass. No product C changed, so packaged executables were not refreshed.
-
-Current totals: historical **1,992 / 1,992**; current exact **1,292 / 1,992** nodes and **2,632 / 4,324** feasible controls (raw **4,342**, infeasible **18**).
+Static `$DA25-$DB44` audit and the retained 1,024-record original-ROM pair
+route found no shared-C mismatch. The current-equivalence registry promotes all
+16 scoped nodes, 58 source-address-owned feasible controls and nine material
+handoffs. x86/x64 replay, focused collision checks, platform purity, and the
+DOS16 shared-source link pass. No product C changed, so no executable artifact
+was refreshed.
