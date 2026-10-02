@@ -869,3 +869,82 @@ object child;no ROM patch, interpreter, mocked child or new platform logic.
 Repeat original/current parser matrix varying all8 declared consumer entries,
 AreaType0-3,cloud override0/1,resident length0-7 and four foreground kinds.
 S6 remains active until these differences and all9 relations are resolved.
+
+## S6 P3 closure - text/scenery material and original dispatch state
+
+All9 planned material relations exact:material-00010; material-00011; material-00012; material-00013; material-00063; material-00064; material-00065; material-00066; material-00067.All18 already-exact
+labels retain their bounded accepted proof with this stronger consumer audit;
+zero fresh node/control credit,no scoped deferral. Current1992/1992 nodes,
+4087/4277 feasible controls(raw4342,infeasible65),512->521/555 material
+partial. Historical1992/1992 separate.T69 open,S7 next unadmitted.Remaining
+190 feasible controls/34 enumerated material and earlier M alias scope plus
+cross-chain certification;not whole-game/all-state equivalence.
+
+| Label | Original/current contract |
+| --- | --- |
+| `GameText` | Actual bound PRG8752-87EC stream including FF terminators; original X/Y byte cursors and stop-on-FF or Y-wrap before null store retained. |
+| `LuigiName` | Actual bound five bytes87ED-87F1 copied in descending4-to0 order only when original current-player bit0 requires Luigi. |
+| `WarpZoneNumbers` | Bound PRG87F2 table; byte selector-minus4 shifted twice and three byte-index reads, destination stride4; declared padding3/7/11 unused. |
+| `GameTextOffsets` | ASL wraps to byte before CPY4/8; NumberOfPlayers increment occurs only after first threshold; indices0,2,4,5,6,7,8,9 reachable,1/3 unused duplicated offsets. |
+| `WriteGameText` | Overwrite command stream regardless incoming buffer offset; copied terminator at actual Y; lives/name/warp patches follow original selector,byte arithmetic and store order. |
+| `CheckPlayerName` | No two-player name change for NumberOfPlayers0; time-up flips bit0 unless mode3; LSR tests bit0, descending name copy. |
+| `PrintWarpZoneNumbers` | Byte SBC4/ASL/ASL index, three successive ROM reads to27/31/35; SetVRAMOffset changes0300 to2C without inventing another terminator write. |
+| `CoinMetatileData` | Existing4 C bytes independently equal original99EE-99F1; real RowOfCoins reads all4 AreaType indices before GetRow. |
+| `RowOfCoins` | AreaType-index coin then actual GetRow length/attribute decode and DrawRow/RenderUnderPart; all4 indices through actual parser vector. |
+| `C_ObjectRow` | Existing3 C bytes equal99FB-99FD; real row13 decoder IDs2/3/4 select paired row at ID-minus2. |
+| `C_ObjectMetatile` | Existing3 C bytes equal99FE-9A00; same actual ChainObj IDs2/3/4 select paired metatile. |
+| `ChainObj` | Actual CastleBridgeObj/AxeObj/ChainObj decoder vector children reach paired table reads before ColObj and RenderUnderPart; preserve vector scratch04-07. |
+| `SolidBlockMetatiles` | Existing4 C bytes equal9A25-9A28; actual row and column select AreaType0-3; row uses length initialization, column uses vertical extent. |
+| `BrickMetatiles` | Existing5 C bytes equal9A29-9A2D; actual row overrides to4 only for CloudTypeOverride!=0, column always AreaType0-3. |
+| `ProcessAreaData` | Actual descending three persistent slots execute source DecodeAreaData and post-child length decrement; admitted real resident scenery paths match full persistent RAM. |
+| `DecodeAreaData` | Actual row and object-ID decode supplies00/07 and invokes original vector-state helper before native selected child, without replacing the child. |
+| `RunAObj` | Native fixed object dispatcher now records original9666 return/vector target04-07 before actual handler; selector is byte sum of ID/addend. |
+| `JumpEngine` | Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution. |
+
+Final67584 unchanged original returning roots each width zero differences:
+mode64 WriteGameText8808,65536 cases0-65535,byte selector/current-player/
+lives/buffer-offset and both NumberOfPlayers/OperMode variants/world/level;
+mode65 ProcessAreaData9508,2048 cases0-2047,8 actual level-pair entries,
+AreaType0-3,cloud0/1,resident length0-7 and foreground0/17/C0/54. Uses real
+DecodeAreaData/RunAObj and object children,not copied tables or mocked calls.
+Probe command arguments:owner-local ROM,ignored raw path,mode,first,count;
+count<=1024,current checker reads each whole batch once per width. Full RAM
+2032 bytes,24 APU,ordered writes/count compared;only01F0-01FF source CPU
+stack/sentinel excluded,actual minimum SP F6. CPU A/X/Y/flags and physical
+return stack are outside native C ABI;all persistent scratch remains compared.
+
+Actual original reads:GameText155 bytes,Luigi5,offset indices0/2/4/5/6/7/8/9,
+valid warp indices0/1/2/4/5/6/8/9/10. Offset1/3 are source-unused duplicates;
+warp3/7/11 padding is not read by three-iteration stride4 and not claimed as
+observed. High controlled selectors use byte wrap and actual bound PRG reads
+beyond the nominal warp table exactly as original. This diagnostic input
+scope does not claim those values arise during ordinary game flow. All19
+existing scenery table bytes independently equal original and were consumed:
+coin99EE-99F1 all4;row99FB-99FD all3;metatile99FE-9A00 all3;solid9A25-9A28
+all4;brick9A29-9A2D all5. Corrected old coin provenance/probe address99ED to
+verified99EE;no table-byte change/import. Both solid/brick row and column
+entries execute actual children;only brick row takes cloud override.
+
+Pre-fix text first1024 x86 roots had35909 RAM diffs;shared code removes
+invented nonempty-buffer/input/length gates,restores byte cursors,player bit0,
+descending name copy and warp index/store semantics. First1024 parser roots
+had3456 diffs from omitted04-07;actual native dispatcher now invokes existing
+shared jump-state helper with source9666 before real child. Original9664
+JSR8E04 pops that return then JMP($06);native fixed C dispatch executes the
+selected routine without a CPU interpreter. Similar-issue sweep covers all
+admitted text gates/cursors/patches plus every declared scenery table index,
+row/column override distinction,paired chain indices and real decoder call
+order. No platform code or unrelated queue/proposals/terrain changes touched.
+
+Operational:current x86/x64 builds and9 focused tests each pass(local area,
+title bootstrap,purity,coin row,castle column,brick/solid row-column,special
+object,parser column,terminal slot). Original OpenNT DOS16 links with inherited
+OLDNAMES.LIB warning;no interactive DOS claim. All three products refreshed:
+
+- `mysmb16.exe`: 261303 bytes, SHA256 `c0bb58c93fa9a33d8b811763995bb7856f684140077e846d57a2144f5d24d67d`; final shared-source build published.
+- `mysmb32.exe`: 374811 bytes, SHA256 `873051902c6f63f7365daaa92428590d5a270f3d79d5140df343acfbf467d346`; final shared-source build published.
+- `mysmb64.exe`: 382348 bytes, SHA256 `c57cce686de2dced55b94235ebc0f9d8cb1c97fc1c6a8a0bf96766d9fed1b745`; final shared-source build published.
+
+Raw deleted each batch,probe deleted at closure;neutral ignored summaries/logs
+only retained. Registry/ledger/progress/documentation gates and diff check
+required before local P3 commit. No push,no later-S pre-credit.

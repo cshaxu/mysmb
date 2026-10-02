@@ -211,13 +211,16 @@
       "consumer": "WriteGameText",
       "storage": "selector/player-count indexed ROM offsets to GameText",
       "feasiblePath": "WriteGameText doubles selector, applies one/two-player rule, then reads GameTextOffsets.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:offset_index and area_prg GameTextOffsets lookup",
-      "semanticContract": "Each valid selector/player-count combination selects the same stream start.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "ASL wraps to byte before CPY4/8; NumberOfPlayers increment occurs only after first threshold; indices0,2,4,5,6,7,8,9 reachable,1/3 unused duplicated offsets.",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: ASL wraps to byte before CPY4/8; NumberOfPlayers increment occurs only after first threshold; indices0,2,4,5,6,7,8,9 reachable,1/3 unused duplicated offsets."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -230,13 +233,16 @@
       "consumer": "WriteGameText",
       "storage": "$ff-terminated ROM command stream to VRAM_Buffer1",
       "feasiblePath": "LdGameText copies selected GameText bytes until $ff.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_queue_game_text source loop",
-      "semanticContract": "Selected command bytes and terminator position agree for every reachable text stream.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Actual bound PRG8752-87EC stream including FF terminators; original X/Y byte cursors and stop-on-FF or Y-wrap before null store retained.",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Actual bound PRG8752-87EC stream including FF terminators; original X/Y byte cursors and stop-on-FF or Y-wrap before null store retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -249,13 +255,16 @@
       "consumer": "CheckPlayerName",
       "storage": "five-byte ROM name table to Buffer1 replacement",
       "feasiblePath": "Nonzero selected player causes NameLoop to replace Buffer1+3 through +7.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_queue_game_text name_player copy",
-      "semanticContract": "LUIGI replacement bytes and condition agree.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Actual bound five bytes87ED-87F1 copied in descending4-to0 order only when original current-player bit0 requires Luigi.",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Actual bound five bytes87ED-87F1 copied in descending4-to0 order only when original current-player bit0 requires Luigi."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -268,13 +277,16 @@
       "consumer": "PrintWarpZoneNumbers",
       "storage": "selector-indexed WarpZone number table to three fixed Buffer1 cells",
       "feasiblePath": "Warp route copies three source bytes with destination stride four.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_queue_game_text selector >= 4 loop",
-      "semanticContract": "Every reachable warp selector produces the same three mutable number tiles and offset.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Bound PRG87F2 table; byte selector-minus4 shifted twice and three byte-index reads, destination stride4; declared padding3/7/11 unused.",
       "semanticEvidence": [
-        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required."
+        "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Bound PRG87F2 table; byte selector-minus4 shifted twice and three byte-index reads, destination stride4; declared padding3/7/11 unused."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1370,13 +1382,16 @@
       "consumer": "RowOfCoins",
       "storage": "AreaType-indexed ROM coin-metatile table value",
       "feasiblePath": "RowOfCoins reads CoinMetatileData,AreaType immediately before tail-entering GetRow.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_coin_metatile_data -> mysmb_area_row_of_coins",
-      "semanticContract": "The same four-entry selection reaches horizontal coin-row rendering.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Existing4 C bytes independently equal original99EE-99F1; real RowOfCoins reads all4 AreaType indices before GetRow.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Existing4 C bytes independently equal original99EE-99F1; real RowOfCoins reads all4 AreaType indices before GetRow."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1389,13 +1404,16 @@
       "consumer": "ChainObj",
       "storage": "row-13 decoder selector minus two to ROM row table",
       "feasiblePath": "ChainObj reads C_ObjectRow-2,Y after the row-13 object decoder supplies Y in two through four.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_c_object_row -> mysmb_area_chain_obj",
-      "semanticContract": "The same decoder index selects the same row before ColObj.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Existing3 C bytes equal99FB-99FD; real row13 decoder IDs2/3/4 select paired row at ID-minus2.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Existing3 C bytes equal99FB-99FD; real row13 decoder IDs2/3/4 select paired row at ID-minus2."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1408,13 +1426,16 @@
       "consumer": "ChainObj",
       "storage": "row-13 decoder selector minus two to ROM metatile table",
       "feasiblePath": "ChainObj reads C_ObjectMetatile-2,Y on the same feasible row-13 object path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_c_object_metatile -> mysmb_area_chain_obj",
-      "semanticContract": "The paired decoder index selects the same metatile before ColObj.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Existing3 C bytes equal99FE-9A00; same actual ChainObj IDs2/3/4 select paired metatile.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Existing3 C bytes equal99FE-9A00; same actual ChainObj IDs2/3/4 select paired metatile."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1427,13 +1448,16 @@
       "consumer": "RowOfSolidBlocks/ColumnOfSolidBlocks",
       "storage": "AreaType-indexed solid-block metatile table",
       "feasiblePath": "Each solid-block source entry reads SolidBlockMetatiles,AreaType before its shared row or column renderer.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_solid_block_metatiles -> solid row/column helpers",
-      "semanticContract": "The same area-type value reaches the corresponding horizontal or vertical path.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Existing4 C bytes equal9A25-9A28; actual row and column select AreaType0-3; row uses length initialization, column uses vertical extent.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Existing4 C bytes equal9A25-9A28; actual row and column select AreaType0-3; row uses length initialization, column uses vertical extent."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -1446,13 +1470,16 @@
       "consumer": "DrawBricks/ColumnOfBricks",
       "storage": "AreaType or cloud-override indexed brick metatile table",
       "feasiblePath": "RowOfBricks/DrawBricks and ColumnOfBricks read BrickMetatiles on their feasible parser paths; only the row path may force index four.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/area.c:mysmb_area_brick_metatiles -> brick row/column helpers",
-      "semanticContract": "Cloud override applies only to the horizontal source path; vertical selection uses AreaType.",
+      "status": "exact",
+      "currentCounterpart": "Shared area.c bound text streams and actual parser/scenery consumers;native RunAObj vector-state helper.",
+      "semanticContract": "Existing5 C bytes equal9A29-9A2D; actual row overrides to4 only for CloudTypeOverride!=0, column always AreaType0-3.",
       "semanticEvidence": [
-        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
+        "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 original source-path,actual byte operand,read index and native consumer/order audit: Existing5 C bytes equal9A29-9A2D; actual row overrides to4 only for CloudTypeOverride!=0, column always AreaType0-3."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 65536 WriteGameText/2048 ProcessAreaData original roots each width zero diff;actual per-table ROM reads counted;19 scenery bytes independently equal;9 tests each/current builds/OpenNT link."
+      ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -14826,12 +14853,14 @@
       "currentCounterpart": "mysmb_area_queue_game_text ROM-authored stream base",
       "semanticEvidence": [
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual bound PRG8752-87EC stream including FF terminators; original X/Y byte cursors and stop-on-FF or Y-wrap before null store retained."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $8745: selector-addressed status and message stream base terminated by $ff.",
+      "semanticContract": "Actual bound PRG8752-87EC stream including FF terminators; original X/Y byte cursors and stop-on-FF or Y-wrap before null store retained.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -14978,12 +15007,14 @@
       "currentCounterpart": "mysmb_area_queue_game_text five-byte replacement copy",
       "semanticEvidence": [
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual bound five bytes87ED-87F1 copied in descending4-to0 order only when original current-player bit0 requires Luigi."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $87d4: five-character LUIGI replacement source.",
+      "semanticContract": "Actual bound five bytes87ED-87F1 copied in descending4-to0 order only when original current-player bit0 requires Luigi.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -14997,12 +15028,14 @@
       "currentCounterpart": "mysmb_area_queue_game_text warp-number copy",
       "semanticEvidence": [
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Bound PRG87F2 table; byte selector-minus4 shifted twice and three byte-index reads, destination stride4; declared padding3/7/11 unused."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $87d9: selector-indexed three-number WarpZone source table.",
+      "semanticContract": "Bound PRG87F2 table; byte selector-minus4 shifted twice and three byte-index reads, destination stride4; declared padding3/7/11 unused.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -15016,12 +15049,14 @@
       "currentCounterpart": "mysmb_area_queue_game_text offset_index selection",
       "semanticEvidence": [
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: ASL wraps to byte before CPY4/8; NumberOfPlayers increment occurs only after first threshold; indices0,2,4,5,6,7,8,9 reachable,1/3 unused duplicated offsets."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $87e5: selector and player-count indexed offsets into GameText.",
+      "semanticContract": "ASL wraps to byte before CPY4/8; NumberOfPlayers increment occurs only after first threshold; indices0,2,4,5,6,7,8,9 reachable,1/3 unused duplicated offsets.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -15035,12 +15070,14 @@
       "currentCounterpart": "mysmb_area_queue_game_text",
       "semanticEvidence": [
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Overwrite command stream regardless incoming buffer offset; copied terminator at actual Y; lives/name/warp patches follow original selector,byte arithmetic and store order."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $87ef: selects text variant, copies through $ff terminator and dispatches mutable post-processing.",
+      "semanticContract": "Overwrite command stream regardless incoming buffer offset; copied terminator at actual Y; lives/name/warp patches follow original selector,byte arithmetic and store order.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -15149,12 +15186,14 @@
       "currentCounterpart": "mysmb_area_queue_game_text player-name branch",
       "semanticEvidence": [
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: No two-player name change for NumberOfPlayers0; time-up flips bit0 unless mode3; LSR tests bit0, descending name copy."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $8827: controls LUIGI replacement and TIME UP player inversion.",
+      "semanticContract": "No two-player name change for NumberOfPlayers0; time-up flips bit0 unless mode3; LSR tests bit0, descending name copy.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -15225,12 +15264,14 @@
       "currentCounterpart": "mysmb_area_queue_game_text selector >= 4 patch",
       "semanticEvidence": [
         "Td S9 B5 status-text static node/edge pass: SMB1 lines 1659-1814 was compared with src/game/area.c, status.c and score.c; controlled original-ROM/x86/x64 text routes remain required.",
-        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration."
+        "M2 T54 S4: source-order audit against SMB1 lines 1661-1800 proves selector table, branch predicates, byte-copy order, mutable text patches, Warp offset handoff and caller/return integration.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Byte SBC4/ASL/ASL index, three successive ROM reads to27/31/35; SetVRAMOffset changes0300 to2C without inventing another terminator write."
       ],
       "operationalEvidence": [
-        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass."
+        "M2 T54 S4: controlled original-ROM, x86 and x64 selector matrix is exact for Buffer1; local-area smoke and platform-purity audit pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $883f: selector-4 times four indexes WarpZoneNumbers before fixed-stride copy.",
+      "semanticContract": "Byte SBC4/ASL/ASL index, three successive ROM reads to27/31/35; SetVRAMOffset changes0300 to2C without inventing another terminator write.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -16221,13 +16262,15 @@
       "currentCounterpart": "shared C vector dispatch at each source-owned caller",
       "semanticEvidence": [
         "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution."
       ],
       "operationalEvidence": [
         "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "ROM $8d91: selector-indexed inline jump-table dispatch preserving caller return continuation.",
+      "semanticContract": "Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
       ]
@@ -18568,12 +18611,14 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual descending three persistent slots execute source DecodeAreaData and post-child length decrement; admitted real resident scenery paths match full persistent RAM."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Starts the three persistent object slots at two and repeats only when behind-object or backloading conditions require further stream consumption.",
+      "semanticContract": "Actual descending three persistent slots execute source DecodeAreaData and post-child length decrement; admitted real resident scenery paths match full persistent RAM.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -18796,12 +18841,14 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual row and object-ID decode supplies00/07 and invokes original vector-state helper before native selected child, without replacing the child."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Selects source record offset and normalizes rows, object families and JumpEngine addends before later placement gating.",
+      "semanticContract": "Actual row and object-ID decode supplies00/07 and invokes original vector-state helper before native selected child, without replacing the child.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -19097,15 +19144,17 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/area.c",
-      "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
+      "currentCounterpart": "mysmb_area_process_object_state jump-state helper then mysmb_area_apply_parser_object / actual shared object child",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Native fixed object dispatcher now records original9666 return/vector target04-07 before actual handler; selector is byte sum of ID/addend."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Adds DecodeAreaData addend to normalized object identity and selects one of the 47 ROM object entries.",
+      "semanticContract": "Native fixed object dispatcher now records original9666 return/vector target04-07 before actual handler; selector is byte sum of ID/addend.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -20281,12 +20330,14 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing4 C bytes independently equal original99EE-99F1; real RowOfCoins reads all4 AreaType indices before GetRow."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Supplies $c3 for water and $c2 for the other three area types.",
+      "semanticContract": "Existing4 C bytes independently equal original99EE-99F1; real RowOfCoins reads all4 AreaType indices before GetRow.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -20300,12 +20351,14 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: AreaType-index coin then actual GetRow length/attribute decode and DrawRow/RenderUnderPart; all4 indices through actual parser vector."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Selects the area-type coin metatile and tail-enters the shared horizontal row renderer.",
+      "semanticContract": "AreaType-index coin then actual GetRow length/attribute decode and DrawRow/RenderUnderPart; all4 indices through actual parser vector.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -20319,12 +20372,14 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing3 C bytes equal99FB-99FD; real row13 decoder IDs2/3/4 select paired row at ID-minus2."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Maps row-13 selector values two through four to rows six through eight.",
+      "semanticContract": "Existing3 C bytes equal99FB-99FD; real row13 decoder IDs2/3/4 select paired row at ID-minus2.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -20338,12 +20393,14 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing3 C bytes equal99FE-9A00; same actual ChainObj IDs2/3/4 select paired metatile."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Maps the paired row-13 selector values to $c5, $0c and $89.",
+      "semanticContract": "Existing3 C bytes equal99FE-9A00; same actual ChainObj IDs2/3/4 select paired metatile.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -20395,12 +20452,14 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual CastleBridgeObj/AxeObj/ChainObj decoder vector children reach paired table reads before ColObj and RenderUnderPart; preserve vector scratch04-07."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Uses decoder selector minus two to select the paired chain row and metatile before tail-entering one-column rendering.",
+      "semanticContract": "Actual CastleBridgeObj/AxeObj/ChainObj decoder vector children reach paired table reads before ColObj and RenderUnderPart; preserve vector scratch04-07.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -20452,12 +20511,14 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing4 C bytes equal9A25-9A28; actual row and column select AreaType0-3; row uses length initialization, column uses vertical extent."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Maps the four area types to $69, $61, $61 and $62.",
+      "semanticContract": "Existing4 C bytes equal9A25-9A28; actual row and column select AreaType0-3; row uses length initialization, column uses vertical extent.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -20471,12 +20532,14 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and named shared area helper",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing5 C bytes equal9A29-9A2D; actual row overrides to4 only for CloudTypeOverride!=0, column always AreaType0-3."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
       ],
-      "semanticContract": "Maps area types to brick values and retains $88 solely for the cloud row override.",
+      "semanticContract": "Existing5 C bytes equal9A29-9A2D; actual row overrides to4 only for CloudTypeOverride!=0, column always AreaType0-3.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]

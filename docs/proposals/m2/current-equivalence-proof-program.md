@@ -423,3 +423,13 @@ diff after original dispatch scratch/descending swap/task INC repairs;
 T69 open,S6 next unadmitted.190 feasible controls/43 enumerated material plus
 explicit M alias fetch-order scope and integrated certification remain;node
 numerator alone cannot close M2 or assert whole-game/all-state equivalence.
+
+## Current checkpoint after T69 S6
+
+[T69 S6](t69-cross-cohort-current-proof.md) closes9 material relations,18
+existing nodes rechecked with zero fresh node/control credit.Current1992/1992
+scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),521/555 material
+partial;historical1992/1992 separate.67584 original roots per width equal,
+9 tests each/purity/current builds/OpenNT link pass,3 EXEs refreshed after
+shared text and parser-vector-state repair.T69 open,S7 next unadmitted;
+190 controls/34 material and earlier M alias scope plus integrated proof remain.

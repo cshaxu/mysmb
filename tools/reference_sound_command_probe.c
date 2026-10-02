@@ -83,6 +83,29 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==65u){
+        /* Unchanged level pairs, through three resident parser slots and the
+         * real DecodeAreaData vector. No ROM or child call is substituted. */
+        static const unsigned short pairs[8]={0xa2d7u,0xa209u,0xa203u,0xa201u,
+            0xa1b1u,0xa1bdu,0xa2f1u,0xa35eu};
+        static const unsigned char foreground[4]={0u,0x17u,0xc0u,0x54u};
+        unsigned int j,address=pairs[n&7u];
+        m->ram[0xe7u]=(unsigned char)address;
+        m->ram[0xe8u]=(unsigned char)(address>>8u);
+        m->ram[0x74eu]=(unsigned char)((n>>3u)&3u);
+        m->ram[0x743u]=(unsigned char)((n>>5u)&1u);
+        for(j=0u;j<3u;++j)m->ram[0x730u+j]=(unsigned char)((n>>6u)&7u);
+        for(j=0u;j<13u;++j)m->ram[0x6a1u+j]=foreground[(n>>9u)&3u];
+    }else if(mode==64u){
+        unsigned int j;
+        for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
+        m->ram[0x300u]=(unsigned char)p;
+        m->ram[0x77au]=(unsigned char)((p&2u)?0xffu:0u);
+        m->ram[0x753u]=(unsigned char)p;
+        m->ram[0x770u]=(unsigned char)((p&4u)?3u:1u);
+        m->ram[0x75au]=(unsigned char)(n*13u+p);
+        m->ram[0x75fu]=(unsigned char)(p&7u);
+        m->ram[0x75cu]=(unsigned char)(n&3u);
     }else if(mode==62u||mode==63u){
         unsigned int j;
         for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
@@ -303,7 +326,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>63u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>65u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -354,6 +377,8 @@ int main(int argc,char **argv)
         if(mode==61u)entry=0x9131u;
         if(mode==62u)entry=0x91cdu;
         if(mode==63u)entry=0x9218u;
+        if(mode==64u)entry=0x8808u;
+        if(mode==65u)entry=0x9508u;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -374,6 +399,26 @@ int main(int argc,char **argv)
                 ++setup_reads[0][0x90e7u+d->machine->y];
             if(mode==62u&&pc==0x91f6u&&op==0xbcu)
                 ++setup_reads[0][0x91bdu+d->machine->x];
+            if(mode==65u&&pc>=0x99edu&&pc<0x9a69u&&(op==0xb9u||op==0xbeu)){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                unsigned int kind=5u;
+                if(base==0x99eeu)kind=0u;
+                else if(base==0x99f9u)kind=1u;
+                else if(base==0x99fcu)kind=2u;
+                else if(base==0x9a25u)kind=3u;
+                else if(base==0x9a29u)kind=4u;
+                if(kind<5u)++lookup_reads[kind][base+d->machine->y];
+            }
+            if(mode==64u&&pc>=0x8808u&&pc<0x889fu&&(op==0xb9u||op==0xbdu||op==0xbeu)){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                unsigned int offset=op==0xbdu?d->machine->x:d->machine->y;
+                unsigned int kind=4u;
+                if(base==0x87feu)kind=0u;
+                else if(base==0x8752u)kind=1u;
+                else if(base==0x87edu)kind=2u;
+                else if(base==0x87f2u)kind=3u;
+                if(kind<4u)++lookup_reads[kind][base+offset];
+            }
             if(mode==61u&&pc>=0x9131u&&pc<0x91beu&&(op==0xb9u||op==0xbdu||op==0xbeu)){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 unsigned int offset=op==0xbdu?d->machine->x:d->machine->y;

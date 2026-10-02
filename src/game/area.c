@@ -3,6 +3,7 @@
 #include "game/enemy/init.h"
 #include "game/objects.h"
 #include "game/status.h"
+#include "game/frame_root.h"
 
 enum {
     MYSMB_AREA_CANNON_OFFSET = 0x046aU,
@@ -384,40 +385,35 @@ mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)
 {
     mysmb_u8 offset_index;
     mysmb_u16 source;
+    mysmb_u8 text_index;
     mysmb_u8 offset;
     mysmb_u8 index;
     mysmb_u8 name_player;
 
-    if (game->area_prg == 0 || game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U ||
+    if (game->area_prg == 0 ||
         game->area_prg_size <= MYSMB_AREA_GAME_TEXT_OFFSETS + 9U) return 0U;
-    if (selector < 2U) {
-        offset_index = (mysmb_u8)(selector << 1U);
-    }
-    else if (selector < 4U) {
-        offset_index = (mysmb_u8)(selector << 1U);
+    /* ASL/TAY wrap before CPY chooses the offset, including high selectors. */
+    offset_index = (mysmb_u8)(selector << 1U);
+    if (offset_index >= 4U) {
+        if (offset_index >= 8U) offset_index = 8U;
         if (game->ram[0x077aU] == 0U) offset_index++;
     }
-    else {
-        offset_index = 8U;
-    }
-    source = (mysmb_u16)(MYSMB_AREA_GAME_TEXT +
-        game->area_prg[MYSMB_AREA_GAME_TEXT_OFFSETS + offset_index]);
+    text_index = game->area_prg[MYSMB_AREA_GAME_TEXT_OFFSETS + offset_index];
     offset = 0U;
-    while (source < game->area_prg_size && game->area_prg[source] != 0xffU) {
-        if (offset == 0xffU) return 0U;
+    do {
+        source = (mysmb_u16)(MYSMB_AREA_GAME_TEXT + text_index);
+        if (source >= game->area_prg_size) return 0U;
+        if (game->area_prg[source] == 0xffU) break;
         game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] =
             game->area_prg[source];
-        source++;
+        text_index++;
         offset++;
-    }
-    if (source >= game->area_prg_size) return 0U;
+    } while (offset != 0U);
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
     if (selector == 1U) {
         mysmb_u8 lives;
 
-        if (offset <= 21U) return 0U;
-        /* ROM EndGameText adds one to NumberofLives, and for ten or more
-         * writes a crown at Buffer1+7 before placing the remaining digit. */
+        /* EndGameText adds one as a byte, then subtracts ten once. */
         lives = (mysmb_u8)(game->ram[0x075aU] + 1U);
         if (lives >= 10U) {
             lives = (mysmb_u8)(lives - 10U);
@@ -429,37 +425,32 @@ mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)
         game->ram[MYSMB_AREA_VRAM_BUFFER1 + 21U] =
             (mysmb_u8)(game->ram[MYSMB_AREA_LEVEL_NUMBER] + 1U);
     }
-    /* EndGameText routes selectors 0, 2 and 3 through CheckPlayerName.
-     * TIME UP flips the current player unless this is Game Over; the other
-     * two selectors use CurrentPlayer unchanged. */
     if (selector != 1U && selector < 4U && game->ram[0x077aU] != 0U) {
         name_player = game->ram[MYSMB_AREA_CURRENT_PLAYER];
         if (selector == 2U && game->ram[0x0770U] != 3U)
             name_player ^= 1U;
-        if (name_player != 0U) {
-            if (offset <= 7U || game->area_prg_size <= MYSMB_AREA_LUIGI_NAME + 4U)
-                return 0U;
-            for (index = 0U; index < 5U; ++index) {
+        /* LSR tests only bit zero; NameLoop writes descending indices. */
+        if ((name_player & 1U) != 0U) {
+            if (game->area_prg_size <= MYSMB_AREA_LUIGI_NAME + 4U) return 0U;
+            index = 5U;
+            do {
+                index--;
                 game->ram[MYSMB_AREA_VRAM_BUFFER1 + 3U + index] =
                     game->area_prg[MYSMB_AREA_LUIGI_NAME + index];
-            }
+            } while (index != 0U);
         }
     }
     if (selector >= 4U) {
-        if (selector > 6U || offset <= 38U ||
-            game->area_prg_size <= MYSMB_AREA_WARP_ZONE_NUMBERS +
-            (mysmb_u16)(selector - 4U) * 4U + 2U) return 0U;
+        text_index = (mysmb_u8)((selector - 4U) << 2U);
         for (index = 0U; index < 3U; ++index) {
+            source = (mysmb_u16)(MYSMB_AREA_WARP_ZONE_NUMBERS + text_index);
+            if (source >= game->area_prg_size) return 0U;
             game->ram[MYSMB_AREA_VRAM_BUFFER1 + 27U + (mysmb_u16)index * 4U] =
-                game->area_prg[MYSMB_AREA_WARP_ZONE_NUMBERS +
-                    (mysmb_u16)(selector - 4U) * 4U + index];
+                game->area_prg[source];
+            text_index++;
         }
-        offset = 0x2cU;
-        game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset] = 0U;
-        /* WriteGameText calls SetVRAMOffset only after it patches a warp
-         * zone.  Other text streams leave $0300 unchanged; NMI consumes
-         * their terminator from $0301. */
-        game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+        /* SetVRAMOffset changes $0300, not the previously copied terminator. */
+        game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = 0x2cU;
     }
     return 1U;
 }
@@ -1257,7 +1248,7 @@ static void mysmb_area_balance_platform_rope(struct mysmb_game *game)
     mysmb_area_draw_rope(game, 1U, height);
 }
 
-/* ROM $99ed-$99f5 CoinMetatileData and RowOfCoins.  The four entries are
+/* ROM $99ee-$99fa CoinMetatileData and RowOfCoins.  The four entries are
  * selected only by AreaType; GetRow remains the separately owned common
  * length/row renderer that this selector tail-calls in the original. */
 static const mysmb_u8 mysmb_area_coin_metatile_data[4] = {
@@ -1956,6 +1947,10 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                     }
                     game->ram[0x0007U] = dispatch_offset;
                     game->ram[0x0000U] = object_id;
+                    /* RunAObj's inline vector leaves JumpEngine scratch
+                     * before the selected native object handler executes. */
+                    mysmb_game_jump_engine_state(game, 0x9666U,
+                        (mysmb_u8)(object_id + dispatch_offset));
                     mysmb_area_apply_parser_object(game, slot, first, second);
                     if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
                         game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;

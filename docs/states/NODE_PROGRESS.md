@@ -1,12 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S6 - active text/scenery material consumer proof
+## M2 T69 S6 - closed text/scenery actual-consumer chain
 
-[Exact18 already-exact labels/9 pending material rows](../proposals/m2/t69-cross-cohort-current-proof.md)
-intended fresh nodes0,max1992/1992. Current1992/1992 scoped-exact nodes,
-4087/4277 controls(raw4342,infeasible65),512/555 material partial;
-historical1992/1992 separate. Both proof tracks required before material credit.
-S7 remains unadmitted;M2 not certified by the node numerator.
+[All9 material relations/18 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+close with zero fresh nodes/controls.Current1992/1992 scoped-exact nodes,
+4087/4277 controls(raw4342,infeasible65),521/555 material partial;
+historical1992/1992 separate.67584 original roots each width zero diff after
+text and real parser-vector-state repairs;9 focused tests each/purity/current
+builds/OpenNT link pass,3 EXEs refreshed.No scoped deferral.T69 open,S7 next
+unadmitted;190 controls/34 enumerated material and M alias scope plus integrated
+certification remain.Node numerator alone cannot certify whole-game equivalence.
 
 ## M2 T69 S5 - closed life/game-over/player transpose chain
 
