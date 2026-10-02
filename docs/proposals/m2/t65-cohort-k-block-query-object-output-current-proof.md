@@ -979,3 +979,84 @@ Admission/closure ledger and documentation gates are rerun. Raw134545420-byte
 records and local probe executable are removed after successful checks;
 only neutral source harnesses and summaries are retained. S8 closes only its
 own35 labels/83 feasible controls/five material rows. M2 and T65 remain open.
+
+## S9 admission - enemy flip, mirror, offscreen and helper graph
+
+Scope is exactly the22 labels in the unchanged S9 plan, all incoming
+needs-evidence. Intended fresh current22, maximum1601/1992 from1579.
+Historical expectedMatches empty; baseline/maximum1992. Maintenance custody
+retained. Entry SkipToOffScrChk/CheckForVerticalFlip and direct original row
+entries; exit ExEGHandler or actual DrawSpriteObject/DumpTwoSpr return.
+
+Internal pending controls:02921-02976,04011-04013,04015-04019 (64).
+Already exact04001/04010 remain unchanged. External04022 DrawOneSpriteRow
+->DBlkLoop is proved with S10's caller,04041 ->DrawPlayerLoop with T66's
+caller; no transfer or promotion is inferred. Invoke existing dump/sprite/
+erase dependencies; meaningful MoveColOffscreen repair may be needed by the
+admitted column helper without promoting S10's own node. S8 is closed,
+S10 follows only after S9 closes. Material enumeration remains partial.
+
+ROM-logic track: audit actual branch/return and ordered RAM reads/writes,
+then compare full original output and child inputs/returns. Include all256
+OAM byte offsets and all256 offscreen masks, flip/type/state alternatives,
+retainer write-before-mirror, Lakitu timer/flip, and spring attribute stores.
+Do not reuse S8's two sampled OAM offsets as proof of every helper boundary.
+Operational track separately verifies focused sprite/actor/core/audio/pause/
+purity tests, current C90 x86/x64 builds, original OpenNT DOS16 link and three
+packages for product-code P work. Only neutral harnesses/summaries tracked.
+Original owner ROM/local ASM remain nonredistributable research inputs;
+ignored build/m2-t65-s9 owns192MiB raw cap,120seconds/run,524288steps/case,
+checkpoints and coordinator cleanup after closure.
+
+### S9 initial source findings
+
+| Exact nodes | Source/native difference and corrective direction |
+| --- | --- |
+| CheckForVerticalFlip | Original calls DumpSixSpr with byte-wrapped Y+2; native writes six attributes through an invented loop. Restore the actual call and Y arithmetic. |
+| FlipEnemyVertically | Original saves both tiles, stores third-row left/right, then restores right/left; native completes one side before the other. Restore read/write order. |
+| CheckForESymmetry; ContES; ESRtnr; SpnySC | Predicates are merged in native C; prove each original route, preserve retainer's bottom-right42 write before any mirror overwrite. |
+| MirrorEnemyGfx; EggExc | Original writes three left attributes before three right attributes; native interleaves sides. Preserve store order and state4 lower-row exception. |
+| CheckToMirrorLakitu; NVFLak; CheckToMirrorJSpring | Timer16/vertical-flip and spring lower-row stores exist; need all predicates and ordered output proof. Raw Lakitu fallthrough02951 and Bowser mirror branch02942 require source-reachability review, not presumed coverage. |
+| SprObjectOffscrChk; LcChk; Row3C; Row23C; AllRowC | Native raw clipping loop replaces the original right-column,left-column,third-row,second-row,first-row calls. Restore actual helpers and order, then preserve the final non-Podoboo/highY2 erase guard. |
+| ExEGHandler; SkipToOffScrChk | Prove shared entry/exit and no duplicated erase or alternate renderer. |
+| DrawEnemyObjRow; DrawOneSpriteRow | Actual indexed/tail entries restored under S8/S7; fresh S9 direct/child proof is still required, with no inherited automatic node credit. |
+| MoveESprRowOffscreen; MoveESprColOffscreen | Missing native meaningful entries. Restore byte add to Enemy_SprDataOffset and actual DumpTwoSpr / MoveColOffscreen leaf calls. Raw loop's per-row wrapping differs from original absolute stores for high OAM offsets; confirm with controlled ROM inputs. |
+
+Similar-issue sweep includes canonical enemy and powerup consumers, original
+helper leaves, and raw clipping users in retained legacy aggregate facades.
+No product repair has been made by this audit P. Eleven nodes and eight missing
+call/jump relations are registered mismatch; remaining predicates and wrap
+cases stay needs-evidence until original-ROM comparison. Exact totals remain
+1579/1992 nodes,3359/4319 feasible controls,389/492 material partial.
+
+### S9 P1 controlled wrap baseline and admission review
+
+The S8 neutral original EnemyGfxHandler family probe is reused locally with
+only its OAM fixture selector changed from the two20/E8 samples to the case
+index low byte. This covers all256 OAM offsets across8192 controlled roots,
+not the complete OAM/mask Cartesian product planned for corrective proof.
+Original count24351 actual row returns and75 Piranha early exits are retained.
+The134545420-byte raw batch stays beneath ignored build/m2-t65-s9, within
+the192MiB active budget. Its copied harness and compiler outputs stay local.
+
+Both current x86/x64 whole-root and independent row-input/return checkers
+report2600 mismatching comparisons, with recorded early differences in the
+post-row RAM output near0300. This confirms the static high-OAM wrap finding;
+it is not2600 distinct gameplay bugs and does not establish a natural game
+allocator reaches every injected offset. The source contract must still
+preserve original byte arithmetic and absolute stores. No expectation is
+relaxed, and no partial route pass earns node/edge credit.
+
+Three additional definite source-action mismatches are registered:
+FlipEnemyVertically reads/stores the two sides in a different order,
+MirrorEnemyGfx interleaves left/right stores instead of three left then three
+right, and ESRtnr omits the retainer42 store when the subsequent mirror path
+will overwrite it. Final pixel equality alone cannot excuse those missing
+ordered node actions. In total eleven scoped nodes/eight control relations
+are mismatch; the other scoped labels remain needs-evidence.
+
+Admission validation accepts22 exact labels with historical baseline/maximum
+1992 and zero expected historical additions; ledger custody remains complete
+with no transfers. Documentation governance and whitespace checks pass.
+This P changes audit/governance records only, so three committed S8 packages
+remain the delivery. S9 is admitted and unfinished; S10 is not admitted.
