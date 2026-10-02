@@ -1,5 +1,13 @@
 # M2 ROM conformance node progress
 
+## M2 T67 S6 - active census/integration
+
+[Exact126-node census and combined original routes](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+admits126 already-exact nodes, expected fresh0/max1842/1992. Current1842/1992
+nodes,3915/4286 controls(raw4342,infeasible56),408/493 material partial;
+historical1992/1992 separate. T67 remains open until member/cross-chain and
+integrated operational evidence agree; no later cohort admission.
+
 ## M2 T67 S5 - closed music-prefix chain
 
 [All27 labels/82 raw controls and repairs](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)

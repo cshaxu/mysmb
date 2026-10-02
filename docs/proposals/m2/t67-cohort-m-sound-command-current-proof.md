@@ -825,3 +825,29 @@ Neutral ignored evidence under build/m2-t67-s5: modes22-27, route/coverage
 summaries, pre-fix terminal diff, final tests/builds/header-table/DOS16 logs.
 Raw removed per batch, probe removed at closure. Registry/ledger/progress/docs
 gates required before P2 commit; unrelated owner work remains unstaged.
+
+## S6 admission - full M census and SoundEngine integration
+
+Scope126 already-exact labels, current fresh expected set empty/max1842/1992:
+SoundEngine; SndOn; InPause; PTone1F; ContPau; PTone2F; PTRegC; DecPauC; SkipPIn; RunSoundSubroutines; SkipSoundSubroutines; NoIncDAC; StrWave; Dump_Squ1_Regs; PlaySqu1Sfx; SetFreq_Squ1; Dump_Freq_Regs; NoTone; Dump_Sq2_Regs; PlaySqu2Sfx; SetFreq_Squ2; SetFreq_Tri; SwimStompEnvelopeData; PlayFlagpoleSlide; PlaySmallJump; PlayBigJump; JumpRegContents; ContinueSndJump; N2Prt; FPS2nd; DmpJpFPS; PlayFireballThrow; PlayBump; Fthrow; ContinueBumpThrow; DecJpFPS; Square1SfxHandler; CheckSfx1Buffer; ExS1H; PlaySwimStomp; ContinueSwimStomp; BranchToDecLength1; PlaySmackEnemy; ContinueSmackEnemy; SmSpc; SmTick; DecrementSfx1Length; StopSquare1Sfx; ExSfx1; PlayPipeDownInj; ContinuePipeDownInj; NoPDwnL; ExtraLifeFreqData; PowerUpGrabFreqData; PUp_VGrow_FreqData; PlayCoinGrab; PlayTimerTick; CGrab_TTickRegL; ContinueCGrabTTick; N2Tone; PlayBlast; ContinueBlast; SBlasJ; PlayPowerUpGrab; ContinuePowerUpGrab; LoadSqu2Regs; DecrementSfx2Length; EmptySfx2Buffer; StopSquare2Sfx; ExSfx2; Square2SfxHandler; CheckSfx2Buffer; ExS2H; Cont_CGrab_TTick; JumpToDecLength2; PlayBowserFall; BlstSJp; ContinueBowserFall; PBFRegs; EL_LRegs; PlayExtraLife; ContinueExtraLife; DivLLoop; PlayGrowPowerUp; PlayGrowVine; GrowItemRegs; ContinueGrowItems; StopGrowItems; BrickShatterFreqData; PlayBrickShatter; ContinueBrickShatter; PlayNoiseSfx; DecrementSfx3Length; ExSfx3; NoiseSfxHandler; CheckNoiseBuffer; ExNH; PlayBowserFlame; ContinueBowserFlame; ContinueMusic; MusicHandler; LoadEventMusic; NoStopSfx; LoadAreaMusic; NoStop1; GMLoopB; HandleAreaMusicLoopB; FindAreaMusicHeader; FindEventMusicHeader; LoadHeader; HandleSquare2Music; EndOfMusicData; NotTRO; MusicLoopBack; VictoryMLoopBack; Squ2LengthHandler; Squ2NoteHandler; Rest; SkipFqL1; MiscSqu2MusicTasks; NoDecEnv1; HandleSquare1Music; FetchSqu1MusicData; Squ1NoteHandler; SkipCtrlL; MiscSqu1MusicTasks. Exact same126 labels as S1-S5 plan; no extra node credit.
+Current1842/1992 nodes,3915/4286 feasible controls(raw4342,infeasible56),
+408/493 material partial; historical1992/1992 separately expectedMatches empty.
+
+Shared audio.c; accepted S1-S5 are predecessors. Census requires126 exact
+nodes,266 exact feasible M controls plus30 instruction-proven impossible
+raw controls,5 exact M material rows. Verify every prior acceptance and
+caller/data boundary remains mapped; incoming external owners remain explicit
+for cross-cohort work. Later N consumers execute as actual callees, not mocks,
+without N promotion. Existing source contracts and per-member route proofs
+are acceptance prerequisites, not recreated as fresh node accomplishments.
+
+ROM track: Unchanged complete F2D0 SoundEngine/real channel and music calls/real RTS:65536 paired Square1/Square2 queue bytes with noise/music mixtures,8192 title/pause profiles; full1841 RAM/24 APU/ordered writes x86/x64, actual channel call order/returns. Census all126 nodes/296 raw controls/5 material rows and accepted S1-S5 exact proof without rerunning member matrices.
+Operational: final full x86/x64 builds/248-test regressions, original OpenNT
+DOS16 link/purity. Product repair refreshes3 owner-authorized EXEs; otherwise
+verify existing S5 products against committed bytes and retain. Every feasible
+integration diff repaired/rechecked inside S6 before T closure. Sweep sibling
+channel ordering, music overwrite/effect protection, pause bypass, terminal
+queue clearing and common output-stream custody. Original owner-local ROM/ASM
+remain nonredistributable; all local evidence under ignored build/m2-t67-s6,
+128MiB raw budget,1024 roots/batch,120seconds/process,524288steps/root and
+per-batch raw cleanup. No platform gameplay change or third-party import.
