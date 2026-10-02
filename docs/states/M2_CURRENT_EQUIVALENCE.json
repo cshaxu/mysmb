@@ -39144,13 +39144,16 @@
       "label": "FireballBGCollision",
       "asmLine": 12751,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c",
       "currentCounterpart": "mysmb_world_fireball_background_collision",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Checks status-bar Y first, probes the fireball bottom, clears bounce for no/non-solid tile, explodes on upward speed or a set bounce flag, otherwise assigns speed $fd, sets bounce and aligns Y to an $f8 boundary.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -39161,13 +39164,16 @@
       "label": "ClearBounceFlag",
       "asmLine": 12772,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c",
       "currentCounterpart": "mysmb_world_clear_fireball_bounce",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Clears FireballBouncingFlag and returns.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -39177,13 +39183,16 @@
       "label": "InitFireballExplode",
       "asmLine": 12777,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c",
       "currentCounterpart": "mysmb_world_init_fireball_explode",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Sets Fireball_State to $80, queues Sfx_Bump on Square1SoundQueue, and returns.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -105755,12 +105764,15 @@
       "instruction": "bcc",
       "id": "control-02700",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ClearBounceFlag, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -105775,12 +105787,15 @@
       "instruction": "jsr",
       "id": "control-02701",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision call relation FireballBGCollision \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 BlockBufferChk_FBall, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -105795,12 +105810,15 @@
       "instruction": "beq",
       "id": "control-02702",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ClearBounceFlag, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -105815,12 +105833,15 @@
       "instruction": "jsr",
       "id": "control-02703",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision call relation FireballBGCollision \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ChkForNonSolids, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -105836,12 +105857,15 @@
       "instruction": "beq",
       "id": "control-02704",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ClearBounceFlag, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -105856,12 +105880,15 @@
       "instruction": "bmi",
       "id": "control-02705",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InitFireballExplode, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -105876,12 +105903,15 @@
       "instruction": "bne",
       "id": "control-02706",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InitFireballExplode, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -131971,12 +132001,15 @@
       "instruction": "rts/rti",
       "id": "control-03991",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision return relation BlockBufferChk_FBall \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 FireballBGCollision, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",
@@ -131991,12 +132024,15 @@
       "instruction": "rts/rti",
       "id": "control-03992",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+      ],
       "semanticContract": "Preserves FireballBGCollision return relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 FireballBGCollision, including source tile/Z or signed-speed predicate and ordered state/sound handoff.",
       "currentSourcePaths": [
         "src/game/fireball/fireball_core.c",

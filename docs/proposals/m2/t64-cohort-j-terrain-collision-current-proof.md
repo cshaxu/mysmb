@@ -1094,3 +1094,47 @@ S30 marks `ChkForNonSolids`, `NSFnd`, and `control-02695` through
 audits. Current totals: historical **1,992 / 1,992**; current exact nodes
 **1,452 / 1,992**; current exact feasible controls **3,043 / 4,324** (raw
 **4,342**, infeasible **18**).
+
+## S31 admission — fireball background collision chain
+
+S31 admits `$E1C8-$E1F0`: `FireballBGCollision`, `ClearBounceFlag` and
+`InitFireballExplode`, all owned by `src/game/world/collision.c`. S30 supplies
+the non-solid predicate; S32 begins the bounding-box data boundary. The ROM
+logic track proves the status-bar BCC, bottom-probe call/return, empty and
+non-solid clear paths, signed Y-speed explosion path, set-bounce explosion
+path, and ordered `$fd` speed/bounce/Y-alignment writes. The operational track
+uses controlled original-ROM direct entries and x86/x64 RAM checks, focused
+fireball tests, platform purity and the shared DOS16 link. Product artifacts
+refresh only if shared product C changes.
+
+- Historical mapping: **1,992 / 1,992**.
+- Incoming current exact: **1,452 / 1,992** nodes and **3,043 / 4,324**
+  feasible controls (raw **4,342**, infeasible **18**).
+- Scope: `FireballBGCollision`, `ClearBounceFlag`, `InitFireballExplode`;
+  expected current matches: **3**; maximum **1,455 / 1,992**.
+
+## S31 closure — fireball background collision chain
+
+All three scoped labels are current-exact: `FireballBGCollision`,
+`ClearBounceFlag` and `InitFireballExplode`. Static `$E1C8-$E1F0` comparison
+confirms the status-bar BCC, the ordered `BlockBufferChk_FBall` and
+`ChkForNonSolids` calls/returns, empty/non-solid clear paths, signed-Y-speed
+and set-bounce explosion branches, then the downward `$fd` speed write,
+bounce set and `$f8` Y alignment. The helper writes match the source exactly:
+clear writes only `FireballBouncingFlag`; explode writes `$80` state then
+`Sfx_Bump` to Square1.
+
+Seven controlled original-ROM direct entries cover status-bar, empty, non-solid,
+first solid bounce, upward-solid explosion, repeated-solid explosion and the
+final non-solid table member. The x86/x64 actual check compares every
+source-visible write in each record with zero differences. Fireball OAM smoke
+and platform-purity CTests pass on both widths; the OpenNT DOS16 shared-source
+link completes. The similar-issue sweep found no duplicate fireball-background
+predicate or host-side game branch. Product C did not change, so the three
+package EXEs intentionally remain the S29 artifacts.
+
+S31 records nodes `FireballBGCollision`, `ClearBounceFlag` and
+`InitFireballExplode`, plus feasible controls `control-02700` through
+`control-02706`, `control-03991` and `control-03992`, exact. Current totals:
+historical **1,992 / 1,992**; current exact nodes **1,455 / 1,992**; current
+exact feasible controls **3,052 / 4,324** (raw **4,342**, infeasible **18**).
