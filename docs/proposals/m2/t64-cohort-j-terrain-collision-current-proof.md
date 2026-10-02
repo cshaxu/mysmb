@@ -178,3 +178,27 @@ link.
 - Scope: **3** labels; expected fresh historical matches: **0**; maximum
   historical complete: **1,992 / 1,992**.
 - Current-exact promotions are determined only after both audit tracks finish.
+
+## S4 closure — hammer-player contact
+
+All three scoped nodes are current-exact: `PlayerHammerCollision`, `ClHCol`
+and `ExPHC`. Static `$D7C4-$D7FF` comparison found no shared-C difference:
+frame parity is active only on odd frames; the TimerControl and hammer
+offscreen bytes form the source OR gate; the geometry box is `slot*4+$24`;
+ObjectOffset is reloaded after geometry; a miss clears its live slot latch; and
+a new hit latches, two-complement reverses speed, then uses the post-response
+star guard before the injury tail.
+
+The retained controlled original-ROM contact route ran 288 records through one
+x86 and one x64 native process, comparing full mapped RAM and recorded geometry
+and injury child calls, with zero differences. The strengthened snapshot runner
+now accepts a manifest, so each width handles the complete record family in one
+process. The focused contact contract, platform purity and OpenNT DOS16 shared
+source link pass. Product C did not change, so package artifacts were not
+refreshed.
+
+S4 marks three nodes, eight source-owned controls (`control-02236` through
+`control-02243`) and three material handoffs (`material-00346`,
+`material-00348`, `material-00349`) exact. Current totals: historical
+**1,992 / 1,992**; current exact nodes **1,252 / 1,992**; current exact
+feasible controls **2,529 / 4,324** (raw **4,342**, infeasible **18**).
