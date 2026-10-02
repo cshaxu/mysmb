@@ -5,6 +5,7 @@
 #include "game/ppu_frame.h"
 #include "platform/startup_timing.h"
 #include "platform/win32/audio_output.h"
+#include "platform/win32/focus_pause.h"
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
@@ -26,6 +27,7 @@ static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
 static struct mysmb_win32_audio_output g_audio_output;
+static struct mysmb_win32_focus_pause g_focus_pause;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static mysmb_u8 g_startup_vblank_waits;
@@ -197,6 +199,7 @@ static void mysmb_win32_step(HWND window)
     LONGLONG elapsed;
     LONGLONG frame_period;
     struct mysmb_input input;
+    mysmb_u8 physical_buttons;
     unsigned int steps;
 
     QueryPerformanceCounter(&now);
@@ -210,12 +213,19 @@ static void mysmb_win32_step(HWND window)
     }
     if (mysmb_win32_start_game() == 0) return;
 
-    input.buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
+    if (g_focus_pause.focused != 0U && GetForegroundWindow() != window)
+        mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
+    physical_buttons = 0U;
+    if (g_focus_pause.focused != 0U)
+        physical_buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
     input.buttons2 = 0U;
     steps = 0U;
     do {
+        input.buttons = mysmb_win32_focus_pause_buttons(&g_focus_pause,
+                                                        &g_game, physical_buttons);
         g_last_tick.QuadPart += frame_period;
         mysmb_game_tick(&g_game, &input, &g_frame);
+        mysmb_win32_focus_pause_after_tick(&g_focus_pause, &g_game);
         mysmb_win32_audio_submit(&g_audio_output, &g_game);
         ++steps;
         elapsed = now.QuadPart - g_last_tick.QuadPart;
@@ -231,8 +241,15 @@ static void mysmb_win32_step(HWND window)
 static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
                                                   WPARAM w_param, LPARAM l_param)
 {
-    (void)w_param;
     (void)l_param;
+    if (message == WM_KILLFOCUS ||
+        (message == WM_ACTIVATEAPP && w_param == 0U)) {
+        mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
+    }
+    if (message == WM_SETFOCUS ||
+        (message == WM_ACTIVATEAPP && w_param != 0U && GetFocus() == window)) {
+        mysmb_win32_focus_pause_gained(&g_focus_pause);
+    }
     if (message == WM_PAINT) {
         mysmb_win32_paint(window);
         return 0;
@@ -279,6 +296,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     QueryPerformanceCounter(&g_last_tick);
     g_startup_vblank_waits = MYSMB_PLATFORM_STARTUP_VBLANK_COUNT;
     g_game_started = 0U;
+    mysmb_win32_focus_pause_initialize(&g_focus_pause);
     mysmb_win32_power_on();
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
                           CW_USEDEFAULT, CW_USEDEFAULT,

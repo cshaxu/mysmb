@@ -1,13 +1,8 @@
-# M2 candidate: Win32 focus-loss pause
+# M2 delivered: Win32 focus-loss pause
 
-## Purpose and queue status
+## Purpose and completed status
 
-The owner requests that losing focus in the Win32 x86/x64 game pause the
-ongoing game as an Enter/START press would. Regaining focus must not resume it;
-the player must release and press Enter again. If Enter does not mean pause in
-the current game state, focus loss must not create a START action. This is one
-unnumbered future T candidate. It is not part of the active current-equivalence
-packet, and its planned S slots are not admitted work.
+The delivered feature pauses a running Win32 x86/x64 game on focus loss through the same shared START/pause path. Regaining focus leaves it paused; the player must release and press Enter again. If Enter does not mean pause in the current game state, focus loss creates no START action. It remains separate from the active current-equivalence packet.
 
 The present `src/platform/win32/main_win32.c` polls `GetAsyncKeyState` every
 frame, maps Enter to `MYSMB_BUTTON_START`, and has no focus handling. The shared
@@ -100,5 +95,20 @@ messages, physical-key filtering and neutral input delivery. The proposal
 introduces no ROM or third-party material. Record the original focus state,
 mode/task, pause eligibility, pending state, injected input count, resulting
 pause state and x86/x64 outcome in neutral test evidence. Keep temporary logs
-and build outputs below ignored `build/`. Do not treat a queued proposal as an
-implemented or admitted feature.
+and build outputs below ignored `build/`. This historical record describes the delivered feature.
+
+## Delivery record
+
+Delivered outside the current source-order T64 proof packet as the owner-approved
+Win32 host-input correction. The shared game exposes only a read-only pause
+eligibility query; the Win32 adapter owns focus messages, physical-key
+suppression, the pending one-shot START delivery, and resume re-arming.
+
+The owner manually verified title behavior and focus loss/restore. Automated
+x86 and x64 evidence: `mysmb.win32-focus-pause-smoke`,
+`mysmb.pause-root-smoke`, `mysmb.audio-smoke`,
+`mysmb.win32-audio-renderer-smoke`, `mysmb.win32-audio-output-smoke`, and
+`mysmb.platform-purity` all pass. A fresh OpenNT large-model link produced the
+DOS16 package from the unchanged shared game path. The three local artifacts
+were refreshed as `assets/mysmb16.exe`, `assets/mysmb32.exe`, and
+`assets/mysmb64.exe`.

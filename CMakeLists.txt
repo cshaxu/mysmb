@@ -905,8 +905,16 @@ if(WIN32)
 
     add_executable(mysmb_win32 WIN32 src/platform/win32/main_win32.c
         src/platform/win32/audio_output.c
-        src/platform/win32/audio_renderer.c)
+        src/platform/win32/audio_renderer.c
+        src/platform/win32/focus_pause.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_game user32 gdi32 winmm)
+    add_executable(mysmb_win32_focus_pause_smoke
+        test/win32_focus_pause_smoke.c
+        src/platform/win32/focus_pause.c)
+    target_include_directories(mysmb_win32_focus_pause_smoke PRIVATE src)
+    target_link_libraries(mysmb_win32_focus_pause_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.win32-focus-pause-smoke
+        COMMAND mysmb_win32_focus_pause_smoke)
     add_executable(mysmb_win32_audio_renderer_smoke
         test/win32_audio_renderer_smoke.c
         src/platform/win32/audio_renderer.c)

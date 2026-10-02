@@ -160,6 +160,22 @@ void mysmb_frame_root_update_top_score(struct mysmb_game *game)
 {
     mysmb_status_update_top_score(game);
 }
+/* Host-only read of the gates used by the translated PauseRoutine and
+ * ReadJoypads.  It never advances or modifies the game state. */
+mysmb_u8 mysmb_game_pause_input_state(const struct mysmb_game *game)
+{
+    if ((game->ram[MYSMB_ROOT_PAUSE_STATUS] & 1U) != 0U ||
+        (game->ram[MYSMB_ROOT_OPERATING_MODE] != 2U &&
+         (game->ram[MYSMB_ROOT_OPERATING_MODE] != 1U ||
+          game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] != 3U)))
+        return MYSMB_PAUSE_INPUT_UNAVAILABLE;
+    if (game->ram[MYSMB_ROOT_PAUSE_TIMER] != 0U ||
+        (game->ram[MYSMB_ROOT_PAUSE_STATUS] & 0x80U) != 0U ||
+        (game->ram[MYSMB_ROOT_JOYPAD_MASK1] & MYSMB_BUTTON_START) != 0U)
+        return MYSMB_PAUSE_INPUT_WAIT;
+    return MYSMB_PAUSE_INPUT_READY;
+}
+
 /* ROM $821c-$8244 PauseRoutine.  T14 later invokes this at its NMI site. */
 mysmb_u8 mysmb_frame_root_pause_step(struct mysmb_game *game)
 {

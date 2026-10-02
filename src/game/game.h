@@ -155,5 +155,12 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
 /* Read-only translated pause-state query for host presentation.  Adapters
  * consume this neutral state and never inspect CPU-RAM storage directly. */
 mysmb_u8 mysmb_game_is_paused(const struct mysmb_game *game);
+enum {
+    MYSMB_PAUSE_INPUT_UNAVAILABLE = 0,
+    MYSMB_PAUSE_INPUT_WAIT = 1,
+    MYSMB_PAUSE_INPUT_READY = 2
+};
+/* Read-only host query for an automatic START-to-pause request. */
+mysmb_u8 mysmb_game_pause_input_state(const struct mysmb_game *game);
 
 #endif
