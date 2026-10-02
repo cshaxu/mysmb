@@ -1062,3 +1062,35 @@ all three package artifacts were refreshed.
 Current totals: historical **1,992 / 1,992**; current exact nodes **1,450 /
 1,992**; current exact feasible controls **3,038 / 4,324** (raw **4,342**,
 infeasible **18**).
+
+## S30 admission — non-solid metatile predicate
+
+S30 admits `ChkForNonSolids -> NSFnd` at `$E1B5-$E1C6`, owned by
+`src/game/world/metatiles.c:mysmb_world_enemy_metatile_is_non_solid`. S29 is
+the predecessor; S31 begins fireball background collision. The ROM track
+checks the ordered `$26,$c2,$c3,$5f,$60` comparisons, the four equality
+branches, final `$60` fallthrough and Z equality result. The operational track
+uses a direct original-ROM route covering all five matches and three
+non-matches, x86/x64 predicate checks, focused CTests, purity and DOS16 link.
+
+- Incoming current exact: **1,450 / 1,992** nodes and **3,038 / 4,324** feasible controls.
+- Scope: `ChkForNonSolids`, `NSFnd`; expected current matches: **2**; maximum **1,452 / 1,992**.
+
+## S30 closure — non-solid metatile predicate
+
+`ChkForNonSolids` and `NSFnd` are current-exact. Static `$E1B5-$E1C6`
+comparison confirms each immediate operand, all four taken equality branches,
+the `$60` final-comparison fallthrough and direct return. Eight controlled
+original-ROM entries cover all five matching metatiles and three non-matches;
+x86/x64 predicates agree with the returned Z result in every case. The
+similar-issue sweep found one shared membership predicate whose positive C
+return intentionally represents the original Z-set branch; its callers use
+that same polarity. Focused ground-query and platform-purity CTests pass on
+both widths, and OpenNT links DOS16. Product C did not change, so the S29
+package EXEs remain current.
+
+S30 marks `ChkForNonSolids`, `NSFnd`, and `control-02695` through
+`control-02699` exact. Caller return relations remain with their caller-chain
+audits. Current totals: historical **1,992 / 1,992**; current exact nodes
+**1,452 / 1,992**; current exact feasible controls **3,043 / 4,324** (raw
+**4,342**, infeasible **18**).

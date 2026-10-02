@@ -2411,3 +2411,15 @@ feasible controls (raw **4,342**, infeasible **18**).
   were refreshed because product C changed.
 - Current exact progress: nodes **1,449 -> 1,450 / 1,992**; feasible controls
   **3,037 -> 3,038 / 4,324** (raw **4,342**, infeasible **18**).
+
+## M2 T64 S30 — ChkForNonSolids and NSFnd
+
+- Completed: `ChkForNonSolids`, `NSFnd`; no deferred node. Exact controls:
+  `control-02695` through `control-02699`.
+- ROM logic: all five ordered metatile comparisons and their equality/Z result
+  agree with `$E1B5-$E1C6`.
+- Operational: eight direct ROM entries agree with x86/x64; focused ground
+  query and purity CTests pass and OpenNT links DOS16. No product C changed,
+  so package EXEs remain those from S29.
+- Current exact progress: nodes **1,450 -> 1,452 / 1,992**; feasible controls
+  **3,038 -> 3,043 / 4,324** (raw **4,342**, infeasible **18**).

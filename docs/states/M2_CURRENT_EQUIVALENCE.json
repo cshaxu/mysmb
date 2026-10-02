@@ -10534,14 +10534,14 @@
   ],
   "nodeCounts": {
     "unclassified": 0,
-    "exact": 1450,
-    "needs-evidence": 542,
+    "exact": 1452,
+    "needs-evidence": 540,
     "mismatch": 0
   },
   "controlEdgeCounts": {
     "unclassified": 0,
-    "exact": 3038,
-    "needs-evidence": 1286,
+    "exact": 3043,
+    "needs-evidence": 1281,
     "mismatch": 0,
     "infeasible": 18
   },
@@ -39106,13 +39106,16 @@
       "label": "ChkForNonSolids",
       "asmLine": 12737,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c:mysmb_world_enemy_metatile_is_non_solid",
       "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S30: direct  static audit proves the ordered five metatile comparisons, equality branches and final return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S30: eight controlled original-ROM entries agree with current x86/x64 Z-result predicate checks."
+      ],
       "semanticContract": "Compares exactly metatiles $26,$c2,$c3,$5f,$60 and preserves the equality/Z result for callers.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -39122,13 +39125,16 @@
       "label": "NSFnd",
       "asmLine": 12747,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/metatiles.c:mysmb_world_enemy_metatile_is_non_solid",
       "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S30: direct  static audit proves the ordered five metatile comparisons, equality branches and final return."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S30: eight controlled original-ROM entries agree with current x86/x64 Z-result predicate checks."
+      ],
       "semanticContract": "Returns the final non-solid comparison flags without changing the predicate result.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -105639,12 +105645,15 @@
       "instruction": "beq",
       "id": "control-02695",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid equality membership predicate",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S30: direct  static audit proves this ordered equality/fallthrough relation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S30: eight controlled original-ROM inputs cover all branch outcomes on x86/x64."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NSFnd, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -105658,12 +105667,15 @@
       "instruction": "beq",
       "id": "control-02696",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid equality membership predicate",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S30: direct  static audit proves this ordered equality/fallthrough relation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S30: eight controlled original-ROM inputs cover all branch outcomes on x86/x64."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NSFnd, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -105677,12 +105689,15 @@
       "instruction": "beq",
       "id": "control-02697",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid equality membership predicate",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S30: direct  static audit proves this ordered equality/fallthrough relation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S30: eight controlled original-ROM inputs cover all branch outcomes on x86/x64."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NSFnd, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -105696,12 +105711,15 @@
       "instruction": "beq",
       "id": "control-02698",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid equality membership predicate",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S30: direct  static audit proves this ordered equality/fallthrough relation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S30: eight controlled original-ROM inputs cover all branch outcomes on x86/x64."
+      ],
       "semanticContract": "Preserves enemy side/terrain branch relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NSFnd, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -105715,12 +105733,15 @@
       "instruction": "cmp",
       "id": "control-02699",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid equality membership predicate",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S30: direct  static audit proves this ordered equality/fallthrough relation."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S30: eight controlled original-ROM inputs cover all branch outcomes on x86/x64."
+      ],
       "semanticContract": "Preserves enemy side/terrain fallthrough relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NSFnd, including its source predicate, state handoff and call/tail/return ordering.",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
