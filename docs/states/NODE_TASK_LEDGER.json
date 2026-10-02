@@ -712635,7 +712635,12 @@
         "BubbleTimerData",
         "ClimbingSub",
         "PlayerPhysicsSub",
-        "GetPlayerAnimSpeed"
+        "GetPlayerAnimSpeed",
+        "GetFireballBoundBox",
+        "FBallB",
+        "BoundingBoxCore",
+        "CheckRightScreenBBox",
+        "CheckLeftScreenBBox"
       ],
       "baseline": 1992,
       "incomingComplete": [

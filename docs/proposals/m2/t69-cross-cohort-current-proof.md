@@ -1049,3 +1049,19 @@ warning,no interactive DOS claim.Three EXEs refreshed under owner approval:
 Registry/ledger/progress/documentation gates and diff check required before
 local P2 commit.Unrelated queue/proposals/terrain preserved.S7 remains
 admitted;this checkpoint does not close or admit S8.
+
+## S7 P3 dependency amendment - actual bounding-box scratch
+
+First1024 original FireballObjCore/current x86 cases yield2075 persistent RAM
+differences;actual original BBoxCore stores00/02/01 before geometry and
+CheckRightScreenBBox stores02/01 before clipping.Native shared box/clip
+helpers omit those stores.A native fireball table match alone cannot accept
+this chain.Coordinator admits five already-exact zero-credit dependencies:
+GetFireballBoundBox;FBallB;BoundingBoxCore;CheckRightScreenBBox;
+CheckLeftScreenBBox.Scope32,fresh0,max1992/1992;15 material unchanged,
+12 already accepted/3 pending.No advance to S8.Repair in canonical shared
+world/bounding_box.c,not a fireball-only workaround.Similar-issue audit checks
+all existing player/enemy/platform/fireball/coin/hammer callers;their explicit
+box address identifies source SprObject offset and relative XY parameters.
+Focused geometry/clip integration tests join the S7 operational track;
+original FireballObjCore full return still compares all persistent RAM.
