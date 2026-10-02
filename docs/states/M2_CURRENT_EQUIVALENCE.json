@@ -873,13 +873,16 @@
       "consumer": "GetAreaMusic",
       "storage": "six-byte selector table to AreaMusicQueue",
       "feasiblePath": "A non-title music invocation resolves pipe/area/cloud selection then reads the selected byte before queueing it.",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C owner named by Td S9 B10a entrance/music audit",
-      "semanticContract": "The source table/index, consumer order and resulting shared RAM write agree for every reachable selector.",
+      "status": "exact",
+      "currentCounterpart": "game.c existing music_select_data and area-music selector consumer",
+      "semanticContract": "Existing6 native bytes equal original90E7-90ED;actual original consumer reads each index0-5;AreaType from header is0-3,cloud4,pipe5.",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 native existing bytes/original region/index/consumer binding audited independently."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 all6 bytes read by declared original consumer and8192 original/current roots equal each width."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -17266,14 +17269,17 @@
       "label": "MusicSelectData",
       "asmLine": 2814,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_get_area_music:music_select_data",
+      "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Existing6 native bytes equal original90E7-90ED;actual original consumer reads each index0-5;AreaType from header is0-3,cloud4,pipe5."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds water, ground, underground, castle, cloud and pipe-intro music selectors in ROM order.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+      ],
+      "semanticContract": "Existing6 native bytes equal original90E7-90ED;actual original consumer reads each index0-5;AreaType from header is0-3,cloud4,pipe5.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17282,14 +17288,17 @@
       "label": "GetAreaMusic",
       "asmLine": 2818,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_get_area_music",
+      "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Mode0 returns without queue write;otherwise alternate entrance2 bypasses header-entry6/7 test;other alternate values permit pipe-intro selection5."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns in title mode; otherwise preserves pipe-entry priority, then chooses area type or cloud override and queues one area-music selector.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+      ],
+      "semanticContract": "Mode0 returns without queue write;otherwise alternate entrance2 bypasses header-entry6/7 test;other alternate values permit pipe-intro selection5.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17298,14 +17307,17 @@
       "label": "ChkAreaType",
       "asmLine": 2830,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_get_area_music area/cloud selection",
+      "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Load source-valid area type0-3;cloud byte nonzero replaces index with4,zero retains area type;pipe path bypasses this branch."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses AreaType unless CloudTypeOverride is nonzero, which selects the cloud table entry.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+      ],
+      "semanticContract": "Load source-valid area type0-3;cloud byte nonzero replaces index with4,zero retains area type;pipe path bypasses this branch.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17314,14 +17326,17 @@
       "label": "StoreMusic",
       "asmLine": 2834,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_get_area_music queue store",
+      "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Read exactly selected original table byte and store only AreaMusicQueue FB;shared C uses existing equal table and same selector."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Reads the selected MusicSelectData entry and writes AreaMusicQueue before the common return.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+      ],
+      "semanticContract": "Read exactly selected original table byte and store only AreaMusicQueue FB;shared C uses existing equal table and same selector.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17330,14 +17345,17 @@
       "label": "ExitGetM",
       "asmLine": 2836,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "mysmb_game_get_area_music return",
+      "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Title path leaves all persistent RAM untouched;selected-music path returns after FB store. CPU A/Y/flags have no exported void-C ABI."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Common no-write return for title-mode and completed music selection paths.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+      ],
+      "semanticContract": "Title path leaves all persistent RAM untouched;selected-music path returns after FB store. CPU A/Y/flags have no exported void-C ABI.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59156,13 +59174,16 @@
       "instruction": "beq",
       "id": "control-00422",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c returns before selection when OperMode is title mode.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c returns before selection when OperMode is title mode.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=4096;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original branch GetAreaMusic -> ExitGetM matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59175,13 +59196,16 @@
       "instruction": "beq",
       "id": "control-00423",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c bypasses pipe-entry checks exactly when AltEntranceControl equals two.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c bypasses pipe-entry checks exactly when AltEntranceControl equals two.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=2048;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original branch GetAreaMusic -> ChkAreaType matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59194,13 +59218,16 @@
       "instruction": "beq",
       "id": "control-00424",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c queues pipe-intro music for header entrance six.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c queues pipe-intro music for header entrance six.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=8;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original branch GetAreaMusic -> StoreMusic matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59213,13 +59240,16 @@
       "instruction": "beq",
       "id": "control-00425",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c queues pipe-intro music for header entrance seven.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c queues pipe-intro music for header entrance seven.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=8;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original branch GetAreaMusic -> StoreMusic matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59232,13 +59262,16 @@
       "instruction": "beq",
       "id": "control-00426",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c non-pipe entry falls into area/cloud selection.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c non-pipe entry falls into area/cloud selection.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=2032;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original fallthrough GetAreaMusic -> ChkAreaType matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59251,13 +59284,16 @@
       "instruction": "beq",
       "id": "control-00427",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c retains AreaType selection when CloudTypeOverride is zero.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c retains AreaType selection when CloudTypeOverride is zero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=2040;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original branch ChkAreaType -> StoreMusic matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59270,13 +59306,16 @@
       "instruction": "ldy",
       "id": "control-00428",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c replaces AreaType with cloud selector when CloudTypeOverride is nonzero.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c replaces AreaType with cloud selector when CloudTypeOverride is nonzero.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=2040;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original fallthrough ChkAreaType -> StoreMusic matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -59289,13 +59328,16 @@
       "instruction": "sta",
       "id": "control-00429",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "game.c table store falls to the common return without an additional state mutation.",
+      "status": "exact",
+      "currentCounterpart": "game.c area-music title/alternate/header-entry/cloud branches and return",
       "semanticEvidence": [
-        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required."
+        "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 manual original opcode/branch/current C source audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "game.c table store falls to the common return without an additional state mutation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S3 P2 transition observations=4096;8192 original/current roots both widths zero differences."
+      ],
+      "semanticContract": "Original fallthrough StoreMusic -> ExitGetM matches shared C selector predicate and source order.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]

@@ -1,12 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S3 - active area-music selection chain
+## M2 T69 S3 - closed area-music selection chain
 
-[Exact5 pending targets/8 controls/1 material](../proposals/m2/t69-cross-cohort-current-proof.md)
-intended fresh5,max1964/1992. Current1959/1992 nodes,4035/4278 controls
-(raw4342,infeasible64),504/555 material partial;historical1992/1992 separate.
-Source/original returning route and operational proof required before credit.
-S4 remains unadmitted.
+[All5 labels/8 controls/1 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+exact after source audit and8192 original returning roots each width zero diff.
+Current1964/1992 nodes,4043/4278 controls(raw4342,infeasible64),505/555 material
+partial;historical1992/1992 separate.3 focused tests each/purity/current builds/
+original OpenNT target pass;product code unchanged,3 S2 EXEs retained exactly.
+No scoped deferral/transfer;T69 open,S4 next unadmitted. Remaining28 nodes/
+235 feasible controls/50 enumerated material and earlier M alias debt pending.
 
 ## M2 T69 S2 - closed initialization chain
 

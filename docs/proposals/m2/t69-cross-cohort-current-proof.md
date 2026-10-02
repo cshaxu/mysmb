@@ -507,3 +507,61 @@ per process/524288steps per root;coordinator removes raw after each batch.
 Similar-issue sweep covers entrance6/7 short-circuit,alternate2 bypass,
 cloud override,source-valid area index and title-mode no-write behavior.
 Any scoped diff stays active until repaired/re-audited;S4 unadmitted.
+
+## S3 P2 closure - area music selection source/current proof
+
+All5 scoped labels exact:MusicSelectData; GetAreaMusic; ChkAreaType; StoreMusic; ExitGetM;8 controls/1 material exact,
+zero scoped deferral/transfer. Current1959->1964/1992 nodes,4035->4043/4278
+controls(raw4342,infeasible64),504->505/555 material partial. Historical
+1992/1992 separate,expected/actualMatches empty. T69 open,S4 next unadmitted;
+28 nodes/235 feasible controls/50 enumerated material and earlier M alias debt
+remain. Source review found no production difference,so product code unchanged.
+
+| Node | Original/current contract |
+| --- | --- |
+| `MusicSelectData` | Existing6 native bytes equal original90E7-90ED;actual original consumer reads each index0-5;AreaType from header is0-3,cloud4,pipe5. |
+| `GetAreaMusic` | Mode0 returns without queue write;otherwise alternate entrance2 bypasses header-entry6/7 test;other alternate values permit pipe-intro selection5. |
+| `ChkAreaType` | Load source-valid area type0-3;cloud byte nonzero replaces index with4,zero retains area type;pipe path bypasses this branch. |
+| `StoreMusic` | Read exactly selected original table byte and store only AreaMusicQueue FB;shared C uses existing equal table and same selector. |
+| `ExitGetM` | Title path leaves all persistent RAM untouched;selected-music path returns after FB store. CPU A/Y/flags have no exported void-C ABI. |
+
+Original GetAreaMusic90ED returned for8192 fixtures,all256 header entrance
+bytes crossed with mode0/FF,alternateFF/2,cloud0/FF and all4 source-valid
+area types. Compare2032 RAM bytes,24 APU and ordered writes/counts;only
+1F0-1FF CPU sentinel/stack excluded,actual minimum SP>=EF. CPU A/X/Y/flags
+not exported by this void C entry. Source predicates independently prove
+zero/nonzero and equality classes;unrestricted out-of-domain AreaType not
+claimed equivalent because original header restricts it to0-3. Actual6 table
+indices include pipe5 and cloud4. Native existing table independently equal
+original bytes;no table import,patched ROM,mocked child or generated oracle.
+Both x86/x64 zero differences;all5 nodes/8 transitions/6 bytes observed.
+
+Similar-issue sweep audits every selector condition and early return in the
+shared owner:alternate2 correctly bypasses entrance6/7,pipe bypasses cloud,
+cloud overrides source area index,and title returns without queue write.
+No missing stores or reordered branch found;downstream sound header/fetch
+contracts remain their separate accepted/debt scopes. Platform code unchanged.
+
+| Control | Original PC | Actual transition observations | Result |
+| --- | --- | --- | --- |
+| `control-00422` | `90f0` | 4096 | exact |
+| `control-00423` | `90f7` | 2048 | exact |
+| `control-00424` | `9100` | 8 | exact |
+| `control-00425` | `9104` | 8 | exact |
+| `control-00426` | `9104` | 2032 | exact |
+| `control-00427` | `910c` | 2040 | exact |
+| `control-00428` | `910e` | 2040 | exact |
+| `control-00429` | `9113` | 4096 | exact |
+
+Operational:current product/checker builds,3 focused tests each(boot-NMI,
+local-title-bootstrap,purity) and original OpenNT DOS16 target pass. No
+interactive DOS or whole-frame proof claim. No product change,therefore
+all3 S2 binaries retained byte-identically and checked against current outputs:
+
+- `mysmb16.exe`: 261063 bytes, SHA256 `1bd1304bccb059a3e5a4b06b013be9a5f273a9997178a7f6ea492f23ad5c7f15`; unchanged S2 final product.
+- `mysmb32.exe`: 374688 bytes, SHA256 `87c9bb6fc11a5c593478827275ad9e0ac58012c52a269b3a61b931bcbb351401`; unchanged S2 final product.
+- `mysmb64.exe`: 381715 bytes, SHA256 `7d5eba3ab7225cfcc12a15b638934f09572140dde4364975d713a74b376c5d1f`; unchanged S2 final product.
+
+Ignored bounded build output retains only neutral summaries/logs;raw removed
+per batch and probe deleted at closure. Registry/ledger/progress/docs gates
+required before commit;unrelated queue/source/proposals preserved unstaged.

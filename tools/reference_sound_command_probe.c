@@ -83,6 +83,14 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==60u){
+        unsigned int j;
+        for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
+        m->ram[0x770u]=(unsigned char)((p&16u)?0xffu:0u);
+        m->ram[0x752u]=(unsigned char)((p&8u)?2u:0xffu);
+        m->ram[0x743u]=(unsigned char)((p&4u)?0xffu:0u);
+        m->ram[0x74eu]=(unsigned char)(p&3u);
+        m->ram[0x710u]=(unsigned char)n;
     }else if(mode>=55u&&mode<=59u){
         unsigned int j;
         for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
@@ -262,7 +270,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>59u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>60u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -309,6 +317,7 @@ int main(int argc,char **argv)
         entry=mode>=36u&&mode<=43u?0xf8cbu:(boundary?0xf6f5u:entries[index]);
         if(mode==51u)entry=0xf8f4u;
         if(mode>=52u&&mode<=54u)entry=mode==52u?0x8f06u:(mode==53u?0x8f5fu:0x8f97u);
+        if(mode==60u)entry=0x90edu;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -325,6 +334,8 @@ int main(int argc,char **argv)
         for(steps=0;steps<524288u&&d->machine->pc!=(boundary?0xf73au:0x8001u);++steps){
             pc=d->machine->pc;if(pc<0x8000u){fprintf(stderr,"reference low PC mode=%u root=%u pc=%04x steps=%u stack=%02x nmi=%u pending=%u control=%02x\n",mode,n,pc,steps,d->machine->s,d->machine->nmi_asserted,d->machine->nmi_pending,d->machine->ppu.control);return 67;}op=prg[pc-0x8000u];++visits[pc];
             if(d->machine->s<minimum_stack)minimum_stack=d->machine->s;
+            if(mode==60u&&pc==0x9110u&&op==0xb9u)
+                ++setup_reads[0][0x90e7u+d->machine->y];
             if(pc>=0x9071u&&pc<0x90ccu&&(op==0xb9u||op==0xbdu)){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 unsigned int offset=op==0xb9u?d->machine->y:d->machine->x;

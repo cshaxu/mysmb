@@ -391,3 +391,13 @@ roots each width zero diff;4 focused tests each/purity/current builds/OpenNT
 link pass,3 EXEs refreshed together. T69 open,S3 next unadmitted;33 nodes,
 243 feasible controls,51 enumerated material rows plus earlier M alias debt
 remain before certification.
+
+## Current checkpoint after T69 S3
+
+[T69 S3](t69-cross-cohort-current-proof.md) closes5 area-music nodes/8 controls/
+1 material without product repairs. Current1964/1992 nodes,4043/4278 feasible
+controls(raw4342,infeasible64),505/555 material partial;historical1992/1992
+separate.8192 original returning roots each width zero diff;3 focused tests
+each/purity/current builds/OpenNT target pass,3 S2 EXEs retained byte-identical.
+T69 open,S4 next unadmitted;28 nodes/235 controls/50 enumerated material plus
+earlier M alias debt remain before certification.

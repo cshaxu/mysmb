@@ -25,6 +25,7 @@ int main(int argc,char **argv)
         game.title_icon_data=prg;game.title_icon_data_size=1U;
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
+        case 0x90edU:mysmb_game_get_area_music(&game);break;
         case 0x90ccU:mysmb_game_initialize_memory(&game,record[4]);break;
         case 0x9071U:mysmb_game_secondary_setup(&game);break;
         case 0x9061U:mysmb_game_primary_setup(&game);break;
@@ -48,9 +49,9 @@ int main(int argc,char **argv)
         case 0xf3adU:a=mysmb_audio_set_freq_tri(&game,a);break;
         default:return 66;
         }
-        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
-            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU){
+            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU){
                 if(i>=0x1f0U&&i<=0x1ffU)continue;
             }else if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
             if(game.ram[i]!=record[2088U+i]){if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}
