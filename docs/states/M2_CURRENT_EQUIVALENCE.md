@@ -2323,3 +2323,13 @@ and 512 original-ROM/current x86/x64 caller replays agree; hit/scan contracts,
 platform purity and DOS16 link pass. The registry is **1,249 / 1,992** nodes
 and **2,521 / 4,324** feasible controls; historical mapping remains
 **1,992 / 1,992**.
+
+
+### T64 S15 climbing tail and predicate result
+
+RunFR through ChkJumpspringMetatiles are current-exact: ten nodes and 14
+source-owned feasible controls. Controlled original-ROM vine routes and 177
+source-reachable predicate records replayed by freshly compiled x86/x64 shared-C
+checkers have zero differences; focused climbing, hidden-spring and platform
+purity checks pass. The registry is **1,383 / 1,992** nodes and **2,894 /
+4,324** feasible controls; historical mapping remains **1,992 / 1,992**.

@@ -580,3 +580,47 @@ the two jumpspring metatiles and their no-match return. The operational track
 uses controlled original-ROM climbing and predicate routes with current x86/x64
 callers, then focused climbing, hidden-spring and platform-purity tests.
 Product artifacts refresh only if shared product C changes.
+
+
+## S15 closure — climbing tail and metatile predicates
+
+All ten scoped labels are current-exact: RunFR, VineCollision, PutPlayerOnVine,
+SetVXPl, ExPVne, ChkInvisibleMTiles, ExCInvT, ChkForLandJumpSpring, ExCJSp,
+and ChkJumpspringMetatiles. Static $DE5D-$DEA6 comparison preserves the
+engine-four tail transfer; vine $26 and player-Y $20 gates; state, speed,
+wrapped relative-X and page ordering; both hidden metatiles; and the $67/$68
+spring predicate and four activation writes.
+
+Current x86/x64 climbing callers replayed controlled original-ROM automatic-vine
+and page-adjust routes with full mapped RAM and child-call comparison, zero
+differences. Freshly compiled current x86/x64 predicate checkers then replayed
+all 177 retained source-reachable original-ROM predicate records (354
+width-runs), including original Z/C flag contracts and full mapped RAM, with
+zero differences. Focused climbing (515 cases), hidden/spring (256 predicate
+inputs x 1,024 RAM cases) and platform-purity checks pass. No product C
+changed, so packaged executables were not refreshed.
+
+The registry records ten nodes and 14 source-owned feasible controls
+(control-02545 through control-02557, control-03968) exact. Historical
+conformance remains 1,992 / 1,992; current exact totals are 1,383 / 1,992
+nodes and 2,894 / 4,324 feasible controls (raw 4,342, infeasible 18);
+exact material relations remain 356 / 487.
+
+## S16 admission — jumpspring terminal return pair
+
+S16 admits $DEE6-$DEE7: JSFnd and NoJSFnd, the terminal carry-set and
+carry-clear returns of ChkJumpspringMetatiles. Its shared owner is
+src/game/player/terrain_metatiles.c; S15 supplies the already-exact predicate
+entry and S17 begins pipe entry. The ROM-logic track compares both return
+flags, input preservation and all callers consuming carry. The operational
+track reuses the source-reachable predicate manifest with current x86/x64
+checkers, focused hidden-spring test, platform purity and the OpenNT DOS16
+shared-source link.
+
+- Historical mapping: 1,992 / 1,992.
+- Incoming current exact: 1,383 / 1,992 nodes and 2,894 / 4,324 feasible
+  controls (raw 4,342, infeasible 18).
+- Scope: 2 labels; historical expected matches: 0; maximum historical complete
+  1,992 / 1,992.
+- Graph scope: 4 source-owned feasible controls (control-02558 through
+  control-02561).
