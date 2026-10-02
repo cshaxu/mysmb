@@ -353,3 +353,11 @@ All seven scoped nodes are current-exact: `LargePlatformCollision`, `ChkForPlaye
 The retained controlled original-ROM platform route covers the containing `$DB45-$DC16` sequence (100 instructions and 38 feasible branch outcomes). Its S8 front-end route replayed against one x86 and one x64 native process with full mapped RAM and child-call comparison, zero differences. Focused platform collision contracts, platform purity and OpenNT DOS16 shared-source link pass. Product C did not change, so package executables were not refreshed.
 
 S8 records seven nodes, 32 source-address-owned feasible controls and five material handoffs exact. Current totals: historical **1,992 / 1,992**; current exact nodes **1,315 / 1,992**; current exact feasible controls **2,722 / 4,324** (raw **4,342**, infeasible **18**).
+
+## S9 admission — platform collision response and player positioning
+
+S9 admits `$DBBC-$DC40`: `ProcSPlatCollisions`, `ProcLPlatCollisions`, `ChkForTopCollision`, `SetCollisionFlag`, `PlatformSideCollisions`, `SideC`, `NoSideC`, `PlayerPosSPlatData`, `PositionPlayerOnS_Plat`, `PositionPlayerOnVPlat`, and `ExPlPos`. It owns the contiguous response and position chain in `platform_collision.c` and `platform_position.c`; S8 is closed and S10 begins collision helper entries. The audit covers all 19 source-address-owned controls and eight material handoffs.
+
+## S9 closure — platform collision response and player positioning
+
+All 11 scoped nodes are current-exact. Static `$DBBC-$DC40` comparison preserves vertical-speed suppression, top/side collision thresholds, small-platform ID flag selection, side-impede ordering, two-byte position table indexing and the shared positioning tail. Retained ROM collision/position routes and focused x86/x64 checks report zero differences; purity and DOS16 link pass. S9 records 11 nodes, 19 controls and eight material handoffs exact. Current totals: historical **1,992 / 1,992**; current **1,326 / 1,992** nodes and **2,741 / 4,324** feasible controls (raw **4,342**, infeasible **18**). Product C did not change.

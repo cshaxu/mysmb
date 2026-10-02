@@ -8520,13 +8520,15 @@
       "consumer": "ProcSPlatCollisions",
       "storage": "eligible box collision and ObjectOffset",
       "feasiblePath": "Eligible hit immediately transfers to common platform response with current platform slot.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c platform_response call",
       "semanticContract": "Common response sees source hit box and selected small platform.",
       "semanticEvidence": [
         "Td S9 B16p large/small platform collision node-semantics and independent integration audit: SMB1 lines 11734-11799 compared with shared enemy/platform_collision.c, geometry and platform response children; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8539,13 +8541,15 @@
       "consumer": "ProcLPlatCollisions",
       "storage": "restored ObjectOffset and small platform box/counter context",
       "feasiblePath": "Small platform hit enters the common response after source slot restoration.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c platform_response",
       "semanticContract": "Common response consumes source small-platform box/counter state.",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8558,13 +8562,15 @@
       "consumer": "ChkForTopCollision",
       "storage": "lower-overlap delta and Player_Y_Speed",
       "feasiblePath": "Underside response may force speed one before top/side classification.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c platform_response",
       "semanticContract": "Top/side branch observes source corrected or retained player vertical speed.",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8578,13 +8584,15 @@
       "consumer": "SetCollisionFlag",
       "storage": "top-overlap delta, platform ID and selected collision marker",
       "feasiblePath": "Close non-rising top hit chooses counter for small IDs $2b/$2c, slot otherwise.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c platform_response",
       "semanticContract": "Collision flag and Player_State zero record source platform-rider ownership.",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8598,13 +8606,15 @@
       "consumer": "SideC",
       "storage": "side selector and source x-overlap arithmetic",
       "feasiblePath": "Eligible left/right proximity delegates side one/two to player impedance.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_collision.c platform_response",
       "semanticContract": "Impedance child receives source side value following borrow-aware range checks.",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8618,13 +8628,15 @@
       "consumer": "PositionPlayerOnS_Plat",
       "storage": "counter-indexed vertical offset",
       "feasiblePath": "Small platform counter selects $80 or $00 before common vertical height calculation.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_position.c small delta lookup",
       "semanticContract": "Positioning receives source unmasked table result for the selected small box.",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8637,13 +8649,15 @@
       "consumer": "PositionPlayerOnVPlat",
       "storage": "offset-adjusted platform height",
       "feasiblePath": "Small entry reaches shared height tail after adding selected offset.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_position.c position_at_height",
       "semanticContract": "Common tail observes exact source adjusted height.",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8656,13 +8670,15 @@
       "consumer": "ExPlPos",
       "storage": "player Y low/high, vertical speed and move force",
       "feasiblePath": "Allowed placement writes Y/platform height relation and clears motion before return.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "enemy/platform_position.c position_at_height",
       "semanticContract": "Return observes either gate-preserved state or completed source rider placement.",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10498,13 +10514,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1315,
-    "needs-evidence": 677
+    "exact": 1326,
+    "needs-evidence": 666
   },
   "controlEdgeCounts": {
-    "exact": 2722,
+    "exact": 2741,
     "infeasible": 18,
-    "needs-evidence": 1602
+    "needs-evidence": 1583
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -36522,13 +36538,15 @@
       "label": "ProcSPlatCollisions",
       "asmLine": 11804,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Restores ObjectOffset then falls through to common large-platform response using the small platform box and counter context.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36538,13 +36556,15 @@
       "label": "ProcLPlatCollisions",
       "asmLine": 11807,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "If player is rising and lower overlap is below four, forces vertical speed one; otherwise continues to top/side classification.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36554,13 +36574,15 @@
       "label": "ChkForTopCollision",
       "asmLine": 11818,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Accepts a close top collision only for non-rising player, writes collision flag as small-box counter for IDs $2b/$2c or platform slot otherwise, and sets Player_State zero.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -36571,13 +36593,15 @@
       "label": "SetCollisionFlag",
       "asmLine": 11834,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Restores ObjectOffset, writes selected collision marker and normalizes Player_State before return.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -36588,13 +36612,15 @@
       "label": "PlatformSideCollisions",
       "asmLine": 11841,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Computes left then right side proximity with source CLC/SBC borrow behavior and delegates only an eligible side to ImpedePlayerMove.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -36605,13 +36631,15 @@
       "label": "SideC",
       "asmLine": 11855,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Calls ImpedePlayerMove using collision side one/ two then returns with ObjectOffset restored.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -36622,13 +36650,15 @@
       "label": "NoSideC",
       "asmLine": 11856,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Restores ObjectOffset and returns when no platform-side response applies.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -36638,13 +36668,15 @@
       "label": "PlayerPosSPlatData",
       "asmLine": 11861,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Binds the two unmasked small-platform vertical offsets $80 and $00 selected by collision counter.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -36654,13 +36686,15 @@
       "label": "PositionPlayerOnS_Plat",
       "asmLine": 11864,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Adds counter-selected small-platform vertical offset and falls through to common vertical positioning.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -36670,13 +36704,15 @@
       "label": "PositionPlayerOnVPlat",
       "asmLine": 11871,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Rejects player-death routine and platform Y-high other than one; otherwise positions player 32 pixels above platform, propagates borrow to high Y and clears vertical speed/move force.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -36686,13 +36722,15 @@
       "label": "ExPlPos",
       "asmLine": 11888,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
       "currentCounterpart": "platform_response / mysmb_platform_position_player_small / mysmb_platform_position_player_vertical",
       "semanticEvidence": [
         "Td S9 B16q platform response/position node-semantics and independent integration audit: SMB1 lines 11804-11888 compared with shared enemy/platform_collision.c and enemy/platform_position.c plus player impedance child; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns without player-coordinate changes after placement gates or after completed common placement.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -98774,12 +98812,14 @@
       "instruction": "ldx",
       "id": "control-02404",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcSPlatCollisions -> ProcLPlatCollisions with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c"
@@ -98793,12 +98833,14 @@
       "instruction": "bcs",
       "id": "control-02405",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcLPlatCollisions -> ChkForTopCollision with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98813,12 +98855,14 @@
       "instruction": "bpl",
       "id": "control-02406",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ProcLPlatCollisions -> ChkForTopCollision with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98833,12 +98877,14 @@
       "instruction": "sta",
       "id": "control-02407",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ProcLPlatCollisions -> ChkForTopCollision with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98853,12 +98899,14 @@
       "instruction": "bcs",
       "id": "control-02408",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForTopCollision -> PlatformSideCollisions with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98873,12 +98921,14 @@
       "instruction": "bmi",
       "id": "control-02409",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForTopCollision -> PlatformSideCollisions with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98893,12 +98943,14 @@
       "instruction": "beq",
       "id": "control-02410",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForTopCollision -> SetCollisionFlag with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98913,12 +98965,14 @@
       "instruction": "beq",
       "id": "control-02411",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation ChkForTopCollision -> SetCollisionFlag with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98933,12 +98987,14 @@
       "instruction": "txa",
       "id": "control-02412",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation ChkForTopCollision -> SetCollisionFlag with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98953,12 +99009,14 @@
       "instruction": "bcc",
       "id": "control-02413",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlatformSideCollisions -> SideC with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98973,12 +99031,14 @@
       "instruction": "bcs",
       "id": "control-02414",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PlatformSideCollisions -> NoSideC with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -98993,12 +99053,14 @@
       "instruction": "bcs",
       "id": "control-02415",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation PlatformSideCollisions -> SideC with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -99013,12 +99075,14 @@
       "instruction": "jsr",
       "id": "control-02416",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original call relation SideC -> ImpedePlayerMove with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -99034,12 +99098,14 @@
       "instruction": "jsr",
       "id": "control-02417",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SideC -> NoSideC with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
@@ -99054,12 +99120,14 @@
       "instruction": "adc",
       "id": "control-02418",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation PositionPlayerOnS_Plat -> PositionPlayerOnVPlat with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -99073,12 +99141,14 @@
       "instruction": "beq",
       "id": "control-02419",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PositionPlayerOnVPlat -> ExPlPos with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -99092,12 +99162,14 @@
       "instruction": "bne",
       "id": "control-02420",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation PositionPlayerOnVPlat -> ExPlPos with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -99111,12 +99183,14 @@
       "instruction": "sta",
       "id": "control-02421",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation PositionPlayerOnVPlat -> ExPlPos with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_position.c"
@@ -129728,12 +129802,14 @@
       "instruction": "rts/rti",
       "id": "control-03945",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared enemy/platform_collision.c and platform_position.c with ImpedePlayerMove child",
       "semanticEvidence": [
         "Td S9 B16q platform response/position integration audit: source endpoint, overlap/side/counter/high-position predicate, slot/box/player-state handoff and call/return ordering compared with shared platform collision/position owners; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S9 static $DBBC-$DC40 audit plus retained original-ROM platform collision/position routes replayed in x86 and x64 native checks with full mapped-RAM and child-call comparison, zero differences; focused platform contracts, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original return relation ImpedePlayerMove -> SideC with source platform box/counter/player-state predicate and position handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_collision.c",
