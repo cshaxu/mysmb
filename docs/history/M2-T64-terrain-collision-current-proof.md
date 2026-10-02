@@ -3474,3 +3474,106 @@ Exact feasible controls rise 3176 to 3181/4323 (raw 4342, infeasible 19).
 Cohort J now has zero pending control/material relations and 497 exact nodes.
 T64 remains open for its required cross-chain matrix and integrated regression;
 T65 is not admitted merely because the last individual return is exact.
+
+## Aggregate S59 admission - T64 integrated closure
+
+S59 audits all 497 Cohort-J labels (all incoming exact, exact source-order
+names in the admission run/node ledger), 1,257 exact feasible controls,
+four infeasible source controls and 245 exact material relations.
+Expected new node/edge promotions empty; no custody transfer. It combines
+T63's first-half and T64's 253 second-half nodes without reopening accepted
+member proof. Historical 1992/1992, exact nodes 1480/1992, controls 3181/4323,
+material 368/487 stay unchanged. S58 precedes; T65 may follow only T64 closure.
+
+The ROM track verifies each ledger row has current static contract, source
+counterpart and operational evidence, then builds a cross-chain matrix of
+actual integration-return suites. Fresh terrain, pickup, jump/Hammer and
+ProcHammerBro batches cover the recent corrected owners; unchanged earlier
+chains retain accepted per-S proof. The operational track builds current
+x86/x64 test/product targets, runs all configured CTests, original OpenNT
+DOS16 link, platform purity and documentation/ledger gates. A failing scoped
+regression remains here for ROM-based repair/re-audit. An unrelated unadmitted
+contract is recorded explicitly, never silently called equivalent.
+
+S59 updates NODE_PROGRESS and the T64 history record on closure. No code
+change means no artifact refresh beyond already committed S58 products;
+a required product correction refreshes all three approved EXEs.
+Owner-local nonredistributable ROM/ASM remain research-only. Unique ignored
+build/m2-t64-s59 owns <=128 MiB raw, 524288 steps/case, 120 seconds/probe,
+checkpoint logs and cleanup. Preserve unrelated changes.
+
+### S59 test-build correction
+
+The all-target build found three owner-ROM checkers: enemy_jump_actual_check,
+hammer_bg_actual_check and kill_enemy_above_block_actual_check, missing their generated header include and local
+ROM object dependency. S59 fixes only these three test CMake targets under the
+existing MYSMB_ROM_PATH boundary. No game code or product artifact changes.
+Repeat full builds and CTests; all other local-header targets are swept.
+
+
+## S59 closure and T64 final closure
+
+T64 is closed after S1-S59. The task's 253 originally pending second-half
+Cohort-J nodes are now exact; completed labels are the exact S1-S36 plan
+above with its subsequent reviewed node/connection closures. No T64-scoped
+label or relation is deferred or transferred. Historical maintenance custody
+remains unchanged. S59's aggregate scope is all 497 J labels, including 244
+previously accepted T63 labels; expected/actual new node promotions empty.
+
+The evidence census checks all 497 node rows for exact state, nonempty source
+counterpart, semantic contract and static/operational evidence, including
+explicit T63/T64 provenance. It checks all 1,257 feasible J control rows and
+245 enumerated material rows for the same dual evidence and disposition.
+The four J infeasible controls retain source proofs without pretending they
+have executable routes: control-01711, control-02036, control-02708 and
+control-03868. Nothing unobserved is promoted by this census.
+
+The accepted S1-S58 static and per-chain ROM routes remain individual proof.
+S59 repeats only the current cross-chain integration matrix needed after the
+recent palette, landing and Hammer Bro fixes:
+
+| Current original-ROM chain | Entry / integration boundary | Cases per width | Compared RAM contract | x86 / x64 |
+| --- | --- | ---: | --- | --- |
+| Pickup, erase, floating score, palette, routine | $D800 with real score/palette/routine returns | 1,536 | 1,841 bytes, all scratch and $0109-$0139 included | zero / zero |
+| Walking terrain, stun, score, facing, landing, side | $DFC1 with 13 actual RTS consumers | 12,288 | 1,841 bytes, all scratch and $0109-$0139 included | zero / zero |
+| Jump/Hammer terrain, landing, kill, side, SetHJ movement | $E163 / $E185 with five actual RTS consumers | 15,360 | 1,841 bytes, all scratch and $0109-$0139 included | zero / zero |
+| ProcHammerBro allocation, direction, jump and movement | $C9D8 current original caller regression | 3,072 | 1,784 persistent bytes; its previous scratch/stack exclusions retained | zero / zero |
+
+Total 32,256 roots per width execute real children; CPU stack excludes the
+actual call-stack implementation where stated. The primary three routes
+include every source-visible scratch byte. The fourth regression is explicitly
+weaker in scratch scope and is not substituted for the primary return proof.
+Runtime emulator/oracle is test-only; native product gameplay remains shared C.
+
+Both complete current native builds pass and all 248 CTests pass per width.
+Original OpenNT DOS16 links the same game source. Platform purity, ledger,
+registry and documentation gates pass. S59 corrected three test target build
+bindings (enemy_jump_actual_check, hammer_bg_actual_check and
+kill_enemy_above_block_actual_check) under the existing owner-ROM option;
+the local-header test targets compile through their declared local build input. S59 also corrects three stale core_smoke fixture inputs:
+falling normal enemy, grounded revival shell and grounded falling mushroom
+now have contact nibble eight and matching under-probe buffer rows. Their
+expected behaviors stay the same; input validity follows original SBC #$08 /
+CMP #$05. No production code changed or new product discrepancy was found.
+
+Similar-issue sweep covers local-header test targets and core_smoke's three
+landing scenarios. All found target bindings and invalid grounded fixtures
+are repaired; full native builds/tests and current ROM integration pass.
+Unrelated owner I/O proposal and whitespace-only game files remain untouched.
+Raw records, probes and diagnostic derivatives are cleaned below ignored build;
+only neutral evidence logs remain. S58's three committed products are retained.
+
+T64 began at exact nodes 1227/1992 and feasible controls 2461/4324; it closes
+at exact nodes 1480/1992 and controls 3181/4323 (raw 4342, infeasible 19),
+material 368/487 with global material enumeration still partial. Historical
+mapping is 1992/1992. J is 497 exact nodes, 1257 exact feasible controls,
+four infeasible controls and 245 exact enumerated material relations.
+
+Thirty-one still-pending incoming boundary controls are outside J ownership:
+27 H-source, three I-source and one K-source relation. Their existing registry
+needs-evidence states and maintenance receivers are preserved for the original
+source-cohort/cross-cohort program; no global equivalence claim follows from
+this T closure. K has 153 needs-evidence nodes and one already exact node.
+Next planned task is T65 shared collision/player terrain; it is not admitted
+in this closure. M2 remains open until all later cohorts, cross-cohort relations,
+material enumeration and final operational certification are completed.

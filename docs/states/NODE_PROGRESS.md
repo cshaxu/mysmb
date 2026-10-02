@@ -1,5 +1,18 @@
 # M2 ROM conformance node progress
 
+## M2 T64 closure - current terrain/collision proof
+
+[T64 retained proof and cross-chain matrix](../history/M2-T64-terrain-collision-current-proof.md)
+closes all 253 planned second-half labels, no scoped deferred labels.
+Cohort J now has 497 exact nodes, 1257 exact feasible controls, four infeasible
+controls and 245 exact enumerated material relations. Current totals:
+1480/1992 nodes, 3181/4323 feasible controls, material 368/487 (partial).
+Historical mapping remains 1992/1992 and is not current end-to-end certification.
+32,256 current original-ROM integration roots per native width are zero-difference;
+248/248 CTests pass per width and original OpenNT DOS16 links.
+T65 and later source cohorts plus cross-cohort/final audits remain pending.
+
+
 ## M2 T64 S23 — PlayerEnemyDiff
 
 - Planned and completed label: `PlayerEnemyDiff`; no transferred or incomplete

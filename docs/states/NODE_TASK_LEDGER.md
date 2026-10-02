@@ -2713,65 +2713,66 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T63 S27 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
 | M2 T63 S28 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j, cross-chain-edge-closure; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
 | M2 T63 S29 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j, integrated-regression-fixture-correction; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
-| M2 T64 | 0 | - | [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md); [record](../../docs/states/CURRENT.md) |
-| M2 T64 S1 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S2 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S3 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S7 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S8 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S9 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S10 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S11 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S12 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S13 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S14 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S15 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S16 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S17 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S18 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S19 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S20 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S21 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S22 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S23 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S24 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S25 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S26 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S27 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S28 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S29 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S30 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S31 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S32 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S33 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S34 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S35 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S36 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S37 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S38 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S39 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S40 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S41 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S42 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S43 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S44 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S45 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S46 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S47 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S48 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S49 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S50 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S51 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S52 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S53 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S54 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S55 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S56 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S57 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S58 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
+| M2 T64 | 0 | - | [record](../../docs/history/M2-T64-terrain-collision-current-proof.md); [record](../../docs/states/CURRENT.md) |
+| M2 T64 S1 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S2 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S3 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S4 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S5 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S6 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S7 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S8 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S9 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S10 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S11 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S12 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S13 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S14 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S15 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S16 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S17 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S18 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S19 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S20 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S21 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S22 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S23 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S24 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S25 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S26 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S27 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S28 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S29 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S30 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S31 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S32 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S33 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S34 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S35 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S36 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S37 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S38 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S39 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S40 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S41 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S42 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S43 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S44 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S45 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S46 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S47 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S48 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S49 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S50 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S51 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S52 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S53 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S54 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S55 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S56 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S57 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S58 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S59 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
@@ -3487,61 +3488,62 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T63 S27 | 20 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
 | M2 T63 S28 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
 | M2 T63 S29 | 0 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t63-cohort-j-actor-movement-current-proof.md) |
-| M2 T64 S1 | 5 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S2 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S3 | 11 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S4 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S5 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S6 | 34 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S7 | 16 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S8 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S9 | 11 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S10 | 4 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S11 | 8 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S12 | 14 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S13 | 9 | 1992 | none / 0 | none / 0 | admitted-current-audit; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S14 | 12 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S15 | 10 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S16 | 2 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S17 | 8 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S18 | 8 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S19 | 32 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S20 | 4 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S21 | 2 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S22 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S23 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S24 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S25 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S26 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S27 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S28 | 2 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S29 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S30 | 2 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S31 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S32 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S33 | 10 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S34 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S35 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S36 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S37 | 8 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S38 | 13 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S39 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S40 | 17 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S41 | 27 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S42 | 15 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S43 | 18 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S44 | 36 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S45 | 9 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S46 | 19 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S47 | 13 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S48 | 23 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S49 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S50 | 12 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S51 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S52 | 26 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S53 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S54 | 26 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S55 | 22 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S56 | 10 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S57 | 30 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
-| M2 T64 S58 | 19 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
+| M2 T64 S1 | 5 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S2 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S3 | 11 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S4 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S5 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S6 | 34 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S7 | 16 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S8 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S9 | 11 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S10 | 4 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S11 | 8 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S12 | 14 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S13 | 9 | 1992 | none / 0 | none / 0 | admitted-current-audit; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S14 | 12 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S15 | 10 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S16 | 2 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S17 | 8 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S18 | 8 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S19 | 32 | 1992 | none / 0 | none / 0 | closed-current-audit; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S20 | 4 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S21 | 2 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S22 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S23 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S24 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S25 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S26 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S27 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S28 | 2 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S29 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S30 | 2 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S31 | 3 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S32 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S33 | 10 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S34 | 1 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S35 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S36 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S37 | 8 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S38 | 13 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S39 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S40 | 17 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S41 | 27 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S42 | 15 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S43 | 18 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S44 | 36 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S45 | 9 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S46 | 19 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S47 | 13 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S48 | 23 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S49 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S50 | 12 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S51 | 6 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S52 | 26 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S53 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S54 | 26 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S55 | 22 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S56 | 10 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S57 | 30 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S58 | 19 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |
+| M2 T64 S59 | 497 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/history/M2-T64-terrain-collision-current-proof.md) |

@@ -1726,13 +1726,21 @@ target_link_libraries(mysmb_platform_bounding_box_entry_actual_check PRIVATE mys
 add_executable(mysmb_misc_bounding_box_entry_actual_check
     test/misc_bounding_box_entry_actual_check.c)
 target_link_libraries(mysmb_misc_bounding_box_entry_actual_check PRIVATE mysmb_game)
-add_executable(mysmb_enemy_jump_actual_check test/enemy_jump_actual_check.c)
-target_link_libraries(mysmb_enemy_jump_actual_check PRIVATE mysmb_game)
-add_executable(mysmb_hammer_bg_actual_check test/hammer_bg_actual_check.c)
-target_link_libraries(mysmb_hammer_bg_actual_check PRIVATE mysmb_game)
-
-add_executable(mysmb_kill_enemy_above_block_actual_check test/kill_enemy_above_block_actual_check.c)
-target_link_libraries(mysmb_kill_enemy_above_block_actual_check PRIVATE mysmb_game)
+if(MYSMB_ROM_PATH)
+    add_executable(mysmb_enemy_jump_actual_check test/enemy_jump_actual_check.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_enemy_jump_actual_check PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_enemy_jump_actual_check PRIVATE mysmb_game)
+    add_executable(mysmb_hammer_bg_actual_check test/hammer_bg_actual_check.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_hammer_bg_actual_check PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_hammer_bg_actual_check PRIVATE mysmb_game)
+    add_executable(mysmb_kill_enemy_above_block_actual_check
+        test/kill_enemy_above_block_actual_check.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_kill_enemy_above_block_actual_check PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_kill_enemy_above_block_actual_check PRIVATE mysmb_game)
+endif()
 
 add_executable(mysmb_bounding_box_core_actual_check test/bounding_box_core_actual_check.c)
 target_link_libraries(mysmb_bounding_box_core_actual_check PRIVATE mysmb_game)

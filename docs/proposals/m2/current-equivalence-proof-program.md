@@ -48,3 +48,11 @@ link, platform-purity check and three-target artifact refresh.
 At closure, the registry records each scoped label and edge as `exact`,
 `mismatch`, or retained `needs-evidence` with its next receiving S.  No task
 may promote an unexecuted branch merely because an adjacent route matched.
+## Current checkpoint after T64
+
+[T64's retained node/edge and integration proof](../../history/M2-T64-terrain-collision-current-proof.md)
+is closed. Current exact nodes 1480/1992, feasible controls 3181/4323 and
+material 368/487; historical mapping 1992/1992 remains separate. Cohort J
+has no pending owned nodes/controls/material rows; global material enumeration
+remains partial. T65 is the next unadmitted source cohort, followed by T66-T70.
+Incoming boundary relations outside J retain their original pending owners.

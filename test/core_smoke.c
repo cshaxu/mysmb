@@ -559,15 +559,16 @@ int main(void)
     game.ram[0x00cfU] = 0x50U;
     game.ram[0x0046U] = 1U;
     game.ram[0x0058U] = 0x10U;
-    /* LandEnemyProperly only aligns this fixture after its source falling bit. */
+    /* ROM landing requires falling state and a contact low nibble $08-$0c. */
     game.ram[0x001eU] = 0x40U;
-    game.ram[0x0543U] = 0x61U;
-    game.ram[0x0544U] = 0x61U;
+    game.ram[0x00cfU] = 0x58U;
+    game.ram[0x0553U] = 0x61U;
+    game.ram[0x0554U] = 0x61U;
     mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x0046U] != 1U || game.ram[0x0058U] != 0x10U ||
         game.ram[0x00cfU] != 0x58U || game.ram[0x001eU] != 0U) return 1;
-    game.ram[0x0543U] = 0U;
-    game.ram[0x0544U] = 0U;
+    game.ram[0x0553U] = 0U;
+    game.ram[0x0554U] = 0U;
     /* ChkForRedKoopa's no-ground d7 route sets d6.  A raw d6-only state
      * would index past EnemyBGCStateData and is not a source-reachable
      * predecessor for this transition. */
@@ -658,9 +659,10 @@ int main(void)
     game.ram[0x03b8U] = 0x20U;
     mysmb_world_set_bounding_box(&game, 0x04acU, game.ram[0x0499U],
                                   game.ram[0x03adU], game.ram[0x03b8U]);
-    /* ChkUnderEnemy probes X=$4a/Y=$88 here, which selects block-buffer
-     * cell $0564.  ReviveStunned is reached from a grounded shell. */
-    game.ram[0x0564U] = 0x61U;
+    /* A grounded shell uses contact low nibble eight. ChkUnderEnemy's
+     * Y+$18 probe then selects row $70, cell $0574. */
+    game.ram[0x00cfU] = 0x78U;
+    game.ram[0x0574U] = 0x61U;
     game.ram[0x0796U] = 0U;
     mysmb_objects_step_normal_enemy(&game, 0U);
     if (game.ram[0x001eU] != 0U || game.ram[0x0046U] != 1U ||
@@ -1338,21 +1340,21 @@ int main(void)
     game.ram[0x0039U] = 0U;
     game.ram[0x0073U] = 0U;
     game.ram[0x008cU] = 0x30U;
-    game.ram[0x00d4U] = 0x50U;
+    game.ram[0x00d4U] = 0x58U;
     game.ram[0x00bbU] = 1U;
     game.ram[0x00a5U] = 0U;
     game.ram[0x041cU] = 0U;
     game.ram[0x0439U] = 0U;
     game.ram[0x004bU] = 1U;
     game.ram[0x005dU] = 0x10U;
-    game.ram[0x0543U] = 0x61U;
+    game.ram[0x0553U] = 0x61U;
     mysmb_objects_step_power_up(&game);
     /* A grounded d6+d7 mushroom enters LandEnemyProperly: it snaps to the
      * source $58 row, clears d6 and retains the zero vertical force. */
     if (game.ram[0x00d4U] != 0x58U || game.ram[0x0023U] != 0x80U ||
         game.ram[0x00a5U] != 0U || game.ram[0x041cU] != 0U ||
         game.ram[0x0439U] != 0U) return 1;
-    game.ram[0x0543U] = 0U;
+    game.ram[0x0553U] = 0U;
     game.ram[0x0023U] = 0x80U;
     game.ram[0x00d4U] = 0x50U;
     mysmb_objects_step_power_up(&game);

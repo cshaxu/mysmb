@@ -8740,10 +8740,10 @@
       "semanticContract": "Platform scan preserves the unusual unindexed low-nibble source handoff.",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
@@ -12673,12 +12673,12 @@
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
-        "M2 T64 S56 full-scratch caller audit found omitted ClrGetLoop RAM00=$ff; shared area.c now restores the source terminal counter. Prior T54 output-region proof did not compare this scratch byte. Actual $D833 return and original GetPlayerColors loop confirm the correction. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S56 full-scratch caller audit found omitted ClrGetLoop RAM00=$ff; shared area.c now restores the source terminal counter. Prior T54 output-region proof did not compare this scratch byte. Actual $D833 return and original GetPlayerColors loop confirm the correction. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
-        "M2 T64 S56 before repair x86/x64 each have 96 RAM00 differences; after repair each matches 1536 actual pickup roots across 1841 bytes, including every scratch byte and 49 lower-stack game aliases. Ten operational regressions per width and original OpenNT DOS16 pass; three EXEs refreshed. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S56 before repair x86/x64 each have 96 RAM00 differences; after repair each matches 1536 actual pickup roots across 1841 bytes, including every scratch byte and 49 lower-stack game aliases. Ten operational regressions per width and original OpenNT DOS16 pass; three EXEs refreshed. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ROM $85F1 GetPlayerColors selects Mario/Luigi/fiery bytes and BackgroundColorCtrl-or-AreaType, preserves the four-color counter terminal RAM00=$ff, writes the $3f10 length-four Buffer1 packet and advances its offset by seven within the admitted table/buffer domain.",
       "currentSourcePaths": [
@@ -30327,11 +30327,11 @@
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Executes offscreen, relative position, small box, small collision, relative position, drawing, small-platform movement and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -30348,11 +30348,11 @@
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Executes offscreen, relative position, large box, large collision, timer-gated movement dispatch, relative position, drawing and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -30369,11 +30369,11 @@
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "After either timer path, calls relative position then large-platform drawing and tail-jumps to terminal bounds.",
       "currentSourcePaths": [
@@ -30531,7 +30531,7 @@
       ],
       "operationalEvidence": [
         "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Shared jump entry now includes the horizontal/normal movement continuation; the normal ProcHammerBro caller returns after that entry so movement occurs once.",
       "currentSourcePaths": [
@@ -30628,7 +30628,7 @@
       ],
       "operationalEvidence": [
         "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ROM $CA37 jump initialization falls through MoveHammerBroXDir and MoveNormalEnemy before returning, including the direct side-bump entry.",
       "currentSourcePaths": [
@@ -38563,7 +38563,7 @@
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Source SBC #$08 / CMP #$05 uses byte wrap, accepting only original contact low nibble $08-$0C; below eight and above twelve route to ChkForRedKoopa.",
       "currentSourcePaths": [
@@ -38661,7 +38661,7 @@
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Goomba/timed-Spiny direct landing and other facing paths preserve the CNwCDir bump-return fall-through into landing.",
       "currentSourcePaths": [
@@ -38701,7 +38701,7 @@
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Equal facing invokes the real bump and then falls into LandEnemyInitState; unequal facing enters that same landing directly.",
       "currentSourcePaths": [
@@ -128301,10 +128301,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSmallPlatform exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -128323,10 +128323,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSmallPlatform restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
@@ -128345,10 +128345,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native SmallPlatformBoundBox return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation SmallPlatformBoundBox -> RunSmallPlatform with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
@@ -128368,10 +128368,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native SmallPlatformCollision return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation SmallPlatformCollision -> RunSmallPlatform with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
@@ -128391,10 +128391,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSmallPlatform restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
@@ -128413,10 +128413,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native DrawSmallPlatform return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves ROM return relation DrawSmallPlatform -> RunSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
@@ -128458,10 +128458,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunLargePlatform exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -128480,10 +128480,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunLargePlatform restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
@@ -128502,10 +128502,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native LargePlatformBoundBox return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation LargePlatformBoundBox -> RunLargePlatform with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
@@ -128525,10 +128525,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native LargePlatformCollision return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation LargePlatformCollision -> RunLargePlatform with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
@@ -128570,10 +128570,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to SkipPT sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipPT restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
@@ -128592,10 +128592,10 @@
       "currentCounterpart": "src/game/enemy/platform_callers.c native DrawLargePlatform return to SkipPT sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves ROM return relation DrawLargePlatform -> SkipPT with source branch condition, OAM handoff and return ordering.",
       "currentSourcePaths": [
@@ -128636,10 +128636,10 @@
       "currentCounterpart": "src/game/enemy/podoboo.c mysmb_objects_step_podoboos_slot real mysmb_enemy_init_podoboo return, immutable slot and post-return PRNG read",
       "semanticEvidence": [
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S39: original MovePodoboo $C9B0 timer-zero JSR $C2F7 returns at $C9B8 after the SmallBBox/SetBBox/InitVStf tail. All eight initialization stores, unchanged remaining persistent RAM, A=0, preserved slot X/Y and post-return PRNG consumption match the current shared Podoboo/init/movement/gravity owner. The nonzero timer skips initialization; both paths tail to gravity force $1C/max $03. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S39: original MovePodoboo $C9B0 timer-zero JSR $C2F7 returns at $C9B8 after the SmallBBox/SetBBox/InitVStf tail. All eight initialization stores, unchanged remaining persistent RAM, A=0, preserved slot X/Y and post-return PRNG consumption match the current shared Podoboo/init/movement/gravity owner. The nonzero timer skips initialization; both paths tail to gravity force $1C/max $03. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S39: reference_podoboo_integration_probe and mysmb_podoboo_integration_route_check execute 3072 actual ROM roots with all six slots, all 256 PRNG bytes per timer path, 1536 real initializer returns and 3072 gravity tails. Current x86/x64 each compare every 1784 persistent RAM byte, zero differences; CPU scratch $00-$07 and stack are explicit ABI exclusions. Podoboo/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S39: reference_podoboo_integration_probe and mysmb_podoboo_integration_route_check execute 3072 actual ROM roots with all six slots, all 256 PRNG bytes per timer path, 1536 real initializer returns and 3072 gravity tails. Current x86/x64 each compare every 1784 persistent RAM byte, zero differences; CPU scratch $00-$07 and stack are explicit ABI exclusions. Podoboo/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation InitPodoboo -> MovePodoboo with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
@@ -128660,10 +128660,10 @@
       "currentCounterpart": "src/game/enemy/hammer_bro.c actual SpawnHammerObj child result consumed by ChkJH continuation",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S40: Actual SpawnHammerObj $BA94 returns to $C9FF with original ObjectOffset X, selected misc Y and carry. Real success writes only parent/state/box; each failure preserves all persistent RAM. Current helper returns equivalent carry byte; ChkJH consumes it for throw state bit or timer decrement without rechecking eligibility. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S40: Actual SpawnHammerObj $BA94 returns to $C9FF with original ObjectOffset X, selected misc Y and carry. Real success writes only parent/state/box; each failure preserves all persistent RAM. Current helper returns equivalent carry byte; ChkJH consumes it for throw state bit or timer decrement without rechecking eligibility. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S40: neutral reference_hammer_bro_integration_probe and mysmb_hammer_bro_integration_route_check run 3072 actual ProcHammerBro roots and current x86/x64 real children; each width zero differences over every 1784 persistent RAM byte. Source ABI checks 960 allocation returns (285 success, 320 misc blocked, 355 enemy blocked), all nine selected slots, and 2304 distance returns with both signs 1152 each. CPU scratch/stack excluded explicitly; carry/sign/slot outputs checked. Focused caller/allocation/normal/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S40: neutral reference_hammer_bro_integration_probe and mysmb_hammer_bro_integration_route_check run 3072 actual ProcHammerBro roots and current x86/x64 real children; each width zero differences over every 1784 persistent RAM byte. Source ABI checks 960 allocation returns (285 success, 320 misc blocked, 355 enemy blocked), all nine selected slots, and 2304 distance returns with both signs 1152 each. CPU scratch/stack excluded explicitly; carry/sign/slot outputs checked. Focused caller/allocation/normal/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation SpawnHammerObj -> ChkJH with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
@@ -128683,10 +128683,10 @@
       "currentCounterpart": "src/game/enemy/hammer_bro.c actual PlayerEnemyDiff child result consumed by Shimmy continuation",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S40: Actual PlayerEnemyDiff $E143 returns to $CA69 with X=slot, Y=1, low result in $00 and page result in A/N, including low-byte borrow and high subtraction carry. Native distance helper has the same byte subtraction and caller consumes high sign for facing and walking speed before the real normal movement tail. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S40: Actual PlayerEnemyDiff $E143 returns to $CA69 with X=slot, Y=1, low result in $00 and page result in A/N, including low-byte borrow and high subtraction carry. Native distance helper has the same byte subtraction and caller consumes high sign for facing and walking speed before the real normal movement tail. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S40: neutral reference_hammer_bro_integration_probe and mysmb_hammer_bro_integration_route_check run 3072 actual ProcHammerBro roots and current x86/x64 real children; each width zero differences over every 1784 persistent RAM byte. Source ABI checks 960 allocation returns (285 success, 320 misc blocked, 355 enemy blocked), all nine selected slots, and 2304 distance returns with both signs 1152 each. CPU scratch/stack excluded explicitly; carry/sign/slot outputs checked. Focused caller/allocation/normal/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S40: neutral reference_hammer_bro_integration_probe and mysmb_hammer_bro_integration_route_check run 3072 actual ProcHammerBro roots and current x86/x64 real children; each width zero differences over every 1784 persistent RAM byte. Source ABI checks 960 allocation returns (285 success, 320 misc blocked, 355 enemy blocked), all nine selected slots, and 2304 distance returns with both signs 1152 each. CPU scratch/stack excluded explicitly; carry/sign/slot outputs checked. Focused caller/allocation/normal/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation PlayerEnemyDiff -> Shimmy with Hammer Bro state, timer, random/table index and call/return ordering.",
       "currentSourcePaths": [
@@ -128710,10 +128710,10 @@
       "currentCounterpart": "src/game/enemy/movement.c actual MoveD_EnemyVertically return to FallE with native immutable slot and real child state",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S41: $CA9B FallE receives restored ObjectOffset, then reloads state and resets Y before state-two/direct or slow/steady horizontal selection; exact state five receives force $20, other states $3D. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: $CA9B FallE receives restored ObjectOffset, then reloads state and resets Y before state-two/direct or slow/steady horizontal selection; exact state five receives force $20, other states $3D. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 3360 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 3360 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> FallE with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
@@ -128732,10 +128732,10 @@
       "currentCounterpart": "src/game/enemy/movement.c actual MoveEnemyHorizontally return to AddHS with native immutable slot and real child state",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S41: $CAC4 AddHS receives the real horizontal displacement and restored slot while temporary adjusted speed remains stored; the source PLA/STA and native saved local restore the original horizontal speed afterwards. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: $CAC4 AddHS receives the real horizontal displacement and restored slot while temporary adjusted speed remains stored; the source PLA/STA and native saved local restore the original horizontal speed afterwards. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 4968 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 4968 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> AddHS with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
@@ -128755,10 +128755,10 @@
       "currentCounterpart": "src/game/enemy/movement.c actual MoveD_EnemyVertically return to MoveDefeatedEnemy with native immutable slot and real child state",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S41: $CAE8 MoveDefeatedEnemy receives restored slot and completed real downward gravity before its unconditional horizontal tail, independent of normal-state precedence. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: $CAE8 MoveDefeatedEnemy receives restored slot and completed real downward gravity before its unconditional horizontal tail, independent of normal-state precedence. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 2304 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 2304 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation MoveD_EnemyVertically -> MoveDefeatedEnemy with enemy state, timer, speed/index and source call/return ordering.",
       "currentSourcePaths": [
@@ -128804,10 +128804,10 @@
       "currentCounterpart": "src/game/enemy/movement.c actual MoveJ_EnemyVertically return to MoveJumpingEnemy with native immutable slot and real child state",
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S41: $CAFC MoveJumpingEnemy receives restored slot and force $1C/max $03 completed gravity before its unconditional horizontal tail. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: $CAFC MoveJumpingEnemy receives restored slot and force $1C/max $03 completed gravity before its unconditional horizontal tail. Source state precedence, slot+1 child adapter, source table binding, speed restoration and current C continuation agree. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 1536 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S41: neutral reference_enemy_movement_integration_probe and mysmb_enemy_movement_integration_route_check run 9216 actual normal/defeated/jumping roots; current x86/x64 each zero differences across 1796 persistent bytes including game-owned $0110-$0115/$0125-$012A stack aliases. This seam occurs 1536 times with explicit source X/force/max or temporary-speed/displacement checks. Six slots, all 256 state values per entry, 32 actual erase calls; normal/vertical/gravity/purity tests and original OpenNT DOS16 link pass. Scratch and remaining CPU stack are explicit exclusions. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation MoveJ_EnemyVertically -> MoveJumpingEnemy with Y force/speed, anchor/center coordinates, frame predicate and call/return ordering.",
       "currentSourcePaths": [
@@ -128872,10 +128872,10 @@
       "currentCounterpart": "src/game/enemy/x_counter.c mysmb_enemy_move_with_x_counters actual horizontal return assigned to ram[0] before saved secondary counter restoration",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S42: original MoveWithXMCntrs $CB66 negates secondary for primary-bit-1 clear, writes direction, calls real horizontal child at $CB7E and returns at $CB81 with X=original slot/A=displacement. Source $CB81 STA $00 then PLA/STA restores the saved secondary. Native local/return-byte handoff is equivalent; green outer frame/Y continuation consumes or overwrites $00 identically. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S42: original MoveWithXMCntrs $CB66 negates secondary for primary-bit-1 clear, writes direction, calls real horizontal child at $CB7E and returns at $CB81 with X=original slot/A=displacement. Source $CB81 STA $00 then PLA/STA restores the saved secondary. Native local/return-byte handoff is equivalent; green outer frame/Y continuation consumes or overwrites $00 identically. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S42: reference_x_counter_integration_probe/mysmb_x_counter_integration_route_check execute 4608 real ROM/current native mover/green roots, no child substitution; x86/x64 each zero differences over 1797 bytes including $00 and lower-stack game arrays. 4608 source returns, result saves and counter restorations; directions 2304/2304, zero/positive/negative displacement 354/1464/2790. Six slots, all secondary bytes both directions, page/fraction carry and wrapper counter/frame branches; focused green/purity tests and original OpenNT DOS16 link pass. Other scratch/CPU stack explicitly excluded. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S42: reference_x_counter_integration_probe/mysmb_x_counter_integration_route_check execute 4608 real ROM/current native mover/green roots, no child substitution; x86/x64 each zero differences over 1797 bytes including $00 and lower-stack game arrays. 4608 source returns, result saves and counter restorations; directions 2304/2304, zero/positive/negative displacement 354/1464/2790. Six slots, all secondary bytes both directions, page/fraction carry and wrapper counter/frame branches; focused green/purity tests and original OpenNT DOS16 link pass. Other scratch/CPU stack explicitly excluded. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> XMRight with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
@@ -128895,10 +128895,10 @@
       "currentCounterpart": "src/game/enemy/bloober.c actual mysmb_enemy_player_difference return used for direction and explicit page-SBC carry passed to swim/near_y",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S43: source $CBA4 PlayerEnemyDiff call returns at $CBA7 with original X, Y=2, A/N page difference, $00 low byte and page-SBC carry including low borrow. Current byte helper and unsigned carry computation preserve both sign and independent carry; source unchanged carry passes through float-state/timer branch into $CC2B ADC $10, equivalent to native near_y. Odd slot LSR carry=1 and original dispatcher ID-7 entry carry=0 are explicit alternate sources. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S43: source $CBA4 PlayerEnemyDiff call returns at $CBA7 with original X, Y=2, A/N page difference, $00 low byte and page-SBC carry including low borrow. Current byte helper and unsigned carry computation preserve both sign and independent carry; source unchanged carry passes through float-state/timer branch into $CC2B ADC $10, equivalent to native near_y. Odd slot LSR carry=1 and original dispatcher ID-7 entry carry=0 are explicit alternate sources. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T64 S43: reference_bloober_integration_probe and mysmb_bloober_integration_route_check execute 3072 actual ROM/current native roots; x86/x64 each zero differences over 1797 compared bytes including $00 and lower-stack game arrays. 888 distance returns check A/X/Y/N/C/low; carry-clear/set 501/387, signs 384/504; actual near ADC inputs C=0/1 observed 777/1167 times and outputs checked. Six slots, all page/Y bytes, low borrow, page wrap, hard masks, PRNG gates, swim/defeated branches. Focused Bloober/purity and original OpenNT DOS16 pass; other CPU scratch/stack explicit exclusions. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S43: reference_bloober_integration_probe and mysmb_bloober_integration_route_check execute 3072 actual ROM/current native roots; x86/x64 each zero differences over 1797 compared bytes including $00 and lower-stack game arrays. 888 distance returns check A/X/Y/N/C/low; carry-clear/set 501/387, signs 384/504; actual near ADC inputs C=0/1 observed 777/1167 times and outputs checked. Six slots, all page/Y bytes, low borrow, page wrap, hard masks, PRNG gates, swim/defeated branches. Focused Bloober/purity and original OpenNT DOS16 pass; other CPU scratch/stack explicit exclusions. See docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Preserves original return relation PlayerEnemyDiff -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering.",
       "currentSourcePaths": [
@@ -128946,7 +128946,7 @@
         "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: GetEnemyOffscreenBits returns at $CD3F with X=ObjectOffset and A=$03D1; ProcFirebar consumes bit 3 before any relative/draw child."
       ],
       "operationalEvidence": [
-        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "GetEnemyOffscreenBits returns at $CD3F with X=ObjectOffset and A=$03D1; ProcFirebar consumes bit 3 before any relative/draw child.",
       "currentSourcePaths": [
@@ -128992,7 +128992,7 @@
         "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: RelativeEnemyPosition returns at $CD6F with X=ObjectOffset and A=$03AE; residual lookup consumes that A before center OAM output."
       ],
       "operationalEvidence": [
-        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "RelativeEnemyPosition returns at $CD6F with X=ObjectOffset and A=$03AE; residual lookup consumes that A before center OAM output.",
       "currentSourcePaths": [
@@ -129102,7 +129102,7 @@
         "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: DrawFirebar returns at $CE0B with X and OAM Y unchanged; FirebarCollision consumes original center/segment coordinates after tile/attribute writes."
       ],
       "operationalEvidence": [
-        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "DrawFirebar returns at $CE0B with X and OAM Y unchanged; FirebarCollision consumes original center/segment coordinates after tile/attribute writes.",
       "currentSourcePaths": [
@@ -129124,7 +129124,7 @@
         "M2 T64 S44 static $CD3C-$CED4 audit and real child-return checks: InjurePlayer returns at $CE82 with X=ObjectOffset on guard, death and demotion paths; saved loop $00 is restored at $CE85 only after injury; saved OAM advances by four before the final slot reload."
       ],
       "operationalEvidence": [
-        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S44: 512 real original-ROM ProcFirebar roots and current x86/x64 each match persistent RAM/OAM/lower-stack game aliases with zero differences; 512/368/3312/102 offscreen/relative/draw/injury returns and 102 saved-loop restores; focused Firebar/spin/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "InjurePlayer returns at $CE82 with X=ObjectOffset on guard, death and demotion paths; saved loop $00 is restored at $CE85 only after injury; saved OAM advances by four before the final slot reload.",
       "currentSourcePaths": [
@@ -129148,7 +129148,7 @@
         "M2 T64 S45 static $CEDF-$CF24 and live return-consumer audit: MoveEnemyHorizontally returns at $CEF0 with X=ObjectOffset and signed nibble/fraction displacement A; FlyCC overwrites Y/A with $0d/$05 before real gravity, retaining moved page/X/force."
       ],
       "operationalEvidence": [
-        "M2 T64 S45 current x86/x64 each match 1536 real original-ROM roots, zero differences across 1800 bytes; 1344 returns per child, 192 defeated roots, all 16 priority indices and both threshold paths observed; focused tests/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S45 current x86/x64 each match 1536 real original-ROM roots, zero differences across 1800 bytes; 1344 returns per child, 192 defeated roots, all 16 priority indices and both threshold paths observed; focused tests/purity/OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "MoveEnemyHorizontally returns at $CEF0 with X=ObjectOffset and signed nibble/fraction displacement A; FlyCC overwrites Y/A with $0d/$05 before real gravity, retaining moved page/X/force.",
       "currentSourcePaths": [
@@ -129171,7 +129171,7 @@
         "M2 T64 S45 static $CEDF-$CF24 and live return-consumer audit: SetXMoveAmt returns at $CEF7 with X=ObjectOffset, force scratch $00=$0d and max $02=$05; FlyCC consumes the resulting Y force high nibble and Y position in indexed subtraction/priority output."
       ],
       "operationalEvidence": [
-        "M2 T64 S45 current x86/x64 each match 1536 real original-ROM roots, zero differences across 1800 bytes; 1344 returns per child, 192 defeated roots, all 16 priority indices and both threshold paths observed; focused tests/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S45 current x86/x64 each match 1536 real original-ROM roots, zero differences across 1800 bytes; 1344 returns per child, 192 defeated roots, all 16 priority indices and both threshold paths observed; focused tests/purity/OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SetXMoveAmt returns at $CEF7 with X=ObjectOffset, force scratch $00=$0d and max $02=$05; FlyCC consumes the resulting Y force high nibble and Y position in indexed subtraction/priority output.",
       "currentSourcePaths": [
@@ -129216,7 +129216,7 @@
         "M2 T64 S46 static $CF28-$CFDC and $E143-$E152 audit: real page/low/borrow return, source BPL, signed low negation, strict $3c clamp, direction deceleration, index predicates, exact pixel+one decrement and outer speed/direction/movement consumer."
       ],
       "operationalEvidence": [
-        "M2 T64 S46 current x86/x64 each match 1920 real original-ROM roots (1536 direct, 384 outer), 1800 RAM bytes and direct returned A, zero differences; 1824 actual distance returns, both sign/borrow values, 198 early deceleration returns and all three adjustment indices observed. Focused Lakitu/purity tests and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S46 current x86/x64 each match 1920 real original-ROM roots (1536 direct, 384 outer), 1800 RAM bytes and direct returned A, zero differences; 1824 actual distance returns, both sign/borrow values, 198 early deceleration returns and all three adjustment indices observed. Focused Lakitu/purity tests and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PlayerEnemyDiff returns at $CF71 with X=ObjectOffset, Y=0, low subtraction in $00 and page-minus-borrow in A/N; PlayerLakituDiff consumes sign, clamps absolute low distance and preserves direction/deceleration, speed-index and pixel-subtraction-loop order.",
       "currentSourcePaths": [
@@ -129243,7 +129243,7 @@
         "M2 T64 S47 static $CFEC-$D060 and shared child return audit: MoveEnemySlowVert returns at $D012 with X=ObjectOffset after force $0f/max two gravity; MoveD_Bowser tail-jumps to real BowserGfxHandler using the updated vertical arrays and same slot."
       ],
       "operationalEvidence": [
-        "M2 T64 S47 current x86/x64 each match 576 real original-ROM roots, zero differences across 1796 persistent bytes; 384 slow vertical returns, 12 final-section InitVStf returns and 576 actual drawing continuations. Focused bridge/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S47 current x86/x64 each match 576 real original-ROM roots, zero differences across 1796 persistent bytes; 384 slow vertical returns, 12 final-section InitVStf returns and 576 actual drawing continuations. Focused bridge/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "MoveEnemySlowVert returns at $D012 with X=ObjectOffset after force $0f/max two gravity; MoveD_Bowser tail-jumps to real BowserGfxHandler using the updated vertical arrays and same slot.",
       "currentSourcePaths": [
@@ -129310,7 +129310,7 @@
         "M2 T64 S47 static $CFEC-$D060 and shared child return audit: InitVStf returns at $D056 with A=0 and X=ObjectOffset, clearing enemy Y speed/force; RemoveBridge then stores state $40 and sound $80 before its real Bowser drawing tail."
       ],
       "operationalEvidence": [
-        "M2 T64 S47 current x86/x64 each match 576 real original-ROM roots, zero differences across 1796 persistent bytes; 384 slow vertical returns, 12 final-section InitVStf returns and 576 actual drawing continuations. Focused bridge/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S47 current x86/x64 each match 576 real original-ROM roots, zero differences across 1796 persistent bytes; 384 slow vertical returns, 12 final-section InitVStf returns and 576 actual drawing continuations. Focused bridge/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "InitVStf returns at $D056 with A=0 and X=ObjectOffset, clearing enemy Y speed/force; RemoveBridge then stores state $40 and sound $80 before its real Bowser drawing tail.",
       "currentSourcePaths": [
@@ -129360,7 +129360,7 @@
         "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: PlayerEnemyDiff returns at $D0B8 with X=ObjectOffset, low subtraction in $00 and page-minus-borrow in A/N; B_FaceP consumes BPL before facing/speed/timer changes."
       ],
       "operationalEvidence": [
-        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PlayerEnemyDiff returns at $D0B8 with X=ObjectOffset, low subtraction in $00 and page-minus-borrow in A/N; B_FaceP consumes BPL before facing/speed/timer changes.",
       "currentSourcePaths": [
@@ -129387,7 +129387,7 @@
         "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: MoveEnemySlowVert returns at $D117 with X=ObjectOffset and force $0f/max two; HammerChk then tests world/frame and updated Y without losing the slot."
       ],
       "operationalEvidence": [
-        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "MoveEnemySlowVert returns at $D117 with X=ObjectOffset and force $0f/max two; HammerChk then tests world/frame and updated Y without losing the slot.",
       "currentSourcePaths": [
@@ -129410,7 +129410,7 @@
         "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: SpawnHammerObj returns at $D127 with restored X, selected Y and allocation carry; HammerChk does not branch on carry and uses current-slot Y to update frame timer."
       ],
       "operationalEvidence": [
-        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SpawnHammerObj returns at $D127 with restored X, selected Y and allocation carry; HammerChk does not branch on carry and uses current-slot Y to update frame timer.",
       "currentSourcePaths": [
@@ -129433,7 +129433,7 @@
         "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: InitVStf returns at $D145 with A=0, X=ObjectOffset and Y speed/force zero; MakeBJump then stores speed $fe before the fire/graphics continuation."
       ],
       "operationalEvidence": [
-        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "InitVStf returns at $D145 with A=0, X=ObjectOffset and Y speed/force zero; MakeBJump then stores speed $fe before the fire/graphics continuation.",
       "currentSourcePaths": [
@@ -129526,7 +129526,7 @@
         "M2 T64 S49 static $D17B-$D1D0 and actual return-consumer audit: RunRetainerObj returns at $D1C2 with X=ObjectOffset for the active front/rear half; ProcessBowserHalf tests that slot state before control-ten box generation or early return."
       ],
       "operationalEvidence": [
-        "M2 T64 S49 current x86/x64 each match 1536 actual BowserGfxHandler roots, zero differences across 1833 bytes including all $0109-$0139 game aliases; 3072 retainer returns, 2100 box returns/tail collisions, 24 injury entries; graphics/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S49 current x86/x64 each match 1536 actual BowserGfxHandler roots, zero differences across 1833 bytes including all $0109-$0139 game aliases; 3072 retainer returns, 2100 box returns/tail collisions, 24 injury entries; graphics/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "RunRetainerObj returns at $D1C2 with X=ObjectOffset for the active front/rear half; ProcessBowserHalf tests that slot state before control-ten box generation or early return.",
       "currentSourcePaths": [
@@ -129550,7 +129550,7 @@
         "M2 T64 S49 static $D17B-$D1D0 and actual return-consumer audit: GetEnemyBoundBox returns at $D1CE with X=ObjectOffset after masked/clipped four-byte box output and control ten; ProcessBowserHalf immediately tail-jumps to PlayerEnemyCollision with that same box/slot."
       ],
       "operationalEvidence": [
-        "M2 T64 S49 current x86/x64 each match 1536 actual BowserGfxHandler roots, zero differences across 1833 bytes including all $0109-$0139 game aliases; 3072 retainer returns, 2100 box returns/tail collisions, 24 injury entries; graphics/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S49 current x86/x64 each match 1536 actual BowserGfxHandler roots, zero differences across 1833 bytes including all $0109-$0139 game aliases; 3072 retainer returns, 2100 box returns/tail collisions, 24 injury entries; graphics/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "GetEnemyBoundBox returns at $D1CE with X=ObjectOffset after masked/clipped four-byte box output and control ten; ProcessBowserHalf immediately tail-jumps to PlayerEnemyCollision with that same box/slot.",
       "currentSourcePaths": [
@@ -129573,7 +129573,7 @@
         "M2 T64 S50 static $D1EB-$D294 and real return-consumer audit: RelativeEnemyPosition returns at $D223 with X=ObjectOffset and A=$03AE; SetGfxF tests current-slot state before consuming relative Y/X in the three-sprite loop."
       ],
       "operationalEvidence": [
-        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "RelativeEnemyPosition returns at $D223 with X=ObjectOffset and A=$03AE; SetGfxF tests current-slot state before consuming relative Y/X in the three-sprite loop.",
       "currentSourcePaths": [
@@ -129595,7 +129595,7 @@
         "M2 T64 S50 static $D1EB-$D294 and real return-consumer audit: GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order."
       ],
       "operationalEvidence": [
-        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order.",
       "currentSourcePaths": [
@@ -129617,7 +129617,7 @@
         "M2 T64 S51 static $D295-$D2CC and real return-consumer audit: RelativeEnemyPosition returns at $D2A8 with X=ObjectOffset and A=$03AE; SetupExpl copies relative Y before X to fireball coordinates, then passes the current-slot frame and OAM offset into the real drawing child."
       ],
       "operationalEvidence": [
-        "M2 T64 S51 current x86/x64 each match 1536 actual fireworks roots with zero differences across 1833 bytes; relative/draw returns 1410/1410, terminal score tails 126 and all three drawing phases; C90 fireworks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S51 current x86/x64 each match 1536 actual fireworks roots with zero differences across 1833 bytes; relative/draw returns 1410/1410, terminal score tails 126 and all three drawing phases; C90 fireworks/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "RelativeEnemyPosition returns at $D2A8 with X=ObjectOffset and A=$03AE; SetupExpl copies relative Y before X to fireball coordinates, then passes the current-slot frame and OAM offset into the real drawing child.",
       "currentSourcePaths": [
@@ -129639,7 +129639,7 @@
         "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: DrawExplosion_Fireworks returns at $D2BC with X=ObjectOffset after all four sprite tile, coordinate and attribute writes; SetupExpl immediately returns."
       ],
       "operationalEvidence": [
-        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "DrawExplosion_Fireworks returns at $D2BC with X=ObjectOffset after all four sprite tile, coordinate and attribute writes; SetupExpl immediately returns.",
       "currentSourcePaths": [
@@ -129684,7 +129684,7 @@
         "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: DigitsMathRoutine returns at $D331 after timer subtraction and clearing $0133-$0139; NoTTick sets modifier +5 to five before EndAreaPoints awards score."
       ],
       "operationalEvidence": [
-        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "DigitsMathRoutine returns at $D331 after timer subtraction and clearing $0133-$0139; NoTTick sets modifier +5 to five before EndAreaPoints awards score.",
       "currentSourcePaths": [
@@ -129707,7 +129707,7 @@
         "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: DigitsMathRoutine returns at $D342 after applying the selected player score modifier and clearing $0133-$0139; ELPGive forms the current-player high-nibble and timer selector before UpdateNumber tail."
       ],
       "operationalEvidence": [
-        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "DigitsMathRoutine returns at $D342 after applying the selected player score modifier and clearing $0133-$0139; ELPGive forms the current-player high-nibble and timer selector before UpdateNumber tail.",
       "currentSourcePaths": [
@@ -129730,7 +129730,7 @@
         "M2 T64 S52 static $D295-$D3AF and real return-consumer audit: RelativeEnemyPosition returns at $D368 with X=ObjectOffset and A=$03AE; DrawStarFlag reloads the current-slot OAM offset and draws the four source-ordered flag sprites before restoring ObjectOffset."
       ],
       "operationalEvidence": [
-        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S52 current x86/x64 each match 1536 actual fireworks/star-flag roots with zero differences across 1833 bytes; explosion/timer/score/flag returns 702/102/168/252, all valid star tasks plus out-of-range exit; C90 actor/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "RelativeEnemyPosition returns at $D368 with X=ObjectOffset and A=$03AE; DrawStarFlag reloads the current-slot OAM offset and draws the four source-ordered flag sprites before restoring ObjectOffset.",
       "currentSourcePaths": [
@@ -129796,7 +129796,7 @@
         "M2 T64 S53 static $D3B0-$D40F and real return-consumer audit: PlayerEnemyDiff returns at $D3C4 with unchanged X, low difference in $00 and borrow-adjusted high difference in A/N; MovePiranhaPlant uses that high sign to conditionally negate the low byte, then compares the magnitude against $21 before reversing speed."
       ],
       "operationalEvidence": [
-        "M2 T64 S53 current x86/x64 each match 1920 actual piranha roots with zero differences across 1841 bytes; 1752 real distance returns, both high signs/low borrows, near/far 486/1266 and 312 endpoint stops; C90 movement/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S53 current x86/x64 each match 1920 actual piranha roots with zero differences across 1841 bytes; 1752 real distance returns, both high signs/low borrows, near/far 486/1266 and 312 endpoint stops; C90 movement/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PlayerEnemyDiff returns at $D3C4 with unchanged X, low difference in $00 and borrow-adjusted high difference in A/N; MovePiranhaPlant uses that high sign to conditionally negate the low byte, then compares the magnitude against $21 before reversing speed.",
       "currentSourcePaths": [
@@ -130096,7 +130096,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MovePlatformUp returns at $D5F8 with X=ObjectOffset after gravity state writes; ChkYCenterPos jumps into the current-slot rider gate."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "MovePlatformUp returns at $D5F8 with X=ObjectOffset after gravity state writes; ChkYCenterPos jumps into the current-slot rider gate.",
       "currentSourcePaths": [
@@ -130119,7 +130119,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MovePlatformDown returns at $D5FE with X=ObjectOffset after gravity state writes; YMDown falls into the current-slot rider gate."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "MovePlatformDown returns at $D5FE with X=ObjectOffset after gravity state writes; YMDown falls into the current-slot rider gate.",
       "currentSourcePaths": [
@@ -130142,7 +130142,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnVPlat returns at $D606 after the guarded rider Y/high-Y and vertical-speed/force writes; ChkYPCollision immediately returns, shared by vertical and large lift callers."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PositionPlayerOnVPlat returns at $D606 after the guarded rider Y/high-Y and vertical-speed/force writes; ChkYPCollision immediately returns, shared by vertical and large lift callers.",
       "currentSourcePaths": [
@@ -130211,7 +130211,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnVPlat returns at $D630 after horizontal rider displacement/page carry and Platform_X_Scroll were committed; SetPVar immediately returns."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PositionPlayerOnVPlat returns at $D630 after horizontal rider displacement/page carry and Platform_X_Scroll were committed; SetPVar immediately returns.",
       "currentSourcePaths": [
@@ -130234,7 +130234,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MoveDropPlatform returns at $D639 with X=ObjectOffset after real gravity updates; DropPlatform invokes current-slot vertical rider positioning next."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "MoveDropPlatform returns at $D639 with X=ObjectOffset after real gravity updates; DropPlatform invokes current-slot vertical rider positioning next.",
       "currentSourcePaths": [
@@ -130257,7 +130257,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnVPlat returns at $D63C after real drop movement and guarded rider placement; DropPlatform immediately returns."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PositionPlayerOnVPlat returns at $D63C after real drop movement and guarded rider placement; DropPlatform immediately returns.",
       "currentSourcePaths": [
@@ -130280,7 +130280,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: MoveEnemyHorizontally returns at $D640 with X=ObjectOffset and A=integer displacement plus fractional carry; RightPlatform stores that A into $00 before the collision gate and next-frame speed acceleration."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "MoveEnemyHorizontally returns at $D640 with X=ObjectOffset and A=integer displacement plus fractional carry; RightPlatform stores that A into $00 before the collision gate and next-frame speed acceleration.",
       "currentSourcePaths": [
@@ -130369,7 +130369,7 @@
         "M2 T64 S54 static $D5D3-$D679 and real return-consumer audit: PositionPlayerOnS_Plat returns at $D679 after consuming the nonzero collision counter to select the bound PRG height adder and applying guarded rider placement; ChkSmallPlatCollision immediately returns."
       ],
       "operationalEvidence": [
-        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S54 current x86/x64 each match 1728 actual platform movement roots with zero differences across 1841 bytes; eight real RTS return counts 120/102/288/288/144/144/288/192, both legal small counters; C90 movement/position/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PositionPlayerOnS_Plat returns at $D679 after consuming the nonzero collision counter to select the bound PRG height adder and applying guarded rider placement; ChkSmallPlatCollision immediately returns.",
       "currentSourcePaths": [
@@ -130440,7 +130440,7 @@
         "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: HandleEnemyFBallCol returns at $D72C after hit response; the scan restores its saved fireball box Y and live enemy $01, decrements that enemy and continues even after setting fireball state $80. Returned CPU X is dead and need not equal the hit enemy."
       ],
       "operationalEvidence": [
-        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "HandleEnemyFBallCol returns at $D72C after hit response; the scan restores its saved fireball box Y and live enemy $01, decrements that enemy and continues even after setting fireball state $80. Returned CPU X is dead and need not equal the hit enemy.",
       "currentSourcePaths": [
@@ -130463,7 +130463,7 @@
         "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: RelativeEnemyPosition returns at $D741 with X=ObjectOffset and A=$03AE; HandleEnemyFBallCol reloads live enemy $01 before duplicate Bowser selection and immunity/health handling."
       ],
       "operationalEvidence": [
-        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "RelativeEnemyPosition returns at $D741 with X=ObjectOffset and A=$03AE; HandleEnemyFBallCol reloads live enemy $01 before duplicate Bowser selection and immunity/health handling.",
       "currentSourcePaths": [
@@ -130485,7 +130485,7 @@
         "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: InitVStf returns at $D764 with A=0 and selected Bowser X, clearing vertical speed/force; HurtBowser uses that zero for horizontal speed/frenzy before setting death velocity and source-world identity/state."
       ],
       "operationalEvidence": [
-        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "InitVStf returns at $D764 with A=0 and selected Bowser X, clearing vertical speed/force; HurtBowser uses that zero for horizontal speed/frenzy before setting death velocity and source-world identity/state.",
       "currentSourcePaths": [
@@ -130532,7 +130532,7 @@
         "M2 T64 S55 static $D6D9-$D7C3 and real return-consumer audit: SetupFloateyNumber returns at $D7BF with the original score enemy slot, stored control/timer/Y/relative-X and A=$03AE; EnemySmackScore then writes $08 to the square-one sound queue."
       ],
       "operationalEvidence": [
-        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S55 current x86/x64 each match 3584 actual scan/hit roots with zero differences across 1841 bytes; real hit/relative/init/floatey returns 780/3852/232/2346, 156 multi-hit scans and all eight worlds; C90 scan/hit/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SetupFloateyNumber returns at $D7BF with the original score enemy slot, stored control/timer/Y/relative-X and A=$03AE; EnemySmackScore then writes $08 to the square-one sound queue.",
       "currentSourcePaths": [
@@ -130603,7 +130603,7 @@
         "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: SetupFloateyNumber returns at $D808 with the incoming score slot and relative X in A after default control six/timer/Y/X writes; HandlePowerUpCollision then sets grab sound and reads live type/status, with 1UP overwriting only the control."
       ],
       "operationalEvidence": [
-        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SetupFloateyNumber returns at $D808 with the incoming score slot and relative X in A after default control six/timer/Y/X writes; HandlePowerUpCollision then sets grab sound and reads live type/status, with 1UP overwriting only the control.",
       "currentSourcePaths": [
@@ -130626,7 +130626,7 @@
         "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: GetPlayerColors returns at $D833 with the original VRAM offset X and advanced offset A after the source palette packet and terminal RAM00=$ff; Shroom_Flower_PUp reloads ObjectOffset before the fiery routine setup."
       ],
       "operationalEvidence": [
-        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "GetPlayerColors returns at $D833 with the original VRAM offset X and advanced offset A after the source palette packet and terminal RAM00=$ff; Shroom_Flower_PUp reloads ObjectOffset before the fiery routine setup.",
       "currentSourcePaths": [
@@ -130649,7 +130649,7 @@
         "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: SetPRout returns at $D84C with X=ObjectOffset after routine nine/twelve, state zero, TimerControl=$ff and ScrollAmount=zero writes; UpToFiery immediately returns."
       ],
       "operationalEvidence": [
-        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SetPRout returns at $D84C with X=ObjectOffset after routine nine/twelve, state zero, TimerControl=$ff and ScrollAmount=zero writes; UpToFiery immediately returns.",
       "currentSourcePaths": [
@@ -131989,7 +131989,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: SubtEnemyYPos returns at $DFCA with byte Y+$3E comparison flags before ID dispatch."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFCA observed 12288 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFCA observed 12288 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SubtEnemyYPos returns at $DFCA with byte Y+$3E comparison flags before ID dispatch.",
       "currentSourcePaths": [
@@ -132014,7 +132014,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkUnderEnemy returns at $DFF5 with metatile A and original pointer/row/low-nibble scratch before zero/nonzero routing."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFF5 observed 12288 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFF5 observed 12288 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ChkUnderEnemy returns at $DFF5 with metatile A and original pointer/row/low-nibble scratch before zero/nonzero routing.",
       "currentSourcePaths": [
@@ -132037,7 +132037,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkForNonSolids returns at $DFFD preserving metatile A and equality rejection before bumped-block/landing selection."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFFD observed 9216 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFFD observed 9216 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ChkForNonSolids returns at $DFFD preserving metatile A and equality rejection before bumped-block/landing selection.",
       "currentSourcePaths": [
@@ -132060,7 +132060,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: KillEnemyAboveBlock returns at $E016 before score-one setup; defeat/stun changes remain visible to subsequent stun."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E016 observed 768 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E016 observed 768 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "KillEnemyAboveBlock returns at $E016 before score-one setup; defeat/stun changes remain visible to subsequent stun.",
       "currentSourcePaths": [
@@ -132083,7 +132083,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: SetupFloateyNumber returns at $E01B with relative X in A, which feeds original stun/demotion comparisons rather than reloaded ID."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E01B observed 3072 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E01B observed 3072 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SetupFloateyNumber returns at $E01B with relative X in A, which feeds original stun/demotion comparisons rather than reloaded ID.",
       "currentSourcePaths": [
@@ -132106,7 +132106,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: PlayerEnemyDiff returns at $E051 with page-difference sign and low difference RAM00 before direction/speed selection."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E051 observed 3840 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E051 observed 3840 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PlayerEnemyDiff returns at $E051 with page-difference sign and low difference RAM00 before direction/speed selection.",
       "currentSourcePaths": [
@@ -132132,7 +132132,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: EnemyLanding returns at $E0A4 after zeroing vertical speed/force and Y alignment; state three and interval remain."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0A4 observed 120 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0A4 observed 120 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "EnemyLanding returns at $E0A4 after zeroing vertical speed/force and Y alignment; state three and interval remain.",
       "currentSourcePaths": [
@@ -132155,7 +132155,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: PlayerEnemyDiff returns at $E0C2 before inverted facing comparison, including low-coordinate borrow."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0C2 observed 168 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0C2 observed 168 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "PlayerEnemyDiff returns at $E0C2 before inverted facing comparison, including low-coordinate borrow.",
       "currentSourcePaths": [
@@ -132181,7 +132181,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkForBump_HammerBroJ returns at $E0CD and falls through physical landing and state initialization, never exits after bump."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0CD observed 72 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0CD observed 72 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ChkForBump_HammerBroJ returns at $E0CD and falls through physical landing and state initialization, never exits after bump.",
       "currentSourcePaths": [
@@ -132204,7 +132204,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: EnemyLanding returns at $E0D0 before state bit-seven selection and bit-six removal or state zero."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0D0 observed 480 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0D0 observed 480 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "EnemyLanding returns at $E0D0 before state bit-seven selection and bit-six removal or state zero.",
       "currentSourcePaths": [
@@ -132227,7 +132227,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: BlockBufferChk_Enemy returns at $E115 with metatile A and horizontal scratch for empty/solid side routing."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E115 observed 8238 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E115 observed 8238 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "BlockBufferChk_Enemy returns at $E115 with metatile A and horizontal scratch for empty/solid side routing.",
       "currentSourcePaths": [
@@ -132249,7 +132249,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkForNonSolids returns at $E11A before bump tail or counter decrement/next side probe."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E11A observed 5262 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E11A observed 5262 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ChkForNonSolids returns at $E11A before bump tail or counter decrement/next side probe.",
       "currentSourcePaths": [
@@ -132272,7 +132272,7 @@
         "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: InitVStf returns at $E152 with zero speed/force before Y high-nibble OR eight."
       ],
       "operationalEvidence": [
-        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E152 observed 600 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E152 observed 600 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "InitVStf returns at $E152 with zero speed/force before Y high-nibble OR eight.",
       "currentSourcePaths": [
@@ -132296,7 +132296,7 @@
         "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: SubtEnemyYPos returns at $E166 with wrapped Y+$3E and CMP flags before the byte speed+$02 eligibility gate."
       ],
       "operationalEvidence": [
-        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E166 actual RTS observed 9216; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E166 actual RTS observed 9216; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "SubtEnemyYPos returns at $E166 with wrapped Y+$3E and CMP flags before the byte speed+$02 eligibility gate.",
       "currentSourcePaths": [
@@ -132318,7 +132318,7 @@
         "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: ChkUnderEnemy returns at $E174 with metatile A, pointer/row and low-nibble scratch; empty skips landing but still tails to side check."
       ],
       "operationalEvidence": [
-        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E174 actual RTS observed 7254; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E174 actual RTS observed 7254; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ChkUnderEnemy returns at $E174 with metatile A, pointer/row and low-nibble scratch; empty skips landing but still tails to side check.",
       "currentSourcePaths": [
@@ -132341,7 +132341,7 @@
         "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: ChkForNonSolids returns at $E179 with original metatile/equality; rejected metatiles skip landing and still tail to side check."
       ],
       "operationalEvidence": [
-        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E179 actual RTS observed 6912; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E179 actual RTS observed 6912; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ChkForNonSolids returns at $E179 with original metatile/equality; rejected metatiles skip landing and still tail to side check.",
       "currentSourcePaths": [
@@ -132364,7 +132364,7 @@
         "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: EnemyLanding returns at $E17E with speed/force zero and Y alignment before the caller overwrites speed $FD and tails to side check."
       ],
       "operationalEvidence": [
-        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E17E actual RTS observed 2304; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E17E actual RTS observed 2304; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "EnemyLanding returns at $E17E with speed/force zero and Y alignment before the caller overwrites speed $FD and tails to side check.",
       "currentSourcePaths": [
@@ -132387,7 +132387,7 @@
         "M2 T64 S58 static $E163-$E1AD and SetHJ movement continuation: ChkUnderEnemy returns at $E188 with original metatile/scratch; hammer distinguishes zero, $23 defeat and timer/state-mask/landing before real side descendants."
       ],
       "operationalEvidence": [
-        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E188 actual RTS observed 6144; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+        "M2 T64 S58 x86/x64 each 15360 real jump/hammer roots zero-difference across 1841 bytes; $E188 actual RTS observed 6144; 3072 ProcHammerBro regression roots zero-difference across 1784 persistent bytes; C90/purity/OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
       ],
       "semanticContract": "ChkUnderEnemy returns at $E188 with original metatile/scratch; hammer distinguishes zero, $23 defeat and timer/state-mask/landing before real side descendants.",
       "currentSourcePaths": [
