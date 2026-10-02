@@ -9319,7 +9319,8 @@
       "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_player_render_rows and mysmb_oam_draw_intermediate_player owner-local PRG reads",
       "semanticContract": "Each selected source row supplies its adjacent tile pair in row order before the shared sprite-object draw.",
       "semanticEvidence": [
-        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required.",
+        "M2 T65 S14 source finding: both indexed row consumers skip meaningful original DrawOneSpriteRow and write its scratch inline; repair indexed pair handoff before proof. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
       "operationalEvidence": [],
       "cohort": "K",

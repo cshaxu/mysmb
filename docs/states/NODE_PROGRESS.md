@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S14 - active player table/indexed-consumer audit
+
+[S14 scope/consumer finding](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+admits3 table labels, intended fresh3, maximum1633/1992. Current1630/1992
+nodes,3483/4317 controls(raw4342,infeasible25),391/492 material partial;
+historical1992/1992 separate. Later player-control credit remains unadmitted.
+
 ## M2 T65 S13 - closed ordered bubble output leaf
 
 [S13 source/branch/output proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

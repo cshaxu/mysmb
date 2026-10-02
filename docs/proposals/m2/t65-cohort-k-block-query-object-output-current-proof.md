@@ -1660,3 +1660,36 @@ pause; explicit artifact delivery authorization overrides default exclusion.
 - mysmb64.exe: 381335 bytes; SHA-256 8ddefac58baf697bcc53feb46a2ea900d542a55da189069bd64ceba8907a3ab1.
 
 Ledger admission/closure, documentation and whitespace gates rerun. S13 closes only its scope; T65 and M2 remain open.
+
+## S14 admission - player table binding and actual indexed consumers
+
+Unchanged scope3: PlayerGfxTblOffsets, PlayerGraphicsTable, SwimKickTileNum,
+all incoming needs-evidence; intended fresh3, maximum1633/1992 from1630.
+Historical baseline/maximum1992, expectedMatches empty; maintenance custody
+unchanged. Shared player_gfx.c owner-local PRG offsets6E07/6E17/6EE7 bind
+original EE07/EE17/EEE7. Sixteen action/size offsets,208 tile bytes and two
+kick bytes must reach the actual indexed consumers; mere byte presence is
+insufficient. Pending material00427-00429:3, no scoped control promotions.
+Current1630/1992 nodes,3483/4317 controls(raw4342,infeasible25),391/492
+material partial; historical separate. S13 closed, S15 census follows only
+when scoped bindings and consumers have no unresolved difference.
+
+Source finding: ordinary and intermediate rows directly call DrawSpriteObject
+instead of source DrawOneSpriteRow. Restore that meaningful indexed-pair
+consumer and source scratch publication order under this S14 owner scope;
+register findings in material00428. Later graphics-control nodes/edges retain
+T66 proof scope, no inferred consumer-node/control credit. No broad player
+state/motion/platform/audio rewrite is admitted. Similar-issue sweep covers
+both indexed row loops, all table selectors and swimming foot continuation.
+
+ROM track counts actual source LDA/ADC indexed reads within the three tables,
+compares original row-entry A/X/Y/RAM and returned row indices plus full RAM
+against current C on both widths. Original EEE9/EFA4 roots cover both sizes,
+seven action selectors/animation, death, grow/shrink, throw, swim kicks and
+intermediate drawing. Owner ROM is explicitly passed to neutral checker for
+local PRG binding, never tracked. Original table bytes are inspected locally,
+not copied into tracked fixtures. Operational track builds C90 x86/x64 and
+focused player/row/core/purity/audio/focus tests, original OpenNT DOS16 link;
+code changes refresh all three authorized EXEs. Ignored S14 owns192MiB raw,
+2048-root chunks,120seconds/run,524288steps/case, checkpoints and coordinator
+cleanup. ROM/local ASM remain nonredistributable research inputs.
