@@ -1736,3 +1736,6 @@ target_link_libraries(mysmb_kill_enemy_above_block_actual_check PRIVATE mysmb_ga
 
 add_executable(mysmb_bounding_box_core_actual_check test/bounding_box_core_actual_check.c)
 target_link_libraries(mysmb_bounding_box_core_actual_check PRIVATE mysmb_game)
+
+add_executable(mysmb_bounding_box_clip_actual_check test/bounding_box_clip_actual_check.c)
+target_link_libraries(mysmb_bounding_box_clip_actual_check PRIVATE mysmb_game)

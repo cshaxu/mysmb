@@ -30,7 +30,7 @@ void mysmb_world_set_bounding_box(struct mysmb_game *game,
         (mysmb_u8)(y + bound_box_ctrl_data[(mysmb_u8)(table_offset + 3U)]);
 }
 
-/* ROM $dc9f CheckRightScreenBBox through $dcf5 NoOfs2.
+/* ROM $e2de CheckRightScreenBBox through $e324 NoOfs2 return.
  * CMP object-X followed by SBC object-page is the source's unsigned
  * world-coordinate comparison against ScreenLeft + $80. */
 void mysmb_world_clip_bounding_box_to_screen(struct mysmb_game *game,

@@ -10537,14 +10537,14 @@
   ],
   "nodeCounts": {
     "unclassified": 0,
-    "exact": 1467,
-    "needs-evidence": 525,
+    "exact": 1473,
+    "needs-evidence": 519,
     "mismatch": 0
   },
   "controlEdgeCounts": {
     "unclassified": 0,
-    "exact": 3071,
-    "needs-evidence": 1252,
+    "exact": 3081,
+    "needs-evidence": 1242,
     "mismatch": 0,
     "infeasible": 19
   },
@@ -39435,16 +39435,17 @@
       "label": "CheckRightScreenBBox",
       "asmLine": 12916,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/world/bounding_box.c",
+      "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
       "semanticContract": "Compares object world coordinate with screen middle and clips right-side box edges to $ff only when their signed relation requires it.",
       "currentSourcePaths": [
-        "src/game/objects.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -39452,13 +39453,15 @@
       "label": "SORte",
       "asmLine": 12935,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/world/bounding_box.c",
+      "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
       "semanticContract": "Writes right edge $ff and left edge when required, then restores ObjectOffset.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
@@ -39468,13 +39471,15 @@
       "label": "NoOfs",
       "asmLine": 12936,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/world/bounding_box.c",
+      "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
       "semanticContract": "Restores ObjectOffset and returns from right-side clip path.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
@@ -39484,13 +39489,15 @@
       "label": "CheckLeftScreenBBox",
       "asmLine": 12939,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/world/bounding_box.c",
+      "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
       "semanticContract": "Leaves $80-$9f wrapped near-left boxes visible, but changes $a0-$ff offscreen left edges and applicable right edge to zero.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
@@ -39500,13 +39507,15 @@
       "label": "SOLft",
       "asmLine": 12948,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/world/bounding_box.c",
+      "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
       "semanticContract": "Writes left edge zero and conditionally right edge zero before restoring ObjectOffset.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
@@ -39516,13 +39525,15 @@
       "label": "NoOfs2",
       "asmLine": 12949,
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/world/collision.c and src/game/world/bounding_box.c",
-      "currentCounterpart": "shared bounding-box builders and mysmb_world_clip_bounding_box_to_screen",
+      "status": "exact",
+      "currentOwner": "src/game/world/bounding_box.c",
+      "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
       "semanticContract": "Restores ObjectOffset and returns from left-side clip path.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
@@ -106385,15 +106396,16 @@
       "instruction": "bcc",
       "id": "control-02724",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CheckRightScreenBBox -> CheckLeftScreenBBox with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
-        "src/game/objects.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -106405,15 +106417,16 @@
       "instruction": "bmi",
       "id": "control-02725",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CheckRightScreenBBox -> NoOfs with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
-        "src/game/objects.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -106425,15 +106438,16 @@
       "instruction": "bmi",
       "id": "control-02726",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CheckRightScreenBBox -> SORte with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
-        "src/game/objects.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -106445,15 +106459,16 @@
       "instruction": "sta",
       "id": "control-02727",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation CheckRightScreenBBox -> SORte with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
-        "src/game/objects.c",
         "src/game/world/bounding_box.c"
       ]
     },
@@ -106465,13 +106480,15 @@
       "instruction": "sta",
       "id": "control-02728",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SORte -> NoOfs with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
       ]
@@ -106484,13 +106501,15 @@
       "instruction": "bpl",
       "id": "control-02729",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CheckLeftScreenBBox -> NoOfs2 with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
       ]
@@ -106503,13 +106522,15 @@
       "instruction": "bcc",
       "id": "control-02730",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CheckLeftScreenBBox -> NoOfs2 with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
       ]
@@ -106522,13 +106543,15 @@
       "instruction": "bpl",
       "id": "control-02731",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation CheckLeftScreenBBox -> SOLft with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
       ]
@@ -106541,13 +106564,15 @@
       "instruction": "sta",
       "id": "control-02732",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation CheckLeftScreenBBox -> SOLft with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
       ]
@@ -106560,13 +106585,15 @@
       "instruction": "sta",
       "id": "control-02733",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen branch/store/return continuation",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SOLft -> NoOfs2 with source offset/mask/page predicate and box-coordinate handoff ordering.",
+      "operationalEvidence": [
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+      ],
+      "semanticContract": "Source branch polarity or fallthrough has the same C corner-write and continuation contract; original-ROM route observes both outcomes for every conditional.",
       "currentSourcePaths": [
         "src/game/world/bounding_box.c"
       ]

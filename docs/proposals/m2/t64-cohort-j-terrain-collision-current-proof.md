@@ -1308,3 +1308,78 @@ still consumer-owned, not promoted by this producer audit. Historical mapping
 remains **1,992/1,992**; current exact nodes **1,467/1,992** (+1), current
 exact feasible controls **3,071/4,323** (raw 4,342, infeasible 19), exact
 material relations **359/487**. S35 owns the next screen-clipping chain.
+
+## S35 admission - bounding-box screen clipping
+
+S35 admits the $E2DE-$E324 chain: `CheckRightScreenBBox`, `SORte`, `NoOfs`,
+`CheckLeftScreenBBox`, `SOLft`, `NoOfs2`. All six need current evidence and
+are expected exact, maximum **1,473/1,992** from **1,467/1,992**. Shared
+owner is `src/game/world/bounding_box.c:mysmb_world_clip_bounding_box_to_screen`;
+S34 supplies box construction and S36 owns rectangle comparison. Historical
+mapping remains **1,992/1,992**, with zero new historical credit.
+
+The ten unresolved source-owned controls `control-02724` through
+`control-02733` are in scope. Incoming exact feasible controls **3,071/4,323**
+(raw 4,342, infeasible 19); material **359/487**. Source audit proves
+ScreenLeft+$80 low-byte carry/page wrap, CMP/SBC borrow polarity, signed
+corner predicates, $80-$9f near-left visibility, $a0-$ff clip and restored
+ObjectOffset. Direct ROM entries use a restored boot baseline per fixture,
+all byte input values and page/corner branch families. x86/x64 native checks
+compare all persistent RAM, plus explicit scratch/register argument seams.
+Focused tests, purity and unchanged shared DOS16 link are operational proof.
+Behavior changes require all three product EXEs; provenance-only changes do not.
+
+Owner-local ROM/disassembly are nonredistributable research only. Ignored
+build/m2-t64-s35 holds raw records <=24 MiB, 524288 steps/case and a
+120-second total route budget; S35 owns cleanup. Similar-issue sweep reviews
+all shared clipping callers and platform geometry ownership. No successor
+node or unrelated I/O change is credited.
+
+## S35 closure - bounding-box screen clipping
+
+All six scoped nodes are current-exact: `CheckRightScreenBBox`, `SORte`,
+`NoOfs`, `CheckLeftScreenBBox`, `SOLft`, `NoOfs2`. Static $E2DE-$E324
+review proves the midpoint low carry into byte-wrapped page, followed by
+object-low CMP borrow into page SBC. The C unsigned world comparison has
+the same carry predicate, including middle-page wrap. Right clipping checks
+DR sign before UL sign; left clipping preserves $80-$9f and clips $a0-$ff,
+with the original conditional opposite-corner store. Both returns restore
+ObjectOffset and retain the selected box Y offset at the explicit C seam.
+
+No behavior repair was needed. The stale $DC9F/$DCF5 provenance is corrected
+to the actual $E2DE-$E324 span. The similar-issue sweep finds one shared
+clipping implementation and five physical call sites representing the six
+fireball/misc-coin/misc-hammer/enemy/small-platform/large-platform paths.
+Their input selections retain the S33 proof; platforms contain no clip logic.
+The unadmitted rectangle consumers remain successor-owned.
+
+The neutral probe `tools/reference_bounding_box_clip_probe.c` directly runs
+$E2DE, with isolated boot-state restoration and no ROM changes. The native
+`mysmb_bounding_box_clip_actual_check` consumes its ignored MSCL records
+through `test/bounding_box_clip_actual_check.c`. Actual record inspection
+confirms all 256 values each for screen X, object X, UL-X and DR-X, 18
+object offsets, every side/UL-sign/DR-sign family, 12 exact-midpoint ties and
+512 screen-page wraps. This 4,096-fixture route is a branch-family matrix,
+not an exhaustive Cartesian product of all bytes. Source arithmetic and
+branch comparison provide the independent static track.
+
+All 32 instructions in the chain are observed, maximum 23 per route. Branch
+taken/fallthrough counts are E2F5 **2426/1670**, E2FA **836/834**, E301
+**414/420**, E30F **1217/1209**, E313 **314/895**, E31A **449/446**.
+Fresh x86/x64 native owners each match all 1,784 persistent RAM bytes
+unconditionally for **4,096/4,096** records, zero differences. Returned
+X=ObjectOffset, unchanged Y=4*object, middle scratch $01/$02 and unchanged
+other scratch bytes are separately checked; CPU flags and stack have no C
+register counterpart and are explicitly excluded. Focused core smoke and
+platform-purity checks pass on both widths. The original OpenNT DOS16
+shared-core build/link succeeds with the existing OLDNAMES.LIB warning.
+
+The ten newly exact controls are `control-02724` through `control-02733`.
+The incoming tail edges `control-02711` and `control-02723` retain S33
+evidence. No new material relation is credited; box-to-consumer material
+relations remain with their consumer audits. Historical mapping stays
+**1,992/1,992**; exact nodes **1,473/1,992** (+6), exact feasible controls
+**3,081/4,323** (+10; raw 4,342, infeasible 19), material **359/487**.
+No product behavior changed, so the three committed S33 EXEs remain the
+delivery. Raw records/probe binary are cleaned after review. S36 is the next
+rectangle-comparison chain.
