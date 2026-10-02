@@ -9647,13 +9647,16 @@
       "consumer": "ContinueBrickShatter",
       "storage": "ROM BrickShatterEnvData half-length index to noise envelope",
       "feasiblePath": "ContinueBrickShatter uses the same half-length table index for BrickShatterEnvData before PlayNoiseSfx.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c immutable PRG envelope reader",
-      "semanticContract": "Preserves BrickShatterEnvData byte selection, source index arithmetic and noise-register handoff to ContinueBrickShatter.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c CPU PRG binding and source-indexed consumer",
+      "semanticContract": "FFEA-FFFA/16 bytes, ContinueBrickShatter reads only when original length LSB is1; shifted length selects FFEA+Y and F62B+Y period, original write order then decrement/mute/clear retained. Even lengths skip both table reads.",
       "semanticEvidence": [
-        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 producer region and actual consumer predicate/address manually audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 declared-consumer original reads=16;2304 roots both widths full RAM/APU/order/returned A equal."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9666,13 +9669,16 @@
       "consumer": "ContinueBowserFlame",
       "storage": "ROM BowserFlameEnvData half-length index to noise envelope",
       "feasiblePath": "ContinueBowserFlame shifts remaining noise length and indexes BowserFlameEnvData-1 before PlayNoiseSfx.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c immutable PRG envelope reader",
-      "semanticContract": "Preserves BowserFlameEnvData byte selection, source index arithmetic and noise-register handoff to ContinueBowserFlame.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c CPU PRG binding and source-indexed consumer",
+      "semanticContract": "FFCA-FFEA/32 bytes, ContinueBowserFlame shifts original noise length once, reads FFC9+Y (named table minus1). Nonzero envelope writes noise envelope/period0F/length18 then decrements; zero continues music directly without decrement. No invented clamp.",
       "semanticEvidence": [
-        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 producer region and actual consumer predicate/address manually audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 declared-consumer original reads=64;2304 roots both widths full RAM/APU/order/returned A equal."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10191,13 +10197,16 @@
       "consumer": "SetFreq_Squ2",
       "storage": "ROM FreqRegLookupTbl indexed music table",
       "feasiblePath": "SetFreq_Squ2 selects FreqRegLookupTbl through its source index/address path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
-      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c CPU PRG binding and source-indexed consumer",
+      "semanticContract": "FF00-FF66/102 bytes, actual Dump_Freq_Regs absolute-Y low FF01+A before high FF00+A; zero low returns without writes, otherwise low then high OR08 to X+2/X+3. A byte index and 16-bit CPU address wrap retained, no table clamp.",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 producer region and actual consumer predicate/address manually audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 declared-consumer original reads=519;2304 roots both widths full RAM/APU/order/returned A equal."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10210,13 +10219,16 @@
       "consumer": "ProcessLengthData",
       "storage": "ROM MusicLengthLookupTbl indexed music table",
       "feasiblePath": "ProcessLengthData selects MusicLengthLookupTbl through its source index/address path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
-      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c CPU PRG binding and source-indexed consumer",
+      "semanticContract": "FF66-FF96/48 bytes, ProcessLengthData AND07 then CLC/ADC F0/ADC7C4 including first carry, byte Y selects FF66+Y. Actual length reads and returned A agree; accepted S2 exhaustive carry/helper proof remains dependency, no substituted length formula.",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 producer region and actual consumer predicate/address manually audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 declared-consumer original reads=48;2304 roots both widths full RAM/APU/order/returned A equal."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10229,13 +10241,16 @@
       "consumer": "LoadEnvelopeData",
       "storage": "ROM EndOfCastleMusicEnvData indexed music table",
       "feasiblePath": "LoadEnvelopeData selects EndOfCastleMusicEnvData through its source index/address path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
-      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c CPU PRG binding and source-indexed consumer",
+      "semanticContract": "FF96-FF9A/4 bytes, LoadEnvelopeData gives EventMusicBuffer bit08 priority over area flags; reads FF96+original Y, no clamp or synthesized envelope.",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 producer region and actual consumer predicate/address manually audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 declared-consumer original reads=4;2304 roots both widths full RAM/APU/order/returned A equal."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10248,13 +10263,16 @@
       "consumer": "LoadUsualEnvData",
       "storage": "ROM AreaMusicEnvData indexed music table",
       "feasiblePath": "LoadUsualEnvData selects AreaMusicEnvData through its source index/address path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
-      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c CPU PRG binding and source-indexed consumer",
+      "semanticContract": "FF9A-FFA2/8 bytes, LoadUsualEnvData uses AreaMusicBuffer AND7D nonzero after event08 exclusion; reads FF9A+original Y, preserves caller pre-decrement index.",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 producer region and actual consumer predicate/address manually audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 declared-consumer original reads=8;2304 roots both widths full RAM/APU/order/returned A equal."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10267,13 +10285,16 @@
       "consumer": "LoadWaterEventMusEnvData",
       "storage": "ROM WaterEventMusEnvData indexed music table",
       "feasiblePath": "LoadWaterEventMusEnvData selects WaterEventMusEnvData through its source index/address path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/audio.c mysmb_audio_read_cpu table binding",
-      "semanticContract": "Reader index/address maps to the same ordered source table byte.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c CPU PRG binding and source-indexed consumer",
+      "semanticContract": "FFA2-FFCA/40 bytes, LoadWaterEventMusEnvData uses AreaMusicBuffer AND7D zero after event08 exclusion; reads FFA2+original Y, including cross-region and CPU wrap for extended indices.",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 producer region and actual consumer predicate/address manually audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 declared-consumer original reads=188;2304 roots both widths full RAM/APU/order/returned A equal."
+      ],
       "cohort": "N",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -49612,14 +49633,17 @@
       "label": "FreqRegLookupTbl",
       "asmLine": 16326,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "currentCounterpart": "src/game/audio.c full original PRG/CPU reader and indexed audio consumers",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 manual source/region/index/consumer audit: FF00-FF66/102 bytes, actual Dump_Freq_Regs absolute-Y low FF01+A before high FF00+A; zero low returns without writes, otherwise low then high OR08 to X+2/X+3. A byte index and 16-bit CPU address wrap retained, no table clamp."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 2304 unchanged original/current roots each width zero diff;250 actual declared-consumer bytes;4 focused tests each/current builds/purity/original OpenNT link."
+      ],
+      "semanticContract": "FF00-FF66/102 bytes, actual Dump_Freq_Regs absolute-Y low FF01+A before high FF00+A; zero low returns without writes, otherwise low then high OR08 to X+2/X+3. A byte index and 16-bit CPU address wrap retained, no table clamp.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -49628,14 +49652,17 @@
       "label": "MusicLengthLookupTbl",
       "asmLine": 16341,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "currentCounterpart": "src/game/audio.c full original PRG/CPU reader and indexed audio consumers",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 manual source/region/index/consumer audit: FF66-FF96/48 bytes, ProcessLengthData AND07 then CLC/ADC F0/ADC7C4 including first carry, byte Y selects FF66+Y. Actual length reads and returned A agree; accepted S2 exhaustive carry/helper proof remains dependency, no substituted length formula."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 2304 unchanged original/current roots each width zero diff;250 actual declared-consumer bytes;4 focused tests each/current builds/purity/original OpenNT link."
+      ],
+      "semanticContract": "FF66-FF96/48 bytes, ProcessLengthData AND07 then CLC/ADC F0/ADC7C4 including first carry, byte Y selects FF66+Y. Actual length reads and returned A agree; accepted S2 exhaustive carry/helper proof remains dependency, no substituted length formula.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -49644,14 +49671,17 @@
       "label": "EndOfCastleMusicEnvData",
       "asmLine": 16349,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "currentCounterpart": "src/game/audio.c full original PRG/CPU reader and indexed audio consumers",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 manual source/region/index/consumer audit: FF96-FF9A/4 bytes, LoadEnvelopeData gives EventMusicBuffer bit08 priority over area flags; reads FF96+original Y, no clamp or synthesized envelope."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 2304 unchanged original/current roots each width zero diff;250 actual declared-consumer bytes;4 focused tests each/current builds/purity/original OpenNT link."
+      ],
+      "semanticContract": "FF96-FF9A/4 bytes, LoadEnvelopeData gives EventMusicBuffer bit08 priority over area flags; reads FF96+original Y, no clamp or synthesized envelope.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -49660,14 +49690,17 @@
       "label": "AreaMusicEnvData",
       "asmLine": 16352,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "currentCounterpart": "src/game/audio.c full original PRG/CPU reader and indexed audio consumers",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 manual source/region/index/consumer audit: FF9A-FFA2/8 bytes, LoadUsualEnvData uses AreaMusicBuffer AND7D nonzero after event08 exclusion; reads FF9A+original Y, preserves caller pre-decrement index."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 2304 unchanged original/current roots each width zero diff;250 actual declared-consumer bytes;4 focused tests each/current builds/purity/original OpenNT link."
+      ],
+      "semanticContract": "FF9A-FFA2/8 bytes, LoadUsualEnvData uses AreaMusicBuffer AND7D nonzero after event08 exclusion; reads FF9A+original Y, preserves caller pre-decrement index.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -49676,14 +49709,17 @@
       "label": "WaterEventMusEnvData",
       "asmLine": 16355,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c",
-      "currentCounterpart": "mysmb_audio_read_cpu table bindings",
+      "currentCounterpart": "src/game/audio.c full original PRG/CPU reader and indexed audio consumers",
       "semanticEvidence": [
-        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required."
+        "Td S9 K38 music lookup/envelope table node/material audit: SMB1 lines 16326-16355 compared with src/game/audio.c CPU-address table readers; controlled original-ROM/x86/x64 note, length and envelope routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 manual source/region/index/consumer audit: FFA2-FFCA/40 bytes, LoadWaterEventMusEnvData uses AreaMusicBuffer AND7D zero after event08 exclusion; reads FFA2+original Y, including cross-region and CPU wrap for extended indices."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves table bytes and source index/address arithmetic for its music reader.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 2304 unchanged original/current roots each width zero diff;250 actual declared-consumer bytes;4 focused tests each/current builds/purity/original OpenNT link."
+      ],
+      "semanticContract": "FFA2-FFCA/40 bytes, LoadWaterEventMusEnvData uses AreaMusicBuffer AND7D zero after event08 exclusion; reads FFA2+original Y, including cross-region and CPU wrap for extended indices.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -49692,14 +49728,17 @@
       "label": "BowserFlameEnvData",
       "asmLine": 16362,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c immutable PRG envelope reader",
-      "currentCounterpart": "mysmb_audio_bowser_flame_envelope",
+      "currentCounterpart": "src/game/audio.c full original PRG/CPU reader and indexed audio consumers",
       "semanticEvidence": [
-        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 manual source/region/index/consumer audit: FFCA-FFEA/32 bytes, ContinueBowserFlame shifts original noise length once, reads FFC9+Y (named table minus1). Nonzero envelope writes noise envelope/period0F/length18 then decrements; zero continues music directly without decrement. No invented clamp."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Provides the 32-byte Bowser-flame noise envelope; ContinueBowserFlame selects its preceding byte after the source length division.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 2304 unchanged original/current roots each width zero diff;250 actual declared-consumer bytes;4 focused tests each/current builds/purity/original OpenNT link."
+      ],
+      "semanticContract": "FFCA-FFEA/32 bytes, ContinueBowserFlame shifts original noise length once, reads FFC9+Y (named table minus1). Nonzero envelope writes noise envelope/period0F/length18 then decrements; zero continues music directly without decrement. No invented clamp.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
@@ -49708,14 +49747,17 @@
       "label": "BrickShatterEnvData",
       "asmLine": 16368,
       "cohort": "N",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/audio.c immutable PRG envelope reader",
-      "currentCounterpart": "mysmb_audio_brick_shatter_envelope",
+      "currentCounterpart": "src/game/audio.c full original PRG/CPU reader and indexed audio consumers",
       "semanticEvidence": [
-        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required."
+        "Td S9 K62 terminal noise-envelope table audit: SMB1 lines 16362-16370 compared with src/game/audio.c immutable PRG reads; controlled original-ROM/x86/x64 Bowser-flame and brick-shatter noise routes remain required.",
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 manual source/region/index/consumer audit: FFEA-FFFA/16 bytes, ContinueBrickShatter reads only when original length LSB is1; shifted length selects FFEA+Y and F62B+Y period, original write order then decrement/mute/clear retained. Even lengths skip both table reads."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Provides the 16-byte brick-shatter noise envelope selected by the source noise-length half-index.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t68-cohort-n-music-data-current-proof.md S5 P2 2304 unchanged original/current roots each width zero diff;250 actual declared-consumer bytes;4 focused tests each/current builds/purity/original OpenNT link."
+      ],
+      "semanticContract": "FFEA-FFFA/16 bytes, ContinueBrickShatter reads only when original length LSB is1; shifted length selects FFEA+Y and F62B+Y period, original write order then decrement/mute/clear retained. Even lengths skip both table reads.",
       "currentSourcePaths": [
         "src/game/audio.c"
       ]

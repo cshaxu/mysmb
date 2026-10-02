@@ -20,6 +20,7 @@ int main(int argc,char **argv)
         case 0xf2d0U:mysmb_audio_step(&game);break;
         case 0xf6f5U:(void)mysmb_audio_load_music_header(&game,record[4]);break;
         case 0xf8cbU:a=mysmb_audio_process_music_length(&game,a);break;
+        case 0xf8f4U:a=mysmb_audio_load_music_envelope(&game,record[4]);break;
         case 0xf381U:mysmb_audio_dump_squ1_regs(&game,record[3],record[4]);break;
         case 0xf388U:a=mysmb_audio_play_squ1_sfx(&game,a,record[3],record[4]);break;
         case 0xf38bU:a=mysmb_audio_set_freq_squ1(&game,a);break;

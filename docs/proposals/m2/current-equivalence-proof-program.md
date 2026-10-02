@@ -349,3 +349,13 @@ new source-path enumeration.1348 bytes actually read,4 explicit source-unused
 storage retained;51201 original roots each width zero diff. Current builds/
 4 focused tests each/purity/OpenNT link pass;3 S2 products unchanged. T68 open,
 S5 next unadmitted;7 N plus73 C labels and external relations remain pending.
+
+## Current checkpoint after T68 S5
+
+[T68 S5](t68-cohort-n-music-data-current-proof.md) closes7 table nodes and7
+material relations. Current1919/1992 nodes,3964/4279 controls(raw4342,
+infeasible63),500/555 material partial.250 declared-consumer bytes/2304 actual
+original roots each width zero differences;current builds/4 focused tests
+each/purity/OpenNT link pass;3 products unchanged. All77 N nodes exact;
+T68 open,S6 integration next unadmitted. Earlier73 C nodes and external
+relations remain pending; historical1992/1992 is not current certification.

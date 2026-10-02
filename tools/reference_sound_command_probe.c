@@ -16,6 +16,8 @@ static unsigned long square2_table_reads[3][256];
 static unsigned long noise_table_reads[3][256];
 static unsigned long header_reads[7][256];
 static unsigned long music_reads[4][65536];
+/* Actual absolute-Y reads, grouped by source operand (not inferred song). */
+static unsigned long lookup_reads[7][65536];
 static int ready(core_machine *m)
 {
     core_run_result r;unsigned int i;
@@ -78,6 +80,9 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==51u){
+        m->ram[0x7b1u]=(unsigned char)(p==0u?8u:0u);
+        m->ram[0xf4u]=(unsigned char)(p==2u?0u:1u);
     }else if(mode==19u||mode==20u){
         m->ram[0xffu]=0u;m->ram[0xfeu]=0u;
         m->ram[0xfdu]=(unsigned char)(mode==19u?n:0u);
@@ -209,6 +214,7 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
     }
     m->a=(unsigned char)n;m->x=(unsigned char)(p%3u*4u);m->y=(unsigned char)(n*13u);
+    if(mode==51u)m->y=(unsigned char)n;
 }
 int main(int argc,char **argv)
 {
@@ -220,7 +226,8 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>50u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>51u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
     if(mode==49u&&(first!=0u||count!=1024u))return 64;
@@ -251,6 +258,7 @@ int main(int argc,char **argv)
         index=mode<5u||mode>=14u?0u:mode-4u;
         boundary=mode==27u||(mode==48u&&n%1024u==0u);
         entry=mode>=36u&&mode<=43u?0xf8cbu:(boundary?0xf6f5u:entries[index]);
+        if(mode==51u)entry=0xf8f4u;
         if(mode>=36u&&mode<=43u)d->machine->a=(unsigned char)(mode-36u);
         if(mode==27u)d->machine->y=(unsigned char)n;
         if(mode==48u&&boundary)d->machine->y=(unsigned char)(n/1024u+1u);
@@ -262,6 +270,17 @@ int main(int argc,char **argv)
         writes=0;
         for(steps=0;steps<524288u&&d->machine->pc!=(boundary?0xf73au:0x8001u);++steps){
             pc=d->machine->pc;if(pc<0x8000u)return 67;op=prg[pc-0x8000u];++visits[pc];
+            if(op==0xb9u&&prg[pc-0x8000u+2u]==0xffu){
+                unsigned int low=prg[pc-0x8000u+1u],kind=7u;
+                if(low==0u||low==1u)kind=0u;
+                else if(low==0x66u)kind=1u;
+                else if(low==0x96u)kind=2u;
+                else if(low==0x9au)kind=3u;
+                else if(low==0xa2u)kind=4u;
+                else if(low==0xc9u)kind=5u;
+                else if(low==0xeau)kind=6u;
+                if(kind<7u)++lookup_reads[kind][(0xff00u+low+d->machine->y)&65535u];
+            }
             if(op==0xb9u&&prg[pc-0x8000u+1u]==0xb0u&&prg[pc-0x8000u+2u]==0xf3u)++envelope_reads[d->machine->y];
             if(op==0xb9u&&prg[pc-0x8000u+2u]==0xf4u){
                 unsigned int low=prg[pc-0x8000u+1u];
@@ -327,5 +346,6 @@ int main(int argc,char **argv)
     for(n=0;n<3u;++n)for(i=0;i<256u;++i)if(noise_table_reads[n][i])printf("noise-table=%u index=%u reads=%lu\n",n,i,noise_table_reads[n][i]);
     for(n=0;n<7u;++n)for(i=0;i<256u;++i)if(header_reads[n][i])printf("header-field=%u index=%u reads=%lu\n",n,i,header_reads[n][i]);
     for(n=0;n<4u;++n)for(i=0;i<65536u;++i)if(music_reads[n][i])printf("music-channel=%u address=%04x reads=%lu\n",n,i,music_reads[n][i]);
+    for(n=0;n<7u;++n)for(i=0;i<65536u;++i)if(lookup_reads[n][i])printf("lookup-kind=%u address=%04x reads=%lu\n",n,i,lookup_reads[n][i]);
     core_driver_destroy(d);return 0;
 }

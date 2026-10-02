@@ -1,11 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T68 S5 - active final table chain
+## M2 T68 S5 - closed final table chain
 
-[Exact7-node admission](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
-scope/intended fresh7,max1919/1992; current1912/1992 nodes,3964/4279 controls
-(raw4342,infeasible63),493/555 material partial; historical1992/1992 separate.
-Actual indexed reads and consumer semantics plus operational proof required.
+[All7 tables/7 material consumers](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+close exact:250 bytes read by their declared original consumers,2304 returning
+original/current roots each width zero differences. Current1919/1992 nodes,
+3964/4279 controls(raw4342,infeasible63),500/555 material partial. Current
+builds/4 focused tests each/purity/original OpenNT link pass;3 S2 EXEs unchanged.
+Historical1992/1992 separate. No scoped deferral/transfer; all77 N nodes exact,
+T68 open,S6 next unadmitted. Earlier73 C nodes/M fetch-order debt remain pending.
 
 ## M2 T68 S4 - closed stream-region chain
 

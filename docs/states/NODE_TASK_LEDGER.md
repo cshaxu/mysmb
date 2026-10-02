@@ -3616,4 +3616,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T68 S2 | 9 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
 | M2 T68 S3 | 23 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
 | M2 T68 S4 | 21 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
-| M2 T68 S5 | 7 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
+| M2 T68 S5 | 7 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t68-cohort-n-music-data-current-proof.md) |
