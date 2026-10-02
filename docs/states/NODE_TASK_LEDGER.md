@@ -2755,6 +2755,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T64 S39 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
 | M2 T64 S40 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
 | M2 T64 S41 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
+| M2 T64 S42 | 0 | 0 | owner-approved-source-order, current-equivalence-cohort-j-aggregate; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
@@ -3511,3 +3512,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T64 S39 | 7 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
 | M2 T64 S40 | 17 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
 | M2 T64 S41 | 27 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |
+| M2 T64 S42 | 15 | 1992 | none / 0 | none / 0 | closed-current-exact; [record](../../docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md) |

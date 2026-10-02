@@ -2041,3 +2041,90 @@ Historical **1,992/1,992**, exact nodes **1,480/1,992**, material
 T64 remains open with **58 Cohort-J controls**, zero pending material.
 The next source-order branch is green paratroopa/platform X-counter
 horizontal-return integration. T65 is not admitted.
+
+## Aggregate S42 admission - X-counter horizontal result return
+
+S42 owns `control-03834` MoveEnemyHorizontally-to-XMRight. Fifteen
+already-exact labels in scope are MoveFlyGreenPTroopa, YSway, NoMGPT,
+XMoveCntr_GreenPTroopa, XMoveCntr_Platform, NoIncXM, IncPXM, DecSeXM,
+MoveWithXMCntrs, XMRight, MoveEnemyHorizontally, MoveObjectHorizontally,
+SaveXSpd, UseAdder, ExXMove. Expected new node set is empty. Historical
+1,992/1,992 and current nodes 1,480/1,992 remain unchanged; controls
+enter 3,123/4,323 and can reach 3,124/4,323; material stays 368/487.
+
+Entry is the X-counter mover $CB66, also exercised through its green
+wrapper $CB25; exit is the completed horizontal result save/counter restore
+and wrapper frame/Y continuation. Shared owners are enemy/x_counter.c,
+enemy/green_paratroopa.c and world/movement.c. Missing evidence is the
+real horizontal returned A beyond earlier substituted child results.
+S41 precedes this distinct counter owner; Bloober distance follows.
+
+Static proof checks direction/temporary negated counter, source PHA/PLA,
+returned X/A, scratch $00 save and wrapper frame/Y overwrite. Actual ROM
+roots restore boot state and execute real children. Native x86/x64 compare
+all persistent RAM plus $00 and declared lower-stack game aliases.
+Six slots, all secondary bytes/both directions, fraction/page carry,
+counter endpoints and wrapper frame branches are exercised. Focused
+green-counter/purity tests and original OpenNT DOS16 form operational proof.
+
+Owner ROM/disassembly are nonredistributable local research. Ignored
+build/m2-t64-s42 owns <=24 MiB raw, 524288 steps/case and 120 seconds;
+S42 cleans raw records/probe. Only neutral tools and summaries are tracked.
+Any scoped mismatch stays here for repair/re-audit; product repairs refresh
+three approved EXEs. Preserve unrelated work; T64 remains open.
+
+## Aggregate S42 closure - X-counter result return exact
+
+`control-03834` is exact. All fifteen scoped labels retain exact status:
+MoveFlyGreenPTroopa, YSway, NoMGPT, XMoveCntr_GreenPTroopa,
+XMoveCntr_Platform, NoIncXM, IncPXM, DecSeXM, MoveWithXMCntrs,
+XMRight, MoveEnemyHorizontally, MoveObjectHorizontally, SaveXSpd,
+UseAdder, ExXMove. Expected/actual new node sets are empty; no deferral,
+transfer or custody change.
+
+Static $CB66-$CB86 and shared enemy/x_counter.c agree on saving the
+original secondary, two's-complement temporary speed when primary bit 1
+is clear, facing 1/2, real horizontal call at $CB7E and return $CB81,
+STA $00 before restoring secondary via PLA/STA. The current return byte
+and saved local are those same handoffs. Original horizontal wrapper
+restores ObjectOffset X; native immutable slot preserves it. Green $CB25
+first updates counters, then calls this mover and finally applies its
+every-fourth-frame Y change, with the same optional $00 overwrite.
+
+Neutral `tools/reference_x_counter_integration_probe.c` and
+`test/x_counter_integration_route_check.c` execute **4,608 actual ROM
+roots** from restored boot state, with real counter and horizontal
+children, no substituted results. **3,072 direct mover** fixtures cover
+every secondary byte with both directions in all six slots; **1,536 green
+wrapper** fixtures add counter endpoints 0/$13/$ff, primary 0/1/$fe/$ff,
+frame/Y branches, fractional carry and page 0/1/$ff boundaries.
+Maximum **89 instructions** per route.
+
+The source observes **4,608 horizontal returns**, **4,608 $00 saves** and
+**4,608 secondary restorations**. Return X/A and temporary speed/facing
+are checked explicitly before the consumer; the source $00 save and
+restored byte are then checked after their instructions. Direction counts
+are **2,304/2,304**; zero/positive/negative displacements are
+**354/1,464/2,790**.
+
+Current x86/x64 each match **4,608/4,608**, zero differences over
+**1,797 compared bytes**: all 1,784 non-stack persistent bytes, twelve
+lower-stack game aliases and **$00**. Other transient scratch $01-$07
+and CPU-stack bytes are explicit ABI exclusions. Including $00 proves
+the return value is handed to its consumer, not merely final coordinates.
+Both widths pass green-paratroopa-counters and platform-purity tests;
+original OpenNT DOS16 builds/links with its existing OLDNAMES.LIB warning.
+
+Similar-issue review finds green and X-platform callers using the same
+counter/mover owner. No duplicate host movement implementation exists.
+Platform's $0E limit remains its existing platform-node proof and later
+platform connection scope; this S does not infer an unobserved outer
+platform edge. No scoped difference or product source change exists;
+EXEs remain the prior delivery. Raw records/probe executable are cleaned.
+
+Historical **1,992/1,992**, exact nodes **1,480/1,992**, material
+**368/487** remain unchanged. Exact feasible controls rise
+**3,123 -> 3,124 / 4,323** (raw **4,342**, infeasible **19**).
+T64 remains open with **57 Cohort-J controls**, zero pending material.
+Next source-order group is Bloober player-distance result/return
+integration. T65 is not admitted.

@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3123,
-    "needs-evidence": 1200,
+    "exact": 3124,
+    "needs-evidence": 1199,
     "infeasible": 19,
     "unclassified": 0,
     "mismatch": 0
@@ -128858,12 +128858,15 @@
       "instruction": "rts/rti",
       "id": "control-03834",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared green/X-counter branch, call, fall-through and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/x_counter.c mysmb_enemy_move_with_x_counters actual horizontal return assigned to ram[0] before saved secondary counter restoration",
       "semanticEvidence": [
-        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S42: original MoveWithXMCntrs $CB66 negates secondary for primary-bit-1 clear, writes direction, calls real horizontal child at $CB7E and returns at $CB81 with X=original slot/A=displacement. Source $CB81 STA $00 then PLA/STA restores the saved secondary. Native local/return-byte handoff is equivalent; green outer frame/Y continuation consumes or overwrites $00 identically. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S42: reference_x_counter_integration_probe/mysmb_x_counter_integration_route_check execute 4608 real ROM/current native mover/green roots, no child substitution; x86/x64 each zero differences over 1797 bytes including $00 and lower-stack game arrays. 4608 source returns, result saves and counter restorations; directions 2304/2304, zero/positive/negative displacement 354/1464/2790. Six slots, all secondary bytes both directions, page/fraction carry and wrapper counter/frame branches; focused green/purity tests and original OpenNT DOS16 link pass. Other scratch/CPU stack explicitly excluded. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation MoveEnemyHorizontally -> XMRight with frame predicate, X counters, direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/x_counter.c",
