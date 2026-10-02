@@ -453,3 +453,133 @@ product corrections refresh three owner-authorized EXEs. Sweep covers all
 relative wrappers, source-index restoration, byte addition and Y-before-X
 store order. No S3/later credit or platform/audio changes. No closure while
 any scoped semantic difference or unproved claimed relation remains.
+
+## S2 P2 relative-coordinate source/return correction and closure
+
+All9 intended labels become current exact, no deferred/transferred names:
+RelativePlayerPosition; RelativeBubblePosition; RelativeFireballPosition;
+RelWOfs; RelativeMiscPosition; RelativeEnemyPosition; RelativeBlockPosition;
+VariableObjOfsRelPos; GetObjRelativePosition. All18 listed control relations
+close exact. Nodes1677 ->1686/1992, controls3588 ->3606/4317(raw4342,
+infeasible25 unchanged). Historical mapping1992/1992 remains separate,
+historical expected/actualMatches empty. S3 next unadmitted; T66 remains open
+with30 pending planned nodes. No later table/offscreen node credit.
+
+### Original source finding, repair and similar-issue sweep
+
+Original RelativeBlockPosition calls VariableObjOfsRelPos once. After the
+coordinate stores, that routine loads X from ObjectOffset and returns. The
+caller increments this restored X twice, then enters the second coordinate
+phase. Native had used the incoming slot+2 instead. When the valid input slot
+and valid ObjectOffset differ, the second relative X/Y and scratch use the
+wrong actor index. A2048-root original pre-repair block batch has3068 RAM-byte
+differences. The shared C second call now reads ObjectOffset+2 in byte width.
+No claimed ordinary-game failure follows merely from the controlled divergent
+slot case; the correction restores the actual ROM data/control dependency.
+
+Sweep: all six relative wrappers use the same GetObjRelativePosition stores;
+only RelativeBlockPosition consumes its first child-return index in a second
+coordinate phase. Enemy/misc/fireball/bubble inputs use their original
+displacements and fixed output cells. Player resets source/destination0.
+VariableObjOfsRelPos retains incoming scratch before byte addition. Relative
+Y store precedes relative X subtraction. Page/high coordinates are not used
+or modified. Every relative call site is inspected; only the paired block
+consumer required code repair. Later offscreen routines remain unchanged.
+
+### Newly enumerated in-scope material dependency
+
+Coordinator accepts material-t66-block-return-slot within the already admitted
+two-node chain: VariableObjOfsRelPos -> RelativeBlockPosition, RAM ObjectOffset
+to returned X to second coordinate index/scratch. Source path above and native
+read after first call prove feasibility; this is a consumed state dependency,
+not a writer-reader cartesian candidate. Block65536 roots include32768 cases
+with independent valid incoming/ObjectOffset values. Final relative cells and
+scratch independently expose wrong substitution. The node/control scope did
+not grow. Material396/492 ->397/493, enumeration remains partial. Existing
+pending material00432 proper-offset table retains S3 ownership/no credit.
+
+### Current original/native route matrix
+
+| Mode / original entry | Root family | Roots per width | Contract |
+| --- | --- | ---: | --- |
+| 21 / F12A | Player | 65536 | Source/destination zero, Y then byte X-left subtraction. |
+| 22 / F131 | Bubble | 65536 | Proper source slot+22, fixed output3. |
+| 23 / F13B | Fireball | 65536 | Proper source slot+7, fixed output2 and RelWOfs continuation. |
+| 24 / F148 | Misc | 65536 | Proper source slot+13, fixed output6. |
+| 25 / F152 | Enemy | 65536 | Incoming slot scratch, byte slot+1, fixed output1. |
+| 26 / F159 | Paired block | 65536 | First slot+9 at output4, restored ObjectOffset+2+9 at output5. |
+
+Each family spans all256 world-X x256 left-X pairs; valid slots are distributed
+across that matrix, not claimed as a full extra Cartesian dimension. All Y
+bytes and wrapped subtraction results occur; page/high state varies and
+must remain untouched. Original controlled records compare1841 RAM bytes,
+including all scratch/OAM/aliases0109-0139; only true CPU stack excluded.
+Every393216 root matches real current x86/x64 shared C, zero differences.
+No child mocking or substituted child output is used in these full routes.
+Native-API unused CPU registers/flags are explicit exclusions. Original X
+restoration consumed by the paired block is mandatory and preserved through
+the RAM read, not excluded. Source index/table constants are checked locally
+against original owner PRG; bytes are not imported into new tracked fixtures.
+
+Local ASM index agrees with original opcode/instruction sizes; non-code
+segment/incbin directives outside scope remain explicit indexing exclusions.
+Actual source PC transfers/RTS continuations cover every9 labels and18
+relations. Static native source audit maps wrapper selection, helper calls,
+destination, scratch and consumed continuation individually. No source-only
+visit count is substituted for native equivalence or unobserved node credit.
+
+## S2 individual node and edge proof
+
+| Node | Original address | Visits | Current counterpart and audited contract |
+| --- | --- | ---: | --- |
+| RelativePlayerPosition | f12a | 65536 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Initializes source and relative-result offsets to zero, then tail-transfers to the common relative-coordinate routine. |
+| RelativeBubblePosition | f131 | 65536 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Uses ObjOffsetData bubble displacement and writes the selected SprObject coordinates into the bubble relative-result cells. |
+| RelativeFireballPosition | f13b | 65536 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Uses ObjOffsetData fireball displacement and writes the selected SprObject coordinates into the fireball relative-result cells. |
+| RelWOfs | f142 | 262144 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Calls the common coordinate calculation and restores ObjectOffset for its caller. |
+| RelativeMiscPosition | f148 | 65536 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Uses ObjOffsetData misc displacement and writes the selected SprObject coordinates into the misc relative-result cells. |
+| RelativeEnemyPosition | f152 | 65536 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells. |
+| RelativeBlockPosition | f159 | 65536 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Performs two relative-coordinate calculations for the selected block object and its paired object at source slot plus two. |
+| VariableObjOfsRelPos | f165 | 196608 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Preserves ObjectOffset in scratch, adds the supplied array displacement, calls the common coordinate routine and restores ObjectOffset. |
+| GetObjRelativePosition | f171 | 458752 | relative-position wrappers with mysmb_oam_get_obj_relative_position and mysmb_oam_variable_obj_relative_position; Copies source Y to destination relative Y and stores source X minus ScreenLeft_X_Pos as destination relative X. |
+
+| Control | Original relation | Instruction PC | Actual transfers/returns |
+| --- | --- | --- | ---: |
+| control-03115 | RelativePlayerPosition -> RelWOfs (jump) | f12e | 65536 |
+| control-03116 | RelativeBubblePosition -> GetProperObjOffset (call) | f133 | 65536 |
+| control-03117 | RelativeBubblePosition -> RelWOfs (jump) | f138 | 65536 |
+| control-03118 | RelativeFireballPosition -> GetProperObjOffset (call) | f13d | 65536 |
+| control-03119 | RelativeFireballPosition -> RelWOfs (fallthrough) | f140 | 65536 |
+| control-03120 | RelWOfs -> GetObjRelativePosition (call) | f142 | 262144 |
+| control-03121 | RelativeMiscPosition -> GetProperObjOffset (call) | f14a | 65536 |
+| control-03122 | RelativeMiscPosition -> RelWOfs (jump) | f14f | 65536 |
+| control-03123 | RelativeEnemyPosition -> VariableObjOfsRelPos (jump) | f156 | 65536 |
+| control-03124 | RelativeBlockPosition -> VariableObjOfsRelPos (call) | f15d | 65536 |
+| control-03125 | RelativeBlockPosition -> VariableObjOfsRelPos (fallthrough) | f164 | 65536 |
+| control-03126 | VariableObjOfsRelPos -> GetObjRelativePosition (call) | f16b | 196608 |
+| control-04048 | GetProperObjOffset -> RelativeBubblePosition (return) | f133 | 65536 |
+| control-04049 | GetProperObjOffset -> RelativeFireballPosition (return) | f13d | 65536 |
+| control-04050 | GetObjRelativePosition -> RelWOfs (return) | f142 | 262144 |
+| control-04051 | GetProperObjOffset -> RelativeMiscPosition (return) | f14a | 65536 |
+| control-04052 | VariableObjOfsRelPos -> RelativeBlockPosition (return) | f15d | 65536 |
+| control-04053 | GetObjRelativePosition -> VariableObjOfsRelPos (return) | f16b | 196608 |
+
+### Operational proof and delivery
+
+Current C90 x86/x64 product and affected core/player/checker targets build;
+12/12 focused tests pass per width, including platform purity, core, player
+OAM/route, audio/focus, death audio and product self-test. Original OpenNT
+DOS16 links the same shared sources, exit0 with existing OLDNAMES.LIB warning.
+No DOS graphical/performance qualification is claimed. All three products
+refresh for the code correction; existing audio/title/focus pause retained
+under the owner's explicit artifact delivery override.
+
+- mysmb16.exe: 260839 bytes; SHA-256 1f99e8e864fcd5da449f3a643eab4f82e550b5b2229e71e167dd77ac96025fa0.
+- mysmb32.exe: 373854 bytes; SHA-256 efb2534dc2bb7074afb4c79db301431ef47beb18d09cd99c7f73a3ee631bed8b.
+- mysmb64.exe: 380886 bytes; SHA-256 87c198fc900fe0a4b744dd70459117c19d711ecf67957ebf7894374c6f0fdc84.
+
+All raw snapshots/probe binaries cleaned from ignored admitted output path;
+neutral logs/summaries remain. Max2048 roots/58851344 bytes per chunk,
+192MiB aggregate,120seconds/run and524288steps/case observed. No ROM/raw
+fixture/reference-emulator runtime added to production. Ledger, node
+admission/closure, registry, documentation and whitespace gates pass.
+S2 closes, T66/M2 remain open pending remaining proof and final certification.

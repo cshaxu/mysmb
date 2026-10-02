@@ -188,3 +188,12 @@ controls(raw4342,infeasible25),396/492 material partial; historical1992/1992
 separate. Original75040 roots/127104 actual row/erase returns match both
 widths;12/12 focused tests each and original DOS16 link pass,3 products
 refreshed. T66 stays open with39 pending nodes; S2 next, not admitted.
+
+## Current checkpoint after T66 S2
+
+[T66 S2](t66-cohort-l-player-relative-offscreen-proof.md) closes9 nodes,
+18 controls and one newly enumerated consumed block-return material relation.
+Current1686/1992 nodes,3606/4317 feasible controls(raw4342,infeasible25),
+397/493 material partial; historical1992/1992 separate. All393216 original
+roots match both widths;12/12 focused tests each and original DOS16 link
+pass,3 products refreshed. T66 has30 pending nodes; S3 next unadmitted.

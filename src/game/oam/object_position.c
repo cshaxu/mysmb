@@ -253,8 +253,9 @@ void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *game, mysmb_u8 slo
 void mysmb_oam_relative_block_position(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_oam_variable_obj_relative_position(game, slot, 9U, 4U);
+    /* VariableObjOfsRelPos returns X=ObjectOffset before the two INX. */
     mysmb_oam_variable_obj_relative_position(game,
-        (mysmb_u8)(slot + 2U), 9U, 5U);
+        (mysmb_u8)(game->ram[8U] + 2U), 9U, 5U);
 }
 /* ROM GetBlockOffscreenBits -> GetOffScreenBitsSet. */
 void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
