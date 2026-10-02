@@ -948,3 +948,28 @@ OLDNAMES.LIB warning;no interactive DOS claim. All three products refreshed:
 Raw deleted each batch,probe deleted at closure;neutral ignored summaries/logs
 only retained. Registry/ledger/progress/documentation gates and diff check
 required before local P3 commit. No push,no later-S pre-credit.
+
+## S7 admission - physics/fireball/bubble material consumers
+
+Scope27 already-exact labels:ClimbAdderLow; ClimbAdderHigh; CSetFDir; JumpMForceData; FallMForceData; PlayerYSpdData; InitMForceData; MaxLeftXSpdData; MaxRightXSpdData; FrictionData; Climb_Y_SpeedData; Climb_Y_MForceData; ProcClimb; GetYPhy; GetXPhy; GetXPhy2; PlayerAnimTmrData; SetAnimSpd; FireballXSpdData; FireballObjCore; SetupBubble; MoveBubl; Bubble_MForceData; BubbleTimerData; ClimbingSub; PlayerPhysicsSub; GetPlayerAnimSpeed.Intended fresh nodes0,
+max1992/1992;15 planned pending material rows,zero pending controls.
+Current1992/1992 scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),
+521/555 material partial;historical1992/1992 separate.S6 closed;later S
+unadmitted.Maintenance custody retained,expectedMatches empty.Concrete
+missing evidence:actual15 table-to-consumer data relations beyond prior
+bounded node proofs.Shared player.c/fireball owners only;all platform code
+excluded.Paired source-entry/return audit uses three native player roots and
+actual fireball/bubble children,with their declared dependency boundaries.
+Predecessor:S6 accepted;successor:S8 unadmitted vine/BulletBill joins.
+ROM track:Source-first audit of actual ClimbingSub/PlayerPhysicsSub/GetPlayerAnimSpeed and FireballObjCore/BubbleCheck returning roots;original absolute-indexed table reads recorded;current x86/x64 actual shared owners compared across direction/facing/carry, jump/swim/climb and speed/friction/animation selectors, fireball spawn and bubble setup/move.
+Operational:focused player climbing/physics/animation/fireball/bubble/OAM and
+purity tests,current x86/x64 targets and original OpenNT DOS16 link. Product
+repair refreshes3 EXEs under standing owner approval;pure audit preserves
+product bytes. Every scoped mismatch repaired/re-audited before S8.No fresh
+credit from a historical route or old binary.Source policy:owner-local ROM
+and reviewed ASM research only,nonredistributable,no imported data or code.
+Ignored build/m2-t69-s7;raw<=128MiB,1024 roots per batch,120seconds process,
+524288steps per root;coordinator deletes raw per batch and probe at closure.
+Similar-issue sweep:byte carries/temporary RAM stores,all jump/swim/climb and
+speed/friction selectors,animation thresholds,spawn facing,random bit and
+zero-page alias/table selection;compare full persistent RAM and actual calls.
