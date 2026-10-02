@@ -2676,3 +2676,79 @@ remain unchanged. Exact feasible controls rise 3,138 to 3,140/4,323
 (raw 4,342, infeasible 19). T64 remains open with 41 Cohort-J controls,
 zero pending material; flame relative/offscreen returns follow before
 explosion positioning. T65 is not admitted.
+
+## Aggregate S50 admission - flame relative/offscreen returns
+
+S50 owns control-03864/03865. Twelve scoped labels are
+ExFl, ProcBowserFlame, SFlmX, SetGfxF, FlmeAt, DrawFlameLoop, M3FOfs, M2FOfs, M1FOfs, ExFlmeD, RelativeEnemyPosition, GetEnemyOffscreenBits. Ten flame nodes are exact; RelativeEnemyPosition
+and GetEnemyOffscreenBits remain needs-evidence under later generic owners.
+Expected new nodes empty and custody unchanged. Historical 1,992/1,992,
+exact nodes 1,480/1,992 and material 368/487 stay unchanged; controls enter
+3,140/4,323 and can reach 3,142/4,323. S49 precedes; explosion position
+return follows.
+
+Shared enemy/bowser_flame.c and oam/bowser_flame_gfx.c own $D1EB-$D294.
+Static track checks relative return slot/coordinates before state gate,
+three-sprite OAM loop and relative X increment, offscreen return slot/mask,
+and four LSR/stack-mask consumers including residual fourth-sprite hide.
+Actual ROM/native roots exercise real children and compare persistent RAM,
+OAM and $0109-$0139 game aliases. CPU-stack/transient scratch exclusions
+and real return checks are explicit. Fixtures span six slots, full/draw-only
+roots, state/timer/hardness gates, carry/page wrapping, edge masks and OAM
+boundary offsets. Generic children gain no unobserved node credit.
+Focused current x86/x64 flame/OAM/purity and original OpenNT DOS16 are
+operational gates; scoped differences stay here for repair/re-audit.
+
+Owner-local nonredistributable ROM/ASM are research only. Ignored
+build/m2-t64-s50 owns <=8 MiB raw, 524288 steps/case, 120 seconds,
+and cleanup. Product repairs refresh three approved EXEs. Preserve
+unrelated work; T64 stays open and T65 is not admitted.
+
+## Aggregate S50 closure - real flame relative/offscreen returns
+
+Control-03864/03865 are exact. Ten admitted flame nodes remain exact:
+ExFl, ProcBowserFlame, SFlmX, SetGfxF, FlmeAt, DrawFlameLoop,
+M3FOfs, M2FOfs, M1FOfs and ExFlmeD. RelativeEnemyPosition and
+GetEnemyOffscreenBits retain needs-evidence with their generic owners;
+no inferred generic path coverage, new node credit or custody transfer.
+
+Static $D1EB-$D294 audit preserves movement force/borrow/page and Y
+selection before drawing. Relative return at $D223 restores the current
+slot and exposes relative A; the following state gate executes before OAM
+writes. Three sprite writes advance relative X by eight each time, using
+byte-wrapped OAM Y. Offscreen return at $D268 restores the slot and exposes
+full $03D1; OAM offset reload and four low-bit shifts hide the residual
+fourth, third, second and first sprite in exact source order. C explicit bit
+checks consume the same mask without a new geometry/range rule.
+
+1,536 actual roots comprise 768 ProcBowserFlame and 768 SetGfxF entries,
+across six slots. Real relative/offscreen returns are 1,536/768; the state
+exit executes 768 times. Each low mask bit is clear/set 246/522 times.
+Observed horizontal masks: $0 (228), $f (504), and $1/$3/$7/$8/$c/$e
+(six each). Thus partial-edge masks and each hide branch are exercised,
+including the source residual fourth-sprite hide. Maximum root execution is
+258 instructions. Timer/hardness, fractional/page borrow, matched/unmatched
+Y target, vertical edges, frame flip and OAM $20/$f0/$f8/$fc are included.
+OAM loop wrapping and absolute-indexed tail writes that cross into adjacent
+RAM are compared rather than clamped or omitted.
+
+Fresh current x86/x64 each match 1,536/1,536 with zero differences across
+1,833 bytes: non-stack persistent RAM/OAM and all 49 game bytes at
+$0109-$0139. Transient scratch $00-$07 and other CPU stack are explicit
+exclusions; returned slot/relative A/full mask are checked separately at
+actual source seams. Both generic children execute; their broader scratch
+and unobserved generic contracts remain deferred to their later owners.
+The same immutable owner PRG supplies local resources only.
+
+C90 checkers and flame/OAM/platform-purity tests pass 3/3 per width.
+Original OpenNT DOS16 builds/links with the existing OLDNAMES.LIB warning.
+Similar-issue sweep checks both return slots, early state exit, relative-X
+consumer, wrapped OAM loop and all four mask hides. No scoped discrepancy
+or host gameplay copy found. Product C and three delivered EXEs remain
+unchanged. Raw records/probe executable are cleaned after acceptance.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487
+remain unchanged. Exact feasible controls rise 3,140 to 3,142/4,323
+(raw 4,342, infeasible 19). T64 remains open with 39 Cohort-J controls,
+zero pending material; explosion relative-position return follows.
+T65 is not admitted.

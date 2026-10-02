@@ -1781,3 +1781,6 @@ target_link_libraries(mysmb_bowser_integration_route_check PRIVATE mysmb_game)
 
 add_executable(mysmb_bowser_half_integration_route_check test/bowser_half_integration_route_check.c)
 target_link_libraries(mysmb_bowser_half_integration_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_flame_integration_route_check test/flame_integration_route_check.c)
+target_link_libraries(mysmb_flame_integration_route_check PRIVATE mysmb_game)

@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3140,
-    "needs-evidence": 1183,
+    "exact": 3142,
+    "needs-evidence": 1181,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129554,13 +129554,16 @@
       "instruction": "rts/rti",
       "id": "control-03864",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame with real shared relative/offscreen return outputs and source mask consumers.",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S50 static $D1EB-$D294 and real return-consumer audit: RelativeEnemyPosition returns at $D223 with X=ObjectOffset and A=$03AE; SetGfxF tests current-slot state before consuming relative Y/X in the three-sprite loop."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetGfxF restores the caller-visible ObjectOffset and relative coordinates after completion.",
+      "operationalEvidence": [
+        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "RelativeEnemyPosition returns at $D223 with X=ObjectOffset and A=$03AE; SetGfxF tests current-slot state before consuming relative Y/X in the three-sprite loop.",
       "currentSourcePaths": [
         "src/game/oam/bowser_flame_gfx.c"
       ]
@@ -129573,13 +129576,16 @@
       "instruction": "rts/rti",
       "id": "control-03865",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame with real shared relative/offscreen return outputs and source mask consumers.",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T64 S50 static $D1EB-$D294 and real return-consumer audit: GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 DrawFlameLoop exposes the completed offscreen byte and restored caller ObjectOffset.",
+      "operationalEvidence": [
+        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order.",
       "currentSourcePaths": [
         "src/game/oam/bowser_flame_gfx.c"
       ]
