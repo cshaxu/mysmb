@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S2 - vine output chain
+
+[T65 S2 current vine/stacker proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes eight named labels, none deferred. Current exact nodes 1502/1992,
+feasible controls 3204/4322 (raw 4342, infeasible 20), material 373/492 partial.
+Historical mapping stays 1992/1992. Original-ROM roots 16384 per width have
+zero differences after original scratch/phase-order repair. Focused 14/14
+and product self-test 1/1 pass per width, original OpenNT DOS16 links; three
+EXEs refreshed. T65 remains open, S3 next.
+
 ## M2 T65 S1 - block-query chain
 
 [T65 S1 current query/table/return proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

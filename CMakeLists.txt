@@ -1819,3 +1819,6 @@ target_link_libraries(mysmb_jump_hammer_integration_route_check PRIVATE mysmb_ga
 
 add_executable(mysmb_block_query_integration_route_check test/block_query_integration_route_check.c)
 target_link_libraries(mysmb_block_query_integration_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_vine_output_route_check test/vine_output_route_check.c)
+target_link_libraries(mysmb_vine_output_route_check PRIVATE mysmb_game)

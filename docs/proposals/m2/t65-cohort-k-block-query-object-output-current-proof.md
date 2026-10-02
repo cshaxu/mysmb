@@ -174,3 +174,119 @@ Result: current nodes 1480 -> 1494/1992; exact feasible controls
 368/487 -> 371/490, enumeration still partial. Historical 1992/1992 stays
 separate. Cohort K now has 15 exact and 139 pending nodes. T65 stays open;
 S2 vine output is next, not admitted by this closure.
+
+## S2 admission - vine sprite chain
+
+All eight planned S2 labels enter needs-evidence, intended fresh exact eight:
+VineYPosAdder, DrawVine, VineTL, SkpVTop, ChkFTop, NextVSp,
+SixSpriteStacker, StkLp. Baseline exact nodes 1494/1992, controls 3192/4322,
+material 371/490 partial; maximum nodes 1502/1992. Historical 1992/1992,
+no new historical labels and no custody transfer. Scope control-02763 through
+control-02773 and control-03998, twelve pending. External H vine caller and
+later large-platform call/return edges retain their source-order receivers.
+
+Entry DrawVine $E435 and its actual SixSpriteStacker $E4AE child return;
+standalone stacker covers byte value/OAM wrapping. Shared owners vine_gfx.c
+and sprite_stacker.c; accepted relative-position caller state is the input,
+not promoted here. Intended original routes cover both vine indices, all six
+registered enemy slots, aligned six-record OAM allocations, coordinate wrapping,
+cap selection, both clipping outcomes and full stacker value range. Compare
+all RAM except true CPU stack; include lower-stack game aliases. Register-only
+A/X/Y contracts are mapped explicitly at the native API rather than emulated.
+
+Static read finds DrawVine omitted original scratch $00/$02 writes. This S
+will establish a failing original-ROM comparison, restore original writes and
+repeat the same complete route. Audit absolute-indexed X/attribute stores,
+byte-index tile/clipping loops and actual child return order for similar omissions.
+Only shared-game repairs are allowed; refresh all three EXEs if product changes.
+Two absent material relations (VineYPosAdder -> DrawVine and SixSpriteStacker
+OAM Y output -> DrawVine clipping) are enumerated only after dual proof.
+
+Provenance: owner-local nonredistributable ROM/ASM remain research-only;
+project probes are neutral and reference core remains a read-only sibling.
+Ignored build/m2-t65-s2 owns <=80 MiB raw records, <=524288 steps/case,
+120-second probe budget, checkpoint logs and cleanup. Focused vine OAM,
+six-sprite-stacker, vine actor and platform-purity tests, C90 x86/x64 and
+original OpenNT DOS16 link are the separate operational track. S3 hammer
+output follows only after all scoped feasible differences are repaired.
+
+## S2 closure - vine/stacker source stages and scratch repair
+
+All eight admitted labels are current exact, no scoped deferred labels or
+custody transfers: VineYPosAdder, DrawVine, VineTL, SkpVTop, ChkFTop,
+NextVSp, SixSpriteStacker, StkLp. Historical expected/actual new matches
+remain empty because historical mapping is already complete.
+
+Static audit first found original DrawVine STY $00 and STY $02 omitted.
+The pre-fix original-ROM batch reported 24480 byte differences on each native
+width. All arise from those two scratch slots: the old source already generated
+the same final OAM for legal allocations, but merged tile/cap/clip phases.
+The shared game owner now writes saved index/base and follows the original
+stack -> absolute-indexed X stores -> attributes -> six-tile loop -> cap ->
+separate six-clipping loop order. Only a non-below unsigned wrapped $64
+difference writes $F8. The original two-entry offset table is unchanged;
+current literal entries and their two indexed consumers agree with the ROM.
+No host-specific gameplay branch, new gameplay rule or emulator was added.
+
+The neutral tools/reference_vine_output_probe.c and
+test/vine_output_route_check.c execute one original/native batch per width:
+12288 DrawVine roots cover both indices, all six registered enemy slots,
+four legal aligned six-sprite allocations (including the final OAM boundary),
+and 256 coordinate/threshold seeds per combination. X and Y seed multipliers
+17 and 13 cover all byte values; start-minus-Y multiplier 25 covers every
+wrapped clip difference, including $63/$64/$65. Another 4096 direct stacker
+roots cover all 256 starting coordinate bytes and sixteen OAM indices,
+including unaligned and $FC/$FE/$FF wrap cases. All 16384 roots compare
+1841 RAM bytes: all scratch/OAM and $0109-$0139 game aliases; only remaining
+CPU stack is excluded. The final current x86/x64 results are zero differences.
+
+Original maximum instructions/root 223. Actual indexed VineYPosAdder reads:
+6144 per index. Cap set/skip: 6144 each. Clip keep/hide: 28800/44928.
+Original PC visits: DrawVine 12288, VineTL 73728, SkpVTop 12288,
+ChkFTop 73728, NextVSp 73728, SixSpriteStacker 16384, StkLp 98304.
+Actual child RTS $E4BF resumes DrawVine $E449 12288 times. Original vine
+returns X=6/Y=saved index; direct stacker returns X=0, A=initial+48 and
+Y=$02. Native void APIs do not emulate registers: the vine caller explicitly
+reloads $02, subsequent phases reload coordinate inputs, and loop/index
+control realizes the original return behavior. Unobserved later platform or
+outer vine call-site contracts are not promoted.
+
+All twelve admitted controls become exact: control-02763, control-02764,
+control-02765, control-02766, control-02767, control-02768, control-02769,
+control-02770, control-02771, control-02772, control-02773, control-03998.
+Newly enumerated exact material relations: material-t65-vine-adder
+(VineYPosAdder -> DrawVine indexed Y offset), material-t65-vine-stack
+(SixSpriteStacker -> DrawVine OAM Y clipping). Enumeration remains partial;
+no unrelated registry row changed.
+
+Similar-issue sweep: both production stacker callers were inspected.
+DrawVine needed saved $00/$02 and separate phases; DrawLargePlatform already
+saves $02 and remains reserved for S5. The stacker itself already matches all
+byte-wrap cases and was not changed. All original absolute indexed X/attribute
+stores and byte-index tile/clipping loops were reviewed; the restored source
+distinguishes their address arithmetic. Scoped table/clip/cap/return contracts
+are now zero-difference; no outstanding scoped repair is deferred.
+
+Independent operational proof: final C90 x86/x64 builds each pass 14/14
+focused/native audio/pause/core/vine/purity CTests and the newly built Win32
+product self-test 1/1. Original OpenNT DOS16 shared-source product links with
+the existing OLDNAMES.LIB warning. Three refreshed owner-approved artifacts:
+
+- mysmb16.exe: 265173 bytes; SHA-256 1a0cab9d8c6572e4d4737a6f170d759e37bdd42fad0fa07437cd1110e5b95ae9.
+
+- mysmb32.exe: 376206 bytes; SHA-256 cc224bd7e0def5037b23c31794e083f5b0757806f3aecdd031b72ca921512a80.
+
+- mysmb64.exe: 383134 bytes; SHA-256 a6716a70f763cf62c7b042fac57dd691f1904fbf001b0a00f9418060506bb422.
+
+The artifacts retain committed audio, title-pause and focus-pause behavior.
+No external redistributability/release claim is made. Only neutral harness
+logic/metadata is tracked besides the owner-approved local products. Raw S2
+record/probe outputs are removed after accepted gates; logs remain ignored.
+Reproduction compiles the named probe against the read-only reference core,
+runs it with the owner ROM and an ignored records path, then runs the native
+checker on that same records file on each width.
+
+Current totals: nodes 1494 -> 1502/1992, feasible controls 3192 -> 3204/4322
+(raw 4342, infeasible 20 unchanged), material 371/490 -> 373/492 partial.
+Historical mapping stays 1992/1992. Cohort K has 23 exact and 131 pending
+nodes. T65 remains open; S3 hammer pose/output is next, not admitted here.

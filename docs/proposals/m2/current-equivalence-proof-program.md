@@ -63,3 +63,10 @@ Incoming boundary relations outside J retain their original pending owners.
 T65 is open and S2 is next. Current exact nodes 1494/1992, feasible controls
 3192/4322 (raw 4342, infeasible 20), material 371/490 partial. Historical
 1992/1992 is separate. Earlier checkpoint paragraphs retain closure-time facts.
+
+## Current checkpoint after T65 S2
+
+[T65 S2](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+T65 is open and S3 is next. Current exact nodes 1502/1992, feasible controls
+3204/4322 (raw 4342, infeasible 20), material 373/492 partial. Historical
+1992/1992 remains separate. Earlier checkpoint paragraphs retain their facts.

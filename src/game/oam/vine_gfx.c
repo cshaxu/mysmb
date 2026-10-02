@@ -9,7 +9,7 @@ enum {
     MYSMB_VINE_RELATIVE_Y = 0x03b9U
 };
 
-/* ROM $e433 VineYPosAdder and $e435 DrawVine through $e4a2 NextVSp.  Each active vine stack owns six consecutive
+/* ROM $e433 VineYPosAdder and $e435 DrawVine through $e4ad return. Each active vine stack owns six consecutive
  * OAM entries.  The top stack has the distinct $e0 cap; the remaining leaves
  * are $e1 with the original alternating horizontal position and flip bit. */
 void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
@@ -21,12 +21,37 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
     mysmb_u8 y;
     mysmb_u8 row;
 
+    game->ram[0U] = vine_index;
     sprite_slot = game->ram[MYSMB_VINE_OBJECT_OFFSET + vine_index];
     oam = game->ram[MYSMB_VINE_ENEMY_SPRITE_OFFSET + sprite_slot];
-    x = game->ram[MYSMB_VINE_RELATIVE_X];
+    game->ram[2U] = oam;
     y = (mysmb_u8)(game->ram[MYSMB_VINE_RELATIVE_Y] + y_adder[vine_index]);
     mysmb_oam_stack_six_sprite_data(game, y, oam);
 
+    /* The absolute indexed stores precede the byte-indexed tile loop. */
+    x = game->ram[MYSMB_VINE_RELATIVE_X];
+    game->ram[0x0203U + oam] = x;
+    game->ram[0x020bU + oam] = x;
+    game->ram[0x0213U + oam] = x;
+    x = (mysmb_u8)(x + 6U);
+    game->ram[0x0207U + oam] = x;
+    game->ram[0x020fU + oam] = x;
+    game->ram[0x0217U + oam] = x;
+    game->ram[0x0202U + oam] = 0x21U;
+    game->ram[0x020aU + oam] = 0x21U;
+    game->ram[0x0212U + oam] = 0x21U;
+    game->ram[0x0206U + oam] = 0x61U;
+    game->ram[0x020eU + oam] = 0x61U;
+    game->ram[0x0216U + oam] = 0x61U;
+
+    /* VineTL runs to completion before the cap and clipping phases. */
+    for (row = 0U; row < 6U; ++row) {
+        game->ram[0x0201U + (mysmb_u8)(oam + row * 4U)] = 0xe1U;
+    }
+    oam = game->ram[2U];
+    if (game->ram[0U] == 0U) game->ram[0x0201U + oam] = 0xe0U;
+
+    /* SkpVTop -> ChkFTop -> NextVSp is a separate six-sprite loop. */
     for (row = 0U; row < 6U; ++row) {
         mysmb_u8 row_oam;
         mysmb_u8 row_y;
@@ -34,15 +59,8 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
         row_oam = (mysmb_u8)(oam + row * 4U);
         row_y = game->ram[(mysmb_u16)(0x0200U + row_oam)];
         if ((mysmb_u8)(game->ram[MYSMB_VINE_START_Y] - row_y) >= 0x64U) {
-            row_y = 0xf8U;
+            game->ram[(mysmb_u16)(0x0200U + row_oam)] = 0xf8U;
         }
-        game->ram[(mysmb_u16)(0x0200U + row_oam)] = row_y;
-        game->ram[(mysmb_u16)(0x0201U + row_oam)] =
-            vine_index == 0U && row == 0U ? 0xe0U : 0xe1U;
-        game->ram[(mysmb_u16)(0x0202U + row_oam)] =
-            (mysmb_u8)((row & 1U) == 0U ? 0x21U : 0x61U);
-        game->ram[(mysmb_u16)(0x0203U + row_oam)] =
-            (mysmb_u8)(x + ((row & 1U) == 0U ? 0U : 6U));
     }
 }
 

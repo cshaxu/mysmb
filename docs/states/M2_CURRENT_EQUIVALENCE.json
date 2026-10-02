@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 490,
+    "enumeratedCount": 492,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -10543,6 +10543,50 @@
       "currentSourcePaths": [
         "src/game/world/block_buffer.c"
       ]
+    },
+    {
+      "id": "material-t65-vine-adder",
+      "producer": "VineYPosAdder",
+      "consumer": "DrawVine",
+      "storage": "Immutable original $E433 two-entry table",
+      "feasiblePath": "Both vine indices select the original byte Y offset before the actual stacker call.",
+      "status": "exact",
+      "currentCounterpart": "shared vine/stacker OAM production and clipping",
+      "semanticContract": "Both vine indices select the original byte Y offset before the actual stacker call.",
+      "semanticEvidence": [
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Both vine indices select the original byte Y offset before the actual stacker call."
+      ],
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "cohort": "K",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
+      ]
+    },
+    {
+      "id": "material-t65-vine-stack",
+      "producer": "SixSpriteStacker",
+      "consumer": "DrawVine",
+      "storage": "Sprite Y bytes at $0200 plus six original OAM offsets",
+      "feasiblePath": "DrawVine clipping consumes all six Y values after the child returns, applying unsigned $64 threshold and only hiding the original non-below path.",
+      "status": "exact",
+      "currentCounterpart": "shared vine/stacker OAM production and clipping",
+      "semanticContract": "DrawVine clipping consumes all six Y values after the child returns, applying unsigned $64 threshold and only hiding the original non-below path.",
+      "semanticEvidence": [
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; DrawVine clipping consumes all six Y values after the child returns, applying unsigned $64 threshold and only hiding the original non-below path."
+      ],
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "cohort": "K",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
+      ]
     }
   ],
   "cohorts": [
@@ -10618,14 +10662,14 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1494,
-    "needs-evidence": 498,
+    "exact": 1502,
+    "needs-evidence": 490,
     "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3192,
-    "needs-evidence": 1130,
+    "exact": 3204,
+    "needs-evidence": 1118,
     "infeasible": 20
   },
   "controlEdgeTypeCounts": {
@@ -40048,14 +40092,17 @@
       "label": "VineYPosAdder",
       "asmLine": 13126,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/vine_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Both immutable $E433 indexed entries produce the original byte-wrapped vertical offset before stacking; both indexed consumers observed."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Both immutable $E433 indexed entries produce the original byte-wrapped vertical offset before stacking; both indexed consumers observed.",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c"
       ]
@@ -40064,14 +40111,17 @@
       "label": "DrawVine",
       "asmLine": 13129,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/vine_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Saves vine index to $00 and OAM base to $02, calls SixSpriteStacker, then writes original alternating X and attributes before tile, cap and clipping phases."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Saves vine index to $00 and OAM base to $02, calls SixSpriteStacker, then writes original alternating X and attributes before tile, cap and clipping phases.",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c"
       ]
@@ -40080,14 +40130,17 @@
       "label": "VineTL",
       "asmLine": 13156,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/vine_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Completes exactly six byte-indexed $E1 tile stores before reloading the original OAM offset and choosing the vine cap."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Completes exactly six byte-indexed $E1 tile stores before reloading the original OAM offset and choosing the vine cap.",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c"
       ]
@@ -40096,14 +40149,17 @@
       "label": "SkpVTop",
       "asmLine": 13169,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/vine_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Only saved index zero replaces the first tile with $E0; starts a separate clipping loop at sprite zero."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Only saved index zero replaces the first tile with $E0; starts a separate clipping loop at sprite zero.",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c"
       ]
@@ -40112,14 +40168,17 @@
       "label": "ChkFTop",
       "asmLine": 13170,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/vine_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Unsigned byte subtraction VineStart_Y_Position minus sprite Y is compared with $64; only the non-below branch writes $F8."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Unsigned byte subtraction VineStart_Y_Position minus sprite Y is compared with $64; only the non-below branch writes $F8.",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c"
       ]
@@ -40128,14 +40187,17 @@
       "label": "NextVSp",
       "asmLine": 13177,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/vine_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Advances OAM index by four and count by one, repeats clipping exactly six times and restores the saved vine index at the source return."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Advances OAM index by four and count by one, repeats clipping exactly six times and restores the saved vine index at the source return.",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c"
       ]
@@ -40144,14 +40206,17 @@
       "label": "SixSpriteStacker",
       "asmLine": 13187,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_oam_stack_six_sprite_data",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Stacks six coordinate bytes from original A and byte Y; actual source restores Y from $02 at return. Native caller explicitly reloads saved OAM, with no emulated register state."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Stacks six coordinate bytes from original A and byte Y; actual source restores Y from $02 at return. Native caller explicitly reloads saved OAM, with no emulated register state.",
       "currentSourcePaths": [
         "src/game/oam/sprite_stacker.c"
       ]
@@ -40160,14 +40225,17 @@
       "label": "StkLp",
       "asmLine": 13189,
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentOwner": "src/game/oam/vine_gfx.c and src/game/oam/sprite_stacker.c",
-      "currentCounterpart": "mysmb_objects_draw_vine / mysmb_oam_stack_six_sprite_data",
+      "status": "exact",
+      "currentOwner": "src/game/oam/sprite_stacker.c",
+      "currentCounterpart": "mysmb_oam_stack_six_sprite_data",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Six stores each add eight to the byte coordinate and four to the byte OAM index with wrapping; source X exits zero and A is initial value plus 48."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves the original vine OAM table/loop/coordinate/attribute semantics for this source label.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Six stores each add eight to the byte coordinate and four to the byte OAM index with wrapping; source X exits zero and A is initial value plus 48.",
       "currentSourcePaths": [
         "src/game/oam/sprite_stacker.c"
       ]
@@ -107410,16 +107478,19 @@
       "instruction": "jsr",
       "id": "control-02763",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; DrawVine saves $02 then invokes the six-coordinate child before X/attributes/tiles/clipping."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DrawVine -> SixSpriteStacker with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "DrawVine saves $02 then invokes the six-coordinate child before X/attributes/tiles/clipping.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_stacker.c",
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107430,15 +107501,19 @@
       "instruction": "ldx",
       "id": "control-02764",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; All X and attribute stores precede the six-tile VineTL loop."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation DrawVine -> VineTL with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "All X and attribute stores precede the six-tile VineTL loop.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107449,15 +107524,19 @@
       "instruction": "bpl",
       "id": "control-02765",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; VineTL repeats through exactly six tile stores using the source byte OAM progression."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation VineTL -> VineTL with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "VineTL repeats through exactly six tile stores using the source byte OAM progression.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107468,15 +107547,19 @@
       "instruction": "bne",
       "id": "control-02766",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Nonzero saved vine index branches around the top-cap store to SkpVTop."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation VineTL -> SkpVTop with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Nonzero saved vine index branches around the top-cap store to SkpVTop.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107487,15 +107570,19 @@
       "instruction": "sta",
       "id": "control-02767",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Zero saved vine index writes the cap tile before falling through to SkpVTop."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation VineTL -> SkpVTop with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Zero saved vine index writes the cap tile before falling through to SkpVTop.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107506,15 +107593,19 @@
       "instruction": "ldx",
       "id": "control-02768",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; SkpVTop begins the distinct clipping stage at the original OAM base and first sprite."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SkpVTop -> ChkFTop with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "SkpVTop begins the distinct clipping stage at the original OAM base and first sprite.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107525,15 +107616,19 @@
       "instruction": "bcc",
       "id": "control-02769",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Unsigned wrapped difference below $64 retains sprite Y and branches to NextVSp."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation ChkFTop -> NextVSp with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Unsigned wrapped difference below $64 retains sprite Y and branches to NextVSp.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107544,15 +107639,19 @@
       "instruction": "sta",
       "id": "control-02770",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Difference not below $64 writes $F8 before NextVSp."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation ChkFTop -> NextVSp with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Difference not below $64 writes $F8 before NextVSp.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107563,15 +107662,19 @@
       "instruction": "bne",
       "id": "control-02771",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; NextVSp advances four bytes and loops while fewer than six sprites have been checked."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation NextVSp -> ChkFTop with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "NextVSp advances four bytes and loops while fewer than six sprites have been checked.",
       "currentSourcePaths": [
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
@@ -107582,14 +107685,18 @@
       "instruction": "ldx",
       "id": "control-02772",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; SixSpriteStacker initializes six stores before StkLp."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation SixSpriteStacker -> StkLp with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "SixSpriteStacker initializes six stores before StkLp.",
       "currentSourcePaths": [
+        "src/game/oam/vine_gfx.c",
         "src/game/oam/sprite_stacker.c"
       ]
     },
@@ -107601,14 +107708,18 @@
       "instruction": "bne",
       "id": "control-02773",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; StkLp repeats byte coordinate/index increments until all six stores complete."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation StkLp -> StkLp with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "StkLp repeats byte coordinate/index increments until all six stores complete.",
       "currentSourcePaths": [
+        "src/game/oam/vine_gfx.c",
         "src/game/oam/sprite_stacker.c"
       ]
     },
@@ -132777,16 +132888,19 @@
       "instruction": "rts/rti",
       "id": "control-03998",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared vine OAM and six-sprite stacker path",
+      "status": "exact",
+      "currentCounterpart": "shared vine_gfx.c source phase / sprite_stacker.c loop and explicit OAM reload",
       "semanticEvidence": [
-        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending."
+        "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Actual stacker RTS continuation is $E449 in DrawVine; returned Y is saved $02 before original X/attribute stores."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SixSpriteStacker -> DrawVine with source OAM loop and coordinate handoff.",
+      "operationalEvidence": [
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Actual stacker RTS continuation is $E449 in DrawVine; returned Y is saved $02 before original X/attribute stores.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_stacker.c",
-        "src/game/oam/vine_gfx.c"
+        "src/game/oam/vine_gfx.c",
+        "src/game/oam/sprite_stacker.c"
       ]
     },
     {
