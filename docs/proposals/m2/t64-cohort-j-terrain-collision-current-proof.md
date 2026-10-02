@@ -1584,3 +1584,91 @@ retain explicit later-owner dependencies rather than silently mark all exact.
 | `material-00402` | `GetEnemyBoundBoxOfsArg` | `PlayerCollisionCore` |
 | `material-k54-01` | `SolidMTileUpperExt` | `CheckForSolidMTiles` |
 | `material-k54-02` | `ClimbMTileUpperExt` | `CheckForClimbMTiles` |
+
+## Aggregate S37 admission - terrain entry and metatile connections
+
+S37 is the first bounded aggregate connection audit after the 36 source-order
+node chains. It owns `control-02442`, `control-02443`, `control-02501`,
+`control-03961`, `material-k54-01`, `material-k54-02`: crouch/noncrouch
+GBBAdr-to-HeadChk entry, side hidden-predicate call/return, and solid/climb
+threshold-table consumer bindings. These belong to one player-background
+collision route with already proven classifier children.
+
+The exact node scope is `GBBAdr`, `HeadChk`, `CheckSideMTiles`,
+`ChkInvisibleMTiles`, `SolidMTileUpperExt`, `CheckForSolidMTiles`,
+`ClimbMTileUpperExt`, `CheckForClimbMTiles`. All eight are incoming exact;
+expected new nodes **0**, maximum unchanged **1,480/1,992**. This is an
+explicit zero-node-credit audit because the concrete missing proof is the
+six named connections, not a new mapping pass. Historical **1,992/1,992**
+also stays unchanged. Incoming exact controls **3,100/4,323** and material
+**365/487**; expected closing controls **3,104/4,323**, material **367/487**.
+
+Read source branch/child/table contracts, execute real original-ROM terrain
+roots, and compare current native owners without installing child return
+records. Classifier routes cover every tile byte against actual source data.
+CPU scratch/register/stack contracts must be explicit; differences remain
+here for repair and repeated proof. Operational proof uses focused tests,
+x86/x64 checks, purity and unchanged OpenNT DOS16 link. Product behavior
+changes require three refreshed EXEs. Preserve unrelated terrain edits.
+
+Owner ROM/disassembly are nonredistributable local research. Ignored
+build/m2-t64-s37 owns <=8 MiB raw records, 524288 steps/case, 120-second
+route budget and cleanup. Only neutral harnesses/evidence are committed.
+Review terrain entry, classifier/hidden predicate callers and duplicate host
+logic. Remaining return families and platform material-00402 stay explicitly
+open in the aggregate gate; this S does not close T64.
+
+## Aggregate S37 closure - terrain entry and metatile connections
+
+Four controls are newly exact: `control-02442`, `control-02443`,
+`control-02501`, `control-03961`. Two material relations are newly exact:
+`material-k54-01`, `material-k54-02`. All eight scoped nodes retain their
+prior exact state; no duplicate node credit is claimed. The eight existing
+labels are `GBBAdr`, `HeadChk`, `CheckSideMTiles`, `ChkInvisibleMTiles`,
+`SolidMTileUpperExt`, `CheckForSolidMTiles`, `ClimbMTileUpperExt`,
+`CheckForClimbMTiles`.
+
+Source GBBAdr's crouch-zero branch and crouch-nonzero increment reach the
+same HeadChk with the same size-derived extent X. The C head owner computes
+the same index; no mutation occurs between entry selection and consumption.
+Source CheckSideMTiles passes unchanged tile A into the hidden predicate and
+consumes returned Z for its early exit. The actual C call preserves that tile
+and consumes its equivalent byte result. Solid/climb table handoffs retain
+the original top-two-bit group, corresponding threshold and unsigned compare;
+actual ROM binding and the resource-free fallback have the same result.
+
+The neutral `tools/reference_terrain_connection_probe.c` produces ignored
+MSTC records for `mysmb_terrain_connection_route_check`, built from
+`test/terrain_connection_route_check.c`. It runs 32 actual $DC64 terrain
+roots covering size/crouch/swim selection and empty/$5f/$60/$61 buffer
+contents, then 768 direct classifier entries covering every tile byte for
+solid, climbable and invisible predicates. Original $DCB7 has **16 taken /
+16 fallthrough**; the actual $DD9C hidden call and $DEC3->$DD9F return are
+each observed **24** times, including both true hidden IDs and the false
+solid-tile path. Root fixtures start from a restored boot machine, with no
+ROM changes. Maximum **474 instructions** per complete route.
+
+Fresh real x86/x64 owners, without installing oracle child returns, each
+match **800/800**, zero differences. Terrain roots compare every 1,784
+persistent RAM byte including unchanged bytes; query scratch $00-$07 and
+CPU stack are declared ABI exclusions, with head X and side predicate Z
+checked explicitly at their argument/result seams. Pure predicates compare
+all 1,792 non-stack RAM bytes plus source A, group X/Y and carry/Z results.
+All 256 tiles per threshold also match without a bound ROM, proving the
+fallback table path. Both widths pass focused terrain/metatile smokes and
+platform purity; original OpenNT DOS16 builds/links the unchanged core with
+the existing OLDNAMES.LIB warning.
+
+The similar-issue sweep checks all solid/climb/hidden predicate consumers in
+shared game sources. Head, feet and side use the same owned classifiers;
+enemy terrain's non-solid classifier remains a distinct ROM rule. No host
+predicate copy was found. Unrelated terrain work is preserved, no product
+source changes or EXE refresh occur. Raw record/probe files are cleaned.
+
+Historical **1,992/1,992** and current exact nodes **1,480/1,992** remain
+unchanged. Exact controls rise **3,100 -> 3,104 / 4,323** (raw 4,342,
+infeasible 19); material **365 -> 367 / 487**. The S36 aggregate table is
+a closure-time snapshot: its four terrain controls and two table materials
+are now resolved. Current Cohort J remainder is **77 feasible controls and
+one material relation (`material-00402`)**. T64 remains open; the next
+bounded connection family is the small/large-platform call/return path.

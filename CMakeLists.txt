@@ -1742,3 +1742,6 @@ target_link_libraries(mysmb_bounding_box_clip_actual_check PRIVATE mysmb_game)
 
 add_executable(mysmb_geometry_core_route_check test/geometry_core_route_check.c)
 target_link_libraries(mysmb_geometry_core_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_terrain_connection_route_check test/terrain_connection_route_check.c)
+target_link_libraries(mysmb_terrain_connection_route_check PRIVATE mysmb_game)

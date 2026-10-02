@@ -10397,13 +10397,15 @@
       "consumer": "CheckForSolidMTiles",
       "storage": "ROM SolidMTileUpperExt group-indexed thresholds",
       "feasiblePath": "CheckForSolidMTiles indexes SolidMTileUpperExt after GetMTileAttrib.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c threshold binding",
       "semanticContract": "Top-two-bit group selects the same threshold before CMP carry result.",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "M2 T64 S37 terrain connection audit: GBBAdr branches on CrouchingFlag=0 directly to HeadChk; nonzero increments size X once before the same head entry. Native head owner recomputes the identical extent index without intervening state mutation. CheckSideMTiles calls ChkInvisibleMTiles with unchanged metatile A and consumes only returned Z; C passes the same tile and early-returns on the equivalent byte predicate. Solid/climb consumers use original tile top-two-bit group and corresponding ROM threshold before unsigned carry comparison, preserving source input and RAM."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10417,13 +10419,15 @@
       "consumer": "CheckForClimbMTiles",
       "storage": "ROM ClimbMTileUpperExt group-indexed thresholds",
       "feasiblePath": "CheckForClimbMTiles indexes ClimbMTileUpperExt after GetMTileAttrib.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/world/metatiles.c threshold binding",
       "semanticContract": "Top-two-bit group selects the same threshold before CMP carry result.",
       "semanticEvidence": [
-        "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required."
+        "M2 T64 S37 terrain connection audit: GBBAdr branches on CrouchingFlag=0 directly to HeadChk; nonzero increments size X once before the same head entry. Native head owner recomputes the identical extent index without intervening state mutation. CheckSideMTiles calls ChkInvisibleMTiles with unchanged metatile A and consumes only returned Z; C passes the same tile and early-returns on the equivalent byte predicate. Solid/climb consumers use original tile top-two-bit group and corresponding ROM threshold before unsigned carry comparison, preserving source input and RAM."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10555,8 +10559,8 @@
   },
   "controlEdgeCounts": {
     "unclassified": 0,
-    "exact": 3100,
-    "needs-evidence": 1223,
+    "exact": 3104,
+    "needs-evidence": 1219,
     "mismatch": 0,
     "infeasible": 19
   },
@@ -100093,13 +100097,15 @@
       "instruction": "beq",
       "id": "control-02442",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/terrain.c extent-index selection and real mysmb_player_invisible_metatile call/result consumption",
       "semanticEvidence": [
-        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+        "M2 T64 S37 terrain connection audit: GBBAdr branches on CrouchingFlag=0 directly to HeadChk; nonzero increments size X once before the same head entry. Native head owner recomputes the identical extent index without intervening state mutation. CheckSideMTiles calls ChkInvisibleMTiles with unchanged metatile A and consumes only returned Z; C passes the same tile and early-returns on the equivalent byte predicate. Solid/climb consumers use original tile top-two-bit group and corresponding ROM threshold before unsigned carry comparison, preserving source input and RAM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves PlayerBG entry branch relation GBBAdr \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 HeadChk including guard predicate and state/probe ordering.",
+      "operationalEvidence": [
+        "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
+      ],
+      "semanticContract": "Same crouch-controlled head extent and same unchanged side-metatile argument with actual predicate return Z consumed by the side path.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
       ]
@@ -100112,13 +100118,15 @@
       "instruction": "inx",
       "id": "control-02443",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/player/terrain.c mysmb_player_background_collision",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/terrain.c extent-index selection and real mysmb_player_invisible_metatile call/result consumption",
       "semanticEvidence": [
-        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+        "M2 T64 S37 terrain connection audit: GBBAdr branches on CrouchingFlag=0 directly to HeadChk; nonzero increments size X once before the same head entry. Native head owner recomputes the identical extent index without intervening state mutation. CheckSideMTiles calls ChkInvisibleMTiles with unchanged metatile A and consumes only returned Z; C passes the same tile and early-returns on the equivalent byte predicate. Solid/climb consumers use original tile top-two-bit group and corresponding ROM threshold before unsigned carry comparison, preserving source input and RAM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves PlayerBG entry fallthrough relation GBBAdr \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 HeadChk including guard predicate and state/probe ordering.",
+      "operationalEvidence": [
+        "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
+      ],
+      "semanticContract": "Same crouch-controlled head extent and same unchanged side-metatile argument with actual predicate return Z consumed by the side path.",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
       ]
@@ -101403,13 +101411,15 @@
       "instruction": "jsr",
       "id": "control-02501",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/terrain.c extent-index selection and real mysmb_player_invisible_metatile call/result consumption",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "M2 T64 S37 terrain connection audit: GBBAdr branches on CrouchingFlag=0 directly to HeadChk; nonzero increments size X once before the same head entry. Native head owner recomputes the identical extent index without intervening state mutation. CheckSideMTiles calls ChkInvisibleMTiles with unchanged metatile A and consumes only returned Z; C passes the same tile and early-returns on the equivalent byte predicate. Solid/climb consumers use original tile top-two-bit group and corresponding ROM threshold before unsigned carry comparison, preserving source input and RAM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves side-probe call relation CheckSideMTiles \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 ChkInvisibleMTiles with half-loop, bounds and tile ordering.",
+      "operationalEvidence": [
+        "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
+      ],
+      "semanticContract": "Same crouch-controlled head extent and same unchanged side-metatile argument with actual predicate return Z consumed by the side path.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
         "src/game/player/terrain_metatiles.c"
@@ -131551,13 +131561,15 @@
       "instruction": "rts/rti",
       "id": "control-03961",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/player/terrain.c side probes and children",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/terrain.c extent-index selection and real mysmb_player_invisible_metatile call/result consumption",
       "semanticEvidence": [
-        "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required."
+        "M2 T64 S37 terrain connection audit: GBBAdr branches on CrouchingFlag=0 directly to HeadChk; nonzero increments size X once before the same head entry. Native head owner recomputes the identical extent index without intervening state mutation. CheckSideMTiles calls ChkInvisibleMTiles with unchanged metatile A and consumes only returned Z; C passes the same tile and early-returns on the equivalent byte predicate. Solid/climb consumers use original tile top-two-bit group and corresponding ROM threshold before unsigned carry comparison, preserving source input and RAM."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves side-probe return relation ChkInvisibleMTiles \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 CheckSideMTiles with half-loop, bounds and tile ordering.",
+      "operationalEvidence": [
+        "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
+      ],
+      "semanticContract": "Same crouch-controlled head extent and same unchanged side-metatile argument with actual predicate return Z consumed by the side path.",
       "currentSourcePaths": [
         "src/game/player/terrain.c",
         "src/game/player/terrain_metatiles.c"
