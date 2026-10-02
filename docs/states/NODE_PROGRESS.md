@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T66 S5 - active vertical offscreen/division chain
+
+[Exact S5 scope and dual-proof contract](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+admits10 pending nodes,13 controls and material00435-00437. Current1703/1992
+nodes,3633/4317 controls(raw4342,infeasible25),400/493 material partial;
+maximum1713/1992 nodes. Historical1992/1992 remains separate.
+
 ## M2 T66 S4 - closed horizontal offscreen chain
 
 [Individual S4 node/edge/table proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)

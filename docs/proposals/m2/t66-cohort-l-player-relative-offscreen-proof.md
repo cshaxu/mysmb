@@ -867,3 +867,43 @@ three S2 P2 assets EXEs verified byte-for-byte against committed HEAD and
 retained with audio/title/focus pause. Only neutral checker/probe extensions.
 Ledger/admission/closure/registry/documentation/whitespace gates pass.
 S4 closes, T66/M2 remain open pending later chains/final certification.
+
+## S5 admission - vertical partitions and shared division
+
+Scope10/intended fresh10, all incoming needs-evidence: YOffscreenBitsData; DefaultYOnscreenOfs; HighPosUnitData; GetYOffscreenBits; YOfsLoop; YLdBData; ExYOfsBS; DividePDiff; SetOscrO; ExDivPD.
+Current1703/1992 nodes,3633/4317 feasible controls(raw4342,infeasible25),
+400/493 material partial. Maximum1713/1992 nodes,3646/4317 controls,
+403/493 material partial. Controls03148-03159 and04060, material00435-00437
+are the exact set. Historical1992/1992 expectedMatches empty; maintenance
+custody unchanged. S4 is closed; S6 sprite-output nodes remain unadmitted.
+
+Owner object_position.c, original F239 through F281 vertical/division chain.
+Common F1C0 entry is used because native vertical/division helpers are private;
+no production test hook or mock is introduced. Full real X/Y composition
+preserves Y's low-nibble mask in the stored high nibble. Every byte Y-low x
+every byte Y-high is controlled under each of two valid scrolling viewports;
+real X and Y calls exercise division's different adders and both side indices.
+Current native output compares1841 RAM bytes including0109-0139, scratch and
+composed mask. True CPU stack0100-0108/013A-01FF and unused CPU registers/
+flags excluded; returned helper data reaches actual table/output consumers.
+
+Static audit: top-before-bottom, subtraction borrow into high-unit compare,
+signed default partition, threshold and real division, indexed mask/restore/
+exit loop; division always writes05, preserves index at threshold, shifts/
+masks below threshold and adds only on side0 after original CPY-cleared carry.
+Actual transfers/RTS and both branch outcomes required. Bind all existing
+Y/default/high constants locally to PRG; track real indexed reads. Y table
+index8 cannot arise from these callers: defaults0/4, threshold32 admits
+quotients0-3, optional adder4 yields4-7. Its byte binding is verified but no
+fabricated index8 execution is required. Table node still requires actual
+consumer reads and correct native mask. This proof is not unobserved credit.
+
+Operational track: x86/x64 checker builds, focused offscreen/player/core/
+purity/audio/focus/self tests, original OpenNT DOS16 shared-source link.
+Three products retained for audit/test-only work, refreshed on code repair.
+Sweep all vertical/division consumers; no platform/audio or later node credit.
+Any scoped diff stays in S5 until repaired and re-audited to zero.
+
+Owner-local ROM/reviewed ASM nonredistributable inputs. All scripts/raw/logs
+under ignored build/m2-t66-s5;192MiB aggregate,2048 roots/chunk,120seconds/
+run,524288steps/case; coordinator cleans raw/probe after proof.
