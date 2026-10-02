@@ -8691,13 +8691,15 @@
       "consumer": "ExCPV",
       "storage": "Player_OffscreenBits, Player_Y_HighPos and Player_Y_Position carry result",
       "feasiblePath": "Vertical collision gate returns source carry result before caller collision work.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/collision.c mysmb_world_player_vertical_carry",
       "semanticContract": "Callers receive set carry only for fully offscreen or bottom-screen player cases.",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -8710,13 +8712,15 @@
       "consumer": "GetEnemyBoundBoxOfsArg",
       "storage": "ObjectOffset to argument A-equivalent",
       "feasiblePath": "Current object slot flows into source slot*4+4 box calculation.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/collision.c mysmb_world_enemy_box_offset",
       "semanticContract": "All ordinary enemy callers use ObjectOffset-selected bounding box.",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10514,13 +10518,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1326,
-    "needs-evidence": 666
+    "exact": 1330,
+    "needs-evidence": 662
   },
   "controlEdgeCounts": {
-    "exact": 2741,
+    "exact": 2745,
     "infeasible": 18,
-    "needs-evidence": 1583
+    "needs-evidence": 1579
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -36740,13 +36744,15 @@
       "label": "CheckPlayerVertical",
       "asmLine": 11892,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c",
       "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns carry set only for Player_OffscreenBits >=$f0 or on-screen-high Y with Player_Y_Position >=$d0; high-Y-not-one exit preserves clear carry from the prior offscreen compare.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -36756,13 +36762,15 @@
       "label": "ExCPV",
       "asmLine": 11901,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c",
       "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Returns the source carry result without changing collision state.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -36772,13 +36780,15 @@
       "label": "GetEnemyBoundBoxOfs",
       "asmLine": 11905,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c",
       "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Loads ObjectOffset and falls through to the argument-based box offset calculation.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -36788,13 +36798,15 @@
       "label": "GetEnemyBoundBoxOfsArg",
       "asmLine": 11908,
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/world/collision.c",
       "currentCounterpart": "src/game/world/collision.c:mysmb_world_player_vertical_carry / mysmb_world_enemy_box_offset / mysmb_world_enemy_box_offset_arg",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Maps input slot to box offset slot*4+4 in Y and returns the unindexed Enemy_OffscreenBits low nibble comparison with $0f carry semantics.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -99204,12 +99216,14 @@
       "instruction": "bcs",
       "id": "control-02422",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckPlayerVertical -> ExCPV with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -99223,12 +99237,14 @@
       "instruction": "bne",
       "id": "control-02423",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original branch relation CheckPlayerVertical -> ExCPV with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -99242,12 +99258,14 @@
       "instruction": "cmp",
       "id": "control-02424",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation CheckPlayerVertical -> ExCPV with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c"
@@ -99261,12 +99279,14 @@
       "instruction": "lda",
       "id": "control-02425",
       "cohort": "J",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "shared world/collision.c vertical and box-offset helpers",
       "semanticEvidence": [
         "Td S9 B16r vertical and enemy-box offset integration audit: source endpoint, carry predicate, ObjectOffset/box and unindexed offscreen-nibble handoff compared with shared collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S10 static $DC41-$DC54 audit plus retained original-ROM platform collision route replayed in x86/x64 native checks with carry, offset, mapped-RAM and child-call comparison, zero differences; focused platform contract, platform purity and DOS16 link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation GetEnemyBoundBoxOfs -> GetEnemyBoundBoxOfsArg with source carry predicate and ObjectOffset/box handoff ordering.",
       "currentSourcePaths": [
         "src/game/world/collision.c"

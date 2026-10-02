@@ -361,3 +361,11 @@ S9 admits `$DBBC-$DC40`: `ProcSPlatCollisions`, `ProcLPlatCollisions`, `ChkForTo
 ## S9 closure — platform collision response and player positioning
 
 All 11 scoped nodes are current-exact. Static `$DBBC-$DC40` comparison preserves vertical-speed suppression, top/side collision thresholds, small-platform ID flag selection, side-impede ordering, two-byte position table indexing and the shared positioning tail. Retained ROM collision/position routes and focused x86/x64 checks report zero differences; purity and DOS16 link pass. S9 records 11 nodes, 19 controls and eight material handoffs exact. Current totals: historical **1,992 / 1,992**; current **1,326 / 1,992** nodes and **2,741 / 4,324** feasible controls (raw **4,342**, infeasible **18**). Product C did not change.
+
+## S10 admission — player vertical and enemy box offsets
+
+S10 admits `$DC41-$DC54`: `CheckPlayerVertical`, `ExCPV`, `GetEnemyBoundBoxOfs`, and `GetEnemyBoundBoxOfsArg`. Shared owner is `src/game/world/collision.c`; it verifies carry preservation through the high-byte gate, source slot/argument selection, box offset arithmetic and masked offscreen result. Scope: four nodes, four source-address-owned controls and two material handoffs.
+
+## S10 closure — player vertical and enemy box offsets
+
+All four scoped nodes are current-exact. Static `$DC41-$DC54` audit, retained x86/x64 original-ROM caller route, focused platform contract, platform purity and the S9-contiguous DOS16 shared-source link pass. S10 records four nodes, four controls and two material handoffs exact. Current totals: historical **1,992 / 1,992**; current **1,330 / 1,992** nodes and **2,745 / 4,324** feasible controls. Product C did not change.

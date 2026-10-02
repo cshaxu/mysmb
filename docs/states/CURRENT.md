@@ -2,20 +2,20 @@
 
 ## Current Work
 
-## M2 T64 S9 Packet
+## M2 T64 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T64 S9 closed — platform collision response and player positioning. |
+| Identifier Mode | M2 T64 S10 closed — player vertical and enemy box offsets. |
 | Admission And Approval | Owner-approved T64 source-order continuation after closed S7. |
-| Objective | Audit `$DBBC-$DC40`: platform response, side collision and player positioning. |
+| Objective | Audit `$DC41-$DC54`: player vertical carry and enemy box offsets. |
 | Non-goals | Collision-response, player vertical, enemy-box and geometry children retain independently admitted owners; this S proves caller contracts and ordering. |
 | Reference Baseline | Historical 1,992 / 1,992; incoming current exact 1,308 / 1,992 nodes and 2,690 / 4,324 feasible controls. |
 | Candidate Proposal | docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md. |
 | Files And ABI Surface | `src/game/enemy/platform_collision.c` and project-owned C90 test/oracle harnesses. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation governance and source policy. |
 | Verification | Static `$DB45-$DBBA` audit, retained original-ROM platform routes per x86/x64 width, focused platform-collision contracts, platform purity and DOS16 link. |
-| Expected Markers | 11 nodes, 19 source-address-owned controls and 8 material handoffs. |
+| Expected Markers | 4 nodes, 4 source-address-owned controls and 2 material handoffs. |
 | Asset Needs | Refresh all three artifacts only if shared product C changes. |
 | Reporting Requirements | Exact labels and relation dispositions plus historical/current totals. |
 | Stop Conditions | Any mismatch or missing route blocks closure. |
@@ -25,7 +25,7 @@
 
 ## Current Technical Baseline
 
-T64 S9 closed at **1,326 / 1,992** current-exact nodes and **2,741 /
+T64 S10 closed at **1,330 / 1,992** current-exact nodes and **2,745 /
 4,324** current-exact feasible controls. Historical conformance remains **1,992 /
 1,992**. The exact seven-label scope is in the admitted node record.
 
@@ -37,3 +37,8 @@ S8 static and original-ROM/current replay found no mismatch. Seven nodes, 32 con
 ## Closure Record
 
 S9 static and original-ROM/current route audit found no mismatch. Eleven nodes, 19 controls and eight material handoffs are current-exact; x86/x64, purity and DOS16 pass. No product C changed.
+
+
+## Closure Record
+
+S10 static and original-ROM/current caller route audit found no mismatch. Four nodes, four controls and two material handoffs are current-exact; x86/x64, purity and DOS16 pass. No product C changed.
