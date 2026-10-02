@@ -585,6 +585,7 @@ static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
 static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
 {
     mysmb_u16 music_data;
+    mysmb_u8 offset;
     mysmb_u8 data;
     mysmb_u8 length;
     mysmb_u8 control;
@@ -593,9 +594,9 @@ static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
     if (game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] != 0U) return;
     music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
                               game->ram[0x00f5U]);
-    data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
-        game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]));
+    offset = game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE];
     game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]++;
+    data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data + offset));
     if (data == 0U) {
         mysmb_audio_write_apu(game, 8U, 0U);
         return;
@@ -604,9 +605,9 @@ static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
         game->ram[MYSMB_RAM_TRIANGLE_NOTE_BUFFER] =
             mysmb_audio_process_music_length(game, data);
         mysmb_audio_write_apu(game, 8U, 0x1fU);
-        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
-            game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]));
+        offset = game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE];
         game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]++;
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data + offset));
         if (data == 0U) {
             mysmb_audio_write_apu(game, 8U, 0U);
             return;
@@ -702,6 +703,7 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
 static void mysmb_audio_step_noise_music(struct mysmb_game *game)
 {
     mysmb_u16 music_data;
+    mysmb_u8 offset;
     mysmb_u8 data;
     mysmb_u8 beat;
     mysmb_u8 table_index;
@@ -715,12 +717,15 @@ static void mysmb_audio_step_noise_music(struct mysmb_game *game)
     music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
                               game->ram[0x00f5U]);
     for (;;) {
-        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
-            game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE]));
+        offset = game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE];
         game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE]++;
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data + offset));
         if (data != 0U) break;
         game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE] =
             game->ram[MYSMB_RAM_NOISE_LOOPBACK_OFFSET];
+        /* Source BNE FetchNoiseBeatData tests the restored offset.
+         * Zero falls into NoiseBeatHandler with A still zero. */
+        if (game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE] == 0U) break;
     }
 
     /* AlternateLengthHandler preserves the original byte in X, rotates bits

@@ -308,3 +308,14 @@ actual four channel call/return joins. Current1842/1992 nodes,3915/4286 controls
 Full builds/248 tests each/purity/OpenNT link pass;3 S5 products unchanged.
 M2 still open; remaining150 nodes/371 feasible controls/85 material rows.
 T68 next unadmitted, then cross-cohort/final certification.
+
+## Current checkpoint after T68 S1
+
+[T68 S1](t68-cohort-n-music-data-current-proof.md) closes17 nodes/41 controls,
+5 impossible raw fallthroughs proven. Current1859/1992 nodes,3956/4281 controls
+(raw4342,infeasible61),408/493 material partial; historical1992/1992 separate.
+200961 original roots each width agree after zero-loopback/INC-order repairs;
+248 tests each/purity/OpenNT link pass,all3 products refreshed. T68 open,
+S2 next unadmitted;60 N plus73 earlier C labels remain pending. Cross-cohort
+audit must resolve Square1/Square2 controlled RAM-alias fetch-order scope
+in TODO before whole-domain certification; earlier PRG evidence remains bounded.

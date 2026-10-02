@@ -2,6 +2,16 @@
 
 ## Translation Debt
 
+- [ ] **Music fetch order beyond immutable PRG inputs (High):** T68 S1's
+  original RAM-alias roots prove INC-before-indirect-read matters. S1 repaired
+  triangle/noise; earlier Square1/Square2 fetch sites still read before INC.
+  Their accepted immutable PRG routes are unaffected, but broader controlled
+  RAM equivalence is not certified. Cross-cohort audit must admit the M-owned
+  fetch chain, test original alias inputs, restore operation order and rerun
+  M/N integration before full-domain closure. Existing maintenance custody
+  retained; no out-of-scope repair or silent evidence upgrade.
+  [Exact finding](../proposals/m2/t68-cohort-n-music-data-current-proof.md#s1-p2-closure---music-tails-and-original-ram-operation-order).
+
 - [ ] **Original dump-child graph fidelity (High):** T65 S3's similar-issue
   sweep found DrawBrickChunks and PlayerOffscreenChk duplicate original
   DumpTwoSpr stores. Final RAM equality alone does not close their call edges.

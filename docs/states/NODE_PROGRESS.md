@@ -1,12 +1,16 @@
 # M2 ROM conformance node progress
 
-## M2 T68 S1 - active music-tail chain
+## M2 T68 S1 - closed music-tail chain
 
-[Exact77-node T plan and17-node S1](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
-admits17 pending/intended fresh17/max1859/1992; entire T max1919/1992. Current
-1842/1992 nodes,3915/4286 controls(raw4342,infeasible56),408/493 material partial;
-historical1992/1992 separate. Later data/helper nodes unadmitted.73 earlier C
-labels retain pending evidence/custody; no advance credit or hidden completion.
+[All17 nodes and46 raw control dispositions](../proposals/m2/t68-cohort-n-music-data-current-proof.md)
+close17 nodes/41 feasible controls exact,5 impossible instruction-proven.
+Current1859/1992 nodes,3956/4281 controls(raw4342,infeasible61),408/493 material
+partial; historical1992/1992 separate.200961 final unchanged original/native
+roots match each width after zero-loopback and INC-before-read repairs;
+248 tests each/purity/original OpenNT link pass,3 EXEs refreshed. No scoped
+deferral or transfer. Earlier Square1/Square2 RAM-alias fetch-order question
+explicitly recorded for cross-cohort review; no premature additional credit.
+T68 open; S2 next unadmitted,60 N and73 C nodes remain pending.
 
 ## M2 T67 - closed sound-command cohort
 

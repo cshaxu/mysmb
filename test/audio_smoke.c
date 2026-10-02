@@ -77,5 +77,50 @@ int main(void)
         game.ram[0x07bbU] != 0x29U || game.ram[0x00f1U] != 0U ||
         game.ram[0x00f2U] != 0U || game.ram[0x00f3U] != 0U ||
         game.ram[0x07b1U] != 1U || game.ram[0x00fcU] != 8U) return 4;
+    /* A zero beat and zero loopback offset fall through to SilentBeat.
+     * The offset is not reread as a new note when BNE is false. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    prg[0x7f66U] = 7U;
+    game.ram[0x0770U] = 1U;
+    game.ram[0x00f4U] = 1U;
+    game.ram[0x00f5U] = 0U;
+    game.ram[0x00f6U] = 2U;
+    game.ram[0x0200U] = 0x11U;
+    game.ram[0x0201U] = 0U;
+    game.ram[0x07b0U] = 1U;
+    game.ram[0x07b4U] = 5U;
+    game.ram[0x07b9U] = 5U;
+    game.ram[0x07baU] = 1U;
+    game.ram[0x07c1U] = 0U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x07b0U] != 0U || game.ram[0x07baU] != 7U ||
+        game.apu_registers[12U] != 0x10U ||
+        game.apu_registers[14U] != 0U ||
+        game.apu_registers[15U] != 0U) return 5;
+    /* Offset writes precede indirect reads even when the RAM stream aliases
+     * its own offset byte. These inputs contain no owner music data. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x0770U] = 1U;
+    game.ram[0x00f4U] = 1U;
+    game.ram[0x00f5U] = 0xf9U;
+    game.ram[0x00f6U] = 0U;
+    game.ram[0x07b4U] = 5U;
+    game.ram[0x07b8U] = 5U;
+    game.ram[0x07b9U] = 1U;
+    game.ram[0x07baU] = 5U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x00f9U] != 1U || game.ram[0x07b9U] != 5U) return 6;
+    game.ram[0x00f5U] = 0xb0U;
+    game.ram[0x00f6U] = 7U;
+    game.ram[0x07b0U] = 0U;
+    game.ram[0x07baU] = 1U;
+    game.ram[0x07c1U] = 2U;
+    game.ram[0x07b2U] = 0x11U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x07b0U] != 1U || game.apu_registers[12U] != 0x10U ||
+        game.apu_registers[14U] != 1U ||
+        game.apu_registers[15U] != 4U) return 7;
     return 0;
 }

@@ -162,3 +162,145 @@ research inputs, no third-party import. All temporary scripts, raw/log/research
 under ignored build/m2-t68-s1,128MiB raw budget,1024 roots/batch,120seconds
 per process,524288steps/root; coordinator cleans raw per comparison. Tracked
 evidence is neutral metadata and reproducible commands without owner data.
+
+## S1 P2 closure - music tails and original RAM operation order
+
+All17 intended labels completed: NoDecEnv2; DeathMAltReg; DoAltLoad; HandleTriangleMusic; TriNoteHandler; NotDOrD4; MediN; LongN; LoadTriCtrlReg; HandleNoiseMusic; FetchNoiseBeatData; NoiseBeatHandler; StrongBeat; LongBeat; SilentBeat; PlayBeat; ExitMusicHandler.
+No scoped deferral or transfer.41 feasible controls exact,5 impossible raw
+fallthroughs independently proven. Current1842->1859/1992 nodes,
+3915->3956 feasible controls; denominator4286->4281(raw4342,infeasible61).
+Material408/493 remains partial, S1 owns no material rows. Later N helpers/data
+execute actually as dependencies but receive no premature node/table credit.
+Historical1992/1992 remains distinct; expectedMatches/actualMatches empty.
+T68 open; S2 next unadmitted. Earlier73 C nodes remain explicitly pending.
+
+| Node | Current shared counterpart | Manual source/state/control contract |
+| --- | --- | --- |
+| `NoDecEnv2` | `mysmb_audio_step_square1_music / load_music_envelope` | Actual envelope helper indexes old Y after conditional RAM decrement; returned envelope writes4000 before alternate tail. |
+| `DeathMAltReg` | `mysmb_audio_step_square1_music` | Read alternate byte; zero substitutes7F, nonzero retains original value, including high-bit values. |
+| `DoAltLoad` | `mysmb_audio_step_square1_music` | Write4001 with selected alternate A, then actual triangle continuation in the same stream invocation. |
+| `HandleTriangleMusic` | `mysmb_audio_step_triangle_music` | Byte counter decrement wraps0 toFF; nonzero goes noise. Fetch stores incremented F9 before indirect read with old Y. First zero writes triangle0; negative byte calls real ProcessLengthData, saves length, writes1F, then second fetch with original write/read order; second zero writes0. |
+| `TriNoteHandler` | `mysmb_audio_step_triangle_music / set_freq_tri` | Actual frequency helper precedes length buffer to counter copy; event AND6E short circuits area AND0A; neither set bypasses triangle control write. |
+| `NotDOrD4` | `mysmb_audio_step_triangle_music` | Compare unsigned saved length against12; long branch wins. Short note reads event AND08 to choose0F or1F. |
+| `MediN` | `mysmb_audio_step_triangle_music` | Short non-castle control1F; fixed nonzero BNE transfers to control store. |
+| `LongN` | `mysmb_audio_step_triangle_music` | Length at least12 selectsFF, then falls through control store. |
+| `LoadTriCtrlReg` | `mysmb_audio_step_triangle_music` | Write4008 with branch-selected A: zero for either rest,0F/1F/FF for gated note; actual noise follows. |
+| `HandleNoiseMusic` | `mysmb_audio_step_noise_music` | Area ANDF3 gates all noise work; counter decrement wraps0 toFF and nonzero returns without fetch. |
+| `FetchNoiseBeatData` | `mysmb_audio_step_noise_music` | Save old noise offset, increment7B0 before indirect read; nonzero byte goes beat handler. Zero restores loopback offset, and actual BNE tests restored byte; zero falls into handler with A0, nonzero repeats fetch. |
+| `NoiseBeatHandler` | `mysmb_audio_step_noise_music` | Actual alternate-length semantics retain original byte X and lookup index Y; write returned length to7BA. Mask X with3E; zero silence,30 long,20 strong, remaining AND10 chooses silence/short. |
+| `StrongBeat` | `mysmb_audio_step_noise_music` | Control1C, X0C,Y18 then original forced BNE PlayBeat. |
+| `LongBeat` | `mysmb_audio_step_noise_music` | Control1C, X03,Y58 then original forced BNE PlayBeat. |
+| `SilentBeat` | `mysmb_audio_step_noise_music` | Control10 retains original alternate helper X and Y; silence does not zero frequency/length indices. |
+| `PlayBeat` | `mysmb_audio_step_noise_music` | Ordered400C control,400E X,400F Y writes for short/strong/long/silent; no host branch. |
+| `ExitMusicHandler` | `mysmb_audio_step_noise_music / run_music_stream` | Actual return to original music caller, then SoundEngine remainder including DAC/queue cleanup; no separate synthesized root output. |
+
+### Original-ROM proof and differences repaired
+
+Final200961 unchanged original SoundEngine F2D0 roots return through real RTS
+and compare1841 RAM bytes (including0109-0139),24 APU registers, and ordered
+APU write count/index/value on x86/x64. Only true CPU stack0100-0108 and
+013A-01FF plus unmapped transient CPU registers excluded. No ROM patch,
+mocked child or native-derived reference input. Controlled RAM streams are
+neutral root inputs, not owner-data fixtures. Per-batch raw removed.
+
+Modes30/31/32 each65536 roots: triangle counter/first byte, triangle saved
+length/event/area/alternate/envelope, noise byte/all area masks. Mode34
+4096 triangle negative length/second byte/table selectors. Mode33 has255
+returning loopback offsets0 and2..255. Offset1 with a zero beat atoffset1
+is a source-proven nonterminating loop: restore1, BNE, increment, readzero,
+restore1. It is not counted as a successful returned root, not patched to
+terminate and not an infeasible control edge. Mode35 two RAM-alias roots
+prove increment-before-read when MusicData points at F9 or7B0 themselves.
+
+First actual difference: zero noise beat plus zero loopback must fall into
+NoiseBeatHandler with A0, rather than unconditionally rereading offset0.
+Restored actual BNE predicate. Second actual difference: triangle/noise INC
+precedes indirect load with old Y. Native previously loaded first. Two
+original alias roots produced10 output differences; restored write/read
+order at both triangle fetch sites and noise fetch. Final full matrix rerun
+against repaired shared C has zero differences, and neutral regressions
+cover zero loopback and both RAM-alias cases.
+
+Similar-issue sweep: all admitted triangle/noise fetches, masks, counter wraps,
+length threshold, silence X/Y retention, fixed nonzero branch flags and zero
+table-result/loopback branches audited. Earlier Square1/Square2 fetches also
+read before INC: their immutable PRG-domain evidence is unaffected, but broader
+controlled RAM alias contract is deferred explicitly to cross-cohort audit in
+TODO; not silently claimed repaired or promoted by this S. Platform gameplay
+unchanged; all repairs in shared audio.c.
+
+### Owned graph evidence
+
+Every17 entry and41 feasible transition observed. Returns attributed to caller
+scope; dependencies remain actual original/current callees. Five impossible
+fallthroughs independently assert original BNE opcode and immediately preceding
+nonzero LDA/LDY immediate bytes; absence alone is never the proof.
+
+- `control-03449`: LDA0F immediately before BNE fixes Z0; fallthrough to MediN impossible.
+- `control-03451`: LDA1F immediately before BNE fixes Z0; fallthrough to LongN impossible.
+- `control-03466`: LDY18 immediately before BNE fixes Z0; fallthrough to StrongBeat impossible.
+- `control-03468`: LDY18 immediately before BNE fixes Z0; fallthrough to LongBeat impossible.
+- `control-03470`: LDY58 immediately before BNE fixes Z0; fallthrough to SilentBeat impossible.
+
+| Control | Source PC | Actual observations | Disposition |
+| --- | --- | --- | --- |
+| `control-03431` | `f80a` | 78079 | exact |
+| `control-03432` | `f80d` | 78079 | exact |
+| `control-03433` | `f813` | 199680 | exact |
+| `control-03434` | `f815` | 1279 | exact |
+| `control-03435` | `f817` | 200959 | exact |
+| `control-03436` | `f81f` | 131072 | exact |
+| `control-03437` | `f827` | 1 | exact |
+| `control-03438` | `f829` | 65664 | exact |
+| `control-03439` | `f82b` | 4224 | exact |
+| `control-03440` | `f83c` | 2048 | exact |
+| `control-03441` | `f83c` | 2176 | exact |
+| `control-03442` | `f83e` | 67840 | exact |
+| `control-03443` | `f84c` | 63488 | exact |
+| `control-03444` | `f852` | 3328 | exact |
+| `control-03445` | `f852` | 1024 | exact |
+| `control-03446` | `f857` | 59976 | exact |
+| `control-03447` | `f85e` | 2232 | exact |
+| `control-03448` | `f862` | 2304 | exact |
+| `control-03449` | `f862` | 0 | infeasible |
+| `control-03450` | `f866` | 2232 | exact |
+| `control-03451` | `f866` | 0 | infeasible |
+| `control-03452` | `f868` | 59976 | exact |
+| `control-03453` | `f86a` | 66561 | exact |
+| `control-03454` | `f871` | 1024 | exact |
+| `control-03455` | `f876` | 135169 | exact |
+| `control-03456` | `f876` | 64768 | exact |
+| `control-03457` | `f880` | 64767 | exact |
+| `control-03458` | `f888` | 506 | exact |
+| `control-03459` | `f888` | 1 | exact |
+| `control-03460` | `f88a` | 64768 | exact |
+| `control-03461` | `f893` | 1766 | exact |
+| `control-03462` | `f897` | 2016 | exact |
+| `control-03463` | `f89b` | 2016 | exact |
+| `control-03464` | `f89f` | 28224 | exact |
+| `control-03465` | `f8a7` | 30746 | exact |
+| `control-03466` | `f8a7` | 0 | infeasible |
+| `control-03467` | `f8af` | 2016 | exact |
+| `control-03468` | `f8af` | 0 | infeasible |
+| `control-03469` | `f8b7` | 2016 | exact |
+| `control-03470` | `f8b7` | 0 | infeasible |
+| `control-03471` | `f8b9` | 29990 | exact |
+| `control-03472` | `f8c1` | 64768 | exact |
+| `control-04090` | `f80a` | 78079 | exact |
+| `control-04091` | `f82b` | 4224 | exact |
+| `control-04092` | `f83e` | 67840 | exact |
+| `control-04093` | `f88a` | 64768 | exact |
+
+Operational: final full builds and248 tests each x86/x64 pass, including
+platform purity; original OpenNT DOS16 link passes with inherited OLDNAMES.LIB
+warning, no interactive DOS claim. Prior audio/title/focus pause preserved.
+All3 owner-authorized products refreshed together:
+
+- `mysmb16.exe`: 260919 bytes, SHA256 `6f05c7338409517c941b2242ea0db0a84c56573398249c5104ea39c862a260c7`.
+- `mysmb32.exe`: 373920 bytes, SHA256 `7d94b962eafc021cb491e6bbbc5089131a3ce03ba6cb08da8eb943f9019bfb20`.
+- `mysmb64.exe`: 380951 bytes, SHA256 `eb14124c9b826b2eb6f585b8ab191120aa4011436379d619c7a83eb8840349bc`.
+
+Neutral ignored evidence: build/m2-t68-s1 route/coverage summaries, modes30-35,
+pre-fix-difference and pre-fix-alias-difference, final build/test/DOS16 logs.
+Raw removed after comparisons; recorder executable removed at closure.
+Ledger, registry, progress and documentation gates required before P2 commit.
