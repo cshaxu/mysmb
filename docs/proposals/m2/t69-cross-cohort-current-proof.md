@@ -1591,3 +1591,126 @@ Similar-issue sweep:live slot reload,record-offset wrap,page-control reentry,
 queue versus buffer flag writes,CMP/ASL carry,vector alias/return scratch,
 duplicate allocation,platform page carries and actual child ordering.
 No admission credit.
+
+## S11 P2 closure - actual enemy stream/initializer joins, no product repair
+
+All38 planned controls exact.No material targets.All34 existing labels
+rechecked:Setup_Vine; PwrUpJmp; EnemiesAndLoopsCore; ProcLoopCommand; DoLpBack; ChkEnemyFrenzy; ProcessEnemyData; CheckPageCtrlRow; InitEnemyObject; DoGroup; CheckpointEnemyID; InitEnemyRoutines; InitBulletBill; InitCheepCheep; InitLakitu; InitLongFirebar; InitShortFirebar; InitBowser; HandleGroupEnemies; InitPiranhaPlant; InitEnemyFrenzy; EndFrenzy; InitJumpGPTroopa; InitBalPlatform; InitDropPlatform; InitHoriPlatform; InitVertPlatform; LargeLiftUp; LargeLiftDown; PlatLiftUp; PlatLiftDown; EndOfEnemyInitCode; RunEnemyObjectsCore; KillAllEnemies.Zero fresh nodes,no scoped deferral.
+Current1992/1992 scoped-exact nodes,4201->4239/4277 feasible controls
+(raw4342,infeasible65),543/555 material partial unchanged;historical1992/1992
+separate.T69 open,S12 next unadmitted;38 controls/12 material and earlier M
+alias scope plus integrated proof remain.No all-state/whole-game inference.
+
+Original source reviewed first against shared enemy core/loop/stream/init,
+init_targets/group/frenzy and listed power-up/vine children. EnemiesAndLoopsCore
+preserves duplicated-flag parent check,active-object tail dispatch and parser
+task7 exit. Active route uses power-up's actual state-zero exit;this observes
+the core-to-actor handoff without claiming new normal-enemy caller coverage.
+ProcLoopCommand retains reverse loop-record match,Y/ground predicates,
+World7 correct/pass counters,original five byte page rewinds,KillAllEnemies
+descending4..0 and return ObjectOffset restoration before queue/parser.
+No cached slot survives a child contrary to its source return contract.
+
+ProcessEnemyData reads actual owner PRG through original pointer/byte Y;
+EOD fallback,sixth-slot2E gate,extended boundary low/page carry,page-select
+MSB and row0F tail reentry retained. Position/bounds two-byte borrow,hardskip,
+Goomba mutation,ordinary flag/init/flag-reload/record advancement,group tail,
+row0E three-byte area/world and frenzy-buffer/VineFlag fallback writes match
+source. The queue path sets flag and clears queue;the buffer fallback does
+not invent that flag write. Checkpoint's CMP<15 supplies carry0 to ADC8;
+offscreen-mask write and all55 C282-C2EF vector entries retain original
+selector aliases,04-07 scratch and tail-return semantics. All110 vector
+bytes independently equal native binding and observed at their original
+indirect read sites;each planned selector separately checked,including
+NoInitCode aliases and54 EndOfEnemyInitCode. Residual2E initializes existing
+power-up without generic coordinates;2F preserves original Y60 for Setup_Vine.
+
+Real initializer children retain Bullet Bill's two-write footprint,Cheep
+random&10/Y force,Piranha speed/state/up/down coordinates,green paratroopa
+box tail,Lakitu erase/setup predicate,frenzy buffer/secondary-vector and
+EndFrenzy's six-slot scan;long firebar/Bowser real duplicate allocation and
+limited copied fields. Balance/vertical/horizontal/drop and large/small lift
+initializers retain original signed-bit selection,page carries,alignment,
+fallthrough and box selection. Frenzy timer1 routes observe actual child
+entry/return and queue/vector handoff;later S12/S13 retain their internal
+spawn-path obligations. No additional leaf credit inferred from this S.
+
+Final65536 original roots each width zero diff:16384 each of CheckpointEnemyID,
+EnemiesAndLoopsCore,ProcLoopCommand,ProcessEnemyData. Profiles cover all55
+declared IDs,six slots,full byte coordinates,hard0/1,area0..3,duplicate flag
+occupancy,platform alignment,page carries,queue/buffer alternatives and all11
+loop records/correct/wrong/state/pass combinations. Five original PRG record
+addresses independently identified from reviewed E_CastleArea data cover
+ordinary,page-control,EOD,row0E area and group rows;offset0/80 uses equivalent
+unchanged pointers and actual bounded records,not synthetic ROM bytes. Loop
+fixture parameters read unchanged owner-local C06B/C076/C081 tables directly;
+no copied table fixture committed. Offset wrap/other malformed record states
+are not inferred from this controlled route;existing source/operational
+contracts remain explicit. No mocked child or ROM patch in ROM/current proof.
+Full2032 persistent RAM,24 APU and ordered writes/counts equal;only01F0-01FF
+physical stack/sentinel excluded,minSP F7,CPU registers/flags outside native
+C ABI. Separate call-order units stub children and are operational evidence.
+
+Similar-issue sweep covers source current-slot versus legacy convenience
+entry in core/stream/init;production enters the current-slot owners,legacy
+five-slot wrappers remain adapters. Queue/buffer flag differences,CMP/ASL
+carry,record/row-page reentry,duplicate slot search,all55 vector aliases and
+initializer byte/page/store ordering match. No scoped product mismatch found;
+no game/platform code changed. Earlier deferred normal/firebar/frenzy caller
+and spawn interiors retain planned later coverage,no mechanical helper swap.
+
+| ID | Original/shared join | Type | Original observations |
+| --- | --- | --- | --- |
+| `control-01431` | EnemiesAndLoopsCore -> RunEnemyObjectsCore | jump | 8192 |
+| `control-01453` | DoLpBack -> KillAllEnemies | call | 7097 |
+| `control-01457` | ChkEnemyFrenzy -> ProcessEnemyData | branch | 13248 |
+| `control-01458` | ChkEnemyFrenzy -> InitEnemyObject | jump | 12032 |
+| `control-01469` | CheckPageCtrlRow -> ProcLoopCommand | jump | 1728 |
+| `control-01490` | InitEnemyObject -> CheckpointEnemyID | call | 20192 |
+| `control-01492` | DoGroup -> HandleGroupEnemies | jump | 766 |
+| `control-03768` | CheckpointEnemyID -> InitEnemyObject | return | 20192 |
+| `control-04223` | InitEnemyRoutines -> InitBulletBill | jump-engine-dispatch | 310 |
+| `control-04225` | InitEnemyRoutines -> InitCheepCheep | jump-engine-dispatch | 596 |
+| `control-04226` | InitEnemyRoutines -> InitCheepCheep | jump-engine-dispatch | 596 |
+| `control-04228` | InitEnemyRoutines -> InitPiranhaPlant | jump-engine-dispatch | 298 |
+| `control-04229` | InitEnemyRoutines -> InitJumpGPTroopa | jump-engine-dispatch | 298 |
+| `control-04232` | InitEnemyRoutines -> InitLakitu | jump-engine-dispatch | 298 |
+| `control-04233` | InitEnemyRoutines -> InitEnemyFrenzy | jump-engine-dispatch | 6080 |
+| `control-04235` | InitEnemyRoutines -> InitEnemyFrenzy | jump-engine-dispatch | 6080 |
+| `control-04236` | InitEnemyRoutines -> InitEnemyFrenzy | jump-engine-dispatch | 6080 |
+| `control-04237` | InitEnemyRoutines -> InitEnemyFrenzy | jump-engine-dispatch | 6080 |
+| `control-04238` | InitEnemyRoutines -> InitEnemyFrenzy | jump-engine-dispatch | 6080 |
+| `control-04239` | InitEnemyRoutines -> EndFrenzy | jump-engine-dispatch | 298 |
+| `control-04242` | InitEnemyRoutines -> InitShortFirebar | jump-engine-dispatch | 1428 |
+| `control-04243` | InitEnemyRoutines -> InitShortFirebar | jump-engine-dispatch | 1428 |
+| `control-04244` | InitEnemyRoutines -> InitShortFirebar | jump-engine-dispatch | 1428 |
+| `control-04245` | InitEnemyRoutines -> InitShortFirebar | jump-engine-dispatch | 1428 |
+| `control-04246` | InitEnemyRoutines -> InitLongFirebar | jump-engine-dispatch | 298 |
+| `control-04251` | InitEnemyRoutines -> InitBalPlatform | jump-engine-dispatch | 298 |
+| `control-04252` | InitEnemyRoutines -> InitVertPlatform | jump-engine-dispatch | 298 |
+| `control-04253` | InitEnemyRoutines -> LargeLiftUp | jump-engine-dispatch | 298 |
+| `control-04254` | InitEnemyRoutines -> LargeLiftDown | jump-engine-dispatch | 298 |
+| `control-04255` | InitEnemyRoutines -> InitHoriPlatform | jump-engine-dispatch | 596 |
+| `control-04256` | InitEnemyRoutines -> InitDropPlatform | jump-engine-dispatch | 298 |
+| `control-04257` | InitEnemyRoutines -> InitHoriPlatform | jump-engine-dispatch | 596 |
+| `control-04258` | InitEnemyRoutines -> PlatLiftUp | jump-engine-dispatch | 298 |
+| `control-04259` | InitEnemyRoutines -> PlatLiftDown | jump-engine-dispatch | 298 |
+| `control-04260` | InitEnemyRoutines -> InitBowser | jump-engine-dispatch | 298 |
+| `control-04261` | InitEnemyRoutines -> PwrUpJmp | jump-engine-dispatch | 12330 |
+| `control-04262` | InitEnemyRoutines -> Setup_Vine | jump-engine-dispatch | 3620 |
+| `control-04269` | InitEnemyRoutines -> EndOfEnemyInitCode | jump-engine-dispatch | 297 |
+
+Operational:13 tests each width pass(enemy dispatch/loop/stream smoke/boundary,
+no-init/vector/common init,group,small/frenzy/platform init,power-up dispatch,
+vine setup,purity). Current x86/x64 builds and original OpenNT DOS16 link pass;
+inherited OLDNAMES.LIB warning remains,no interactive DOS claim.Pure audit:
+all3 committed S10 products equal current outputs and retained byte-identical:
+
+- `mysmb16.exe`: 261399 bytes, SHA256 `b73e6cbb6e54f81b115f37686e12cc2eb97a6d2df6ebeefd563576e4ea7bf955`; S10 product retained byte-identical.
+- `mysmb32.exe`: 374811 bytes, SHA256 `d37925f435091faa8fb16789701b8bd0aa151c670eaba2e90aea206ab1ad7f57`; S10 product retained byte-identical.
+- `mysmb64.exe`: 382348 bytes, SHA256 `c07d686b1d3a137cf2cce0b85749465bdb8d8ffc796f2fab6afa7d3af85d093b`; S10 product retained byte-identical.
+
+Raw bounded128MiB/1024 batch/120seconds process/524288steps root/deleted per
+batch;probe deleted at closure,neutral ignored logs retained.Registry,
+ledger/progress/documentation/diff gates required before local P2 commit;
+unrelated owner work preserved,no push,no S12 pre-credit.
