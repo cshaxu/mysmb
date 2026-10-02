@@ -489,3 +489,21 @@ Product changes refresh all3 EXEs under owner authorization:
 
 Registry/ledger/progress/document gates required before commit. Unrelated
 queue/source/proposals preserved unstaged. S3 remains unadmitted at S2 closure.
+
+## S3 admission - complete area-music selection chain
+
+Exact5 pending targets:MusicSelectData; GetAreaMusic; ChkAreaType; StoreMusic; ExitGetM;8 pending controls and1 material.
+Current1959/1992 nodes,4035/4278 controls(raw4342,infeasible64),504/555
+material partial;intended fresh5,max1964/1992. Historical1992/1992 separate,
+expectedMatches empty;maintenance custody retained. Shared game.c owner;
+original root and actual MusicSelectData binding,not replacement audio logic.
+ROM track:Unchanged original GetAreaMusic returning root;vary all256 player-entrance values,mode zero/nonzero,alternate entrance2/other,cloud zero/nonzero and all4 source-valid area types;actual6 indexed MusicSelectData reads and source transitions;full persistent RAM/APU/output compare x86/x64.
+Operational:focused audio/title/boot tests,current x86/x64 checker/products,
+purity and original OpenNT DOS16 link. Pure audit preserves3 S2 products;
+any product repair refreshes all3. Source policy:owner-local ROM/reviewed ASM
+research only,no redistribution or new table import;neutral metadata only.
+Ignored build/m2-t69-s3,budget128MiB raw/1024 roots per batch/120seconds
+per process/524288steps per root;coordinator removes raw after each batch.
+Similar-issue sweep covers entrance6/7 short-circuit,alternate2 bypass,
+cloud override,source-valid area index and title-mode no-write behavior.
+Any scoped diff stays active until repaired/re-audited;S4 unadmitted.
