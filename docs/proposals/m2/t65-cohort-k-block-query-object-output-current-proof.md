@@ -1060,3 +1060,51 @@ Admission validation accepts22 exact labels with historical baseline/maximum
 with no transfers. Documentation governance and whitespace checks pass.
 This P changes audit/governance records only, so three committed S8 packages
 remain the delivery. S9 is admitted and unfinished; S10 is not admitted.
+
+## S9 P2 - shared flip/mirror/offscreen repair; proof still open
+
+Restore actual DumpSixSpr with byte-wrapped Y+2, save both exchanged tiles
+before stores, preserve retainer42 before mirror overwrites and three-left
+then three-right attribute stores. Restore the original right-column,
+left-column, third-row, second-row, first-row helper sequence and the final
+non-Podoboo/high-Y erase guard. Each helper wraps its offset addition once;
+leaf absolute-indexed stores do not wrap per row. MoveColOffscreen is restored
+as the admitted dependency, without granting the S10 node any credit.
+All repairs reside in shared game C; platform/audio sources are unchanged.
+
+The same 8192-root original batch compares1841 RAM bytes/root on x86/x64.
+Both full-output and independent row-input/return checks fall from2600
+mismatching comparisons per checker/width to zero. All256 OAM offsets occur,
+but this is not the complete OAM/mask Cartesian matrix. These results do not
+prove every helper input, nested return or scoped branch. S9 remains active;
+full matrix and independent helper graph proof are still required before
+closure. Eleven repaired node findings and eight repaired call findings move
+from mismatch to needs-evidence, retaining their original finding records.
+No new exact credit:1579/1992 nodes,3359/4319 feasible controls(raw4342,
+infeasible23),389/492 material partial; historical1992/1992 separate.
+External caller returns04022/04041 retain S10/T66 responsibility.
+
+Similar-issue sweep: canonical EnemyGfxHandler and powerup callers use the
+shared SprObjectOffscrChk entry and restored helpers. Raw clipping remains
+only in retained aggregate/test facades in bloober_gfx.c, hammer_bro_gfx.c,
+podoboo_gfx.c, spiny_gfx.c and the koopa/buzzy facade in normal_enemy_gfx.c;
+none is promoted as a current original-ROM entry or alternate production
+GameEngine route. The source search and canonical consumers are reviewed;
+legacy facade behavior is not silently certified by this repair.
+
+Operational track: complete C90 x86/x64 builds pass;16/16 focused tests per
+width pass, including sprite/core/purity, audio-renderer/output/death,
+focus-pause and product self-test checks. Original OpenNT DOS16 shared-source
+link succeeds with the existing OLDNAMES.LIB warning. DOS gameplay/performance
+qualification is not claimed. Fresh products include the already committed
+audio/title/focus-pause changes. Owner explicitly authorizes these local
+package files to accompany the commit, overriding their default exclusion.
+
+- mysmb16.exe: 261815 bytes; SHA-256 e5ee8837f6be0b8f1e93903841e38d40a1af398251fc62c3845015a3990188a2.
+- mysmb32.exe: 373071 bytes; SHA-256 2a70e275b905f11182e21736e2e632e9614e33a9cf26cf26ba00627289012592.
+- mysmb64.exe: 380509 bytes; SHA-256 8d01d6f47a5e6f63b0615318c662c142de51993a3aa4b057a792a774ffdd65ba.
+
+The active original raw batch remains ignored under the S9 build directory,
+134545420 bytes within the192MiB cap. It remains needed for unfinished proof;
+no raw ROM, trace or generated data is added to tracked evidence. Documentation
+and admission checks are rerun for this P. T65 and S9 remain open.

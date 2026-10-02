@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T65 S9 P1; S8 closed. |
+| Identifier Mode | Continuation: M2 T65 S9 P2; S8 closed; S9 repair committed with proof unfinished. |
 | Admission And Approval | Owner approved source-order execution and corrective loops; coordinator admits the unchanged S9 plan. |
 | Objective | Audit/repair the22 source-order S9 flip/mirror/offscreen/row/column labels and64 pending internal controls; exact names in the proposal S9 row. |
 | Non-goals | No platform/audio changes or unrelated I/O work. S10 block and T66 player caller returns04022/04041 remain named pending external boundaries; no S10/T66 node credit. |
@@ -27,5 +27,5 @@
 - Current exact nodes: **1579/1992**.
 - Current exact feasible controls: **3359/4319** (raw4342,infeasible23).
 - Exact material relations: **389/492**, enumeration partial.
-- Latest three products are committed S8 builds, including audio/title/focus pause.
-- S9 is active; no new exact credit or product changes.
+- Latest three products are S9 P2 builds, including the committed audio/title/focus pause changes; refreshed under explicit owner authorization.
+- S9 is active: repaired findings remain needs-evidence. Sampled8192 roots match on x86/x64; full matrix/helper graph proof is pending. No new exact credit.

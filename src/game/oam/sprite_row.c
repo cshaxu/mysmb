@@ -1,9 +1,34 @@
 #include "game/oam/oam.h"
-#include "game/oam/enemy_offscreen_tail.h"
 #include "game/objects.h"
 
-/* ROM $eb64 SprObjectOffscrChk entry and its final erase guard.  Existing
- * callers of the raw clipping helper retain their separate migration scope. */
+/* ROM $ec4a MoveColOffscreen; Y is a byte, absolute indexed stores are not. */
+mysmb_u8 mysmb_oam_move_column_offscreen(struct mysmb_game *game, mysmb_u8 oam)
+{
+    game->ram[0x0200U + oam] = 0xf8U;
+    game->ram[0x0208U + oam] = 0xf8U;
+    return 0xf8U;
+}
+
+/* ROM $ebc1 MoveESprColOffscreen: wrap the addition once, before the leaf. */
+void mysmb_oam_move_enemy_column_offscreen(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 column)
+{
+    mysmb_u8 oam, value;
+    oam = (mysmb_u8)(column + game->ram[0x06e5U + slot]);
+    value = mysmb_oam_move_column_offscreen(game, oam);
+    game->ram[0x0210U + oam] = value;
+}
+
+/* ROM $ebb7 MoveESprRowOffscreen tail-calls DumpTwoSpr. */
+void mysmb_oam_move_enemy_row_offscreen(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 row)
+{
+    mysmb_u8 oam;
+    oam = (mysmb_u8)(row + game->ram[0x06e5U + slot]);
+    mysmb_oam_dump_two_sprites(game, 0xf8U, oam);
+}
+
+/* ROM $eb64 SprObjectOffscrChk calls columns, then rows, in source order. */
 void mysmb_oam_sprite_object_offscreen_check(struct mysmb_game *game,
                                               mysmb_u8 oam_offset)
 {
@@ -12,10 +37,21 @@ void mysmb_oam_sprite_object_offscreen_check(struct mysmb_game *game,
 
     slot = game->ram[8U];
     bits = game->ram[0x03d1U];
-    mysmb_oam_enemy_offscreen_tail(game, oam_offset, bits);
-    if ((bits & 0x80U) != 0U && game->ram[0x0016U + slot] != 12U &&
-        game->ram[0x00b6U + slot] == 2U)
-        mysmb_objects_erase_enemy(game, slot);
+    (void)oam_offset;
+    if ((bits & 4U) != 0U)
+        mysmb_oam_move_enemy_column_offscreen(game, slot, 4U);
+    if ((bits & 8U) != 0U)
+        mysmb_oam_move_enemy_column_offscreen(game, slot, 0U);
+    if ((bits & 0x20U) != 0U)
+        mysmb_oam_move_enemy_row_offscreen(game, slot, 0x10U);
+    if ((bits & 0x40U) != 0U)
+        mysmb_oam_move_enemy_row_offscreen(game, slot, 8U);
+    if ((bits & 0x80U) != 0U) {
+        mysmb_oam_move_enemy_row_offscreen(game, slot, 0U);
+        if (game->ram[0x0016U + slot] != 12U &&
+            game->ram[0x00b6U + slot] == 2U)
+            mysmb_objects_erase_enemy(game, slot);
+    }
 }
 
 /* ROM $ebb2 DrawOneSpriteRow stores incoming A before its tail call. */

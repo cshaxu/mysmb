@@ -3,8 +3,10 @@
 ## M2 T65 S9 - active flip/mirror/offscreen helper audit
 
 [T65 S9 exact scope and findings](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
-registers22 pending labels, intended fresh22, maximum1601/1992; eleven
-static node mismatches/eight control mismatches recorded. No new exact credit. Current exact
+registers22 pending labels, intended fresh22, maximum1601/1992. P2 repairs
+eleven node/eight control findings; they remain needs-evidence pending full
+OAM/mask and helper graph proof. Sampled8192 roots match on x86/x64; three
+products refreshed. No new exact credit. Current exact
 1579/1992 nodes,3359/4319 feasible controls(raw4342,infeasible23),
 389/492 material partial; historical1992/1992 separate. S9 stays active.
 

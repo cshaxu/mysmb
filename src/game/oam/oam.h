@@ -69,6 +69,11 @@ mysmb_u8 mysmb_objects_draw_hammer_bro(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_oam_draw_enemy_object_row(struct mysmb_game *game,
     mysmb_u8 *oam_offset, mysmb_u8 *graphics_index);
+mysmb_u8 mysmb_oam_move_column_offscreen(struct mysmb_game *game, mysmb_u8 oam);
+void mysmb_oam_move_enemy_column_offscreen(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 column);
+void mysmb_oam_move_enemy_row_offscreen(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 row);
 void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
 /* Existing retainer graphics child; caller owns relative/offscreen work. */
 /* Existing EnemyGfxHandler jumpspring branch; actor prepares relative/bits. */

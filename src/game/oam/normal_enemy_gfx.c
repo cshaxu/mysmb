@@ -214,7 +214,7 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
                                                    mysmb_u8 slot)
 {
     mysmb_u8 id, state, code, tile, oam, first, a, y, swap_row;
-    mysmb_u8 row;
+    mysmb_u8 left, right;
 
     game->ram[2U] = game->ram[MYSMB_NORMAL_Y + slot];
     game->ram[5U] = game->ram[MYSMB_NORMAL_REL_X];
@@ -354,64 +354,81 @@ draw:
     mysmb_oam_draw_enemy_object_row(game,&oam,&tile);
     mysmb_oam_draw_enemy_object_row(game,&oam,&tile);
 
-    if (code != 8U && game->ram[0x0109U] != 0U) {
-        a = (mysmb_u8)(game->ram[0x0202U+first] | 0x80U);
-        for (row=0U;row<3U;++row) {
-            y=(mysmb_u8)(first+row*8U);
-            game->ram[0x0202U+y]=a; game->ram[0x0206U+y]=a;
-        }
-        swap_row = (code == 5U || code == 17U || code >= 0x15U) ? 0U : 8U;
-        y=(mysmb_u8)(first+swap_row);
-        a=game->ram[0x0201U+y];
-        game->ram[0x0201U+y]=game->ram[0x0211U+first];
-        game->ram[0x0211U+first]=a;
-        a=game->ram[0x0205U+y];
-        game->ram[0x0205U+y]=game->ram[0x0215U+first];
-        game->ram[0x0215U+first]=a;
-    }
-    if (code != 8U && code != 5U && game->ram[0x036aU] == 0U) {
-        if ((code != 18U || game->ram[0x00ecU] == 5U) &&
-            (code == 7U || code == 13U || code == 12U ||
-             game->ram[0x00ecU] >= 2U)) {
-            a=(mysmb_u8)(game->ram[0x0202U+first] & 0xa3U);
-            for (row=0U;row<3U;++row) {
-                y=(mysmb_u8)(first+row*8U);
-                game->ram[0x0202U+y]=a;
-                game->ram[0x0206U+y]=(mysmb_u8)(a | 0x40U |
-                    (game->ram[0x00ecU]==5U ? 0x80U : 0U));
-            }
-            if (game->ram[0x00ecU] == 4U) {
-                a=(mysmb_u8)(game->ram[0x020aU+first] | 0x80U);
-                game->ram[0x020aU+first]=a;
-                game->ram[0x0212U+first]=a;
-                game->ram[0x020eU+first]=(mysmb_u8)(a|0x40U);
-                game->ram[0x0216U+first]=(mysmb_u8)(a|0x40U);
-            }
-        } else if (code == 0x15U) game->ram[0x0216U+first]=0x42U;
-        if (code == 17U) {
-            if (game->ram[0x0109U] == 0U) {
-                game->ram[0x0212U+first] &= 0x81U;
-                a=(mysmb_u8)(game->ram[0x0216U+first]|0x41U);
-                game->ram[0x0216U+first]=a;
-                if (game->ram[0x078fU] < 0x10U) {
-                    game->ram[0x020eU+first]=a;
-                    game->ram[0x020aU+first]=(mysmb_u8)(a&0x81U);
-                }
-            } else {
-                game->ram[0x0202U+first] &= 0x81U;
-                game->ram[0x0206U+first] |= 0x41U;
-            }
-        }
-        if (code >= 0x18U) {
-            game->ram[0x020aU+first]=0x82U;
-            game->ram[0x0212U+first]=0x82U;
-            game->ram[0x020eU+first]=0xc2U;
-            game->ram[0x0216U+first]=0xc2U;
-        }
-    }
-    mysmb_normal_apply_offscreen(game,first,game->ram[MYSMB_NORMAL_OFFSCREEN]);
-    if ((game->ram[MYSMB_NORMAL_OFFSCREEN] & 0x80U) != 0U &&
-        id != 12U && game->ram[0x00b6U+slot] == 2U)
-        mysmb_objects_erase_enemy(game,slot);
+    slot = game->ram[8U];
+    first = game->ram[MYSMB_NORMAL_SPRITE + slot];
+    code = game->ram[0x00efU];
+    if (code == 8U) goto offscreen;
+    if (game->ram[0x0109U] == 0U) goto symmetry;
+
+    /* CheckForVerticalFlip: Y+2 wraps before the real DumpSixSpr call. */
+    a = (mysmb_u8)(game->ram[0x0202U + first] | 0x80U);
+    mysmb_oam_dump_six_sprites(game, a, (mysmb_u8)(first + 2U));
+    swap_row = first;
+    if (code != 5U && code != 17U && code < 0x15U)
+        swap_row = (mysmb_u8)(swap_row + 8U);
+    /* FlipEnemyVertically saves both old tiles before any exchange. */
+    left = game->ram[0x0201U + swap_row];
+    right = game->ram[0x0205U + swap_row];
+    game->ram[0x0201U + swap_row] = game->ram[0x0211U + first];
+    game->ram[0x0205U + swap_row] = game->ram[0x0215U + first];
+    game->ram[0x0215U + first] = right;
+    game->ram[0x0211U + first] = left;
+
+symmetry:
+    if (game->ram[0x036aU] != 0U) goto offscreen;
+    y = game->ram[0x00ecU];
+    if (code == 5U) goto offscreen;
+    if (code == 7U || code == 13U || code == 12U) goto mirror;
+    if (code == 18U && y != 5U) goto lakitu;
+    /* ESRtnr writes the retainer exception before SpnySC/mirror. */
+    if (code == 0x15U) game->ram[0x0216U + first] = 0x42U;
+    if (y < 2U) goto lakitu;
+
+mirror:
+    if (game->ram[0x036aU] != 0U) goto lakitu;
+    a = (mysmb_u8)(game->ram[0x0202U + first] & 0xa3U);
+    game->ram[0x0202U + first] = a;
+    game->ram[0x020aU + first] = a;
+    game->ram[0x0212U + first] = a;
+    a = (mysmb_u8)(a | 0x40U);
+    if (y == 5U) a = (mysmb_u8)(a | 0x80U);
+    game->ram[0x0206U + first] = a;
+    game->ram[0x020eU + first] = a;
+    game->ram[0x0216U + first] = a;
+    if (y != 4U) goto lakitu;
+    a = (mysmb_u8)(game->ram[0x020aU + first] | 0x80U);
+    game->ram[0x020aU + first] = a;
+    game->ram[0x0212U + first] = a;
+    a = (mysmb_u8)(a | 0x40U);
+    game->ram[0x020eU + first] = a;
+    game->ram[0x0216U + first] = a;
+
+lakitu:
+    if (code != 17U) goto spring;
+    if (game->ram[0x0109U] != 0U) goto vertical_lakitu;
+    a = (mysmb_u8)(game->ram[0x0212U + first] & 0x81U);
+    game->ram[0x0212U + first] = a;
+    a = (mysmb_u8)(game->ram[0x0216U + first] | 0x41U);
+    game->ram[0x0216U + first] = a;
+    if (game->ram[0x078fU] >= 0x10U) goto offscreen;
+    game->ram[0x020eU + first] = a;
+    game->ram[0x020aU + first] = (mysmb_u8)(a & 0x81U);
+    goto offscreen;
+
+vertical_lakitu:
+    a = (mysmb_u8)(game->ram[0x0202U + first] & 0x81U);
+    game->ram[0x0202U + first] = a;
+    a = (mysmb_u8)(game->ram[0x0206U + first] | 0x41U);
+    game->ram[0x0206U + first] = a;
+
+spring:
+    if (code < 0x18U) goto offscreen;
+    game->ram[0x020aU + first] = 0x82U;
+    game->ram[0x0212U + first] = 0x82U;
+    game->ram[0x020eU + first] = 0xc2U;
+    game->ram[0x0216U + first] = 0xc2U;
+
+offscreen:
+    mysmb_oam_sprite_object_offscreen_check(game, first);
     return 1U;
 }
