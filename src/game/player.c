@@ -321,6 +321,8 @@ void mysmb_player_climb(struct mysmb_game *game)
         (mysmb_u8)(old_value + game->ram[MYSMB_PLAYER_Y_FORCE]);
     carry_dummy = game->ram[MYSMB_PLAYER_Y_DUMMY] < old_value ? 1U : 0U;
     page_delta = game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ? 0xffU : 0U;
+    /* MoveOnVine stores its sign extension before the position ADCs. */
+    game->ram[0U] = page_delta;
     old_value = game->ram[MYSMB_PLAYER_Y];
     y_sum = (mysmb_u16)old_value + game->ram[MYSMB_PLAYER_Y_SPEED] +
         carry_dummy;
@@ -358,12 +360,11 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game)
     static const mysmb_u8 max_right[4] = { 0x28U, 0x18U, 0x10U, 0x0cU };
     static const mysmb_u8 friction[3] = { 0xe4U, 0x98U, 0xd0U };
     mysmb_u8 speed_index;
-    mysmb_u8 friction_index;
     mysmb_u8 friction_value;
     mysmb_u8 check_fast_friction;
 
     speed_index = 0U;
-    friction_index = 0U;
+    game->ram[0U] = 0U;
     check_fast_friction = 0U;
     if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
         speed_index = 1U;
@@ -381,12 +382,12 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game)
             }
         }
         speed_index++;
-        friction_index++;
+        game->ram[0U]++;
         check_fast_friction = 1U;
     }
     else if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] < 0x19U) {
         speed_index++;
-        friction_index++;
+        game->ram[0U]++;
         check_fast_friction = 1U;
     }
     /* X_Physics reaches FastXSp only through ChkRFast.  An airborne player
@@ -395,13 +396,13 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game)
     if (check_fast_friction != 0U &&
         (game->ram[MYSMB_RUNNING_SPEED] != 0U ||
          game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x21U)) {
-        friction_index++;
+        game->ram[0U]++;
     }
 configure_limits:
     game->ram[MYSMB_MAX_LEFT] = max_left[speed_index];
     if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 7U) speed_index = 3U;
     game->ram[MYSMB_MAX_RIGHT] = max_right[speed_index];
-    friction_value = friction[friction_index];
+    friction_value = friction[game->ram[0U]];
     game->ram[MYSMB_FRICTION_LOW] = friction_value;
     game->ram[MYSMB_FRICTION_HIGH] = 0U;
     if (game->ram[MYSMB_PLAYER_FACING] !=

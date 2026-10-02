@@ -1,11 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S7 - active physics/fireball/bubble consumers
+## M2 T69 S7 - active; player consumers accepted, fireball/bubble pending
 
-[Exact27 existing labels/15 pending material](../proposals/m2/t69-cross-cohort-current-proof.md)
-intended fresh0,max1992/1992.Current1992/1992 scoped-exact nodes,
-4087/4277 controls(raw4342,infeasible65),521/555 material partial;
-historical1992/1992 separate.Both proof tracks required;S8 unadmitted.
+[27 existing labels/15 material scope](../proposals/m2/t69-cross-cohort-current-proof.md)
+P2 rechecks21 player labels,accepts12 material,zero fresh nodes/controls.
+Current1992/1992 scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),
+533/555 material partial;historical1992/1992 separate.262144 original roots
+per width zero diff,55 table bytes equal/read,9 tests each/current builds/
+purity/OpenNT link pass,3 EXEs refreshed.S7 stays active for remaining6
+fireball/bubble labels/3 material;S8 unadmitted.190 controls/22 material and
+M alias scope plus cross-chain certification remain.
 
 ## M2 T69 S6 - closed text/scenery actual-consumer chain
 

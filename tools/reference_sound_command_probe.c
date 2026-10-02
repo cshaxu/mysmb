@@ -83,6 +83,41 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode>=66u&&mode<=69u){
+        unsigned int j;
+        for(j=0u;j<2048u;++j)m->ram[j]=(unsigned char)(n+j*17u+p*13u);
+        m->ram[0x1du]=(unsigned char)(p&3u);
+        m->ram[0x700u]=(unsigned char)n;
+        m->ram[0x704u]=(unsigned char)((p>>2u)&1u);
+        m->ram[0x47du]=(unsigned char)((p>>3u)&1u);
+        m->ram[0x70eu]=0u;m->ram[0xau]=0x80u;m->ram[0xdu]=0u;
+        m->ram[0x782u]=(unsigned char)((p>>4u)&1u);
+        m->ram[0x9fu]=(unsigned char)((p&32u)?0xffu:4u);
+        m->ram[0x74eu]=(unsigned char)((p>>6u)&1u);
+        m->ram[0xbu]=(unsigned char)(((p>>2u)&3u)*4u);
+        m->ram[0xcu]=(unsigned char)((p>>4u)&3u);
+        m->ram[0x490u]=(unsigned char)((p&128u)?0u:0xffu);
+        m->ram[0x33u]=(unsigned char)((p&1u)+1u);
+        m->ram[0x45u]=(unsigned char)(((p>>1u)&1u)+1u);
+        m->ram[0x783u]=(unsigned char)((p&8u)?10u:0u);
+        m->ram[0x703u]=(unsigned char)((p&4u)?1u:0u);
+        m->ram[0xeu]=(unsigned char)((p&2u)?7u:8u);
+        m->ram[0x754u]=(unsigned char)((p>>7u)&1u);
+        if(mode==69u){
+            m->ram[0x70eu]=(unsigned char)((p&32u)?1u:0u);
+            m->ram[0xau]=(unsigned char)((p&16u)?0x40u:0x80u);
+            m->ram[0xdu]=(unsigned char)((p&8u)?0x80u:0u);
+        }
+        if(mode==67u){
+            m->ram[0x86u]=(unsigned char)n;
+            m->ram[0x789u]=(unsigned char)((p&64u)?1u:0u);
+            m->ram[0xcu]=(unsigned char)((p>>1u)&3u);
+            m->ram[0x33u]=(unsigned char)((p&1u)+1u);
+            m->ram[0x9fu]=(unsigned char)(p*13u);
+            m->ram[0x433u]=(unsigned char)n;
+            m->ram[0x416u]=(unsigned char)p;
+        }
+        if(mode==68u){m->ram[0x6fcu]=(unsigned char)p;}
     }else if(mode==65u){
         /* Unchanged level pairs, through three resident parser slots and the
          * real DecodeAreaData vector. No ROM or child call is substituted. */
@@ -326,7 +361,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>65u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>69u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -379,6 +414,10 @@ int main(int argc,char **argv)
         if(mode==63u)entry=0x9218u;
         if(mode==64u)entry=0x8808u;
         if(mode==65u)entry=0x9508u;
+        if(mode==66u)entry=0xb450u;
+        if(mode==67u)entry=0xb3cfu;
+        if(mode==68u)entry=0xb58fu;
+        if(mode==69u)entry=0xb450u;
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -399,6 +438,11 @@ int main(int argc,char **argv)
                 ++setup_reads[0][0x90e7u+d->machine->y];
             if(mode==62u&&pc==0x91f6u&&op==0xbcu)
                 ++setup_reads[0][0x91bdu+d->machine->x];
+            if(mode>=66u&&mode<=69u&&pc>=0xb3cfu&&pc<0xb5c6u&&(op==0xb9u||op==0xbdu||op==0xbeu||op==0x7du)){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                unsigned int offset=(op==0xbdu||op==0x7du)?d->machine->x:d->machine->y;
+                if(base>=0xb3c7u&&base<=0xb58cu)++lookup_reads[0][base+offset];
+            }
             if(mode==65u&&pc>=0x99edu&&pc<0x9a69u&&(op==0xb9u||op==0xbeu)){
                 unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
                 unsigned int kind=5u;

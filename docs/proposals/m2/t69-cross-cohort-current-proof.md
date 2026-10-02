@@ -973,3 +973,79 @@ Ignored build/m2-t69-s7;raw<=128MiB,1024 roots per batch,120seconds process,
 Similar-issue sweep:byte carries/temporary RAM stores,all jump/swim/climb and
 speed/friction selectors,animation thresholds,spawn facing,random bit and
 zero-page alias/table selection;compare full persistent RAM and actual calls.
+
+## S7 P2 player-consumer checkpoint - S remains active
+
+All12 player material rows00077-00088 exact;21 existing player labels
+rechecked:ClimbAdderLow; ClimbAdderHigh; CSetFDir; JumpMForceData; FallMForceData; PlayerYSpdData; InitMForceData; MaxLeftXSpdData; MaxRightXSpdData; FrictionData; Climb_Y_SpeedData; Climb_Y_MForceData; ProcClimb; GetYPhy; GetXPhy; GetXPhy2; PlayerAnimTmrData; SetAnimSpd; ClimbingSub; PlayerPhysicsSub; GetPlayerAnimSpeed.No fresh node/control credit.Current1992/1992
+scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),521->533/555
+material partial.Historical1992/1992 separate.S7 still active:FireballXSpdData,
+FireballObjCore,SetupBubble,MoveBubl,Bubble_MForceData,BubbleTimerData and
+material-00089/00090/00091 remain without S7 consumer proof.S8 unadmitted.
+Globally190 controls/22 enumerated material and M alias scope plus final
+cross-chain certification remain;not all-state/whole-game equivalence.
+
+Original source B3CF-B5C5 reviewed before repair.MoveOnVine STY00 sign
+extension must precede vertical ADCs;C omitted it.X_Physics STY00 and the
+ChkRFast/FastXSp INC00 stores were replaced with a local index.Native now
+executes those exact RAM stores at their original sequence points and uses00
+for the final FrictionData read.First1024 pre-fix physics cases had765 RAM
+differences;first1024 pre-fix climb cases had1020.No platform edit.
+
+Final262144 unchanged original returning roots each width zero differences:
+mode66 PlayerPhysicsSub B450 65536 new-jump/swim/climb cases;mode67
+ClimbingSub B3CF 65536 direction/facing/carry/sign/timer cases;mode68
+GetPlayerAnimSpeed B58F 65536 speed/controller/skid cases;mode69 B450
+65536 supplemental held-A/B/jumpspring-blocked cases.Each mode varies all
+byte absolute speeds or X positions with256 profiles.Profile fields cover
+player states0-3,water/dry,whirlpool0/1,climb neutral/up/down,collision mask,
+facings/moving directions,run timer/flag and entrance7 right-limit override.
+Supplemental fixtures use held previous A and B/spring gates;controlled
+profiles are diagnostic inputs,not a claim every combination arises in play.
+The original executes actual native-corresponding physics children.No ROM
+patch,table import,CPU interpreter or mocked child.All2032 persistent RAM,
+24 APU and ordered writes/counts equal;only01F0-01FF CPU stack/sentinel
+excluded,original minimum SP>=EF.CPU A/X/Y/flags/physical stack outside C ABI.
+Probe arguments:owner-local ROM,ignored output,mode,first,count<=1024;
+current native runner processes each batch once per width.Raw deleted per
+batch.Neutral summaries/logs only retained. Original lookup operands include
+LDX abs,Y and ADC abs,X so climbing tables are observed rather than inferred.
+
+| Existing C table | Original address | Bytes independently equal/read | Actual original reads |
+| --- | --- | --- | --- |
+| `x_low` | `b3c7` | 4 | 12288 |
+| `x_high` | `b3cb` | 4 | 12288 |
+| `jump_force` | `b424` | 7 | 32768 |
+| `fall_force` | `b42b` | 7 | 32768 |
+| `initial_speed` | `b432` | 7 | 32768 |
+| `initial_force` | `b439` | 7 | 32768 |
+| `max_left` | `b440` | 3 | 98304 |
+| `max_right` | `b443` | 4 | 98304 |
+| `friction` | `b447` | 3 | 98304 |
+| `speed` | `b44a` | 3 | 32768 |
+| `move_force` | `b44d` | 3 | 32768 |
+| `timer` | `b58c` | 3 | 65536 |
+
+GetYPhy selects0-4 from speed thresholds09/10/19/1C,5-6 from swim/whirlpool;
+source four vertical-table read/store order,swim-surface clear and jump sound
+retained.GetXPhy selects left limit first,entrance7 overrides only right index;
+00 selects friction0-2 before facing/moving mismatch ASL/ROL.ProcClimb keeps
+paired force/speed indices0-2 and negative8/nonnegative4 animation timing.
+CSetFDir independently selects all4 direction/facing pairs,retaining low-add
+carry to high-byte add.SetAnimSpd keeps three speed thresholds and skid input
+branches.Similar-issue sweep covers admitted sign extensions,all RAM00 index
+writes,byte carries,source tables and all12 actual consumer bindings;fireball/
+bubble scope will be audited separately before this S can close.
+
+Operational:current x86/x64 targeted builds and9 tests each pass(player
+climb/physics/animation,fireball dispatch/core,bubble core,title bootstrap,
+boot-NMI,purity);original OpenNT DOS16 links with inherited OLDNAMES.LIB
+warning,no interactive DOS claim.Three EXEs refreshed under owner approval:
+
+- `mysmb16.exe`: 261335 bytes, SHA256 `be812ad518865902d9743e7640f11314808bbd2d0fcfbac73c6a094f604015a7`; current shared-source build published.
+- `mysmb32.exe`: 374811 bytes, SHA256 `1980a84a52a3d966197e386322f8289da4085a19d80f254157d718b9ce052f17`; current shared-source build published.
+- `mysmb64.exe`: 382348 bytes, SHA256 `bec0226d2ca1ca51122def8a5b5e6764724be686a6b45a146ae4615bb7109d79`; current shared-source build published.
+
+Registry/ledger/progress/documentation gates and diff check required before
+local P2 commit.Unrelated queue/proposals/terrain preserved.S7 remains
+admitted;this checkpoint does not close or admit S8.
