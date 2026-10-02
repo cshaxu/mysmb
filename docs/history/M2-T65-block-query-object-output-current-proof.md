@@ -1818,3 +1818,107 @@ including audio/title/focus pause; product-code repairs refresh all3 EXEs
 under prior owner authorization. T65 cannot close with a pending owned edge
 or scoped difference. T66 remains unadmitted. Similar-issue sweep covers
 actual return continuations, child ABI and isolated checker dependency guards.
+
+## S15 P2 closure and T65 final closure
+
+T65 closes after S1-S15. All154 scoped labels are current exact:153 fresh
+since admission and DrawLargePlatform already exact. Every completed label
+is individually named in the source-order S plan and registry. None deferred
+or transferred in T65; maintenance custody unchanged. S15 audits154 existing
+nodes with0 fresh node credit; historical expected/actualMatches both empty.
+Historical mapping1992/1992 is separate from current certification.
+
+Final owned census:154 exact nodes,307 exact feasible controls plus6
+source-infeasible raw relations,26 exact enumerated material relations.
+Census checks counterpart, semantic contract, source paths and dual evidence
+for every row; infeasible rows retain their source proof and raw identity.
+The two previously pending actual returns now close:
+
+| Relation | Original continuation and native connection | Current original evidence |
+| --- | --- | --- |
+| control-04007 MoveSixSpritesOffscreen -> SLChk | Bit80 conditional calls E5B3; actual RTS resumes E654 ExDLPl. Native large-platform final six-sprite erase returns before function exit. | 6144 roots,3072 actual selected returns; full and independent checks zero on both widths. |
+| control-04014 DumpSixSpr -> CheckForVerticalFlip | Actual E5B5 RTS resumes EA73 before tile exchange. Native attribute dump receives original OR80 and wrapped Y+2, then exchanges tiles. | 8192 roots,2550 actual selected returns; full and independent checks zero on both widths. |
+
+These are current-version recordings; old S5/S9 replay results were not used
+alone to promote either edge. All1841 compared RAM bytes include scratch,
+OAM and aliases0109-0139. True CPU call-stack storage and unused transient
+registers/flags remain explicit ABI exclusions. Original register arguments
+that map to native parameters and row returned indices are independently
+checked; no CPU-X equivalence is invented where native API does not use it.
+
+### Cross-chain matrix
+
+Accepted S1-S14 member proofs remain node/branch/read/write/call-order
+evidence; the integrated closure repeats current joins affected by the recent
+OAM repairs, not every already accepted member recording.
+
+| Accepted proof | Chain / original route | Roots per width | Acceptance |
+| --- | --- | ---: | --- |
+| S1 | Block queries/table/probe coordinates | 18944 | Both table domains and actual address/BBChk returns; zero differences. |
+| S2 | Vine -> SixSpriteStacker | 16384 | Original per-sprite stores, scratch and actual child returns; zero differences. |
+| S3 | Hammer -> DumpTwoSpr | 13824 | All pose tables, offset/wrap and actual child return; zero differences. |
+| S4 | Flagpole -> sprite dump leaves | 16896 | Score output plus direct dump address/store domains; zero differences. |
+| S5, repeated S15 | Large platform -> stack/dumps/offscreen/erase | 6144 | Full and independent six-child joins current; selected E654 return3072. |
+| S6 | Coin/floating number output | 9216 | Actual floating-number child and caller scratch; zero differences. |
+| S7 | Power-up tile/attribute/flip output | 8192 | Indexed tables and actual row/offscreen consumers; zero differences. |
+| S8 | Enemy graphics selection -> actual rows | 8192 | Type/state/profile and real row input/return proof; zero differences. |
+| S9, enemy return repeated S15 | Enemy flip/mirror/offscreen and row/column/dump helpers | 337408 | Helper address/wrap and432630 actual child returns; enemy8192 roots/2550 EA73 returns repeated current. |
+| S10 | Block/brick output -> row/column helpers | 656384 | Full and actual-child/address/carry comparisons; zero differences. |
+| S11 | Fireball/firebar/explosion output | 393216 | Shared explosion path and wrapped OAM positions; zero differences. |
+| S12 | Small platform -> DumpSixSpr/DumpThreeSpr | 69632 | Full and208896 actual child returns; zero differences. |
+| S13 | Bubble ordered output | 131072 | Original store/guard/wrap semantics; zero differences. |
+| S14, repeated S15 | Player tables -> actual DrawOneSpriteRow | 1312 | 16/16,208/208,2/2 indexed reads and4224 actual row returns; current full and independent checks zero. |
+
+S15 current matrix executes15648 original roots per width across large
+platform, enemy vertical-flip and ordinary/intermediate/throw player output.
+These routes execute real children for full output and substitute separately
+recorded original children only in independent caller checks. Table/row
+recheck does not promote later player-control nodes or unrelated edges.
+
+### Operational proof and review
+
+Both complete current C90 native builds pass; x86 and x64 each pass248/248
+CTest cases, including platform purity, audio, focus/pause and core regressions.
+Original OpenNT DOS16 links the same game sources, exit0; existing
+OLDNAMES.LIB warning remains, no DOS gameplay/performance claim.
+Documentation, node admission/closure, ledger and whitespace gates pass.
+
+Only test dependency binding changed in S15: isolated large-platform caller
+checker links an owner unit that also defines DrawSmallPlatform. The latter
+now depends on DumpThreeSpr after S12. A rejecting DumpThreeSpr test binding
+completes that link; it increments failures if accidentally reached. All
+actual large-platform child calls remain independently checked. Similar-issue
+sweep covers same-unit dump bindings and scoped selected child sequences;
+full native builds/replays/tests pass. No production code changed in S15.
+
+S14 committed products are retained, including audio/title/focus pause:
+- mysmb16.exe: 260935 bytes; SHA-256 30c43e13da351cd5007bbe7f907710d557ce2dae15e6272c6b18f2324e6dac75.
+- mysmb32.exe: 373790 bytes; SHA-256 b947f5a716148df518c6eb5a7549216453c299908c96f15be1783b15cab5785d.
+- mysmb64.exe: 381335 bytes; SHA-256 15d9987de20db09f96bb9a665b9b9f75238ebfe2832a957fcc48b9d9c120abb5.
+
+Raw records and diagnostic probe executables are removed from the admitted
+ignored output path; neutral local summaries remain. No owner ROM/raw fixture
+or emulator runtime was added to the product. Unrelated I/O proposals and
+whitespace-only game files are preserved.
+
+T65 current totals: nodes1480 ->1633/1992, feasible controls3181 ->3485/
+4317(raw4342,infeasible19 ->25), material368/487 ->394/492; enumeration
+remains partial. No milestone-wide equality claim follows from T65 closure.
+
+Ten still-pending incoming controls are outside K ownership: eight H-source
+and two L-source relations. Their exact preserved names and IDs:
+- control-01176 (H): VDrawLoop -> DrawVine (call).
+- control-01184 (H): WrCMTile -> BlockBufferCollision (call).
+- control-01222 (H): RunBBSubs -> EnemyGfxHandler (jump).
+- control-01242 (H): RunHSubs -> DrawHammer (call).
+- control-01266 (H): RunJCSubs -> JCoinGfxHandler (call).
+- control-01304 (H): RunPUSubs -> DrawPowerUp (call).
+- control-01365 (H): BlockObjectsCore -> DrawBrickChunks (call).
+- control-01375 (H): BouncingBlockHandler -> DrawBlock (call).
+- control-03057 (L): PROfsLoop -> DumpTwoSpr (call).
+- control-03064 (L): DrawPlayerLoop -> DrawOneSpriteRow (call).
+
+These retain original pending owners for the source-cohort/cross-cohort
+program. Next planned T66 audits the actual Cohort L inventory, beginning
+PlayerGfxHandler, before relative/offscreen and subsequent output chains.
+T66 is not admitted in this closure; M2 remains open.

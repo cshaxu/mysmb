@@ -1,16 +1,21 @@
 # M2 ROM conformance node progress
 
-## M2 T65 S15 - active cross-chain closure audit
+## M2 T65 - closed after S15 cross-chain proof
 
-[S15 exact scope and dual proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
-audits154 already-exact nodes, fresh0. Two pending owned actual return edges
-must pass current original/full/independent replay before closure. Current
-1633/1992 nodes,3483/4317 controls(raw4342,infeasible25),394/492 material
-partial; historical1992/1992 separate. T65 stays open; T66 unadmitted.
+[T65 retained node/edge proof](../history/M2-T65-block-query-object-output-current-proof.md)
+closes154 scoped nodes (153 fresh),307 feasible owned controls plus6
+source-infeasible and26 owned material relations. S15 closes the2 pending
+actual return edges with current full/independent original replay. Current
+1633/1992 nodes,3485/4317 feasible controls(raw4342,infeasible25),394/492
+material partial; historical1992/1992 separate. Current15648 integration
+roots per width have zero differences; complete builds,248/248 tests per
+width and original DOS16 link pass. No S15 production change; three S14
+products retained. Ten pending external incoming boundaries remain explicit.
+T66 is next planned, not admitted; M2 stays open.
 
 ## M2 T65 S14 - closed player tables and indexed consumers
 
-[S14 actual table/row proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[S14 actual table/row proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes3 fresh table nodes and3 material relations, no control promotion.
 Current1633/1992 nodes,3483/4317 controls(raw4342,infeasible25),394/492
 material partial; historical1992/1992 separate. All1312 original roots and
@@ -21,7 +26,7 @@ not admitted, T65 stays open. Later player-control proof is not pre-credited.
 
 ## M2 T65 S13 - closed ordered bubble output leaf
 
-[S13 source/branch/output proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[S13 source/branch/output proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes2 fresh nodes and3 feasible controls, none deferred. Current1630/1992
 nodes,3483/4317 controls(raw4342,infeasible25),391/492 material partial;
 historical1992/1992 separate. All131072 original roots match both widths;
@@ -30,7 +35,7 @@ refreshed; T65 open with3 pending table nodes, S14 next, not admitted.
 
 ## M2 T65 S12 - closed ordered small-platform output
 
-[S12 node/child/address proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[S12 node/child/address proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes6 fresh nodes and16 feasible controls, none deferred. Current1628/1992
 nodes,3480/4317 controls(raw4342,infeasible25),391/492 material partial;
 historical1992/1992 separate. All69632 original roots/208896 child returns
@@ -40,7 +45,7 @@ open with5 pending nodes; S13 next, not admitted.
 
 ## M2 T65 S11 - closed shared projectile/explosion output chain
 
-[S11 node/child/byte-wrap proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[S11 node/child/byte-wrap proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes7 fresh nodes,7 feasible controls and one material row, none deferred.
 Current1622/1992 nodes,3464/4317 feasible controls(raw4342,infeasible25),
 391/492 material partial; historical1992/1992 distinct. All393216 original
@@ -50,7 +55,7 @@ T65 remains open with11 pending nodes; S12 next, not admitted.
 
 ## M2 T65 S10 - closed original block/chunk output chain
 
-[S10 node/child/carry proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[S10 node/child/carry proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes14 fresh nodes,36 feasible controls and one material row, none deferred.
 Current1615/1992 nodes,3457/4317 feasible controls(raw4342,infeasible25),
 390/492 material partial; historical1992/1992 distinct. All656384 original
@@ -60,7 +65,7 @@ pending nodes, S11 next and not admitted.
 
 ## M2 T65 S9 - closed flip/mirror/offscreen helper graph
 
-[T65 S9 original helper contracts and closure](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S9 original helper contracts and closure](../history/M2-T65-block-query-object-output-current-proof.md)
 closes22 fresh nodes and62 feasible controls, none deferred. Two raw relations
 are source-infeasible. Current exact1601/1992 nodes,3421/4317 feasible controls
 (raw4342,infeasible25),389/492 material partial; historical1992/1992 separate.
@@ -70,7 +75,7 @@ link pass; three products refreshed. T65 remains open; S10 is next.
 
 ## M2 T65 S8 - enemy graphics selection and actual rows
 
-[T65 S8 current source/graph/output proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S8 current source/graph/output proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes35 freshly exact nodes,83 feasible controls and five material rows,
 none deferred. Two raw fallthroughs proved infeasible. Current nodes1579/1992,
 feasible controls3359/4319(raw4342,infeasible23),material389/492 partial;
@@ -80,7 +85,7 @@ original DOS16 link pass. Three products refreshed. T65 stays open, S9 next.
 
 ## M2 T65 S7 - power-up rows and tail handoff
 
-[T65 S7 current indexed-row/tail proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S7 current indexed-row/tail proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes six nodes, ten controls and two material rows, none deferred. Current
 nodes1544/1992, feasible controls3276/4321 (raw4342,infeasible21), material
 384/492 partial; historical1992/1992 separate. Both checkers match8192 roots
@@ -89,7 +94,7 @@ Three products refreshed. T65 stays open, S8 next; S9 internals pending.
 
 ## M2 T65 S6 - coin output child and indexed table proof
 
-[T65 S6 source/output/graph proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S6 source/output/graph proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes five nodes, nine controls and one material relation, none deferred.
 Current nodes 1538/1992, feasible controls 3266/4321 (raw 4342, infeasible 21),
 material 382/492 partial. Historical mapping 1992/1992 remains separate.
@@ -99,7 +104,7 @@ Three products refreshed. T65 remains open, S7 next.
 
 ## M2 T65 S5 - large-platform stores and graph
 
-[T65 S5 source/output/call proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S5 source/output/call proof](../history/M2-T65-block-query-object-output-current-proof.md)
 proves eleven labels, ten freshly exact, and 31 controls, none deferred.
 Current nodes 1533/1992, feasible controls 3257/4321 (raw 4342, infeasible 21),
 material 381/492 partial. Historical mapping 1992/1992 remains separate.
@@ -109,7 +114,7 @@ Three products refreshed. T65 stays open, S6 next.
 
 ## M2 T65 S4 - flagpole output and dump leaves
 
-[T65 S4 current carry/output/graph proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S4 current carry/output/graph proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes nine labels, thirteen controls and one material row, none deferred.
 Current nodes 1523/1992, feasible controls 3226/4321 (raw 4342, infeasible 21),
 material 381/492 partial; historical mapping 1992/1992 is separate.
@@ -119,7 +124,7 @@ Three products refreshed; T65 remains open, S5 next.
 
 ## M2 T65 S3 - hammer output and child edge
 
-[T65 S3 current indexed-output/call proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S3 current indexed-output/call proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes twelve named labels, none deferred. Current nodes 1514/1992, feasible
 controls 3213/4321 (raw 4342, infeasible 21), material 380/492 partial.
 Historical mapping remains 1992/1992. Full and child-sequence checkers replay
@@ -129,7 +134,7 @@ Three products refreshed. T65 stays open, S4 next.
 
 ## M2 T65 S2 - vine output chain
 
-[T65 S2 current vine/stacker proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S2 current vine/stacker proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes eight named labels, none deferred. Current exact nodes 1502/1992,
 feasible controls 3204/4322 (raw 4342, infeasible 20), material 373/492 partial.
 Historical mapping stays 1992/1992. Original-ROM roots 16384 per width have
@@ -139,7 +144,7 @@ EXEs refreshed. T65 remains open, S3 next.
 
 ## M2 T65 S1 - block-query chain
 
-[T65 S1 current query/table/return proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+[T65 S1 current query/table/return proof](../history/M2-T65-block-query-object-output-current-proof.md)
 closes all fourteen named query labels; none deferred. Current exact nodes
 1494/1992, feasible controls 3192/4322 (raw 4342, infeasible 20),
 material 371/490 with partial enumeration. Historical mapping stays 1992/1992.

@@ -6726,13 +6726,13 @@
     {
       "id": "M2 T65",
       "evidence": [
-        "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+        "docs/history/M2-T65-block-query-object-output-current-proof.md"
       ],
       "subtasks": [
         {
           "id": "M2 T65 S1",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6745,7 +6745,7 @@
         {
           "id": "M2 T65 S2",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6758,7 +6758,7 @@
         {
           "id": "M2 T65 S3",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6771,7 +6771,7 @@
         {
           "id": "M2 T65 S4",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6784,7 +6784,7 @@
         {
           "id": "M2 T65 S5",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6797,7 +6797,7 @@
         {
           "id": "M2 T65 S6",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6810,7 +6810,7 @@
         {
           "id": "M2 T65 S7",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6823,7 +6823,7 @@
         {
           "id": "M2 T65 S8",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6836,7 +6836,7 @@
         {
           "id": "M2 T65 S9",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6849,7 +6849,7 @@
         {
           "id": "M2 T65 S10",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6862,7 +6862,7 @@
         {
           "id": "M2 T65 S11",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6875,7 +6875,7 @@
         {
           "id": "M2 T65 S12",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6888,7 +6888,7 @@
         {
           "id": "M2 T65 S13",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6901,7 +6901,7 @@
         {
           "id": "M2 T65 S14",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -6914,7 +6914,7 @@
         {
           "id": "M2 T65 S15",
           "evidence": [
-            "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+            "docs/history/M2-T65-block-query-object-output-current-proof.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -633033,7 +633033,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -635047,7 +635047,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -637065,7 +637065,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -639080,7 +639080,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -641097,7 +641097,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -643108,7 +643108,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -645120,7 +645120,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -647161,7 +647161,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed-current-exact"
     },
     {
@@ -649189,7 +649189,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed"
     },
     {
@@ -651209,7 +651209,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed"
     },
     {
@@ -653222,7 +653222,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed"
     },
     {
@@ -655234,7 +655234,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed"
     },
     {
@@ -657242,7 +657242,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed"
     },
     {
@@ -659251,7 +659251,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
       "state": "closed"
     },
     {
@@ -661411,8 +661411,8 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md",
-      "state": "admitted"
+      "evidence": "docs/history/M2-T65-block-query-object-output-current-proof.md",
+      "state": "closed"
     }
   ]
 }

@@ -59,21 +59,21 @@ Incoming boundary relations outside J retain their original pending owners.
 
 ## Current checkpoint after T65 S1
 
-[T65 S1](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+[T65 S1](../../history/M2-T65-block-query-object-output-current-proof.md) is closed;
 T65 is open and S2 is next. Current exact nodes 1494/1992, feasible controls
 3192/4322 (raw 4342, infeasible 20), material 371/490 partial. Historical
 1992/1992 is separate. Earlier checkpoint paragraphs retain closure-time facts.
 
 ## Current checkpoint after T65 S2
 
-[T65 S2](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+[T65 S2](../../history/M2-T65-block-query-object-output-current-proof.md) is closed;
 T65 is open and S3 is next. Current exact nodes 1502/1992, feasible controls
 3204/4322 (raw 4342, infeasible 20), material 373/492 partial. Historical
 1992/1992 remains separate. Earlier checkpoint paragraphs retain their facts.
 
 ## Current checkpoint after T65 S3
 
-[T65 S3](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+[T65 S3](../../history/M2-T65-block-query-object-output-current-proof.md) is closed;
 T65 is open, S4 next. Current nodes 1514/1992, feasible controls 3213/4321
 (raw 4342, infeasible 21), material 380/492 partial; historical 1992/1992
 remains separate. Planned Cohort L must restore PlayerOffscreenChk's actual
@@ -81,28 +81,28 @@ DumpTwoSpr call instead of direct stores before claiming that graph contract.
 
 ## Current checkpoint after T65 S4
 
-[T65 S4](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+[T65 S4](../../history/M2-T65-block-query-object-output-current-proof.md) is closed;
 T65 stays open, S5 next. Current nodes 1523/1992, feasible controls 3226/4321
 (raw 4342, infeasible 21), material 381/492 partial. Historical 1992/1992
 remains separate; no later-scope node or relation is pre-credited.
 
 ## Current checkpoint after T65 S5
 
-[T65 S5](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+[T65 S5](../../history/M2-T65-block-query-object-output-current-proof.md) is closed;
 T65 stays open, S6 next. Current nodes 1533/1992, feasible controls 3257/4321
 (raw 4342, infeasible 21), material 381/492 partial. Historical 1992/1992 is
 separate; dependency-node and external material evidence retains later scope.
 
 ## Current checkpoint after T65 S6
 
-[T65 S6](t65-cohort-k-block-query-object-output-current-proof.md) is closed;
+[T65 S6](../../history/M2-T65-block-query-object-output-current-proof.md) is closed;
 T65 stays open, S7 next. Current nodes 1538/1992, feasible controls 3266/4321
 (raw 4342, infeasible 21), material 382/492 partial. Historical 1992/1992 is
 separate; external caller relations retain their own audit scope.
 
 ## Current checkpoint after T65 S7
 
-[T65 S7](t65-cohort-k-block-query-object-output-current-proof.md) closed;
+[T65 S7](../../history/M2-T65-block-query-object-output-current-proof.md) closed;
 T65 open, S8 next. Current nodes1544/1992, controls3276/4321 (raw4342,
 infeasible21), material384/492 partial; historical1992/1992 separate.
 S9 must consolidate raw clip callers into the original shared column/row/
@@ -110,7 +110,7 @@ erase sequence, avoiding duplicate erase; internal pending status is retained.
 
 ## Current checkpoint after T65 S8
 
-[T65 S8](t65-cohort-k-block-query-object-output-current-proof.md) closes35
+[T65 S8](../../history/M2-T65-block-query-object-output-current-proof.md) closes35
 nodes,83 feasible controls and five material rows; two raw fallthroughs are
 source-infeasible. Current nodes1579/1992, controls3359/4319(raw4342,
 infeasible23), material389/492 partial. Historical1992/1992 separate.
@@ -118,7 +118,7 @@ T65 remains open with54 pending nodes; S9 next, not yet admitted.
 
 ## Current checkpoint after T65 S9
 
-[T65 S9](t65-cohort-k-block-query-object-output-current-proof.md) closes22
+[T65 S9](../../history/M2-T65-block-query-object-output-current-proof.md) closes22
 nodes and62 feasible controls; two raw controls are source-infeasible.
 Current nodes1601/1992, controls3421/4317(raw4342,infeasible25), material389/492
 partial; historical1992/1992 separate. T65 stays open with32 pending nodes;
@@ -126,7 +126,7 @@ S10 next, not yet admitted. External block/player caller returns remain pending.
 
 ## Current checkpoint after T65 S10
 
-[T65 S10](t65-cohort-k-block-query-object-output-current-proof.md) closes14
+[T65 S10](../../history/M2-T65-block-query-object-output-current-proof.md) closes14
 nodes,36 controls and one material row. Current1615/1992 nodes,3457/4317
 controls(raw4342,infeasible25),390/492 material partial; historical1992/1992
 distinct. T65 stays open with18 pending nodes; S11 next, not admitted.
@@ -134,7 +134,7 @@ External BlockObjectsCore/BouncingBlockHandler caller boundaries remain pending.
 
 ## Current checkpoint after T65 S11
 
-[T65 S11](t65-cohort-k-block-query-object-output-current-proof.md) closes7
+[T65 S11](../../history/M2-T65-block-query-object-output-current-proof.md) closes7
 nodes,7 controls and one material row. Current1622/1992 nodes,3464/4317
 controls(raw4342,infeasible25),391/492 material partial; historical1992/1992
 separate. T65 remains open with11 pending nodes; S12 next, not admitted.
@@ -142,22 +142,33 @@ Shared projectile/explosion output repairs retain exact incoming caller credit.
 
 ## Current checkpoint after T65 S12
 
-[T65 S12](t65-cohort-k-block-query-object-output-current-proof.md) closes6
+[T65 S12](../../history/M2-T65-block-query-object-output-current-proof.md) closes6
 nodes and16 controls. Current1628/1992 nodes,3480/4317 feasible controls
 (raw4342,infeasible25),391/492 material partial; historical1992/1992 separate.
 T65 stays open with5 pending nodes; S13 next, not admitted.
 
 ## Current checkpoint after T65 S13
 
-[T65 S13](t65-cohort-k-block-query-object-output-current-proof.md) closes2
+[T65 S13](../../history/M2-T65-block-query-object-output-current-proof.md) closes2
 nodes and3 controls. Current1630/1992 nodes,3483/4317 controls(raw4342,
 infeasible25),391/492 material partial; historical1992/1992 separate.
 T65 remains open with3 pending table nodes; S14 next, not admitted.
 
 ## Current checkpoint after T65 S14
 
-[T65 S14](t65-cohort-k-block-query-object-output-current-proof.md) closes3
+[T65 S14](../../history/M2-T65-block-query-object-output-current-proof.md) closes3
 table nodes and3 material rows, no control promotion. Current1633/1992 nodes,
 3483/4317 controls(raw4342,infeasible25),394/492 material partial; historical
 1992/1992 separate. T65 has all154 planned nodes exact; S15 census remains
 unadmitted and required before T closure. T66 player-control proof not inferred.
+
+## Current checkpoint after T65 closure
+
+[T65's retained proof](../../history/M2-T65-block-query-object-output-current-proof.md)
+is closed after S15. Current1633/1992 nodes,3485/4317 feasible controls
+(raw4342,infeasible25),394/492 material partial; historical1992/1992 separate.
+K has154 exact nodes,307 exact feasible controls plus6 infeasible,26 exact
+material rows. Current full/independent integration and248/248 native tests
+per width plus original DOS16 link pass. Ten external incoming controls
+retain their named pending owners. T66 actual Cohort L inventory is next,
+not admitted; no milestone-wide proof inferred from this closure.

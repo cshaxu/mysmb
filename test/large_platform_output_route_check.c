@@ -33,6 +33,8 @@ mysmb_u8 mysmb_oam_get_x_offscreen_bits(struct mysmb_game *g,mysmb_u8 s,mysmb_u8
 }
 void mysmb_oam_move_six_sprites_offscreen(struct mysmb_game *g,mysmb_u8 o){(void)child(g,6U,0U,rec[0],o,0U,1U);}
 void mysmb_oam_dump_two_sprites(struct mysmb_game *g,mysmb_u8 v,mysmb_u8 o){(void)g;(void)v;(void)o;++failures;}
+/* Only DrawSmallPlatform uses this dependency in the linked owner unit. */
+void mysmb_oam_dump_three_sprites(struct mysmb_game *g,mysmb_u8 v,mysmb_u8 o){(void)g;(void)v;(void)o;++failures;}
 #endif
 int main(int argc,char **argv)
 {
