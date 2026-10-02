@@ -10719,13 +10719,13 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1713,
-    "needs-evidence": 279
+    "exact": 1716,
+    "needs-evidence": 276
   },
   "controlEdgeCounts": {
-    "exact": 3646,
-    "needs-evidence": 671,
-    "infeasible": 25
+    "exact": 3649,
+    "needs-evidence": 667,
+    "infeasible": 26
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -44445,49 +44445,57 @@
       "label": "DrawSpriteObject",
       "asmLine": 15025,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_row.c",
       "currentCounterpart": "mysmb_oam_draw_sprite_object",
       "semanticEvidence": [
-        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Reads scratch tile/facing/attribute/position fields, emits one two-sprite OAM row, then advances vertical position, OAM offset and graphics index for the caller."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entryf282 observations131072."
+      ],
       "semanticContract": "Reads scratch tile/facing/attribute/position fields, emits one two-sprite OAM row, then advances vertical position, OAM offset and graphics index for the caller.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c",
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/sprite_draw.c"
       ]
     },
     {
       "label": "NoHFlip",
       "asmLine": 15036,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_row.c",
       "currentCounterpart": "mysmb_oam_draw_sprite_object",
       "semanticEvidence": [
-        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Writes first then second tile in normal order and clears the horizontal-flip contribution before common OAM attribute writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entryf296 observations65536."
+      ],
       "semanticContract": "Writes first then second tile in normal order and clears the horizontal-flip contribution before common OAM attribute writes.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/sprite_draw.c"
       ]
     },
     {
       "label": "SetHFAt",
       "asmLine": 15040,
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/sprite_row.c",
       "currentCounterpart": "mysmb_oam_draw_sprite_object",
       "semanticEvidence": [
-        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Combines normal or horizontal-flip contribution with base attributes and writes both OAM attribute bytes before coordinate and index advancement."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original entryf2a0 observations131072."
+      ],
       "semanticContract": "Combines normal or horizontal-flip contribution with base attributes and writes both OAM attribute bytes before coordinate and index advancement.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/sprite_draw.c"
       ]
     },
     {
@@ -117755,16 +117763,18 @@
       "instruction": "bcc",
       "id": "control-03160",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
       "semanticEvidence": [
-        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source branch DrawSpriteObject \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoHFlip preserves the horizontal-flip predicate before tile and attribute order is selected."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Instructionf288 actual transfer observations65536."
+      ],
       "semanticContract": "The source branch DrawSpriteObject \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoHFlip preserves the horizontal-flip predicate before tile and attribute order is selected.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c",
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/sprite_draw.c"
       ]
     },
     {
@@ -117775,16 +117785,18 @@
       "instruction": "bne",
       "id": "control-03161",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
       "semanticEvidence": [
-        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source branch DrawSpriteObject \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetHFAt preserves the horizontal-flip predicate before tile and attribute order is selected."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Instructionf294 actual transfer observations65536."
+      ],
       "semanticContract": "The source branch DrawSpriteObject \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetHFAt preserves the horizontal-flip predicate before tile and attribute order is selected.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c",
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/sprite_draw.c"
       ]
     },
     {
@@ -117795,16 +117807,18 @@
       "instruction": "bne",
       "id": "control-03162",
       "cohort": "L",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
+      "status": "infeasible",
+      "currentCounterpart": "src/game/oam/sprite_draw.c flip branch joins common attributes; it never falls into the normal-tile branch.",
       "semanticEvidence": [
-        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
+        "M2 T66 S6 P2 local original opcode binding: F292 A9 40 is LDA #$40 immediately before F294 D0 BNE SetHFAt; zero flag must be clear. The raw DrawSpriteObject -> NoHFlip fall-through cannot execute. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source fall-through DrawSpriteObject \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NoHFlip preserves the selected tile ordering before common attribute writes.",
+      "operationalEvidence": [
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Original F294 taken65536/fall0; F288 flip selector has both outcomes. Absence alone is not proof; instruction semantics above proves impossibility."
+      ],
+      "semanticContract": "Raw extractor fall-through after LDA #$40/BNE is impossible: LDA sets zero flag clear, no intervening instruction changes it, so BNE always branches to SetHFAt.",
       "currentSourcePaths": [
-        "src/game/oam/block_gfx.c",
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/sprite_draw.c"
       ]
     },
     {
@@ -117815,15 +117829,18 @@
       "instruction": "lda",
       "id": "control-03163",
       "cohort": "L",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/sprite_row.c mysmb_oam_draw_sprite_object horizontal-flip control flow",
       "semanticEvidence": [
-        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required."
+        "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md The source fall-through NoHFlip \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetHFAt preserves the selected tile ordering before common attribute writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md Instructionf29e actual transfer observations65536."
+      ],
       "semanticContract": "The source fall-through NoHFlip \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetHFAt preserves the selected tile ordering before common attribute writes.",
       "currentSourcePaths": [
-        "src/game/oam/sprite_row.c"
+        "src/game/oam/sprite_draw.c"
       ]
     },
     {
@@ -143290,12 +143307,13 @@
     "control-02908",
     "control-02942",
     "control-02951",
+    "control-03162",
     "control-03497",
     "control-03743",
     "control-03769",
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 25,
-  "feasibleControlEdgeTotal": 4317
+  "infeasibleControlEdgeTotal": 26,
+  "feasibleControlEdgeTotal": 4316
 }

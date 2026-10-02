@@ -171,6 +171,15 @@ static void vertical_fixture(core_machine *m,unsigned int n,unsigned int mode)
     m->ram[0x71cu]=left;m->ram[0x71du]=(unsigned char)(left-1u);
     m->ram[0x71au]=page;m->ram[0x71bu]=(unsigned char)(page+(left!=0u));
 }
+static void sprite_fixture(core_machine *m,unsigned int n,unsigned int mode)
+{
+    m->x=(unsigned char)(n>>8u);m->y=(unsigned char)(n*17u);
+    m->p=(unsigned char)((m->p&0xfeu)|((n+(mode==38u))&1u));
+    m->ram[0u]=(unsigned char)n;m->ram[1u]=(unsigned char)((n>>8u)*17u);
+    m->ram[2u]=(unsigned char)(n>>8u);m->ram[3u]=(unsigned char)(n>>8u);
+    m->ram[4u]=(unsigned char)n;m->ram[5u]=(unsigned char)(n*13u);
+    if(mode==38u){m->y=(unsigned char)(n*19u);m->ram[2u]=(unsigned char)n;m->ram[5u]=(unsigned char)((n>>8u)*13u);}
+}
 int main(int argc,char **argv)
 {
     static core_machine baseline;
@@ -178,14 +187,14 @@ int main(int argc,char **argv)
     static unsigned int hits[4096],taken[4096],fell[4096],events[14],continuations[65536],offset_reads[16],graphic_reads[208],kick_reads[2],size_reads[20],intermediate_reads[6],proper_reads[3],xmask_reads[16],xdefault_reads[3],ymask_reads[9],ydefault_reads[3],yhigh_reads[2];
     static unsigned long transfer_keys[8192];
     static unsigned int transfer_counts[8192];
-    static const unsigned int entries[37]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u,0xede1u,0xeee9u,0xefa4u,0xeee9u,0xeee9u,0xeee9u,0xf12au,0xf131u,0xf13bu,0xf148u,0xf152u,0xf159u,0xf180u,0xf187u,0xf191u,0xf19bu,0xf1afu,0xf1b6u,0xf1f6u,0xf1f6u,0xf1c0u,0xf1c0u};
+    static const unsigned int entries[39]={0xeb64u,0xebc1u,0xebb7u,0xebaau,0xebb2u,0xe87du,0xebd1u,0xec53u,0xec46u,0xec53u,0xecdeu,0xecedu,0xed09u,0xed17u,0xed66u,0xede1u,0xeee9u,0xefa4u,0xeee9u,0xeee9u,0xeee9u,0xf12au,0xf131u,0xf13bu,0xf148u,0xf152u,0xf159u,0xf180u,0xf187u,0xf191u,0xf19bu,0xf1afu,0xf1b6u,0xf1f6u,0xf1f6u,0xf1c0u,0xf1c0u,0xf282u,0xf282u};
     unsigned char h[16]={'M','S','O','H',1u};
     core_driver *d=NULL;core_driver_options options={0u,LIB_FALSE};core_run_result r;
     unsigned int mode,first,count,n,i,slot,pc,steps,k,pos,pending,continuation,maxsteps=0u,returns=0u;
     int ok=1;FILE *f;time_t start=time(NULL);
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],NULL,0);first=(unsigned int)strtoul(argv[4],NULL,0);count=(unsigned int)strtoul(argv[5],NULL,0);
-    if(mode>36u||count==0u||count>2048u||first+count>(mode>=21u?65536u:(mode>=19u?(mode==19u?65536u:8192u):(mode>=16u?(mode==16u?1024u:(mode==17u?32u:256u)):(mode==15u?131072u:(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u)))))))))))return 64;
+    if(mode>38u||count==0u||count>2048u||first+count>(mode>=21u?65536u:(mode>=19u?(mode==19u?65536u:8192u):(mode>=16u?(mode==16u?1024u:(mode==17u?32u:256u)):(mode==15u?131072u:(mode==14u?69632u:(mode==13u?196608u:(mode==0u?67072u:(mode==5u?8192u:(mode==6u?263168u:((mode==7u||mode==9u)?131072u:65536u)))))))))))return 64;
     h[5]=(unsigned char)mode;for(i=0u;i<4u;++i){h[8u+i]=(unsigned char)(count>>(i*8u));h[12u+i]=(unsigned char)(first>>(i*8u));}
     f=fopen(argv[1],"rb");if(!f||fseek(f,16L,SEEK_SET)||fread(prg,1u,sizeof(prg),f)!=sizeof(prg))return 65;fclose(f);
     if(core_driver_create(&d,&options)!=LIB_STATUS_OK||!core_driver_set_media(d,argv[1],LIB_STORAGE_MEDIUM_READONLY)||!ready(d->machine))return 65;
@@ -272,6 +281,7 @@ int main(int argc,char **argv)
         if(mode>=27u&&mode<=32u)offscreen_fixture(d->machine,n,mode);
         if(mode==33u||mode==34u)horizontal_fixture(d->machine,n,mode);
         if(mode==35u||mode==36u)vertical_fixture(d->machine,n,mode);
+        if(mode==37u||mode==38u)sprite_fixture(d->machine,n,mode);
         d->machine->pc=(unsigned short)entries[mode];d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
         memset(rec,0,sizeof(rec));rec[0]=d->machine->a;rec[1]=d->machine->x;rec[2]=d->machine->y;
@@ -307,7 +317,8 @@ int main(int argc,char **argv)
             if(core_machine_debug_step(d->machine,1u,1024u,&r)!=LIB_STATUS_OK||r.trap_valid){ok=0;break;}
             if((mode>=16u&&mode<=20u&&pc>=0xeee9u&&pc<0xf12au)||
                (mode>=21u&&mode<=26u&&pc>=0xf12au&&pc<0xf1b7u)||
-               (mode>=27u&&pc>=0xf180u&&pc<0xf282u)){
+               (mode>=27u&&mode<=36u&&pc>=0xf180u&&pc<0xf282u)||
+               (mode>=37u&&pc>=0xf282u&&pc<0xf300u)){
                 unsigned long key=(((unsigned long)pc<<16u)|d->machine->pc)+1u;
                 unsigned int bucket=(unsigned int)((key^(key>>13u))&8191u),attempt;
                 for(attempt=0u;attempt<8192u;++attempt){

@@ -1,12 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T66 S6 - active sprite emission chain
+## M2 T66 S6 - closed two-sprite output chain
 
-[Exact S6 scope and dual-proof contract](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
-admits3 pending nodes/4 raw controls. Current1713/1992 nodes,3646/4317
-controls(raw4342,infeasible25),403/493 material partial; maximum1716/1992
-nodes and3649/4316 controls if impossible03162 is source-proven. Historical
-1992/1992 remains separate; no admission-time exact/infeasible promotion.
+[Individual S6 node/edge proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+closes3 nodes/3 feasible controls and source-proven infeasible03162. Current
+1716/1992 nodes,3649/4316 controls(raw4342,infeasible26),403/493 material
+partial; historical1992/1992 separate.131072 original roots match both widths
+including consumed X/Y and OAM page spill.16 focused tests each and original
+DOS16 link pass; S2 products retained. All83 T66 nodes exact, T remains open
+for S7 integration closure; S7 next unadmitted.
 
 ## M2 T66 S5 - closed vertical offscreen/division chain
 

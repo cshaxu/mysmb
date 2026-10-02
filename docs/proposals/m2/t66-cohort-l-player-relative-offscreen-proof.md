@@ -1090,3 +1090,93 @@ Scoped feasible diff repaired/re-audited within S6 before S7 admission.
 Owner-local ROM/reviewed ASM nonredistributable inputs. All scripts/raw/logs
 under ignored build/m2-t66-s6;192MiB aggregate,2048 roots/chunk,120seconds/
 run,524288steps/case; coordinator cleans raw/probe after proof.
+
+## S6 P2 two-sprite output audit and closure
+
+All3 intended nodes become exact: DrawSpriteObject; NoHFlip; SetHFAt.
+Controls03160/03161/03163 become exact;03162 becomes instruction-proven
+infeasible and remains in the raw ledger. No deferred/transferred labels.
+Nodes1713 ->1716/1992; exact feasible controls3646 ->3649/4316, raw4342
+unchanged/infeasible25 ->26. Material403/493 partial unchanged. Historical
+1992/1992 expected/actualMatches empty remains separate. All83 T66 nodes
+are now exact; S7 cross-chain/operational closure remains unadmitted, T66 open.
+
+### Source/graph review and impossible extractor edge
+
+Actual owner sprite_draw.c is called once by DrawOneSpriteRow in sprite_row.c;
+the proposal path was corrected at admission without moving source. Original
+two LSR select scratch03 bit1, matching native mask2. Normal writes tile00
+to first sprite, tile01 to second; flip path writes tile00 to second first,
+then tile01 to first and ORs40 into base attributes04. Native store order
+preserves both paths. SetHFAt writes both attributes, paired Y positions,
+first X, then byte X+8. Source clears carry before X+8, scratch Y+8 and OAM
+offset+8; C casts each byte result. Graphics index advances by2 via two INX,
+matching byte pointer output. RAM02 advance, consumed returned X/Y and all
+OAM writes compare directly. Absolute-indexed base+Y uses16-bit addresses,
+so OAM offsets near255 may write past02FF; only the returned offset wraps.
+Current first/second uint16 addresses preserve that original distinction.
+
+Raw control03162 is extractor fall-through from DrawSpriteObject to NoHFlip
+at ASM15035/F294 BNE. Immediately preceding F292 A9 40 is LDA #$40, which
+sets zero flag clear. No intervening instruction exists; BNE always branches
+to SetHFAt. Original local opcode binding confirms that proof. Native flip
+branch likewise joins shared attributes, never enters the normal tile path.
+Zero observed transfers support the proof but are not its justification.
+Raw record remains explicit, feasible denominator decreases by1. Normal path
+still enters NoHFlip through real control03160, and03163 joins attributes.
+The flip selector has65536 taken/65536 fall outcomes; F294 has65536 taken/
+zero fall. No unreachable path is fabricated for an apparent coverage gap.
+
+Similar-issue sweep: all shared sprite-row stores/caller inspected. Sprite
+scratch00-05 cannot alias0200+Y OAM writes; caching tile/attributes is safe.
+Both flip paths use common attribute/coordinate/index writes in source order.
+Only DrawOneSpriteRow calls this routine in production; its scratch01 store
+and pointer handoff were already accepted by previous OAM/player chains.
+No production discrepancy, fix, duplicate implementation or platform business
+logic introduced. S7 integration proof remains required before T closure.
+
+### Controlled original/native route matrix
+
+Modes37/38 each execute65536 original F282 roots. Each covers all byte flip
+control xbase-attribute pairs; distinct tile inputs, every graphics index,
+every OAM byte offset and all byte coordinate values are distributed across
+the matrix. Correlated dimensions are not claimed as an exhaustive larger
+Cartesian product. Second mode swaps coordinate mapping and initial carry;
+each paired root checks both initial carry states. Source LSR/CLC semantics
+are audited independently, not inferred from matching arbitrary flags.
+131072 roots match current real x86/x64 output across1841 RAM bytes and
+returned graphics/OAM X/Y. This includes OAM page spill and returned byte
+wrap, scratch02, unrelated state and aliases0109-0139; zero differences.
+True CPU stack0100-0108/013A-01FF and unused CPU A/flags excluded. Caller-
+consumed X/Y are mandatory comparisons. No helper mock or test hook.
+
+Original opcode/index validation agrees; non-code directives outside scope
+remain indexing exclusions. Raw/probe cleaned; neutral summaries/logs retained
+below ignored admitted path. Limits192MiB aggregate,2048 roots/chunk,
+120seconds/run and524288steps/case enforced. No ROM fixture/runtime emulator
+or protected source material added to tracked test infrastructure.
+
+| Node | Original address | Visits | Native counterpart / contract |
+| --- | --- | ---: | --- |
+| DrawSpriteObject | f282 | 131072 | mysmb_oam_draw_sprite_object; Reads scratch tile/facing/attribute/position fields, emits one two-sprite OAM row, then advances vertical position, OAM offset and graphics index for the caller. |
+| NoHFlip | f296 | 65536 | mysmb_oam_draw_sprite_object; Writes first then second tile in normal order and clears the horizontal-flip contribution before common OAM attribute writes. |
+| SetHFAt | f2a0 | 131072 | mysmb_oam_draw_sprite_object; Combines normal or horizontal-flip contribution with base attributes and writes both OAM attribute bytes before coordinate and index advancement. |
+
+| Control | Original relation | Instruction PC | Transfers | Disposition |
+| --- | --- | --- | ---: | --- |
+| control-03160 | DrawSpriteObject -> NoHFlip (branch) | f288 | 65536 | exact |
+| control-03161 | DrawSpriteObject -> SetHFAt (branch) | f294 | 65536 | exact |
+| control-03162 | DrawSpriteObject -> NoHFlip (fallthrough) | f294 | 0 | infeasible |
+| control-03163 | NoHFlip -> SetHFAt (fallthrough) | f29e | 65536 | exact |
+
+### Operational proof and delivery
+
+Current x86/x64 checker builds;14 common focused tests plus2 rebuilt sprite
+OAM/root integration tests pass each width, total16 unique tests. Original
+OpenNT DOS16 shared-source link exit0, existing OLDNAMES.LIB warning retained.
+No DOS graphics/performance qualification. Product source unchanged;3 S2 P2
+EXEs verified byte-for-byte against committed HEAD and retained, including
+audio/title/focus pause. Neutral probe/checker extensions only. Ledger,
+admission/closure/current registry/documentation/whitespace gates pass.
+S6 closes; T66 remains open for S7, M2 remains open for later cohorts/full
+cross-cohort and final equivalence certification.
