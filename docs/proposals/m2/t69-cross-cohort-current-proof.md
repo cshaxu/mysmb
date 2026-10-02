@@ -706,3 +706,14 @@ result branch,actual restart/screen/no-op call/return/fallthrough order.
 Owner-local ROM/reviewed ASM research only,nonredistributable,no import.
 Ignored build/m2-t69-s5,128MiB raw/1024 roots batch/120seconds process/
 524288steps root;coordinator deletes raw per batch,retains neutral summaries.
+
+### S5 admission amendment - real JumpEngine dependency
+
+Coordinator adds already-exact JumpEngine as a zero-credit dependency after
+actual GameOverMode routes expose missing scratch04-07 stores. Scope19,
+intended fresh17/max1992 unchanged. Restore original helper state through
+shared game.c and actual game-over/screen call sites;no CPU interpreter or
+mocked child. Existing ScreenRoutines dependency likewise needs original
+dispatch scratch state. Focused test name corrected to mysmb.mode-smoke;
+the earlier terminal-modes-smoke name was not an existing CTest entry.
+No credit yet;S5 remains active until same routes prove repaired equivalence.

@@ -5,15 +5,15 @@
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | Continuation: M2 T69 S5 P1 active;S1-S4 closed,later S unadmitted. |
-| Admission And Approval | Owner approved continued source-order proof;coordinator admits18 life/game-over labels/intended fresh17 and28 controls/2 material after S4 closure. |
+| Admission And Approval | Owner approved continued source-order proof;coordinator admits19 life/game-over labels/intended fresh17 and28 controls/2 material after S4 closure. |
 | Objective | Audit/repair original life/checkpoint/game-over/transpose/no-op chain with actual pointer/screen dependencies. |
-| Non-goals | No fresh credit for ScreenRoutines or promotion of later material/object/audio-fetch joins and unrelated work. |
+| Non-goals | No fresh credit for ScreenRoutines/JumpEngine or promotion of later material/object/audio-fetch joins and unrelated work. |
 | Reference Baseline | Historical1992/1992; current exact1975/1992 nodes,4060/4278 feasible controls(raw4342,infeasible64),510/555 material partial. |
-| Candidate Proposal | [T69 residual/cross-cohort plan](../proposals/m2/t69-cross-cohort-current-proof.md),S5 exact17 pending targets/1 exact dependency. |
-| Files And ABI Surface | Shared terminal_modes.c/game.c life/game-over/transpose/no-op owners;actual area-pointer/screen children,neutral original/checker probes and governance. |
+| Candidate Proposal | [T69 residual/cross-cohort plan](../proposals/m2/t69-cross-cohort-current-proof.md),S5 exact17 pending targets/2 exact dependencies. |
+| Files And ABI Surface | Shared terminal_modes.c/game.c life/game-over/transpose/no-op owners;actual area-pointer/screen/JumpEngine children,neutral original/checker probes and governance. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
 | Verification | Unchanged original PlayerLoseLife/GameOverMode returning roots with actual TransposePlayers/ContinueGame/LoadAreaPointer/ScreenRoutines children;vary life sign/byte,all8 worlds/4 levels,halfway threshold,both player states,START/timer/task0-2;actual half-way table reads/source transfers and persistent RAM/APU/order compare x86/x64;recheck actual SecondaryGameSetup no-op children. |
-| Expected Markers | Scope18,intended fresh17/max1992/1992;28 controls/2 material;historical expectedMatches empty. |
+| Expected Markers | Scope19,intended fresh17/max1992/1992;28 controls/2 material;historical expectedMatches empty. |
 | Asset Needs | Owner-local ROM/reviewed ASM nonredistributable;ignored build output,128MiB raw/1024 batch/120seconds process/524288steps root and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
 | Stop Conditions | Any scoped difference or missing original child/table/dual proof keeps S5 active. |
