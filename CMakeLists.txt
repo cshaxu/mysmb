@@ -1775,3 +1775,6 @@ target_link_libraries(mysmb_lakitu_integration_route_check PRIVATE mysmb_game)
 
 add_executable(mysmb_bridge_integration_route_check test/bridge_integration_route_check.c)
 target_link_libraries(mysmb_bridge_integration_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_bowser_integration_route_check test/bowser_integration_route_check.c)
+target_link_libraries(mysmb_bowser_integration_route_check PRIVATE mysmb_game)

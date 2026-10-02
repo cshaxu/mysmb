@@ -2526,3 +2526,80 @@ remain unchanged. Exact feasible controls rise 3,132 to 3,134/4,323
 (raw 4,342, infeasible 19). T64 remains open with 47 Cohort-J controls,
 zero pending material; normal Bowser control returns follow. T65 remains
 unadmitted.
+
+## Aggregate S48 admission - real Bowser control returns
+
+S48 owns control-03855/03856/03857/03858. Scoped labels are
+BowserControl, ChkMouth, FeetTmr, ResetMDr, B_FaceP, GetPRCmp, GetDToO, CompDToO, HammerChk, SetHmrTmr, SkipToFB, MakeBJump, ChkFireB, SpawnFBr, SetFBTmr, PRandomRange, RunBowser, PlayerEnemyDiff, MoveEnemySlowVert, SpawnHammerObj, InitVStf, SetFlameTimer, BowserGfxHandler. All 23 are already exact; no expected new node
+credit or custody transfer. Historical 1,992/1,992, exact nodes
+1,480/1,992 and material 368/487 stay unchanged; controls enter
+3,134/4,323 and can reach 3,138/4,323. S47 precedes; front/rear
+Bowser drawing and bounding-box returns follow.
+
+Shared enemy/bowser.c owns $D065-$D17A, using real distance,
+slow gravity, hammer allocator, vertical initializer, flame timer and
+Bowser graphics descendants. Static track checks $D0B8 page/low/sign
+consumption, $D117 force/max/slot, $D127 allocation result/slot and
+$D145 zeroed speed/force followed by $fe launch speed. Roots cover six
+slots, timer/body/frame/world gates, both distance signs, hammer allocation
+success/blocked states, jump and flame/drawing continuation. Persistent
+RAM/OAM and lower-stack game aliases are compared; transient scratch/CPU
+stack exclusions are named, with return seams checked separately.
+Focused x86/x64 control/graphics/purity and original OpenNT DOS16 form
+operational evidence. Any scoped mismatch remains for repair/re-audit.
+
+Owner-local ROM/ASM are nonredistributable research only. Ignored
+build/m2-t64-s48 owns <=8 MiB raw, 524288 steps/case and 120 seconds;
+S48 cleans records/probe after acceptance. Product repairs refresh all
+three approved EXEs. Preserve unrelated work and do not admit T65.
+
+## Aggregate S48 closure - real Bowser control returns
+
+Control-03855/03856/03857/03858 are exact. All 23 scoped labels
+retain exact: BowserControl, ChkMouth, FeetTmr, ResetMDr, B_FaceP,
+GetPRCmp, GetDToO, CompDToO, HammerChk, SetHmrTmr, SkipToFB,
+MakeBJump, ChkFireB, SpawnFBr, SetFBTmr, PRandomRange,
+RunBowser, PlayerEnemyDiff, MoveEnemySlowVert, SpawnHammerObj,
+InitVStf, SetFlameTimer and BowserGfxHandler. No node promotions
+or custody transfers; unobserved descendant paths receive no inferred credit.
+
+Static $D065-$D17A comparison preserves body/frame/timer/world gates,
+feet reset, distance borrow/sign consumed by BPL, original-range selection,
+wrapped horizontal movement, slow downward gravity and slot reload,
+hammer call/return ordering, jumping vertical reset followed by $fe speed,
+fire-mouth toggle and final drawing. Source return checks use $D0B8,
+$D117, $D127 and $D145. Allocation returns restore X and expose selected
+Y/carry; the Bowser caller intentionally ignores carry and then consumes
+current-slot Y position. Native C uses explicit result and retained slot,
+without invented failure branches or CPU-register persistence.
+
+1,536 real RunBowser roots cover six slots and distance, falling/allocation,
+jump and timer-pause families. Each of the four target returns executes
+384 times. Distance sign clear/set is 204/180; allocation carry clear/set
+267/117. Allocation success/misc-blocked/enemy-blocked counts are
+117/126/141. All nine allocation slots occur (slot zero 48 times, others
+42 each). Actual Bowser drawing occurs 1,536 times; maximum root execution
+is 1,048 instructions. Distinct world, frame, body phase, origin/range,
+flame timer and hardness values feed their original consumers.
+
+Current freshly built x86/x64 each match 1,536/1,536 with zero differences
+across 1,796 persistent bytes including OAM and twelve lower-stack game
+aliases. Transient $00-$07 and CPU-stack bytes are explicit exclusions;
+low/page/sign return, gravity force/max, allocation X/Y/carry and initialized
+speed/force are checked at actual source seams before drawing replaces
+scratch. All descendants execute rather than supplying recorded child
+outputs. ROM/resource bytes remain owner-local and immutable.
+
+Focused Bowser control, graphics and platform-purity tests pass 3/3 on
+each width; C90 current runners and original OpenNT DOS16 build/link pass
+with the existing OLDNAMES.LIB warning. Similar-issue sweep covers all
+four real returns and consumers, both distance signs, allocation failure
+classes/slots, init reset/$fe launch and shared graphics continuation.
+No scoped discrepancy or host gameplay duplicate found. Product C and
+three delivered EXEs remain unchanged. Raw records/probe are cleaned.
+
+Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487
+remain unchanged. Exact feasible controls rise 3,134 to 3,138/4,323
+(raw 4,342, infeasible 19). T64 remains open with 43 Cohort-J controls,
+zero pending material; front/rear Bowser graphics and box returns follow.
+T65 is not admitted.

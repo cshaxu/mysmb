@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3134,
-    "needs-evidence": 1189,
+    "exact": 3138,
+    "needs-evidence": 1185,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -129341,13 +129341,16 @@
       "instruction": "rts/rti",
       "id": "control-03855",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with real shared distance/gravity/hammer/init/flame/OAM descendants and retained slot.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: PlayerEnemyDiff returns at $D0B8 with X=ObjectOffset, low subtraction in $00 and page-minus-borrow in A/N; B_FaceP consumes BPL before facing/speed/timer changes."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerEnemyDiff -> B_FaceP with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
+      "operationalEvidence": [
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PlayerEnemyDiff returns at $D0B8 with X=ObjectOffset, low subtraction in $00 and page-minus-borrow in A/N; B_FaceP consumes BPL before facing/speed/timer changes.",
       "currentSourcePaths": [
         "src/game/cannon.c",
         "src/game/enemy/background.c",
@@ -129365,13 +129368,16 @@
       "instruction": "rts/rti",
       "id": "control-03856",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with real shared distance/gravity/hammer/init/flame/OAM descendants and retained slot.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: MoveEnemySlowVert returns at $D117 with X=ObjectOffset and force $0f/max two; HammerChk then tests world/frame and updated Y without losing the slot."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation MoveEnemySlowVert -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
+      "operationalEvidence": [
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "MoveEnemySlowVert returns at $D117 with X=ObjectOffset and force $0f/max two; HammerChk then tests world/frame and updated Y without losing the slot.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
         "src/game/enemy/movement.c"
@@ -129385,13 +129391,16 @@
       "instruction": "rts/rti",
       "id": "control-03857",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with real shared distance/gravity/hammer/init/flame/OAM descendants and retained slot.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: SpawnHammerObj returns at $D127 with restored X, selected Y and allocation carry; HammerChk does not branch on carry and uses current-slot Y to update frame timer."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SpawnHammerObj -> HammerChk with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
+      "operationalEvidence": [
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SpawnHammerObj returns at $D127 with restored X, selected Y and allocation carry; HammerChk does not branch on carry and uses current-slot Y to update frame timer.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
         "src/game/hammer.c"
@@ -129405,13 +129414,16 @@
       "instruction": "rts/rti",
       "id": "control-03858",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with named shared child",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser with real shared distance/gravity/hammer/init/flame/OAM descendants and retained slot.",
       "semanticEvidence": [
-        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S48 static $D065-$D17A and real child-return consumer audit: InitVStf returns at $D145 with A=0, X=ObjectOffset and Y speed/force zero; MakeBJump then stores speed $fe before the fire/graphics continuation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitVStf -> MakeBJump with source timer/world/state predicate, slot/scratch handoff and call, loop, tail or return order.",
+      "operationalEvidence": [
+        "M2 T64 S48 current x86/x64 each match 1536 actual original-ROM RunBowser roots, zero differences across 1796 persistent bytes; all four target returns observed 384 times each, both distance signs, all nine allocation slots and success/misc-blocked/enemy-blocked outcomes; real drawing, C90 focused checks/purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "InitVStf returns at $D145 with A=0, X=ObjectOffset and Y speed/force zero; MakeBJump then stores speed $fe before the fire/graphics continuation.",
       "currentSourcePaths": [
         "src/game/enemy/bowser.c",
         "src/game/enemy/init.c",
