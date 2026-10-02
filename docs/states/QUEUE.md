@@ -10,5 +10,5 @@ and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 ## M2: current-equivalence work
 
 The [T53–T70 current-equivalence proof program](../proposals/m2/current-equivalence-proof-program.md)
-lists the remaining work: T68 is next unadmitted, followed by T69-T70. Each later task stays unadmitted
+lists the remaining work: T69-T70 remain unadmitted. Active source-order work is recorded only in CURRENT.md; each later task stays unadmitted
 until its exact S packet, node/edge scope and original-ROM route are recorded.

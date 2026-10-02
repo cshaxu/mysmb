@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T67 S6 Packet
+## M2 T68 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T67 S6 P2 closed; T67 closed, T68 next unadmitted. |
-| Admission And Approval | Owner approved source-order continuation; coordinator admits planned126-node M census/integration with zero fresh credit. |
-| Objective | Census126 nodes/296 raw controls/5 material rows, verify cross-chain SoundEngine routes and close T67 only after integrated proof. |
-| Non-goals | No fresh node credit/N promotion/T68 admission, platform gameplay or unrelated work. |
+| Identifier Mode | New: M2 T68 S1 P1 active; T67 closed, later S unadmitted. |
+| Admission And Approval | Owner approved source-order continuation; coordinator admits exact N77-node plan and S1 pending17-node chain. |
+| Objective | Audit/repair17 music-tail nodes and owned controls against original source and ordered output; T68 targets77 nodes/56 controls/30 material. |
+| Non-goals | No S2-S6/N data promotion, earlier C backlog promotion, platform gameplay or unrelated work. |
 | Reference Baseline | Historical1992/1992; current exact1842/1992 nodes,3915/4286 feasible controls(raw4342,infeasible56),408/493 material partial. |
-| Candidate Proposal | [Closed T67 exact126-node proof](../history/M2-T67-sound-command-current-proof.md), S6 census/integration. |
+| Candidate Proposal | [T68 exact77-node plan](../proposals/m2/t68-cohort-n-music-data-current-proof.md), S1 exact17-node chain. |
 | Files And ABI Surface | src/game/audio.c and audio.h neutral APU ABI; test/tools probes and governance. |
-| Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and admitted T67 proof program. |
-| Verification | M census126 nodes/266 feasible controls/30 impossible/5 material exact;73728 original mixed/title/pause roots zero full RAM/APU/ordered differences each width; four actual channel calls/returns65536 each. |
-| Expected Markers | Met:126 already-exact labels rechecked, zero fresh credit; current1842/1992, historical expected/actualMatches empty. |
-| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable; ignored build/m2-t67-s6,128MiB raw,1024 roots/batch,120seconds/run,524288steps/root and cleanup. |
+| Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
+| Verification | Unchanged F2D0 SoundEngine -> real music/channel tails -> real RTS. Controlled RAM music stream inputs exercise triangle counter/note/second-byte/length/control choices and noise counter/beat/loopback/silence choices; actual source code unchanged. Full1841 RAM/24 APU/ordered writes x86/x64 and recorded scoped transitions; source predicates/CPU indexing/caller returns independently audited. |
+| Expected Markers | S1 scope17 pending/intended fresh17/max1859/1992; T68 max1919/1992; historical expectedMatches empty. |
+| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable; ignored build/m2-t68-s1,128MiB raw,1024 roots/batch,120seconds/run,524288steps/root and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | Any scoped feasible diff, missing member/graph/operational evidence or dirty product provenance keeps S6/T67 open. |
-| Exit Criteria | Met: accepted member/cross-chain census,248 tests each/full native builds/purity/OpenNT link pass;3 S5 products byte-identical, ledger/tracker/history/queue updated. |
+| Stop Conditions | Any scoped feasible diff or missing dual/graph/table proof keeps S1 open; no S2 admission. |
+| Exit Criteria | 17 nodes/owned feasible controls exact after repair/reaudit, native tests/purity/OpenNT link, product3 refresh if changed, ledger/tracker gates. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Channel ordering/returns, music effect protection/overwrite, title/pause bypass, terminal clears and one shared command stream. |
+| Similar-Issue Sweep | Triangle rest/length branches, pre-decrement envelope, noise loopback zero-result branch and ordered beat registers. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **3915/4286** (raw4342,infeasible56).
 - Exact material relations: **408/493**, enumeration partial.
 - Latest three products are T67 S5 P2 builds with exact ground-loop/victory/header semantics and prior audio/title/focus pause.
-- T67 closed:126 nodes/266 feasible controls/5 material exact,30 impossible retained; T68 next unadmitted, M2 remains open.
+- T68 S1 active:17 pending/intended fresh17, zero admission credit; exact N77-node plan registered.
