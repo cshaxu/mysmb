@@ -6,6 +6,7 @@ static void prepare(struct mysmb_game *game, mysmb_u8 type,
 {
     mysmb_game_initialize_memory(game, 0U);
     game->ram[0x0039U] = type;
+    game->ram[8U] = 5U;
     game->ram[0x0009U] = frame;
     game->ram[0x03aeU] = 0x40U;
     game->ram[0x03b9U] = 0x50U;

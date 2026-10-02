@@ -729,3 +729,111 @@ Totals: nodes 1533 -> 1538/1992; controls 3257 -> 3266/4321 (raw 4342,
 infeasible 21); material 381 -> 382/492 partial. Historical mapping 1992/1992
 remains separate. Cohort K has 59 exact, 95 pending nodes. T65 remains open;
 S7 six-node power-up output chain is next. No scoped feasible difference remains.
+
+## S7 admission - power-up indexed rows, attributes and offscreen handoff
+
+Six needs-evidence labels, intended fresh exact six: PowerUpGfxTable,
+PowerUpAttributes, DrawPowerUp, PUpDrawLoop, FlipPUpRightSide, PUpOfs.
+Baseline nodes1538/1992, controls3266/4321, material382/492 partial;
+maximum nodes1544. Historical1992/1992, expected new historical matches empty.
+Ten controls02827-02835 and04010, two material rows00418/00419 pending.
+External RunPUSubs call/return retain caller ownership. Entry $E6D2 to $E73B
+then original SprObjectOffscrChk dependency; shared power_up_gfx.c and invoked
+row/offscreen entries. S6 precedes; S8 enemy selection follows.
+Static source audit found skipped DrawOneSpriteRow, early RAM01 ownership,
+missing flower/star RAM00 type store and absent offscreen erase guard.
+Restore shared dependency entry as needed without promoting S9 internals;
+no unrelated enemy caller migration. Full and independent caller proof compare
+actual two row inputs/returns plus tail input and final effects. All scratch,
+OAM and $0109-$0139 aliases compare (1841 bytes); true CPU stack excluded.
+Four legal types, frame/coordinate/offscreen bytes, base attributes and high-Y/
+Podoboo guard profiles exercise tables, loops, palette/flip and tail outcomes.
+C90 x86/x64 focused operational tests, purity and original OpenNT DOS16 link;
+product repairs refresh three owner-approved local EXEs.
+Owner-local nonredistributable ROM/ASM research-only, sibling core read-only.
+Ignored build/m2-t65-s7 owns <=208 MiB raw, 524288 steps/root,
+120 seconds/probe, checkpoints and cleanup. Similar-issue sweep: row entry
+scratch ownership, post-row type scratch, actual tail entry/erase and callers.
+
+## S7 closure - power-up original row and tail boundaries
+
+Six scoped labels freshly exact: PowerUpGfxTable, PowerUpAttributes,
+DrawPowerUp, PUpDrawLoop, FlipPUpRightSide, PUpOfs. None deferred or
+transferred; historical expected/actual new matches empty.
+
+Static audit found direct DrawSpriteObject skipped original DrawOneSpriteRow,
+caller prematurely wrote RAM01, flower/star omitted RAM00=type, and raw
+offscreen clipping omitted original final erase guard. Before repair the
+full checker reported 11760 differing byte comparisons; the caller checker
+reported 19952 comparisons/call-count failures (not distinct gameplay bugs).
+Shared power_up_gfx.c now invokes original row entry, stores type at the
+original stage, sets palette rows before top-right/bottom-right OR stores,
+and enters a shared offscreen entry. sprite_row.c's meaningful entry loads
+source ObjectOffset/Enemy_OffscreenBits, applies existing clipping and calls
+the accepted EraseEnemyObject owner only for bit7, non-Podoboo and highY=2.
+The previous forwarding-only power-up helper is removed. No platform changes.
+
+tools/reference_power_up_output_probe.c records original $E6D2 roots,
+actual two $EBB2 row inputs and RTS continuation $E702, plus $EB64 tail
+pre-state and complete final output. test/power_up_output_route_check.c full
+checker links actual shared descendants; independent GNU-test-only wrapped
+checker validates row RAM/A/X/Y and tail RAM/OAM/count/order before replaying
+recorded effects. No test wrapping or macro enters any product target.
+Both x86/x64 checkers match 8192 roots with zero differences across1841 RAM
+bytes: scratch/OAM and $0109-$0139 game aliases included, only true CPU stack
+excluded. Original saved type/CPU registers become native type/index/OAM
+locals; original tail A/X inputs are overwritten/unused at entry and not
+emulated. Native row argument increments agree with recorded next row input.
+
+Four legal types, eight attribute/highY/Podoboo profiles and all256 frame
+seeds give8192 roots. Base attributes0/$20; highY1/2; ID$2e/Podoboo$0c;
+relativeX/Y multiplier17/13 and offscreen multiplier29 each cover all bytes.
+OAM$20/$e8 includes final legal three-row allocation (stale third row checked).
+Original max steps215, row returns16384, tail entries8192, erase calls1024.
+Mushroom/1-up palette skips2048 each, flower/star branches2048 each, flip4096;
+loop taken/exit8192 each. All16 tile indices read2048 times each and all4
+attribute indices read2048 times each at actual original consumers. The probe
+rejects wrong returns, missing table indices and incomplete branch counts.
+
+Ten scoped controls exact: control-02827 through control-02835 and
+control-04010. Material00418/00419 exact; no new enumeration/infeasible row.
+External RunPUSubs call/return and S9 row/offscreen internal nodes/edges are
+not promoted. Every out-of-scope registry row is asserted unchanged from HEAD.
+Full tail effects prove the dependency needed by this caller; they do not
+close unobserved internal graph connections.
+
+Similar-issue sweep: both power-up row calls now share original RAM01 owner;
+flower/star RAM00 store and flip order restored. Shared raw clip consumers
+are normal_enemy_gfx, bloober_gfx, bowser_gfx, hammer_bro_gfx, podoboo_gfx and
+spiny_gfx. Their exact source-stage consolidation remains the existing S8/S9
+scope; no broad rewrite is made here. S9 must replace simplified raw clipping
+with original column/row child calls and reconcile existing caller-owned erase
+guards, avoiding duplicated erase when adopting the new shared entry. The
+entry has current root output proof but its internal node/edge statuses remain
+pending. Earlier block/player dump-call repairs retain S10/Cohort L ownership.
+The focused power-up fixture now sets actual caller ObjectOffset=5 rather than
+using an unrelated default slot. No unrelated code or maintenance transfer.
+
+Operational track: current C90 x86/x64 products/checkers build and8/8 focused
+tests pass per width (power-up OAM/core/purity/focus/audio renderer/output/death
+audio/self test). Original OpenNT DOS16 same-source build/link passes with
+existing OLDNAMES.LIB warning; no DOS hardware qualification is inferred.
+Three refreshed owner-approved local artifacts retain audio/title/focus pause:
+
+- mysmb16.exe: 265289 bytes; SHA-256 dd132023f47e4fa49757fef910a5d62f836f1841173f4b0ecc82b0347758fddf.
+
+- mysmb32.exe: 376322 bytes; SHA-256 608fe9d3721a4436aadee5d41e6391cc0f827da13824dc79dcb48288dc27fa8b.
+
+- mysmb64.exe: 383248 bytes; SHA-256 28ed6d4296e3afe3532ce8e48e32747737080436b84ac48223ff6db8507669c6.
+
+Owner-local nonredistributable ROM/ASM remain research-only; neutral harnesses
+contain no protected fixture or imported third-party implementation. Raw record/
+probe binaries removed after accepted gates; neutral logs stay below ignored
+build. Reproduction compiles the named probe against the read-only reference
+core, records owner-ROM roots to bounded ignored output then runs both current
+native checkers on the same batch. Admission gates passed.
+
+Totals: nodes1538 ->1544/1992; controls3266 ->3276/4321 (raw4342,
+infeasible21); material382 ->384/492 partial. Historical1992/1992 is separate.
+Cohort K has65 exact and89 pending nodes. T65 remains open; S8 enemy graphics
+selection's35-node chain is next. No scoped feasible difference remains.

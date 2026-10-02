@@ -1,5 +1,14 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S7 - power-up rows and tail handoff
+
+[T65 S7 current indexed-row/tail proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes six nodes, ten controls and two material rows, none deferred. Current
+nodes1544/1992, feasible controls3276/4321 (raw4342,infeasible21), material
+384/492 partial; historical1992/1992 separate. Both checkers match8192 roots
+per width, 8/8 operational tests per width and original DOS16 link pass.
+Three products refreshed. T65 stays open, S8 next; S9 internals pending.
+
 ## M2 T65 S6 - coin output child and indexed table proof
 
 [T65 S6 source/output/graph proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

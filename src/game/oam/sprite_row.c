@@ -1,4 +1,22 @@
 #include "game/oam/oam.h"
+#include "game/oam/enemy_offscreen_tail.h"
+#include "game/objects.h"
+
+/* ROM $eb64 SprObjectOffscrChk entry and its final erase guard.  Existing
+ * callers of the raw clipping helper retain their separate migration scope. */
+void mysmb_oam_sprite_object_offscreen_check(struct mysmb_game *game,
+                                              mysmb_u8 oam_offset)
+{
+    mysmb_u8 slot;
+    mysmb_u8 bits;
+
+    slot = game->ram[8U];
+    bits = game->ram[0x03d1U];
+    mysmb_oam_enemy_offscreen_tail(game, oam_offset, bits);
+    if ((bits & 0x80U) != 0U && game->ram[0x0016U + slot] != 12U &&
+        game->ram[0x00b6U + slot] == 2U)
+        mysmb_objects_erase_enemy(game, slot);
+}
 
 /* ROM $ebb2 DrawOneSpriteRow stores incoming A before its tail call. */
 void mysmb_oam_draw_one_sprite_row(struct mysmb_game *game,

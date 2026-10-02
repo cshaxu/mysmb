@@ -1,5 +1,4 @@
 #include "game/oam/oam.h"
-#include "game/oam/enemy_offscreen_tail.h"
 #include "game/game.h"
 
 enum {
@@ -16,14 +15,6 @@ enum {
     MYSMB_FRAME_COUNTER = 0x0009U
 };
 
-/* DrawPowerUp falls through PUpOfs into SprObjectOffscrChk.  That routine
- * has a three-row enemy layout even though this caller draws two rows: its
- * third-row stores still clear stale OAM exactly as the original jump does. */
-static void mysmb_power_up_apply_offscreen(struct mysmb_game *game,
-                                           mysmb_u8 oam, mysmb_u8 bits)
-{
-    mysmb_oam_enemy_offscreen_tail(game, oam, bits);
-}
 /* ROM DrawPowerUp. */
 void mysmb_objects_draw_power_up(struct mysmb_game *game)
 {
@@ -60,15 +51,17 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     row_offset = offset;
     for (row = 0U; row < 2U; ++row) {
         game->ram[0U] = graphics[graphics_offset];
-        game->ram[1U] = graphics[(mysmb_u8)(graphics_offset + 1U)];
-        mysmb_oam_draw_sprite_object(game, &graphics_offset, &row_offset);
+        mysmb_oam_draw_one_sprite_row(game,
+            graphics[(mysmb_u8)(graphics_offset + 1U)],
+            &graphics_offset, &row_offset);
         game->ram[7U]--;
     }
     if (type == 1U || type == 2U) {
+        game->ram[0U] = type;
         phase_attributes = (mysmb_u8)(((game->ram[MYSMB_FRAME_COUNTER] >> 1U) & 3U) |
                                        game->ram[MYSMB_ENEMY_ATTRIBUTES + slot]);
         game->ram[(mysmb_u16)(0x0202U + offset)] = phase_attributes;
-        game->ram[(mysmb_u16)(0x0206U + offset)] = (mysmb_u8)(phase_attributes | 0x40U);
+        game->ram[(mysmb_u16)(0x0206U + offset)] = phase_attributes;
         if (type == 2U) {
             game->ram[(mysmb_u16)(0x020aU + offset)] = phase_attributes;
             game->ram[(mysmb_u16)(0x020eU + offset)] = phase_attributes;
@@ -76,12 +69,11 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
         /* FlipPUpRightSide runs for both flower and star.  For the flower
          * its lower row retains the base palette before this OR, which is
          * why the source still changes that otherwise undrawn-looking byte. */
+        game->ram[(mysmb_u16)(0x0206U + offset)] = (mysmb_u8)(
+            game->ram[(mysmb_u16)(0x0206U + offset)] | 0x40U);
         game->ram[(mysmb_u16)(0x020eU + offset)] = (mysmb_u8)(
             game->ram[(mysmb_u16)(0x020eU + offset)] | 0x40U);
     }
-    mysmb_power_up_apply_offscreen(game, offset,
-                                   game->ram[MYSMB_ENEMY_OFFSCREEN]);
+    /* Original PUpOfs tail enters the shared three-row/erase contract. */
+    mysmb_oam_sprite_object_offscreen_check(game, offset);
 }
-
-
-

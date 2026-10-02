@@ -2,22 +2,22 @@
 
 **Idle.**
 
-M2 T65 remains open; S6 closed.
+M2 T65 remains open; S7 closed.
 
 ## Current Technical Baseline
 
-- Historical mapping: **1992/1992**, not current end-to-end certification.
-- Current exact nodes: **1538/1992**.
-- Current exact feasible controls: **3266/4321** (raw 4342, infeasible 21).
-- Exact material relations: **382/492**, enumeration partial.
-- Latest three assets EXEs are refreshed S6 products including audio/title/focus pause.
+- Historical mapping: **1992/1992**, not current certification.
+- Current exact nodes: **1544/1992**.
+- Current exact feasible controls: **3276/4321** (raw4342, infeasible21).
+- Exact material relations: **384/492**, enumeration partial.
+- Three refreshed S7 EXEs retain audio/title/focus-pause behavior.
 
 ## Latest closure
 
-[M2 T65 S6](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
-closes five coin/score nodes, nine controls and one material relation exact.
-Both original DumpTwoSpr calls and ordered OAM phases restored; four indexed
-tiles proved. Full and independent caller checks each match 9216 ROM roots
-per width, 8/8 tests per width and original DOS16 link pass. Three updated
-products recorded in proposal. No transfer or new historical credit.
-T65 has 95 pending nodes; S7 power-up output is next.
+[M2 T65 S7](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+closes six power-up nodes, ten controls and two table relations exact.
+Restored row entry, RAM00 type, flip order and shared offscreen erase guard.
+Both full and independent row/tail checks match8192 roots per width,
+8/8 operational tests per width and original DOS16 link pass. Three products
+recorded in proposal. S9 dependency internals retain pending node/edge scope;
+no custody transfer or historical credit. T65 has89 pending nodes, S8 next.

@@ -9095,13 +9095,16 @@
       "consumer": "DrawPowerUp",
       "storage": "ROM type*4 PowerUpGfxTable bytes to DrawOneSpriteRow scratch $00/$01",
       "feasiblePath": "DrawPowerUp shifts PowerUpType twice, reads each adjacent tile pair and calls DrawOneSpriteRow for both rows.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/power_up_gfx.c graphics array in mysmb_objects_draw_power_up",
-      "semanticContract": "Each selected 2x2 source tile set is consumed in row order before OAM tile writes.",
+      "semanticContract": "Immutable sixteen-entry $E6BE graphics table; type*4 and two consecutive row pairs consume all indices with original DrawOneSpriteRow A/RAM00 ownership.",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -9114,13 +9117,16 @@
       "consumer": "DrawPowerUp",
       "storage": "ROM PowerUpAttributes byte OR Enemy_SprAttrib+5 to DrawPowerUp scratch $04",
       "feasiblePath": "DrawPowerUp indexes PowerUpAttributes by PowerUpType, ORs priority bits and passes the result to both row writes.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/power_up_gfx.c attributes array in mysmb_objects_draw_power_up",
-      "semanticContract": "The selected base attribute reaches each initial OAM attribute write before type-specific overrides.",
+      "semanticContract": "Immutable four-entry $E6CE type table OR Enemy_SprAttrib+5 initializes RAM04 before drawing both rows.",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
       "cohort": "K",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10682,14 +10688,14 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1538,
-    "needs-evidence": 454,
+    "exact": 1544,
+    "needs-evidence": 448,
     "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3266,
-    "needs-evidence": 1055,
+    "exact": 3276,
+    "needs-evidence": 1045,
     "infeasible": 21
   },
   "controlEdgeTypeCounts": {
@@ -40981,96 +40987,120 @@
       "label": "PowerUpGfxTable",
       "asmLine": 13500,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/power_up_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Immutable sixteen-entry $E6BE graphics table; type*4 and two consecutive row pairs consume all indices with original DrawOneSpriteRow A/RAM00 ownership."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds four ordered 2x2 tile sets for mushroom, flower, star and 1UP.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Immutable sixteen-entry $E6BE graphics table; type*4 and two consecutive row pairs consume all indices with original DrawOneSpriteRow A/RAM00 ownership.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
       "label": "PowerUpAttributes",
       "asmLine": 13506,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/power_up_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Immutable four-entry $E6CE type table OR Enemy_SprAttrib+5 initializes RAM04 before drawing both rows."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Binds per-type base palette attributes 02,01,02,01.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Immutable four-entry $E6CE type table OR Enemy_SprAttrib+5 initializes RAM04 before drawing both rows.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
       "label": "DrawPowerUp",
       "asmLine": 13509,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/power_up_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Fixed slot5 OAM, wrapped relativeY+8 to RAM02 and relativeX to RAM05, indexed type attributes, RAM07/RAM03=1 precede row loop."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Prepares source scratch positions/attributes, derives type*4 tile offset and begins two-row sprite construction.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Fixed slot5 OAM, wrapped relativeY+8 to RAM02 and relativeX to RAM05, indexed type attributes, RAM07/RAM03=1 precede row loop.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
       "label": "PUpDrawLoop",
       "asmLine": 13530,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/power_up_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Two actual DrawOneSpriteRow calls load RAM00 left tile and pass right tile A before callee RAM01 store; decrement RAM07 through 0 to $ff. Types0/3 skip palette; types1/2 store type to RAM00 then set animated top pair and star-only bottom pair."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Loads adjacent tiles, calls DrawOneSpriteRow twice, then applies type-specific phase palettes and lower-star update.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Two actual DrawOneSpriteRow calls load RAM00 left tile and pass right tile A before callee RAM01 store; decrement RAM07 through 0 to $ff. Types0/3 skip palette; types1/2 store type to RAM00 then set animated top pair and star-only bottom pair.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
       "label": "FlipPUpRightSide",
       "asmLine": 13555,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/power_up_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Read/OR/store top-right attributes then bottom-right attributes with $40, preserving flower lower base attributes and star animated palette."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Sets horizontal flip on both right-side attribute records for flower and star paths.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Read/OR/store top-right attributes then bottom-right attributes with $40, preserving flower lower base attributes and star animated palette.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
       "label": "PUpOfs",
       "asmLine": 13562,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/power_up_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_power_up",
+      "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Tail enters actual shared SprObjectOffscrChk contract with restored fixed OAM; complete root output includes three-row clip and original non-Podoboo/highY2 erase guard."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Tail-jumps into SprObjectOffscrChk with the power-up OAM state.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Tail enters actual shared SprObjectOffscrChk contract with restored fixed OAM; complete root output includes three-row clip and original non-Podoboo/highY2 erase guard.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109151,15 +109181,19 @@
       "instruction": "sta",
       "id": "control-02827",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DrawPowerUp -> PUpDrawLoop with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough DrawPowerUp -> PUpDrawLoop retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109170,13 +109204,16 @@
       "instruction": "jsr",
       "id": "control-02828",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation PUpDrawLoop -> DrawOneSpriteRow with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call PUpDrawLoop -> DrawOneSpriteRow retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
         "src/game/oam/power_up_gfx.c",
         "src/game/oam/sprite_row.c"
@@ -109190,15 +109227,19 @@
       "instruction": "bpl",
       "id": "control-02829",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> PUpDrawLoop with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch PUpDrawLoop -> PUpDrawLoop retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109209,15 +109250,19 @@
       "instruction": "beq",
       "id": "control-02830",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> PUpOfs with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch PUpDrawLoop -> PUpOfs retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109228,15 +109273,19 @@
       "instruction": "beq",
       "id": "control-02831",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> PUpOfs with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch PUpDrawLoop -> PUpOfs retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109247,15 +109296,19 @@
       "instruction": "beq",
       "id": "control-02832",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation PUpDrawLoop -> FlipPUpRightSide with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch PUpDrawLoop -> FlipPUpRightSide retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109266,15 +109319,19 @@
       "instruction": "sta",
       "id": "control-02833",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation PUpDrawLoop -> FlipPUpRightSide with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough PUpDrawLoop -> FlipPUpRightSide retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109285,15 +109342,19 @@
       "instruction": "sta",
       "id": "control-02834",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation FlipPUpRightSide -> PUpOfs with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough FlipPUpRightSide -> PUpOfs retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -109304,16 +109365,19 @@
       "instruction": "jmp",
       "id": "control-02835",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM jump relation PUpOfs -> SprObjectOffscrChk with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original jump PUpOfs -> SprObjectOffscrChk retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
-        "src/game/oam/bowser_gfx.c",
-        "src/game/oam/power_up_gfx.c"
+        "src/game/oam/power_up_gfx.c",
+        "src/game/oam/sprite_row.c"
       ]
     },
     {
@@ -133568,13 +133632,16 @@
       "instruction": "rts/rti",
       "id": "control-04010",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/power_up_gfx.c:mysmb_objects_draw_power_up and shared OAM children",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_power_up original row call, type/loop/flip branches and shared offscreen tail entry",
       "semanticEvidence": [
-        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required."
+        "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DrawOneSpriteRow -> PUpDrawLoop with source type predicate, scratch/OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return DrawOneSpriteRow -> PUpDrawLoop retained by indexed powerup row/loop/type/flip phases and actual shared child/tail entry; row RTS resumes $E702 twice per root.",
       "currentSourcePaths": [
         "src/game/oam/power_up_gfx.c",
         "src/game/oam/sprite_row.c"

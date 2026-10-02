@@ -99,3 +99,11 @@ separate; dependency-node and external material evidence retains later scope.
 T65 stays open, S7 next. Current nodes 1538/1992, feasible controls 3266/4321
 (raw 4342, infeasible 21), material 382/492 partial. Historical 1992/1992 is
 separate; external caller relations retain their own audit scope.
+
+## Current checkpoint after T65 S7
+
+[T65 S7](t65-cohort-k-block-query-object-output-current-proof.md) closed;
+T65 open, S8 next. Current nodes1544/1992, controls3276/4321 (raw4342,
+infeasible21), material384/492 partial; historical1992/1992 separate.
+S9 must consolidate raw clip callers into the original shared column/row/
+erase sequence, avoiding duplicate erase; internal pending status is retained.
