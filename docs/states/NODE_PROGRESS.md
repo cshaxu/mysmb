@@ -1,12 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T67 S3 - active Square2 effect chain
+## M2 T67 S3 - closed Square2 effect chain
 
-[Exact36-node target and original route](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
-admits36 pending nodes/intended fresh36/max1804/1992, zero admission credit.
-Current1768/1992 nodes,3760/4301 controls(raw4342,infeasible41),404/493 material
-partial. Historical1992/1992 separate; scoped controls/material00439-00441 require
-source/RAM/branch/table audit and original ordered output before closure.
+[Exact36 completed labels and71 raw control dispositions](../proposals/m2/t67-cohort-m-sound-command-current-proof.md)
+closes36 expected nodes/60 feasible controls/material00439-00441;11 impossible
+controls retained raw with explicit source proofs. Current1804/1992 nodes,
+3820/4290 feasible controls(raw4342,infeasible52),407/493 material partial.
+Historical1992/1992 separate.135,168 original roots zero RAM/APU/ordered-command
+differences each width; all three declared data regions observed.7 focused tests
+each/original DOS16 link pass, no product repair,3 EXEs retained. No deferral
+or transfer; T67 has38 pending nodes, S4 noise next unadmitted.
 
 ## M2 T67 S2 - closed Square1 effect chain
 

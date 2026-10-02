@@ -470,3 +470,111 @@ Owner-local original ROM/reviewed ASM are nonredistributable research inputs;
 all probes/raw/scripts/logs under ignored build/m2-t67-s3,128MiB raw budget,
 1024 roots/batch,120seconds/process,524288 instructions/root. Coordinator deletes
 raw after comparison. No third-party code import or platform game logic.
+
+## S3 P2 closure - Square2 priority, counters and frequency consumers
+
+Completed36 expected labels: ExtraLifeFreqData; PowerUpGrabFreqData; PUp_VGrow_FreqData; PlayCoinGrab; PlayTimerTick; CGrab_TTickRegL; ContinueCGrabTTick; N2Tone; PlayBlast; ContinueBlast; SBlasJ; PlayPowerUpGrab; ContinuePowerUpGrab; LoadSqu2Regs; DecrementSfx2Length; EmptySfx2Buffer; StopSquare2Sfx; ExSfx2; Square2SfxHandler; CheckSfx2Buffer; ExS2H; Cont_CGrab_TTick; JumpToDecLength2; PlayBowserFall; BlstSJp; ContinueBowserFall; PBFRegs; EL_LRegs; PlayExtraLife; ContinueExtraLife; DivLLoop; PlayGrowPowerUp; PlayGrowVine; GrowItemRegs; ContinueGrowItems; StopGrowItems.
+No deferred owned feasible relations or labels, no transfers, no product diff.
+Owned71 raw controls:60 exact feasible,10 impossible fallthroughs and one
+impossible branch03319. Material00439-00441 exact. Current1768->1804/1992
+nodes,3760->3820 exact feasible controls; denominator4301->4290 only through
+explicit instruction/path proofs(raw4342,infeasible52). Material404->407/493,
+enumeration partial. Historical1992/1992 distinct, actualMatches empty. T67
+still open with38 pending nodes; S4 noise next unadmitted.
+
+| Inventory label | Shared counterpart | Manual source/state/control contract |
+| --- | --- | --- |
+| `ExtraLifeFreqData` | `mysmb_audio_square2_extra_life_freq` | Owner-local F4D3+index, six data members indexes1..6; divided old length supplies index before decrement. |
+| `PowerUpGrabFreqData` | `mysmb_audio_square2_power_up_freq` | Owner-local F4D9+index,27 named data bytes plus three residual bytes before next label; even old length/2 supplies index. |
+| `PUp_VGrow_FreqData` | `mysmb_audio_square2_grow_vine_freq` | Owner-local F4F8+index,32 shared growth bytes at indexes0..31; incremented secondary byte/2 supplies index. |
+| `PlayCoinGrab` | `mysmb_audio_square2_play_coin_timer timer==0` | A35/X8D starts coin; nonzero X branches common controls. |
+| `PlayTimerTick` | `mysmb_audio_square2_play_coin_timer timer!=0` | A06/X98 starts timer and falls common controls. |
+| `CGrab_TTickRegL` | `mysmb_audio_square2_play_coin_timer` | Save length35/06, actual PlaySqu2Sfx A42/X8D-or98/Y7F then one continuation/decrement. |
+| `ContinueCGrabTTick` | `mysmb_audio_square2_continue_coin_timer` | Length30 writes4006=54; other lengths skip tone; one decrement. |
+| `N2Tone` | `mysmb_audio_square2_continue_coin_timer` | Branch to decrement always has nonzero Z from unequal CMP30 or LDA54. |
+| `PlayBlast` | `mysmb_audio_square2_play_blast` | Length20, actual PlaySqu2Sfx(5E,9F,94), selected buffer continuation supplies exactly one decrement without another start write. |
+| `ContinueBlast` | `mysmb_audio_square2_continue_blast` | Length18 writes PlaySqu2Sfx(18,9F,93), otherwise no tone; one decrement. |
+| `SBlasJ` | `mysmb_audio_square2_play_blast / continue_blast` | Nonzero A5E/18 always routes shared Bowser/blast register phase. |
+| `PlayPowerUpGrab` | `mysmb_audio_square2_play_power_up` | Set length36; same frame selected continuation performs table read/decrement. |
+| `ContinuePowerUpGrab` | `mysmb_audio_square2_continue_power_up` | Odd old length skips frequency; even shifts once, reads table-1,Y and emits actual PlaySqu2Sfx(freq,5D,7F); one decrement. |
+| `LoadSqu2Regs` | `mysmb_audio_play_sq2_sfx followed by square2_decrement` | Actual ordered controls/frequency then common length tail; source X/Y depend on original entry. |
+| `DecrementSfx2Length` | `mysmb_audio_square2_decrement` | Byte decrement, zero wrapsFF; length1 terminates and clears buffer. |
+| `EmptySfx2Buffer` | `mysmb_audio_square2_decrement / continue_grow_item` | Clear F2 before ordered terminal mute; grow path preserves ordinary length. |
+| `StopSquare2Sfx` | `shared audio terminal writers; mysmb_audio_stop_square2_sfx for later callers` | Ordered4015=0D then0F; this entry itself does not clear F2, whereas preceding EmptySfx2Buffer does. Later music calls uncredited. |
+| `ExSfx2` | `Square2 phase/decrement return` | Return after length or stop; queue clear/DAC remain SoundEngine caller. |
+| `Square2SfxHandler` | `mysmb_audio_step_square2` | Saved buffer bit40 wins before new queue; otherwise save unshifted queue and bit7 then bits0..6 priority, shifting live FE. |
+| `CheckSfx2Buffer` | `mysmb_audio_step_square2 buffer dispatch` | Zero returns; bit7 then lower winning bits select continuation. Bit40-only path already intercepted before queue read. |
+| `ExS2H` | `mysmb_audio_step_square2 buffer==0 return` | No active effect means no Square2 commands/counter change. |
+| `Cont_CGrab_TTick` | `mysmb_audio_square2_continue_coin_timer` | Coin/timer buffer bits1/10 share actual continuation/decrement path. |
+| `JumpToDecLength2` | `mysmb_audio_square2_jump_to_decrement` | Direct common decrement from noneligible extra-life or Bowser phases. |
+| `PlayBowserFall` | `mysmb_audio_square2_play_bowser_fall` | Length38, frequency18/Y C4 shared load writes then decrement once; caller returns immediately. |
+| `BlstSJp` | `mysmb_audio_square2_load_bowser_regs / blast writers` | A18/5E from starts or blast continuation is nonzero; always proceeds common register path. |
+| `ContinueBowserFall` | `mysmb_audio_square2_continue_bowser_fall` | Only old length08 emits frequency5A/Y A4; other lengths trampoline to decrement. |
+| `PBFRegs` | `mysmb_audio_square2_load_bowser_regs / blast writers` | X9F common control for Bowser/blast phases. |
+| `EL_LRegs` | `mysmb_audio_play_sq2_sfx from extra-life or shared Bowser load` | Nonzero X9F or preceding Y7F always branches to shared LoadSqu2Regs; extra-life uses X82. |
+| `PlayExtraLife` | `mysmb_audio_square2_play_extra_life` | Length30 then immediate actual extra-life continuation. |
+| `ContinueExtraLife` | `mysmb_audio_square2_continue_extra_life` | Old length low3bits nonzero takes decrement; otherwise index=length>>3, actual table read and PlaySqu2Sfx(freq,82,7F) before decrement. |
+| `DivLLoop` | `mysmb_audio_square2_continue_extra_life low-three-bit test` | Original three LSR carry decisions equal (length&7)!=0; eligible length/8 index is unsigned, including0. |
+| `PlayGrowPowerUp` | `mysmb_audio_square2_play_grow_item length10` | Length10 and unconditional common start; not vine fallthrough. |
+| `PlayGrowVine` | `mysmb_audio_square2_play_grow_item length20` | Length20 uses same actual common growth start. |
+| `GrowItemRegs` | `mysmb_audio_square2_play_grow_item` | Save primary length, write4005=7F, secondary0; fall into exactly one increment phase. |
+| `ContinueGrowItems` | `mysmb_audio_square2_continue_grow_item` | Increment secondary modulo256, index=secondary>>1; equality to unchanged primary stops, else4004=9D and actual SetFreq_Squ2(table[index]); never decrement primary. |
+| `StopGrowItems` | `mysmb_audio_square2_continue_grow_item equality branch` | Clear buffer then ordered4015=0D/0F, with primary and incremented secondary retained. |
+
+Original full SoundEngine runs unchanged with actual Square2 entry/RTS:
+4096 starts vary256 queues/16 saved-state profiles including40/C0/41 protected
+buffers;65536 continuations exhaust256 buffered bytes by256 length bytes;
+65536 growth inputs independently exhaust256 primary bytes by256 secondary
+bytes. Other channels/music inactive, but their real original/native calls
+execute. Public native audio_step consumes identical RAM, not a private test
+clone. Full1841 RAM (including0109-0139),24 final APU registers and every
+ordered command count/index/value compare zero differences in135,168 roots
+each x86/x64. Only true CPU stack0100-0108/013A-01FF and unmapped transient
+registers excluded. Static audit additionally proves live queue shifts/save,
+priority and phase order; SoundEngine final clear alone cannot prove them.
+
+Actual indexed original reads cover all six ExtraLifeFreqData bytes at1..6,
+27 named PowerUpGrab bytes plus three residual bytes at1..30, and32 shared
+growth bytes at0..31. Full-byte controlled lengths also exercise neighboring
+program offsets (extra0..31, power-up0..127, grow0..127); these are CPU address
+semantics, not invented extra data members or uncredited table owners. Index
+producers and actual ordered consumer outputs before decrement are matched.
+Growth equality/wrap keeps ordinary length unchanged; stop clears buffer and
+emits0D/0F, exactly as the original. All scoped feasible edges have recorded
+actual transitions and three caller-owned register helper returns.
+
+Unobserved edges have explicit independent instruction/path proofs:
+
+- `control-03277`: LDX8D sets Z0 before BNE common coin/timer entry.
+- `control-03284`: N2Tone reached with Z0 from unequal CMP30 or fixed LDA54; BNE always taken.
+- `control-03286`: LDA5E sets Z0 before BNE SBlasJ.
+- `control-03290`: SBlasJ receives fixed nonzero A5E or18, so BNE BlstSJp always taken.
+- `control-03310`: Nonzero new queue bit7 or bits0..6 must dispatch; zero queue already branches buffer. Final queue BCS cannot fall through.
+- `control-03319`: Saved buffer bit40 is intercepted by entry AND40/BNE. New nonzero queue dispatches directly to a start and returns, never CheckSfx2Buffer; its last bit40 branch is unreachable.
+- `control-03320`: At CheckSfx2Buffer zero already returns, bit40 already intercepted, and any remaining nonzero buffer has bit7 or a winning bit0..5; last BCS cannot fall through.
+- `control-03325`: BlstSJp receives A18 from Bowser start or nonzero blast A5E/18; BNE PBFRegs always taken.
+- `control-03330`: PBFRegs sets X9F/Z0; extra-life arrives after Y7F/Z0; EL_LRegs BNE always taken.
+- `control-03336`: LDY7F sets Z0 before DivLLoop tail BNE EL_LRegs.
+- `control-03338`: LDA10 sets Z0 before BNE GrowItemRegs.
+
+These conclusions use the original bound PRG/index and exhaustive byte-bit
+case reasoning.03319 is an impossible branch, not just an untested hit: the
+entry protection and direct nonzero queue dispatch exclude its bit40 input.
+No absence-only infeasible classification; all raw IDs retained. No active
+music/noise or later cross-cohort boundary promotion.
+
+Native checker builds pass;7/7 focused tests each include audio/header/death/
+channel/purity. Original OpenNT DOS16 link passes with existing OLDNAMES.LIB
+warning, no interactive DOS claim. Similar-issue sweep found no priority loss,
+double tone/decrement, wrong threshold/division/parity, primary-vs-secondary
+counter confusion, byte wrap, stop-buffer or command-order discrepancy. No
+product repair required; three T66 S2 products retained byte-identical:
+
+- `mysmb16.exe`: 260839 bytes, SHA256 `1f99e8e864fcd5da449f3a643eab4f82e550b5b2229e71e167dd77ac96025fa0`.
+- `mysmb32.exe`: 373854 bytes, SHA256 `efb2534dc2bb7074afb4c79db301431ef47beb18d09cd99c7f73a3ee631bed8b`.
+- `mysmb64.exe`: 380886 bytes, SHA256 `87c198fc900fe0a4b744dd70459117c19d711ecf67957ebf7894374c6f0fdc84`.
+
+Neutral local evidence under ignored build/m2-t67-s3: route/coverage summaries,
+mode16/17/18 indexed-read/transition logs, checker-build and focused native
+logs, dos16-link.log. Raw deleted per batch, probe removed at closure. Ledger,
+registry, admission/progress and documentation gates required before P2 commit.

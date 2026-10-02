@@ -269,3 +269,12 @@ Current1768/1992 nodes,3760/4301 controls(raw4342,infeasible41),404/493 material
 partial; historical1992/1992 separate.69,632 actual original roots agree both
 widths including ordered APU writes;7 tests each/original DOS16 link pass.
 No product repair,3 existing EXEs retained; S3 next unadmitted, T67 open.
+
+## Current checkpoint after T67 S3
+
+[T67 S3](t67-cohort-m-sound-command-current-proof.md) closes36 Square2 nodes,
+60 feasible controls and material00439-00441, with11 impossible controls retained.
+Current1804/1992 nodes,3820/4290 controls(raw4342,infeasible52),407/493 material
+partial; historical1992/1992 separate.135,168 actual original roots agree both
+widths including ordered APU writes;7 tests each/original DOS16 link pass.
+No product repair,3 existing EXEs retained; S4 next unadmitted, T67 open.
