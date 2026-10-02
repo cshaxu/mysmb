@@ -1,5 +1,12 @@
 # M2 ROM conformance node progress
 
+## M2 T66 S3 - active offscreen composition chain
+
+[Exact S3 scope and dual-proof contract](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)
+admits11 pending nodes,18 controls and material00432. Current1686/1992
+nodes,3606/4317 controls(raw4342,infeasible25),397/493 material partial;
+maximum1697/1992 nodes. Historical1992/1992 remains separate.
+
 ## M2 T66 S2 - closed relative coordinate chain
 
 [S2 individual node/edge and material proof](../proposals/m2/t66-cohort-l-player-relative-offscreen-proof.md)

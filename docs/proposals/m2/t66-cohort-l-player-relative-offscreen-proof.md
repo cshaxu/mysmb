@@ -583,3 +583,39 @@ neutral logs/summaries remain. Max2048 roots/58851344 bytes per chunk,
 fixture/reference-emulator runtime added to production. Ledger, node
 admission/closure, registry, documentation and whitespace gates pass.
 S2 closes, T66/M2 remain open pending remaining proof and final certification.
+
+## S3 admission - object offscreen entries and mask composition
+
+Scope11/intended fresh11, all incoming needs-evidence: GetPlayerOffscreenBits; GetFireballOffscreenBits; GetBubbleOffscreenBits; GetMiscOffscreenBits; ObjOffsetData; GetProperObjOffset; GetEnemyOffscreenBits; GetBlockOffscreenBits; SetOffscrBitsOffset; GetOffScreenBitsSet; RunOffscrBitsSubs.
+Current1686/1992 nodes,3606/4317 feasible controls(raw4342,infeasible25),
+397/493 material partial. Maximum1697/1992 nodes and3624/4317 controls;
+material00432 pending, maximum398/493. Historical1992/1992, expectedMatches
+empty; audit participation leaves maintenance custody unchanged.
+
+Entry six family roots F180/F187/F191/F19B/F1AF/F1B6; exit shared mask store.
+Player wrapper lives in player_gfx.c; other wrappers/composition/table belong
+to object_position.c. S2 is closed. Real GetX/GetYOffscreenBits are dependency
+execution only, with independent arithmetic/table certification reserved for
+S4/S5. No production test hook or mock replaces either dependency.
+
+Static audit checks byte source displacement, fixed destination, incoming
+slot scratch, X-before-Y calls, four right/left shifts, OR/store order and
+the caller-consumed result. Original source transfers/RTS continuations and
+all three existing offset-table reads are observed. Native counterparts are
+audited individually; actual original visits alone never certify C edges.
+Unused CPU A/X/Y and true CPU stack0100-0108/013A-01FF are explicit ABI
+exclusions. Native full output compares1841 RAM bytes including0109-0139.
+
+Six families each run65536 controlled byte X/Y pairs with valid family slots,
+independent valid ObjectOffset, selected page/high and screen-edge states.
+These varied dimensions are not a full Cartesian proof; static semantics
+and actual transfer evidence form the separate equivalence track. Focused
+native offscreen/player/core tests and purity form the operational track;
+original DOS16 toolchain is retained. Only product-code changes refresh all
+three owner-authorized EXEs; otherwise S2 products remain current.
+
+Owner-local ROM/reviewed ASM are nonredistributable inputs. All scripts/raw
+and logs stay below ignored build/m2-t66-s3,192MiB aggregate raw budget,
+2048 roots/chunk,120seconds/run,524288steps/case; coordinator deletes raw
+after comparison. Sweep all six wrappers and composition. No successor
+admission with scoped diff/unproved edge; repair and re-audit within S3.
