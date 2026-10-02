@@ -10561,8 +10561,8 @@
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3163,
-    "needs-evidence": 1160,
+    "exact": 3176,
+    "needs-evidence": 1147,
     "infeasible": 19
   },
   "controlEdgeTypeCounts": {
@@ -38554,12 +38554,14 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "M2 T64 S57 corrects prior landing audit omission: Source SBC #$08 / CMP #$05 uses byte wrap, accepting only original contact low nibble $08-$0C; below eight and above twelve route to ChkForRedKoopa."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "semanticContract": "Aligns landed enemy and clears/fixes state bits.",
+      "semanticContract": "Source SBC #$08 / CMP #$05 uses byte wrap, accepting only original contact low nibble $08-$0C; below eight and above twelve route to ChkForRedKoopa.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/enemy/frenzy.c"
@@ -38650,12 +38652,14 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "M2 T64 S57 corrects prior landing audit omission: Goomba/timed-Spiny direct landing and other facing paths preserve the CNwCDir bump-return fall-through into landing."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "semanticContract": "Uses ID-specific direction initialization or player-facing decision before landing.",
+      "semanticContract": "Goomba/timed-Spiny direct landing and other facing paths preserve the CNwCDir bump-return fall-through into landing.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
       ]
@@ -38688,12 +38692,14 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "M2 T64 S57 corrects prior landing audit omission: Equal facing invokes the real bump and then falls into LandEnemyInitState; unequal facing enters that same landing directly."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "semanticContract": "Compares desired and current direction and bumps only when equal.",
+      "semanticContract": "Equal facing invokes the real bump and then falls into LandEnemyInitState; unequal facing enters that same landing directly.",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
       ]
@@ -131972,13 +131978,16 @@
       "instruction": "rts/rti",
       "id": "control-03971",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; SubtEnemyYPos returns at $DFCA with byte Y+$3E comparison flags before ID dispatch.",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: SubtEnemyYPos returns at $DFCA with byte Y+$3E comparison flags before ID dispatch."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy-background return relation SubtEnemyYPos \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 EnemyToBGCollisionDet and source ID/state/query ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFCA observed 12288 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SubtEnemyYPos returns at $DFCA with byte Y+$3E comparison flags before ID dispatch.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/enemy/frenzy.c",
@@ -131994,13 +132003,16 @@
       "instruction": "rts/rti",
       "id": "control-03972",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; ChkUnderEnemy returns at $DFF5 with metatile A and original pointer/row/low-nibble scratch before zero/nonzero routing.",
       "semanticEvidence": [
-        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required."
+        "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkUnderEnemy returns at $DFF5 with metatile A and original pointer/row/low-nibble scratch before zero/nonzero routing."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy-background return relation ChkUnderEnemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 YesIn and source ID/state/query ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFF5 observed 12288 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "ChkUnderEnemy returns at $DFF5 with metatile A and original pointer/row/low-nibble scratch before zero/nonzero routing.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/world/block_buffer.c"
@@ -132014,13 +132026,16 @@
       "instruction": "rts/rti",
       "id": "control-03973",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; ChkForNonSolids returns at $DFFD preserving metatile A and equality rejection before bumped-block/landing selection.",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkForNonSolids returns at $DFFD preserving metatile A and equality rejection before bumped-block/landing selection."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing/stun return relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 HandleEToBGCollision with source terrain/state ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $DFFD observed 9216 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "ChkForNonSolids returns at $DFFD preserving metatile A and equality rejection before bumped-block/landing selection.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/world/metatiles.c"
@@ -132034,13 +132049,16 @@
       "instruction": "rts/rti",
       "id": "control-03974",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; KillEnemyAboveBlock returns at $E016 before score-one setup; defeat/stun changes remain visible to subsequent stun.",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: KillEnemyAboveBlock returns at $E016 before score-one setup; defeat/stun changes remain visible to subsequent stun."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing/stun return relation KillEnemyAboveBlock \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 HandleEToBGCollision with source terrain/state ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E016 observed 768 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "KillEnemyAboveBlock returns at $E016 before score-one setup; defeat/stun changes remain visible to subsequent stun.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/objects.c"
@@ -132054,13 +132072,16 @@
       "instruction": "rts/rti",
       "id": "control-03975",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; SetupFloateyNumber returns at $E01B with relative X in A, which feeds original stun/demotion comparisons rather than reloaded ID.",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: SetupFloateyNumber returns at $E01B with relative X in A, which feeds original stun/demotion comparisons rather than reloaded ID."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing/stun return relation SetupFloateyNumber \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 GiveOEPoints with source terrain/state ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E01B observed 3072 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "SetupFloateyNumber returns at $E01B with relative X in A, which feeds original stun/demotion comparisons rather than reloaded ID.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/world/player_enemy_collision.c"
@@ -132074,13 +132095,16 @@
       "instruction": "rts/rti",
       "id": "control-03976",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; PlayerEnemyDiff returns at $E051 with page-difference sign and low difference RAM00 before direction/speed selection.",
       "semanticEvidence": [
-        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required."
+        "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: PlayerEnemyDiff returns at $E051 with page-difference sign and low difference RAM00 before direction/speed selection."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing/stun return relation PlayerEnemyDiff \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetNotW with source terrain/state ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E051 observed 3840 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PlayerEnemyDiff returns at $E051 with page-difference sign and low difference RAM00 before direction/speed selection.",
       "currentSourcePaths": [
         "src/game/cannon.c",
         "src/game/enemy/background.c",
@@ -132097,13 +132121,16 @@
       "instruction": "rts/rti",
       "id": "control-03977",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; EnemyLanding returns at $E0A4 after zeroing vertical speed/force and Y alignment; state three and interval remain.",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: EnemyLanding returns at $E0A4 after zeroing vertical speed/force and Y alignment; state three and interval remain."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing-state return relation EnemyLanding \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetForStn with state/facing ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0A4 observed 120 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "EnemyLanding returns at $E0A4 after zeroing vertical speed/force and Y alignment; state three and interval remain.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/world/collision.c"
@@ -132117,13 +132144,16 @@
       "instruction": "rts/rti",
       "id": "control-03978",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; PlayerEnemyDiff returns at $E0C2 before inverted facing comparison, including low-coordinate borrow.",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: PlayerEnemyDiff returns at $E0C2 before inverted facing comparison, including low-coordinate borrow."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing-state return relation PlayerEnemyDiff \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InvtD with state/facing ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0C2 observed 168 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "PlayerEnemyDiff returns at $E0C2 before inverted facing comparison, including low-coordinate borrow.",
       "currentSourcePaths": [
         "src/game/cannon.c",
         "src/game/enemy/background.c",
@@ -132140,13 +132170,16 @@
       "instruction": "rts/rti",
       "id": "control-03979",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; ChkForBump_HammerBroJ returns at $E0CD and falls through physical landing and state initialization, never exits after bump.",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkForBump_HammerBroJ returns at $E0CD and falls through physical landing and state initialization, never exits after bump."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing-state return relation ChkForBump_HammerBroJ \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 CNwCDir with state/facing ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0CD observed 72 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "ChkForBump_HammerBroJ returns at $E0CD and falls through physical landing and state initialization, never exits after bump.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/objects.c"
@@ -132160,13 +132193,16 @@
       "instruction": "rts/rti",
       "id": "control-03980",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/enemy/background.c",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; EnemyLanding returns at $E0D0 before state bit-seven selection and bit-six removal or state zero.",
       "semanticEvidence": [
-        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: EnemyLanding returns at $E0D0 before state bit-seven selection and bit-six removal or state zero."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy landing-state return relation EnemyLanding \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 LandEnemyInitState with state/facing ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E0D0 observed 480 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "EnemyLanding returns at $E0D0 before state bit-seven selection and bit-six removal or state zero.",
       "currentSourcePaths": [
         "src/game/enemy/background.c",
         "src/game/world/collision.c"
@@ -132180,13 +132216,16 @@
       "instruction": "rts/rti",
       "id": "control-03981",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; BlockBufferChk_Enemy returns at $E115 with metatile A and horizontal scratch for empty/solid side routing.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: BlockBufferChk_Enemy returns at $E115 with metatile A and horizontal scratch for empty/solid side routing."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation BlockBufferChk_Enemy \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SdeCLoop, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E115 observed 8238 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "BlockBufferChk_Enemy returns at $E115 with metatile A and horizontal scratch for empty/solid side routing.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c"
       ]
@@ -132199,13 +132238,16 @@
       "instruction": "rts/rti",
       "id": "control-03982",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; ChkForNonSolids returns at $E11A before bump tail or counter decrement/next side probe.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: ChkForNonSolids returns at $E11A before bump tail or counter decrement/next side probe."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation ChkForNonSolids \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SdeCLoop, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E11A observed 5262 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "ChkForNonSolids returns at $E11A before bump tail or counter decrement/next side probe.",
       "currentSourcePaths": [
         "src/game/enemy/side_collision.c",
         "src/game/world/metatiles.c"
@@ -132219,13 +132261,16 @@
       "instruction": "rts/rti",
       "id": "control-03983",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy side/terrain counterpart named by its endpoint owner",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/background.c, enemy/side_collision.c and real query/distance/bump/landing descendants; InitVStf returns at $E152 with zero speed/force before Y high-nibble OR eight.",
       "semanticEvidence": [
-        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required."
+        "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
+        "M2 T64 S57 source $DFC1-$E1AD audit and original preceding-RTS return proof: InitVStf returns at $E152 with zero speed/force before Y high-nibble OR eight."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves enemy side/terrain return relation InitVStf \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 EnemyLanding, including its source predicate, state handoff and call/tail/return ordering.",
+      "operationalEvidence": [
+        "M2 T64 S57 x86/x64 each 12288 actual roots zero-difference across 1841 bytes; actual RTS $E152 observed 600 times; ten focused regressions/width, purity and original OpenNT DOS16 pass. docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
+      "semanticContract": "InitVStf returns at $E152 with zero speed/force before Y high-nibble OR eight.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
         "src/game/enemy/init_targets.c",

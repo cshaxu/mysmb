@@ -25,10 +25,11 @@ int main(void)
     struct mysmb_game game;
 
     /* EnemyToBGCollisionDet -> LandEnemyProperly -> LandEnemyInitState.
-     * The bottom $15 probe sees a solid at Y+$12, and a falling Goomba
+     * The bottom $15 probe sees a solid at Y+$18, and a falling Goomba
      * lands at its ROM low-nibble alignment. */
     mysmb_test_prepare_enemy(&game, 6U, 0x40U);
-    game.ram[0x0544U] = 0x61U;
+    game.ram[0x00cfU] = 0x58U;
+    game.ram[0x0554U] = 0x61U;
     game.ram[0x00a0U] = 2U;
     game.ram[0x0434U] = 0x7fU;
     mysmb_objects_step_normal_enemy_terrain(&game, 0U);

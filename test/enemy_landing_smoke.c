@@ -63,7 +63,8 @@ int main(void)
     reset(&game); game.ram[0x001eU] = 1U; game.ram[0x0016U] = 18U;
     game.ram[9U] = 1U; game.ram[0x0046U] = 1U; difference = 0U;
     mysmb_objects_enemy_land_from_probe(&game, 0U, &terrain);
-    if (check(0U, 0U, 1U) || game.ram[0x0058U] != 8U) return 5;
+    if (check(1U, 0U, 1U) || game.ram[0x0058U] != 8U ||
+        game.ram[0x001eU] != 0U) return 5;
     reset(&game); game.ram[0x001eU] = 5U; game.ram[0x0016U] = 6U;
     mysmb_objects_enemy_land_from_probe(&game, 0U, &terrain);
     if (check(1U, 0U, 0U) || game.ram[0x001eU] != 0U) return 6;

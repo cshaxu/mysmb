@@ -3267,3 +3267,102 @@ Historical 1,992/1,992, exact nodes 1,480/1,992 and material 368/487 stay
 unchanged. Exact feasible controls rise 3,160 to 3,163/4,323 (raw 4,342,
 infeasible 19). T64 remains open with 18 Cohort-J controls, zero pending
 material; enemy terrain/landing returns follow. T65 is not admitted.
+
+## Aggregate S57 admission - enemy terrain, landing and side returns
+
+S57 owns control-03971 through control-03983 (13 needs-evidence returns).
+Scope (30 labels, source order): InitVStf (exact), SetupFloateyNumber (exact), EnemyToBGCollisionDet (exact), YesIn (exact), HandleEToBGCollision (exact), GiveOEPoints (exact), SetNotW (exact), LandEnemyProperly (exact), ChkLandedEnemyState (exact), SetForStn (exact), ProcEnemyDirection (exact), InvtD (exact), CNwCDir (exact), LandEnemyInitState (exact), NMovShellFallBit (exact), ChkForRedKoopa (exact), Chk2MSBSt (exact), GetSteFromD (exact), SetD6Ste (exact), DoEnemySideCheck (exact), SdeCLoop (exact), NextSdeC (exact), ChkForBump_HammerBroJ (exact), PlayerEnemyDiff (exact), EnemyLanding (exact), SubtEnemyYPos (exact), KillEnemyAboveBlock (exact), ChkUnderEnemy (exact), ChkForNonSolids (exact), BlockBufferChk_Enemy (needs-evidence).
+Expected new nodes empty; already accepted nodes receive no new credit.
+BlockBufferChk_Enemy remains with its generic later owner; this audit proves
+only the side-call contract exercised here. Historical 1992/1992, exact nodes
+1480/1992 and material 368/487 remain unchanged. Controls enter 3163/4323
+and can reach 3176/4323. S56 precedes; jump/hammer returns follow. No T65.
+
+Shared enemy/background.c, side_collision.c and world collision/query owners
+cover $DFC1-$E1AD. One bounded walking-terrain route includes eligibility,
+under-probe metatile, non-solid rejection, bumped-block stun/score, low-nibble
+landing, state/facing, side probes and physical landing. Audit source reads,
+writes, byte branches, data bindings and actual child RTS return consumers;
+run full non-stack RAM and $0109-$0139 comparison on current x86/x64.
+Two suspected differences remain here for original-ROM confirmation and repair:
+landing subtraction wrap below eight, and bump return falling into landing.
+No invented gameplay or adapter logic is permitted. Run focused regressions,
+purity, original OpenNT DOS16; refresh three approved EXEs on product changes.
+
+Owner-local nonredistributable ROM/ASM are research-only. Ignored
+build/m2-t64-s57 owns <=64 MiB raw, 524288 steps/case, 120 seconds/probe,
+checkpoints and cleanup. Preserve unrelated work and original custody.
+
+## Aggregate S57 closure - repaired terrain/landing return integration
+
+All 13 scoped controls (control-03971 through control-03983) are exact.
+All 29 previously exact scoped nodes retain exact after scoped repair and
+re-audit; BlockBufferChk_Enemy retains needs-evidence for its unobserved generic
+contract. All 30 labels are listed individually in the admission above.
+Expected/actual new historical matches are both empty; no custody transfer.
+
+Static review confirms EnemyToBGCollisionDet guards/ID dispatch, original
+under-probe pointer/row/A, five non-solid comparisons, tile $23 clearing,
+Goomba defeat before score-one, returned relative A used by stun/demotion,
+page/borrow direction, byte state table, landing/state/timer and side routing.
+It found two real omissions in previously accepted C, now repaired:
+LandEnemyProperly omitted SBC #$08 byte wrap, incorrectly accepting contacts
+$00-$07; CNwCDir's bump branch returned early instead of falling into
+LandEnemyInitState. These could initialize falling objects prematurely or
+leave a turned enemy in its prior state/vertical motion. Shared background.c
+now preserves both source operations; adapters remain untouched.
+
+The original-ROM route has 12,288 EnemyToBGCollisionDet roots: six slots
+by every combination of 16 low nibbles ($80-$8F Y), eight states
+(0/1/2/3/5/$40/$80/$C0), four tiles (0/$61/$23/$26), and four IDs
+(0/3/6/18). Direction, player relative position, frame phase and area type
+vary deterministically. Roots execute real descendants without replacing
+any child output. Thirteen actual preceding-RTS seams are observed, not just
+shared label visits. Initial x86/x64 each had 10,370 differing byte fields;
+after both source repairs each matches 12,288/12,288 across 1,841 bytes:
+all scratch, persistent non-stack RAM and all 49 aliases $0109-$0139.
+Only other CPU-stack bytes are excluded. This is the bounded observed
+walking chain, not evidence for unobserved eligibility/ID branches or the
+generic later-owned block query. Maximum root execution is 233 instructions.
+
+Return evidence (control ID, actual return PC, occurrence count):
+- control-03971: $DFCA, 12288 returns. SubtEnemyYPos returns at $DFCA with byte Y+$3E comparison flags before ID dispatch.
+- control-03972: $DFF5, 12288 returns. ChkUnderEnemy returns at $DFF5 with metatile A and original pointer/row/low-nibble scratch before zero/nonzero routing.
+- control-03973: $DFFD, 9216 returns. ChkForNonSolids returns at $DFFD preserving metatile A and equality rejection before bumped-block/landing selection.
+- control-03974: $E016, 768 returns. KillEnemyAboveBlock returns at $E016 before score-one setup; defeat/stun changes remain visible to subsequent stun.
+- control-03975: $E01B, 3072 returns. SetupFloateyNumber returns at $E01B with relative X in A, which feeds original stun/demotion comparisons rather than reloaded ID.
+- control-03976: $E051, 3840 returns. PlayerEnemyDiff returns at $E051 with page-difference sign and low difference RAM00 before direction/speed selection.
+- control-03977: $E0A4, 120 returns. EnemyLanding returns at $E0A4 after zeroing vertical speed/force and Y alignment; state three and interval remain.
+- control-03978: $E0C2, 168 returns. PlayerEnemyDiff returns at $E0C2 before inverted facing comparison, including low-coordinate borrow.
+- control-03979: $E0CD, 72 returns. ChkForBump_HammerBroJ returns at $E0CD and falls through physical landing and state initialization, never exits after bump.
+- control-03980: $E0D0, 480 returns. EnemyLanding returns at $E0D0 before state bit-seven selection and bit-six removal or state zero.
+- control-03981: $E115, 8238 returns. BlockBufferChk_Enemy returns at $E115 with metatile A and horizontal scratch for empty/solid side routing.
+- control-03982: $E11A, 5262 returns. ChkForNonSolids returns at $E11A before bump tail or counter decrement/next side probe.
+- control-03983: $E152, 600 returns. InitVStf returns at $E152 with zero speed/force before Y high-nibble OR eight.
+
+Current C90 x86/x64 builds and ten regressions per width pass: background
+caller, side caller, terrain state, background entry, stun, landing,
+side/jump/hammer, platform purity, focus pause and audio renderer. Original
+OpenNT DOS16 builds/links with its existing OLDNAMES.LIB warning. Two old
+operational assertions embodied the defects: the landing stub expected bump
+without landing, and the grounded fixture used low nibble zero. They now
+expect bump then landing and use Y=$58 with its correct $0554 probe row.
+Original table index $15 adds Y+$18, not the old misleading comment's +$12.
+No product query/table change was needed. Three refreshed approved EXEs
+retain audio/title/focus pause functionality:
+- mysmb16.exe: 264805 bytes; SHA256 `9225f8359b6ba069568dcaf81adc42e90b095fd6b3ce8f4e4bae18e9309acba1`.
+- mysmb32.exe: 376153 bytes; SHA256 `c80509143799f98aa9c00c0386ddd0ec7f138f1a04d220198d04ad4791591afc`.
+- mysmb64.exe: 382570 bytes; SHA256 `05698d31fbc3ac9f93c717acc81fae2def7923120359692a2bbddc28fd94d69a`.
+
+Similar-issue sweep searches shared terrain low-nibble thresholds and facing
+return consumers. The only corresponding production hits are background.c's
+LandEnemyProperly threshold and ProcEnemyDirection/CNwCDir continuation,
+both repaired and re-audited. Real side bump tails intentionally return;
+only the JSR in CNwCDir falls into landing. Jump/hammer chains retain their
+separate planned return audit. No platform gameplay change or duplicate.
+Raw records/probe are cleaned after gates; neutral logs remain under build.
+
+Historical 1992/1992, exact nodes 1480/1992, material 368/487 unchanged.
+Exact feasible controls rise 3163 to 3176/4323 (raw 4342, infeasible 19).
+T64 stays open with five pending Cohort-J controls: control-03984 through
+control-03988, all jump/hammer returns. T65 is not admitted.

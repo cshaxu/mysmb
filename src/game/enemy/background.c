@@ -141,17 +141,18 @@ static void background_enemy_direction(struct mysmb_game *game, mysmb_u8 slot)
         }
     }
     direction = (mysmb_enemy_player_difference(game, slot) & 0x80U) != 0U ? 2U : 1U;
-    if (direction != game->ram[0x0046U + slot])
-        background_land_init(game, slot);
-    else
+    if (direction == game->ram[0x0046U + slot])
         mysmb_objects_bump_enemy(game, slot);
+    /* ROM CNwCDir returns from the bump into LandEnemyInitState. */
+    background_land_init(game, slot);
 }
 
 void mysmb_objects_enemy_land_from_probe(struct mysmb_game *game,
     mysmb_u8 slot, const struct mysmb_enemy_terrain *terrain)
 {
     mysmb_u8 state;
-    if (terrain->contact_low_nibble >= 0x0dU) {
+    /* ROM SBC #$08 / CMP #$05 includes byte wrap below eight. */
+    if ((mysmb_u8)(terrain->contact_low_nibble - 8U) >= 5U) {
         mysmb_objects_enemy_no_ground(game, slot);
         return;
     }
