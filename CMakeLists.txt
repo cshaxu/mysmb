@@ -1745,3 +1745,6 @@ target_link_libraries(mysmb_geometry_core_route_check PRIVATE mysmb_game)
 
 add_executable(mysmb_terrain_connection_route_check test/terrain_connection_route_check.c)
 target_link_libraries(mysmb_terrain_connection_route_check PRIVATE mysmb_game)
+
+add_executable(mysmb_platform_integration_route_check test/platform_integration_route_check.c)
+target_link_libraries(mysmb_platform_integration_route_check PRIVATE mysmb_game)

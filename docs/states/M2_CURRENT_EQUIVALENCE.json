@@ -8735,13 +8735,16 @@
       "consumer": "PlayerCollisionCore",
       "storage": "Y box offset and unindexed Enemy_OffscreenBits low nibble",
       "feasiblePath": "Platform caller receives box offset and source offscreen-mask comparison before geometry.",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "world/collision.c mysmb_world_enemy_box_offset_arg",
       "semanticContract": "Platform scan preserves the unusual unindexed low-nibble source handoff.",
       "semanticEvidence": [
-        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16r vertical and enemy-box offset node-semantics and independent integration audit: SMB1 lines 11892-11916 compared with shared world/collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "cohort": "J",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -10552,17 +10555,17 @@
     }
   ],
   "nodeCounts": {
-    "unclassified": 0,
     "exact": 1480,
     "needs-evidence": 512,
+    "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
+    "exact": 3116,
+    "needs-evidence": 1207,
+    "infeasible": 19,
     "unclassified": 0,
-    "exact": 3104,
-    "needs-evidence": 1219,
-    "mismatch": 0,
-    "infeasible": 19
+    "mismatch": 0
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -30323,10 +30326,12 @@
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Executes offscreen, relative position, small box, small collision, relative position, drawing, small-platform movement and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -30342,10 +30347,12 @@
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
       "semanticContract": "Executes offscreen, relative position, large box, large collision, timer-gated movement dispatch, relative position, drawing and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -30361,10 +30368,12 @@
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
       "operationalEvidence": [
-        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
       "semanticContract": "After either timer path, calls relative position then large-platform drawing and tail-jumps to terminal bounds.",
       "currentSourcePaths": [
@@ -128278,12 +128287,15 @@
       "instruction": "rts/rti",
       "id": "control-03809",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSmallPlatform exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -128297,12 +128309,15 @@
       "instruction": "rts/rti",
       "id": "control-03810",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSmallPlatform restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -128316,12 +128331,15 @@
       "instruction": "rts/rti",
       "id": "control-03811",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native SmallPlatformBoundBox return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation SmallPlatformBoundBox -> RunSmallPlatform with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -128336,12 +128354,15 @@
       "instruction": "rts/rti",
       "id": "control-03812",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native SmallPlatformCollision return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation SmallPlatformCollision -> RunSmallPlatform with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -128356,12 +128377,15 @@
       "instruction": "rts/rti",
       "id": "control-03813",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSmallPlatform restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -128375,12 +128399,15 @@
       "instruction": "rts/rti",
       "id": "control-03814",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "small-platform/bubble shared OAM paths",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native DrawSmallPlatform return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required."
+        "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM return relation DrawSmallPlatform -> RunSmallPlatform with source clipping/offscreen predicate, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -128417,12 +128444,15 @@
       "instruction": "rts/rti",
       "id": "control-03816",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required."
+        "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunLargePlatform exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -128436,12 +128466,15 @@
       "instruction": "rts/rti",
       "id": "control-03817",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunLargePlatform restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -128455,12 +128488,15 @@
       "instruction": "rts/rti",
       "id": "control-03818",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared bounding-box generation and screen-clip owners",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native LargePlatformBoundBox return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16t box-build/screen-clip integration audit: source endpoint, object-offset/mask/page predicate, box coordinate and return handoff compared with shared build/clip owners; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation LargePlatformBoundBox -> RunLargePlatform with source offset/mask/page predicate and box-coordinate handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -128475,12 +128511,15 @@
       "instruction": "rts/rti",
       "id": "control-03819",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy/platform_collision.c with named vertical/box/geometry/response children",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native LargePlatformCollision return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16p platform collision integration audit: source endpoint, timer/state/offscreen predicate, slot/box/$00 handoff and call/return ordering compared with shared platform_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves original return relation LargePlatformCollision -> RunLargePlatform with source timer/state/box predicate and current platform handoff ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c",
@@ -128517,12 +128556,15 @@
       "instruction": "rts/rti",
       "id": "control-03821",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c relative-position wrapper and common helper control flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native RelativeEnemyPosition return to SkipPT sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required."
+        "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "The source return relation RelativeEnemyPosition \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SkipPT restores the caller-visible ObjectOffset and relative coordinates after completion.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"
@@ -128536,12 +128578,15 @@
       "instruction": "rts/rti",
       "id": "control-03822",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/platform_callers.c native DrawLargePlatform return to SkipPT sequence with immutable slot argument",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/proposals/m2/t64-cohort-j-terrain-collision-current-proof.md"
+      ],
       "semanticContract": "Preserves ROM return relation DrawLargePlatform -> SkipPT with source branch condition, OAM handoff and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/platform_callers.c"

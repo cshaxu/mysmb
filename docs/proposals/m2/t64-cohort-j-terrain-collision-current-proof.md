@@ -1672,3 +1672,92 @@ a closure-time snapshot: its four terrain controls and two table materials
 are now resolved. Current Cohort J remainder is **77 feasible controls and
 one material relation (`material-00402`)**. T64 remains open; the next
 bounded connection family is the small/large-platform call/return path.
+
+## Aggregate S38 admission - platform return and box-offset handoff
+
+S38 owns twelve pending returns: `control-03809` through `control-03814`,
+`control-03816` through `control-03819`, `control-03821`, `control-03822`,
+and `material-00402` GetEnemyBoundBoxOfsArg-to-PlayerCollisionCore. It audits
+actual small/large-platform roots at $C94D/$C965, not the stale $C5BB/$C5E9
+provenance in the old T63 S2 closure narrative. Source call bytes and native
+call order will be verified before replay.
+
+The exact node scope is RunSmallPlatform, RunLargePlatform, SkipPT,
+GetEnemyOffscreenBits, RelativeEnemyPosition, SmallPlatformBoundBox,
+SmallPlatformCollision, LargePlatformBoundBox, LargePlatformCollision,
+DrawSmallPlatform, DrawLargePlatform, GetEnemyBoundBoxOfsArg,
+PlayerCollisionCore. Ten are exact; GetEnemyOffscreenBits,
+RelativeEnemyPosition and DrawSmallPlatform still require their generic
+child-owner audits. This S credits only the platform boundary routes, with
+**zero new nodes**, current total unchanged **1,480/1,992**. Generic child
+status/custody remains with its planned later owner; a platform route alone
+cannot promote all generic child paths.
+
+Incoming exact controls **3,104/4,323**, material **367/487**; expected
+closing controls **3,116/4,323**, material **368/487**. Historical
+**1,992/1,992** stays unchanged. This zero-node-credit S addresses concrete
+missing return/handoff evidence. Real ROM roots exercise position/mask,
+box/collision, timer/movement, drawing and bounds descendants; native replay
+uses actual children and compares persistent RAM including OAM. CPU scratch,
+register and stack seams must be explicit. Any feasible platform connection
+difference stays here for a bounded shared-owner repair and repeated proof.
+
+Owner ROM/disassembly are nonredistributable local research. Ignored
+build/m2-t64-s38 owns <=8 MiB records, 524288 steps/case, 120-second
+route budget and cleanup. Focused caller/collision tests, native x86/x64,
+purity and original OpenNT DOS16 link are operational proof. Behavior repair
+refreshes all three EXEs under owner approval. Preserve unrelated work.
+Review child return slot, box offset/unindexed nibble, OAM handoff, original
+source addresses and duplicate host platform logic. T64 remains open.
+
+## Aggregate S38 closure - platform connections exact
+
+All twelve scoped returns are exact: `control-03809` through `control-03814`,
+`control-03816` through `control-03819`, `control-03821`, `control-03822`.
+`material-00402` is exact. All thirteen admission labels retain their node
+dispositions: ten exact and GetEnemyOffscreenBits, RelativeEnemyPosition,
+DrawSmallPlatform still needs-evidence under their generic child owners.
+Expected and actual newly completed nodes are both empty; no custody transfer.
+
+Original call bytes and shared platform_callers.c establish roots $C94D,
+$C965 and SkipPT $C979. These correct the stale $C5BB/$C5E9 provenance in
+the historical T63 S2 narrative; that historical record is not rewritten.
+Small-platform drawing precedes movement; large-platform movement is gated
+by TimerControl and precedes drawing. Each original descendant RTS restores
+ObjectOffset. Native immutable slot arguments preserve the same consumer
+identity, including balance-platform partner checks and original-slot reload.
+
+The neutral `tools/reference_platform_integration_probe.c` and
+`test/platform_integration_route_check.c` run 512 actual original-ROM roots
+against real current native descendants, without oracle-return substitution.
+Each x86/x64 checker reports **512/512, zero differences**, comparing every
+one of **1,784 persistent RAM bytes**, including all OAM and unchanged bytes.
+CPU scratch $00-$07 and stack are explicit ABI exclusions. Twelve return
+PCs each occur **256** times with **zero wrong-slot returns**. Box producer
+$DC5F occurs **205** times and returns Y=slot*4+4 and A=unindexed $03D1&15;
+**42 small / 109 large** handoffs enter $E325 with the same Y. The original
+small mask gate and large mask-ignore semantics are preserved by the native
+box helper and actual geometry calls. Observed source low masks are
+0, 3, 8, e, f; distinct shadow array cells check the unindexed source.
+
+Fixtures cover both small IDs and all seven large IDs, all six slots,
+world pages 1/2, byte boundaries, eight heights and both timer paths.
+Maximum route length is **934 instructions**. Routes change **6,016 small /
+6,089 large** OAM bytes in aggregate. Focused platform-caller,
+platform-collision-chain and platform-purity tests pass on both widths;
+original OpenNT DOS16 compiles/links with the existing OLDNAMES.LIB warning.
+Audio/focus/pause regressions additionally pass **6/6 on each width**.
+
+Similar-issue review covers all twelve platform return seams, partner-slot
+reloads, the shared box offset/unindexed nibble handoff and call order.
+No scoped difference or host gameplay copy was found. No product source
+changes or EXE refresh are needed; the existing S33 artifacts retain the
+committed audio/title/focus fixes. Raw record/probe outputs are cleaned.
+
+Historical **1,992/1,992** and exact nodes **1,480/1,992** are unchanged.
+Exact feasible controls rise **3,104 -> 3,116 / 4,323** (raw **4,342**,
+infeasible **19**); exact material rises **367 -> 368 / 487**.
+Cohort J now has **65 controls and zero material relations** needing
+evidence. The S36 aggregate table remains its historical snapshot. T64 is
+open; actor-movement return integration is the next bounded source-order
+family. T65 is not admitted.
