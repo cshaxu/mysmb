@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T65 S5 - large-platform stores and graph
+
+[T65 S5 source/output/call proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)
+proves eleven labels, ten freshly exact, and 31 controls, none deferred.
+Current nodes 1533/1992, feasible controls 3257/4321 (raw 4342, infeasible 21),
+material 381/492 partial. Historical mapping 1992/1992 remains separate.
+Both full and child-order checkers match 6144 ROM roots per width after
+removing an invented DumpTwoSpr call; 9/9 tests per width and DOS16 link pass.
+Three products refreshed. T65 stays open, S6 next.
+
 ## M2 T65 S4 - flagpole output and dump leaves
 
 [T65 S4 current carry/output/graph proof](../proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md)

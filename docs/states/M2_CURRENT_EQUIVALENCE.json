@@ -10679,14 +10679,14 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1523,
-    "needs-evidence": 469,
+    "exact": 1533,
+    "needs-evidence": 459,
     "unclassified": 0,
     "mismatch": 0
   },
   "controlEdgeCounts": {
-    "exact": 3226,
-    "needs-evidence": 1095,
+    "exact": 3257,
+    "needs-evidence": 1064,
     "infeasible": 21
   },
   "controlEdgeTypeCounts": {
@@ -40666,17 +40666,19 @@
       "cohort": "K",
       "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "S6 H9 source audit: SMBDIS.ASM lines 13357-13435 require DrawLargePlatform to restore ObjectOffset after SixSpriteStacker and load Enemy_Y_Position,x ($00cf+x) before DumpFourSpr; Enemy_Rel_YPos ($03b9) is not the first-four-row source.",
-        "S6 differential fixture gives $00cf+x=$40 and $03b9=$70; the focused shared-C check proves first-four OAM Y bytes are $40 while castle, secondary-hard, cloud and full-offscreen tails retain their original branches."
+        "S6 differential fixture gives $00cf+x=$40 and $03b9=$70; the focused shared-C check proves first-four OAM Y bytes are $40 while castle, secondary-hard, cloud and full-offscreen tails retain their original branches.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Save OAM to RAM02; stack relative X; restore slot and load absolute Enemy_Y_Position; call DumpFourSpr before castle/hard shrink decision."
       ],
       "operationalEvidence": [
         "S6 x64 and x86 isolated builds: mysmb_large_platform_graphics_smoke passes with deliberately distinct world/relative Y values.",
         "S6 original-ROM parent route replay: x64 and x86 mysmb_large_platform_snapshot_check pass 12 retained M2 T44 S5 RunLargePlatform -> DrawLargePlatform records (normal, castle and variants 0-9), comparing every non-stack RAM byte.",
-        "S6 platform-purity audit passes; owner-ROM raw records and build outputs remain under ignored build/m2-t52-s6/."
+        "S6 platform-purity audit passes; owner-ROM raw records and build outputs remain under ignored build/m2-t52-s6/.",
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "semanticContract": "Uses Enemy_Rel_XPos for six X records, Enemy_Y_Position,x for the first four Y records, then executes the platform tile/attribute/offscreen chain.",
+      "semanticContract": "Save OAM to RAM02; stack relative X; restore slot and load absolute Enemy_Y_Position; call DumpFourSpr before castle/hard shrink decision.",
       "repairCandidate": "H9",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
@@ -40686,14 +40688,17 @@
       "label": "ShrinkPlatform",
       "asmLine": 13374,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Castle or nonzero secondary hard mode substitutes $f8 for last two Y values; other path retains absolute enemy Y."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Selects A=$f8 for castle AreaType before SetLast2Platform.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Castle or nonzero secondary hard mode substitutes $f8 for last two Y values; other path retains absolute enemy Y.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40702,14 +40707,17 @@
       "label": "SetLast2Platform",
       "asmLine": 13377,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Direct absolute indexed stores at OAM+16 then +20; no DumpTwoSpr call. Cloud override selects $75 versus $5b before common tile output."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Writes the final two Y records, selects girder/puff tile from CloudTypeOverride and enters common tile/attribute work.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Direct absolute indexed stores at OAM+16 then +20; no DumpTwoSpr call. Cloud override selects $75 versus $5b before common tile output.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40718,14 +40726,17 @@
       "label": "SetPlatformTilenum",
       "asmLine": 13386,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Restore original slot; DumpSixSpr tile then attributes $02; increment common-array slot for GetXOffscreenBits, restore slot/OAM before clipping."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Dumps six tile and attribute records, recomputes source X offscreen bits with X+1, then begins d7..d2 per-column hide handling.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Restore original slot; DumpSixSpr tile then attributes $02; increment common-array slot for GetXOffscreenBits, restore slot/OAM before clipping.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40734,14 +40745,17 @@
       "label": "SChk2",
       "asmLine": 13402,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Consume shifted bit6 and clear second sprite Y only when set, then continue third-bit stage."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies original d6 second-column hide condition before next shift.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Consume shifted bit6 and clear second sprite Y only when set, then continue third-bit stage.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40750,14 +40764,17 @@
       "label": "SChk3",
       "asmLine": 13408,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Consume shifted bit5 and clear third sprite Y only when set, then continue fourth-bit stage."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies original d5 third-column hide condition before next shift.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Consume shifted bit5 and clear third sprite Y only when set, then continue fourth-bit stage.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40766,14 +40783,17 @@
       "label": "SChk4",
       "asmLine": 13414,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Consume shifted bit4 and clear fourth sprite Y only when set, then continue fifth-bit stage."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies original d4 fourth-column hide condition before next shift.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Consume shifted bit4 and clear fourth sprite Y only when set, then continue fifth-bit stage.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40782,14 +40802,17 @@
       "label": "SChk5",
       "asmLine": 13420,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Consume shifted bit3 and clear fifth sprite Y only when set, then continue sixth-bit stage."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies original d3 fifth-column hide condition before next shift.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Consume shifted bit3 and clear fifth sprite Y only when set, then continue sixth-bit stage.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40798,14 +40821,17 @@
       "label": "SChk6",
       "asmLine": 13426,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Consume shifted bit2 and clear sixth sprite Y only when set before final vertical mask."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Applies original d2 sixth-column hide condition before final full-hide test.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Consume shifted bit2 and clear sixth sprite Y only when set before final vertical mask.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40814,14 +40840,17 @@
       "label": "SLChk",
       "asmLine": 13431,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Test Enemy_OffscreenBits bit7 after horizontal clipping; call MoveSixSpritesOffscreen only when set."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Uses Enemy_OffscreenBits d7 to choose full six-sprite hide or return.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Test Enemy_OffscreenBits bit7 after horizontal clipping; call MoveSixSpritesOffscreen only when set.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -40830,14 +40859,17 @@
       "label": "ExDLPl",
       "asmLine": 13435,
       "cohort": "K",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "currentCounterpart": "mysmb_objects_draw_large_platform",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md; Return only after ordered clipping and any actual final hide call, with no further game-state mutation."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Returns after per-column/full-hide processing.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Return only after ordered clipping and any actual final hide call, with no further game-state mutation.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c"
       ]
@@ -108285,16 +108317,21 @@
       "instruction": "jsr",
       "id": "control-02794",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DrawLargePlatform -> SixSpriteStacker with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call DrawLargePlatform -> SixSpriteStacker retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_stacker.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108305,16 +108342,21 @@
       "instruction": "jsr",
       "id": "control-02795",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation DrawLargePlatform -> DumpFourSpr with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call DrawLargePlatform -> DumpFourSpr retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108325,15 +108367,21 @@
       "instruction": "beq",
       "id": "control-02796",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DrawLargePlatform -> ShrinkPlatform with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch DrawLargePlatform -> ShrinkPlatform retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108344,15 +108392,21 @@
       "instruction": "beq",
       "id": "control-02797",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DrawLargePlatform -> SetLast2Platform with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch DrawLargePlatform -> SetLast2Platform retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108363,15 +108417,21 @@
       "instruction": "beq",
       "id": "control-02798",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation DrawLargePlatform -> ShrinkPlatform with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough DrawLargePlatform -> ShrinkPlatform retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108382,15 +108442,21 @@
       "instruction": "lda",
       "id": "control-02799",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation ShrinkPlatform -> SetLast2Platform with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough ShrinkPlatform -> SetLast2Platform retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108401,15 +108467,21 @@
       "instruction": "beq",
       "id": "control-02800",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SetLast2Platform -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SetLast2Platform -> SetPlatformTilenum retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108420,15 +108492,21 @@
       "instruction": "lda",
       "id": "control-02801",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SetLast2Platform -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SetLast2Platform -> SetPlatformTilenum retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108439,16 +108517,21 @@
       "instruction": "jsr",
       "id": "control-02802",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation SetPlatformTilenum -> DumpSixSpr with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call SetPlatformTilenum -> DumpSixSpr retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108459,16 +108542,21 @@
       "instruction": "jsr",
       "id": "control-02803",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation SetPlatformTilenum -> DumpSixSpr with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call SetPlatformTilenum -> DumpSixSpr retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108479,18 +108567,21 @@
       "instruction": "jsr",
       "id": "control-02804",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation SetPlatformTilenum -> GetXOffscreenBits with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call SetPlatformTilenum -> GetXOffscreenBits retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/oam/object_position.c",
         "src/game/oam/small_platform_gfx.c",
-        "src/game/scroll.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108501,15 +108592,21 @@
       "instruction": "bcc",
       "id": "control-02805",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SetPlatformTilenum -> SChk2 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SetPlatformTilenum -> SChk2 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108520,15 +108617,21 @@
       "instruction": "sta",
       "id": "control-02806",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SetPlatformTilenum -> SChk2 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SetPlatformTilenum -> SChk2 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108539,15 +108642,21 @@
       "instruction": "bcc",
       "id": "control-02807",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SChk2 -> SChk3 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SChk2 -> SChk3 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108558,15 +108667,21 @@
       "instruction": "sta",
       "id": "control-02808",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SChk2 -> SChk3 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SChk2 -> SChk3 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108577,15 +108692,21 @@
       "instruction": "bcc",
       "id": "control-02809",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SChk3 -> SChk4 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SChk3 -> SChk4 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108596,15 +108717,21 @@
       "instruction": "sta",
       "id": "control-02810",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SChk3 -> SChk4 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SChk3 -> SChk4 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108615,15 +108742,21 @@
       "instruction": "bcc",
       "id": "control-02811",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SChk4 -> SChk5 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SChk4 -> SChk5 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108634,15 +108767,21 @@
       "instruction": "sta",
       "id": "control-02812",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SChk4 -> SChk5 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SChk4 -> SChk5 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108653,15 +108792,21 @@
       "instruction": "bcc",
       "id": "control-02813",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SChk5 -> SChk6 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SChk5 -> SChk6 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108672,15 +108817,21 @@
       "instruction": "sta",
       "id": "control-02814",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SChk5 -> SChk6 with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SChk5 -> SChk6 retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108691,15 +108842,21 @@
       "instruction": "bcc",
       "id": "control-02815",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SChk6 -> SLChk with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SChk6 -> SLChk retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108710,15 +108867,21 @@
       "instruction": "sta",
       "id": "control-02816",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SChk6 -> SLChk with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SChk6 -> SLChk retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108729,15 +108892,21 @@
       "instruction": "bcc",
       "id": "control-02817",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation SLChk -> ExDLPl with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original branch SLChk -> ExDLPl retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108748,16 +108917,21 @@
       "instruction": "jsr",
       "id": "control-02818",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM call relation SLChk -> MoveSixSpritesOffscreen with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original call SLChk -> MoveSixSpritesOffscreen retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -108768,15 +108942,21 @@
       "instruction": "jsr",
       "id": "control-02819",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM fallthrough relation SLChk -> ExDLPl with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original fallthrough SLChk -> ExDLPl retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/oam/small_platform_gfx.c"
+        "src/game/oam/small_platform_gfx.c",
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -133148,16 +133328,21 @@
       "instruction": "rts/rti",
       "id": "control-04002",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation SixSpriteStacker -> DrawLargePlatform with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return SixSpriteStacker -> DrawLargePlatform retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_stacker.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -133168,16 +133353,21 @@
       "instruction": "rts/rti",
       "id": "control-04003",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpFourSpr -> DrawLargePlatform with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return DumpFourSpr -> DrawLargePlatform retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -133188,16 +133378,21 @@
       "instruction": "rts/rti",
       "id": "control-04004",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpSixSpr -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return DumpSixSpr -> SetPlatformTilenum retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -133208,16 +133403,21 @@
       "instruction": "rts/rti",
       "id": "control-04005",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_large_platform and shared OAM helper calls",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required."
+        "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Preserves ROM return relation DumpSixSpr -> SetPlatformTilenum with source branch condition, OAM handoff and return ordering.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return DumpSixSpr -> SetPlatformTilenum retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
         "src/game/oam/small_platform_gfx.c",
-        "src/game/oam/sprite_dump.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {
@@ -133228,18 +133428,21 @@
       "instruction": "rts/rti",
       "id": "control-04006",
       "cohort": "K",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/oam/object_position.c X/Y offscreen loops and divide helper",
+      "status": "exact",
+      "currentCounterpart": "mysmb_objects_draw_large_platform ordered stages and actual stacker/dump/offscreen helper boundaries",
       "semanticEvidence": [
-        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required."
+        "Td S9 K22 X/Y offscreen-bit algorithm node-semantics and independent control/material-edge audit: SMB1 lines 14927-15016 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 left/right/top/bottom boundary and each sub-tile partition route remain required.",
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
       ],
-      "operationalEvidence": [],
-      "semanticContract": "The source return relation GetXOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 SetPlatformTilenum exposes the resolved partition index or offscreen mask to its caller continuation.",
+      "operationalEvidence": [
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/proposals/m2/t65-cohort-k-block-query-object-output-current-proof.md"
+      ],
+      "semanticContract": "Original return GetXOffscreenBits -> SetPlatformTilenum retained by ordered shared large-platform phases and actual child input/return; all applicable conditional alternatives observed.",
       "currentSourcePaths": [
-        "src/game/enemy_bounds.c",
-        "src/game/oam/object_position.c",
         "src/game/oam/small_platform_gfx.c",
-        "src/game/scroll.c"
+        "src/game/oam/sprite_stacker.c",
+        "src/game/oam/sprite_dump.c",
+        "src/game/oam/object_position.c"
       ]
     },
     {

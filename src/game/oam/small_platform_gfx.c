@@ -68,16 +68,19 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
     /* ROM DrawLargePlatform restores ObjectOffset after stacking relative X,
      * then loads Enemy_Y_Position,x for DumpFourSpr.  Relative Y belongs to
      * the positioning phase and is not this OAM producer's source. */
-    y = game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
-    tile = game->ram[0x0743U] != 0U ? 0x75U : 0x5bU;
     mysmb_oam_stack_six_sprite_data(game, x, (mysmb_u8)(oam + 3U));
+    y = game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
     mysmb_oam_dump_four_sprites(game, y, oam);
     /* SetLast2Platform is reached by both paths.  The source leaves A as
      * Enemy_Y_Position for the ordinary path, and replaces it with $f8 for
      * castle/secondary-hard mode before storing both final rows. */
     if (game->ram[0x074eU] == 3U || game->ram[0x06ccU] != 0U)
         y = 0xf8U;
-    mysmb_oam_dump_two_sprites(game, y, (mysmb_u8)(oam + 16U));
+    /* ROM SetLast2Platform writes these directly, first +16 then +20.
+     * It does not enter DumpTwoSpr or reverse their store order. */
+    game->ram[(mysmb_u16)(0x0210U + oam)] = y;
+    game->ram[(mysmb_u16)(0x0214U + oam)] = y;
+    tile = game->ram[0x0743U] != 0U ? 0x75U : 0x5bU;
     mysmb_oam_dump_six_sprites(game, tile, (mysmb_u8)(oam + 1U));
     mysmb_oam_dump_six_sprites(game, 2U, (mysmb_u8)(oam + 2U));
     /* INX changes the source SprObject index from the enemy base ($6e/$87)

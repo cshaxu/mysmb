@@ -520,3 +520,118 @@ Totals: nodes 1514 -> 1523/1992; feasible controls 3213 -> 3226/4321
 remains 1992/1992. Cohort K has 44 exact and 110 pending nodes. S4 closes with
 no unresolved scoped feasible difference. T65 remains open; S5 large-platform
 output is next, with eleven scoped labels and ten expected fresh exact.
+
+## S5 admission - large-platform ordered output and clipping
+
+Scope eleven in source order: DrawLargePlatform (already exact), ShrinkPlatform,
+SetLast2Platform, SetPlatformTilenum, SChk2, SChk3, SChk4, SChk5, SChk6,
+SLChk, ExDLPl (ten needs-evidence, intended fresh exact ten). Historical
+1992/1992, no new historical credit. Baseline current nodes 1523/1992,
+controls 3226/4321, material 381/492 partial; maximum nodes 1533.
+Scope control-02794 through control-02819 and control-04002 through
+control-04006, all 31 needs-evidence. Existing external SkipPT relations and
+material-00178 remain unchanged. No new material relation is presumed.
+
+Entry $E5C8 to $E654: shared small_platform_gfx.c, accepted stacker/dump
+dependencies and implemented GetXOffscreenBits dependency (no later node
+credit). S4 dump proof precedes this chain; S6 coin output follows. Source
+SetLast2Platform directly writes final two Y coordinates, while current C
+introduces an extra DumpTwoSpr call: repair original graph, not just pixels.
+Both full actual-child and independent caller-input/order records must match.
+Fixtures cover six slots, castle/hard/cloud choices, byte X/Y, screen-edge
+page/borrow cases, every six-column mask alternative, vertical hide and OAM
+allocation boundaries. Compare 1841 RAM bytes including scratch/OAM and
+$0109-$0139 aliases; true CPU stack alone excluded. Child return registers
+are recorded and mapped to explicit native arguments/results. Source static
+audit precedes replay and every scoped mismatch is repaired before S6.
+
+Operational track: current C90 x86/x64 checks and focused platform/core/audio/
+focus/purity tests, original OpenNT DOS16 shared-source link; shared changes
+refresh all three owner-approved EXEs. Owner-local nonredistributable ROM/ASM
+are research-only; sibling reference core is read-only. Ignored
+build/m2-t65-s5 owns <=192 MiB raw, 524288 steps/root, 120 seconds/probe,
+checkpoint logs and cleanup. No protected fixture or code import.
+Similar-issue sweep covers direct-vs-helper stores, child scratch/order and
+six sequential offscreen bit branches; later owners retain their scope.
+
+## S5 closure - large-platform original stores and child graph
+
+All eleven scoped labels now have fresh current proof, ten newly exact:
+DrawLargePlatform (already exact), ShrinkPlatform, SetLast2Platform,
+SetPlatformTilenum, SChk2, SChk3, SChk4, SChk5, SChk6, SLChk, ExDLPl.
+None deferred or transferred; historical expected/actual new matches empty.
+
+Static audit found SetLast2Platform introduced an extra DumpTwoSpr child and
+reversed the original direct-store order. Before repair, full native output
+already matched all 6144 roots, but independent caller proof failed (18362
+argument/input/output comparison failures, not distinct gameplay defects).
+Shared small_platform_gfx.c now performs original direct +16 then +20 stores,
+loads Y after SixSpriteStacker and selects the tile at its original stage.
+No platform code changes. Both x86/x64 full and independent caller checkers
+then match 6144 original-ROM roots with zero differences each.
+
+tools/reference_large_platform_output_probe.c records actual original $E5C8
+roots, all invoked child inputs/effects and stack-depth-qualified RTS returns.
+test/large_platform_output_route_check.c full runner links actual children;
+separate caller runner checks child input/order then replays recorded effects.
+Unexpected DumpTwoSpr is rejected, so identical final pixels cannot hide the
+graph discrepancy. 1841 RAM bytes compare: scratch/OAM and lower-stack game
+aliases $0109-$0139 included; remaining CPU stack excluded. Native explicit
+slot/value/OAM variables and offscreen return value represent useful register
+contracts; GetX entry A/Y and final hide entry A are unused by those children
+and omitted from argument comparison. Original inputs are still recorded.
+
+Six slots, eight castle/hard/cloud profiles, 128 seeds give 6144 roots. Across
+paired slots, relative X and absolute Y span every byte. Allocations include
+the last legal six-sprite base $E8. World pages 0/1/2 and screen edges
+page1/X$80, page2/X$7f exercise borrow/sign/near-edge cases. Vertical mask
+uses all byte values across slots. Max source instructions/root 209.
+ShrinkPlatform executes 4608 times; every other scoped entry 6144.
+All six actual child continuations are verified against original PC:
+SixSpriteStacker $E5D6, DumpFourSpr $E5DD, first DumpSixSpr $E603,
+second DumpSixSpr $E609, GetXOffscreenBits $E60D (6144 each), final
+MoveSixSpritesOffscreen $E654 (3072). Vertical keep/hide both 3072.
+Castle branch taken/fall 3072/3072; secondary-hard branch 1536/1536;
+cloud-default branch 3072/3072. Six horizontal skip/hide alternatives:
+1911/4233, 1935/4209, 1959/4185, 1983/4161, 2007/4137, 2031/4113.
+The probe rejects any unobserved node, child or conditional alternative.
+
+All 31 admitted controls become exact: control-02794 through control-02819
+and control-04002 through control-04006. Existing external SkipPT call/return
+and material-00178 are unchanged. GetX dependency-node and cross-cohort
+producer contracts retain later ownership; no fresh material enumeration or
+global material-completeness claim is made. Out-of-scope registry rows are
+asserted unchanged from the prior commit.
+
+Similar-issue sweep covered every large-platform store and helper site.
+Original stacker/four/six/six/GetX/final-hide calls remain; the final-two
+direct-store stage alone had an invented helper and is restored. The six
+sequential shift/branch stages match source bit7 through bit2 in order, then
+the independent vertical mask. Small-platform output in the same source file
+retains S12 audit ownership and is not changed or credited. Earlier hammer
+and flagpole real DumpTwoSpr calls remain required, not removed indiscriminately.
+
+Operational track: C90 x86/x64 products/checkers build; each width passes
+9/9 large-platform, small-platform-OAM, core, platform purity, focus pause,
+audio rendering/output, death audio and product-self tests. Original OpenNT
+DOS16 shared-source product links, existing OLDNAMES.LIB warning retained.
+This is compile/link evidence, not DOS hardware qualification. Three refreshed
+owner-approved local artifacts retain audio/title/focus-pause behavior:
+
+- mysmb16.exe: 265237 bytes; SHA-256 e368211fc72e30fc6d97fcdde76299febf57d511cf4d4e89e2771dda807f176d.
+
+- mysmb32.exe: 376273 bytes; SHA-256 c78c557ae4e58ea110d7eb7d60aeddbde399f89a0300ce5e72f8b29b93136e6c.
+
+- mysmb64.exe: 383200 bytes; SHA-256 18a919fb7d03f1a47470160fc5f3e16126530943e0905c10e32e0af29d23132a.
+
+Neutral original-input harness logic only, no protected fixtures or third-party
+implementation import. Raw records/probe binaries are removed after accepted
+gates, neutral logs remain under ignored build. Reproduction compiles the
+named probe against the read-only local reference core, records owner-ROM
+roots to a bounded ignored output, then runs both native checkers on the same
+batch for each width. Admission node/ledger/documentation gates passed.
+
+Totals: nodes 1523 -> 1533/1992; controls 3226 -> 3257/4321 (raw 4342,
+infeasible 21); material remains 381/492 partial. Historical mapping 1992/1992
+is separate. Cohort K now has 54 exact, 100 pending nodes. T65 remains open;
+S6 five-node floating/jumping coin output is next. No scoped difference remains.
