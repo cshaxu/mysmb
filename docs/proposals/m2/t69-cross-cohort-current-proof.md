@@ -831,3 +831,24 @@ All new scripts explicitly decode/write UTF-8. Raw deleted per1024-root
 batch and probe deleted at closure;only neutral ignored summaries/logs remain.
 Registry/ledger/progress/docs gates required before P4 commit. Unrelated
 queue/terrain line-endings/proposals preserved unstaged. S6 unadmitted.
+
+## S6 admission - text and scenery material consumers
+
+Scope14 already-exact labels:GameText; LuigiName; WarpZoneNumbers; GameTextOffsets; WriteGameText; CheckPlayerName; PrintWarpZoneNumbers; CoinMetatileData; RowOfCoins; C_ObjectRow; C_ObjectMetatile; ChainObj; SolidBlockMetatiles; BrickMetatiles.Intended fresh nodes0,
+max1992/1992;9 pending material rows as S6 plan,zero pending controls.
+Current1992/1992 scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),
+512/555 material partial;historical1992/1992 separate. Maintenance custody
+retained,expectedMatches empty. Shared area.c owns both declared consumer
+chains;no later physics/object/audio promotions. ROM track:Unchanged original WriteGameText returning roots with actual text-offset/stream/Luigi/warp reads;vary byte selectors,players/lives/world/level/mode and incoming buffer offset;actual decoder/parser routes for coin/chain/solid/brick consumers and their read indices;compare current x86/x64 persistent RAM/output independently.
+Source-first review covers original text byte-index/wrap/buffer/name/warp
+stores and source-valid decoded scenery indices. Operational:focused local
+area/area-row/special-object/title tests,current x86/x64 builds,purity and
+original OpenNT link. Any product repair refreshes3 EXEs under owner approval.
+Every scoped mismatch repaired/re-audited before S7;no credit from old replay
+binary alone. Owner-local ROM/reviewed ASM research only,nonredistributable,
+no import. Ignored build/m2-t69-s6,budget128MiB raw/1024 roots per batch/
+120seconds process/524288steps root;coordinator removes raw per batch.
+Similar-issue sweep:invented buffer capacity/input gates,byte selector/cursor
+wrap,name low-bit/descending copies,warp index/stride,table producer/consumer
+binding and real shared decoder/renderer children. Material enumeration stays
+partial until final sweep;node numerator alone cannot certify M2.

@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T69 S5 Packet
+## M2 T69 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T69 S5 P4 closed;T69 open,S6 next unadmitted. |
-| Admission And Approval | Owner approved continued source-order proof;coordinator admits19 life/game-over labels/intended fresh17 and28 controls/2 material after S4 closure. |
-| Objective | Audit/repair original life/checkpoint/game-over/transpose/no-op chain with actual pointer/screen dependencies. |
-| Non-goals | No fresh credit for ScreenRoutines/JumpEngine or promotion of later material/object/audio-fetch joins and unrelated work. |
+| Identifier Mode | Continuation: M2 T69 S6 P1 active;S1-S5 closed,later S unadmitted. |
+| Admission And Approval | Owner approved continued planned proof;coordinator admits14 already-exact text/scenery labels/9 pending material rows after S5 closure. |
+| Objective | Audit/repair actual text/scenery table consumers and prove all9 planned material relations. |
+| Non-goals | No fresh node/control credit or promotion of later physics/object/audio joins and unrelated work. |
 | Reference Baseline | Historical1992/1992; current exact1992/1992 nodes,4087/4277 feasible controls(raw4342,infeasible65),512/555 material partial. |
-| Candidate Proposal | [T69 residual/cross-cohort plan](../proposals/m2/t69-cross-cohort-current-proof.md),S5 exact17 pending targets/2 exact dependencies. |
-| Files And ABI Surface | Shared terminal_modes.c/game.c life/game-over/transpose/no-op owners;actual area-pointer/screen/JumpEngine children,neutral original/checker probes and governance. |
+| Candidate Proposal | [T69 residual/cross-cohort plan](../proposals/m2/t69-cross-cohort-current-proof.md),S6 exact14 labels/9 pending material rows. |
+| Files And ABI Surface | Shared area.c text/scenery owners and real decoder/renderer children;neutral original/checker probes and governance. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
-| Verification | 82176 final original returning roots each width zero diff;17 nodes/16 table bytes/27 feasible controls/2 material exact;1 PLA/PLA/JMP-proven impossible fallthrough. |
-| Expected Markers | Met:17 intended labels/27 controls/2 material exact;1 infeasible;2 dependencies no fresh credit;historical expected/actualMatches empty. |
+| Verification | Unchanged original WriteGameText returning roots with actual text-offset/stream/Luigi/warp reads;vary byte selectors,players/lives/world/level/mode and incoming buffer offset;actual decoder/parser routes for coin/chain/solid/brick consumers and their read indices;compare current x86/x64 persistent RAM/output independently. |
+| Expected Markers | Scope14 already exact,intended fresh0/max1992/1992;9 material,zero pending controls;historical expectedMatches empty. |
 | Asset Needs | Owner-local ROM/reviewed ASM nonredistributable;ignored build output,128MiB raw/1024 batch/120seconds process/524288steps root and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | Any scoped difference or missing original child/table/dual proof keeps S5 active. |
-| Exit Criteria | Met:source/actual-child/original proof,4 focused tests each/purity/current builds/OpenNT link;3 final products refreshed. |
+| Stop Conditions | Any scoped difference or missing actual table/consumer/dual proof keeps S6 active. |
+| Exit Criteria | All9 material relations exact after source/original proof;focused tests/purity/current builds/OpenNT link;product edits refresh3 EXEs. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Life/task byte arithmetic,halfway parity/threshold,descending player swap,carry return and actual pointer/screen/no-op handoffs. |
+| Similar-Issue Sweep | Text gates/byte cursors/name bit/warp stride and all declared scenery table indices/actual decoder children. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **4087/4277** (raw4342,infeasible65).
 - Exact material relations: **512/555**, enumeration partial.
 - Latest three products are T69 S5 P4 builds with original game-over/screen dispatch scratch/player swap/task INC repairs and prior fixes.
-- T69 S5 closed:17 nodes/27 controls/2 material exact,1 infeasible;S6 next unadmitted. Remaining190 feasible controls/43 enumerated material and earlier M alias scope;M2 not certified.
+- T69 S6 active:14 already-exact labels/9 pending material rows;zero admission credit. Remaining190 feasible controls/43 enumerated material and earlier M alias scope;M2 not certified.
