@@ -1261,3 +1261,26 @@ Raw bounded<=128MiB/1024 batch/120seconds process/524288steps root and deleted
 per batch;probe removed at closure,neutral ignored summaries/logs retained.
 Registry/ledger/progress/documentation/diff gates required before local P2
 commit;unrelated work preserved,no push,no S9 pre-credit.
+
+## S9 admission - hammer/coin/score cross-owner joins
+
+Scope29 already-exact labels:PrintStatusBarNumbers; DigitsMathRoutine; ProcHammerObj; RunAllH; RunHSubs; CoinBlock; SetupJumpCoin; JCoinC; FindEmptyMiscSlot; MiscLoop; JCoinRun; RunJCSubs; CoinTallyOffsets; ScoreOffsets; StatusBarNybbles; GiveOneCoin; AddToScore; GetSBNybbles; UpdateNumber; MoveObjectHorizontally; ImposeGravity; PlayerHammerCollision; GetMiscBoundBox; DrawHammer; JCoinGfxHandler; RelativeMiscPosition; GetMiscOffscreenBits; MiscObjectsCore; HammerXSpdData.Intended fresh nodes0,
+max1992/1992;36 planned controls and3 material rows00101-00103 pending.
+Current1992/1992 scoped-exact nodes,4116/4277 controls(raw4342,infeasible65),
+537/555 material partial;historical1992/1992 separate.S8 closed,S10 and later
+unadmitted.Maintenance custody retained,expectedMatches empty.Concrete missing
+evidence:actual caller/child return and three score table consumer relations.
+MiscObjectsCore supplies real MiscLoop parent;HammerXSpdData is original
+release dependency,zero extra credit. Shared hammer.c,coin.c,misc.c,score.c
+and listed game children only;platform code excluded.Predecessor:S8 accepted;
+successor:S10 power-up/block/movement unadmitted. ROM track:Source-first original ProcHammerObj BAC3,MiscObjectsCore BB96,CoinBlock BB38,SetupJumpCoin BB51,GiveOneCoin BBFE,AddToScore BC27 returning roots with actual gravity/movement/misc position/offscreen/box/collision/OAM/status-digit children;observe original call/RTS joins and compare full persistent RAM/APU/ordered writes against actual x86/x64 shared owners.
+Operational:hammer chain/contact,misc lifetime/OAM,coin allocation,score HUD,
+status,box,title/NMI and purity focused tests,current x86/x64 products and
+original OpenNT DOS16 link.Product edits refresh3 EXEs under standing owner
+approval;pure audit keeps products byte-identical.All scoped diffs repaired
+and re-audited before S10.Source policy:original local ROM/reviewed ASM only,
+nonredistributable,no third-party import.Ignored build/m2-t69-s9;raw<=128MiB,
+1024 roots per batch,120seconds process,524288steps per root;coordinator
+deletes raw per batch and probe at closure.Similar-issue sweep:slot restore,
+carry/borrow through allocation/ASL/math,temporary RAM handoff,table indices,
+status buffer offsets and child order.
