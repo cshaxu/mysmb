@@ -18,6 +18,7 @@ static unsigned long header_reads[7][256];
 static unsigned long music_reads[4][65536];
 /* Actual absolute-Y reads, grouped by source operand (not inferred song). */
 static unsigned long lookup_reads[7][65536];
+static unsigned long status_reads[2][65536];
 static int ready(core_machine *m)
 {
     core_run_result r;unsigned int i;
@@ -80,6 +81,22 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode>=52u&&mode<=54u){
+        unsigned int j;
+        m->ram[0x770u]=1u;m->ram[0x300u]=(unsigned char)p;
+        for(j=0u;j<36u;++j)m->ram[0x7d7u+j]=(unsigned char)((n+j)%10u);
+        if(mode==53u){
+            m->ram[0x770u]=(unsigned char)(p==0u?0u:1u);
+            m->ram[0x7e2u]=(unsigned char)p;
+            m->ram[0x139u]=(unsigned char)n;
+        }
+        if(mode==54u){
+            for(j=0u;j<6u;++j){
+                m->ram[0x7d7u+j]=(unsigned char)p;
+                m->ram[0x7ddu+j]=(unsigned char)n;
+                m->ram[0x7e3u+j]=(unsigned char)(n^0x55u);
+            }
+        }
     }else if(mode==51u){
         m->ram[0x7b1u]=(unsigned char)(p==0u?8u:0u);
         m->ram[0xf4u]=(unsigned char)(p==2u?0u:1u);
@@ -215,6 +232,7 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
     }
     m->a=(unsigned char)n;m->x=(unsigned char)(p%3u*4u);m->y=(unsigned char)(n*13u);
     if(mode==51u)m->y=(unsigned char)n;
+    if(mode==53u)m->y=11u;
 }
 int main(int argc,char **argv)
 {
@@ -226,7 +244,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>51u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>54u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -259,6 +277,7 @@ int main(int argc,char **argv)
         boundary=mode==27u||(mode==48u&&n%1024u==0u);
         entry=mode>=36u&&mode<=43u?0xf8cbu:(boundary?0xf6f5u:entries[index]);
         if(mode==51u)entry=0xf8f4u;
+        if(mode>=52u&&mode<=54u)entry=mode==52u?0x8f06u:(mode==53u?0x8f5fu:0x8f97u);
         if(mode>=36u&&mode<=43u)d->machine->a=(unsigned char)(mode-36u);
         if(mode==27u)d->machine->y=(unsigned char)n;
         if(mode==48u&&boundary)d->machine->y=(unsigned char)(n/1024u+1u);
@@ -270,6 +289,12 @@ int main(int argc,char **argv)
         writes=0;
         for(steps=0;steps<524288u&&d->machine->pc!=(boundary?0xf73au:0x8001u);++steps){
             pc=d->machine->pc;if(pc<0x8000u)return 67;op=prg[pc-0x8000u];++visits[pc];
+            if((op==0xb9u||op==0xbdu)&&pc>=0x8f06u&&pc<0x8fb0u){
+                unsigned int base=prg[pc-0x8000u+1u]|((unsigned int)prg[pc-0x8000u+2u]<<8u);
+                unsigned int offset=op==0xb9u?d->machine->y:d->machine->x;
+                if(base==0x8ef4u||base==0x8ef5u)++status_reads[0][(base+offset)&65535u];
+                if(base==0x8f00u)++status_reads[1][(base+offset)&65535u];
+            }
             if(op==0xb9u&&prg[pc-0x8000u+2u]==0xffu){
                 unsigned int low=prg[pc-0x8000u+1u],kind=7u;
                 if(low==0u||low==1u)kind=0u;
@@ -347,5 +372,6 @@ int main(int argc,char **argv)
     for(n=0;n<7u;++n)for(i=0;i<256u;++i)if(header_reads[n][i])printf("header-field=%u index=%u reads=%lu\n",n,i,header_reads[n][i]);
     for(n=0;n<4u;++n)for(i=0;i<65536u;++i)if(music_reads[n][i])printf("music-channel=%u address=%04x reads=%lu\n",n,i,music_reads[n][i]);
     for(n=0;n<7u;++n)for(i=0;i<65536u;++i)if(lookup_reads[n][i])printf("lookup-kind=%u address=%04x reads=%lu\n",n,i,lookup_reads[n][i]);
+    for(n=0;n<2u;++n)for(i=0;i<65536u;++i)if(status_reads[n][i])printf("status-table=%u address=%04x reads=%lu\n",n,i,status_reads[n][i]);
     core_driver_destroy(d);return 0;
 }

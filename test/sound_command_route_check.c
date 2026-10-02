@@ -1,4 +1,6 @@
 #include "game/audio.h"
+#include "game/status.h"
+#include "game/frame_root.h"
 #include <stdio.h>
 #include <string.h>
 #define RECORD_BYTES 4290U
@@ -17,6 +19,9 @@ int main(int argc,char **argv)
         game.area_prg=prg;game.area_prg_size=32768U;
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
+        case 0x8f06U:(void)mysmb_status_print_numbers(&game,a);break;
+        case 0x8f5fU:mysmb_status_apply_digit_modifier(&game,record[4]);break;
+        case 0x8f97U:mysmb_frame_root_update_top_score(&game);break;
         case 0xf2d0U:mysmb_audio_step(&game);break;
         case 0xf6f5U:(void)mysmb_audio_load_music_header(&game,record[4]);break;
         case 0xf8cbU:a=mysmb_audio_process_music_length(&game,a);break;
@@ -32,7 +37,7 @@ int main(int argc,char **argv)
         case 0xf3adU:a=mysmb_audio_set_freq_tri(&game,a);break;
         default:return 66;
         }
-        if(pc!=0xf2d0U&&pc!=0xf6f5U&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
             if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
             if(game.ram[i]!=record[2088U+i]){if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}

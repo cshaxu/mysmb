@@ -370,3 +370,13 @@ partial;historical1992/1992 separate. Full builds/248 tests each/purity/OpenNT
 link pass;3 S2 products unchanged. T69 cross-cohort work next unadmitted;
 earlier73 C nodes/315 controls/55 enumerated material rows and M alias debt
 remain before final certification. M2 remains open.
+
+## Current checkpoint after T69 S1
+
+[T69 S1](t69-cross-cohort-current-proof.md) closes19 status nodes/29 feasible
+controls/2 material,1 impossible retained. Current1938/1992 nodes,3993/4278
+controls(raw4342,infeasible64),502/555 material partial;historical1992/1992
+separate.196608 final original roots each width zero diff after source repairs;
+current builds/4 focused tests each/purity/OpenNT link pass,3 EXEs refreshed.
+T69 open,S2 next unadmitted;54 nodes/285 controls/53 enumerated material
+rows plus explicit M alias debt remain before certification.

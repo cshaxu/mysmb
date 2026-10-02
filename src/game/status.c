@@ -33,21 +33,25 @@ static mysmb_u8 mysmb_status_output_numbers(struct mysmb_game *game, mysmb_u8 se
     offset = game->ram[MYSMB_STATUS_BUFFER_OFFSET];
     /* OutputNumbers keeps X at the command's first byte while it writes
      * the three-byte header, then stores that unchanged X in $02. */
-    game->ram[0x0002U] = offset;
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = selector == 0U ? 0x22U : 0x20U;
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = mysmb_status_data[y];
+    game->ram[MYSMB_STATUS_BUFFER + offset] = selector == 0U ? 0x22U : 0x20U;
+    game->ram[MYSMB_STATUS_BUFFER + 1U + offset] = mysmb_status_data[y];
     length = mysmb_status_data[y + 1U];
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = length;
+    game->ram[MYSMB_STATUS_BUFFER + 2U + offset] = length;
     /* ROM OutputNumbers saves its live buffer pointer and digit count in
      * zero-page $02/$03 before it calculates the source digit offset. */
     game->ram[0x0003U] = length;
+    game->ram[0x0002U] = offset;
     digit = (mysmb_u8)(mysmb_status_offset[selector] - length);
     while (game->ram[0x0003U] != 0U) {
-        game->ram[MYSMB_STATUS_BUFFER + offset++] = game->ram[MYSMB_STATUS_DIGITS + digit++];
+        /* The ROM wraps X after STA VRAM_Buffer1+3,X, not the
+         * absolute address before the store. Keep the +3 outside X. */
+        game->ram[MYSMB_STATUS_BUFFER + 3U + offset] = game->ram[MYSMB_STATUS_DIGITS + digit];
+        offset++;
+        digit++;
         --game->ram[0x0003U];
     }
-    game->ram[MYSMB_STATUS_BUFFER + offset] = 0U;
-    game->ram[MYSMB_STATUS_BUFFER_OFFSET] = offset;
+    game->ram[MYSMB_STATUS_BUFFER + 3U + offset] = 0U;
+    game->ram[MYSMB_STATUS_BUFFER_OFFSET] = (mysmb_u8)(offset + 3U);
     return 1U;
 }
 
@@ -79,20 +83,34 @@ void mysmb_status_apply_digit_modifier(struct mysmb_game *game, mysmb_u8 digit_o
             digit_offset--;
         }
     }
-    for (index = 0U; index <= 6U; ++index)
+    /* ROM EraseMLoop clears from DigitModifier+5 down to -1. */
+    for (index = 6U;; --index) {
         game->ram[MYSMB_STATUS_MODIFIER - 1U + index] = 0U;
+        if (index == 0U) break;
+    }
+}
+
+/* ROM TopScoreCheck / GetScoreDiff / CopyScore / NoTopSc. */
+static void mysmb_status_top_score_check(struct mysmb_game *game,
+                                          mysmb_u8 player_offset)
+{
+    mysmb_u8 index;
+    mysmb_u8 borrow;
+
+    borrow = 0U;
+    for (index = 6U; index != 0U; --index)
+        /* SBC carry compares against the full subtrahend plus borrow;
+         * $ff + borrow must remain $100 for this comparison. */
+        borrow = game->ram[MYSMB_STATUS_PLAYER_SCORE + player_offset + index - 1U] < (mysmb_u16)(game->ram[MYSMB_STATUS_TOP_SCORE + index - 1U] + borrow) ? 1U : 0U;
+    if (borrow != 0U) return;
+    for (index = 0U; index < 6U; ++index)
+        game->ram[MYSMB_STATUS_TOP_SCORE + index] = game->ram[MYSMB_STATUS_PLAYER_SCORE + player_offset + index];
 }
 
 void mysmb_status_update_top_score(struct mysmb_game *game)
 {
-    mysmb_u8 player_offset;
-    mysmb_u8 index;
-    mysmb_u8 borrow;
-    for (player_offset = 0U; player_offset <= 6U; player_offset = (mysmb_u8)(player_offset + 6U)) {
-        borrow = 0U;
-        for (index = 6U; index != 0U; --index)
-            borrow = game->ram[MYSMB_STATUS_PLAYER_SCORE + player_offset + index - 1U] < (mysmb_u8)(game->ram[MYSMB_STATUS_TOP_SCORE + index - 1U] + borrow) ? 1U : 0U;
-        if (borrow == 0U) for (index = 0U; index < 6U; ++index)
-            game->ram[MYSMB_STATUS_TOP_SCORE + index] = game->ram[MYSMB_STATUS_PLAYER_SCORE + player_offset + index];
-    }
+    /* Original JSR checks Mario, then the Luigi setup falls into the
+     * same TopScoreCheck body. Keep that shared child in the C graph. */
+    mysmb_status_top_score_check(game, 0U);
+    mysmb_status_top_score_check(game, 6U);
 }

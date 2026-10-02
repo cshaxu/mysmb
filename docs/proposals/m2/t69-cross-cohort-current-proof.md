@@ -204,3 +204,126 @@ Owner-local ROM/reviewed ASM research only,nonredistributable;no imported data.
 Ignored build/m2-t69-s1,128MiB raw,1024 roots/batch,120seconds/process,
 524288steps/root;coordinator removes raw per batch. Historical expectedMatches
 empty;current promotions only after both tracks. Missing proof keeps S1 open.
+
+## S1 P2 closure - status source-order repair and dual proof
+
+All19 intended labels exact: StatusBarData; StatusBarOffset; PrintStatusBarNumbers; OutputNumbers; SetupNums; DigitPLoop; ExitOutputN; DigitsMathRoutine; AddModLoop; StoreNewD; EraseDMods; EraseMLoop; BorrowOne; CarryOne; UpdateTopScore; TopScoreCheck; GetScoreDiff; CopyScore; NoTopSc. No scoped deferral or
+transfer.29 feasible controls exact,1 source-proven impossible fallthrough;
+2 material relations exact. Current1919->1938/1992 nodes,3964->3993 controls,
+denominator4279->4278(raw4342,infeasible64),500->502/555 material partial.
+Historical1992/1992 separate,expected/actualMatches empty. T69 remains open;
+S2 next unadmitted,earlier54 nodes/285 feasible controls/53 enumerated material
+rows plus explicit M alias debt still require proof. No end-to-end claim.
+
+| Node | Manual original/current contract |
+| --- | --- |
+| `StatusBarData` | Original8EF4-8F00/12 bytes equal existing shared table; actual consumer reads address-low/length pairs for all6 selectors. |
+| `StatusBarOffset` | Original8F00-8F06/6 bytes equal existing shared offsets; actual absolute-X reads produce digit source minus declared length. |
+| `PrintStatusBarNumbers` | STA00 then actual OutputNumbers child low selector; reload00/LSR4 then same output body high selector, preserving scratch and command order. |
+| `OutputNumbers` | CLC/ADC1/AND0F/CMP6; selector>=6 returns, otherwise double selector and load X300; original header base+X/+1/+2 without premature X increment/wrap. |
+| `SetupNums` | Header high22 only selector0,otherwise20; original low/length and03 then02 stores; offset-minus-length yields original digit Y. |
+| `DigitPLoop` | Read DisplayDigits+Y;store VRAM_Buffer1+3+X before byte INX/INY and DEC03;BNE loop. Absolute +3 stays outside wrapped X. |
+| `ExitOutputN` | Invalid selector returns without output;valid output stores zero at base+3+X then byte X+3 into300. C success1 is facade, no CPU A ABI. |
+| `DigitsMathRoutine` | Mode0 locks arithmetic and goes erase;other modes start X5 and caller Y, each ADC begins CLC, wrapped8-bit result determines BMI/CMP10. |
+| `AddModLoop` | Load modifier+X, add actual digit+Y with byte result; negative borrow before >=10 carry; process six positions from least significant to most. |
+| `StoreNewD` | Store source value then decrement digit Y/index X;continue while original X nonnegative,then erase modifiers. |
+| `EraseDMods` | Zero fill starts original X6;includes DigitModifier-1 through+5,not adjacent013A. |
+| `EraseMLoop` | Store zero from0139 down0133 in original descending order;byte loop terminates after index0. |
+| `BorrowOne` | DEC preceding modifier byte,load9;BNE StoreNewD always taken because load9 fixes Z0. |
+| `CarryOne` | SEC/SBC10 from original byte result;INC preceding modifier and jump StoreNewD. |
+| `UpdateTopScore` | Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11. |
+| `TopScoreCheck` | Independent SEC/no borrow and six least-significant-first source comparisons for each player;actual shared C child, not flattened duplicate bodies. |
+| `GetScoreDiff` | Original SBC carry uses full top digit+borrow,including FF+1=100;no premature byte truncation. Final borrow selects no-copy/copy. |
+| `CopyScore` | On final no-borrow,copy six player bytes to top score in ascending order;second player compares against updated first-player top. |
+| `NoTopSc` | Borrow path returns without copy;equal/higher copy path returns after six bytes. CPU transient registers excluded from declared C ABI. |
+
+### Actual original proof and repairs
+
+Final196608 unchanged original returning roots each width zero differences:
+mode52 covers all256 selectors x256 initial buffer offsets(65536),real
+PrintStatusBarNumbers8F06 and actual OutputNumbers child. Mode53 covers all256
+modifier bytes x256 selected digit-byte profiles,original DigitsMathRoutine8F5F,
+Y11 with mode0 title lock for first profile and active mode1 otherwise(65536).
+Mode54 covers all256 top-digit bytes x256 player-byte profiles for both players,
+real UpdateTopScore8F97/TopScoreCheck child(65536);native uses actual frame-root
+entry and shared status child. Original A/X/Y transient register effects have
+no exported C ABI here;facade status success1 is not original A. Compare all1841
+persistent RAM including zero-page and0109-0139,24 APU and ordered write
+counts/indices/values. Only CPU stack0100-0108/013A-01FF/unmapped CPU transients
+excluded. No mocked original child,patched ROM or C-generated oracle state.
+
+All19 entries/regions observed. Original table regions8EF4-8F00 and8F00-8F06
+have actual consumer reads for all18 bytes;existing native bytes independently
+match unchanged ROM. No new protected table import/fixture.30 control rows
+audited with actual transitions;control-00372 fallthrough is independently
+impossible because original LDA09 fixes Z0 before BNE,not because route missed it.
+
+First original output batch at60416 had14 RAM differences:for buffer239 a
+wrapped C cursor wrote0301 where original absolute base+3+X writes0401.
+Repair keeps source byte X and constant absolute offsets separate,STX02 after
+length/03,and store->INX->INY->DEC order. Original top255 batch65280 had1530
+RAM differences in both widths;full top+borrow subtrahend now remains100
+instead of byte00. TopScoreCheck actual C child restored for first/second
+player graph;EraseMLoop now clears0139->0133 in original order rather than
+ascending final-state-equivalent stores. Original source semantics drive all
+repairs;final output/arith/top groups rerun after their last relevant edits.
+
+Similar-issue sweep reviewed every buffer cursor/borrow/modifier loop in
+status.c and adjacent score.c facade. All status producer hits repaired;
+score.c queue_bottom_line starts only with300=0 and bounded two score/coin
+packets before its6-byte header/digits,so its guarded cursor never reaches byte
+wrap in that facade. No unrelated caller promotion. Source decimal active
+loop arithmetic/negative/carry ordering retained;source clear loop direction
+restored even though final RAM alone cannot detect it. Shared game owner only,
+no host API/platform branch. Remaining cross-owner caller/material audits
+stay in named later S. Source proof and test proof remain separate.
+
+| Control | Original PC | Actual transition observations | Result |
+| --- | --- | --- | --- |
+| `control-00354` | `8f08` | 65536 | exact |
+| `control-00355` | `8f10` | 65536 | exact |
+| `control-00356` | `8f18` | 81920 | exact |
+| `control-00357` | `8f24` | 40960 | exact |
+| `control-00358` | `8f26` | 8192 | exact |
+| `control-00359` | `8f45` | 49152 | exact |
+| `control-00360` | `8f51` | 155648 | exact |
+| `control-00361` | `8f5b` | 49152 | exact |
+| `control-00362` | `8f64` | 256 | exact |
+| `control-00363` | `8f66` | 65280 | exact |
+| `control-00364` | `8f6f` | 35968 | exact |
+| `control-00365` | `8f73` | 33034 | exact |
+| `control-00366` | `8f73` | 322678 | exact |
+| `control-00367` | `8f7a` | 326400 | exact |
+| `control-00368` | `8f7a` | 65280 | exact |
+| `control-00369` | `8f7e` | 65536 | exact |
+| `control-00370` | `8f84` | 393216 | exact |
+| `control-00371` | `8f8c` | 35968 | exact |
+| `control-00372` | `8f8c` | 0 | infeasible |
+| `control-00373` | `8f94` | 33034 | exact |
+| `control-00374` | `8f99` | 65536 | exact |
+| `control-00375` | `8f9c` | 65536 | exact |
+| `control-00376` | `8fa0` | 131072 | exact |
+| `control-00377` | `8fa9` | 655360 | exact |
+| `control-00378` | `8fab` | 77632 | exact |
+| `control-00379` | `8fae` | 53440 | exact |
+| `control-00380` | `8fb9` | 267200 | exact |
+| `control-00381` | `8fb9` | 53440 | exact |
+| `control-03536` | `8f08` | 65536 | exact |
+| `control-03537` | `8f99` | 65536 | exact |
+
+Operational:final current x86/x64 product/checker builds and4 focused tests
+each(status-arithmetic,top-score-root,score-hud,purity) pass. Original OpenNT
+DOS16 link exits0 with inherited OLDNAMES.LIB warning,no interactive DOS claim.
+Auto-review initially rejected one DOS build due possible same-tree race;
+completed handles/full read-only process inventory established no m2-opennt
+build active,then sequential final build passed. No workaround or concurrent
+DOS build. Product source changed,all3 final EXEs published together:
+
+- `mysmb16.exe`: 260967 bytes, SHA256 `ea65bcb453a5efd448b383ddd8ebe4976b1d38e166b6b4e79800cc3958820193`, final source build published.
+- `mysmb32.exe`: 374054 bytes, SHA256 `9363d3bbf5135e4d01ec4ed7b3df2e5ae54a2b72cac7846220b521158430fb46`, final source build published.
+- `mysmb64.exe`: 381595 bytes, SHA256 `f1c17c32044b1a840e22fe4529768d10d8d5be7bd307f7386d811ba618884fda`, final source build published.
+
+Ignored build/m2-t69-s1 retains bounded source/coverage/routes,pre-fix neutral
+differences and final build/test logs. Raw deleted per batch;probe deleted at
+closure. Registry/ledger/progress/docs gates required before commit;unrelated
+owner queue/source/proposals preserved unstaged. S2 remains unadmitted.

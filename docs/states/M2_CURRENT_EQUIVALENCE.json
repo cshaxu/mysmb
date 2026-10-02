@@ -785,13 +785,16 @@
       "consumer": "OutputNumbers",
       "storage": "selector-indexed ROM address/length pairs to status command output",
       "feasiblePath": "OutputNumbers doubles validated selector to read StatusBarData low address and length.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/status.c:mysmb_status_data",
-      "semanticContract": "All six selector pairs agree.",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c mysmb_status_data/offset and actual output_numbers",
+      "semanticContract": "Original8EF4-8F00/12 bytes equal existing shared table; actual consumer reads address-low/length pairs for all6 selectors.",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 source region/native existing bytes/index/consumer independently audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 all18 producer bytes read by declared original consumer;65536 output roots both widths zero differences."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -804,13 +807,16 @@
       "consumer": "OutputNumbers",
       "storage": "selector-indexed display digit offsets to status command output",
       "feasiblePath": "OutputNumbers subtracts command length from StatusBarOffset selector value before digit copy.",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/status.c:mysmb_status_offset",
-      "semanticContract": "All valid selector offsets and digit spans agree.",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c mysmb_status_data/offset and actual output_numbers",
+      "semanticContract": "Original8F00-8F06/6 bytes equal existing shared offsets; actual absolute-X reads produce digit source minus declared length.",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 source region/native existing bytes/index/consumer independently audited."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 all18 producer bytes read by declared original consumer;65536 output roots both widths zero differences."
+      ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -16494,14 +16500,17 @@
       "label": "StatusBarData",
       "asmLine": 2544,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_data",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Original8EF4-8F00/12 bytes equal existing shared table; actual consumer reads address-low/length pairs for all6 selectors."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8eec: six status command low-address/length pairs.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original8EF4-8F00/12 bytes equal existing shared table; actual consumer reads address-low/length pairs for all6 selectors.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16510,14 +16519,17 @@
       "label": "StatusBarOffset",
       "asmLine": 2552,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_offset",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Original8F00-8F06/6 bytes equal existing shared offsets; actual absolute-X reads produce digit source minus declared length."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8ef8: six display-digit offsets.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original8F00-8F06/6 bytes equal existing shared offsets; actual absolute-X reads produce digit source minus declared length.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16526,14 +16538,17 @@
       "label": "PrintStatusBarNumbers",
       "asmLine": 2555,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_print_numbers",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: STA00 then actual OutputNumbers child low selector; reload00/LSR4 then same output body high selector, preserving scratch and command order."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8efe: preserves selector in $00 and invokes OutputNumbers for low then high nybbles.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "STA00 then actual OutputNumbers child low selector; reload00/LSR4 then same output body high selector, preserving scratch and command order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16542,14 +16557,17 @@
       "label": "OutputNumbers",
       "asmLine": 2564,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_output_numbers",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: CLC/ADC1/AND0F/CMP6; selector>=6 returns, otherwise double selector and load X300; original header base+X/+1/+2 without premature X increment/wrap."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f07: validates selector, writes one status command and copies selected digits.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "CLC/ADC1/AND0F/CMP6; selector>=6 returns, otherwise double selector and load X300; original header base+X/+1/+2 without premature X increment/wrap.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16558,14 +16576,17 @@
       "label": "SetupNums",
       "asmLine": 2578,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_output_numbers command header setup",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Header high22 only selector0,otherwise20; original low/length and03 then02 stores; offset-minus-length yields original digit Y."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f15: writes PPU high/low/length fields and preserves offset/count scratch bytes.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Header high22 only selector0,otherwise20; original low/length and03 then02 stores; offset-minus-length yields original digit Y.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16574,14 +16595,17 @@
       "label": "DigitPLoop",
       "asmLine": 2592,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_output_numbers digit loop",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Read DisplayDigits+Y;store VRAM_Buffer1+3+X before byte INX/INY and DEC03;BNE loop. Absolute +3 stays outside wrapped X."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f29: copies exactly selected command length digits and terminates command.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Read DisplayDigits+Y;store VRAM_Buffer1+3+X before byte INX/INY and DEC03;BNE loop. Absolute +3 stays outside wrapped X.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16590,14 +16614,17 @@
       "label": "ExitOutputN",
       "asmLine": 2604,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_output_numbers return",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Invalid selector returns without output;valid output stores zero at base+3+X then byte X+3 into300. C success1 is facade, no CPU A ABI."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f3b: returns for invalid selector or completed command.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Invalid selector returns without output;valid output stores zero at base+3+X then byte X+3 into300. C success1 is facade, no CPU A ABI.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16606,14 +16633,17 @@
       "label": "DigitsMathRoutine",
       "asmLine": 2608,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_apply_digit_modifier",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Mode0 locks arithmetic and goes erase;other modes start X5 and caller Y, each ADC begins CLC, wrapped8-bit result determines BMI/CMP10."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f3c: title mode skips arithmetic then clears modifiers; other modes apply six BCD modifiers.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Mode0 locks arithmetic and goes erase;other modes start X5 and caller Y, each ADC begins CLC, wrapped8-bit result determines BMI/CMP10.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16622,14 +16652,17 @@
       "label": "AddModLoop",
       "asmLine": 2613,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_apply_digit_modifier loop",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Load modifier+X, add actual digit+Y with byte result; negative borrow before >=10 carry; process six positions from least significant to most."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f41: adds modifier to one display digit and branches for borrow/carry.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Load modifier+X, add actual digit+Y with byte result; negative borrow before >=10 carry; process six positions from least significant to most.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16638,14 +16671,17 @@
       "label": "StoreNewD",
       "asmLine": 2619,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_apply_digit_modifier digit store",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Store source value then decrement digit Y/index X;continue while original X nonnegative,then erase modifiers."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f4d: stores corrected digit and continues through six positions.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store source value then decrement digit Y/index X;continue while original X nonnegative,then erase modifiers.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16654,14 +16690,17 @@
       "label": "EraseDMods",
       "asmLine": 2623,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_apply_digit_modifier modifier clear",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Zero fill starts original X6;includes DigitModifier-1 through+5,not adjacent013A."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f51: clears seven DigitModifier bytes.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Zero fill starts original X6;includes DigitModifier-1 through+5,not adjacent013A.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16670,14 +16709,17 @@
       "label": "EraseMLoop",
       "asmLine": 2625,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_apply_digit_modifier modifier clear loop",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Store zero from0139 down0133 in original descending order;byte loop terminates after index0."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f53: descending clear through DigitModifier-1..+5.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Store zero from0139 down0133 in original descending order;byte loop terminates after index0.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16686,14 +16728,17 @@
       "label": "BorrowOne",
       "asmLine": 2629,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_apply_digit_modifier borrow path",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: DEC preceding modifier byte,load9;BNE StoreNewD always taken because load9 fixes Z0."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f59: decrements previous modifier and stores BCD nine.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "DEC preceding modifier byte,load9;BNE StoreNewD always taken because load9 fixes Z0.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16702,14 +16747,17 @@
       "label": "CarryOne",
       "asmLine": 2632,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_apply_digit_modifier carry path",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: SEC/SBC10 from original byte result;INC preceding modifier and jump StoreNewD."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f5c: subtracts ten and increments previous modifier.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "SEC/SBC10 from original byte result;INC preceding modifier and jump StoreNewD.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16718,14 +16766,17 @@
       "label": "UpdateTopScore",
       "asmLine": 2639,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_frame_root_update_top_score",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f63: compares Mario then Luigi score against TopScoreDisplay.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -16734,14 +16785,17 @@
       "label": "TopScoreCheck",
       "asmLine": 2644,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_update_top_score player loop",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Independent SEC/no borrow and six least-significant-first source comparisons for each player;actual shared C child, not flattened duplicate bodies."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f68: starts low digit score difference comparison.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Independent SEC/no borrow and six least-significant-first source comparisons for each player;actual shared C child, not flattened duplicate bodies.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16750,14 +16804,17 @@
       "label": "GetScoreDiff",
       "asmLine": 2647,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_update_top_score borrow propagation",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Original SBC carry uses full top digit+borrow,including FF+1=100;no premature byte truncation. Final borrow selects no-copy/copy."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f6b: performs six-digit subtraction with carry/borrow propagation.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Original SBC carry uses full top digit+borrow,including FF+1=100;no premature byte truncation. Final borrow selects no-copy/copy.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16766,14 +16823,17 @@
       "label": "CopyScore",
       "asmLine": 2655,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_update_top_score copy loop",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: On final no-borrow,copy six player bytes to top score in ascending order;second player compares against updated first-player top."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f73: replaces top score only when player score is greater/equal.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "On final no-borrow,copy six player bytes to top score in ascending order;second player compares against updated first-player top.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -16782,14 +16842,17 @@
       "label": "NoTopSc",
       "asmLine": 2661,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/status.c",
-      "currentCounterpart": "mysmb_status_update_top_score completion",
+      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Borrow path returns without copy;equal/higher copy path returns after six bytes. CPU transient registers excluded from declared C ABI."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "ROM $8f7f: returns after retain or six-byte top-score copy.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+      ],
+      "semanticContract": "Borrow path returns without copy;equal/higher copy path returns after six bytes. CPU transient registers excluded from declared C ABI.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57521,13 +57584,16 @@
       "instruction": "jsr",
       "id": "control-00354",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original PrintStatusBarNumbers -> OutputNumbers call relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65536;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original call PrintStatusBarNumbers -> OutputNumbers retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57540,13 +57606,16 @@
       "instruction": "lsr",
       "id": "control-00355",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original PrintStatusBarNumbers -> OutputNumbers fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65536;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough PrintStatusBarNumbers -> OutputNumbers retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57559,13 +57628,16 @@
       "instruction": "bcs",
       "id": "control-00356",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original OutputNumbers -> ExitOutputN branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=81920;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch OutputNumbers -> ExitOutputN retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57578,13 +57650,16 @@
       "instruction": "bne",
       "id": "control-00357",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original OutputNumbers -> SetupNums branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=40960;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch OutputNumbers -> SetupNums retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57597,13 +57672,16 @@
       "instruction": "lda",
       "id": "control-00358",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original OutputNumbers -> SetupNums fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=8192;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough OutputNumbers -> SetupNums retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57616,13 +57694,16 @@
       "instruction": "ldx",
       "id": "control-00359",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original SetupNums -> DigitPLoop fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=49152;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough SetupNums -> DigitPLoop retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57635,13 +57716,16 @@
       "instruction": "bne",
       "id": "control-00360",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original DigitPLoop -> DigitPLoop branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=155648;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch DigitPLoop -> DigitPLoop retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57654,13 +57738,16 @@
       "instruction": "stx",
       "id": "control-00361",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original DigitPLoop -> ExitOutputN fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=49152;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough DigitPLoop -> ExitOutputN retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57673,13 +57760,16 @@
       "instruction": "beq",
       "id": "control-00362",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original DigitsMathRoutine -> EraseDMods branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=256;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch DigitsMathRoutine -> EraseDMods retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57692,13 +57782,16 @@
       "instruction": "ldx",
       "id": "control-00363",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original DigitsMathRoutine -> AddModLoop fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65280;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough DigitsMathRoutine -> AddModLoop retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57711,13 +57804,16 @@
       "instruction": "bmi",
       "id": "control-00364",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original AddModLoop -> BorrowOne branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=35968;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch AddModLoop -> BorrowOne retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57730,13 +57826,16 @@
       "instruction": "bcs",
       "id": "control-00365",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original AddModLoop -> CarryOne branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=33034;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch AddModLoop -> CarryOne retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57749,13 +57848,16 @@
       "instruction": "bcs",
       "id": "control-00366",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original AddModLoop -> StoreNewD fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=322678;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough AddModLoop -> StoreNewD retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57768,13 +57870,16 @@
       "instruction": "bpl",
       "id": "control-00367",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original StoreNewD -> AddModLoop branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=326400;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch StoreNewD -> AddModLoop retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57787,13 +57892,16 @@
       "instruction": "bpl",
       "id": "control-00368",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original StoreNewD -> EraseDMods fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65280;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough StoreNewD -> EraseDMods retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57806,13 +57914,16 @@
       "instruction": "ldx",
       "id": "control-00369",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original EraseDMods -> EraseMLoop fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65536;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough EraseDMods -> EraseMLoop retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57825,13 +57936,16 @@
       "instruction": "bpl",
       "id": "control-00370",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original EraseMLoop -> EraseMLoop branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=393216;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch EraseMLoop -> EraseMLoop retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57844,13 +57958,16 @@
       "instruction": "bne",
       "id": "control-00371",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original BorrowOne -> StoreNewD branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=35968;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch BorrowOne -> StoreNewD retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57863,13 +57980,16 @@
       "instruction": "bne",
       "id": "control-00372",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "infeasible",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original BorrowOne -> CarryOne fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=0;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original LDA immediate09 immediately before BNE StoreNewD fixes Z0;fallthrough CarryOne impossible regardless prior machine flags.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57882,13 +58002,16 @@
       "instruction": "jmp",
       "id": "control-00373",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original CarryOne -> StoreNewD jump relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=33034;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original jump CarryOne -> StoreNewD retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57901,13 +58024,16 @@
       "instruction": "jsr",
       "id": "control-00374",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original UpdateTopScore -> TopScoreCheck call relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65536;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original call UpdateTopScore -> TopScoreCheck retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
         "src/game/status.c"
@@ -57921,13 +58047,16 @@
       "instruction": "ldx",
       "id": "control-00375",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original UpdateTopScore -> TopScoreCheck fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65536;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough UpdateTopScore -> TopScoreCheck retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
         "src/game/status.c"
@@ -57941,13 +58070,16 @@
       "instruction": "sec",
       "id": "control-00376",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original TopScoreCheck -> GetScoreDiff fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=131072;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough TopScoreCheck -> GetScoreDiff retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57960,13 +58092,16 @@
       "instruction": "bpl",
       "id": "control-00377",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original GetScoreDiff -> GetScoreDiff branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=655360;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch GetScoreDiff -> GetScoreDiff retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57979,13 +58114,16 @@
       "instruction": "bcc",
       "id": "control-00378",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original GetScoreDiff -> NoTopSc branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=77632;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch GetScoreDiff -> NoTopSc retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -57998,13 +58136,16 @@
       "instruction": "iny",
       "id": "control-00379",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original GetScoreDiff -> CopyScore fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=53440;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough GetScoreDiff -> CopyScore retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -58017,13 +58158,16 @@
       "instruction": "bcc",
       "id": "control-00380",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original CopyScore -> CopyScore branch relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=267200;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original branch CopyScore -> CopyScore retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -58036,13 +58180,16 @@
       "instruction": "bcc",
       "id": "control-00381",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original CopyScore -> NoTopSc fallthrough relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=53440;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original fallthrough CopyScore -> NoTopSc retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -128058,13 +128205,16 @@
       "instruction": "rts/rti",
       "id": "control-03536",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original OutputNumbers -> PrintStatusBarNumbers return relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65536;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original return OutputNumbers -> PrintStatusBarNumbers retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/status.c"
       ]
@@ -128077,13 +128227,16 @@
       "instruction": "rts/rti",
       "id": "control-03537",
       "cohort": "C",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared C status-number owner named by Td S9 B9a",
+      "status": "exact",
+      "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
-        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required."
+        "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
       ],
-      "operationalEvidence": [],
-      "semanticContract": "Original TopScoreCheck -> UpdateTopScore return relation must preserve selector/arithmetic predicate, scratch/RAM state and successor or return behavior.",
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original transition observations=65536;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
+      ],
+      "semanticContract": "Original return TopScoreCheck -> UpdateTopScore retains corresponding shared child/loop/return predicate and order.",
       "currentSourcePaths": [
         "src/game/frame_root.c",
         "src/game/status.c"
@@ -146361,6 +146514,7 @@
   "infeasibleControlEdgeIds": [
     "control-00076",
     "control-00081",
+    "control-00372",
     "control-01339",
     "control-01405",
     "control-01408",
@@ -146423,6 +146577,6 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 63,
-  "feasibleControlEdgeTotal": 4279
+  "infeasibleControlEdgeTotal": 64,
+  "feasibleControlEdgeTotal": 4278
 }

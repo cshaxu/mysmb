@@ -1,12 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S1 - active status residual chain
+## M2 T69 S1 - closed status residual chain
 
-[Exact residual/cross-cohort task plan](../proposals/m2/t69-cross-cohort-current-proof.md)
-admits19 pending status labels,intended fresh19,max1938/1992. Current1919/1992
-nodes,3964/4279 controls(raw4342,infeasible63),500/555 material partial;
-historical1992/1992 separate. Dual original source/route and operational proof
-required;zero admission credit,later S unadmitted.
+[All19 status labels/30 control dispositions/2 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+close19 nodes/29 feasible controls/2 material exact,1 opcode-proven impossible.
+Current1938/1992 nodes,3993/4278 controls(raw4342,infeasible64),502/555 material
+partial;historical1992/1992 separate.196608 final original roots each width
+zero diff after cursor/SBC/clear-order/shared-child repair;current builds/4
+focused tests each/purity/OpenNT link pass,3 final EXEs refreshed together.
+No scoped deferral/transfer;T69 open,S2 next unadmitted. Remaining54 nodes/
+285 feasible controls/53 enumerated material rows plus earlier M debt pending.
 
 ## M2 T68 - closed music/data cohort
 
