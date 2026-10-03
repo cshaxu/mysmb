@@ -37,6 +37,8 @@ void mysmb_fireball_step_object(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 state;
     mysmb_u8 old_value;
+    mysmb_u8 speed_index;
+    mysmb_u16 speed_address;
     game->ram[0x0008U] = slot;
     state = game->ram[MYSMB_FIREBALL_STATE + slot];
     if ((state & 0x80U) != 0U) {
@@ -53,8 +55,18 @@ void mysmb_fireball_step_object(struct mysmb_game *game, mysmb_u8 slot)
                         (game->ram[MYSMB_FIREBALL_X + slot] < old_value ? 1U : 0U));
         game->ram[MYSMB_FIREBALL_Y + slot] = game->ram[MYSMB_PLAYER_Y];
         game->ram[MYSMB_FIREBALL_Y_HIGH + slot] = 1U;
-        game->ram[MYSMB_FIREBALL_X_SPEED + slot] =
-            mysmb_fireball_x_speed[(mysmb_u8)(game->ram[MYSMB_PLAYER_FACING] - 1U)];
+        /* DEY is a byte index into the original ROM, including adjacent
+         * bytes when simultaneous directions publish facing value three. */
+        speed_index = (mysmb_u8)(game->ram[MYSMB_PLAYER_FACING] - 1U);
+        if (speed_index < 2U) {
+            game->ram[MYSMB_FIREBALL_X_SPEED + slot] =
+                mysmb_fireball_x_speed[speed_index];
+        } else {
+            speed_address = (mysmb_u16)(0x3687U + speed_index);
+            game->ram[MYSMB_FIREBALL_X_SPEED + slot] =
+                game->area_prg != 0 && speed_address < game->area_prg_size ?
+                game->area_prg[speed_address] : 0U;
+        }
         game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 4U;
         game->ram[MYSMB_FIREBALL_BOUND_BOX + slot] = 7U;
         --game->ram[MYSMB_FIREBALL_STATE + slot];

@@ -4,16 +4,16 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P45 timer/warp/whirlpool repair checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P46 original indexed-speed repair checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
 | Reference Baseline | Historical1992/1992;local scoped1992/1992 nodes,4274/4274 controls(raw4342,infeasible68);material993 partial,total unknown. |
 | Candidate Proposal | [S17 material completeness](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
-| Files And ABI Surface | P45 sharedwhirlpool.c RAM00/01/02 publication andtest/engine_environment_smoke.c originalgravityentry observer;S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
+| Files And ABI Surface | P46 sharedfireball/fireball_core.c originalbyte-indexed boundPRG speed lookup;P45 sharedwhirlpool.c RAM00/01/02 publication andtest/engine_environment_smoke.c originalgravityentry observer;S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 582 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 585 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -75,7 +75,6 @@
 
 
 
-S17 P38:17 castle/pipe labels,147 instructions/48 RAM in15 boundedclauses;95706 actualparents eachwidth zero fullRAM diff,all147PC observed,80626 scalar/fourindexchecks pass. Paths976-984 added,no source/products/freshnodes/controls. Rawwater/exitguard/returnedX andadjacent-ROM index clauses explicitlyopen,not hiddenbyboundedpass. Scope475;local1992/1992,controls4274/4274,material984 partial,totalunknown.1793 instruction/551RAM boundedreceipts,3222 otherRAM clauses/fourfinalpackages open.
 
 
 S17 P39:19 rawpipe/castle/return contracts restored;3516 baseline roots14727 bytesdiff eachwidth ->0;63024 expandedparents,9216 fullRAM/returnX and95706 previousparents eachwidth0diff. Threeproducts refreshed;10tests each/six600frames pass,DOS compile/linkonly. Path985 added;historical/local1992/1992,controls4274/4274,material985 partial,totalunknown.1793 instruction/551RAM boundedreceipts,3222 otherRAM joins/fourfinalpackages open,M2 NOT COMPLETE.
@@ -92,3 +91,5 @@ S17 P44:138fireball/bubbleinstructions/55RAM joined8manualclauses,3owners/boxunc
 
 
 S17 P45:117timer/warp/whirlpoolinstructions/59RAM joined10clauses;threecontracts restored,2048baseline eachwidth3373RAMdiff->0.212992currentroots eachwidth2032RAM/APU/order0diff/all117PC/19branchpairs;5tests each/six600frames pass/3products refreshed,DOSlinkonly.Paths987-993,scope582/fresh0;2562instruction/864RAM receipts,2909otherRAMjoins.Local1992/1992,controls4274/4274,material993partial,totalunknown,fourfinalpackages open.
+
+S17 P46:actualground8instructions/3RAM joined;2core/speed contracts restored,2048baseline eachwidth3962RAMdiff->0.12288currentroots eachwidth2032RAM/APU/order0diff/all256speedaddresses;9tests each/seven600frames pass/3products refreshed,DOSlinkonly. Scope585/fresh0;2570instruction/867RAM receipts,2906otherRAMjoins.Local1992/1992,controls4274/4274,material993partial,totalunknown,fourfinalpackages open.

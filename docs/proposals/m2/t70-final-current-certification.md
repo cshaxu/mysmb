@@ -6816,3 +6816,63 @@ Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993
 partial,totalunknown.2562instruction/864RAM boundedreceipts,8129other
 instructions/2909otherRAMjoins remain,not2909discovereddefects. Allwhole-
 programlifetimeclauses/fourfinalpackages open,M2 NOT COMPLETE.
+
+## S17 P46 admission - real facing producer and indexed fireball speed
+
+Exactparticipants:OnGroundStateSub,GndMove,FireballObjCore,FireballXSpdData. Scope585,fresh0/max1992. ReadJoypads preservesbothdirectionbits;PlayerCtrl mask3 yields000C3;actualgroundB361 stores33=000C withoutnormalizing. B6AB LDY33/DEY selectsB687+byteY,soFacing3 consumesB689originalbyte86 ratherthan two-bytearray. Sharedfireballcore hostarrayreadcurrentlyoutofbounds,reopen2contractsbeforebaseline/repair;local1990/1992 temporarily. InputAPIpermitsWASDsimultaneouskeys,do notinventfilter. Nativeactualmovementsource andpairedoriginalmovement-before-core roots auditproducer-consumerhandoff;separateallbyteFacingfixture checksrawindexdomain. RestoreboundownerPRGindexedreadforindices2-255,normalprefix0/1unchanged;no emulator/newROMimport. Allthreeproducts requiredaftercodechange. SameS17boundedrepair beforeflagpole/cannonjoins;1024roots/128MiB/120sprocess,rawcleanupunderbuild,source/ROMownerreadonly. Similarclasssweep speedlookupandactualfacingwriters;unrelatedtablefamiliesretainexplicitscope.
+
+## S17 P46 checkpoint - original byte indexed fireball speed repaired
+
+Participants:OnGroundStateSub,GndMove,FireballObjCore,FireballXSpdData.
+Scope585,fresh0/max1992. Two reopened contracts restored in this same S.
+Only production delta is fireball_core.c speed lookup/declarations;movement,
+control,frame_root and engine_slots remain byte-identical to aa70064a.
+ReadJoypads retains LR bits,PlayerCtrl masks to000C;B361 writes raw3 to33.
+B6AB LDY33/DEY/B6AE reads B687+byteY:Facing3 consumes original B689 byte86.
+Previous native two-element array read returned00 in actual baseline;
+2048 paired roots eachwidth3962RAM-byte differences include downstream
+coordinates/offscreen/OAM/bounds. Repaired source keeps prefix0/1,uses
+already-bound owner PRG for indices2-255,retains byte wrap. No filtering,
+emulator,platform game logic or new ROM import. Missing-PRG fixtures are
+not qualified original-ROM runtime. Similar-class sweep:all facing writers
+and this speed lookup checked;other table families retain their own scopes.
+
+Returning real movement B329 roots(mode127),original movement before core
+B689(mode128),and all-byteFacing core(mode129):4096 each,12288 eachwidth,
+zero2032RAM/24APU/ordered-write differences. Physical1F0-1FF excluded with
+minimumSP>=EF;native CPU A is not exported by void APIs. All8 ground PCs,
+B35F both outcomes and every B687-B786 speed address actually observed.
+Movement precursor mode128 runs before root capture,so B361 visits are
+credited only to mode127;paired mode128 final RAM is not an intermediate
+fullGameCore proof. Source clauses/order inspection is independent of
+returned-state equality. P44 core clause amended at indexed read only.
+
+Nine focused tests eachwidth pass;seven600-frame integration routes have
+zero scoped differences and byte-identical modern outputs. FrameABI compares
+0200-07FF excluding0778/0779,allCIRAM/palette/OAM/APU/PPU plus Facing0033;
+other zero-page/stack excluded. Simultaneous-direction gameplay sees actual
+Facing3 on250frames;Mario remains small here,so it does not certify a fiery
+wholeGameCore path. Controlled paired roots separately exercise speed use.
+Reuse material89 widened contract;do not invent ground-to-fireball whole
+GameCore material edge from isolated roots. Original OpenNT16 compile/link
+passes with inherited OLDNAMES.LIB warning,no DOS runtime qualification.
+Accounting missing/duplicate/falsewhole/falselocal negative checks reject.
+All three assets match current build bytes and MZ/modern machine headers:
+
+- mysmb16.exe: 259643 bytes,SHA256 `53dae358fe2ad4d78e419aa4f75dce9cfa0f0b8ec5ef178a96a9c809b61ff026`.
+
+- mysmb32.exe: 374219 bytes,SHA256 `efaeccb86df328080cc137421d6304ceb7dfa820ccf2bb02c6d1adf9edc84cbb`.
+
+- mysmb64.exe: 379704 bytes,SHA256 `6fedd38d5cbdc64f036c8fb7f364ca158594ef207ff79804dc0d726f94d79ada`.
+
+Current src/game/fireball/fireball_core.c normalizedSHA256:9013e2e86f428bd72b2daf27f0704d37d82c839a2f29a5af645119ac039db9dd.
+
+Current src/game/player_movement.c normalizedSHA256:ce7cea88da5e76af3a7916fc64e44343cd04b39fcb65af3715064e2f8ab9d5d7.
+
+Current src/game/player_control.c normalizedSHA256:750be06040838c76fcee09fbb13dd4cee7069b456bd6808bd383ea44053a0347.
+
+Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
+
+Current src/game/engine_slots.c normalizedSHA256:8cb4682243253529fb2514b3a50670d838cb056d62faffbf621b1b492a048d25.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993 partial,totalunknown.2570instruction/867RAM bounded receipts,8121otherinstruction/2906otherRAMjoins remain,not new discovered defects. Allwhole-program lifetime fields and four final packages remain open. M2 NOT COMPLETE.

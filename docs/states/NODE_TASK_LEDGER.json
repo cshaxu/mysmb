@@ -28734,8 +28734,8 @@
     {
       "label": "FireballXSpdData",
       "line": 6349,
-      "receiver": "M2 T34 S2",
-      "receivingBasis": "Accepted transfer-143: fireball core state and explosion dispatch.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P46 accepted actualsimultaneousdirection producer andadjacentPRG speed-read repair.",
       "futurePackage": null,
       "history": [
         {
@@ -28755,8 +28755,8 @@
     {
       "label": "FireballObjCore",
       "line": 6352,
-      "receiver": "M2 T34 S2",
-      "receivingBasis": "Accepted transfer-143: fireball core state and explosion dispatch.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P46 accepted actualsimultaneousdirection producer andadjacentPRG speed-read repair.",
       "futurePackage": null,
       "history": [
         {
@@ -69797,6 +69797,18 @@
         "WhLoop",
         "WhirlpoolActivate",
         "WhPull"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-fireball-index-1",
+      "type": "transfer",
+      "from": "M2 T34 S2",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "FireballXSpdData",
+        "FireballObjCore"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -766978,7 +766990,10 @@
         "WhirlpoolActivate",
         "LeftWh",
         "SetPWh",
-        "WhPull"
+        "WhPull",
+        "OnGroundStateSub",
+        "GndMove",
+        "FireballXSpdData"
       ],
       "baseline": 1992,
       "incomingComplete": [

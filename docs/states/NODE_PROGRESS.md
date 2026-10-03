@@ -13,6 +13,12 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P46 original indexed-speed repair](../proposals/m2/t70-final-current-certification.md#s17-p46-checkpoint---original-byte-indexed-fireball-speed-repaired).
+Two contracts restored;2048baselineeachwidth3962RAMdiff->0,12288currentroots
+zero scoped differences,all256 speed addresses observed.2570instruction/867RAM
+bounded receipts,2906otherRAMjoins remain;material993partial,totalunknown;
+three products refreshed,whole M2 incomplete.
+
 [P45 timer/warp/whirlpool repair](../proposals/m2/t70-final-current-certification.md#s17-p45-checkpoint---timer-warp-and-whirlpool-fidelity-repaired).
 117instructions/59RAM,threecontracts reopenedthenrestored;2048baselineeach
 width3373RAMdiff->0.212992currentroots0scopeddiff,117PC/19branchpairs;
