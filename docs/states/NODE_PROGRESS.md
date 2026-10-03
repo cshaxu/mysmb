@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P112 stream writer limits](../proposals/m2/t70-final-current-certification.md#s17-p112-checkpoint---stream-writer-receipts-joined-with-explicit-limits).
+S17 P112:374 indexed alias sites and8 direct/9 indirect writers linked to current scoped receipts;12 entry-local exclusions,362 caller-domain qualifications remain. Source identities unchanged;four negative accounting checks pass. No node/control credit;local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);instruction10690/10691,RAM3773/3773 receipts. Material993 partial,totalunknown;M2 incomplete.
+
 [P111 mode joins](../proposals/m2/t70-final-current-certification.md#s17-p111-checkpoint---mode-and-parser-caller-uses-reconciled).
 S17 P111:11mode/parser labels/44instructions/16RAM joined7boundedclauses;83712actualroots eachwidth0diff/all44PC/5branchpairs,14tests each. Scope1667/fresh0;10690/10691instruction receipts,3773/3773RAM receipts;1instruction/0RAM pending(CheckForEnemyGroupC1FB). Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 

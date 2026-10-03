@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P111 mode joins checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P112 stream writer checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -143,7 +143,6 @@
 
 
 
-S17 P104:16area-callback labels/70instructions/15RAM joined7boundedclauses;bridge/water originalUnderPart tails repaired. 65536actualroots eachwidth0diff/all70PC/6branchpairs,7tests each;threeEXEsP104refreshed. Scope1633/fresh0;10361/10691instruction receipts,3688/3773RAM receipts;330instructions/85RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P105:22screen/music labels/110instructions/24RAM joined7boundedclauses;69520actualroots eachwidth0diff/all110PC/17branchpairs,7tests each. Scope1645/fresh0;10471/10691instruction receipts,3712/3773RAM receipts;220instructions/61RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,producer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
@@ -158,3 +157,5 @@ S17 P109:10enemy-caller labels/36instructions/5RAM joined4boundedclauses;65536ac
 S17 P110:FlagpoleObject23instructions/9RAM joined1boundedclause;65536actual9508parserparents eachwidth0diff/all23PC,5tests each. Scope1663/fresh0;10646/10691instruction receipts,3757/3773RAM receipts;45instructions/16RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
 S17 P111:11mode/parser labels/44instructions/16RAM joined7boundedclauses;83712actualroots eachwidth0diff/all44PC/5branchpairs,14tests each. Scope1667/fresh0;10690/10691instruction receipts,3773/3773RAM receipts;1instruction/0RAM pending(CheckForEnemyGroupC1FB). Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
+S17 P112:374 indexed alias sites and8 direct/9 indirect writers linked to current scoped receipts;12 entry-local exclusions,362 caller-domain qualifications remain. Source identities unchanged;four negative accounting checks pass. No node/control credit;local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);instruction10690/10691,RAM3773/3773 receipts. Material993 partial,totalunknown;M2 incomplete.

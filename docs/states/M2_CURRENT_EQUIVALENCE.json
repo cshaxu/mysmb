@@ -170337,7 +170337,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:FlagpoleObject23instructions/9RAM joined1boundedclause;UnderPart/coordinates/carry/slot5/liveflag counterlifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P112 checkpoint - stream writer receipts joined with explicit limits"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -170356,6 +170357,16 @@
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."
+      },
+      "streamWriterReceiptReconciliation": {
+        "indexedWriterReceiptsJoined": 374,
+        "entryLocalIndexExclusions": 12,
+        "callerDomainFlowsPending": 362,
+        "directWriterReceiptsJoined": 8,
+        "indirectWriterReceiptsJoined": 9,
+        "nodeCredit": 0,
+        "controlCredit": 0,
+        "wholeProgramAbsenceOfAliasProved": false
       }
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
