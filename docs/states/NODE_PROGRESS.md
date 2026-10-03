@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P93 victory uses](../proposals/m2/t70-final-current-certification.md#s17-p93-checkpoint---victory-messages-counters-and-world-completion-uses-reconciled).
+S17 P93:16victory labels/84instructions/29RAM joined7boundedclauses;264192actualroots eachwidth0diff/all84PC/16branchpairs plusmandatory8421,4tests each. Scope1527/fresh0;9506/10691instruction receipts,3361/3773RAM receipts;1185instructions/412RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);00153priorfalseexact reclassifiedinfeasible withoriginalinstructionproof. Material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P92 terminal uses](../proposals/m2/t70-final-current-certification.md#s17-p92-checkpoint---loss-restart-game-over-and-player-records-uses-reconciled).
 S17 P92:14terminal labels/96instructions/41RAM joined7boundedclauses;196608actualroots eachwidth0diff/all96PC/11branchpairs,4tests each. Scope1514/fresh0;9422/10691instruction receipts,3332/3773RAM receipts;1269instructions/441RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

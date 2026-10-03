@@ -768007,7 +768007,20 @@
         "GameIsOn",
         "TransposePlayers",
         "TransLoop",
-        "ExTrans"
+        "ExTrans",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo"
       ],
       "baseline": 1992,
       "incomingComplete": [

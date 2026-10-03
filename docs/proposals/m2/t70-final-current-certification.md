@@ -8824,3 +8824,31 @@ Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff9994
 Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
 
 Current src/game/area.c normalizedSHA256:7f9125e079ae875931894d72eafec68256280f33e559bd5257d43381c8a288cd.
+
+## S17 P93 admission - victory messages counters and world completion uses
+
+Existingterminalvictory gap:84instructions/29RAM/16labels VictoryModeSubroutines,SetupVictoryMode,PrintVictoryMessages,MRetainerMsg,ThankPlayer,SecondPartMsg,EvalForMusic,PrintMsg,IncMsgCounter,SetEndTimer,IncModeTask_A,ExitMsgs,PlayerEndWorld,EndExitOne,EndChkBButton,EndExitTwo. Actual83A0VictoryModeSubroutines roots task1/3/4,canonicalterminal_modes.c andactualJumpEngine/LoadAreaPointer/TerminateGame dependencies;task0bridge/task2walk remainseparateexistingownerobligations. Four65536profiles rawmessagecounters,timer/buttons/page,legalworld0-7/currentplayer0-1/area0,world8counterfullsupplement. SourceCMP/SBCcarry,messageID/music/order,secondary+4 carryintoprimary andimmediateSetEndTimer bypass,liveworld/playerafterTranspose required. Allnonphysical-stackRAM/APU/orderedwritescompared;voidCPUreturnexcludedactualparentreloadsTask. ProtectedROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992,source/P81productsunchangedunless mismatchrequiresrepair,wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P93 checkpoint - victory messages counters and world completion uses reconciled
+
+S17 P93:16victory labels/84instructions/29RAM joined7boundedclauses;264192actualroots eachwidth0diff/all84PC/16branchpairs plusmandatory8421,4tests each. Scope1527/fresh0;9506/10691instruction receipts,3361/3773RAM receipts;1185instructions/412RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);00153priorfalseexact reclassifiedinfeasible withoriginalinstructionproof. Material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| V1 | VictoryModeSubroutines,SetupVictoryMode | ReadliveTask/actualJumpEngine83A5 beforetask1/3/4leaf. SetupScreenRightbyte+1Destination34,queue08 thenIncModeTask_Bfromtask1to2. Task0bridge/task2walk outsidethisrootfamily,remaininguseobligations retained. |
+| V2 | PrintVictoryMessages,MRetainerMsg | Secondarynonzero skipsselection;zero readsPrimary,zeroThankPlayer,>=9IncMsg. World==7 andPrimary>=3 CMPcarry1/SBC1 thenThankPlayer,otherworldPrimary>=2ThankPlayer;otherwiseIncMsg. OriginaltransformedmessageA/Y semantics reviewedratherthanwindowHUDreplacement. |
+| V3 | ThankPlayer,SecondPartMsg | TAY thennonzeroYSecondPart;Y0 loadsCurrentPlayer,zeroEval elseINY0to1/BNEEval. Thus8421false edgecontrol00153 impossibleforanysource-entryA,notcoveredbyoldframefixture;preserveoldevidencebutreclassifyinfeasible. SecondarypartINY,World7retainY elseDEY and>=4SetEndTimer/==3IncMsg. Currentplayer0-1domain,extra2048world7profiles breakPrimary0/Player0fixturecoupling andobserveLuigi branch. |
+| V4 | EvalForMusic,PrintMsg | Y3 queuesVictoryMusic04beforeVRAM selector;otherYleavesqueueunchanged. SelectorbyteY+0C sourcecarrycleared;world7SBC/INY yieldsPrimary+0C,world1-7primary2 selector0E. No retainedscreenoutput syntheticHUD. |
+| V5 | IncMsgCounter,SetEndTimer,IncModeTask_A,ExitMsgs | Secondarybyte+4 withcarryintoPrimary+0;CMPPrimary7carry determinesSetEndTimer BCCexit. EarlierSecondPart CPY4carry1 bypassescounterwrites andgoesstraightTimer06/INCTask. Allrawprimary/secondarybytes coverFFwrap/carry boundaries,readonlyoldprimarylocal validnosubcallmutation. |
+| V6 | PlayerEndWorld,EndExitOne | NonzeroWorldEndTimer returnswithoutdecrement;NMI ownsdecrement. Timer0/world<7 clearsArea/Level/Task beforeINCWorld/actualLoadAreaPointer/INCfetchTimer/Mode1. Legalworld0-7/area0postworldload,actualdependencyretained;liveworldthreshold>=7 delegatesBgate. |
+| V7 | EndChkBButton,EndExitTwo | ORbothSavedports/ANDB40;absentreturns,presentWorldSelect1/LivesFF thenactualTerminateGame. SameframequeueSilence/Transpose/Continue orreturnTitle usesP92acceptedchild;postswapWorld/Area loadingactualsource,allRAMcompared. CPU A/X/Y/CvoidABI excludedexceptnativechildcarrycapability;parentreloadsTask afterreturn. |
+
+Four65536original83A0task1/3/4rootfamilies plus2048Luigicounterprofiles total264192eachwidth/all84PC/16two-sidedbranchsites plusmandatory8421. ActualunmodifiedROM/fullPRGdependencies;rawmessagecounters/timer/buttons/pages inlegalworld0-7/player0-1/area0domain,notallcartesianinputs. BaselinefixturePrimary0 coupledPlayer0 missedLuigi8420/8421;2048supplementcoveredthemwithoutweakeningassertions. Compareall2048RAMexceptobservedactualphysicalCPUstackpushrange,24APU/orderedwrites0diff. CPUvoid A/X/Y/CexcludedunexposedABI,actualparentreloadsTask. Fourfreshfocusedtests eachwidthpass/fournegativeaccountingmutantsrejected. Source/P81productsunchanged,DOScompile/linkonly. Control00153oldexactclassificationwithdrawn:previousT53S4framefixture didnotobservethisfalsebranch;TAY/nonzeroexit constrainY0thenINY1/BNEmandatory,rawedgepreservedas81stinfeasible. Currentfeasiblecount4260/4261,previouscheckpointcountsretainedhistorical. Victorywalking/task0parentjoins andwholeproducer/inter-frame/material/pixels/routes/snapshotremainpending.
+
+Current src/game/terminal_modes.c normalizedSHA256:ad4c1b051f312b80b0fd345a4056e3a2c0e110eab5e86efdb4970c6e912934f2.
+
+Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
+
+Current src/game/area.c normalizedSHA256:7f9125e079ae875931894d72eafec68256280f33e559bd5257d43381c8a288cd.
