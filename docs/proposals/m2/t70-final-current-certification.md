@@ -4955,3 +4955,55 @@ no product source change,EXEs remain P23. No new node/control credit.
 Historical1992/1992;local scoped1992/1992 nodes,4274/4274 feasible controls
 (raw4342,infeasible68);material929 partial,global denominator unknown.
 S17/material,pixels,routes,snapshot remain open;M2 is not certified complete.
+
+## S17 P25 admission - indexed memory clear to sound queues
+
+Resolve P24's six observed90dc indexed-clear sound-reader joins only.
+InitializeMemory/InitPageLoop/InitByteLoop/InitByte/SkipByte are already in
+S17 scope. Independently instrument current boot.c actual indexed zero-store,
+retain page/offset/stack guards,tag native probe-local site49. Compare real
+original parent and SoundEngine with unpatched RAM between them;fixed queue
+addresses consumed by sound derive from original06=0/page loop,not arbitrary
+pointer aliases. Full RAM/APU/commands,strict C90 x86/x64 execution and existing
+metadata gates required. No product source change or EXE refresh,fresh0,max1992.
+Other bulk consumers and broader lifetimes remain outside this bounded join.
+
+## S17 P25 checkpoint - indexed clear queue consumers
+
+P24's six indexed-clear source joins now have independently observed native
+counterparts. Current boot.c indexed zero assignment is instrumented in an
+ignored copy as site49;original writerPC IDs are never injected into native
+state. The same page/offset expression,byte wraps,scratch06/07 stores and
+stack160-1FF exclusion remain. Original06=0 and page0 imply queueFA-FF are
+cleared;writing pointer bytes06/07 to0 on page0 preserves that effective base.
+Original later sound reads join the actual final zero writer in this parent.
+DoneInitArea overwritesFB with Silence80,so no InitByte->FB sound path is
+claimed from this route;P24 records its actual direct9056 producer instead.
+
+2048 real original initialization-parent roots each width compare all2048
+RAM before/after sound,24 APU bytes and ordered commands with zero differences.
+Six source reader pairs match actual native site49/function/address events
+in the same batch. PauseFA source reads map to two reads in one native step
+function;counts are not instruction-event bijections. Actual physical pushes
+alone are excluded. This domain does not prove all indexed-clear consumers,
+callers or cross-frame state. Strict C90 current probe builds/execution pass;
+source hash checks cover original30 unchanged owners plus current boot.c.
+Boot owner SHA256:5ed50c00b7848387b4798e2f658e21110396b165149edbe66521c5289bf4e3a9.
+
+| Material | Producer | Consumer | RAM | Original reader | Current reader |
+| --- | --- | --- | --- | --- | --- |
+| material-00930 | InitByte | InPause | 00fa | f2f3 | mysmb_audio_step |
+| material-00931 | InitByte | SndOn | 00fa | f2e8 | mysmb_audio_step |
+| material-00932 | InitByte | Square1SfxHandler | 00ff | f41b | mysmb_audio_step_square1 |
+| material-00933 | InitByte | Square2SfxHandler | 00fe | f582 | mysmb_audio_step_square2 |
+| material-00934 | InitByte | NoiseSfxHandler | 00fd | f667 | mysmb_audio_step_noise |
+| material-00935 | InitByte | MusicHandler | 00fc | f694 | mysmb_audio_select_music |
+
+
+Six paths930-935 added,zero fresh node/control credit. No product source
+change,three EXEs remain P23. Raw records deleted,all work contained below
+ignored build. Historical1992/1992;local scoped1992/1992 nodes,4274/4274 feasible
+controls(raw4342,infeasible68);material935 partial,total unknown. This closes
+the named six90dc-to-sound joins,not S17 or the whole material denominator.
+Other owner mutable/register/flag/stack/cross-frame uses and final pixel,
+complete gameplay route and snapshot packages remain open;M2 uncertified.
