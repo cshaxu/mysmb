@@ -2088,3 +2088,35 @@ child scratch and post-return writes;retained offscreen value-query callers
 reviewed for explicit original child contract,not mechanically replaced.
 Any scoped feasible diff remains active until repair and repeated dual proof;
 no whole-game certification or enumeration-complete inference from counters.
+
+## S15 P2 amendment - real offscreen caller-child contracts
+
+Source sweep confirms8 caller labels replace actual GetEnemyOffscreenBits
+with const value-only query: FPGfx; JumpspringHandler; RunNormalEnemies; RunBowserFlame; RunSmallPlatform; RunLargePlatform; DrawFlameLoop; InitPlatformFall.
+The pure helper cannot write original00/04/06/07 or invoke canonical child.
+Original call sites6643,6654,9095,9142,9157,9169,10409,10888 byte-bound at
+review. This is a graph/operation-order mismatch even where later writes
+hide the final-RAM difference.7 other graphics-only value queries require
+individual source disposition,not mechanical replacement.
+
+Coordinator extends current S15 to22 existing labels by adding: FPGfx; JumpspringHandler; RunNormalEnemies; RunBowserFlame; RunSmallPlatform; RunLargePlatform; DrawFlameLoop; InitPlatformFall; GetEnemyOffscreenBits; FlagpoleRoutine; SetGfxF; BalancePlatform.
+Six shared owners jumpspring.c,enemy/normal.c,enemy/platform_callers.c,
+enemy/special_callers.c,oam/flagpole_gfx.c,oam/bowser_flame_gfx.c plus
+balance caller dependency. Eight nodes and16 actual call/return controls
+reopened mismatch;planned8 pending controls remain unpromoted. Current
+exact1984/1992 nodes,4252/4276 feasible controls(raw4342,infeasible66),
+557/557 material partial. Historical1992/1992 is unchanged. No new node
+credit expected. Root observation must compare actual original/native child
+inputs and returned RAM plus full parent outputs,including balance peer
+slot and flame double-call. Canonical GetEnemyOffscreenBits already owns
+its writes. Production repair must call that owner;no duplicated scratch
+stores. All3 products refresh together after repairs;S15 stays active.
+
+Existing 2304 original screen/NMI roots match current x86/x64;all8 planned
+control sites have actual opcode/return/vector observations,but no promotion
+until this extended integration chain is repaired. Two harness corrections:
+clear NMI enable in direct screen caller state,and use same ScreenRoutines
+parent on both sides to include dispatcher scratch. Neither changed game
+logic or concealed a product mismatch. Actual256 NMI roots independently
+read FFFA/FFFB via original interrupt service and reach8082;128 dispatch
+selector3 entries observed. Full parent/child and frame proof still required.

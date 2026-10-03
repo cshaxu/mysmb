@@ -728992,7 +728992,19 @@
         "GetPlayerColors",
         "UpdateTopScore",
         "GameOverMode",
-        "SoundEngine"
+        "SoundEngine",
+        "FPGfx",
+        "JumpspringHandler",
+        "RunNormalEnemies",
+        "RunBowserFlame",
+        "RunSmallPlatform",
+        "RunLargePlatform",
+        "DrawFlameLoop",
+        "InitPlatformFall",
+        "GetEnemyOffscreenBits",
+        "FlagpoleRoutine",
+        "SetGfxF",
+        "BalancePlatform"
       ],
       "baseline": 1992,
       "incomingComplete": [

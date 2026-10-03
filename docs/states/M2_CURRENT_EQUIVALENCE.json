@@ -26508,12 +26508,13 @@
       "label": "FPGfx",
       "asmLine": 6643,
       "cohort": "G",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "shared flagpole/OAM core",
       "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
@@ -26565,12 +26566,13 @@
       "label": "JumpspringHandler",
       "asmLine": 6653,
       "cohort": "G",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
@@ -32591,12 +32593,13 @@
       "label": "RunNormalEnemies",
       "asmLine": 9092,
       "cohort": "I",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
@@ -32672,12 +32675,13 @@
       "label": "RunBowserFlame",
       "asmLine": 9140,
       "cohort": "I",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
@@ -32712,13 +32716,14 @@
       "label": "RunSmallPlatform",
       "asmLine": 9156,
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
@@ -32733,13 +32738,14 @@
       "label": "RunLargePlatform",
       "asmLine": 9168,
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
@@ -35852,12 +35858,13 @@
       "label": "DrawFlameLoop",
       "asmLine": 10388,
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
@@ -36954,12 +36961,13 @@
       "label": "InitPlatformFall",
       "asmLine": 10885,
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
       ],
       "operationalEvidence": [
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
@@ -75699,11 +75707,12 @@
       "instruction": "jsr",
       "id": "control-01144",
       "cohort": "G",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
@@ -75787,11 +75796,12 @@
       "instruction": "jsr",
       "id": "control-01148",
       "cohort": "G",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
@@ -87514,11 +87524,12 @@
       "instruction": "jsr",
       "id": "control-01671",
       "cohort": "I",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
@@ -87874,11 +87885,12 @@
       "instruction": "jsr",
       "id": "control-01685",
       "cohort": "I",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
@@ -88031,11 +88043,12 @@
       "instruction": "jsr",
       "id": "control-01692",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
@@ -88211,11 +88224,12 @@
       "instruction": "jsr",
       "id": "control-01700",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
@@ -95386,11 +95400,12 @@
       "instruction": "jsr",
       "id": "control-02019",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
@@ -97823,11 +97838,12 @@
       "instruction": "jsr",
       "id": "control-02129",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
@@ -132902,11 +132918,12 @@
       "instruction": "rts/rti",
       "id": "control-03684",
       "cohort": "G",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
@@ -132968,11 +132985,12 @@
       "instruction": "rts/rti",
       "id": "control-03687",
       "cohort": "G",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
@@ -135380,11 +135398,12 @@
       "instruction": "rts/rti",
       "id": "control-03794",
       "cohort": "I",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
@@ -135642,11 +135661,12 @@
       "instruction": "rts/rti",
       "id": "control-03804",
       "cohort": "I",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
@@ -135754,11 +135774,12 @@
       "instruction": "rts/rti",
       "id": "control-03809",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
@@ -135911,11 +135932,12 @@
       "instruction": "rts/rti",
       "id": "control-03816",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
@@ -137045,11 +137067,12 @@
       "instruction": "rts/rti",
       "id": "control-03865",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame with real shared relative/offscreen return outputs and source mask consumers.",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T64 S50 static $D1EB-$D294 and real return-consumer audit: GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order."
+        "M2 T64 S50 static $D1EB-$D294 and real return-consumer audit: GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
@@ -137408,11 +137431,12 @@
       "instruction": "rts/rti",
       "id": "control-03881",
       "cohort": "J",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
       ],
       "operationalEvidence": [
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
