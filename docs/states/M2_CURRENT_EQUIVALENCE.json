@@ -22937,7 +22937,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch.",
@@ -22946,7 +22947,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
@@ -25676,10 +25678,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
-        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $86e6: disables screen, completes parser tasks for one column set, conditionally advances task, then selects VRAM buffer control six.",
       "currentSourcePaths": [
@@ -25695,10 +25699,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
-        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $86e8: repeatedly invokes AreaParserTaskHandler until its task count is zero.",
       "currentSourcePaths": [
@@ -25714,10 +25720,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_control",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write."
+        "M2 T54 S6: source-order audit against SMB1 lines 1595-1603 proves DisableScreenFlag increment, one-or-more parser-handler calls until AreaParserTaskNum is zero, ColumnSets decrement, final-set ScreenRoutineTask increment, then VRAM control $06 write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
-        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass."
+        "M2 T54 S6: normal Start route samples 6-18 executes the parser-task chain in original ROM, x86 and x64 with identical ColumnSets, AreaParserTaskNum, ScreenRoutineTask, DisableScreenFlag and VRAM control values; focused parser-column and screen-status smoke plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $86f8: writes VRAM_Buffer_AddrCtrl $06 after each completed parser column set.",
       "currentSourcePaths": [
@@ -26460,11 +26468,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $88ae: stages a 13-metatile vertical Buffer2 command, accumulates attributes, advances name-table address and selects control six. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26481,11 +26491,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $88c7: selects metatile graphics half by parser-task parity and emits two vertical tile bytes for each of 13 rows. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26607,11 +26619,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $8940: appends seven one-byte attribute commands derived from the just-rendered column. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26649,11 +26663,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $8962: emits one attribute byte every eight address bytes and clears its source entry. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26670,11 +26686,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "ROM $899f: writes VRAM_Buffer_AddrCtrl six and returns. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -28481,11 +28499,13 @@
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC.",
       "currentSourcePaths": [
@@ -28503,12 +28523,14 @@
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P119 checkpoint - slot-storage bounds and remaining lifetimes: conditional address bounds/source-table review; indexed and phase lifetimes pending; no global promotion."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P119 checkpoint - slot-storage bounds and remaining lifetimes: conditional address bounds/source-table review; indexed and phase lifetimes pending; no global promotion.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P119 checkpoint - slot-storage bounds and remaining lifetimes: seven focused tests each width pass; P115 products retained; no fresh ROM replay claim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P119 checkpoint - slot-storage bounds and remaining lifetimes: seven focused tests each width pass; P115 products retained; no fresh ROM replay claim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields.",
       "currentSourcePaths": [
@@ -29396,11 +29418,13 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step",
       "semanticEvidence": [
-        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
-        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "Initializes a zero task counter to eight, executes exactly one descending task slot, decrements the persistent counter, and emits attributes only after slot zero.",
       "currentSourcePaths": [
@@ -29415,11 +29439,13 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step task decrement/tail",
       "semanticEvidence": [
-        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
-        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "Passes task minus one through the eight-way selector, then retains it as AreaParserTaskNum before conditional attribute output.",
       "currentSourcePaths": [
@@ -29434,11 +29460,13 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step return",
       "semanticEvidence": [
-        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
-        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "Returns after nonzero task slots without emitting attribute commands.",
       "currentSourcePaths": [
@@ -29455,12 +29483,14 @@
       "semanticEvidence": [
         "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
         "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
       ],
       "operationalEvidence": [
         "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
         "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
       ],
       "semanticContract": "Maps source selectors 0/4 to column advance, 1/2/5/6 to graphics, and 3/7 to parser core. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -170498,7 +170528,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved",
         "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix",
         "docs/proposals/m2/t70-final-current-certification.md S17 P118 checkpoint - qualified loop child returns verified",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P119 checkpoint - slot-storage bounds and remaining lifetimes"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P119 checkpoint - slot-storage bounds and remaining lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
