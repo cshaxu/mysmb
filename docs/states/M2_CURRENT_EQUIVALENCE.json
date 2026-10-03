@@ -45415,11 +45415,13 @@
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
-        "M2 T64 S58 repairs earlier entry-boundary omission: Shared jump entry now includes the horizontal/normal movement continuation; the normal ProcHammerBro caller returns after that entry so movement occurs once."
+        "M2 T64 S58 repairs earlier entry-boundary omission: Shared jump entry now includes the horizontal/normal movement continuation; the normal ProcHammerBro caller returns after that entry so movement occurs once.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Shared jump entry now includes the horizontal/normal movement continuation; the normal ProcHammerBro caller returns after that entry so movement occurs once.",
       "currentSourcePaths": [
@@ -45435,10 +45437,12 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Branches to jump setup only when HammerBroJumpTimer is zero; nonzero path decrements then enters throw/offscreen handling.",
       "currentSourcePaths": [
@@ -45454,10 +45458,12 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Decrements HammerThrowingTimer and tail-jumps to Hammer Bro horizontal movement.",
       "currentSourcePaths": [
@@ -45492,10 +45498,12 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "For non-jumping low state derives vertical speed and a random/hard-mode jump-length selector, then falls through jump-state writes.",
       "currentSourcePaths": [
@@ -45512,11 +45520,13 @@
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
-        "M2 T64 S58 repairs earlier entry-boundary omission: ROM $CA37 jump initialization falls through MoveHammerBroXDir and MoveNormalEnemy before returning, including the direct side-bump entry."
+        "M2 T64 S58 repairs earlier entry-boundary omission: ROM $CA37 jump initialization falls through MoveHammerBroXDir and MoveNormalEnemy before returning, including the direct side-bump entry.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S58 real HammerBroBGColl descendants and 3072 original ProcHammerBro regression roots pass on current x86/x64; docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $CA37 jump initialization falls through MoveHammerBroXDir and MoveNormalEnemy before returning, including the direct side-bump entry.",
       "currentSourcePaths": [
@@ -45532,10 +45542,12 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Selects jump-length index from random bitmask only in secondary hard mode; normal mode forces index zero.",
       "currentSourcePaths": [
@@ -45551,10 +45563,12 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Sets frame-phase shimmy speed, chooses facing from player difference and expired walk timer, then falls through normal enemy movement.",
       "currentSourcePaths": [
@@ -45570,10 +45584,12 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Stores selected shimmy X speed before player-difference direction logic.",
       "currentSourcePaths": [
@@ -45589,10 +45605,12 @@
       "currentCounterpart": "shared Hammer Bro slot path and normal movement tail",
       "semanticEvidence": [
         "Td S9 B15d Hammer Bro front-chain node-semantics and independent integration audit: SMB1 lines 9229-9317 compared with shared enemy/hammer_bro.c and normal movement owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff."
+        "M2 T63 S4 static audit: SMB1 $C9CE-$CA76 against shared enemy/hammer_bro.c preserves both timer/length tables, defeated precedence, timer and offscreen gates, child-result branch, PRNG/hard-mode jump selection, shimmy, player-distance direction and normal-movement handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S4 current-source original-ROM/x86/x64 evidence: 712 Hammer movement route comparisons (356 per width), 12,288 focused caller-state footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:65536originalC9D8roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all71PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Stores Hammer Bro moving direction and falls through MoveNormalEnemy.",
       "currentSourcePaths": [
@@ -170122,23 +170140,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10055,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 636,
+        "localInstructionReceiptSites": 10126,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 565,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3583,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 190,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3613,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 160,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
           "src/game/area/block_metatile.c": 34,
-          "src/game/enemy/hammer_bro.c": 30,
           "src/game/objects.c": 26,
           "src/game/game.c": 24,
           "src/game/frame_root.c": 22,

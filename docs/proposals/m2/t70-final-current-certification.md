@@ -9057,3 +9057,33 @@ Current src/game/oam/object_position.c normalizedSHA256:1fdb3149c5d4ca6159550a0e
 Current src/game/player_control.c normalizedSHA256:750be06040838c76fcee09fbb13dd4cee7069b456bd6808bd383ea44053a0347.
 
 Current src/game/terminal_modes.c normalizedSHA256:5cc2ca631ad8ec956ee9a513bd0ab58807fd61a4870c5133bea250c3b99becf0.
+
+## S17 P101 admission - hammer bro movement and throw uses
+
+ExistingC9D8-CA76HammerBrochain71instructions/30RAM/9labels ProcHammerBro,ChkJH,DecHT,HammerBroJumpCode,SetHJ,HJump,MoveHammerBroXDir,Shimmy,SetShim. Sharedenemy/hammer_bro.c actualSpawnHammerObj/PlayerEnemyDiff/MoveNormalEnemy/MoveDefeatedEnemy children. LegalcallerX/ObjectOffset0-5same;SecondaryHardMode0-1;rawState/Y/LFSR/Frame/distancebytes andjump/throw/intervaltimers/offscreen/spawnoccupiedvariants. 65536actualC9D8controlledroots,sourcebranchmask/carrysuccess/DEConfailedspawn/jumpheight/scratch00LFSRtableindex/distancefacing/normaltail reviewed. Fullnonphysical-stackRAM/APU/orderedwrites,CPUvoidunused. ROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992;P98productsunchangedunlessmismatch;wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P101 checkpoint - hammer bro movement and throw uses reconciled
+
+S17 P101:9hammer bro labels/71instructions/30RAM joined3boundedclauses;65536actualroots eachwidth0diff/all71PC/13branchpairs,4tests each. Scope1603/fresh0;10126/10691instruction receipts,3613/3773RAM receipts;565instructions/160RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| H1 | ProcHammerBro,ChkJH,DecHT | Statebit20defeatedtailbeforetimertests. JumpTimer!=0byteDEC thenOffscreenAND0Cnonzeroskipsallthrowtimerwork. VisibleThrowTimer!=0byteDEC;zeroresetstabletimer[SecondaryHard0/1]thenactualSpawnHammerObj. Sourcecarrysuccess setsliveStateOR8andjumpsmovementwithoutDEC;failureDECnewtimer. ActualSpawnreloadsXfromObjectOffset:admittedcaller08==slot0-5,soCslotargumentstable. EveryRAM/APU/orderedwritechildoutputcompared. |
+| H2 | HammerBroJumpCode,SetHJ,HJump | JumpTimer0andStatelow3==1skipsjump. ElseScratch00=0/YSpeedFA;Ybit7setkeepsFA;Y<70setsFD/mask1;Y70-7Fmask0 andLFSR1bit0selectsFDvsFA. SetHJstoreSpeed/stateOR1;index=Scratch00ANDLFSR2,Hard0forcesindex0elsekeeps0/1;FrameTimer[20,37],JumpTimer=LFSR1ORC0,thenmovementfallthrough. AlloriginalSetHJcallerschecked:mainjumpmask0/1andChkForBump_HammerBroJobjects.c explicitlymask0/speedFA;noothercaller. Originaltableindexdomain0/1notassumedfromtest-onlyinputs. |
+| H3 | MoveHammerBroXDir,Shimmy,SetShim | Framebit40setsXSpeedFCelse04 beforeactualPlayerEnemyDiff. Bytepage-minusborrowreturnbit7setkeepsDirection1;clearDirection2 thenliveIntervalTimer0overridesSpeedF8elsepreserves shimmySpeed. PlayerEnemyDiff leavesCPUY1andpublishesRAM00;Cdirectionlocal sameunclobberedcapability. DirectionstorethenactualMoveNormalEnemyfallthrough;defeatedtail bypasses shimmyentirely. Childrenretainnormal/gravitymovement proofs,notnewautomaticcredit. |
+
+ActualC9D8root65536profiles withlegalObjectOffset/Xsame0-5,SecondaryHard0-1,rawEnemyState/Y/LFSR/Frame/coordinate/pagebytes,jump/throw/interval/offscreen/spawnoccupiedbranches. All71PC/13two-sidedbranchsites/65536returnsbothwidths0diff. Profilescontrolled/coupled,notallRAMcartesianorwholeproducer/inter-frameproof. Full2048RAMexceptobservedphysicalCPUstackpushspan plus24APU/orderedwrites,CPUvoidunused. ActualSpawnHammerObj/PlayerEnemyDiff/MoveNormalEnemy/MoveDefeatedEnemychildren;ROMunpatched. SetHJtableindexdomainjustifiedfromallsourcecallers:mainmask0/1,bumpmask0;slotreloadidentifiedandfixturecontractexplicit. Threepartitionclauses/fournegativeaccountingmutants/fourfreshfocusedtests eachwidthpass. No source/productchange;threeP98hashesunchanged,DOScompile/linkonly. Fullmaterial/pixels/routes/snapshotremainopen.
+
+Current src/game/enemy/hammer_bro.c normalizedSHA256:237bb23548f55c38a8d9891d0cdcb1780caa6d7270a185e2d57570c7eb7dc160.
+
+Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+Current src/game/hammer.c normalizedSHA256:c8e87932754f358603f2e93d8b71cba2d1e35da37c9a2b55ce5338d8d2885f8a.
+
+Current src/game/enemy/movement.c normalizedSHA256:7ca92616e9557096e30833bbfb6ab2e06d907f6fdffc67f8406a72d3ed9b7c28.
+
+Current src/game/enemy/distance.c normalizedSHA256:260ed46333bf7de18963cce9e5b309f6285b320b97a85e183497a120b6a117aa.
+
+Current src/game/world/movement.c normalizedSHA256:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
+
+Current src/game/world/gravity.c normalizedSHA256:4213b8f264e8794ba761d6f791bea7a89cd69add3605d97d43b66de48a95b0a7.

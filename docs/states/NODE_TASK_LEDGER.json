@@ -768087,7 +768087,16 @@
         "ScrollScreen",
         "InitScrlAmt",
         "ChkPOffscr",
-        "InitPlatScrl"
+        "InitPlatScrl",
+        "ProcHammerBro",
+        "ChkJH",
+        "DecHT",
+        "HammerBroJumpCode",
+        "SetHJ",
+        "HJump",
+        "MoveHammerBroXDir",
+        "Shimmy",
+        "SetShim"
       ],
       "baseline": 1992,
       "incomingComplete": [
