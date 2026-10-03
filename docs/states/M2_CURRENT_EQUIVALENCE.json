@@ -22620,17 +22620,17 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1992,
+    "exact": 1991,
     "infeasible": 0,
     "mismatch": 0,
-    "needs-evidence": 0,
+    "needs-evidence": 1,
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4272,
-    "infeasible": 70,
+    "exact": 4269,
+    "infeasible": 72,
     "mismatch": 0,
-    "needs-evidence": 0,
+    "needs-evidence": 1,
     "unclassified": 0
   },
   "controlEdgeTypeCounts": {
@@ -40273,12 +40273,14 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:430080actual roots each width2032RAM/24APU/ordered writes0diff,only physical1F0-1FF excluded/minSP>=EF;all240PC observed,all conditional sides except provably impossibleBEB1 fallthrough;8focused tests each pass;source/products unchanged,not whole caller/alias/pixel proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:430080actual roots each width2032RAM/24APU/ordered writes0diff,only physical1F0-1FF excluded/minSP>=EF;all240PC observed,all conditional sides except provably impossibleBEB1 fallthrough;8focused tests each pass;source/products unchanged,not whole caller/alias/pixel proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Selects enemy SprObject offset by incrementing from ObjectOffset, runs horizontal movement, then restores ObjectOffset.",
       "currentSourcePaths": [
@@ -40294,10 +40296,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Blocks player horizontal movement only while JumpspringAnimCtrl is nonzero; otherwise enters common SprObject movement at offset zero.",
       "currentSourcePaths": [
@@ -40404,11 +40408,13 @@
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Uses TimerControl/Jumpspring gate, then supplies VerticalForce and maximum four to shared gravity.",
       "currentSourcePaths": [
@@ -40424,10 +40430,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Loads VerticalForce into shared scratch and tail-jumps to SprObject gravity.",
       "currentSourcePaths": [
@@ -40444,11 +40452,13 @@
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Selects $3d downward force except for exact Enemy_State five, which falls into falling-platform force $20.",
       "currentSourcePaths": [
@@ -40464,10 +40474,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Loads force $20 then uses the high-speed gravity entry.",
       "currentSourcePaths": [
@@ -40483,10 +40495,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Tail-jumps from selected downward force into maximum-three setup.",
       "currentSourcePaths": [
@@ -40502,10 +40516,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Selects downward direction zero and tail-jumps to red-paratroopa gravity setup.",
       "currentSourcePaths": [
@@ -40521,10 +40537,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Selects upward direction one then enters red-paratroopa gravity setup.",
       "currentSourcePaths": [
@@ -40540,10 +40558,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Installs downward/upward force and maximum two at enemy SprObject offset before RedPTroopaGrav.",
       "currentSourcePaths": [
@@ -40559,10 +40579,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Installs force $7f and maximum two through the medium-speed entry.",
       "currentSourcePaths": [
@@ -40578,10 +40600,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Installs force $0f and maximum two through the medium-speed entry.",
       "currentSourcePaths": [
@@ -40597,10 +40621,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Sets maximum two and unconditionally enters SetXMoveAmt because the loaded value is nonzero.",
       "currentSourcePaths": [
@@ -40616,10 +40642,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Installs force $1c then enters maximum-three setup.",
       "currentSourcePaths": [
@@ -40635,10 +40663,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Sets maximum three then enters common SprObject gravity setup.",
       "currentSourcePaths": [
@@ -40654,10 +40684,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Stores selected force, offsets X into enemy SprObject arrays, calls gravity, and restores ObjectOffset.",
       "currentSourcePaths": [
@@ -40692,10 +40724,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Retains the unreachable residual entry whose BIT opcode skips the normal Y=one initialization before block gravity setup.",
       "currentSourcePaths": [
@@ -40712,11 +40746,13 @@
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Selects block maximum-speed table index one and force $50 before common SprObject gravity.",
       "currentSourcePaths": [
@@ -40732,10 +40768,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Stores maximum speed, selects downward-only gravity input zero and tail-jumps to common gravity.",
       "currentSourcePaths": [
@@ -40751,10 +40789,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Uses the BIT-overlap entry to preserve direction zero while skipping MovePlatformUp\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u20ac\u017e\u00c2\u00a2s LDA-one instruction.",
       "currentSourcePaths": [
@@ -40770,10 +40810,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Selects direction one and initializes platform forces/maximum before shared red gravity.",
       "currentSourcePaths": [
@@ -40789,10 +40831,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Stores residual-ID-selected downward force, upward force ten and maximum three before shared red gravity.",
       "currentSourcePaths": [
@@ -40808,10 +40852,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Calls common gravity with the selected direction and restores ObjectOffset.",
       "currentSourcePaths": [
@@ -40914,11 +40960,13 @@
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Dispatches each enemy slot by flag: high-bit linked-slot cleanup, active object run, or parser/loop work unless parser task seven owns the turn.",
       "currentSourcePaths": [
@@ -40935,10 +40983,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Masks AreaParserTaskNum to three bits and returns only at task seven; otherwise tail-jumps into loop processing.",
       "currentSourcePaths": [
@@ -40955,10 +41005,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Uses Enemy_Flag low nibble as a linked-slot index and clears the current high-bit flag only when that referenced flag is zero.",
       "currentSourcePaths": [
@@ -40975,10 +41027,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Returns from the current enemy/loop slot invocation.",
       "currentSourcePaths": [
@@ -41055,10 +41109,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Subtracts four pages from the five source page controls, clears parser page/offset controls and selects AreaDataOfsLoopback by matched loop index.",
       "currentSourcePaths": [
@@ -41076,11 +41132,13 @@
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Gates loop evaluation on LoopCommand and CurrentColumnPos, then enters the reverse eleven-entry matcher or frenzy tail.",
       "currentSourcePaths": [
@@ -41097,10 +41155,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Searches tables from index ten down to zero and distinguishes correct grounded loop passage, wrong passage and no match.",
       "currentSourcePaths": [
@@ -41117,10 +41177,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Advances World-7 multi-loop pass count and selects reset versus loopback after the third pass.",
       "currentSourcePaths": [
@@ -41137,10 +41199,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Routes wrong player Y/state through World-7 pass accounting or direct loopback.",
       "currentSourcePaths": [
@@ -41158,11 +41222,13 @@
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Runs page/area loopback before KillAllEnemies, restores ObjectOffset, then resets multi-loop counters.",
       "currentSourcePaths": [
@@ -41179,10 +41245,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Clears multi-loop pass and correct counters before clearing LoopCommand.",
       "currentSourcePaths": [
@@ -41199,10 +41267,12 @@
       "currentCounterpart": "enemy/core.c and enemy/loop.c with stream/initialization successors",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Clears LoopCommand then enters the frenzy/stream tail.",
       "currentSourcePaths": [
@@ -41220,11 +41290,13 @@
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Consumes a queued frenzy ID into current slot ID/flag/state, clears the queue and tail-jumps to initialization; otherwise enters stream processing.",
       "currentSourcePaths": [
@@ -41243,12 +41315,14 @@
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Reads current enemy record, routes end marker to fallback, protects sixth slot except power-up and otherwise enters right-bound processing.",
       "currentSourcePaths": [
@@ -41266,11 +41340,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Distinguishes row-$0e, ordinary available slots and the source sixth-slot power-up exception before range setup.",
       "currentSourcePaths": [
@@ -41288,11 +41364,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Builds extended right boundary with original carry, applies one-time page control, then handles row-$0f control records.",
       "currentSourcePaths": [
@@ -41311,12 +41389,14 @@
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Processes row-$0f page-control records only before page selection is set; advances two bytes and tail-reenters loop processing.",
       "currentSourcePaths": [
@@ -41334,11 +41414,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Copies object page/X, tests normal right boundary, and routes behind-screen records to row-$0e or record advancement.",
       "currentSourcePaths": [
@@ -41356,11 +41438,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Tests extended right boundary, initializes visible object Y, applies row-$0e and hard-mode gates, then selects group or individual ID.",
       "currentSourcePaths": [
@@ -41372,17 +41456,20 @@
       "label": "CheckForEnemyGroup",
       "asmLine": 8006,
       "cohort": "I",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentOwner": "shared enemy stream and initializer core",
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. Previous exact evidence does not cover declared residual ID3F. Original vector target4A07 is outside PRG;native fallback differs. Legal cursor/pointer/alias reachability must be proved or a reachable counterexample repaired before exact reinstatement. No gameplay failure established by this evidence gap."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Classifies IDs below $37, group range $37-$3e and residual IDs at/above $3f.",
       "currentSourcePaths": [
@@ -41399,10 +41486,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Mutates Goomba to Buzzy Beetle only when PrimaryHardMode is set, retaining all other IDs.",
       "currentSourcePaths": [
@@ -41419,10 +41508,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Stores individual ID/flag, initializes it, then advances the source record only if initialization leaves its flag active.",
       "currentSourcePaths": [
@@ -41439,10 +41530,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Uses frenzy buffer first, otherwise produces a vine only for VineFlagOffset one, else exits.",
       "currentSourcePaths": [
@@ -41459,10 +41552,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Stores fallback identifier into current enemy ID then enters common initialization.",
       "currentSourcePaths": [
@@ -41480,11 +41575,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Clears current enemy state, calls CheckpointEnemyID and falls into return exit.",
       "currentSourcePaths": [
@@ -41501,10 +41598,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Returns from parser/fallback initialization.",
       "currentSourcePaths": [
@@ -41522,11 +41621,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Tail-jumps group identifiers into HandleGroupEnemies.",
       "currentSourcePaths": [
@@ -41544,11 +41645,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Reads the third record byte; only matching world writes AreaPointer and EntrancePage before three-byte advancement.",
       "currentSourcePaths": [
@@ -41565,10 +41668,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Tail-jumps to three-byte record advancement regardless of row-$0e world match.",
       "currentSourcePaths": [
@@ -41586,11 +41691,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Selects two- versus three-byte advance based solely on current record row.",
       "currentSourcePaths": [
@@ -41607,10 +41714,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Adds the extra first increment for row-$0e records.",
       "currentSourcePaths": [
@@ -41628,11 +41737,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
       ],
       "semanticContract": "Advances two bytes, clears enemy page select, restores ObjectOffset and returns.",
       "currentSourcePaths": [
@@ -94977,16 +95088,18 @@
       "instruction": "bne",
       "id": "control-01449",
       "cohort": "I",
-      "status": "exact",
+      "status": "infeasible",
       "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
       "semanticEvidence": [
         "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence."
+        "M2 T62 S1 static $C047-$C0C3 audit plus controlled original-ROM route review: duplicate-slot flag predicate, parser-task gate, 11-entry table selection, world-seven loop counters, rewind/erase ordering, frenzy queue writes and caller/return sequencing match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. C111 BEQ false reaches C113 with Z0;C113 BNE cannot fall through WrongChk."
       ],
       "operationalEvidence": [
-        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass."
+        "M2 T62 S1 current x86/x64 loop caller checks match 96 controlled original-ROM snapshots per width (192 comparisons); 44 ROM table bytes and focused loop smoke pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof. Missing branch side is corroboration,not the infeasibility proof."
       ],
-      "semanticContract": "Preserves original fallthrough relation IncMLoop -> WrongChk with source predicate, slot/page state handoff and return semantics.",
+      "semanticContract": "C111 BEQ false reaches C113 with Z0;C113 BNE cannot fall through WrongChk. Prior exact classification explicitly invalidated;original instruction bytes verified.",
       "currentSourcePaths": [
         "src/game/enemy/core.c",
         "src/game/enemy/loop.c"
@@ -95696,11 +95809,12 @@
       "instruction": "bcc",
       "id": "control-01480",
       "cohort": "I",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. Previous exact evidence does not cover declared residual ID3F. Original vector target4A07 is outside PRG;native fallback differs. Legal cursor/pointer/alias reachability must be proved or a reachable counterexample repaired before exact reinstatement. No gameplay failure established by this evidence gap."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
@@ -96088,16 +96202,18 @@
       "instruction": "bne",
       "id": "control-01497",
       "cohort": "I",
-      "status": "exact",
+      "status": "infeasible",
       "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. Only source entry C1C8 follows row!=0E guard;immutable pointer/record unchanged through position publication for original caller slots0-5;C259 BNE cannot fall through Inc3B."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof. Missing branch side is corroboration,not the infeasibility proof."
       ],
-      "semanticContract": "Preserves original fallthrough relation CheckThreeBytes -> Inc3B with source predicate, record/slot state handoff and return/dispatch semantics.",
+      "semanticContract": "Only source entry C1C8 follows row!=0E guard;immutable pointer/record unchanged through position publication for original caller slots0-5;C259 BNE cannot fall through Inc3B. Prior exact classification explicitly invalidated;original instruction bytes verified.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
         "src/game/enemy/stream.c"
@@ -160937,18 +161053,20 @@
     "control-03784",
     "control-03868",
     "control-01236",
-    "control-01371"
+    "control-01371",
+    "control-01449",
+    "control-01497"
   ],
-  "infeasibleControlEdgeTotal": 70,
-  "feasibleControlEdgeTotal": 4272,
+  "infeasibleControlEdgeTotal": 72,
+  "feasibleControlEdgeTotal": 4270,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4272,
+    "feasibleControlUniverse": 4270,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 70,
+    "infeasibleControls": 72,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -163941,7 +164059,6 @@
           "control-01446",
           "control-01447",
           "control-01448",
-          "control-01449",
           "control-01450",
           "control-01451",
           "control-01452",
@@ -163989,7 +164106,6 @@
           "control-01494",
           "control-01495",
           "control-01496",
-          "control-01497",
           "control-01498",
           "control-01499",
           "control-01500",
@@ -167385,7 +167501,8 @@
       "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract",
       "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract:owner rejects repeated audit rounds;named gap closure supersedes A-N restart.",
       "docs/proposals/m2/t70-final-current-certification.md S17 P49 reclassifiescontrol-01236 impossibleBB26falseedge;raw4342 retained,feasible4273/infeasible69. Historical4274/68 receipts retainclosuretimecounts.",
-      "docs/proposals/m2/t70-final-current-certification.md S17 P50 invalidates old exact control-01371 and proves infeasibleBEB1fallthrough;raw4342 retained,feasible4272/infeasible70. Earlier counts remain historical."
+      "docs/proposals/m2/t70-final-current-certification.md S17 P50 invalidates old exact control-01371 and proves infeasibleBEB1fallthrough;raw4342 retained,feasible4272/infeasible70. Earlier counts remain historical.",
+      "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. Old exact01449/01497 corrected to infeasible;CheckForEnemyGroup/01480 explicitly reopened within existing S17,not a new audit round."
     ],
     "resolvedScopedEvidence": [
       "docs/proposals/m2/t70-final-current-certification.md S14 P1 scoped source8652-86e5 and889d-88ad:fixed-X bottom status writes without invented buffer guard;canonical OutputInter and ResetScreenTimer;task advances before output enable;actual accepted text/status/OAM children. Final global contract review remains pending.",
@@ -167799,7 +167916,9 @@
         "ChkUpM",
         "ExVMove"
       ],
-      "controlEdgeIds": [],
+      "controlEdgeIds": [
+        "control-01480"
+      ],
       "status": "in-progress-material-use-completeness",
       "evidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P1 admission - complete material-use census and path reconciliation",
@@ -167877,16 +167996,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol",
         "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 3367,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 7324,
+        "localInstructionReceiptSites": 3676,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 7015,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1171,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2602,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1272,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2501,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -167901,14 +168021,12 @@
           "src/game/frame_root.c": 60,
           "src/game/oam/block_gfx.c": 54,
           "src/game/objects.c": 48,
-          "shared enemy stream and initializer core": 48,
           "src/game/title_modes.c": 46,
           "shared game core: enemy/bowser.c": 45,
           "shared firebar and flying-Cheep initializer core": 44,
           "src/game/world/enemy_collision.c": 43,
           "src/game/oam/small_platform_gfx.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
-          "shared enemy core and loop-command core": 39,
           "src/game/enemy/background.c": 38,
           "src/game/enemy/bloober.c": 37,
           "src/game/oam/object_position.c": 35,
@@ -167952,7 +168070,6 @@
           "src/game/enemy/platform_collision.c": 19,
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
-          "shared world movement/gravity and actor core": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
           "shared fireworks frenzy core": 17,
           "src/game/oam/hammer_gfx.c": 17,
@@ -167986,6 +168103,7 @@
           "src/game/enemy/distance.c:mysmb_enemy_player_difference": 5,
           "src/game/objects.c:mysmb_objects_step_hammer_terrain": 5,
           "src/game/dispatcher.c": 4,
+          "shared enemy stream and initializer core": 4,
           "shared game core: enemy/frenzy.c": 4,
           "src/game/objects.c:mysmb_objects_bump_enemy": 4,
           "src/game/oam/sprite_row.c and src/game/oam/enemy_offscreen.c": 4,

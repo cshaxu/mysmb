@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P51 checkpoint](../proposals/m2/t70-final-current-certification.md#s17-p51-checkpoint---motion-loop-and-enemy-stream-source-use-joins).
+S17 P51:55 motion/loop/stream labels,310PC inspected/observed;309 instruction/101RAM bounded joins,408380 roots each width0diff,7tests each. Scope724/fresh0;3676instruction/1272RAM receipts,7015instruction/2501RAM remaining. Two controls exact->infeasible;CheckForEnemyGroup/control-01480 exact->needs-evidence for residualID3F producer constraint. Currentlocal1991/1992nodes,4269/4270controls(raw4342,infeasible72);material993partial,totalunknown;source/productsP46unchanged,M2 incomplete.
+
 [P50 block source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p50-checkpoint---block-head-contents-chunks-and-replacement-source-use-joins).
 240instructions/87RAM joined16bounded clauses,430080actualroots each width
 zero scoped differences;allPC/conditional sides except proved impossible

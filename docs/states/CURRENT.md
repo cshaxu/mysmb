@@ -4,16 +4,16 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P50 block source-use checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P51 motion/loop/stream source-use checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
-| Reference Baseline | Historical1992/1992;local scoped1992/1992 nodes,4272/4272 controls(raw4342,infeasible70);material993 partial,total unknown. |
+| Reference Baseline | Historical1992/1992;local scoped1991/1992 nodes,4269/4270 controls(raw4342,infeasible72);material993 partial,total unknown. |
 | Candidate Proposal | [S17 material completeness](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
 | Files And ABI Surface | P46 sharedfireball/fireball_core.c originalbyte-indexed boundPRG speed lookup;P45 sharedwhirlpool.c RAM00/01/02 publication andtest/engine_environment_smoke.c originalgravityentry observer;S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 679 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 724 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -26,8 +26,8 @@
 - Full M2 certification: **NOT COMPLETE**;prior exact rows are local contracts.
 - Historical mapping1992/1992;no new global audit round or zero-based progress denominator.
 - S15 closed its17-node/42-control startup scope;identified8 mismatches and1 input-contract gap resolved.
-- Local ledger1992/1992 accepted scoped nodes and4272/4272 feasible controls
-  (raw4342,infeasible70);these are scoped dispositions,not whole-game certification.
+- Local ledger1991/1992 accepted scoped nodes and4269/4270 feasible controls
+  (raw4342,infeasible72);CheckForEnemyGroup/control-01480 needs evidence;these are scoped dispositions,not whole-game certification.
 - Material993 partial;global denominator unknown. Startup package closed;
   material/pixels/routes/snapshot packages remain;bindings closes in S16. A-N restart is superseded.
 - S16 P1 removed an uncalled synthetic terrain helper with one mismatching table byte;active original owners unchanged.
@@ -81,7 +81,6 @@
 
 
 
-S17 P43:250playerinstructions/110RAM joined12retainedclauses,fullplayer.c unchangedfad46182;262144roots eachwidth2032RAM/APU/order0diff and12tables/55bytesread. Separate65536frictionroots eachwidth2048RAM/noexclusion0diff/all39PC observed;5tests each/productsP39unchanged.Scope555/fresh0;2307instruction/750RAM boundedreceipts,3023otherRAMjoins.Local1992/1992,controls4274/4274,material986partial,totalunknown,fourfinalpackages open.
 
 S17 P44:138fireball/bubbleinstructions/55RAM joined8manualclauses,3owners/boxunchanged45b802b4;262144actualroots eachwidth2032RAM/APU/order0diff,all138PC/17branchpairs/sixbytes observed. B624realparentpluscore/bubblechildren;11tests each/productsP39unchanged.Scope570/fresh0;2445instruction/805RAM boundedreceipts,2968otherRAMjoins.Local1992/1992,controls4274/4274,material986partial,totalunknown,fourfinalpackages open.
 
@@ -97,3 +96,5 @@ S17 P48:37timer/landing/springgraphicsinstructions/11RAM joined6boundedclauses,4
 S17 P49:36hammer/misc/coin/score/poweruplabels,273instructions/110RAM joined21boundedclauses,6ownersunchanged.471040currentroots eachwidth2032RAM/APU/order0diff,all273PC/27branchpairs/oneconstantbranch;10tests each/productsP46unchanged.Scope652/fresh0;3127instruction/1084RAM receipts,2689otherRAMjoins. Control-01236 correctedexact->infeasible,prior4274/68 summarieshistorical:localcontrols4273/4273,raw4342/infeasible69;localnodes1992/1992,material993partial,totalunknown,fourfinalpackages open.
 
 S17 P50:35block/head/content/chunk/replacement/movement labels,240instructions/87RAM joined16 bounded clauses,6 owners unchanged.430080actual roots each width2032RAM/APU/order0diff,all240PC/conditional sides except impossibleBEB1;8tests each/productsP46unchanged.Scope679/fresh0;3367instruction/1171RAM receipts,2602otherRAMjoins. Control-01371 correctedexact->infeasible;localcontrols4272/4272,raw4342/infeasible70;localnodes1992/1992,material993partial,totalunknown,four final packages open.
+
+S17 P51:55 motion/loop/stream labels,310PC inspected/observed;309 instruction/101RAM bounded joins,408380 roots each width0diff,7tests each. Scope724/fresh0;3676instruction/1272RAM receipts,7015instruction/2501RAM remaining. Two controls exact->infeasible;CheckForEnemyGroup/control-01480 exact->needs-evidence for residualID3F producer constraint. Currentlocal1991/1992nodes,4269/4270controls(raw4342,infeasible72);material993partial,totalunknown;source/productsP46unchanged,M2 incomplete.

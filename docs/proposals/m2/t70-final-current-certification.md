@@ -7204,3 +7204,92 @@ Current src/game/blocks/replacement.c normalizedSHA256:f16380414f2200b6883b2f8ca
 Current src/game/world/movement.c normalizedSHA256:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
 
 Historical/local1992/1992,controls4272/4272(raw4342,infeasible70);material993partial,totalunknown.3367instruction/1171RAM bounded receipts;7324otherinstructions/2602otherRAMjoins remain,not new discovered bugs. All whole-program lifetime fields pending;four final packages open,M2 NOT COMPLETE.
+
+## S17 P51 admission - gravity adapters enemy dispatch loop and stream source-use joins
+
+Existing census BF07-C26B:310instructions/101directRAM;55labels:MoveEnemyHorizontally,MovePlayerHorizontally,MovePlayerVertically,NoJSChk,MoveD_EnemyVertically,MoveFallingPlatform,ContVMove,MoveRedPTroopaDown,MoveRedPTroopaUp,MoveRedPTroopa,MoveDropPlatform,MoveEnemySlowVert,SetMdMax,MoveJ_EnemyVertically,SetHiMax,SetXMoveAmt,ResidualGravityCode,ImposeGravityBlock,ImposeGravitySprObj,MovePlatformDown,MovePlatformUp,SetDplSpd,RedPTroopaGrav,EnemiesAndLoopsCore,ChkAreaTsk,ChkBowserF,ExitELCore,ExecGameLoopback,ProcLoopCommand,FindLoop,IncMLoop,WrongChk,DoLpBack,InitMLp,InitLCmd,ChkEnemyFrenzy,ProcessEnemyData,CheckEndofBuffer,CheckRightBounds,CheckPageCtrlRow,PositionEnemyObj,CheckRightExtBounds,CheckForEnemyGroup,BuzzyBeetleMutate,StrID,CheckFrenzyBuffer,StrFre,InitEnemyObject,ExEPar,DoGroup,ParseRow0e,NotUse,CheckThreeBytes,Inc3B,Inc2B. Scope724,fresh0/max1992. Shared player/world gravity/enemy movement/core/loop/stream owners;retained canonical motion receipt unchanged,reuse BF08 from actualP50 enemy-horizontal return. Source clauses:adapter force/max/index and direction,TimerControl/spring gate,core flag/parser gate,loop tables/counters/page rollback,stream full pointer/eight-bit Y,page select,bounds subtraction,row14/hardmode/group/frenzy/initializer handoffs. Original roots91-93 plus dedicated adapter entries and loop/core branch complements. ROM/ASM owner-readonly,no child patch,raw only ignoredbuild128MiB/120seconds perprocess. Concrete mismatch remains S17 repair/re-audit;code change requires3products. Local1992/1992,controls4272/4272(raw4342/infeasible70),material993partial/global denominatorunknown;no full-game certificate.
+
+## S17 P51 checkpoint - motion loop and enemy stream source-use joins
+
+Existing S17 census BF07-C26B:55 labels,310 instructions/101 direct RAM sites,
+scope724/fresh0. Seven shared source owners unchanged. Sixteen source clauses
+inspected;309 complete local receipts added. C1FB explicitly remains pending.
+No new S,whole-project audit round,product edit or material denominator claim.
+
+Participants: MoveEnemyHorizontally,MovePlayerHorizontally,MovePlayerVertically,NoJSChk,MoveD_EnemyVertically,MoveFallingPlatform,ContVMove,MoveRedPTroopaDown,MoveRedPTroopaUp,MoveRedPTroopa,MoveDropPlatform,MoveEnemySlowVert,SetMdMax,MoveJ_EnemyVertically,SetHiMax,SetXMoveAmt,ResidualGravityCode,ImposeGravityBlock,ImposeGravitySprObj,MovePlatformDown,MovePlatformUp,SetDplSpd,RedPTroopaGrav,EnemiesAndLoopsCore,ChkAreaTsk,ChkBowserF,ExitELCore,ExecGameLoopback,ProcLoopCommand,FindLoop,IncMLoop,WrongChk,DoLpBack,InitMLp,InitLCmd,ChkEnemyFrenzy,ProcessEnemyData,CheckEndofBuffer,CheckRightBounds,CheckPageCtrlRow,PositionEnemyObj,CheckRightExtBounds,CheckForEnemyGroup,BuzzyBeetleMutate,StrID,CheckFrenzyBuffer,StrFre,InitEnemyObject,ExEPar,DoGroup,ParseRow0e,NotUse,CheckThreeBytes,Inc3B,Inc2B.
+
+| Clause | Original PCs | Source disposition |
+| --- | --- | --- |
+| A1 | bf07-bf0e | Enemy RTS BF08 reuses actual P50 BF02 return route with identical movement owner. Playerhorizontal BF09 reads spring control first:nonzero returns original A unchanged,zero TAX selects object0 then canonical horizontal code. No TimerControl gate on horizontal entry. |
+| A2 | bf4d-bf62 | Playervertical forces offset0;TimerControl nonzero bypasses spring test and still moves,zero timer/nonzero spring returns. Otherwise VerticalForce709 ->00,maximum4 ->02 and downward gravity A0. Existing canonical gravity body receipt reused;adapter scratch stores/order compared. |
+| A3 | bf63-bf6f | Defeated vertical defaultY3D,only exact raw EnemyState5 replacesY20;then maximum3. Falling entry starts20. No low-nibble equivalence or invented defeated-state gate. Native same fixed force scratch00/index+1/max02 and canonical gravity. |
+| A4 | bf70-bf87 | Red down/up selects direction0/1,INX gives shared enemy offset;writes00=3/01=6/02=2 then TYA direction goes into real gravity;return reloads CPU X from08. Native direction local is disjoint these RAM writes;CPU X not exported. |
+| A5 | bf88-bf9e | Drop force7F unconditional BNE skips slow0F;slow selects0F;both max2 unconditional BNE skips jump1C/max3. These two impossible fallthroughs already classified infeasible01405/01408. SetXMoveAmt stores00,INX real SprObjgravity,then CPU X restore08;native helpers duplicate identical force store with no interposed observer. |
+| A6 | bfa1-bfb3 | Residual entry Y0/BIT skips LDY1,ordinary block usesY1;immutable max6/8,force50,source X already block slot+9. Native wrappers take block slot and add9;standalone roots restore this declared API convention. SprObj gravity publishes incoming A maximum02 then downstream A0;does not overwrite upward force01. |
+| A7 | bfb4-bfd6 | Platform down BIT skips up LDA1;direction pushed across ID load andforce setup. ID29 selects downward9,other IDs5,upwardA/max3. Real RedPTroopaGrav calls canonical gravity then reload08. Residual ID29 included as controlled-root semantics,not a gameplay reachability claim. |
+| A8 | c047-c06a | Core saves raw flag,bit7 path reads EnemyFlag at low nibble flat RAM index and clears current only if linked flag zero;otherwise nonzero routes RunEnemyObjectsCore,zero tests ParserTask&7==7 skip else ProcLoop. Native core does not enumerate all slots;callers own schedule. Raw high-flag linked offsets0-15 preserved without clamp. |
+| A9 | c08c-c0cb | Loopback independently SEC subtracts4 from player/current/left/right/area page bytes,then zeros enemy/area page-select and enemy cursor/page;9BF8+Y ->area cursor. Original Y survives all preceding stores,valid index0-10. No invented scroll or coordinate reconstruction. |
+| A10 | c0cc-c101 | Loop only when command set/currentColumn0;reverse lookup index10..0 checks world thenpage;miss proceeds frenzy without clearingcommand. Matched playerY and exactground state0 determine correctness;non-world6 correct path resets counters,world6 increments correct thenpass counters. |
+| A11 | c102-c12c | Pass increment byte wraps,exact3 gate;correct exact3 resets,otherwise loopback andKillAllEnemies thenreload08. Wrong world6 increments pass withoutcorrect,otherworld loops immediately. C111 BEQ false setsZ0,so C113 BNE cannotfallthroughWrongChk. Original loop-command flag cleared only after matched command handling. |
+| A12 | c12f-c163 | Frenzy queue nonzero stores current ID/flag1/state0/queue0 then initializer tail. Otherwise ProcessEnemyData begins immutable(e9/ea)+8-bitY read;FF selectsfallback. Sixth slot restricted unless rowE or secondID2E;native second prefetch has no observable side effect on this declared NROM immutable input. |
+| A13 | c164-c1aa | Extendedright low+30 carry survives AND F0 andfeeds page ADC0;06/07 scratch published before second-byte MSB test. MSB with PageSel0 increments selector/page bytes. RowF with PageSel0 consumes2/cachespage/setsselector andtail reenters real loopcommand;no direct parser shortcut or invented offset normalization. |
+| A14 | c1ab-c1ef | Enemy page/X publication precedes position checks. Low CMPcarry feeds page SBC for lower andupper boundaries;native composite unsigned16 comparisons preserve original borrow/pagewrap for byte inputs. Earlier-than-right rowE parses3 else consumes2;later-than-extended fallback. Inwindow highY1/Ylow(first<<4),rowE special before hardmode bit gate. |
+| A15 | c1f1-c22e | IDs37-3E real group tail;otherwise Goomba6 plusPrimaryHard nonzero becomes Buzzy2 beforeID/flag1/realinitializer. Post-child actual flag controls cursoradvance;do not assume alive. Fallback frenzybuffer nonzero else VineFlag==1 chooses2F;statezero then real checkpoint,not unconditionalflag set. InitializeEnemyObject separately owns statezero/child order. |
+| A16 | c231-c26b | RowE reads third at 8-bit(offset+2);fiveLSR compares high3world,match copies rawsecond area pointer andthird low5 entrancepage;all rowE consume3. CheckThreeBytes re-readsfirstrow for length then common Inc2B incrementscursor bytes,clearsPageSel,reloads CPU X08. Source pointers are readonly bound PRG;invalid/missing-source native safety return is outside qualified ROM domain. |
+
+Original roots91/92/93/157/158 each65536;143-156 each4096;
+159 uses535 distinct actual records across34 streams and32 independent profiles
+(17120 roots);160 uses4096 controlled sixth-slot2E roots;161 uses2140 actual
+record/frenzy roots. Total408380 each width,zero2032RAM/24APU/ordered-write
+differences;only physical1F0-1FF excluded,minSP>=EF. All310PC observed.
+Forty-two conditional sites have both outcomes;five have one. BF8A/BF90 already
+have constant-branch infeasibility receipts. C113 and C259 receive source
+proofs below. C1FB does not receive completeness credit. P50 mode142 reuses
+identical movement-owner return evidence without inflating fresh root totals.
+Seven rebuilt focused tests each width pass,including platform purity.
+
+Control-01449: C111 BEQ false implies Z0,so C113 BNE cannot fall through.
+Control-01497: only original source entry C1C8 follows first-row!=0E guard;
+immutable E9/EA pointer and739 cursor remain unchanged through stores06/07,
+73A/73B,6E+X/87+X for original slots0-5. C250 rereads the same byte,so
+C259 cannot select Inc3B. Original opcodes verified. Both old exact
+classifications invalidated,raw rows retained. These are source proofs,
+not inferences from missing observed branch sides.
+
+CheckForEnemyGroup/control-01480 explicitly downgraded exact->needs-evidence.
+Its old contract included residual ID3F,whose original raw initializer vector
+targets4A07 outside PRG while native has a fallback. Actual normal records
+did not exercise this ID. Absence from34 streams alone cannot prove complete
+legal cursor/pointer/alias reachability. C1FB's full use receipt is withheld.
+Resolve this named producer constraint in existing S17;repair only if reachable.
+No demonstrated gameplay failure and no new whole-project verification round.
+
+Rejected harness work: shared-tail record duplication corrected before credit;
+independent hard-mode profiles replace correlated16-profile attempt. Original
+batch capacity1024->4096 is validation-only,1024 old/new records byte-identical
+across four modes. First fast attempt hit native checker's old count guard,
+produced no comparisons and receives no credit. Native checker cap then matched;
+actual unchanged shared libraries linked. Deliberately stopped partial92 run
+receives no credit;completed91 retained. Raw outputs cleaned after batches.
+
+Historical mapping1992/1992;current local exact1991/1992 nodes and4269/4270
+feasible controls(raw4342,infeasible72). This makes insufficient evidence visible.
+3676/10691 instruction and1272/3773 direct-RAM bounded receipts;7015 instruction
+and2501 RAM sites still lack complete local receipts. Material993 partial,
+global denominator unknown;all whole-program lifetime fields pending.
+Four final packages remain open. M2 NOT COMPLETE;S17 stays active.
+No source/product changes;three EXEs remain P46,DOS runtime unqualified.
+
+Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.
+
+Current src/game/world/movement.c normalizedSHA256:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
+
+Current src/game/world/gravity.c normalizedSHA256:4213b8f264e8794ba761d6f791bea7a89cd69add3605d97d43b66de48a95b0a7.
+
+Current src/game/enemy/movement.c normalizedSHA256:7ca92616e9557096e30833bbfb6ab2e06d907f6fdffc67f8406a72d3ed9b7c28.
+
+Current src/game/enemy/core.c normalizedSHA256:d568c921de10cba733e2124bdfc1575f3c28b67f7d446af348f73435ebf52a27.
+
+Current src/game/enemy/loop.c normalizedSHA256:a9619ed5b897c07732fc6a6f104823fd3ba4ebc17fdad244b6a2dcd71c7caf92.
+
+Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
