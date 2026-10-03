@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P78 enemy ground uses](../proposals/m2/t70-final-current-certification.md#s17-p78-checkpoint---enemy-ground-side-and-fireball-background-uses-reconciled).
+S17 P78:51enemy ground/side/fireball labels/274instructions/68RAM joined14boundedclauses;798976actualroots eachwidth0diff/all274PC/64branchpairs,8tests each. Scope1241/fresh0;7355/10691instruction receipts,2601/3773RAM receipts;3336instructions/1172RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P77 player terrain uses](../proposals/m2/t70-final-current-certification.md#s17-p77-checkpoint---player-terrain-and-contact-uses-reconciled).
 S17 P77:59player terrain/contact labels/382instructions/116RAM joined17boundedclauses;745472actualroots eachwidth0diff/all382PC/81branchpairs,8tests each. Scope1195/fresh0;7081/10691instruction receipts,2533/3773RAM receipts;3610instructions/1240RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

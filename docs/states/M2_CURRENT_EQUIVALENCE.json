@@ -53616,11 +53616,13 @@
       "semanticEvidence": [
         "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Guards state/Y then dispatches jump paratroopa, hammer bro or normal enemy terrain collision by ID.",
       "currentSourcePaths": [
@@ -53638,10 +53640,12 @@
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
         "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes special jump/hammer IDs before normal eligibility checks.",
       "currentSourcePaths": [
@@ -53657,10 +53661,12 @@
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
         "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes Hammer Bro terrain path.",
       "currentSourcePaths": [
@@ -53676,10 +53682,12 @@
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
         "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects normal terrain eligibility for Spiny, power-up and IDs below seven.",
       "currentSourcePaths": [
@@ -53695,10 +53703,12 @@
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
         "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls under-enemy query for eligible normal actors.",
       "currentSourcePaths": [
@@ -53714,10 +53724,12 @@
       "currentCounterpart": "mysmb_objects_enemy_background_current and normal terrain path",
       "semanticEvidence": [
         "Td S9 K55 enemy background collision entry node/edge/table audit: SMB1 lines 12420-12461 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 enemy terrain routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Handles missing ground path.",
       "currentSourcePaths": [
@@ -53735,12 +53747,14 @@
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes non-solid terrain to no-ground, ordinary solid terrain to landing, and block $23 to erase/score/stun path.",
       "currentSourcePaths": [
@@ -53756,10 +53770,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Awards enemy-above-block score then enters stun handling.",
       "currentSourcePaths": [
@@ -53775,10 +53791,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Demotes eligible enemy IDs before stun.",
       "currentSourcePaths": [
@@ -53794,10 +53812,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Reduces eligible ID to base enemy form.",
       "currentSourcePaths": [
@@ -53813,10 +53833,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets stunned state/Y behavior, faces player except bullet variants and selects facing speed.",
       "currentSourcePaths": [
@@ -53832,10 +53854,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses water/spiny condition for stunned Y speed.",
       "currentSourcePaths": [
@@ -53851,10 +53875,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses normal stunned Y speed.",
       "currentSourcePaths": [
@@ -53870,10 +53896,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Preserves cannon/frenzy bullet direction exceptions.",
       "currentSourcePaths": [
@@ -53889,10 +53917,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores facing direction for non-bullet actor.",
       "currentSourcePaths": [
@@ -53908,10 +53938,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns from stun/background check.",
       "currentSourcePaths": [
@@ -53928,11 +53960,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "M2 T64 S57 corrects prior landing audit omission: Source SBC #$08 / CMP #$05 uses byte wrap, accepting only original contact low nibble $08-$0C; below eight and above twelve route to ChkForRedKoopa."
+        "M2 T64 S57 corrects prior landing audit omission: Source SBC #$08 / CMP #$05 uses byte wrap, accepting only original contact low nibble $08-$0C; below eight and above twelve route to ChkForRedKoopa.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Source SBC #$08 / CMP #$05 uses byte wrap, accepting only original contact low nibble $08-$0C; below eight and above twelve route to ChkForRedKoopa.",
       "currentSourcePaths": [
@@ -53949,10 +53983,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Tests special IDs/states before landing state dispatch.",
       "currentSourcePaths": [
@@ -53968,10 +54004,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes state to side check, direction/bump, timed transition or return.",
       "currentSourcePaths": [
@@ -53987,10 +54025,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores stunned enemy interval timer and transitions state two to three.",
       "currentSourcePaths": [
@@ -54006,10 +54046,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns from landed-state checks.",
       "currentSourcePaths": [
@@ -54026,11 +54068,13 @@
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "M2 T64 S57 corrects prior landing audit omission: Goomba/timed-Spiny direct landing and other facing paths preserve the CNwCDir bump-return fall-through into landing."
+        "M2 T64 S57 corrects prior landing audit omission: Goomba/timed-Spiny direct landing and other facing paths preserve the CNwCDir bump-return fall-through into landing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Goomba/timed-Spiny direct landing and other facing paths preserve the CNwCDir bump-return fall-through into landing.",
       "currentSourcePaths": [
@@ -54046,10 +54090,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Builds inverted desired facing from player/enemy difference.",
       "currentSourcePaths": [
@@ -54066,11 +54112,13 @@
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "M2 T64 S57 corrects prior landing audit omission: Equal facing invokes the real bump and then falls into LandEnemyInitState; unequal facing enters that same landing directly."
+        "M2 T64 S57 corrects prior landing audit omission: Equal facing invokes the real bump and then falls into LandEnemyInitState; unequal facing enters that same landing directly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S57 all six slots, low nibbles 0-15, eight states, four metatiles and four identities: current x86/x64 12288 zero-difference real ROM roots; docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Equal facing invokes the real bump and then falls into LandEnemyInitState; unequal facing enters that same landing directly.",
       "currentSourcePaths": [
@@ -54086,10 +54134,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Lands enemy then clears state or retains moving-shell fall bit semantics.",
       "currentSourcePaths": [
@@ -54105,10 +54155,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Clears d6 while retaining remaining moving-shell state bits.",
       "currentSourcePaths": [
@@ -54124,10 +54176,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Applies red-koopa normal-state side check exception.",
       "currentSourcePaths": [
@@ -54143,10 +54197,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Dispatches old state by high-bit into falling/state-table update.",
       "currentSourcePaths": [
@@ -54162,10 +54218,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Reads new state from EnemyBGCStateData by old state index.",
       "currentSourcePaths": [
@@ -54181,10 +54239,12 @@
       "currentCounterpart": "landing state/direction helpers",
       "semanticEvidence": [
         "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores computed enemy state.",
       "currentSourcePaths": [
@@ -54200,10 +54260,12 @@
       "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Skips status-bar coordinates, then probes only the moving-direction side at source offsets 0x16 and 0x17, and bumps on a solid metatile.",
       "currentSourcePaths": [
@@ -54219,10 +54281,12 @@
       "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Compares the source direction counter with Enemy_MovingDir before issuing the selected side block-buffer query.",
       "currentSourcePaths": [
@@ -54238,10 +54302,12 @@
       "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Decrements the direction counter, advances the probe index, and loops only while the index remains below 0x18.",
       "currentSourcePaths": [
@@ -54257,10 +54323,12 @@
       "currentCounterpart": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return."
+        "M2 T64 S20 static audit: SMB1 $E0FE-$E123 and src/game/enemy/side_collision.c preserve the status-bar gate, $eb=2 down-counter, $16/$17 direction probes, empty/non-solid exits, solid bump tail and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass."
+        "M2 T64 S20 original-ROM side route: 33 original boundaries and 66 current x86/x64 comparisons cover all four labels; source caller contract covers every Y/direction byte, six slots and empty/non-solid/solid result. Both widths pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after status-bar exclusion or both directional probes complete without a blocking solid.",
       "currentSourcePaths": [
@@ -54276,12 +54344,14 @@
       "currentCounterpart": "mysmb_objects_bump_enemy",
       "semanticEvidence": [
         "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Slot-five and state-d7 sound gating, followed by Hammer $00/Y handoff or ordinary inversion tail.",
       "currentSourcePaths": [
@@ -54296,10 +54366,12 @@
       "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy",
       "currentCounterpart": "mysmb_objects_bump_enemy",
       "semanticEvidence": [
-        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
+        "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Slot-five and state-d7 sound gating, followed by Hammer $00/Y handoff or ordinary inversion tail.",
       "currentSourcePaths": [
@@ -54314,10 +54386,12 @@
       "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy/RXSpd owner",
       "currentCounterpart": "mysmb_objects_bump_enemy ordinary path: exact RXSpd writes",
       "semanticEvidence": [
-        "M2 T64 S22 static audit: SMB1 InvEnemyDir ($E140) is the unconditional tail jump to RXSpd; current shared objects.c performs the exact RXSpd two-complement X-speed write and moving-direction XOR 3 on the ordinary bump path."
+        "M2 T64 S22 static audit: SMB1 InvEnemyDir ($E140) is the unconditional tail jump to RXSpd; current shared objects.c performs the exact RXSpd two-complement X-speed write and moving-direction XOR 3 on the ordinary bump path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S22 controlled original-ROM ordinary bump records: x86/x64 current checkers replay all normal entry variants with zero differences in Square1SoundQueue, Enemy_X_Speed and Enemy_MovingDir; focused chain, terrain-state and platform-purity CTests pass on both widths."
+        "M2 T64 S22 controlled original-ROM ordinary bump records: x86/x64 current checkers replay all normal entry variants with zero differences in Square1SoundQueue, Enemy_X_Speed and Enemy_MovingDir; focused chain, terrain-state and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Transfers to the shared RXSpd direction-reversal owner.",
       "currentSourcePaths": [
@@ -54358,10 +54432,12 @@
       "currentOwner": "src/game/world/collision.c:mysmb_world_land_enemy",
       "currentCounterpart": "mysmb_world_land_enemy invokes exact InitVStf semantics",
       "semanticEvidence": [
-        "M2 T64 S24 static audit: SMB1 EnemyLanding calls InitVStf to clear Enemy_Y_Speed and Enemy_Y_MoveForce, then masks Enemy_Y_Position with $f0 and ORs $08; shared world/collision.c performs the same ordered writes."
+        "M2 T64 S24 static audit: SMB1 EnemyLanding calls InitVStf to clear Enemy_Y_Speed and Enemy_Y_MoveForce, then masks Enemy_Y_Position with $f0 and ORs $08; shared world/collision.c performs the same ordered writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S24 controlled original-ROM EnemyLanding entries: two Y low-nibble cases replay on current x86/x64 with zero differences in Y speed, move force and aligned Y; focused chain, terrain-state and purity CTests pass."
+        "M2 T64 S24 controlled original-ROM EnemyLanding entries: two Y low-nibble cases replay on current x86/x64 with zero differences in Y speed, move force and aligned Y; focused chain, terrain-state and purity CTests pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Initializes vertical movement state and aligns Enemy_Y_Position to its high nibble plus bit d3.",
       "currentSourcePaths": [
@@ -54377,10 +54453,12 @@
       "currentCounterpart": "mysmb_objects_step_enemy_jump_terrain",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S25 static - audit: wrapped ADC/CMP predicates, ordered child calls, landing write and DoSide tail match src/game/enemy/jump_terrain.c."
+        "M2 T64 S25 static - audit: wrapped ADC/CMP predicates, ordered child calls, landing write and DoSide tail match src/game/enemy/jump_terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S25 controlled original-ROM  four-route probe replayed by current x86/x64 shared C owners with zero non-stack RAM differences; focused chain and platform-purity tests pass."
+        "M2 T64 S25 controlled original-ROM  four-route probe replayed by current x86/x64 shared C owners with zero non-stack RAM differences; focused chain and platform-purity tests pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Adds $3e in eight-bit arithmetic and returns the CMP $44 flags used by the jumping-enemy ground gate.",
       "currentSourcePaths": [
@@ -54397,11 +54475,13 @@
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
         "M2 T64 S25 static - audit: wrapped ADC/CMP predicates, ordered child calls, landing write and DoSide tail match src/game/enemy/jump_terrain.c.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S25 controlled original-ROM  four-route probe replayed by current x86/x64 shared C owners with zero non-stack RAM differences; focused chain and platform-purity tests pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Checks the wrapped Y threshold and falling speed, accepts only solid under-metatiles, lands, assigns speed $fd, then always performs the side check.",
       "currentSourcePaths": [
@@ -54417,10 +54497,12 @@
       "currentCounterpart": "mysmb_objects_step_enemy_jump_terrain",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S25 static - audit: wrapped ADC/CMP predicates, ordered child calls, landing write and DoSide tail match src/game/enemy/jump_terrain.c."
+        "M2 T64 S25 static - audit: wrapped ADC/CMP predicates, ordered child calls, landing write and DoSide tail match src/game/enemy/jump_terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S25 controlled original-ROM  four-route probe replayed by current x86/x64 shared C owners with zero non-stack RAM differences; focused chain and platform-purity tests pass."
+        "M2 T64 S25 controlled original-ROM  four-route probe replayed by current x86/x64 shared C owners with zero non-stack RAM differences; focused chain and platform-purity tests pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Tail-transfers the jumping-enemy route to DoEnemySideCheck.",
       "currentSourcePaths": [
@@ -54435,10 +54517,12 @@
       "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
       "currentCounterpart": "mysmb_objects_step_hammer_terrain",
       "semanticEvidence": [
-        "M2 T64 S26 static direct-entry audit: original SMB1 $E185 begins with ChkUnderEnemy; caller-owned state/Y guards remain solely at the EnemyToBGCollisionDet caller, followed by the exact empty/blank/landing/side-tail order."
+        "M2 T64 S26 static direct-entry audit: original SMB1 $E185 begins with ChkUnderEnemy; caller-owned state/Y guards remain solely at the EnemyToBGCollisionDet caller, followed by the exact empty/blank/landing/side-tail order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S26 controlled original-ROM $E185 probe: four direct entries cover inherited state/Y, empty terrain, blank $23 and solid landing; current x86/x64 replays have zero non-stack RAM differences, focused terrain/purity and product checks pass."
+        "M2 T64 S26 controlled original-ROM $E185 probe: four direct entries cover inherited state/Y, empty terrain, blank $23 and solid landing; current x86/x64 replays have zero non-stack RAM differences, focused terrain/purity and product checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Queries the under-metatile; no tile/fresh timer sets state d0, blank $23 kills above-block, otherwise lands and checks side blockage.",
       "currentSourcePaths": [
@@ -54453,10 +54537,12 @@
       "currentOwner": "src/game/objects.c:mysmb_objects_kill_enemy_above_block",
       "currentCounterpart": "mysmb_objects_kill_enemy_above_block",
       "semanticEvidence": [
-        "M2 T64 S27 static direct-entry audit: SMB1 $E18B calls ShellOrBlockDefeat, returns, then loads/stores Enemy_Y_Speed=$FC before RTS; current objects.c has the same ordered shared-child call and write."
+        "M2 T64 S27 static direct-entry audit: SMB1 $E18B calls ShellOrBlockDefeat, returns, then loads/stores Enemy_Y_Speed=$FC before RTS; current objects.c has the same ordered shared-child call and write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S27 controlled original-ROM $E18B probe: four direct entries cover Goomba, Hammer Bro, Piranha ADC carry and high-state-mask cases; current x86/x64 full persistent-RAM replays have zero differences; focused terrain/purity checks pass."
+        "M2 T64 S27 controlled original-ROM $E18B probe: four direct entries cover Goomba, Hammer Bro, Piranha ADC carry and high-state-mask cases; current x86/x64 full persistent-RAM replays have zero differences; focused terrain/purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses ShellOrBlockDefeat then sets Enemy_Y_Speed to $fc.",
       "currentSourcePaths": [
@@ -54471,10 +54557,12 @@
       "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
       "currentCounterpart": "mysmb_objects_step_hammer_terrain",
       "semanticEvidence": [
-        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "On an expired Hammer Bro frame timer preserves only state d7/d3, performs landing alignment, then tail-transfers to side checking.",
       "currentSourcePaths": [
@@ -54489,10 +54577,12 @@
       "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
       "currentCounterpart": "mysmb_objects_step_hammer_terrain",
       "semanticEvidence": [
-        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order."
+        "M2 T64 S28 static audit: SMB1 $E191-$E19A branches on EnemyFrameTimer, masks Enemy_State with $88 before EnemyLanding, tails to DoEnemySideCheck, and NoUnderHammerBro ORs state d0; current objects.c preserves the same order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass."
+        "M2 T64 S28 controlled original-ROM HammerBroBGColl route: five entries cover no ground, blank tile, timer-expired solid landing and timer-nonzero solid ground; current x86/x64 full persistent-RAM replays have zero differences; terrain/purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets state d0 to mark Hammer Bro jumping or falling and returns.",
       "currentSourcePaths": [
@@ -54508,10 +54598,12 @@
       "currentCounterpart": "mysmb_world_query_enemy_under",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S29: direct SMB1  static audit proves LDA #, LDY # and tail JMP BlockBufferChk_Enemy; shared C preserves the returned metatile rather than a normalized boolean."
+        "M2 T64 S29: direct SMB1  static audit proves LDA #, LDY # and tail JMP BlockBufferChk_Enemy; shared C preserves the returned metatile rather than a normalized boolean.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S29: five controlled original-ROM entries (empty, solid, page-carry and row variants) agree with x86/x64 returned metatile and scratch /// checks."
+        "M2 T64 S29: five controlled original-ROM entries (empty, solid, page-carry and row variants) agree with x86/x64 returned metatile and scratch /// checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects vertical block-buffer probe flag A=0 and offset Y=$15.",
       "currentSourcePaths": [
@@ -54527,10 +54619,12 @@
       "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S30: direct  static audit proves the ordered five metatile comparisons, equality branches and final return."
+        "M2 T64 S30: direct  static audit proves the ordered five metatile comparisons, equality branches and final return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S30: eight controlled original-ROM entries agree with current x86/x64 Z-result predicate checks."
+        "M2 T64 S30: eight controlled original-ROM entries agree with current x86/x64 Z-result predicate checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Compares exactly metatiles $26,$c2,$c3,$5f,$60 and preserves the equality/Z result for callers.",
       "currentSourcePaths": [
@@ -54546,10 +54640,12 @@
       "currentCounterpart": "mysmb_world_enemy_metatile_is_non_solid",
       "semanticEvidence": [
         "Td S9 K59 enemy side/terrain node and integration audit: SMB1 lines 12617-12747 compared with src/game/enemy/side_collision.c, jump_terrain.c, distance.c, objects.c and world/block_buffer.c/metatiles.c; controlled original-ROM/x86/x64 state, side-probe and hammer routes remain required.",
-        "M2 T64 S30: direct  static audit proves the ordered five metatile comparisons, equality branches and final return."
+        "M2 T64 S30: direct  static audit proves the ordered five metatile comparisons, equality branches and final return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S30: eight controlled original-ROM entries agree with current x86/x64 Z-result predicate checks."
+        "M2 T64 S30: eight controlled original-ROM entries agree with current x86/x64 Z-result predicate checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns the final non-solid comparison flags without changing the predicate result.",
       "currentSourcePaths": [
@@ -54565,10 +54661,12 @@
       "currentCounterpart": "mysmb_world_fireball_background_collision",
       "semanticEvidence": [
         "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
-        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Checks status-bar Y first, probes the fireball bottom, clears bounce for no/non-solid tile, explodes on upward speed or a set bounce flag, otherwise assigns speed $fd, sets bounce and aligns Y to an $f8 boundary.",
       "currentSourcePaths": [
@@ -54585,10 +54683,12 @@
       "currentCounterpart": "mysmb_world_clear_fireball_bounce",
       "semanticEvidence": [
         "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
-        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
+        "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Clears FireballBouncingFlag and returns.",
       "currentSourcePaths": [
@@ -54605,12 +54705,14 @@
       "semanticEvidence": [
         "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required.",
         "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets Fireball_State to $80, queues Sfx_Bump on Square1SoundQueue, and returns.",
       "currentSourcePaths": [
@@ -169173,16 +169275,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P75 checkpoint - enemy pair and platform contact uses reconciled:28labels/234instructions/82RAM joined11boundedclauses;stackbox/live01/08,moving-shell/score/dedup/turnaround,paired platform/small-box/top/side carry. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 7081,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3610,
+        "localInstructionReceiptSites": 7355,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3336,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2533,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1240,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2601,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1172,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169197,7 +169300,6 @@
           "src/game/title_modes.c": 46,
           "src/game/oam/small_platform_gfx.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
-          "src/game/enemy/background.c": 38,
           "src/game/oam/object_position.c": 35,
           "src/game/area/block_metatile.c": 34,
           "src/game/world/bounding_box.c": 33,
@@ -169222,28 +169324,21 @@
           "src/game/oam/fireworks_gfx.c": 15,
           "src/game/boot.c": 13,
           "src/game shared dispatcher/engine/scroll owners": 10,
-          "src/game/world/collision.c": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
           "src/game/oam/sprite_dump.c": 6,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
-          "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side": 5,
-          "src/game/objects.c:mysmb_objects_step_hammer_terrain": 5,
           "src/game/dispatcher.c": 4,
-          "src/game/objects.c:mysmb_objects_bump_enemy": 4,
           "src/game/oam/sprite_row.c and src/game/oam/enemy_offscreen.c": 4,
-          "src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain": 3,
           "src/game/oam/enemy_offscreen.c and src/game/oam/sprite_dump.c": 3,
           "src/game/oam/firebar_gfx.c": 3,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,
-          "src/game/world/collision.c:mysmb_world_land_enemy": 2,
           "src/game/oam/sprite_stacker.c": 2,
           "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1,
-          "src/game/objects.c:mysmb_objects_kill_enemy_above_block": 1,
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
