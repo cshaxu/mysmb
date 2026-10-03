@@ -555,3 +555,93 @@ Neutral summaries/scripts stay under ignored build;raw records deleted.
 | mysmb16.exe | 258735 | e7d455565419b59dda4a8862efba18359eb71ca3363010b4707a030c33d32476 |
 | mysmb32.exe | 372256 | ba58c9818855530d531ea9ad83b7e472201c47a236747dd3e2b9d1f2922021e8 |
 | mysmb64.exe | 379290 | 58ced651503a6bcaae16c911c919468057e2a487b3e2bb4850feca939b63b550 |
+
+## S5 P1 admission - timer and random material propagation
+
+Audit seven existing exact labels in source order:InitBuffer,DecTimers,
+DecTimersLoop,SkipExpTimer,NoDecTimers,PauseSkip,RotPRandomBit. Expected fresh0,
+maximum1992;historical1992/1992,current1992/1992 nodes,4276/4276 feasible
+controls(raw4342,infeasible66),558/558 material partially enumerated.
+Shared frame_root.c owner;entry80f0 after accepted SoundEngine/ReadJoypads/
+PauseRoutine/UpdateTopScore calls,exit8138 before sprite-zero handling.
+S4 prefix is accepted predecessor;sprite-zero/scroll successor stays outside.
+Concrete missing proof:existing material rows do not enumerate the selected
+timer loop index,initial random feedback and seven-byte carry propagation.
+No new source or historical credit from this audit;repair requires accepted
+implementation custody in the same S if a scoped mismatch is confirmed.
+
+ROM logic track:unmodified original reaches real NMI80f0;RAM-only fixtures,
+all256 interval controls x2 pause branches x4 master controls,plus seven
+random byte positions x256 values and both first-byte feedback bit domains.
+Batch at most1024 roots;capture8138 and actually executed scoped control
+transitions. Compare RAM00,09,0747,077f,0780-07a3,07a7-07ad with live native
+frame_root_begin on both widths. Other children/output/stack are outside this
+phase ABI;source order and inputs audited separately. No CPU/child/ROM patch.
+Bound source fields and feasible material paths before creating any row;
+future timer readers outside this chain stay unenumerated,global total open.
+
+Operational:current S4 products/source unchanged,focused timer/random/NMI and
+purity tests both widths. Audit-only P retains three EXEs and accepted S4
+full builds/248 tests/OpenNT link;any product repair refreshes all three.
+Owner ROM/ASM nonredistributable/read-only,no import or push. Unique ignored
+build output,128MiB,120seconds/process,524288steps/root,raw cleanup per batch.
+Similar sweep:timer freeze/underflow/zero suppression and all seven ROR carry
+links;do not replace control/data proof with final-output equality.
+
+## S5 P1 closure - timer and random index/carry paths match
+
+Seven labels retained exact:InitBuffer,DecTimers,DecTimersLoop,SkipExpTimer,
+NoDecTimers,PauseSkip,RotPRandomBit. Expected/actual fresh0,no scoped deferred
+label or transfer;existing maintenance custody unchanged. Historical1992/1992,
+current1992/1992 nodes and4276/4276 feasible controls(raw4342,infeasible66).
+Three new source-proven material rows00559-00561 make561/561 enumerated exact;
+global enumeration remains partial,T70/M2 remain open. No product source edit.
+
+Static original80f0-8137 and actual shared frame_root_begin/timer/random owners
+match:pause bit0 skips both master/timer decrement and FrameCounter but not
+random rotation. Master zero or DEC-to-zero enters DecTimers;other nonzero
+master decrements and skips only timer loop. Interval DEC with negative bit7
+reloads14 and chooses X23;otherwise X14. Descending timer reads skip zero and
+decrement nonzero in place. FrameCounter increments only unpaused,including
+master-frozen frames. PauseSkip stores first seed d1 in RAM00,then XORs second
+seed d1 to choose initial carry;seven ROR operations pass old d0 forward after
+writing each current byte. C last_timer/index and carry/next_carry retain the
+same data dependencies and eight-bit wrap,not merely the final array image.
+
+New material00559 DecTimers -> DecTimersLoop:index14/23 selected by the
+post-DEC sign test controls exactly21/36 timer addresses in descending order.
+New00560 PauseSkip -> RotPRandomBit:RAM00 plus second seed d1 selects initial
+carry before any seed rotation. New00561 RotPRandomBit -> RotPRandomBit:old
+low bit of each byte becomes carry input for the next,through all seven bytes.
+These are transient data dependencies with concrete source consumers;not
+invented RAM writer-reader cartesian edges. Existing control00026-00039
+retain exact source counterparts;each actual original instruction transition
+was observed (counts1024,2048,512,256,256,2048,19776,59328,76800,2304,2816,
+2048,1792,23040 respectively). No sprite-zero/scroll edge credit is inferred.
+
+Unmodified original reaches natural first NMI80f0 after its real prefix and
+accepted children,then RAM-only fixtures execute to8138.2048 timer roots cover
+all256 interval inputs,two pause states,and master0/1/2/255;timer byte patterns
+0/1/128/255 cover zero/nonzero/wrap classes.1792 additional roots sweep each
+of seven random byte positions over all256 values;initial XOR branches and
+all carry links execute. Four batches1024/1024/1024/768,each <=120seconds,
+524288steps/root and128MiB. Native invokes actual current frame_root_begin;
+no CPU,ROM,child or native production method patched. Both widths match all
+47 compared bytes in every root and their records are byte-identical.
+
+Phase ABI includes RAM00,09,0747,077f,0780-07a3,07a7-07ad. It does not compare
+other child state,stack,CIRAM/OAM/audio/PPU,or exact hardware timing;the native
+entry includes accepted prefix/children whereas original fixtures are applied
+after them. Source review proves those preceding calls do not write these
+fixture-owned timer/random fields on the selected mode-zero route. This is
+controlled branch proof,not arbitrary whole-RAM or end-to-end equivalence.
+PauseRoutine producer state and timer/FrameCounter/random consumers elsewhere
+remain separate source-owner/material enumeration duties. The scoped index
+and carry dependencies are exhaustive for this chain only.
+
+Operational:four focused NMI/timer/random/purity tests pass on each width.
+All game sources normalized-identical and all three product files byte-identical
+to S4;S4 full builds,248 tests/width,OpenNT DOS16 link and six600-frame routes
+remain applicable. Audit-only P does not rebuild/replace products. DOS runtime
+qualification remains M3/M4. Raw batches deleted;only neutral local summaries
+retained. No third-party import,push or unrelated work changes.

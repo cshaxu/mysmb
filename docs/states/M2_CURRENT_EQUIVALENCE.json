@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 558,
+    "enumeratedCount": 561,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12290,6 +12290,69 @@
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
+    },
+    {
+      "id": "material-00559",
+      "producer": "DecTimers",
+      "consumer": "DecTimersLoop",
+      "storage": "selected X timer index14/23 to descending Timers,X reads/writes",
+      "feasiblePath": "After DEC077f,BPL chooses X14 for nonnegative result;negative result reloads077f=14 and selectsX23 before entering DecTimersLoop.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:last_timer and descending index in mysmb_game_tick_player_timers",
+      "semanticContract": "Exactly21 or36 original timer slots are read and nonzero values decremented;zero values are suppressed.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00560",
+      "producer": "PauseSkip",
+      "consumer": "RotPRandomBit",
+      "storage": "RAM00 first seed d1 and second seed d1 to initial carry",
+      "feasiblePath": "PauseSkip stores seed07a7&2 in RAM00;seed07a8&2 XOR RAM00 followed by CLC/conditional SEC supplies the first ROR carry.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:RAM00 and initial carry in mysmb_game_rotate_pseudorandom",
+      "semanticContract": "Initial carry is set only when the two d1 values differ,before any seed byte is modified.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00561",
+      "producer": "RotPRandomBit",
+      "consumer": "RotPRandomBit",
+      "storage": "old seed byte d0 to subsequent ROR carry input",
+      "feasiblePath": "Each original ROR writes current seed using incoming carry and exports old d0;INX/DEY/BNE passes it to the next of seven bytes.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:value/carry/next_carry update in mysmb_game_rotate_pseudorandom",
+      "semanticContract": "For all seven bytes,old low bit becomes next carry and old incoming carry becomes current high bit,with original read/write order.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
     }
   ],
   "cohorts": [
@@ -12608,12 +12671,14 @@
         "M2 T53 S1 source audit: after UpdateScreen, InitBuffer selects buffer-offset entry zero except selector six, clears both selected offset/header bytes, resets the address selector, and then permits display restore and the NMI service tail. The C VRAM commit has the same selector-six distinction and clear/reset writes; display restoration is the following shared call.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
         "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
@@ -12628,10 +12693,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "When TimerControl is zero, decrements IntervalTimerControl and selects the source frame-only or frame-plus-interval timer range.",
       "currentSourcePaths": [
@@ -12646,10 +12713,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Visits timer bytes in descending source order, decrementing only nonzero entries until index zero is processed.",
       "currentSourcePaths": [
@@ -12664,10 +12733,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Skips decrement for an expired timer, decrements the index and continues while the index remains nonnegative.",
       "currentSourcePaths": [
@@ -12682,10 +12753,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin",
       "semanticEvidence": [
-        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending."
+        "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof."
+        "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Increments FrameCounter after the applicable timer branch, including the TimerControl nonzero path once its decrement does not reach zero.",
       "currentSourcePaths": [
@@ -12701,10 +12774,12 @@
       "currentCounterpart": "mysmb_frame_root_begin",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: after PauseRoutine, both the paused and unpaused source paths reach PauseSkip and execute the seven-byte LFSR phase; the C root has the same timer/frame-counter gate followed by unconditional pseudorandom update."
+        "M2 T53 S1 source audit: after PauseRoutine, both the paused and unpaused source paths reach PauseSkip and execute the seven-byte LFSR phase; the C root has the same timer/frame-counter gate followed by unconditional pseudorandom update.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Begins pseudorandom rotation regardless of paused timer branch; a paused game bypasses frame-counter and timer work but not the LFSR update.",
       "currentSourcePaths": [
@@ -12719,11 +12794,13 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom",
       "semanticEvidence": [
-        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return."
+        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
-        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c."
+        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing.",
       "currentSourcePaths": [
@@ -51355,10 +51432,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation InitBuffer -> PauseSkip at source line 809 (bcs) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51376,10 +51455,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation InitBuffer -> DecTimers at source line 811 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51397,10 +51478,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation InitBuffer -> NoDecTimers at source line 813 (bne) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51418,10 +51501,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original fallthrough relation InitBuffer -> DecTimers at source line 813 (bne) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51439,10 +51524,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation DecTimers -> DecTimersLoop at source line 816 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51460,10 +51547,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original fallthrough relation DecTimers -> DecTimersLoop at source line 819 (ldx) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51481,10 +51570,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation DecTimersLoop -> SkipExpTimer at source line 821 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51502,10 +51593,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original fallthrough relation DecTimersLoop -> SkipExpTimer at source line 822 (dec) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51523,10 +51616,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation SkipExpTimer -> DecTimersLoop at source line 824 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51544,10 +51639,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original fallthrough relation SkipExpTimer -> NoDecTimers at source line 824 (bpl) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51565,10 +51662,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64."
+        "Td S9 A4 controlled timer routes execute every DecTimers/DecTimersLoop/SkipExpTimer/NoDecTimers branch and fall-through: master nonzero/expiry, interval non-expiry/expiry, zero/nonzero cells and loop termination. Timer-owned RAM and FrameCounter agree with ROM on x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original fallthrough relation NoDecTimers -> PauseSkip at source line 825 (inc) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51587,10 +51686,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation PauseSkip -> RotPRandomBit at source line 835 (beq) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51609,10 +51710,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step and mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original fallthrough relation PauseSkip -> RotPRandomBit at source line 836 (sec) must preserve pause gating, timer branch predicates and the descending timer-loop successor order.",
       "currentSourcePaths": [
@@ -51631,10 +51734,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
       ],
       "semanticContract": "Original branch relation RotPRandomBit -> RotPRandomBit at source line 840 (bne) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [

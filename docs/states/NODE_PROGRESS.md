@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S5 - closed timer/random material audit
+
+[Seven exact nodes and three material paths](../proposals/m2/t70-final-current-certification.md#s5-p1-closure---timer-and-random-indexcarry-paths-match).
+3840 original/native phase roots both widths zero diff,14 scoped original
+transitions observed;timer index,initial feedback and inter-byte carry paths
+registered. Historical1992/1992,current1992/1992 nodes,4276/4276 feasible
+controls(raw4342,infeasible66),material561/561 partially enumerated.
+Expected/actual fresh0,no transfers or source edits;focused tests/purity pass,
+S4 builds/3 products unchanged and retained. T70/M2 global certification open.
+
 ## M2 T70 S4 - closed NMI display transaction repair
 
 [Exact6 labels and dual proof](../proposals/m2/t70-final-current-certification.md#s4-p1-closure---original-two-phase-display-transaction-restored).

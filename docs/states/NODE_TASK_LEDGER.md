@@ -2832,6 +2832,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S2 | 0 | 29 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S3 | 0 | 0 | source-provenance-reconciliation; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S4 | 0 | 6 | nmi-prefix-material-phase-proof; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S5 | 0 | 0 | timer-random-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3666,3 +3667,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S2 | 29 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S4 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S5 | 7 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
