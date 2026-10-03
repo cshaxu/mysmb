@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 668,
+    "enumeratedCount": 673,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -14694,6 +14694,111 @@
       "cohortBasis": "parser producer inventory label",
       "currentSourcePaths": [
         "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00669",
+      "producer": "LoadHeader",
+      "consumer": "HandleSquare2Music",
+      "storage": "F5/F6 MusicData pointer",
+      "feasiblePath": "Original header writesF701/F706 then channel consumes pointer atf743. Square2 header transition returns to loop head and reloads the pointer;length helper between its two reads cannot clobber it.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c:mysmb_audio_load_music_header and channel music helpers",
+      "semanticContract": "Source-produced22 header pointer domains and observed retained header/channel routes;intra-channel cache lifetime only. No arbitrary corrupt pointer or every residual-header gameplay reachability claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+      ],
+      "cohort": "K",
+      "cohortBasis": "music header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-00670",
+      "producer": "LoadHeader",
+      "consumer": "Squ2LengthHandler",
+      "storage": "F5/F6 MusicData pointer",
+      "feasiblePath": "Original header writesF701/F706 then channel consumes pointer atf784. Square2 header transition returns to loop head and reloads the pointer;length helper between its two reads cannot clobber it.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c:mysmb_audio_load_music_header and channel music helpers",
+      "semanticContract": "Source-produced22 header pointer domains and observed retained header/channel routes;intra-channel cache lifetime only. No arbitrary corrupt pointer or every residual-header gameplay reachability claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+      ],
+      "cohort": "K",
+      "cohortBasis": "music header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-00671",
+      "producer": "LoadHeader",
+      "consumer": "FetchSqu1MusicData",
+      "storage": "F5/F6 MusicData pointer",
+      "feasiblePath": "Original header writesF701/F706 then channel consumes pointer atf7c9. Actual current channel/helper closure has no pointer writer;cached intra-channel pointer remains valid through repeated fetches.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c:mysmb_audio_load_music_header and channel music helpers",
+      "semanticContract": "Source-produced22 header pointer domains and observed retained header/channel routes;intra-channel cache lifetime only. No arbitrary corrupt pointer or every residual-header gameplay reachability claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+      ],
+      "cohort": "K",
+      "cohortBasis": "music header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-00672",
+      "producer": "LoadHeader",
+      "consumer": "HandleTriangleMusic",
+      "storage": "F5/F6 MusicData pointer",
+      "feasiblePath": "Original header writesF701/F706 then channel consumes pointer atf825,f83a. Actual current channel/helper closure has no pointer writer;cached intra-channel pointer remains valid through repeated fetches.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c:mysmb_audio_load_music_header and channel music helpers",
+      "semanticContract": "Source-produced22 header pointer domains and observed retained header/channel routes;intra-channel cache lifetime only. No arbitrary corrupt pointer or every residual-header gameplay reachability claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+      ],
+      "cohort": "K",
+      "cohortBasis": "music header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-00673",
+      "producer": "LoadHeader",
+      "consumer": "FetchNoiseBeatData",
+      "storage": "F5/F6 MusicData pointer",
+      "feasiblePath": "Original header writesF701/F706 then channel consumes pointer atf87e. Actual current channel/helper closure has no pointer writer;cached intra-channel pointer remains valid through repeated fetches.",
+      "status": "exact",
+      "currentCounterpart": "src/game/audio.c:mysmb_audio_load_music_header and channel music helpers",
+      "semanticContract": "Source-produced22 header pointer domains and observed retained header/channel routes;intra-channel cache lifetime only. No arbitrary corrupt pointer or every residual-header gameplay reachability claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+      ],
+      "cohort": "K",
+      "cohortBasis": "music header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/audio.c"
       ]
     }
   ],
@@ -51860,10 +51965,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_load_music_header",
       "semanticEvidence": [
         "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
       ],
       "semanticContract": "All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI.",
       "currentSourcePaths": [
@@ -51880,11 +51987,13 @@
       "semanticEvidence": [
         "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
         "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S14 P2 Original byte-bound F73F/F780/F7C5 LDY old offset,INC offset,indirect load;four shared fetch sites preserve old offset and write before read. Actual Square2 first/length-second and Square1 first/null-refetch alias paths observed,including FFFF+Y wrap. All3 scoped entries visited."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S14 P2 Original byte-bound F73F/F780/F7C5 LDY old offset,INC offset,indirect load;four shared fetch sites preserve old offset and write before read. Actual Square2 first/length-second and Square1 first/null-refetch alias paths observed,including FFFF+Y wrap. All3 scoped entries visited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
       ],
       "operationalEvidence": [
         "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S14 P2 59394 original roots each x86/x64 zero RAM/APU/ordered-write diff;1024 alias roots compare2042 RAM bytes excluding only actual01FA-01FF stack(minSP F9). Other retained routes use documented existing sound ABI stack exclusions;CPU return registers outside C ABI.49 headers1024 live frames each,4096 Square1/4096 Square2 length paths,2 triangle/noise aliases;10 tests each including audio,pause,focus,purity;current x86/x64 products and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S14 P2 59394 original roots each x86/x64 zero RAM/APU/ordered-write diff;1024 alias roots compare2042 RAM bytes excluding only actual01FA-01FF stack(minSP F9). Other retained routes use documented existing sound ABI stack exclusions;CPU return registers outside C ABI.49 headers1024 live frames each,4096 Square1/4096 Square2 length paths,2 triangle/noise aliases;10 tests each including audio,pause,focus,purity;current x86/x64 products and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
       ],
       "semanticContract": "Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note.",
       "currentSourcePaths": [
@@ -51976,10 +52085,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music / process_music_length",
       "semanticEvidence": [
         "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual length lookup saves7B3, then increments stream offset and reads second byte as note without a second length classification."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual length lookup saves7B3, then increments stream offset and reads second byte as note without a second length classification.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
       ],
       "semanticContract": "Actual length lookup saves7B3, then increments stream offset and reads second byte as note without a second length classification.",
       "currentSourcePaths": [
@@ -52111,10 +52222,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music zero-prefix loop",
       "semanticEvidence": [
         "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
       ],
       "semanticContract": "Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler.",
       "currentSourcePaths": [
@@ -52246,10 +52359,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_triangle_music",
       "semanticEvidence": [
         "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required.",
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Byte counter decrement wraps0 toFF; nonzero goes noise. Fetch stores incremented F9 before indirect read with old Y. First zero writes triangle0; negative byte calls real ProcessLengthData, saves length, writes1F, then second fetch with original write/read order; second zero writes0."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Byte counter decrement wraps0 toFF; nonzero goes noise. Fetch stores incremented F9 before indirect read with old Y. First zero writes triangle0; negative byte calls real ProcessLengthData, saves length, writes1F, then second fetch with original write/read order; second zero writes0.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
       ],
       "semanticContract": "Byte counter decrement wraps0 toFF; nonzero goes noise. Fetch stores incremented F9 before indirect read with old Y. First zero writes triangle0; negative byte calls real ProcessLengthData, saves length, writes1F, then second fetch with original write/read order; second zero writes0.",
       "currentSourcePaths": [
@@ -52379,10 +52494,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_noise_music",
       "semanticEvidence": [
         "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required.",
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Save old noise offset, increment7B0 before indirect read; nonzero byte goes beat handler. Zero restores loopback offset, and actual BNE tests restored byte; zero falls into handler with A0, nonzero repeats fetch."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Save old noise offset, increment7B0 before indirect read; nonzero byte goes beat handler. Zero restores loopback offset, and actual BNE tests restored byte; zero falls into handler with A0, nonzero repeats fetch.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
       ],
       "semanticContract": "Save old noise offset, increment7B0 before indirect read; nonzero byte goes beat handler. Zero restores loopback offset, and actual BNE tests restored byte; zero falls into handler with A0, nonzero repeats fetch.",
       "currentSourcePaths": [
@@ -158305,7 +158422,13 @@
         "RunAObj",
         "AlterAreaAttributes",
         "Alter2",
-        "SetFore"
+        "SetFore",
+        "LoadHeader",
+        "HandleSquare2Music",
+        "Squ2LengthHandler",
+        "FetchSqu1MusicData",
+        "HandleTriangleMusic",
+        "FetchNoiseBeatData"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -158319,7 +158442,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 corrective scope amendment - complete column output chain",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair",
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 corrective scope amendment - complete parser output chain",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 bounded scope amendment - music pointer lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

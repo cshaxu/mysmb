@@ -3384,3 +3384,66 @@ paths added. S17/T70 remain open;no full certification or new audit round.
 | mysmb16.exe | 258651 | a8440c84f64ed9b2a79d8a097ff511f22758b2f84ee4893d5bb38faedb407e13 |
 | mysmb32.exe | 373107 | 6aba0141541c9b9bbdeb13e417a7d8e2d1b86272c7bf553a63896fa3395071b5 |
 | mysmb64.exe | 379113 | ff1c5df7fbd8b222d7ed531fe2d6f8fd43a6c425144c1e34578bfd00248e0b5d |
+
+## S17 P7 bounded scope amendment - music pointer lifetimes
+
+Receive six already accepted labels as overlapping audit participation:
+`LoadHeader`, `HandleSquare2Music`, `Squ2LengthHandler`, `FetchSqu1MusicData`, `HandleTriangleMusic`, `FetchNoiseBeatData`.
+Expected fresh0,baseline/max1992,no custody transfer or node/control promotion.
+Audit six original MusicData indirect sites/seven native fetch expressions,
+two original LoadHeader scalar pointer stores and five producer/consumer pairs.
+Use retained T69 S14 P2 live header/channel routes only after whole audio.c
+identity and all intra-channel helper/write dependencies are checked. Square2
+header reload must precede a fresh pointer read;the other channel caches must
+have no pointer-writing child before reuse. Original22 header pointer domains
+come from S16;residual headers need no unsupported normal-gameplay claim.
+All local research/check output stays under ignored build. Four focused native
+music/audio checks each width validate current integration;no new original
+execution,product code edit or three-EXE refresh. A dependency/lifetime mismatch
+stays this S and receives corrective custody before editing. Material total
+remains unknown;this admission is not a global use/alias closure.
+
+## S17 P7 checkpoint - retained music pointer paths
+
+Six original MusicData indirect sites F743/F784/F7C9/F825/F83A/F87E map
+to seven native fetch expressions. The extra Square1 null-byte refetch shares
+the original F7C9 instruction. Whole current audio.c equals accepted1face800
+after line-ending normalization,including local enums,reader,APU shim and
+all channel/helper bodies. Normalized SHA256:
+b02bed93dffecc3c205b04801abe85054af28dab7fc83518205915befd43b1b4.
+
+Original scalar pointer writes are only LoadHeader F701/F706. The C RAM-write
+scan resolves every write expression to a literal/enum address;there is no
+unresolved dynamic index in the audio owner. All actual internal call closures
+are contained in that file,no external callback. LoadHeader alone writesF5/F6.
+Square1,Triangle,Noise closures cannot overwrite these bytes. Square2's end
+helper may reload a header;the source/native loop immediately reloads the
+pointer before another fetch. ProcessLengthData's closure cannot overwrite
+the pointer between Square2's first and second read. Offset increment-before-
+fetch and zero/null/loopback behavior retain the accepted T68/T69 clauses.
+Bulk initialization and other game phases are outside this intra-channel
+lifetime claim;P5's global indexed-write candidates are not discharged here.
+
+The retained original T69 S14 P2 mode48 receipt contains50176 live calls
+(49 selectors,1024 calls each),zero scoped RAM/APU/ordered-write differences
+per native width. It actually observes both header stores and all six read
+PCs. Whole-source identity plus the current dependency/lifetime check permits
+reuse in exactly that receipt's fixture/stack ABI. S16 separately binds22
+source header pointer domains and all256 byte offsets;residual headers are
+not automatically called normal-gameplay reachable. No new original execution
+or broader input/caller coverage is claimed.
+
+Four current native checks each width pass:music header,death music,audio
+and original header table binding. Five negative checks reject missing or
+duplicate sites,unobserved reads,and simulated pointer clobbers in channel
+or length-helper closures. Current checks validate integration,not replace
+original route evidence. No production or test code changed;three EXEs remain
+P6 byte-identical. Source/domain dependency remains for final snapshot binding.
+
+Material669-673 add five explicit LoadHeader-to-consumer pointer paths;no new
+node/control credit or custody transfer. Historical1992/1992;local scoped
+nodes1992/1992,controls4274/4274(raw4342,infeasible68);material673 partial,
+total unknown. Six admitted labels retain their previous local contracts.
+S17 remains open for remaining indirect/mutable/hardware/register/flag/stack/
+inter-frame use joins;pixels,routes,snapshot are still pending. This checkpoint
+does not close the entire61-site indirect inventory or the material package.

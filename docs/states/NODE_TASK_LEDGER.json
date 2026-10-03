@@ -766268,7 +766268,13 @@
         "RunAObj",
         "AlterAreaAttributes",
         "Alter2",
-        "SetFore"
+        "SetFore",
+        "LoadHeader",
+        "HandleSquare2Music",
+        "Squ2LengthHandler",
+        "FetchSqu1MusicData",
+        "HandleTriangleMusic",
+        "FetchNoiseBeatData"
       ],
       "baseline": 1992,
       "incomingComplete": [

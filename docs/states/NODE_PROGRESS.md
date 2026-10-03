@@ -8,10 +8,17 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material668 is a partial enumerated set;its global denominator is unknown.
+Material673 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P7 music pointers](../proposals/m2/t70-final-current-certification.md#s17-p7-checkpoint---retained-music-pointer-paths).
+Six original indirect sites/seven native fetches,five header-to-channel paths
+reconciled in declared domains. Whole audio owner/callee writes stable versus
+accepted snapshot;50176 actual original live calls retained,4 current checks
+each width and5 negative probes pass. No new node/control credit or products;
+material673 partial,total unknown. S17 and four named packages remain open.
 
 [P6 parser repair](../proposals/m2/t70-final-current-certification.md#s17-p6-checkpoint---parser-decoder-and-return-order-repair).
 32 parser nodes repaired/re-audited;27139 original roots each width zero RAM
