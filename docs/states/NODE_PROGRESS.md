@@ -1,5 +1,16 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S11 - closed victory message/termination material chain
+
+[15-node source/material proof](../proposals/m2/t70-final-current-certification.md#s11-p1-closure---victory-messages-and-canonical-termination-call).
+Restored final B actual shared TerminateGame call,corrected source range.
+16128 original roots+707 persistent records each width zero scoped RAM diff;
+all15 entries observed,1152 original terminal calls;9 material rows added.
+4 focused checks each,6x600-frame routes,native/OpenNT builds and3 products
+pass. Historical1992/1992,current exact nodes1992/1992,feasible controls
+4275/4275(raw4342,infeasible67),material595/595 partially enumerated. Fresh0,
+no deferred labels;T70/M2 global material/output/end-to-end duties remain.
+
 ## M2 T70 S10 - closed title/menu/demo material repair
 
 [25-node source/material proof](../proposals/m2/t70-final-current-certification.md#s10-p1-closure---title-score-clear-repair-and-menudemo-material-paths).

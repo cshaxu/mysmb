@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 586,
+    "enumeratedCount": 595,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12882,6 +12882,196 @@
       "currentSourcePaths": [
         "src/game/title_modes.c"
       ]
+    },
+    {
+      "id": "material-00587",
+      "producer": "IncMsgCounter",
+      "consumer": "IncMsgCounter",
+      "storage": "RAM0749 persisted add4 and RAM0719 carry accumulator",
+      "feasiblePath": "Each secondary+4 eight-bit carry increments primary exactly once;full256 secondary and primary byte classes plus707 persistent records prove wrap and next-call retained counters.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:print_victory_messages persisted secondary/primary stores",
+      "semanticContract": "Each secondary+4 eight-bit carry increments primary exactly once;full256 secondary and primary byte classes plus707 persistent records prove wrap and next-call retained counters.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00588",
+      "producer": "IncMsgCounter",
+      "consumer": "SecondPartMsg",
+      "storage": "RAM0719/0749 persisted counters to next message selection",
+      "feasiblePath": "Only next-call secondary0 enables message selection;normal-world primary2 prints selector14,primary3 counts,primary4 exits;final-world primary3..6 selects15..18. Persistent zero-counter protocols exercise actual transitions.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:print_victory_messages zero-secondary and world/primary branches",
+      "semanticContract": "Only next-call secondary0 enables message selection;normal-world primary2 prints selector14,primary3 counts,primary4 exits;final-world primary3..6 selects15..18. Persistent zero-counter protocols exercise actual transitions.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00589",
+      "producer": "ThankPlayer",
+      "consumer": "PrintMsg",
+      "storage": "CurrentPlayer RAM0753 to initial message Y0/1 and selector12/13",
+      "feasiblePath": "Zero primary selects Mario Y0 or Luigi Y1 before EvalForMusic then selector+12;original stores no victory music for these Y values. Both current-player states and full-RAM patterned queue sentinels match.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:print_victory_messages player predicate and VRAM control",
+      "semanticContract": "Zero primary selects Mario Y0 or Luigi Y1 before EvalForMusic then selector+12;original stores no victory music for these Y values. Both current-player states and full-RAM patterned queue sentinels match.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00590",
+      "producer": "SecondPartMsg",
+      "consumer": "EvalForMusic",
+      "storage": "world-conditioned Y and primary-minus1/INY to victory-music predicate",
+      "feasiblePath": "World7 source primary>=3 subtracts1 then INY before CPY3;only message3 publishes queue4 before selector15. Normal-world primary2 reaches Y2 and preserves music. Controlled roots prove conditional stores/order.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:print_victory_messages world7 message and EventMusic4 gate",
+      "semanticContract": "World7 source primary>=3 subtracts1 then INY before CPY3;only message3 publishes queue4 before selector15. Normal-world primary2 reaches Y2 and preserves music. Controlled roots prove conditional stores/order.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00591",
+      "producer": "IncMsgCounter",
+      "consumer": "SetEndTimer",
+      "storage": "post-add RAM0719 carry/wrap result to CMP7 end predicate",
+      "feasiblePath": "Primary is stored after byte carry before >=7 test;ff+carry wraps0 and does not terminate. Normal-world primary>=4 zero-secondary early path bypasses counter writes but reaches same timer/task publication.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:print_victory_messages byte primary and >=7/early >=4 checks",
+      "semanticContract": "Primary is stored after byte carry before >=7 test;ff+carry wraps0 and does not terminate. Normal-world primary>=4 zero-secondary early path bypasses counter writes but reaches same timer/task publication.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00592",
+      "producer": "SetEndTimer",
+      "consumer": "PlayerEndWorld",
+      "storage": "RAM07a1 timer6 and RAM0772 phase3-to4 publication",
+      "feasiblePath": "Message exit writes timer6 then increments phase;next real end-world call observes nonzero timer and returns unchanged. Both persistent protocols include that actual phase4 wait call;no synthetic timer decrement or NMI coverage inferred.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:print_victory_messages phase transition then step_victory timer gate",
+      "semanticContract": "Message exit writes timer6 then increments phase;next real end-world call observes nonzero timer and returns unchanged. Both persistent protocols include that actual phase4 wait call;no synthetic timer decrement or NMI coverage inferred.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00593",
+      "producer": "EndChkBButton",
+      "consumer": "TransposePlayers",
+      "storage": "RAM075a livesff store to actual seven-byte record exchange",
+      "feasiblePath": "Final combined-port B sets flag1 and livesff before actual TerminateGame enters TransposePlayers;successful swap placesff in offscreen record while resuming other lives/world/area. Exhaustive offscreen-life signed byte and both player-count/player alternatives prove both outcomes.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:step_victory shared terminate_game then transpose_players record swap",
+      "semanticContract": "Final combined-port B sets flag1 and livesff before actual TerminateGame enters TransposePlayers;successful swap placesff in offscreen record while resuming other lives/world/area. Exhaustive offscreen-life signed byte and both player-count/player alternatives prove both outcomes.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00594",
+      "producer": "TransposePlayers",
+      "consumer": "ContinueGame",
+      "storage": "actual transpose result and swapped world/area to continue-area reset",
+      "feasiblePath": "Original carry-clear and native nonzero child result select real ContinueGame only for two-player nonnegative offscreen lives;real area-pointer child consumes swapped world/area before size/status/timer/mode reset. No child patched or substituted.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:terminate_game nonzero transpose result then continue_game",
+      "semanticContract": "Original carry-clear and native nonzero child result select real ContinueGame only for two-player nonnegative offscreen lives;real area-pointer child consumes swapped world/area before size/status/timer/mode reset. No child patched or substituted.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c"
+      ]
+    },
+    {
+      "id": "material-00595",
+      "producer": "PlayerEndWorld",
+      "consumer": "LoadAreaPointer",
+      "storage": "RAM075f incremented world and RAM0760 cleared area to actual area lookup",
+      "feasiblePath": "Zero end timer at worlds0..6 clears area/level/task, increments world,then calls actual area lookup before fetch timer increment/mode1;all7 worlds and256 fetch-timer bytes match full RAM with original child executing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:step_victory next-world stores then load_area_pointer",
+      "semanticContract": "Zero end timer at worlds0..6 clears area/level/task, increments world,then calls actual area lookup before fetch timer increment/mode1;all7 worlds and256 fetch-timer bytes match full RAM with original child executing.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c",
+        "src/game/area.c"
+      ]
     }
   ],
   "cohorts": [
@@ -14527,10 +14717,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $83c9: branches on SecondaryMsgCounter, then PrimaryMsgCounter, WorldNumber and source thresholds to choose a message/control write or counters; it must not select a message on a nonzero secondary counter.",
       "currentSourcePaths": [
@@ -14546,10 +14738,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $83da: on worlds 1\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201c7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer.",
       "currentSourcePaths": [
@@ -14565,10 +14759,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $83df: turns the primary value into message index Y; at zero it selects Mario or Luigi first-message index, otherwise enters the second-message transform.",
       "currentSourcePaths": [
@@ -14584,10 +14780,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201c7, choosing ordinary message, counter-only, or end-timer paths.",
       "currentSourcePaths": [
@@ -14603,10 +14801,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $83fd: queues VictoryMusic only for World 8 message index three, then reaches PrintMsg; other indexes print without changing EventMusicQueue.",
       "currentSourcePaths": [
@@ -14622,10 +14822,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8404: writes VRAM_Buffer_AddrCtrl as the selected message index plus $0c, then continues to counter update.",
       "currentSourcePaths": [
@@ -14641,10 +14843,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $840d: adds four to SecondaryMsgCounter, carries into PrimaryMsgCounter, and passes its post-add primary result to SetEndTimer.",
       "currentSourcePaths": [
@@ -14660,10 +14864,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $841a: returns without terminal writes while post-add primary is below seven; otherwise writes WorldEndTimer=$06 then enters the common task increment.",
       "currentSourcePaths": [
@@ -14679,10 +14885,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8422: increments OperMode_Task exactly once before the common return.",
       "currentSourcePaths": [
@@ -14698,10 +14906,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8423: returns from the victory message leaf without further game-state writes.",
       "currentSourcePaths": [
@@ -14717,10 +14927,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201c7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check.",
       "currentSourcePaths": [
@@ -14736,10 +14948,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8443: returns from PlayerEndWorld after either the active-timer branch or the completed next-world transition without additional writes.",
       "currentSourcePaths": [
@@ -14755,10 +14969,13 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 source graph audit:original JSR TerminateGame but C step_victory has duplicate inline body,no real shared child call. RAM equality does not prove this edge.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8444: ORs both saved controller latches, tests B, returns on no B, otherwise sets WorldSelectEnableFlag and lives=$ff before TerminateGame.",
       "currentSourcePaths": [
@@ -14774,10 +14991,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8454: returns after the World 8 no-B result or after TerminateGame returns, preserving that helper result.",
       "currentSourcePaths": [
@@ -18753,10 +18972,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title.",
       "currentSourcePaths": [
@@ -55432,13 +55653,16 @@
       "id": "control-00170",
       "cohort": "A",
       "status": "exact",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch World 8 B-set terminal helper sequence",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory actual mysmb_game_terminate_game child after flag1/livesff",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 shared child call missing despite existing canonical TerminateGame used by game-over;previous terminal RAM route does not prove call graph.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original EndChkBButton -> TerminateGame writes WorldSelectEnableFlag and lives=$ff before terminal player switching/title transition.",
       "currentSourcePaths": [

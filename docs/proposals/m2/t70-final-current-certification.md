@@ -1506,3 +1506,130 @@ covers3 EXEs local commit,no push;unrelated I/O/presentation/terrain work retain
 | mysmb16.exe | 258879 | 406543451e97c77f0944c584022f0ad6eb38bdfb1c42dc6c2133c639c29c746b |
 | mysmb32.exe | 372392 | 8d1cb3dbf48cd284a8fb5c443e82b88a48cf245b700e484a9c5ea3ee1997fc07 |
 | mysmb64.exe | 379424 | 4696d6756907b730a653b09f5bdc12387ecf4ff69013ff63f728e6a53b3ba10a |
+
+## S11 P1 admission - victory message and final termination material chain
+
+Scope15:PrintVictoryMessages,MRetainerMsg,ThankPlayer,SecondPartMsg,
+EvalForMusic,PrintMsg,IncMsgCounter,SetEndTimer,IncModeTask_A,ExitMsgs,
+PlayerEndWorld,EndExitOne,EndChkBButton,EndExitTwo,TerminateGame. All historical
+complete/current exact incoming;fresh expected0,max1992. Historical1992/1992,
+current1992/1992 nodes,4275/4275 feasible controls(raw4342,infeasible67),586/586
+material partial. Shared terminal_modes.c owns victory phases3/4 and real
+TerminateGame child. Earlier victory walk/dispatch and later area/status/audio
+owners retain accepted dependency contracts;this contiguous message-to-end
+state chain starts after walk and ends at actual world/title/player handoff.
+
+Source audit finds feasible control00170 original EndChkBButton JSR
+TerminateGame has no actual C shared child call:step_victory duplicates its
+body despite canonical mysmb_game_terminate_game already existing for game
+over. Reopen EndChkBButton and00170 graph contracts;equal terminal RAM alone
+cannot prove a missing call. Coordinator receives all15 scoped maintenance
+nodes before restoring that actual child and repeating both proof tracks.
+No source-game behavior invented or platform logic added.
+
+Original source first:secondary+4 carry into primary,world/player message
+selection,early normal-world exit,WorldEndTimer6 publication/task increment,
+zero-timer world advance and final combined-port B gate before shared
+termination. Actual TransposePlayers,ContinueGame and LoadAreaPointer remain
+accepted external dependencies and execute their real source/C bodies.
+Separate controlled original message/end-world roots compare all RAM except
+only per-case actually observed physical CPU-stack writes;CPU registers/SP
+outside portable ABI. No ROM,CPU instruction or child patched.
+
+Message fixtures12288:all256 secondary values with primary0..7/world0 or7/
+player0 or1 (8192),plus all256 primary values with secondary0/1/fc/ff and
+world/player alternatives (4096). End-world fixtures3840:all256 combined
+button bytes with zero/nonzero timer and world0/7 (1024);every valid pre-final
+world0..6 with all256 fetch-timer bytes (1792);all256 offscreen-life bytes,
+both player-count/current-player alternatives and final B (1024). Total16128
+roots,batches<=1024,process120seconds/root2560 instructions/128MiB;unique
+ignored S11 scripts/logs/raw data and cleanup per batch. Add persistent normal/
+final-world message protocols from zero counters through actual phase change.
+These are controlled function-state routes,not complete final-castle gameplay.
+
+Native C90 current x86/x64 probes,focused victory/core/NMI/purity/products,
+existing native/OpenNT builds and3 refreshed EXEs for this source repair.
+Similar sweep:all TerminateGame call sites/shared-body clones;message carries,
+conditional queue/selector stores,timer publication and player-record switch.
+Node exact flags remain scoped proof;complete material/output/end-to-end M2
+certification stays open. Owner original ROM/reviewed ASM read-only,local
+nonredistributable;no third-party implementation import. Standing local3-EXE
+commit authorization,no push;unrelated workspace work preserved.
+
+## S11 P1 closure - victory messages and canonical termination call
+
+All15 admitted labels exact:PrintVictoryMessages,MRetainerMsg,ThankPlayer,
+SecondPartMsg,EvalForMusic,PrintMsg,IncMsgCounter,SetEndTimer,IncModeTask_A,
+ExitMsgs,PlayerEndWorld,EndExitOne,EndChkBButton,EndExitTwo,TerminateGame.
+Expected/actual fresh historical0;no deferred nodes or transfer backlog.
+All15 remain S11 maintenance receivers. Historical1992/1992,current exact
+1992/1992 nodes,4275/4275 feasible controls(raw4342,infeasible67),595/595
+enumerated material relations,partial global denominator. S11 closed;T70/M2
+complete-material,numeric binding,pixel fidelity and end-to-end work remains.
+
+Source repair restores actual EndChkBButton849b JSR9248 corresponding shared
+mysmb_game_terminate_game call. Previous C duplicated its body;equal terminal
+RAM did not satisfy call-graph contract. No state-behavior difference is
+claimed for that duplicate. Canonical child silences event music,transposes
+records then either calls ContinueGame or returns to title. Flag1/livesff
+stores precede child. Source comment corrected from83c9-8426 to byte-bound
+83f6-8460. Canonical helper's only callers are RunGameOver and final victory;
+similar-issue sweep finds no second termination clone. PlayerLoseLife's silence
+and restart is a distinct original path and remains unchanged.
+
+Source message reads secondary first;nonzero bypasses selection. Zero primary
+prints current player selector12/13. Residual primary>=9 bypasses selection;
+normal world primary2 prints14,3 counts,4..8 exits early. Final-world primary
+3..8 subtracts1 then INY,queue4 only at resultingY3 before selectorY+12.
+All counter arithmetic preserves byte carry/wrap;secondary+4 carries into
+primary and post-store CMP7 chooses end timer6/task increment. Early normal
+exit leaves counters untouched. End-world timer nonzero returns;zero timer
+worlds0..6 reset area/level/task,increment world,call real LoadAreaPointer,
+increment fetch timer and set mode1. World>=7 ORs both saved ports,tests B,
+then publishes selection/lives before actual TerminateGame. Real transpose,
+continue and area children execute;they retain accepted external ownership.
+
+16128 original roots:12288 message counter/world/player states,3840 end-world
+timer/button/world/fetch/player-record states. All15 entries observed;17
+feasible conditional sites have both outcomes observed. Source8421 BNE after
+INY fromY0 to1 is unconditional;fallthrough is not an uncovered feasible path
+and retains original infeasible proof.1152 actual849b-to9248 calls observed.
+Full2048-byte RAM plus return discriminator compared both widths;only each
+root's actually observed CPU-stack write addresses excluded,union01f8-01fd.
+Other stack slots,zero page and all game RAM compared;CPU registers/SP outside
+portable ABI. All16128 returns checked at actual sentinel with SPff. No ROM,
+instruction,child or RAM-writing branch patched. Synthetic residual message
+counter bytes are byte-contract cases,not natural gameplay reachability claims.
+
+Persistent zero-counter protocols add707 records:normal world257 message calls
+to phase4 then one actual end-world waiting call;final world448 message calls
+then one waiting call. Both publish timer6 and retain it at the real next leaf.
+All707 records match both widths;native outputs byte-identical. Protocols omit
+intervening NMI/GameCore side effects,so do not certify timer decrement or a
+naturally completed castle. Timer0 roots separately prove next-world/title/
+second-player transitions. Nine material rows587-595 register actual counters,
+selector/music,index/phase,timer,record and area inputs. No global/cartesian
+material-completeness inference;music/HUD consumers remain separate owners.
+
+Operational:current shared C90 probes compiled both widths;4 focused CTests
+each pass(victory message,NMI parent,purity,product self-test). Six600-frame
+idle/start/pause/right/run-jump/select routes zero scoped difference and
+identical native records. Frame ABI compares0200-07ff except0778/0779,all
+CIRAM,palette,OAM,audio and PPU scalars;ordinal/zero-page/physical stack outside
+frame ABI,local roots above cover full RAM. Native products rebuilt both
+widths;original OpenNT shared-source DOS16 compile/link exit0,optional
+OLDNAMES.LIB warning retained. Product MZ format/length and copied hashes
+checked. Actual DOS graphical runtime/486 qualification is later work.
+
+Ignored build holds bounded probe scripts/logs/summaries;raw RAM/frame records
+removed after comparison. A shell-quoted coverage-summary command failed
+before any audit write and was replaced by a file-backed script;no failed
+command counts as evidence. No platform,ABI or runtime-emulator change.
+Standing owner authorization covers three refreshed local EXE commits;
+unrelated I/O/presentation/terrain edits preserved,no push.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258799 | 5899974b180e0ed99b284c1e82240c81d4ad9ed93fb47cc99092e02ef824b54d |
+| mysmb32.exe | 372392 | 7287a3a1937c2c6ab4d4bcd19ca1b0f42281464445f378769cb4e6db4ad2c889 |
+| mysmb64.exe | 379424 | 4827c814461a89698164b6ba5bf4101759bffa3d0f46b56833870d4a4aaf80c2 |

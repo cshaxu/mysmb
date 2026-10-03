@@ -255,18 +255,11 @@ void mysmb_game_step_victory(struct mysmb_game *game)
         game->ram[MYSMB_RAM_NUMBER_OF_LIVES] = 0xffU;
         /* EndChkBButton enters ROM TerminateGame, including its silence and
          * title-return writes when no other player's record can be resumed. */
-        game->ram[MYSMB_RAM_EVENT_MUSIC] = 0x80U;
-        if (mysmb_game_transpose_players(game) != 0U) mysmb_game_continue_game(game);
-        else {
-            game->ram[MYSMB_RAM_CONTINUE_WORLD] = game->ram[MYSMB_RAM_WORLD];
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
-            game->ram[MYSMB_RAM_SCREEN_TIMER] = 0U;
-            game->ram[MYSMB_RAM_OPER_MODE] = 0U;
-        }
+        mysmb_game_terminate_game(game);
     }
 }
 
-/* ROM $83c9-$8426 PrintVictoryMessages.  Its secondary counter is a frame
+/* ROM $83f6-$8460 PrintVictoryMessages.  Its secondary counter is a frame
  * divider: a message is selected only when it is zero, then the add-four
  * carries into the primary counter every 64 calls. */
 static void mysmb_game_print_victory_messages(struct mysmb_game *game)
