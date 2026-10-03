@@ -60292,10 +60292,12 @@
       "currentCounterpart": "mysmb_oam_draw_sprite_object",
       "semanticEvidence": [
         "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
-        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/history/M2-T66-player-relative-offscreen-current-proof.md Reads scratch tile/facing/attribute/position fields, emits one two-sprite OAM row, then advances vertical position, OAM offset and graphics index for the caller."
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/history/M2-T66-player-relative-offscreen-current-proof.md Reads scratch tile/facing/attribute/position fields, emits one two-sprite OAM row, then advances vertical position, OAM offset and graphics index for the caller.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:3labels/36instructions/19RAM joined3boundedclauses;actualchildflip/order/absoluteaddress/byteX-Yincrements reviewed,mandatoryF294retainsinfeasible03162;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf282 observations131072."
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf282 observations131072.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:reuse823296P82/P83/P84originalparentroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all36childPC/F288branchpair andmandatoryF294;P82rowX-Ycapabilitiescompared,5tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Reads scratch tile/facing/attribute/position fields, emits one two-sprite OAM row, then advances vertical position, OAM offset and graphics index for the caller.",
       "currentSourcePaths": [
@@ -60311,10 +60313,12 @@
       "currentCounterpart": "mysmb_oam_draw_sprite_object",
       "semanticEvidence": [
         "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
-        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/history/M2-T66-player-relative-offscreen-current-proof.md Writes first then second tile in normal order and clears the horizontal-flip contribution before common OAM attribute writes."
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/history/M2-T66-player-relative-offscreen-current-proof.md Writes first then second tile in normal order and clears the horizontal-flip contribution before common OAM attribute writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:3labels/36instructions/19RAM joined3boundedclauses;actualchildflip/order/absoluteaddress/byteX-Yincrements reviewed,mandatoryF294retainsinfeasible03162;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf296 observations65536."
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf296 observations65536.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:reuse823296P82/P83/P84originalparentroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all36childPC/F288branchpair andmandatoryF294;P82rowX-Ycapabilitiescompared,5tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Writes first then second tile in normal order and clears the horizontal-flip contribution before common OAM attribute writes.",
       "currentSourcePaths": [
@@ -60330,10 +60334,12 @@
       "currentCounterpart": "mysmb_oam_draw_sprite_object",
       "semanticEvidence": [
         "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
-        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/history/M2-T66-player-relative-offscreen-current-proof.md Combines normal or horizontal-flip contribution with base attributes and writes both OAM attribute bytes before coordinate and index advancement."
+        "M2 T66 S6 P2 original F282 two-sprite source audit: bit1 horizontal flip via two LSR, swapped/normal tile store order, base attribute OR, paired Y/X stores, explicit cleared-carry plus8, absolute-indexed OAM addresses and byte-wrapped coordinate/returned X/Y advances match current sprite_draw.c. docs/history/M2-T66-player-relative-offscreen-current-proof.md Combines normal or horizontal-flip contribution with base attributes and writes both OAM attribute bytes before coordinate and index advancement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:3labels/36instructions/19RAM joined3boundedclauses;actualchildflip/order/absoluteaddress/byteX-Yincrements reviewed,mandatoryF294retainsinfeasible03162;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf2a0 observations131072."
+        "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf2a0 observations131072.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:reuse823296P82/P83/P84originalparentroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all36childPC/F288branchpair andmandatoryF294;P82rowX-Ycapabilitiescompared,5tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Combines normal or horizontal-flip contribution with base attributes and writes both OAM attribute bytes before coordinate and index advancement.",
       "currentSourcePaths": [
@@ -135687,7 +135693,8 @@
       "currentCounterpart": "src/game/oam/sprite_draw.c flip branch joins common attributes; it never falls into the normal-tile branch.",
       "semanticEvidence": [
         "Td S9 K23 shared sprite-row OAM writer node-semantics and independent control-edge audit: SMB1 lines 15025-15061 compared with shared src/game/oam/sprite_row.c; controlled original-ROM/x86/x64 flipped and unflipped two-sprite row routes remain required.",
-        "M2 T66 S6 P2 local original opcode binding: F292 A9 40 is LDA #$40 immediately before F294 D0 BNE SetHFAt; zero flag must be clear. The raw DrawSpriteObject -> NoHFlip fall-through cannot execute. docs/history/M2-T66-player-relative-offscreen-current-proof.md"
+        "M2 T66 S6 P2 local original opcode binding: F292 A9 40 is LDA #$40 immediately before F294 D0 BNE SetHFAt; zero flag must be clear. The raw DrawSpriteObject -> NoHFlip fall-through cannot execute. docs/history/M2-T66-player-relative-offscreen-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:3labels/36instructions/19RAM joined3boundedclauses;actualchildflip/order/absoluteaddress/byteX-Yincrements reviewed,mandatoryF294retainsinfeasible03162;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T66 S6 P2 current x86/x64 match131072 original F282 roots across1841 RAM bytes and caller-consumed returned X/Y, zero differences; all flip xbase-attribute byte pairs, coordinate/OAM/graphics bytes and both initial carry states.3 nodes/3 feasible controls observed; source-proven impossible03162 has zero transfers.14+2 focused tests each, purity and original DOS16 link pass; products unchanged. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original F294 taken65536/fall0; F288 flip selector has both outcomes. Absence alone is not proof; instruction semantics above proves impossibility."
@@ -169728,16 +169735,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P84 checkpoint - player graphics action size animation uses reconciled:42labels/255instructions/81RAM joined14boundedclauses;actualspritechildren/carry/timer/swimcontinuation/offscreen/index semantics reviewed;producer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:30labels/155instructions/35RAM joined10boundedclauses;offset/borrow/sign/divide/scratch/childorder reviewed,36tablebytesboundexact;producer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:30labels/155instructions/35RAM joined10boundedclauses;offset/borrow/sign/divide/scratch/childorder reviewed,36tablebytesboundexact;producer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:3labels/36instructions/19RAM joined3boundedclauses;actualchildflip/order/absoluteaddress/byteX-Yincrements reviewed,mandatoryF294retainsinfeasible03162;producer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 8940,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1751,
+        "localInstructionReceiptSites": 8976,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1715,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3170,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 603,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3189,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 584,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169757,7 +169765,6 @@
           "src/game/status.c": 25,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/entry.c shared C90 entry owner": 21,
-          "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/area.c": 15,

@@ -767947,7 +767947,10 @@
         "ExYOfsBS",
         "DividePDiff",
         "SetOscrO",
-        "ExDivPD"
+        "ExDivPD",
+        "DrawSpriteObject",
+        "NoHFlip",
+        "SetHFAt"
       ],
       "baseline": 1992,
       "incomingComplete": [

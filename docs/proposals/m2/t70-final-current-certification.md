@@ -8666,3 +8666,23 @@ Fourteenoriginalrootfamilies total548864 eachwidth:6relative4096 plus8offscreen6
 Current src/game/oam/object_position.c normalizedSHA256:1fdb3149c5d4ca6159550a0ed9e13247734987199343ecb1c90aa77d3cf39225.
 
 Current src/game/oam/player_gfx.c normalizedSHA256:36c26a719a788bf05992170f1b8b6d5a5bad95a5a1c891d70c04dc9ee7f68478.
+
+## S17 P86 admission - actual sprite drawing child retained route join
+
+Existing F282-F2CF gap:DrawSpriteObject,NoHFlip,SetHFAt;36instructions/19directRAM sites. Canonicalowner oam/sprite_draw.c,inventoryretains historicalsprite_row ownerdescription. ActualP82enemyrow/P83block/P84player routesalreadyexecuteunmodifiedchild withallRAMwritescompared. Reuse parentroutePC/branch evidence andexplicitP82X/Ypointerreturn comparisons;no repeatmanifest orfakechildstub. Semanticjoinrequiresdirectionbit1tile/storeorder,absoluteOAMbase,byteX/Yincrements,03carry lifetime andsourceLDA40/Z0mandatoryBNE. Retaininfeasiblecontrol-03162. Fresh0/max1992,local1991/1992nodes4261/4262controls retained;source/productidentities checked,no sourcechange,no newglobalcredit. Wholeproducer/inter-frame/finalpackages stillpending.
+
+## S17 P86 checkpoint - sprite drawing child retained route uses reconciled
+
+S17 P86:3sprite child labels/36instructions/19RAM joined3boundedclauses;reuse823296parentroots eachwidth0diff/all36PC/onebranchpair plusmandatoryF294,5tests each. Scope1457/fresh0;8976/10691instruction receipts,3189/3773RAM receipts;1715instructions/584RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| D1 | DrawSpriteObject | TwoLSR03 exposeoriginalbit1carry;LDA00doesnotclobbercarry. Flipstoreslefttiletorightfirstthenrighttiletoleft,notflippingpixeldata. Nonflipstoreorderleftthenright. Absolute0200+Ybase retains0315addressforYFF;tileandattribute inputsRAMcannotaliasthisOAMrange. Currentcanonicalowner sprite_draw.c retainedcurrentSourcePaths,inventoryprimarydescriptionhistorical. |
+| D2 | NoHFlip | Nonflippath setsA0;flipsetsA40thenmandatoryBNEF294becauseZ0. Priorinfeasiblecontrol-03162 retainedsourceproven,notnewunexecutedbranchdebt. Parentroute F288taken/fallthrough bothobserved andall36PCexecuted. |
+| D3 | SetHFAt | ORA04 storespairedattributes,live02pairedY,live05firstXthenCLC/ADC8secondX;live02CLC/ADC8publishes02. TYA/CLC/ADC8returnsbyteY+8;twoINXreturnsbyteX+2. P82actualrowpointercapabilitiescomparebothoriginalregisteroutputs;P83/P84actualchildrenobservecalleroutputs/scratch. Nohost-widthcoordinate orOAMwrapbeforeabsolutestores. |
+
+No neworiginalmanifest:reuseacceptedP82enemyrow/P83block/P84player823296parentroots eachwidth withactualunmodifiedchild. AllnonstackRAM/24APU/orderedwrites0diff;all36childPC,F288bothsides,F294onlyF2A0(sourceLDA40Z0). P82rowX/Ypointercapabilitiescheckedagainstoriginalreturns. Fivefocusedtests eachwidthpass,fournegativeaccountingmutants rejected. SourceidentitiesequalHEADandacceptedparentdependencies. AbsoluteOAM/byteindices/03carry/pairedstores reviewedseparatelyfromoutputequality;controlledparentdomains notwholeproducerreachability. RetainoldT66childreceiptwithinitsdomains,notanotherglobalaudit. No product/sourcechange;P81threeproducts hashesunchanged,DOScompile/linkonly. WholeProgramLifetime/material/pixels/routes/snapshot remainpending.
+
+Current src/game/oam/sprite_draw.c normalizedSHA256:38d45cf19d2e7cf63863002c007244765bd9b4901ef3be8bca45464eb32e0588.
+
+Current src/game/oam/sprite_row.c normalizedSHA256:c48564ca7adfdd578115ff8014961eb48da784ff6f8ab3115216b2255c1081e5.
