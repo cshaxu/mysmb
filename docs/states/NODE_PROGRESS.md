@@ -1,5 +1,16 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S1 - active final-certificate baseline
+
+[Exact task backlog and empty-node infrastructure scope](../proposals/m2/t70-final-current-certification.md).
+Incoming/current exact1992/1992 nodes,4276/4276 feasible controls(raw4342,
+infeasible66),557/557 material partial;historical1992/1992 separate,no new
+credit.1992 original source bindings,9604 source and4506 explicit evidence
+references pass catalog integrity. Inactive area alternatives remain a live
+certification debt;old TODO reconciliation,material completeness,proof
+freshness and full gameplay/death/warp/completion routes remain unproven.
+Products unchanged S15 builds;S1 active,no M2 completion claim.
+
 ## M2 T69 - closed cross-cohort integration
 
 [Task matrix and exact scopes](../history/M2-T69-cross-cohort-current-proof.md#s16-p1-and-t69-closure---cross-chain-evidence-matrix).

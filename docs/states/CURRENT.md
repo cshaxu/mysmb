@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T69 S16 Packet
+## M2 T70 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T69 S16 P1 closed;T69 closed,T70 next unadmitted. |
-| Admission And Approval | Owner ongoing M2 mandate;coordinator admits empty-node infrastructure cross-S closure audit after all15 preceding runs closed. |
-| Objective | Consolidate T69 cross-chain proofs and final integrated regression;retain task history and define remaining certification obligations. |
-| Non-goals | Zero fresh nodes;no unobserved control/material credit or premature M2 certification. |
+| Identifier Mode | New: M2 T70 S1 P1 active;T69 closed. |
+| Admission And Approval | Owner ongoing M2 completion mandate;coordinator admits next original-plan final-certification task after T69 closure. |
+| Objective | Establish final certificate baseline;inspect actual evidence/source/address contracts and identify exact remaining certification gaps. |
+| Non-goals | No promotion from catalog/exact flags;no source change without bounded chain amendment,no M2 completion from partial material enumeration. |
 | Reference Baseline | Historical1992/1992;current exact1992/1992 nodes,4276/4276 feasible controls(raw4342,infeasible66),557/557 material partial. |
-| Candidate Proposal | [T69 plan](../history/M2-T69-cross-cohort-current-proof.md#s16-p1-admission---final-cross-s-evidence-and-artifact-review). |
-| Files And ABI Surface | Governance/evidence registry,ledger,progress,history and neutral summaries;no product source or ABI change. |
+| Candidate Proposal | [T70 exact backlog and S1 contract](../proposals/m2/t70-final-current-certification.md). |
+| Files And ABI Surface | Registry/ledger/progress/TODO/evidence catalog;existing shared-source and original listing read-only until exact repair scope amendment. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
-| Verification | Review each S closure/route summary and source dependency validity,actual current statuses and S15 integrated three-target regression/artifact hashes;focused product self-tests/purity. |
-| Expected Markers | Empty node scope/expectedMatches/actualMatches;fresh0,max1992;no control/material promotion. |
-| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable;ignored build output,128MiB raw/1024 batch/120seconds process/524288steps root and cleanup. |
-| Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | Missing or contradicted accepted chain proof,unresolved T69 mismatch or product identity prevents task closure. |
-| Exit Criteria | Met:cross-chain matrix and remaining certification duties recorded;all T69 runs closed,history retained,products unchanged and governance gates pass. |
+| Verification | Node/control/material ID census,source files and counterparts,evidence links,address binding,source freshness/open debts and current product identity;retained original route catalog is not new semantic proof. |
+| Expected Markers | Empty S1 node/expected/actual arrays,fresh0,max1992;no edge/material promotion. |
+| Asset Needs | Owner-local ROM/reviewed ASM nonredistributable,read-only original byte binding;ignored build contains neutral catalog and logs,no new raw trace. Standing EXE commit authorization applies only if product repair. |
+| Reporting Requirements | Report current exact nodes/1992,feasible controls/4276,raw4342/infeasible66 and material557 partial;historical1992 separate;name concrete missing proof and exact repair scope. |
+| Stop Conditions | A concrete mismatch requires bounded repair and repeat audit within current admitted scope before closure;missing broad certification proof prevents M2 certification. |
+| Exit Criteria | Actionable evidence/source/debt catalog produced with exact labels/edges and successor boundaries;governance gates pass,no unresolved admitted product mismatch. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Stale cached counters,open runs,source-invalidated proofs,unresolved debt,artifact identity and scope limits. |
+| Similar-Issue Sweep | Missing files/counterparts,empty proofs,stale counters,old TODOs,dead alternate owners,evidence freshness and incomplete material/route denominators. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **4276/4276** (raw4342,infeasible66).
 - Exact material relations: **557/557**, enumeration partial.
 - Latest three products are T69 S15 P3 builds restoring8 actual offscreen caller sites in shared game code.
-- T69 closed:all16 S runs closed,73 planned pending nodes/315 controls/55 material resolved;T70 next unadmitted,M2 not certified.
+- T69 closed;T70 S1 active infrastructure certificate-baseline audit;M2 remains unproven.

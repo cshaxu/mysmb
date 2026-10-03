@@ -545,3 +545,14 @@ and six600-frame matrix retained;all3 products unchanged. Historical1992/1992
 separate. T70 remains next unadmitted and must complete evidence freshness,
 feasible material enumeration,historical-debt reconciliation and end-to-end
 Win32/game route certification before any M2 completion claim.
+
+## Current checkpoint at T70 S1 admission
+
+[T70 exact final-certification backlog](t70-final-current-certification.md)
+is admitted after T69 closure. S1 is empty-node infrastructure review with
+zero credit;existing exact1992/1992 nodes,4276/4276 feasible controls and
+557/557 partially enumerated material remain claims under certification.
+Original source/address and evidence-file catalog pass;inactive area legacy
+owners and historical TODO reconciliation remain concrete follow-up work.
+Complete material enumeration,actual proof freshness and end-to-end native
+routes remain required.Three S15 products unchanged;M2 not certified.
