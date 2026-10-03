@@ -6956,3 +6956,81 @@ Current src/game/vine.c normalizedSHA256:079acf2621b59a9fedcaa297218e79fbf045ff8
 Current src/game/cannon.c normalizedSHA256:447512bdf43eee743b78d7919398dd18e8e630eb938b8e4e65c411bcd569bde1.
 
 Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993partial,totalunknown.2817instruction/963RAM boundedreceipts,7874otherinstructions/2810otherRAMjoins remain,not new discoveredbugs.Allwhole-programlifetimefields/fourfinalpackages open,M2 NOT COMPLETE.
+
+## S17 P48 admission - original spring producer and freeze timer protocol
+
+NamedP47pendingclause:anim070E/indexdomains afterTimerControlfreeze. OriginalNMI80F6-8116 holdsalltimerswhenTimerControlremainnonzero;landingDEC4-DEE7 suppliesanim1/timer3;handlerclearsframe4 whenunfrozen andincrementswithtimer0only. Scope:InitBuffer,DecTimers,DecTimersLoop,SkipExpTimer,ChkForLandJumpSpring,ExCJSp,ChkJumpspringMetatiles,JSFnd,NoJSFnd,CheckForJumpspring,JumpspringHandler,DrawJSpr,PosJSpr, 37unjoined instructions/11RAM sites,participation620,fresh0/max1992. Auditcurrentoriginal landrootsandsequentialtimer/handler protocols,freeze before/aftertimerstep. Harnesscomposesoriginalexistingentrysegments withoutROMpatch;that artificialhandoff isnotanoriginalcontrol/materialedge credit orwholeGameCoreproof. Non-adversarial singlefreeze episodesandoptionalrelanding areexplicitbounded scenarios;broaderrepeatedfreeze/fullcaller lifetime remainspending. Sourceunchanged unlessactualqualifiedmismatch found;noinventedclamp. Rawbelowbuild,128MiB/120sprocess,readonlyownerROM,similarclassallanim/timerwriters andgraphicsconsumer. Existingglobaltotalsremain1992/1992local/4274controls/993partialmaterial.
+
+## S17 P48 checkpoint - original spring producer and freeze timer protocol
+
+NamedP47pendingproducerclause,notanotherauditround. Newlocaljoins:
+37instructions/11RAM,6clauses,scope620/fresh0/max1992. Participants:
+InitBuffer,DecTimers,DecTimersLoop,SkipExpTimer,ChkForLandJumpSpring,ExCJSp,ChkJumpspringMetatiles,JSFnd,NoJSFnd,CheckForJumpspring,JumpspringHandler,DrawJSpr,PosJSpr.
+
+| Clause | Original PCs | Source-use/lifetime/alias disposition |
+| --- | --- | --- |
+| S1 | 80f6-80fe | TimerControl747 read beforeNMI:zero entersDecTimers;nonzeroDEC,onlyresultzero entersDecTimers. Frozenpositivecontrolthereforeholds786 andalltimerbytes. No invented decrementwhilefrozen. Native tick_player_timers identical exactgate,standalone protocolstopsbeforeFrameCounter increment. |
+| S2 | 8100-810c | Interval077F byteDEC thenBMInegative resets14 andlastindex23,otherwiselast14;LDX bounds go tocommonloop. Timer786 belongsframeoffset6 andisvisited in bothintervalpaths. Controlflag state isfromoriginalDEC,not host signedint. |
+| S3 | 810e-8116 | DescendingTimers0780+X reads currenttimer,onlynonzeroDEC;DEX/BPL stopsafterX0. Scalarindex<=23 bounds directRAM;looponlymutates0780-07A3,disjointanim070E. Originalprotocol NMIreturn is artificialharnesshandoff,notwholeNMI/GameCoreedge. |
+| S4 | dec4-dedc | Actualmetatilepredicate returns carry beforebranch;only67/68 publishes709force70,6DBforceF9,786timer3,070Eanim1 inoriginalorder. LSR3 yields1;otherallbyteinputs leaveRAM unchanged. All256 metatiles tested16profiles;validlandingproducer no arbitraryanim/timerinjection forprotocol otherthanthese provenstores. |
+| S5 | dedd-dee7 | CMP67 equalSECreturn;otherwiseCMP68,CLC,BNE skipsSEC unlessequal. Booleanpredicate exact C-carry contract;A preserved byoriginalCMP butvoidlanding API exposes onlyRAM/output,CPUregisterA excluded. No RAMsideeffect inpredicate. |
+| S6 | e8d5-e8de | Code50 (spring) setsY3 andreads070E toX thenabsolute-X E878frame table;non-springbypassesread. Tableprefix0..4 actualreadincontinuousprotocol;sourcearray5 safein thatscenario. P47 Bullet Bill roots provecomplementarybranch withunchangedrenderer dependency. Single-freeze proofdoesnotestablishallcaller/alias/inter-frame states. |
+
+Audit conclusion:frame4/timer0/frozen input canpublish5,andcannotbeassumed
+safe. Howeverit isnot evidenceofareachablegameplaybug byitself. Actual
+NMI TimerControlgate holdsspringtimer duringfreeze. Verified landing
+entryDEC4 produces070E1/7863;controlledsinglefreeze startanyactivephase
+before/afterNMI resumeswithoutout-of-prefixreads. No productfixorclamp.
+
+Currentoriginal4096landingroots:all256metatiles x16profiles,only67/68
+performthefourstores,otherinputs retainRAM. Continuousmode135:64episodes
+x256steps,freezeonset0..15,length8/64,before/aftertimersegment80F6-8119,
+thenactualB8BAhandler. Rootinput/output compares2032RAM/24APU/order;only
+physical1F0-1FF stackexcluded,minSP>=EF. PersistentRAM fromeachroot feeds
+nextstep;rawconsecutivebefore/afterRAMidentitycheckedexceptFrameCounter9,
+declaredbeforetimerfreeze747,andphysicalstack. Originalcodeunchanged,
+butharnessjoins8119 toB8BA withslotrestore;thisisdeclaredartificialprotocol
+handoff,notGameCorecontrol/materialedge orfullNMIframeproof. FrameCounter
+isexternalstepinput,notanobservedoriginalNMIincrement. Protocolinitial
+0709/6DB/786/070E values areverifiedlandingoutputs,notactuallandingcall
+executioninsideeachprofile;separatecurrentDEC4roots proveinputbinding.
+
+All20480roots eachwidth zero scoped differences. All37PC/8branchpairs:
+spring/non-springgraphicsbranchcomplement reusescurrentP47Bullet Bill
+roots,withsamewhole normal_enemy_gfx dependencyidentity. Originalactual
+B8DC ADC readsall4 positiontableaddressesB8B6-B8B9;E8DE LDA readsall5
+graphicstableaddressesE878-E87C. Handlerentryphasecensus:
+0=13934,1=542,2=816,3=816,4=276,no5. Singlefreeze reducedsource-semantic
+model4366states/25239transitions exhausts duration1..255,arbitraryphase,
+before/afterNMI andearlyrelease;negative seed4/0/frozen8 generates5 as
+expected. ThismodelisindependentofnativeAPI equality,butisnotafullROM
+reachabilityproof. Repeatedfreeze events/fullcaller/indirectinitialization
+andcross-framealias proofremainpending;do notpromoteanimdomain globally.
+
+Two harness corrections beforeacceptance:initialheader omittedbatchfirst
+ordinal,soaftertimerfreezebatchesusedwrongnativeprofile;thenpersistent
+RAMwasnotcopiedtolivebufferbetweensteps. Thosezero-or-difference results
+arenotprotocolacceptance. Header12-15 nowcarryabsoluteordinal,original
+liveRAMcarryincludesmode135;consecutivepersistentstates assertion guards
+againstreset-to-zero equality. Finalcontinuousrun supersedes initialruns.
+No product/source mismatch inferredfromthoseharness errors.
+
+Six rebuiltfocusedtests eachwidthpass(timer-root,area-jumpspring,
+jumpspring-origin-offscreen,chain,OAM,platformpurity);fournegativeindex
+checksrejectmissing/duplicate/falseglobal/falselocalcredit. Nofullsuite
+claim. Similar-classsweep:allnamed070E/786 writers,0780-07A3 NMI timer
+stores,InitMemory clearing,validslotOAM/scratchdisjointness,graphics
+consumer andTimerControl gate checked. Reset/landing reinitializeactive
+phase;broadercaller lifetimes retainedpendinginstead ofassumedinvariant.
+Reuse material94 boundedtablecontract;no syntheticinterframeedgeadded.
+AllthreeproductsunchangedP46 hashes;DOSruntime notqualifiedhere.
+
+Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
+
+Current src/game/player/terrain_metatiles.c normalizedSHA256:cabc254bb597eb3156a68e0cc18e7d687a6c7d51820b24730f1a8d282fc509a0.
+
+Current src/game/oam/normal_enemy_gfx.c normalizedSHA256:9c9e764cd4a0f8bf68aa59a1e6e6bc16adf2dcaa265c81dd0d4137aa7b49ab83.
+
+Current src/game/jumpspring.c normalizedSHA256:f1941a910c1da856975f48e85368b35e7fd51090989548ed0e603eb8bc89f5b4.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993partial,totalunknown.2854instruction/974RAM boundedreceipts,7837otherinstructions/2799otherRAMjoins remain,not new discoveredbugs.Allwhole-programlifetimefields/fourfinalpackages open,M2 NOT COMPLETE.

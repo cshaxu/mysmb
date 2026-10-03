@@ -2124,11 +2124,13 @@
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -22848,13 +22850,15 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
         "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
         "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
@@ -22870,11 +22874,13 @@
       "currentCounterpart": "mysmb_game_tick_player_timers",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "When TimerControl is zero, decrements IntervalTimerControl and selects the source frame-only or frame-plus-interval timer range.",
       "currentSourcePaths": [
@@ -22890,11 +22896,13 @@
       "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Visits timer bytes in descending source order, decrementing only nonzero entries until index zero is processed.",
       "currentSourcePaths": [
@@ -22910,11 +22918,13 @@
       "currentCounterpart": "mysmb_game_tick_player_timers descending loop",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Skips decrement for an expired timer, decrements the index and continues while the index remains nonnegative.",
       "currentSourcePaths": [
@@ -37861,12 +37871,14 @@
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Preserves timer/animation gates, frame direction, A-edge force override, bounce handoff and animation cadence.",
       "currentSourcePaths": [
@@ -37904,11 +37916,13 @@
       "semanticEvidence": [
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Positions jumpspring from fixed Y plus frame table, and only arms force on new A press at applicable frame.",
       "currentSourcePaths": [
@@ -37946,11 +37960,13 @@
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Draws/checks spring before timer-gated animation advance.",
       "currentSourcePaths": [
@@ -51733,10 +51749,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Initializes vertical force, spring force/timer/animation after a landing spring tile.",
       "currentSourcePaths": [
@@ -51752,10 +51770,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Returns from landing-spring check.",
       "currentSourcePaths": [
@@ -51771,10 +51791,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Returns carry set for either spring metatile and clear otherwise.",
       "currentSourcePaths": [
@@ -51791,10 +51813,12 @@
       "currentCounterpart": "mysmb_player_jumpspring_metatile true return",
       "semanticEvidence": [
         "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
-        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
-        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Sets carry-equivalent true result for either jumpspring metatile then returns.",
       "currentSourcePaths": [
@@ -51810,10 +51834,12 @@
       "currentCounterpart": "mysmb_player_jumpspring_metatile false/true return",
       "semanticEvidence": [
         "Td S9 K57 jumpspring predicate terminal audit: SMB1 lines 12292-12293 compared with src/game/player/terrain_metatiles.c; controlled jump-spring predicate routes remain required.",
-        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
-        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences."
+        "M2 T64 S16: static SMB1 $DEE6-$DEE7 return audit plus 177 source-reachable original-ROM predicate records replayed by freshly compiled current x86/x64 shared-C checkers; original carry results and full mapped RAM agree with zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Returns final jumpspring predicate result.",
       "currentSourcePaths": [
@@ -55143,10 +55169,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Maps JumpspringObject through its five-entry animation offset and state code three."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Maps JumpspringObject through its five-entry animation offset and state code three.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
       ],
       "semanticContract": "Maps JumpspringObject through its five-entry animation offset and state code three.",
       "currentSourcePaths": [
@@ -167654,28 +167682,29 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - retained player physics climb animation and friction joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired",
         "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 2817,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 7874,
+        "localInstructionReceiptSites": 2854,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 7837,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 963,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2810,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 974,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2799,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/oam/normal_enemy_gfx.c": 128,
+          "src/game/oam/normal_enemy_gfx.c": 127,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
           "src/game/enemy/firebar.c": 79,
           "shared game core: enemy/balance_platform.c": 78,
           "src/game/world/player_enemy_collision.c": 72,
-          "src/game/frame_root.c": 66,
+          "src/game/frame_root.c": 60,
           "src/game/oam/block_gfx.c": 54,
           "shared coin, misc, score, world and OAM core": 51,
           "src/game/objects.c": 48,
@@ -167733,7 +167762,6 @@
           "shared game core: oam/bowser_gfx.c": 19,
           "shared game core: enemy/actor_slots.c": 19,
           "src/game/enemy/platform_collision.c": 19,
-          "src/game/player/climbing.c and terrain_metatiles.c": 19,
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
@@ -167744,6 +167772,7 @@
           "shared Bullet Bill/Cheep frenzy core": 15,
           "src/game/world/collision.c": 15,
           "src/game/player/terrain_metatiles.c and climbing.c": 15,
+          "src/game/player/climbing.c and terrain_metatiles.c": 15,
           "src/game/enemy_bounds.c": 15,
           "src/game/world/block_buffer.c": 15,
           "src/game/oam/fireworks_gfx.c": 15,

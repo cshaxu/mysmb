@@ -13,6 +13,12 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P48 bounded spring producer](../proposals/m2/t70-final-current-certification.md#s17-p48-checkpoint---original-spring-producer-and-freeze-timer-protocol).
+37instructions/11RAM joined6boundedclauses;20480currentroots eachwidth
+zero scoped differences,continuoussinglefreeze indices0-4;2854instruction/
+974RAM receipts,2799otherRAMjoins remain. Broadercaller lifetimepending,
+material993partial,totalunknown;source/productsunchanged,M2incomplete.
+
 [P47 retained object-use joins](../proposals/m2/t70-final-current-certification.md#s17-p47-checkpoint---retained-flag-spring-vine-and-cannon-source-use-joins).
 247instructions/96RAM joined boundedclauses,241664currentroots eachwidth
 zero scoped differences,allPC/branchsides;2817instruction/963RAM receipts,

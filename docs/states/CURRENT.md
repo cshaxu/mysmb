@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P47 retained object-use checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P48 bounded spring producer checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -13,7 +13,7 @@
 | Files And ABI Surface | P46 sharedfireball/fireball_core.c originalbyte-indexed boundPRG speed lookup;P45 sharedwhirlpool.c RAM00/01/02 publication andtest/engine_environment_smoke.c originalgravityentry observer;S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 611 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 620 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -78,7 +78,6 @@
 
 
 
-S17 P40:65 paletteinstructions/28RAM joined8 retainedclauses;5segments identical398f38ef.36864 currentparents eachwidth+480protocols/1440records0diff,6branchpairs/all28tablebytes/29184order checks;2tests each,productsP39 unchanged. Scope490/fresh0;1858instruction/579RAM boundedreceipts,3194otherRAM joins;local1992/1992,controls4274/4274,material985 partial,totalunknown,fourfinalpackages open.
 
 S17 P41:53setupinstructions/22RAM joined7retainedclauses;fivebodies unchangedd247f6a3,5888currentroots eachwidth0 scopedRAM/APU/orderdiff,21entries/42controls/19tablebytes observed.3tests each/productsP39 unchanged.Path986 A0return added,scope497/fresh0;1911instruction/601RAM boundedreceipts,3172otherRAM joins. Local1992/1992,controls4274/4274,material986 partial,totalunknown,fourfinalpackages open.
 
@@ -94,3 +93,5 @@ S17 P45:117timer/warp/whirlpoolinstructions/59RAM joined10clauses;threecontracts
 S17 P46:actualground8instructions/3RAM joined;2core/speed contracts restored,2048baseline eachwidth3962RAMdiff->0.12288currentroots eachwidth2032RAM/APU/order0diff/all256speedaddresses;9tests each/seven600frames pass/3products refreshed,DOSlinkonly. Scope585/fresh0;2570instruction/867RAM receipts,2906otherRAMjoins.Local1992/1992,controls4274/4274,material993partial,totalunknown,fourfinalpackages open.
 
 S17 P47:31flag/spring/vine/cannonlabels,247instructions/96RAM joined15boundedclauses,4ownersunchanged.241664currentroots eachwidth2032RAM/APU/order0diff,all247PC/40branchpairs;13tests each,productsP46unchanged.Scope611/fresh0;2817instruction/963RAM receipts,2810otherRAMjoins. Springfreeze-to-indexproducerclause pending;local1992/1992,controls4274/4274,material993partial,totalunknown,fourfinalpackages open.
+
+S17 P48:37timer/landing/springgraphicsinstructions/11RAM joined6boundedclauses,4ownersunchanged;20480currentroots eachwidth2032RAM/APU/order0diff,37PC/8branchpairs,64continuousfreezeepisodes/readindices0-4. Model4366states/25239transitions,6tests each/productsP46unchanged.Scope620/fresh0;2854instruction/974RAM receipts,2799otherRAMjoins. Singlefreezeclausequalified,broadercaller lifetimepending;local1992/1992,controls4274/4274,material993partial,totalunknown,fourfinalpackages open.

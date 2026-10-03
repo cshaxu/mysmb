@@ -767019,7 +767019,16 @@
         "ChkDSte",
         "BBFly",
         "RunBBSubs",
-        "KillBB"
+        "KillBB",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "ChkForLandJumpSpring",
+        "ExCJSp",
+        "ChkJumpspringMetatiles",
+        "JSFnd",
+        "NoJSFnd",
+        "CheckForJumpspring"
       ],
       "baseline": 1992,
       "incomingComplete": [
