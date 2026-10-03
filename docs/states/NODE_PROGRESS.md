@@ -8,10 +8,15 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material935 is a partial enumerated set;its global denominator is unknown.
+Material946 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P26 shared motion](../proposals/m2/t70-final-current-certification.md#s17-p26-checkpoint---shared-motion-value-lifetimes).
+93 core instruction clauses/47 RAM sites,4096 original roots each width zero
+differences,all8 branch pairs/5 tests each pass.11 paths936-946;material946
+partial,total unknown. Caller/inter-frame/other owners and final packages remain.
 
 [P25 indexed clear](../proposals/m2/t70-final-current-certification.md#s17-p25-checkpoint---indexed-clear-queue-consumers).
 Six named90dc-to-sound aliases resolved by actual independent native events;

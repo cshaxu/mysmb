@@ -5007,3 +5007,97 @@ controls(raw4342,infeasible68);material935 partial,total unknown. This closes
 the named six90dc-to-sound joins,not S17 or the whole material denominator.
 Other owner mutable/register/flag/stack/cross-frame uses and final pixel,
 complete gameplay route and snapshot packages remain open;M2 uncertified.
+
+## S17 P26 admission - shared motion carry and value lifetimes
+
+Audit participation for the existing material gap: `MoveObjectHorizontally`,`SaveXSpd`,`UseAdder`,`ExXMove`,`ImposeGravity`,`AlterYP`,`ChkUpM`,`ExVMove`.
+Core entries BF0F and BFD7,exits BF4C/C046;93 instructions/47 direct memory
+sites,shared world/movement.c and world/gravity.c. Scope is original carry/
+borrow/sign/stack and cached RAM lifetimes inside these two real owners;
+source index domain0-22,caller register restoration and other adapters retain
+existing receipts without promotion. Audit source clauses before returning
+original/native roots. No implementation custody transfer,fresh0,max1992.
+No product changes or EXE refresh unless a real admitted mismatch is found.
+New controlled fixture modes148/149 use256 speed values/eight low samples
+and256 varied state patterns,full pre/post RAM/APU/commands,actual pushes only.
+All output/probes below build,1024 roots/batch,120seconds/128MiB,raw cleanup.
+
+## S17 P26 checkpoint - shared motion value lifetimes
+
+Audit the admitted8 core labels,not all motion adapters or their callers.
+93 instructions and47 direct RAM sites are assigned exactly once to13
+source clauses below. Fixed X0-22 addresses,unchanged index inside each core,
+no child/callback and distinct same-X fields justify cached speed/force
+reads. Original writes and later reloads select identical cached bytes even
+through clamp joins.16-bit arithmetic bounds0-511 and shifts<=4080 fit DOS
+C promotion rules;final unsigned-byte casts preserve modular results.
+
+| Clause | First PC | Last PC | Source/current contract |
+| --- | --- | --- | --- |
+| H1 | bf0f | bf21 | Two immutable-in-owner X-speed loads;four byte ASLs and four logical LSRs yield fraction=(speed<<4)&FF and integer=speed>>4;CMP8/BCC/ORF0 sign extends the nibble. Native unsigned-char shifts are safe after16-bit int promotion(max4080). |
+| H2 | bf23 | bf2b | Publish integer00;LDY0/CMP0/BPL/DEY selects page delta0/FF from integer bit7. Native integer>=80 is the same bit test;these instructions do not overwrite carry before later CLC. |
+| H3 | bf2c | bf34 | Publish page delta02;force+fraction with CLC gives byte force and carry. Native old_value comparison is equivalent to sum>FF for all byte inputs. No callback or indexed/scratch alias intervenes. |
+| H4 | bf37 | bf3b | LDA0/ROL materializes prior carry as0/1;PHA saves it;ROR restores original carry because A is0/1. Native carry_force preserves the same bit;the later ADCs cannot overwrite this local. |
+| H5 | bf3c | bf46 | Position ADC00 consumes fractional carry;page ADC02 consumes bit8 of that full addition. Native x_sum uses16-bit unsigned range0-511;comparison againstFF preserves equal-low-result carry cases. |
+| H6 | bf48 | bf4c | PLA restores saved fractional carry;CLC/ADC00 returns wrapped displacement. Native integer+carry_force byte return matches actual original pre-Sound A;source page carry is intentionally discarded. |
+| V1 | bfd7 | bfdf | PHA preserves entry A direction;dummy+force ADC with CLC publishes byte dummy and carry. Native upward parameter is unmodified;16-bit sum0-510 preserves carry. |
+| V2 | bfe2 | bff3 | LDY0/LDA speed/BPL/DEY/STY07 preserve incoming carry;speed+Y ADC consumes it,high+07 ADC consumes new bit8. Native speed bit7 and successive sum tests preserve sign/page wrap;07 publishes0/FF. |
+| V3 | bff5 | c002 | Reload force;CLC/ADC00 publishes new force and carry;reload speed/ADC0 publishes new speed. Native cached initial speed is safe:dummy/position/high/force writes have different same-X addresses and cannot alter speed. |
+| V4 | c004 | c015 | CMP02/BMI tests bit7 of wrapped speed-max,not signed host ordering. Only N-clear and force>=80 clamp to max/zero. Native difference byte and force test preserve both predicates and write values. |
+| V5 | c018 | c021 | PLA restores original A;BEQ exits for zero. Otherwise max XOR FF,TAY,INY produces byte negative max and publishes07. Native upward==0 and0U-max truncated to byte are identical;prior source A/flags clobbers cannot affect saved direction. |
+| V6 | c023 | c030 | Force SEC/SBC01 publishes wrapped force and borrow;speed SBC0 decrements only on borrow. Native force<upforce and byte subtractions retain the same data dependence. Cached force/speed equal published values across the clamp join. |
+| V7 | c032 | c046 | CMP07/BPL uses wrapped difference bit7. Only N-set and force<80 clamp speed=07,force=FF;otherwise retain prior published speed/force. Native cached values have no intervening writer/callback;return ABI does not promise original final A/X/Y as game state. |
+
+4096 real original returning core roots each x86/x64,full2048 RAM before/
+after SoundEngine,24 APU shadow bytes and ordered commands have zero diff.
+SoundEngine is title-muted in these declared arithmetic fixtures;this
+does not add sound gameplay coverage. Horizontal original A is captured
+before sound and compared to native displacement byte. Gravity exposes RAM
+outputs,not arbitrary original final A/X/Y;external caller live-register
+contracts retain their own receipts and are not inferred from this root.
+Actual physical pushes alone are excluded from RAM comparison. The saved
+fractional carry and upward direction have explicit source/local lifetimes.
+
+All93 PCs observed,and both outcomes of8 source branches.327938 factored
+byte carry/borrow/CMP-N/negative-cap/ROL-ROR identity assertions reinforce
+the direct instruction/C review;they are scalar proofs,not all combinations
+of whole-game inputs. Current horizontal-movement,vertical-adapters,gravity,
+world-movement-smoke and platform-purity tests rebuilt/run:5 each width pass.
+Horizontal harness checks2360832 arithmetic/write/return cases and255 gates;
+the standalone gravity smoke covers six boundary/entry cases. Original
+returning roots remain the independent runtime track.
+
+Actual original memory transfers yield147 semantic writer/read address
+joins,grouped into11 paths936-946. Indexed STA preliminary bus reads and RTS
+dummy stack reads are explicitly excluded as non-consumed bus activity;
+they are not new material consumers. PHA->PLA receives a local saved-value
+counterpart even though native need not replicate the6502 physical stack.
+Native source/cache counterpart is reviewed directly,no original PC IDs
+are assigned to C. Grouping preserves source PC pairs and index domain:
+
+| Material | Producer | Consumer | Storage | Actual original writer/read PCs |
+| --- | --- | --- | --- | --- |
+| material-00936 | MoveObjectHorizontally | UseAdder | $01 | bf15>bf32 |
+| material-00937 | SaveXSpd | UseAdder | $00 | bf23>bf3e,bf23>bf4a |
+| material-00938 | UseAdder | UseAdder | $02 | bf2c>bf44 |
+| material-00939 | UseAdder | UseAdder | PHA/PLA saved scalar | bf3a>bf48 |
+| material-00940 | AlterYP | AlterYP | $07 | bfe9>bff1 |
+| material-00941 | AlterYP | AlterYP | SprObject_Y_MoveForce,x | bffb>c008 |
+| material-00942 | ImposeGravity | ChkUpM | PHA/PLA saved scalar | bfd7>c018 |
+| material-00943 | AlterYP | ChkUpM | SprObject_Y_MoveForce,x | bffb>c023,c015>c023 |
+| material-00944 | AlterYP | ChkUpM | SprObject_Y_Speed,x | c002>c02c,c011>c02c |
+| material-00945 | ChkUpM | ChkUpM | $07 | c021>c032,c021>c03d |
+| material-00946 | ChkUpM | ChkUpM | SprObject_Y_MoveForce,x | c029>c036 |
+
+Current owner SHA256:
+
+- src/game/world/movement.c:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
+- src/game/world/gravity.c:4213b8f264e8794ba761d6f791bea7a89cd69add3605d97d43b66de48a95b0a7.
+
+Raw records removed;probes/logs/intermediates below ignored build. No product
+source change or new node/control promotion;EXEs remain P23. Historical
+1992/1992;local scoped1992/1992 nodes,4274/4274 feasible controls(raw4342,
+infeasible68);material946 partial,total unknown. Current S17 audit scope402
+labels,fresh0/max1992;8 added participants already exact with existing
+maintenance receivers. Other owner lifetimes/full-game aliases and final
+pixels/routes/snapshot remain open. S17 and M2 are not certified complete.

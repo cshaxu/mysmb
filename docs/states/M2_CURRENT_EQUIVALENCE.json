@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 935,
+    "enumeratedCount": 946,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -20998,6 +20998,259 @@
         "src/game/boot.c",
         "src/game/audio.c"
       ]
+    },
+    {
+      "id": "material-00936",
+      "producer": "MoveObjectHorizontally",
+      "consumer": "UseAdder",
+      "storage": "$01 shared motion value",
+      "feasiblePath": "Actual original bf15>bf32 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/movement.c:mysmb_world_move_spr_object_horizontally",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bf15>bf32;addresses0001. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bf15>bf32;addresses0001. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:2048. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/movement.c"
+      ]
+    },
+    {
+      "id": "material-00937",
+      "producer": "SaveXSpd",
+      "consumer": "UseAdder",
+      "storage": "$00 shared motion value",
+      "feasiblePath": "Actual original bf23>bf3e,bf23>bf4a last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/movement.c:mysmb_world_move_spr_object_horizontally",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bf23>bf3e,bf23>bf4a;addresses0000. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bf23>bf3e,bf23>bf4a;addresses0000. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:4096. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/movement.c"
+      ]
+    },
+    {
+      "id": "material-00938",
+      "producer": "UseAdder",
+      "consumer": "UseAdder",
+      "storage": "$02 shared motion value",
+      "feasiblePath": "Actual original bf2c>bf44 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/movement.c:mysmb_world_move_spr_object_horizontally",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bf2c>bf44;addresses0002. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bf2c>bf44;addresses0002. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:2048. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/movement.c"
+      ]
+    },
+    {
+      "id": "material-00939",
+      "producer": "UseAdder",
+      "consumer": "UseAdder",
+      "storage": "PHA/PLA saved scalar shared motion value",
+      "feasiblePath": "Actual original bf3a>bf48 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/movement.c:mysmb_world_move_spr_object_horizontally",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bf3a>bf48;addresses01fd. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bf3a>bf48;addresses01fd. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:2048. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/movement.c"
+      ]
+    },
+    {
+      "id": "material-00940",
+      "producer": "AlterYP",
+      "consumer": "AlterYP",
+      "storage": "$07 shared motion value",
+      "feasiblePath": "Actual original bfe9>bff1 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/gravity.c:mysmb_world_impose_gravity",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bfe9>bff1;addresses0007. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bfe9>bff1;addresses0007. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:2048. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00941",
+      "producer": "AlterYP",
+      "consumer": "AlterYP",
+      "storage": "SprObject_Y_MoveForce,x shared motion value",
+      "feasiblePath": "Actual original bffb>c008 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/gravity.c:mysmb_world_impose_gravity",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bffb>c008;addresses0433,0434,0435,0436,0437,0438,0439,043a,043b,043c,043d,043e,043f,0440,0441,0442,0443,0444,0445,0446,0447,0448,0449. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bffb>c008;addresses0433,0434,0435,0436,0437,0438,0439,043a,043b,043c,043d,043e,043f,0440,0441,0442,0443,0444,0445,0446,0447,0448,0449. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:1024. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00942",
+      "producer": "ImposeGravity",
+      "consumer": "ChkUpM",
+      "storage": "PHA/PLA saved scalar shared motion value",
+      "feasiblePath": "Actual original bfd7>c018 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/gravity.c:mysmb_world_impose_gravity",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bfd7>c018;addresses01fd. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bfd7>c018;addresses01fd. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:2048. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00943",
+      "producer": "AlterYP",
+      "consumer": "ChkUpM",
+      "storage": "SprObject_Y_MoveForce,x shared motion value",
+      "feasiblePath": "Actual original bffb>c023,c015>c023 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/gravity.c:mysmb_world_impose_gravity",
+      "semanticContract": "Actual original consumed-value path in declared core domain:bffb>c023,c015>c023;addresses0433,0434,0435,0436,0437,0438,0439,043a,043b,043c,043d,043e,043f,0440,0441,0442,0443,0444,0445,0446,0447,0448,0449. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:bffb>c023,c015>c023;addresses0433,0434,0435,0436,0437,0438,0439,043a,043b,043c,043d,043e,043f,0440,0441,0442,0443,0444,0445,0446,0447,0448,0449. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:1792. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00944",
+      "producer": "AlterYP",
+      "consumer": "ChkUpM",
+      "storage": "SprObject_Y_Speed,x shared motion value",
+      "feasiblePath": "Actual original c002>c02c,c011>c02c last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/gravity.c:mysmb_world_impose_gravity",
+      "semanticContract": "Actual original consumed-value path in declared core domain:c002>c02c,c011>c02c;addresses009f,00a0,00a1,00a2,00a3,00a4,00a5,00a6,00a7,00a8,00a9,00aa,00ab,00ac,00ad,00ae,00af,00b0,00b1,00b2,00b3,00b4,00b5. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:c002>c02c,c011>c02c;addresses009f,00a0,00a1,00a2,00a3,00a4,00a5,00a6,00a7,00a8,00a9,00aa,00ab,00ac,00ad,00ae,00af,00b0,00b1,00b2,00b3,00b4,00b5. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:1876. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00945",
+      "producer": "ChkUpM",
+      "consumer": "ChkUpM",
+      "storage": "$07 shared motion value",
+      "feasiblePath": "Actual original c021>c032,c021>c03d last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/gravity.c:mysmb_world_impose_gravity",
+      "semanticContract": "Actual original consumed-value path in declared core domain:c021>c032,c021>c03d;addresses0007. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:c021>c032,c021>c03d;addresses0007. Native scratch publication/reload or stack-saved local has the same byte;stable scalar index and no intervening alias/callback. Stack value is represented by local carry_force/upward,not a native physical push claim. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:2249. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00946",
+      "producer": "ChkUpM",
+      "consumer": "ChkUpM",
+      "storage": "SprObject_Y_MoveForce,x shared motion value",
+      "feasiblePath": "Actual original c029>c036 last-writer/read joins;stable X0-22,byte/scalar domain,no intervening producer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/world/gravity.c:mysmb_world_impose_gravity",
+      "semanticContract": "Actual original consumed-value path in declared core domain:c029>c036;addresses0433,0434,0435,0436,0437,0438,0439,043a,043b,043c,043d,043e,043f,0440,0441,0442,0443,0444,0445,0446,0447,0448,0449. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs.",
+        "Actual original consumed-value path in declared core domain:c029>c036;addresses0433,0434,0435,0436,0437,0438,0439,043a,043b,043c,043d,043e,043f,0440,0441,0442,0443,0444,0445,0446,0447,0448,0449. Native cached speed/force equals original last published field:all intervening writes target distinct same-X addresses;no callback/child mutates RAM. Sign/clamp joins publish and retain the original selected values. Full source clauses cover wrapped ADC/SBC/CMP/BMI/BPL semantics. Finite roots plus local scalar proofs do not certify arbitrary external callers/inter-frame producers or gravity final CPU register ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23.",
+        "Original semantic visits:896. Native source/local correspondence is reviewed directly;no original producer PC tags injected into C."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/gravity.c"
+      ]
     }
   ],
   "cohorts": [
@@ -38246,12 +38499,14 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
         "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Splits signed 4.4 X speed into fractional and signed integer parts, propagates both carries into X/page and returns the source displacement byte.",
       "currentSourcePaths": [
@@ -38267,10 +38522,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
-        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Stores sign-extended integer X speed before page-delta selection.",
       "currentSourcePaths": [
@@ -38286,10 +38543,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence."
+        "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
-        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass."
+        "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Selects page delta from signed integer speed and performs fractional, X and page accumulation in source order.",
       "currentSourcePaths": [
@@ -38306,11 +38565,13 @@
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S9 static $BF02-$BF4C audit plus controlled original-ROM entry coverage: wrappers, jumpspring gate, signed nibble conversion, carry/page write and returned A match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
         "M2 T61 S9 x86/x64 current routes match 96 original-ROM snapshots per width (192 comparisons total); focused horizontal C90 harness passes 2,360,832 arithmetic/write/return cases and 255 gate cases per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Returns the movement displacement or the blocked jumpspring control value.",
       "currentSourcePaths": [
@@ -38751,11 +39012,13 @@
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
         "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Updates dummy/fraction/speed/Y/Y-high using source carry and sign rules, clamps downward and optionally upward velocity.",
       "currentSourcePaths": [
@@ -38771,10 +39034,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Applies current signed Y speed plus fractional carry to Y/Y-high before acceleration/clamp checks.",
       "currentSourcePaths": [
@@ -38790,10 +39055,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Handles no-upward exit and the two\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u20ac\u017e\u00c2\u00a2s-complement upward clamp after downward update.",
       "currentSourcePaths": [
@@ -38809,10 +39076,12 @@
       "currentCounterpart": "world/movement.c, world/gravity.c, player.c and enemy/movement.c with named callers",
       "semanticEvidence": [
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence."
+        "M2 T61 S10 static $BF4D-$C0A8 audit and controlled original-ROM route review: entry selection, scratch/table setup, signed force/speed saturation, branch predicates, call/tail/return ordering and output writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:93 original instruction sites mapped individually to13 current shared movement/gravity source clauses;all47 memory accesses preserve addresses/phase/byte semantics in stable X0-22 domains. Carry/borrow/N equations,stack-saved fractional carry/upward direction and RAM/local cache equivalence reviewed;no child/callback or mutable index inside either core.327938 scalar identity assertions do not claim exhaustive whole-game inputs."
       ],
       "operationalEvidence": [
-        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass."
+        "M2 T61 S10 x86/x64 current vertical caller and complete routes match 32 controlled original-ROM snapshots each; x86/x64 gravity routes match 32 snapshots each. Focused gravity boundary checks and 460,324 vertical adapter gate/parameter/full-write cases pass per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes:4096 returning original core roots each width zero full2048 pre/post RAM/APU/ordered-command difference,horizontal pre-Sound A return explicitly compared. All93 original PCs and both outcomes of8 branches observed;147 actual original semantic last-writer/read address joins,STA/RTS bus dummy reads excluded.5 current focused tests each pass,strict C90 returning probes;physical pushes only excluded. Products unchanged P23."
       ],
       "semanticContract": "Returns after the selected gravity path.",
       "currentSourcePaths": [
@@ -165683,7 +165952,15 @@
         "HoleBottom",
         "ChkHoleX",
         "ExitCtrl",
-        "CloudExit"
+        "CloudExit",
+        "MoveObjectHorizontally",
+        "SaveXSpd",
+        "UseAdder",
+        "ExXMove",
+        "ImposeGravity",
+        "AlterYP",
+        "ChkUpM",
+        "ExVMove"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -165735,7 +166012,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 admission - actual external queue consumer joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption",
         "docs/proposals/m2/t70-final-current-certification.md S17 P25 admission - indexed memory clear to sound queues",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P25 checkpoint - indexed clear queue consumers"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P25 checkpoint - indexed clear queue consumers",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 admission - shared motion carry and value lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

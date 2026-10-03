@@ -766738,7 +766738,15 @@
         "HoleBottom",
         "ChkHoleX",
         "ExitCtrl",
-        "CloudExit"
+        "CloudExit",
+        "MoveObjectHorizontally",
+        "SaveXSpd",
+        "UseAdder",
+        "ExXMove",
+        "ImposeGravity",
+        "AlterYP",
+        "ChkUpM",
+        "ExVMove"
       ],
       "baseline": 1992,
       "incomingComplete": [
