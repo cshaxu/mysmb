@@ -5828,3 +5828,97 @@ promotion;S17/material/pixels/routes/snapshot remainopen,M2 uncertified.
 
 Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
 Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
+
+## S17 P34 scope amendment - row column and castle-object leaf handoffs
+
+Missing consumed-use clauses in retained exact nodes:`RowOfCoins`,`CastleBridgeObj`,`AxeObj`,`ChainObj`,`EmptyBlock`,`ColObj`,`RowOfBricks`,`DrawBricks`,`RowOfSolidBlocks`,`GetRow`,`DrawRow`,`ColumnOfBricks`,`ColumnOfSolidBlocks`,`GetRow2`.
+Source99F2-9A68,41 instructions/11 directRAMsites;shared area.c row/column/
+castle-bridge/axe/chain/empty owners. Existing table bindings and scoped
+node/parent receipts remain;complete saved metatile/decodedrow/length/carry/
+childreturn connections to P33 primitives. Add14 auditparticipants only,
+S17 scope434,fresh0/max1992,no implementationcustody transfer/newround.
+Actual original returning parents/current C90 x86/x64 compare fullRAM,
+actualphysicalpush exclusions only,allchildren real. AreaType0-3/cloud0or3,
+selectors2-4/slot0-2 and34 originalpointerviews/cursorwrap. Exposeunchanged
+privatefunctions inignorednativecopy,production unchanged. Stream2048-case
+batches under128MiB/120seconds/process,rawcleanup belowbuild. Concrete
+diff requiresboundedcorrective amendment/repair/threeproducts;sameS.
+
+## S17 P34 checkpoint - row column and castle-object parent handoffs reconciled
+
+All14 admitted parent labels/41 instructions/11 directRAM sites mapped to
+10 manually reviewed lifetime/alias/childreturn clauses. S17 scope434,
+fresh0/max1992;no product source or new node/control credit. Current area.c
+and block_buffer.c hashes match P33;all3 P28 product hashes verified unchanged.
+
+44412 actual original returning parent roots EACH current x86/x64 have zero
+completeRAM differences. All41 scope instruction PCs directly observed.
+Original code/children execute unmodified. Native ignored area.c copy only
+removes private static linkage tokens on9 entry declarations/definitions;
+all bodies and real attribute/length/render children remain unchanged.
+No mocks, sourcePC labels in native code, ROM patches or between-call edits.
+Only actual original physical push bytes excluded; source saved metatile
+lifetime separately reviewed and consumed by parent output. Void parent API
+has no final CPUregister/flag outputs;these are not fabricated in native C.
+
+| Fixture family | Actual original roots perwidth |
+| --- | --- |
+| row-column-main | 30720 |
+| row-column-pointer-wrap | 4080 |
+| chain-axe | 108 |
+| castle-bridge | 4608 |
+| empty-block | 4896 |
+
+Main row/column matrix covers all256 old length bytes/3 slots/4 types/2
+cloud outcomes/5 original entries. Pointer supplement covers34 original
+views/8 cursor boundaries includingFF wrap/3 slots/5 entries. Chain/axe
+cover selectors2-4 and6 existing metatile priorities;castle bridge covers
+all256 old lengths/3 slots/6 priorities. Empty covers34 views/8 cursors/
+3 slots/6 priorities. Source Xslot equals native RAM08 ObjectOffset in every
+fixture,as required by actual decoder ownership. These are controlled ABI
+domains,not proof that every fixture is reachable during normal gameplay.
+
+| Clause | Original instructions | Local connection disposition |
+| --- | --- | --- |
+| R1 | 99f2-99f8 | AreaType074E selects immutable coin table for type0-3 before GetRow. Native value parameter preserves the selected byte across real attribute/length children. Child write set excludes074E/table storage; caller and helper use the same slot0-2. |
+| C1 | 9a01-9a06 | CastleBridge passes fixed length12 in Y with original Xslot; ChkLrgObjFixedLength changes only length0730+slot when oldbyte negative. The selector00 used by ChainObj survives this child, whose reads/writes cannot alias00. Source ignores returned carry; native explicitly discards it, then invokes the actual chain owner. |
+| C2 | 9a09-9a16 | Axe publishes0773=8 before entering ChainObj. Actual00 selector2-4 indexes paired ROM tables at base-2; native subtract2 once and reads same pair. No intervening writer of selector/row/metatile; child0735 and staging06A1+row cannot alias0773. Fixed chain rows6-8, vertical extent0. |
+| E1 | 9a19-9a1e | EmptyBlock invokes actual attributes at Xslot, then reads actual07 after return and choosesC4. Native uses RAM08 ObjectOffset with admitted equality RAM08=Xslot, reloads07 and discards returned extent. Attribute writes only07; immutable pointer/cursor disjoint. This does not prove arbitrary X/RAM08 disagreement is a legitimate decoder state. |
+| C3 | 9a20-9a22 | ColObj replaces Y with0, so EmptyBlock/chain renders exactly one row under original priority. Native explicit height0 matches source, with selected row/metatile as byvalue parameters. P33 actual child loops/priority contract retained. |
+| R2 | 9a2e-9a3b | RowOfBricks reads type first, then CloudTypeOverride0743; any nonzero override selects index4. Native same choice. Tables immutable, no call/store between these reads, inputs cannot change mid-helper. Column brick entry intentionally has no cloud override. Controlled roots0/3 cover both branch outcomes, scalar predicate covers all256 override bytes. |
+| R3 | 9a3e-9a44 | Solid row selects type0-3 immutable table then saves metatile with PHA at GetRow. Native metatile parameter has its own storage and survives attribute/length calls; no pointer to it is passed. Original stack pushes physically excluded but restored value is checked through actual parent RAM output and source PHA/PLA lifetime. |
+| R4 | 9a45-9a4d | Actual ChkLrgObjLength decodes07 and initializes persistent length only on bit7, then DrawRow reloads07 and replaces Y with0 before PLA restores metatile. Native uses a nonalias local output byte, discards it, reloads actual07, passes saved tile and height0. Length0730+slot, row07, staging06A1+row and height0735 are disjoint in slot0-2/row0-15 domain. No callback/intervening writer; no extra row length decrement in this owner. |
+| V1 | 9a50-9a5f | Column brick/solid select AreaType0-3 with no cloud override, save metatile at GetRow2. Native byvalue parameter survives attributes. The helper uses RAM08 equal to original Xslot as required by decoder; same pointers/cursors and source wrapped Y cursor read are retained. |
+| V2 | 9a60-9a66 | Actual attributes returns decoded lowF length in Y and writes row07. PLA restores only A and changes NZ, not Y; LDX07 changes X/NZ, not Y. RenderUnderPart receives saved metatile, actual07 row and decoded Y extent. Native local second captures return, actual07 reloaded afterward, parameter tile untouched. No child between attribute return and render, all concrete fields disjoint. Final CPU flags/registers are not outputs of the void native parent API. |
+
+1299 finite checks:19 current tablebytes equal original ROM at admitted
+addresses,1024 type/cloud predicate cases and256 fixed bridge lengths.
+Checks validate reviewed equations/counts,not clause prose or global proof.
+Five actual original intervals/child dependencies were missing path rows:
+
+954: GetRow -> DrawRow; A metatile saved across ChkLrgObjLength. 9a44 PHA ->9a45 real attribute/fixed-length child ->9a4c PLA. Native metatile value parameter is not passed by pointer or aliased by child writes; original restored byte is consumed by actual DrawRow/render output. RAM07 reloaded after child, Y replaced0.
+
+955: GetLrgObjAttrib -> DrawRow; RAM0007 decoded row after length child. 9bc2 STA07 ->9baf length read/possible0730+slot write ->9a48 LDX07. Slot0-2 length array disjoint07, no callback/writer in interval; native draw_row reloads actual07 after check_large_length.
+
+956: GetRow2 -> RenderUnderPart; A metatile saved across column attribute child. 9a5f PHA ->9a60 actual GetLrgObjAttrib ->9a63 PLA ->9a64 LDX07 ->9a66 render. Native immutable value parameter survives child and is supplied with actual decoded row/extent; no pointer alias to this parameter.
+
+957: GetLrgObjAttrib -> GetRow2; Y decoded vertical extent across PLA and LDX. 9bc9 TAY ->return9a63 PLA ->9a64 LDX07 ->9a66 JMP RenderUnderPart. PLA/LDX leaveY unchanged; native local second captures required Yreturn and passes it as height. Actual source Xslot=native RAM08 ObjectOffset required by decoder.
+
+958: GetLrgObjAttrib -> EmptyBlock; RAM0007 decoded row reloaded before ColObj. 9bc2 STA07 ->9bca RTS ->9a1c LDX07 ->9a1e LDA C4 ->9a20 Y0 ->render. No intervening child/writer, native reloads07 then passes row/C4/height0; Xslot=RAM08 contract explicitly admitted.
+
+Strict C90 current native probes compiled/linked in both widths. P28 actual
+10 focused checks each/six600-frame integrations retained;pure evidence P
+does not rebuild products. DOS original OpenNT remains compile/link only.
+2048-case streamed batches below128MiB/120seconds perprocess,rawrecords
+deleted after each batch. Four negative accounting checks pass; no raw
+ROM/data/source derivatives enter tracked work.
+
+Complete local1374/10691 instruction and415/3773 directRAM receipts;
+9317 other instruction/3358 directRAM clauses require exact retained joins
+or missing-clause proof. Historical/local1992/1992 and feasible controls
+4274/4274(raw4342,infeasible68) unchanged;material958 partial,totalunknown.
+S17 remains open. Material/pixels/routes/snapshot final packages remain
+pending;M2 NOT certified. This checkpoint does not close the full audit.
+
+Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.

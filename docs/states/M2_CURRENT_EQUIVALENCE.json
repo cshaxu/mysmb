@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 953,
+    "enumeratedCount": 958,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -21400,6 +21400,116 @@
       ],
       "operationalEvidence": [
         "68896 actual original returning helpers each current x86/x64 zero fullRAM/declared returnABI differences;all68 scopePC observed.135424 source scalar/loop assertions. Original interval/alias proof,not fabricated last-writer eventcounts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00954",
+      "producer": "GetRow",
+      "consumer": "DrawRow",
+      "storage": "A metatile saved across ChkLrgObjLength",
+      "feasiblePath": "9a44 PHA ->9a45 real attribute/fixed-length child ->9a4c PLA. Native metatile value parameter is not passed by pointer or aliased by child writes; original restored byte is consumed by actual DrawRow/render output. RAM07 reloaded after child, Y replaced0.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_get_row / mysmb_area_draw_row / mysmb_area_get_row2 / mysmb_area_empty_block",
+      "semanticContract": "Local returning parent inputs AreaType0-3,cloud predicate,slot0-2 equal RAM08,selectors2-4,decodedrow0-15,immutable original pointerviews. No whole-game/inter-frame claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled",
+        "9a44 PHA ->9a45 real attribute/fixed-length child ->9a4c PLA. Native metatile value parameter is not passed by pointer or aliased by child writes; original restored byte is consumed by actual DrawRow/render output. RAM07 reloaded after child, Y replaced0."
+      ],
+      "operationalEvidence": [
+        "44412 actual original returning parent roots each current x86/x64 zero fullRAM differences;all41 original PCs observed;real children,1299 scalar/table assertions. Source interval/alias proof,not last-writer eventcounts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00955",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "DrawRow",
+      "storage": "RAM0007 decoded row after length child",
+      "feasiblePath": "9bc2 STA07 ->9baf length read/possible0730+slot write ->9a48 LDX07. Slot0-2 length array disjoint07, no callback/writer in interval; native draw_row reloads actual07 after check_large_length.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_get_row / mysmb_area_draw_row / mysmb_area_get_row2 / mysmb_area_empty_block",
+      "semanticContract": "Local returning parent inputs AreaType0-3,cloud predicate,slot0-2 equal RAM08,selectors2-4,decodedrow0-15,immutable original pointerviews. No whole-game/inter-frame claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled",
+        "9bc2 STA07 ->9baf length read/possible0730+slot write ->9a48 LDX07. Slot0-2 length array disjoint07, no callback/writer in interval; native draw_row reloads actual07 after check_large_length."
+      ],
+      "operationalEvidence": [
+        "44412 actual original returning parent roots each current x86/x64 zero fullRAM differences;all41 original PCs observed;real children,1299 scalar/table assertions. Source interval/alias proof,not last-writer eventcounts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00956",
+      "producer": "GetRow2",
+      "consumer": "RenderUnderPart",
+      "storage": "A metatile saved across column attribute child",
+      "feasiblePath": "9a5f PHA ->9a60 actual GetLrgObjAttrib ->9a63 PLA ->9a64 LDX07 ->9a66 render. Native immutable value parameter survives child and is supplied with actual decoded row/extent; no pointer alias to this parameter.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_get_row / mysmb_area_draw_row / mysmb_area_get_row2 / mysmb_area_empty_block",
+      "semanticContract": "Local returning parent inputs AreaType0-3,cloud predicate,slot0-2 equal RAM08,selectors2-4,decodedrow0-15,immutable original pointerviews. No whole-game/inter-frame claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled",
+        "9a5f PHA ->9a60 actual GetLrgObjAttrib ->9a63 PLA ->9a64 LDX07 ->9a66 render. Native immutable value parameter survives child and is supplied with actual decoded row/extent; no pointer alias to this parameter."
+      ],
+      "operationalEvidence": [
+        "44412 actual original returning parent roots each current x86/x64 zero fullRAM differences;all41 original PCs observed;real children,1299 scalar/table assertions. Source interval/alias proof,not last-writer eventcounts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00957",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "GetRow2",
+      "storage": "Y decoded vertical extent across PLA and LDX",
+      "feasiblePath": "9bc9 TAY ->return9a63 PLA ->9a64 LDX07 ->9a66 JMP RenderUnderPart. PLA/LDX leaveY unchanged; native local second captures required Yreturn and passes it as height. Actual source Xslot=native RAM08 ObjectOffset required by decoder.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_get_row / mysmb_area_draw_row / mysmb_area_get_row2 / mysmb_area_empty_block",
+      "semanticContract": "Local returning parent inputs AreaType0-3,cloud predicate,slot0-2 equal RAM08,selectors2-4,decodedrow0-15,immutable original pointerviews. No whole-game/inter-frame claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled",
+        "9bc9 TAY ->return9a63 PLA ->9a64 LDX07 ->9a66 JMP RenderUnderPart. PLA/LDX leaveY unchanged; native local second captures required Yreturn and passes it as height. Actual source Xslot=native RAM08 ObjectOffset required by decoder."
+      ],
+      "operationalEvidence": [
+        "44412 actual original returning parent roots each current x86/x64 zero fullRAM differences;all41 original PCs observed;real children,1299 scalar/table assertions. Source interval/alias proof,not last-writer eventcounts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00958",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "EmptyBlock",
+      "storage": "RAM0007 decoded row reloaded before ColObj",
+      "feasiblePath": "9bc2 STA07 ->9bca RTS ->9a1c LDX07 ->9a1e LDA C4 ->9a20 Y0 ->render. No intervening child/writer, native reloads07 then passes row/C4/height0; Xslot=RAM08 contract explicitly admitted.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_get_row / mysmb_area_draw_row / mysmb_area_get_row2 / mysmb_area_empty_block",
+      "semanticContract": "Local returning parent inputs AreaType0-3,cloud predicate,slot0-2 equal RAM08,selectors2-4,decodedrow0-15,immutable original pointerviews. No whole-game/inter-frame claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled",
+        "9bc2 STA07 ->9bca RTS ->9a1c LDX07 ->9a1e LDA C4 ->9a20 Y0 ->render. No intervening child/writer, native reloads07 then passes row/C4/height0; Xslot=RAM08 contract explicitly admitted."
+      ],
+      "operationalEvidence": [
+        "44412 actual original returning parent roots each current x86/x64 zero fullRAM differences;all41 original PCs observed;real children,1299 scalar/table assertions. Source interval/alias proof,not last-writer eventcounts."
       ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
@@ -166190,22 +166300,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P30 checkpoint - retained column and attribute lifetimes reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P31 checkpoint - scenery terrain and block-buffer handoffs reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P33 checkpoint - shared area leaf lifetimes and return ABI reconciled"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P33 checkpoint - shared area leaf lifetimes and return ABI reconciled",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 1333,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9358,
+        "localInstructionReceiptSites": 1374,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9317,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 404,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3369,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 415,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3358,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/area.c": 219,
+          "src/game/area.c": 208,
           "src/game/player.c": 138,
           "src/game/oam/normal_enemy_gfx.c": 128,
           "src/game/terminal_modes.c": 81,
@@ -166335,7 +166446,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 953,
+        "materialPathsEnumerated": 958,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."

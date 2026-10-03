@@ -766764,7 +766764,21 @@
         "ChkLrgObjFixedLength",
         "LenSet",
         "GetAreaObjXPosition",
-        "GetAreaObjYPosition"
+        "GetAreaObjYPosition",
+        "RowOfCoins",
+        "CastleBridgeObj",
+        "AxeObj",
+        "ChainObj",
+        "EmptyBlock",
+        "ColObj",
+        "RowOfBricks",
+        "DrawBricks",
+        "RowOfSolidBlocks",
+        "GetRow",
+        "DrawRow",
+        "ColumnOfBricks",
+        "ColumnOfSolidBlocks",
+        "GetRow2"
       ],
       "baseline": 1992,
       "incomingComplete": [
