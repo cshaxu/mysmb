@@ -6031,3 +6031,95 @@ S17/material/pixels/routes/snapshot remainopen,M2 NOT certified.
 Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
 Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
 Current blocks/bump.c normalizedSHA256:65675f35d76b34f8f6621b4614844540cdfa090ab60f4c2b64852f2b4b176df9.
+
+## S17 P36 scope amendment - initialization clear and screen-position lifetimes
+
+Exact auditparticipants:`InitializeArea`,`ClrTimersLoop`,`StartPage`,`SetInitNTHigh`,`SetSecHard`,`CheckHalfway`,`DoneInitArea`,`InitializeMemory`,`InitPageLoop`,`InitByteLoop`,`InitByte`,`SkipByte`,`GetScreenPosition`.
+
+76 original instructions/29 directRAM sites;InitializeArea8FE4-9060 with actual InitializeMemory90CC-90E6/GetScreenPositionB038-B049 children. Shared area.c/boot.c/scroll.c; existing area_data.c address/header bindings and P25 actual2048 initialization-to-sound parents retained. Complete zero-fill pointer selfalias,page/byte/stack limits,returned screen A and clear-to-header/hardmode/halfway lifetimes. 7 added participants,S17 scope458,fresh0/max1992.
+
+Fresh unmodified original returning parents and linked native C90 owners compare fullRAM;all256 clear startingY values,34 valid area pointers,hardmodeboundary matrix,all256 page values,all256 leftX with boundarypages. Childdependencies real,physicalpush exclusions only. Batches128 cases,32768 instruction budget perroot,128MiB/120seconds perprocess,rawcleanup belowbuild. Concrete diff requires scopedrepair/re-audit/threeproducts in sameS17.
+
+Owner final overnight boundary: finish existing bounded certification work before the owner returns in the morning;do not launch a fourth or later whole-project round or silently expand verification to replace a failed close. If required exits remain unmet,report NOT COMPLETE with exact unresolved clauses and retained evidence rather than claiming completion. No guarantee of passing the deadline inferred from this admission.
+
+## S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled
+
+13 admitted labels,76 instructions/29 directRAM sites assigned13 manually
+reviewed clauses;7 new auditparticipants,S17 scope458/fresh0/max1992.
+2216 actual original returning parents EACH currentx86/x64 zero completeRAM
+differences;all76 scopePCs observed. Native links actual unchanged game
+library in strictC90;no private-copy body edits,mocks,ROMpatches or between-
+call RAM edits. Only original actualphysicalpushbytes excluded. Voidhelper
+finalCPUregister/flags notnativeAPI;original returnedA consumedbyparent
+reconciled separately underactual071Cclear0,not silently ignored.
+
+| Fixture family | Actual original roots perwidth |
+| --- | --- |
+| area-header-hardmode | 680 |
+| area-all-pagebytes | 512 |
+| clear-all-starting-y | 256 |
+| screen-position | 768 |
+
+680 area roots cover34 validpointervalues,five primary/world/levelboundary
+triples,halfway0/3 andalt0/1.512 parents coverall256 halfwaypages andboth
+altbranches withindependententrancepage.256 clearhelpers coverallstartingY;
+768 screenhelpers coverall256 leftX withpages0/127/FF. Actual header,clear,
+screen children executeunmodified;retained P25 2048 initialization-to-sound
+receipts remain forstated queue/output contracts,no newaudio/globalcredit.
+
+| Clause | Original instructions | Alias/lifetime disposition |
+| --- | --- | --- |
+| M1 | 90cc-90d2 | SetX7/A0/actual06=0,then actual07page. Native explicit page7/offset input/06zero match original. Pointer06/07 selfalias addressed below;source Aremains0 across allcompare/index instructions. Caller storage is gameRAM,not host pointer layout. |
+| M2 | 90d4-90dc | Source only skips page1,Y>=60;otherpages clearindexedbyte through actual06/07. Native same page/offsetpredicate. All possibleinitialY0-FF checked. Pointerisforced06=0/07page;onpage0 clearing07 to0and06to0 cannotchangeeffectivebase0. No otherclearstorealias changespointer or loopcontrolCPUregisters. |
+| M3 | 90de-90e6 | Byte DEYwrap exitscurrentpageatFF;nextpage startsYFF unchanged. DEX/BPL visits7through0 thenFFexit. Native u8loops have identical writesequence/stackskip,includinginitialYFF clearsfullfirstpage. Actual07ends0;pointer-selfzero storesagree. Native voidhelper hasno finalCPUA/X/Y/flag output;InitializeArea immediately explicitlyreloadsX21/A0. |
+| A1 | 8fe4-8ff1 | InitializeArea passesY4Btoactualclear. Pages0-6 clearall except160-1FF;page7 clears700-74B. Actualtimer780-7A1 thenzeroedX21through0. Native sameinclusive34timerbytes. ScreenLeftX071C,secondary06CC andlength730-732 areclear;half75B/entry751/alt752/world75F/level75C/primary76A/task772 survive. Thus cachedlater values cannotrepresent preclear state. |
+| A2 | 8ff3-8ffb | Read survivingHalfwayPage75B;readAltEntrance752,chooseEntrance751 onlyifnonzero. Native same conditional and actualRAMreads afterclear. Fields are disjointtimer range/clear74Blimit,no intermediatechild betweenreads. |
+| A3 | 8ffe-9010 | Publishsamepage to071A/0725/0728 thenactualGetScreenPosition. ClearforcesleftX071C0,so ADCFFcarry0 andreturnedA equalsleftpage,not arbitraryrightpage. Original followingAND1 therefore equalsnative start_page parity. No surviving pagecache assumption without this priorclear proof; GetScreenPosition actualstores still performed. |
+| A4 | 9012-902c | SourceNT high20/24 low80,parityfourASLs->BlockColumn06A0,threeDEC clearedlengths730-732->FF,columnsets071E0B. Native sameactualstores and wrappedu8decrements. Fieldsdisjoint071A/page0725/backload0728;no callbacks beforeheaderchild. Native row/task types portableC90. |
+| A5 | 902f-9032 | RealGetAreaDataAddrs reloads survivingAreaPointer750 and rewritesactualpointers/type/headerfields under existing bindings. Native boundoriginalsource required,actualchild called before hard/halfway overrides. Header writes710/715/727/741-744/733 andE7-EA/type74E/F,not primary76A/world75F/level75C/half75B. No cachedheader value replaceslateractualread. |
+| A6 | 9035-9045 | Original primarynonzero alwaysactivatessecondary;otherwiseunsignedworldCMP4:below skips,above activates,equalrequireslevel>=2. Native exactBoolean inclusiveboundary. All256world/all256level/primaryzero-or-nonzero scalarcases agree,finite roots exerciseevery branchoutcome. Primarypreservedpastclear/header,not reloaded fromhoststate. |
+| A7 | 9047-9051 | Secondary06CC actualINC onlyifhardpredicate,initialclear0 andheaderdoesnotwriteit;nativeincrement fromactual0 yields1. SurvivingHalfway75B testedindependentlyof chosenstartpage;nonzero overwritesheaderPlayerEntrance710 with2. Native sameafterheader order,halfzero leavesheaderentranceunchanged. Altentrydoesnot silentlydisablehalfwayoverride. |
+| A8 | 9054-9060 | ActualFB Silence80,DisableScreen7741,OperModeTask772INCbyte afterall initialization. Native same C90sharedRAM/bytewrap;task772outsideclearrange. Prior P25 soundparent preservesexisting concreteFBoverwrite/otherqueuezero receipts,no new wholeaudio/interframe inference. |
+| G1 | b038-b03e | ActualScreenLeftX071C LDA/CLC ADCFF producesrightX=(left-1)&FF,carryleft!=0;sourceSTA preservescarry. Native leftlocal andu8addition same all256inputs. No writer toleft/pagebeforesecondpart,no callback. |
+| G2 | b041-b049 | LDAleftpage071A preservescarryfromXaddition;ADC0 ->actualrightpage071B withbytewrap. Native page+(left!=0) matches65536left/pagepairs. VoidnativeAPI hasnoAoutput,howeverInitializeArea consumes originalA and A3explicitly reconciles that caller use underleftX0. Othercallers do not gain newproof fromthis receipt. |
+
+786688 scalar assertions:524288 startingY/RAMaddress clear-membership
+identities withsameorderedwritesequence,131072 hardpredicate cases,
+65536 screenX/pagecarry cases,65536 alt/halfwayselection/paritycases and256
+taskINCbytewraps. Pointer06/07 selfclears leaveeffectivebase0 onpage0;
+stack160-1FF skipped,otherstackbytes actuallycleared andcompared. Header
+write-set excludeshalf75B/world75F/level75C/primary76A/secondary06CC,so
+clear/header/overrideorder hasexplicit alias proof. Scalars/count gates do
+not automatically proveclauseprose orwhole-program equivalence.
+
+Four missing concrete paths966-969:
+
+966: InitByte -> GetScreenPosition; RAM071C cleared left X to screen-position carry. 90dc actual clear071C ->8ffe pagepublish ->9007 GetScreenPosition ->b038 read071C. Timer0780-07A1/page071A/0725/0728 stores disjoint071C;no intervening writer. Current boot clear leaves071C0 and actual scroll child reads0;sourceADCFF thereforecarry0.
+
+967: GetScreenPosition -> StartPage; A returned page parity after cleared left X. b041 LDA071A ->b044 ADC0 withcarry0fromcleared071C ->b046 store071B ->b049 RTS ->900c AND1. NoAwriterbetweenreturnandAND(LDY20 only changesY);native start_page parity equalsreturnedA because prior actualclear setsleftX0. Doesnot provecachedpage equivalenceforothercallers/nonzeroleftX.
+
+968: InitByte -> SetInitNTHigh; RAM0730-0732 cleared object lengths to three DEC reads. 90dc clears730/731/732 ->timer/page/actualscreenchild ->9021/9024/9027 DEC respectivebytes. Interveningwriters0780-07A1/071A/B/D/0725/0728/0720/0721/06A0 cannotaliaslengthslots;native sameclear andactualbyte decrements0->FF. Headerchild occursaftertheseDEC,not an unstated prioroverwrite.
+
+969: InitByte -> SetSecHard; RAM06CC cleared secondary hard-mode byte to conditional INC. 90dc actual clear06CC ->timer/page/actualscreen/header children ->9047 INC06CC if originalhardpredicate. Header writes only retainedspecificpointer/type/header/scratchfields,not06CC. Native realclear plus realheader leaves0 thenincrement1;gatepredicate proveswhichroutesconsume priorzero. No crossframe inference.
+
+Existing619/620 clearpointer/continuation receipts retained,not duplicated.
+StrictC90 nativeprobes linkbothwidths;P28 actual10 checks each/six600-frame
+regressions retained. Productsource unchanged,all3 P28 hashes verified,
+no artifactrefresh required. DOS originalOpenNT remainscompile/link only.
+128-case batches/32768instructions perroot/128MiB/120seconds perprocess;
+rawrecords deleted aftereachbatch. Fournegativeaccounting/governance checks
+pass,no protecteddata imported ortracked.
+
+Complete local1573/10691 instructions and483/3773 directRAM receipts;
+9118 otherinstructions/3290 otherRAM clauses requireexact retainedjoins or
+missingclause proof. Historical/local1992/1992,feasiblecontrols4274/4274
+(raw4342,infeasible68) unchanged,material969 partial,totalunknown. No
+newnode/controlcredit;S17/fourfinalpackages open,M2 NOT certified.
+
+Current src/game/area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+
+Current src/game/boot.c normalizedSHA256:5ed50c00b7848387b4798e2f658e21110396b165149edbe66521c5289bf4e3a9.
+
+Current src/game/scroll.c normalizedSHA256:f4f7b0df4a870cb31290309652d043e536a375334702f7f2eda73a561fba3036.
+
+Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.

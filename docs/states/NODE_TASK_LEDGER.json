@@ -766795,7 +766795,14 @@
         "GetAreaObjectID",
         "ExitDecBlock",
         "Hole_Empty",
-        "StrWOffset"
+        "StrWOffset",
+        "InitializeArea",
+        "ClrTimersLoop",
+        "StartPage",
+        "SetInitNTHigh",
+        "SetSecHard",
+        "CheckHalfway",
+        "GetScreenPosition"
       ],
       "baseline": 1992,
       "incomingComplete": [
