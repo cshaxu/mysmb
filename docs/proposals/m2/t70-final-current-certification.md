@@ -3090,3 +3090,76 @@ retained-rom-clause-stability.py,run-rom-clause-checks.py and their JSON/logs
 under ignored S17 build. Protected inputs remain read-only/untracked. Registry,
 39-label audit admission,ledger,documentation and whitespace gates validate
 accounting only;unrelated owner changes are preserved,no push.
+
+## S17 P3 corrective scope amendment - title copy pointer outputs
+
+Original DrawTitleScreen/OutputTScr/ChkHiByte writes $01=3,$00=0
+before copying $13a bytes to $0300-$0439, increments $01 after byte256,
+and returns with $00=0,$01=4. Current case12 omits these writes.
+The previous zero-page exclusion does not justify excluding actual outputs.
+Reopen these three scoped contracts; no control predicate difference found.
+Coordinator accepts their corrective shared-owner chain into current S17
+under the owner repair mandate. S17 remains an audit with receiving custody
+for this bounded correction; previous39-label participation is unchanged.
+No new T/S or audit round. Expected fresh matches0,historical baseline1992.
+
+Before/after evidence: execute original ScreenRoutines task12 through its
+actual JumpEngine and compare2048 RAM bytes on patterned initial RAM, all
+four OperMode values, against both native widths. Exclude only physical
+return/push stack bytes observed in the original trace; no zero-page mask.
+Test source-pointer outputs and non-title no-write behavior. Rebuild all
+three products after shared-C correction, retain original OpenNT16 tools.
+The material/pixel/route/snapshot certificate remains incomplete.
+
+## S17 P3 checkpoint - title pointer repair
+
+Three reopened nodes DrawTitleScreen,OutputTScr,ChkHiByte are repaired within
+the same S;historical fresh0,local accepted scoped1992/1992 restored. Controls
+4275/4275 unchanged(raw4342,infeasible67). Source copy-pointer outputs were
+missing,not a demonstrated visible title defect. The former broad zero-page
+exclusion was insufficient for actual routine writes. This supersedes that
+exclusion for these three nodes,not unrelated retained receipts.
+
+Execute original ScreenRoutines $8567 with real JumpEngine/task12,32 cases:
+four OperMode values and eight patterned RAM seeds per mode. Before repair,
+both widths have15 differences,all at00/01. After repair compare2048 RAM bytes,
+exclude only observed return/push physical-stack addresses(two bytes per
+case);zero differences on both widths,including non-title pointer preservation,
+314 copied bytes,043a sentinel,task/address-control and scratch state.
+Actual original coverage:DrawTitleScreen32,OutputTScr2512,ChkHiByte2512;
+all three copy-loop predicates have both outcomes(2504/8,2040/472,464/8).
+Static original order preserves01=3 then00=0,01 increment at first Y wrap,
+termination page4,Y3a. Native C90 bounded-loop arithmetic preserves these
+values without introducing a CPU interpreter. Existing bootstrap regression
+now asserts00=0,01=4. No platform business logic changed.
+
+Five focused tests per native width actually pass(title-bootstrap,screen-status,
+boot/NMI boundary,NMI integration,purity). Six retained600-frame
+idle/start/pause/right/run-jump/select routes have zero scoped diff and
+byte-identical native records. Frame ABI remains0200-07ff except0778/0779,
+CIRAM/palette/OAM/audio/PPU scalars;zero-page/physical stack outside that
+separate frame ABI. The controlled root above covers all zero-page bytes.
+Neither fixture is a complete gameplay/pixel certificate.
+
+Original OpenNT16 compiler/linker passes with existing conversion and optional
+OLDNAMES warnings;DOS compile/link only,no gameplay claim. Initial unrestricted
+CMake build selected unrelated tests;stopped those exact two process trees and
+rebuilt limited product/recorder/focused targets. Aborted builds are not proof.
+The resulting three MZ products are copied and verified below.
+
+Material648-649 record title pointer destination and page-wrap/termination
+source paths. Local enumerated649 remains partial,total unknown;indirect
+pointer/RAM/hardware/register/flag/stack/inter-frame clauses remain S17.
+Material,pixels,routes,snapshot packages remain;no successor or new audit round.
+All probes/logs remain ignored below build;unrelated owner work preserved.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258539 | 55c98a1a17f07701ba513fbfc44777ae5ec1db08f48f30c5c0520356922ca11d |
+| mysmb32.exe | 373107 | 00a1014aaaafce6d49f944f0cc39be5348cef0bfae35cec5e037f7412be4b56d |
+| mysmb64.exe | 379113 | e10caf7e33b5be6a12ad32da0f14251b26b5913768b985ba8bd8b16f2df5b119 |
+
+| Changed source | SHA256 |
+| --- | --- |
+| src/game/game.c | e3c8c4a4580969e6e2898a6d3d9b5a67efed029fc7e9884d9f38b7a0b6f208c6 |
+| test/local_title_bootstrap_smoke.c | 52135ef49180fd04db7a7a892f3fada945ecacaf4ee0a1be204cde7db70fcaae |

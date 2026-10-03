@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 647,
+    "enumeratedCount": 649,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -14254,6 +14254,48 @@
       "currentSourcePaths": [
         "src/game/oam/player_gfx.c"
       ]
+    },
+    {
+      "id": "material-00648",
+      "producer": "DrawTitleScreen",
+      "consumer": "OutputTScr",
+      "storage": "$00/$01 indirect title-copy destination",
+      "feasiblePath": "Original title mode initializes pointer0300 before OutputTScr;314 writes use its destination plus wrapping Y.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case12",
+      "semanticContract": "Initial pointer0300, first256 destination bytes0300-03ff and remaining58 bytes0400-0439;043a unchanged. Valid full source binding and original task12/mode0 domain;native bounded-loop address arithmetic preserves this consumed value without CPU interpretation.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00649",
+      "producer": "OutputTScr",
+      "consumer": "ChkHiByte",
+      "storage": "$01 page increment and Y wrap to loop termination",
+      "feasiblePath": "OutputTScr wraps Y once after256 bytes and increments01;ChkHiByte consumes01 and Y, exits at page4,Y3a.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case12",
+      "semanticContract": "Page3 continues independent of low offset;page4 continues until low offset3a, ending00=0,01=4. Valid full source binding and original task12/mode0 domain;native bounded-loop address arithmetic preserves this consumed value without CPU interpretation.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c"
+      ]
     }
   ],
   "cohorts": [
@@ -14329,7 +14371,11 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1992
+    "exact": 1992,
+    "infeasible": 0,
+    "mismatch": 0,
+    "needs-evidence": 0,
+    "unclassified": 0
   },
   "controlEdgeCounts": {
     "exact": 4275,
@@ -17125,12 +17171,15 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "T70 S17 P3 reopened: actual $00/$01 copy-pointer outputs were omitted; prior zero-page exclusion is insufficient for these outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass."
       ],
-      "semanticContract": "ROM $86ff: non-title path increments OperMode_Task; title path copies exactly $13a PPU bytes to $0300, writes address control $05 and increments ScreenRoutineTask.",
+      "semanticContract": "ROM $86ff: non-title path increments OperMode_Task; title path copies exactly $13a PPU bytes to $0300, writes address control $05 and increments ScreenRoutineTask. Title copy pointer outputs $00=0,$01=4 and original page-wrap update are included;zero-page output exclusions from earlier title fixture are superseded for this chain.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17144,12 +17193,15 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12 title-data copy loop",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "T70 S17 P3 reopened: actual $00/$01 copy-pointer outputs were omitted; prior zero-page exclusion is insufficient for these outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass."
       ],
-      "semanticContract": "ROM $8712: copies PPU data through the $0300 indirect destination and advances Y/high byte.",
+      "semanticContract": "ROM $8712: copies PPU data through the $0300 indirect destination and advances Y/high byte. Title copy pointer outputs $00=0,$01=4 and original page-wrap update are included;zero-page output exclusions from earlier title fixture are superseded for this chain.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -17163,12 +17215,15 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 12 fixed-size copy bound",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "T70 S17 P3 reopened: actual $00/$01 copy-pointer outputs were omitted; prior zero-page exclusion is insufficient for these outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass."
       ],
-      "semanticContract": "ROM $8717: stops only after destination reaches $043a, then selects control $05 and common task increment.",
+      "semanticContract": "ROM $8717: stops only after destination reaches $043a, then selects control $05 and common task increment. Title copy pointer outputs $00=0,$01=4 and original page-wrap update are included;zero-page output exclusions from earlier title fixture are superseded for this chain.",
       "currentSourcePaths": [
         "src/game/game.c"
       ]
@@ -157671,7 +157726,10 @@
         "EnemyBGCStateData",
         "GetSteFromD",
         "PlayerGraphicsTable",
-        "SwimKT"
+        "SwimKT",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -157679,7 +157737,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P1 admission - complete material-use census and path reconciliation",
         "docs/proposals/m2/t70-final-current-certification.md S17 P1 checkpoint - byte-bound material-use inventory",
         "docs/proposals/m2/t70-final-current-certification.md S17 P2 bounded scope amendment - immutable producer uses",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 corrective scope amendment - title copy pointer outputs",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

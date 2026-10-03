@@ -7620,11 +7620,12 @@
             "docs/proposals/m2/t70-final-current-certification.md"
           ],
           "recordKinds": [
-            "material-use-completeness-and-path-reconciliation"
+            "material-use-completeness-and-path-reconciliation",
+            "corrective-title-pointer-output-chain"
           ],
-          "canReceive": false,
+          "canReceive": true,
           "admissionRole": "audit",
-          "receipt": "Coordinator admits existing named material gap under ongoing owner mandate;no node transfer."
+          "receipt": "Coordinator accepts three title pointer-output nodes for same-S correction under owner M2 repair mandate."
         }
       ]
     }
@@ -15166,8 +15167,8 @@
     {
       "label": "DrawTitleScreen",
       "line": 1612,
-      "receiver": "M2 T27 S2",
-      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P3 bounded title pointer-output correction, accepted same-S custody.",
       "futurePackage": null,
       "history": [
         {
@@ -15181,8 +15182,8 @@
     {
       "label": "OutputTScr",
       "line": 1624,
-      "receiver": "M2 T27 S2",
-      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P3 bounded title pointer-output correction, accepted same-S custody.",
       "futurePackage": null,
       "history": [
         {
@@ -15196,8 +15197,8 @@
     {
       "label": "ChkHiByte",
       "line": 1629,
-      "receiver": "M2 T27 S2",
-      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P3 bounded title pointer-output correction, accepted same-S custody.",
       "futurePackage": null,
       "history": [
         {
@@ -69497,6 +69498,19 @@
         "SkipByte"
       ],
       "acceptedBy": "Coordinator accepts original reset/startup subtree under owner M2 mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-title-pointer-1",
+      "type": "transfer",
+      "from": "M2 T27 S2",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte"
+      ],
+      "acceptedBy": "Coordinator under standing owner M2 repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
     }
   ],
@@ -766133,7 +766147,10 @@
         "EnemyBGCStateData",
         "GetSteFromD",
         "PlayerGraphicsTable",
-        "SwimKT"
+        "SwimKT",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte"
       ],
       "baseline": 1992,
       "incomingComplete": [

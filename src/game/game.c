@@ -304,8 +304,15 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
             game->title_data_size != MYSMB_TITLE_BUFFER_SIZE) {
             break;
         }
-        for (index = 0U; index < MYSMB_TITLE_BUFFER_SIZE; ++index)
+        /* DrawTitleScreen initializes the indirect destination before
+         * OutputTScr advances its high byte at the first Y wrap. These
+         * scratch writes are observable outputs of the original chain. */
+        game->ram[1U] = 3U;
+        game->ram[0U] = 0U;
+        for (index = 0U; index < MYSMB_TITLE_BUFFER_SIZE; ++index) {
             game->ram[(mysmb_u16)(0x0300U + index)] = game->title_data[index];
+            if ((mysmb_u8)(index + 1U) == 0U) game->ram[1U]++;
+        }
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 5U;
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 13U;
         break;

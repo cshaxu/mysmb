@@ -94,6 +94,7 @@ int main(void)
             }
             if (game.ram[0x043aU] != 0x5aU || game.ram[0x073cU] != 13U)
                 return 1;
+            if (game.ram[0U] != 0U || game.ram[1U] != 4U) return 1;
             saw_title_buffer = 1U;
         }
         if (screen_task == 13U) {
