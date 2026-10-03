@@ -1,5 +1,16 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S9 - closed input-to-pause material repair
+
+[Ten-node source/input proof](../proposals/m2/t70-final-current-certification.md#s9-p1-closure---original-port-scratch-and-input-to-pause-connections).
+Missing PortLoop raw00 store repaired;65536 button/mask roots on both ports
+and128x49 persistent steps each width zero diff;2045 RAM bytes compared,
+only observed physical stack1fb-1fd excluded.5 focused checks each,six600-
+frame routes,native/OpenNT build and3 refreshed EXEs pass. Three material
+paths added;scope10 exact,no deferred nodes,fresh0. Historical1992/1992,
+current1992/1992 exact nodes,4275/4275 feasible controls(raw4342,infeasible67),
+572/572 material partial. T70/M2 global certification remains open.
+
 ## M2 T70 S8 - closed pause state/material and feasibility audit
 
 [Six-node source/state proof](../proposals/m2/t70-final-current-certification.md#s8-p1-closure---pause-state-history-and-feasible-edge-correction).

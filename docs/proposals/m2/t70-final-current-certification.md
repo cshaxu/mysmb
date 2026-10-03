@@ -1198,3 +1198,137 @@ no imports,ignored budgets upheld. No push;unrelated workspace work preserved.
 | mysmb16.exe | 258847 | 3bd83fc02682ddfd7c6e135d6b1ab514bb23579ce3555f8064735f48909d6575 |
 | mysmb32.exe | 372392 | e03bd0b27b31db423f396a6f576f460fdba9c0ba7d192b83289c08bc2a2f2501 |
 | mysmb64.exe | 379424 | 48e6433da55a4f806bdae676b206a5398e41a0476d89c51845e0e371db51502a |
+
+## S9 P1 admission - serial input debounce to pause material chain
+
+Scope10:ReadJoypads,ReadPortBits,PortLoop,Save8Bits,PauseRoutine,ChkPauseTimer,
+ChkStart,ClrPauseTimer,SetPause,ExitPause. Original NMI calls the input root
+then pause;shared frame_root.c owns both. Incoming historical1992/1992,
+current1992/1992 exact nodes,4275/4275 feasible controls(raw4342,infeasible67),
+569/569 material partially enumerated. Fresh expected0,max1992. Inspect
+source serial carry,port ordering,saved/mask branches and persistent Start
+handoff;missing port scratch00 write is a scoped candidate discrepancy.
+Coordinator receives the10-node implementation chain under ongoing owner
+mandate before any product edit. Pause's accepted S8 internal proof retained.
+
+Owner ROM and reviewed ASM are read-only,local nonredistributable research.
+Source first;no ROM/CPU instruction patch or third-party implementation import.
+Reference controller only has one port. An ignored validation-only bus wrapper
+supplies port2 serial bits after the real bus read and mirrors strobe writes;
+it preserves CPU execution,source addresses,open-bus high bits and bus timing.
+This is a controlled standard NES peripheral fixture,not a new product emulator
+or Famicom expansion-controller compatibility claim. Raw hardware port00 and
+source physical stack writes are audited explicitly;native CPU stack is outside
+portable ABI,only observed overwritten stack bytes may be excluded.
+
+Bounded cases:all256 decoded button images and all256 prior mask bytes,with
+both ports alternating roles;then persistent press/hold/release/repress routes
+through real original input and pause roots. RAM comparison,actual branch,
+read/write/return evidence separate from source audit. Use batches<=1024,
+process120seconds,128MiB/root1024steps,ignored S9 output and raw cleanup.
+C90 current native probes x86/x64;focused input,pause,NMI,purity/product
+checks. Any confirmed diff repaired and same routes repeated before closure.
+Code change refreshes all3 EXEs via existing native/OpenNT toolchain.
+Similar sweep:both ports,Select/Start overlap,mask retention,serial ordering,
+zero-page publication and input-to-pause timer/lock boundary.
+
+## S9 P1 closure - original port scratch and input-to-pause connections
+
+All10 labels exact:ReadJoypads,ReadPortBits,PortLoop,Save8Bits,PauseRoutine,
+ChkPauseTimer,ChkStart,ClrPauseTimer,SetPause,ExitPause. PortLoop reopened,
+repaired and re-audited before advancing. Fresh expected/actual0;no scoped
+deferral;maintenance custody10 retained S9. Historical1992/1992,current
+1992/1992 nodes,4275/4275 feasible controls(raw4342,infeasible67),572/572
+material partially enumerated. T70/M2 remain open for global material
+completeness,numeric data binding,within-line rendering and end-to-end routes.
+
+Original8e5c strobes4016=1 then0,reads X0,returns to INX and falls through
+for X1. Each eight-iteration loop saves A physically on stack,reads the port,
+stores the raw byte00,and combines d0/d1 via LSR/ORA00/LSR before restoring
+and rotating A. Eight ROL operations discard all incoming A bits;carry
+collects buttons in native A,B,Select,Start,Up,Down,Left,Right bit order.
+The final indexed saved byte is always published;overlapping current/prior
+Select or Start clears BOTH saved Select/Start bits while retaining mask.
+Otherwise Save8Bits stores the full current byte as the next mask. Two ports
+use distinct6fc/6fd and74a/74b;port2 never overwrites port1's saved Start.
+
+Missing STA00 output was confirmed:before repair1024/1024 cases both widths
+differ only at00. Standard NES absolute4016/4017 address fetch leaves40 as
+open-bus high bits;d1 is clear and d0 is the decoded serial bit. Shared input
+owner now publishes40|serial each iteration,including final port2 Right
+sample,then reconstructs the byte. This is a partial evaluation of source
+LSR/ORA/LSR for the declared standard decoded-controller ABI;no runtime CPU
+or host game logic. Famicom expansion-pin/raw-bus inputs are outside that ABI
+and are not claimed tested. The range comment also now includes the actual final RTS8e91,after
+Save8Bits STA074a,X ends at8e90. Constants/button masks and all write/branch/order
+semantics audited against the bound original listing,not inferred from images.
+Scratch store is not claimed to fix a visible player-control symptom;it closes
+the original observable RAM contract omitted by prior selected-byte proof.
+
+Reference uses the existing validation-only original CPU with unmodified ROM.
+Because its original bus models only port1,the ignored local link wrapper
+supplies port2 through the same reviewed controller read/strobe API. It first
+runs real bus operations,preserves high bits,slots/device timing,updates the
+returned byte/latch/trace and adds only peripheral input. No ROM,CPU registers
+at mid-instruction,source branch,game state or ROM call is patched. Source
+entry/stack sentinels are explicit controlled fixtures. Source root calls
+ReadJoypads then PauseRoutine,as ordered in original NMI;source NMI caller
+and other-subsystem behavior retain their independent accepted proof.
+
+65536 independent roots per width pair every button byte with every prior
+mask on BOTH ports simultaneously;port2 complementary bijection covers its
+full65536 space too. Both actual port read/debounce paths observed. At8e79
+BNE,917504 loop-taken and131072 exits;8e84 BEQ73728 Save8Bits and57344 retained
+mask paths. Source observes1048576 port reads and same number of00 stores,
+131072 root returns;physical internal first-port return is separately
+instruction-bound. Compare all RAM except the three actually overwritten
+CPU-stack slots1fb/1fc/1fd:2045 bytes per record,including all zero page.
+CPU A/X/Y/P/SP and physical native stack are outside portable ABI;no other
+RAM exclusions. Original stack writes were observed rather than excluding
+whole0100-01ff. Sentinel return and source bounds validated per root.
+
+128 persistent protocols,49 input-plus-pause steps each (6272 steps/width):
+initial Start,held Start through countdown,release45,repress46,release47,
+repress48 during timer. Saved/mask/status/queue RAM persists between calls;
+port2 inputs vary independently. This validates debounce as the producer
+of PauseRoutine input;it differs intentionally from S8's direct saved-Start
+fixture. All independent and persistent comparisons zero diff both widths;
+outputs byte-identical. S8 exhaustive mode/task/timer/status internal proof
+retained without claiming this protocol re-covers all of it.
+
+Material570 PortLoop -> PortLoop:raw00 readback supplies d0/d1 carry on each
+iteration;native stable40|serial admits equivalent direct serial folding.
+Material571 Save8Bits -> PortLoop:published74a/74b survives to next read and
+controls Select/Start suppression/mask retention until release updates it.
+Material572 PortLoop -> ChkStart:filtered6fc Start,after independent second
+port completion,feeds pause timer/lock activation. Actual persistent routes
+and source predicates establish these edges;no writer-reader cartesian claim.
+Similar sweep covers all16 scratch stores,port order,last-bit publication,
+Select/Start overlap,mask retention and held/released pause handoffs. No
+further scoped mismatch. New regression checks source-derived final00 values
+40 and41,including Start+Right;existing exhaustive debounce test retained.
+
+Operational:impacted products/shared libraries/input/pause/NMI/recorder rebuilt
+both widths;5 focused CTests each pass,including platform-purity and product
+self-tests. Six600-frame source/native routes (idle,start,pause,right,run-jump,
+select) zero scoped diff and native width identity. Frame ABI compares0200-
+07ff except0778/0779,all CIRAM/palette/OAM/audio/PPU scalars;zero page and
+physical stack excluded there and covered locally above. This is scoped
+regression,not full gameplay completion or fresh within-scanline pixel proof.
+Original OpenNT full shared-source compilation/link exits0;optional missing
+OLDNAMES.LIB warning retained;DOS MZ length validated. Actual DOS runtime/
+486 performance qualification remains later work. All3 refreshed products
+match source build outputs;owner standing local commit authorization,no push.
+
+All probes/logs/derived data remain ignored below build;raw RAM/frame captures
+removed after comparison. First concurrent probe attempt had shared temporary
+output names and one sequence read failed after matrix cleanup. Distinct
+sequence filenames fixed the harness;both full matrix and protocol rerun from
+scratch successfully before acceptance. No failed probe is counted as proof.
+Unrelated queued I/O/presentation proposals and terrain whitespace preserved.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258879 | c39fe586fc50d4571f5d9f32f82dbb743dd704e1b359c48a49c0f78de811e8fe |
+| mysmb32.exe | 372392 | 9347524c3a234b432b9c6d4c24181f11cb672bceabe1561d964c0a1381b33bcc |
+| mysmb64.exe | 379424 | 334df897151da99de4aaee259fe7f0c4a34bfb78708db4954fc8239555e3e33b |

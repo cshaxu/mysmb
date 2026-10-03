@@ -106,10 +106,11 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     return paused;
 }
 
-/* ROM $8e5c-$8e90 ReadJoypads/ReadPortBits/PortLoop/Save8Bits.  Host
+/* ROM $8e5c-$8e91 ReadJoypads/ReadPortBits/PortLoop/Save8Bits.  Host
  * adapters provide decoded button images only; this shared owner recreates
  * the eight serial reads and applies the source's two-port debounce rule. */
-static mysmb_u8 mysmb_frame_root_read_port_bits(mysmb_u8 buttons)
+static mysmb_u8 mysmb_frame_root_read_port_bits(struct mysmb_game *game,
+                                               mysmb_u8 buttons)
 {
     mysmb_u8 index;
     mysmb_u8 serial;
@@ -118,6 +119,10 @@ static mysmb_u8 mysmb_frame_root_read_port_bits(mysmb_u8 buttons)
     result = 0U;
     for (index = 0U; index < 8U; ++index) {
         serial = (mysmb_u8)((buttons >> (7U - index)) & 1U);
+        /* Standard NES $4016/$4017 reads retain $40 from the absolute
+         * address fetch on the CPU bus. Source STA $00 publishes the raw
+         * sample before d0/d1 are combined into the decoded button bit. */
+        game->ram[0x0000U] = (mysmb_u8)(0x40U | serial);
         result = (mysmb_u8)((result << 1U) | serial);
     }
     return result;
@@ -147,10 +152,10 @@ void mysmb_frame_root_read_joypads(struct mysmb_game *game,
     /* The source writes $4016=1, then $4016=0, reads port one, increments
      * X and falls through ReadPortBits for port two. */
     mysmb_frame_root_save_port_bits(game,
-        mysmb_frame_root_read_port_bits(buttons1),
+        mysmb_frame_root_read_port_bits(game, buttons1),
         MYSMB_ROOT_SAVED_JOYPAD1, MYSMB_ROOT_JOYPAD_MASK1);
     mysmb_frame_root_save_port_bits(game,
-        mysmb_frame_root_read_port_bits(buttons2),
+        mysmb_frame_root_read_port_bits(game, buttons2),
         MYSMB_ROOT_SAVED_JOYPAD2, MYSMB_ROOT_JOYPAD_MASK2);
 }
 /* ROM $8f97-$8fbb UpdateTopScore / TopScoreCheck. */

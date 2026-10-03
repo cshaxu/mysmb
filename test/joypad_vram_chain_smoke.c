@@ -67,6 +67,13 @@ int main(void)
     mysmb_game_initialize(&game);
     if (mysmb_verify_joypad_port(0x06fcU, 0x074aU) == 0 ||
         mysmb_verify_joypad_port(0x06fdU, 0x074bU) == 0) return 5;
+    /* Original final $4017 read publishes raw right-button sample in $00,
+     * even when Select/Start debounce later suppresses saved input bits. */
+    mysmb_frame_root_read_joypads(&game, MYSMB_BUTTON_RIGHT, 0U);
+    if (game.ram[0x0000U] != 0x40U) return 6;
+    mysmb_frame_root_read_joypads(&game, 0U,
+        (mysmb_u8)(MYSMB_BUTTON_RIGHT | MYSMB_BUTTON_START));
+    if (game.ram[0x0000U] != 0x41U) return 7;
     game.ram[0x074aU] = 0U;
     game.ram[0x074bU] = 0U;
     mysmb_frame_root_read_joypads(&game,

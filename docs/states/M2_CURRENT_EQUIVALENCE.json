@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 569,
+    "enumeratedCount": 572,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12522,6 +12522,69 @@
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
+    },
+    {
+      "id": "material-00570",
+      "producer": "PortLoop",
+      "consumer": "PortLoop",
+      "storage": "RAM00 raw port readback to serial d0/d1 carry",
+      "feasiblePath": "Source stores raw4016/4017 sample00,LSR/ORA00/LSR combines d0/d1;declared standard40|serial input allows equivalent native serial folding while preserving scratch publication.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_read_port_bits per-iteration raw00 store and result rotate",
+      "semanticContract": "Source stores raw4016/4017 sample00,LSR/ORA00/LSR combines d0/d1;declared standard40|serial input allows equivalent native serial folding while preserving scratch publication.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00571",
+      "producer": "Save8Bits",
+      "consumer": "PortLoop",
+      "storage": "persisted RAM074a/074b to next Select/Start debounce predicate",
+      "feasiblePath": "Source Save8Bits publishes full current mask;next same-port loop uses it to suppress both Select/Start if either overlaps;held path retains mask and release updates it. Persistent input/pause protocols prove this state history.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_save_port_bits mask assignment and later overlap test",
+      "semanticContract": "Source Save8Bits publishes full current mask;next same-port loop uses it to suppress both Select/Start if either overlaps;held path retains mask and release updates it. Persistent input/pause protocols prove this state history.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00572",
+      "producer": "PortLoop",
+      "consumer": "ChkStart",
+      "storage": "filtered RAM06fc Start to pause activation after port2 completion",
+      "feasiblePath": "Source ReadJoypads completes two distinct saved/mask paths before NMI PauseRoutine consumes6fc;held Start is suppressed by prior mask,release clears mask,and repress may activate only when timer/status permit.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_read_joypads then mysmb_frame_root_pause_step ordered NMI calls",
+      "semanticContract": "Source ReadJoypads completes two distinct saved/mask paths before NMI PauseRoutine consumes6fc;held Start is suppressed by prior mask,release clears mask,and repress may activate only when timer/status permit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
     }
   ],
   "cohorts": [
@@ -13095,11 +13158,13 @@
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Permits pause only in VictoryMode or GameMode task $03; otherwise returns existing pause bit without changing timer/status.",
       "currentSourcePaths": [
@@ -13115,11 +13180,13 @@
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "When GamePauseTimer is nonzero decrements it and returns; when zero proceeds to Start input processing.",
       "currentSourcePaths": [
@@ -13135,11 +13202,13 @@
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Reads controller-one Start, honors the d7 debounce flag, initializes the $2b pause timer and sound queue, then toggles pause bit and sets d7.",
       "currentSourcePaths": [
@@ -13155,11 +13224,13 @@
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "When Start is absent at timer zero, clears d7 while preserving the pause bit before storing GamePauseStatus.",
       "currentSourcePaths": [
@@ -13175,11 +13246,13 @@
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Stores the source-computed pause status and falls through to the common return.",
       "currentSourcePaths": [
@@ -13195,11 +13268,13 @@
       "currentCounterpart": "mysmb_frame_root_pause_step return",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Returns with GamePauseStatus and GamePauseTimer exactly as selected by the source branch.",
       "currentSourcePaths": [
@@ -16850,10 +16925,12 @@
       "currentCounterpart": "mysmb_frame_root_read_joypads",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "ROM $8e5c: strobes controller ports then serializes and debounces two decoded port images.",
       "currentSourcePaths": [
@@ -16869,10 +16946,12 @@
       "currentCounterpart": "mysmb_frame_root_read_port_bits and save_port_bits",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "ROM $8e66: reads eight serial bits for one port then applies Select/Start debounce.",
       "currentSourcePaths": [
@@ -16888,10 +16967,13 @@
       "currentCounterpart": "mysmb_frame_root_read_port_bits eight-bit loop",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 original8e70 STA00 stores each raw port value;1024 controlled roots per width differ only at00. Prior selected saved/mask proof omitted this byte.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "ROM $8e67: rotates exactly eight port bits into the saved image.",
       "currentSourcePaths": [
@@ -16907,10 +16989,12 @@
       "currentCounterpart": "mysmb_frame_root_save_port_bits",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "ROM $8e80: stores a button image into JoypadBitMask when Select/Start are not held across frames.",
       "currentSourcePaths": [
@@ -58553,13 +58637,15 @@
       "id": "control-00337",
       "cohort": "C",
       "status": "exact",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "currentCounterpart": "src/game/frame_root.c:ordered read_port_bits/save_port_bits per-port chain,source serial loop and debounce successor",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Original ReadJoypads -> ReadPortBits call relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -58575,13 +58661,15 @@
       "id": "control-00338",
       "cohort": "C",
       "status": "exact",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "currentCounterpart": "src/game/frame_root.c:ordered read_port_bits/save_port_bits per-port chain,source serial loop and debounce successor",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Original ReadJoypads -> ReadPortBits fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -58597,13 +58685,15 @@
       "id": "control-00339",
       "cohort": "C",
       "status": "exact",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "currentCounterpart": "src/game/frame_root.c:ordered read_port_bits/save_port_bits per-port chain,source serial loop and debounce successor",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Original ReadPortBits -> PortLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -58619,13 +58709,15 @@
       "id": "control-00340",
       "cohort": "C",
       "status": "exact",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "currentCounterpart": "src/game/frame_root.c:ordered read_port_bits/save_port_bits per-port chain,source serial loop and debounce successor",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Original PortLoop -> PortLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -58641,13 +58733,15 @@
       "id": "control-00341",
       "cohort": "C",
       "status": "exact",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "currentCounterpart": "src/game/frame_root.c:ordered read_port_bits/save_port_bits per-port chain,source serial loop and debounce successor",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Original PortLoop -> Save8Bits branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -130049,13 +130143,15 @@
       "id": "control-03534",
       "cohort": "C",
       "status": "exact",
-      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "currentCounterpart": "src/game/frame_root.c:ordered read_port_bits/save_port_bits per-port chain,source serial loop and debounce successor",
       "semanticEvidence": [
         "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required.",
-        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired."
+        "M2 T55 S7 source audit: SMB1 lines 2446-2476 and NMI line 804 match shared frame_root.c strobe/order, eight-bit reconstruction, prior-mask Select/Start predicate and caller continuation; the pre-dispatch physical $2000 packet write was repaired.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
       ],
       "operationalEvidence": [
-        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass."
+        "M2 T55 S7 controlled 120-frame original-ROM/x86/x64 route reaches both port passes, all eight loop turns, both debounce outcomes and exact $06fc/$06fd/$074a/$074b plus seven PPU scalars; exhaustive per-port 256x256 native debounce sweep and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
       ],
       "semanticContract": "Original ReadPortBits -> ReadJoypads return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
