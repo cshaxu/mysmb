@@ -766755,7 +766755,16 @@
         "SkipATRender",
         "IncrementColumnPos",
         "NoColWrap",
-        "AreaParserCore"
+        "AreaParserCore",
+        "RenderUnderPart",
+        "DrawThisRow",
+        "WaitOneRow",
+        "ExitUPartR",
+        "ChkLrgObjLength",
+        "ChkLrgObjFixedLength",
+        "LenSet",
+        "GetAreaObjXPosition",
+        "GetAreaObjYPosition"
       ],
       "baseline": 1992,
       "incomingComplete": [

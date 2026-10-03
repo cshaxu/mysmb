@@ -5727,3 +5727,104 @@ controls4274/4274(raw4342,infeasible68),material951 partial,totalunknown.
 S17/material/pixels/routes/snapshot remain open;M2 notfully certified.
 
 Current area.c normalized SHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+
+## S17 P33 scope amendment - shared area leaf input and return lifetimes
+
+Retained area leaf clauses:`RenderUnderPart`,`DrawThisRow`,`WaitOneRow`,`ExitUPartR`,`ChkLrgObjLength`,`ChkLrgObjFixedLength`,`LenSet`,`GetLrgObjAttrib`,`GetAreaObjXPosition`,`GetAreaObjYPosition`,`GetBlockBufferAddr`.
+Original9B7D-9BF5,68 instructions/12 direct RAM sites. Native shared area.c
+and area/block_buffer.c;RenderUnderPart/length/attribute/position/pointer
+primitives. Existing parent/indirect receipts remain;missing clauses are
+cached/saved input values,aliases,carry/return conventions andloop writes.
+Extend S17 audit participation by9 names (2 alreadyadmitted),expectedfresh0/
+max1992,total1992 unchanged,no implementation custody transfer. Entry/exit
+each original returning helper;use actual originalROM,currentC90 x86/x64,
+fullRAM with actualphysicalpushmask only. Explicit nativeABI outputs:fixed
+length carry,large length carry/Y,attributesY,coordinateA,pointerRAM06/07
+andlowA. Other final CPU registers/flags not promised by nativeAPI.
+Temporary native copy exposes private RenderUnderPart without modifying
+its body;no production code edit. Row0-15/heightbyte,slot0-2,34 original
+pointer views/Ybytewrap,column0-31. Finite sourcepredicate/scalar checks
+plusactual returning roots;not arbitrary corrupt pointer/gameplayproof.
+Raw/log/script outputs below ignoredbuild,2048case batches/128MiB/120second
+process caps/cleanup. Concrete diff requires sameS corrective amendment,
+repair and3 products;otherwise currentP28 products retained. No newround.
+
+## S17 P33 checkpoint - shared area leaf lifetimes and return ABI reconciled
+
+Existing11-label leaf group,9 added auditparticipants (2 alreadyadmitted),
+S17 scope420/fresh0/max1992. All68 instructions/12 direct RAM sites assigned
+to9 manually reviewed consumed-value/alias/saved-byte/return clauses.
+No product/test source change;all3 P28 product hashes verified unchanged.
+
+68896 actual original returning helper roots EACH current x86/x64 have zero
+completeRAM and declaredreturnABI differences. All68 instruction PCs directly
+observed. Source originals executeunmodified,with realGetLrgObjAttrib child
+under9bac. Native ignoredarea.c copy changes ONLY two static linkage tokens
+on RenderUnderPart declaration/definition,exposing its unchanged body for
+directentry. No original PC labels injected into production/nativehelper,
+no mocks,ROMpatches orbetween-call RAM edits. Only actualphysicalpushbytes
+excluded;source savedstack values separately matchnativeparameter/local.
+
+| Fixture family | Real original roots perwidth |
+| --- | --- |
+| overlay | 1792 |
+| fill-loop | 8192 |
+| fixed-length | 6144 |
+| attribute | 26112 |
+| large-length | 26112 |
+| x-position | 256 |
+| y-position | 256 |
+| block-pointer | 32 |
+
+Overlay rootscover every oldmetatilebyte with7 representative newtiles on
+the finalrow;65536-pair exactsourcepriority truth table supplements them.
+Fill loopscover all16 startingrows/all256 heightbytes/two overwrite policies.
+Fixed-length rootscover all256 oldbytes/8 independent newlengths/3 slots;
+all65536 old/new scalarpairs verifycarry/writechoice. Attribute/large-length
+eachcovers34 originalpointerviews/all256 cursors/3 slots,includingFF->00 Y
+wrap andboth oldlengthsigns. Coordinate rootscoverall256 byteseach;pointer
+rootcoversall32 legitimatecolumns. These helperdomains are not everycaller
+orwholegame reachable-state proof. FinalCPU registers/flags outsideexplicit
+nativeAPI are not fabricated asnativeoutputs;requiredcarry/Y/A andallRAM
+are actually compared accordingto each admitted helperABI.
+
+| Clause | Original instructions | Local alias/lifetime/ABI disposition |
+| --- | --- | --- |
+| U1 | 9b7d-9b9b | Publish input Y to actual AreaObjectHeight0735,thenread stagingrow. Ametatile survivesallCPY/LDY/comparisons,no callback. Source priority:0 overwrite;17/1A keep;C0 overwrite;other>=C0 keep;54keep only A50;remaining overwrite. Native boolean exactly same all65536 existing/metatile bytepairs. Row0-15 staging06A1+row cannotalias0735,so savedheight remainsstable. |
+| U2 | 9b9d-9bab | Optionalstagingwrite retainsinputmetatile,then X++/CPX0D exits atbottom. Otherwise reloadactualheight/DEY/BPL uses newbyte bit7. Native same reloadandtruncate,heightlocalonly copiedback atnextRenderUnderPart entry. On terminal decrement,the storedheight must staypreviousvalue,not decrementedprivatevalue. Row0-15/highheight0-FF scalartraces match finalrowwrites/heightRAM; finalCPU Y/flags not nativevoidAPI output. |
+| L1 | 9bac-9bac | RealGetLrgObjAttrib call leavesdecodedlowF inY andsameXslot. Current check_large_length capturesreturn into callerlocal*length,thenpassesbyvalue tofixedlength. All8 currentproduction callers passaddress ofownlocal length/height/second,notgameRAMalias; helper pointer-output ABI requiresnonalias validlocal,notarbitrary null/userpointer. |
+| L2 | 9baf-9bba | ActualRAM lengthslot read;CLC makescarry0 regardlessincomingflag. Nonnegative oldlength returnsunchanged withcarry0,negative loads savedY/actualstore thenSECcarry1. Native same bytebit7 predicate,onlywritesonnegative andreturnBoolean. Ydecodedlength survivesLDA/CLC/BPL/STAs,so large-length outputalso retainedifnoinitialize. Slot0-2 RAM0730-0732 disjoint07/e7/e8 andcallerlocal. |
+| A1 | 9bbb-9bca | Slot-indexedbuffer cursor read,firstimmutableROMbyte lowF publishes07,wrappedINY secondread lowF returnedinY. Native computesaddressesearlybutpointere7/e8 andcursor072D+slot cannotalias07;readonlyROM stable. Sourcepointerbus readorder notnativebuscontract. Actual34 pointerviews/all256 cursors/3slots,includingFF->00 Ywrap andlengthcarryparent,comparefullRAM/requiredY. |
+| P1 | 9bcb-9bd2 | Four byteASLs ofactualCurrentColumn return wrappedA. Native u8(RAMcolumn<<4) same for256 bytes;16-bit int promotedmax4080 safe. CPUX/Y/flags not promised returnAPI. |
+| P2 | 9bd3-9bdc | Actual07 shiftedfourtimes thenCLC/ADC32 returns wrappedA;nativeu8((07<<4)+32) sameallbytes,max4112 safeDOS16. ExplicitCLCmeansoldcarrycannotchangeYpixelresult. Input07 may holdanybyte underhelperlocalcontract,notassumedvalidrowonly. |
+| B1 | 9be1-9bec | PHA savesinitialAcolumn whilefourLSR/TAY choose highpointertable. Sourceactual07highstorethenPLArestorecolumn. Native byvaluecolumnpreservesidentical savedbyte;originalactualstackpushonly excluded,andrestoredbyte separatelyprovedby32 directroots. Validcolumns0-31select0/1;othercolumns outsidecallercontracts,not nativeguardequivalenceclaim. |
+| B2 | 9bed-9bf5 | Restoredcolumn&F thenCLC/ADCimmutablelowtable -> actual06. Native lowaddition maxDF,nooverflow;stored06/07 decode same16-bitaddress. Pointer APIreturnscombinedaddress;required originalA lowbyte compared,sourcefinalYselector not a gameoutput. Blockaddresshelper hasnocallback/interveningwriter. |
+
+135424 scalar assertions includethe exact65536 overlaypairs,4096 row/height
+looptraces,65536 fixedlengthold/newpairs and256 coordinatepairs. Tools check
+reviewedscalar equations/cardinality;they do not independently proveclause
+prose orwhole-program materialcompleteness. All8 production large-length
+call sites use a local outputbyte,which cannotaliasoriginalRAM stores.
+GetBlockBufferAddr06/07->StrBlock/BlockBufferCollision paths retain existing
+703/710 receipts ratherthan duplicatingthem. Two missinglocalpaths952/953
+are originalinterval/alias plusactual returning-root proofs:
+
+952:RenderUnderPart -> WaitOneRow;RAM0735 saved height during one fill iteration. 9b7d STY0735 ->rowread/optionalstore/rowadvance ->9ba5 LDY0735. Row0-15 staging06A1+row cannotalias0735,no child/callback writer;native stores actualheightthenreloads it beforedecrement. Terminal private decrement is not spuriously published.
+
+953:GetLrgObjAttrib -> ChkLrgObjFixedLength;Y decoded object length across attribute return and slot-length read. 9bc9 TAY ->9bca returnto9baf LDA oldslot/CLC/BPL ->9bb5 TYA wheninitializing. No Y writer orcallbackininterval;native check_large_length outputlocalcaptures attribute return thenpassesbyvalue tofixedlength. Slot0-2/validnonaliascallerlocal contract. Current original9bac roots explicitlycompareY length,carry andRAM.
+
+Current strictC90 probe owners linked x86/x64 successfully;P28 actual10
+focused checks each/six600-frame integrations retained,no repeatedproduct
+build for evidence-onlyP. DOS originalOpenNT remainscompile/linkonly.
+2048-case streamedbatches stayunder128MiB/120seconds/process,rawrecords
+removedaftereachbatch,noprotected data imported/tracked. Fourindexnegative
+checks andledgeradmission gate pass. Source changed nowhere inproducts.
+
+Complete local1333/10691 instruction and404/3773 directRAM receipts;
+9358 otherinstruction/3369 directRAM indexclauses stillneedexact retained
+joins ormissingclause completion. Historical/local1992/1992,controls4274/4274
+(raw4342,infeasible68),material953 partial,totalunknown. No node/control
+promotion;S17/material/pixels/routes/snapshot remainopen,M2 uncertified.
+
+Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.

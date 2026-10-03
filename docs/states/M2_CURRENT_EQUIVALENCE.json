@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 951,
+    "enumeratedCount": 953,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -21358,6 +21358,50 @@
         "3424 actual original parents each current x86/x64 with zero fullRAM differences;all36 schedule sourceinstructionPC observed. Child P29-31 source/lifetime contracts retained. Paths are source-interval/actual-parent proofs,not a new recorded last-writer eventcount."
       ],
       "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00952",
+      "producer": "RenderUnderPart",
+      "consumer": "WaitOneRow",
+      "storage": "RAM0735 saved height during one fill iteration",
+      "feasiblePath": "9b7d STY0735 ->rowread/optionalstore/rowadvance ->9ba5 LDY0735. Row0-15 staging06A1+row cannotalias0735,no child/callback writer;native stores actualheightthenreloads it beforedecrement. Terminal private decrement is not spuriously published.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_under_part / mysmb_area_check_large_length/fixed_length",
+      "semanticContract": "Complete local stated scalar/row/slot/returning helper domains;no arbitrary bad outputpointer orinter-frame caller claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P33 checkpoint - shared area leaf lifetimes and return ABI reconciled",
+        "9b7d STY0735 ->rowread/optionalstore/rowadvance ->9ba5 LDY0735. Row0-15 staging06A1+row cannotalias0735,no child/callback writer;native stores actualheightthenreloads it beforedecrement. Terminal private decrement is not spuriously published."
+      ],
+      "operationalEvidence": [
+        "68896 actual original returning helpers each current x86/x64 zero fullRAM/declared returnABI differences;all68 scopePC observed.135424 source scalar/loop assertions. Original interval/alias proof,not fabricated last-writer eventcounts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00953",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "ChkLrgObjFixedLength",
+      "storage": "Y decoded object length across attribute return and slot-length read",
+      "feasiblePath": "9bc9 TAY ->9bca returnto9baf LDA oldslot/CLC/BPL ->9bb5 TYA wheninitializing. No Y writer orcallbackininterval;native check_large_length outputlocalcaptures attribute return thenpassesbyvalue tofixedlength. Slot0-2/validnonaliascallerlocal contract. Current original9bac roots explicitlycompareY length,carry andRAM.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_under_part / mysmb_area_check_large_length/fixed_length",
+      "semanticContract": "Complete local stated scalar/row/slot/returning helper domains;no arbitrary bad outputpointer orinter-frame caller claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P33 checkpoint - shared area leaf lifetimes and return ABI reconciled",
+        "9bc9 TAY ->9bca returnto9baf LDA oldslot/CLC/BPL ->9bb5 TYA wheninitializing. No Y writer orcallbackininterval;native check_large_length outputlocalcaptures attribute return thenpassesbyvalue tofixedlength. Slot0-2/validnonaliascallerlocal contract. Current original9bac roots explicitlycompareY length,carry andRAM."
+      ],
+      "operationalEvidence": [
+        "68896 actual original returning helpers each current x86/x64 zero fullRAM/declared returnABI differences;all68 scopePC observed.135424 source scalar/loop assertions. Original interval/alias proof,not fabricated last-writer eventcounts."
+      ],
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/area.c"
@@ -166145,22 +166189,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P29 checkpoint - parser consumed-value clauses reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P30 checkpoint - retained column and attribute lifetimes reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P31 checkpoint - scenery terrain and block-buffer handoffs reconciled",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P33 checkpoint - shared area leaf lifetimes and return ABI reconciled"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 1265,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9426,
+        "localInstructionReceiptSites": 1333,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9358,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 392,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3381,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 404,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3369,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/area.c": 231,
+          "src/game/area.c": 219,
           "src/game/player.c": 138,
           "src/game/oam/normal_enemy_gfx.c": 128,
           "src/game/terminal_modes.c": 81,
@@ -166290,7 +166335,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 951,
+        "materialPathsEnumerated": 953,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."
