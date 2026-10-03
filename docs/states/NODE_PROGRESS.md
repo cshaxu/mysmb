@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P85 relative offscreen uses](../proposals/m2/t70-final-current-certification.md#s17-p85-checkpoint---relative-position-and-offscreen-producer-uses-reconciled).
+S17 P85:30relative/offscreen labels/155instructions/35RAM joined10boundedclauses;548864actualroots eachwidth0diff/all155PC/10branchpairs,6tests each. Scope1454/fresh0;8940/10691instruction receipts,3170/3773RAM receipts;1751instructions/603RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P84 player graphics uses](../proposals/m2/t70-final-current-certification.md#s17-p84-checkpoint---player-graphics-action-size-animation-uses-reconciled).
 S17 P84:42player graphics labels/255instructions/81RAM joined14boundedclauses;286720actualroots eachwidth0diff/all255PC/41branchpairs,4tests each. Scope1424/fresh0;8785/10691instruction receipts,3135/3773RAM receipts;1906instructions/638RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
