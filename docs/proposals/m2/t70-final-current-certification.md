@@ -7957,3 +7957,32 @@ All69PC/14branchpairsobserved;singleCAADBNEalwaysbranchsourceproofcorrects01752 
 
 S17 P64:12movementlabels,69instructions/16RAM joined6boundedclauses;196608actualroots eachwidth0diff/all69PC/14branchpairs,384erasecalls,1falseexactfallthrough correctedinfeasible,5tests each. Scope887/fresh0;4721instruction/1660RAM receipts,5970instruction/2113RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 Current src/game/enemy/movement.c normalizedSHA256:7ca92616e9557096e30833bbfb6ab2e06d907f6fdffc67f8406a72d3ed9b7c28.
+
+## S17 P65 admission - paratroopa movement and shared X counters
+
+Existing enemy movement/counter materialgap;70pending instructions in14labels: ProcMoveRedPTroopa,NoIncPT,MoveRedPTUpOrDown,MovPTDwn,MoveFlyGreenPTroopa,YSway,NoMGPT,XMoveCntr_GreenPTroopa,XMoveCntr_Platform,NoIncXM,IncPXM,DecSeXM,MoveWithXMCntrs,XMRight. Shared enemy/paratroopa.c/green_paratroopa.c/x_counter.c,realhorizontal/redgravity children. OriginalCAFF red/CB25green/CB45constantcounter/CB47platformmaximum/CB66temporarycounter entries;sourceframegates/primarybits/secondarybounds/stacklifetime/postchild00publication reviewed. ControlledX0-5/rawcounter andmaximum bytes/Frameallbyte/Yanchor/center/gravity gates. Scope901,fresh0/max1992. Bothwidth2032RAM/24APU/orderedwrites/focusedtests;diffstaysS17/productrepairrequires3EXEs. OwnerROM/ASMreadonlynonredistributable,raw onlyignoredbuild128MiB/120seconds perprocess,4096recordbatchesdeleted. No newauditround.
+
+## S17 P65 checkpoint - paratroopa movement and shared X counters reconciled
+
+ExistingS17 adjacentenemy/counter materialgap;14labels/70instructions,scope901/fresh0,threeowners unchangedfromHEAD.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| R1 | ProcMoveRedPTroopa,NoIncPT | OR YspeedA0+X andforce434+X nonzero skipsdummyreset. Zero clears417+X,comparesY against0401original-heightanchor;belowanchor onlyFrame9&7zero incrementsY,otherframesreturn. NativeunsignedcompareandbyteINCmatch,0401isYanchor despiteoriginalXPosname. No syntheticcollision orstate gate. |
+| R2 | MoveRedPTUpOrDown,MovPTDwn | Reachedafterforce/speednonzeroorY>=anchor;Y<center58+X tailactualMoveRedPTroopaDown elseactualUp. SourcecarryfromCMP onlyselectsdirection;sharedredgravity getsownconstantamount03/max06/force02andX=slot+1. Nativecorrectunsignedcenterthreshold,realchildeffectscompared;childinstructionsnotcreditedbyparentcoverage. |
+| G1 | MoveFlyGreenPTroopa,YSway,NoMGPT | Realconstantcounterchild then realMoveWithXMCntrs alwaysrunbeforeverticalFramegate. Frame9&3nonzero leavesRAM00atreturnedhorizontal displacement;everyfourthframe replaces00by1 ifbit40elseFF,CLC/Y+00 bytewrap. NativeRAM00publicationbeforeverticalupdate andsameframebits preservegatedframeobservablechildoutput. Frame9 cannotaliasfixedslotchildfields. |
+| X1 | XMoveCntr_GreenPTroopa,XMoveCntr_Platform,NoIncXM | GreenentryloadA13fallsthroughplatform;platformalwaysSTA01=maxbeforeFrame9&3 gate. ActiveprimaryA0+X bit0clearcomparessecondary58+X exactlyequalmax,not >=;equality incrementsprimary,inequality incrementssecondary byte. Primarybit0set entersdecrementpath. DirectplatformA=maxrawbyte/Frame0andindependentFramebytefixtures coverallcounterpairs/gates withinseededmaximumcoupling;no sixslotdefault orclamp. |
+| X2 | IncPXM,DecSeXM | Oddprimary andsecondary0 incrementsprimarybyte,otherwiseDECsecondary;bothsourceRTS positionsretainRAM01. WrapFF->0primary/secondary and0boundary witnessed. Nativeu8increment/decrementmatch;bit1direction isindependentofbit0phase,notcollapsedtoenum0-3. |
+| X3 | MoveWithXMCntrs,XMRight | PHA preservesoriginalsecondary. Primarybit1nonzero keepssecondary/dir1;bit1zero EORFF/CLC/ADC1 temporarilynegatessecondary/dir2. ActualMoveEnemyHorizontally consumesmodified58+X;returnedA storedRAM00 beforePLArestoresoriginalsecondary. Nativecapturedvalue mirrorsstacklifetime,notrestoring00/coordinate/fraction/pageeffects. Allrawprimary/secondarypairs sampled;sourceparentX==initial08 inallreturningroots. |
+
+SixoriginalreturningroutesCAFF/CB25/CB47/CB66/CB45/CB47,65536each,total393216eachwidth. FixedX0-5,fullRAMpattern,rawprimary/secondary bytepairs;directplatformFrame0/maximumbytecoupled toseed,independentFramebytegate,greenconstant13counter;redzero/nonzeroforce/speed/anchor/center/Y and8-framegate. Greenhorizontalorder and4-frame/bit40sway retainRAM00whenverticalgatecloses. Finitecontrolledfixturesnotallmaximum-by-countercartesian or gameplayreachable producer/inter-frameproof.
+
+All70PC/11branchpairsobserved,originalchildren untouched,finalCPU X==initial08assertedeveryroot. 2032RAM/24APU/orderedhardwarewrites0diff eachwidth,minSP0xf5,onlyphysical1F0-1FFexcluded;voidnativeABIexcludesA/Y/flags. SourceCB45constant13 checked;no source/tableimport. StrictC90checkers/currentlibraries;5focusedtests eachwidthpass,platformpurityincluded;fournegativeaccountingmutationsrejected. ThreeEXEs verifiedP57hashesunchanged,DOScompile/linkreceipt only. Raw4096recordbatchesdeletedbelowignoredbuild,neutralmetadata onlytracked.
+
+S17 P65:14paratroopa/counter labels,70instructions/30RAM joined6boundedclauses;393216actualroots eachwidth0diff/all70PC/11branchpairs,5tests each. Scope901/fresh0;4791instruction/1690RAM receipts,5900instruction/2083RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
+
+Current src/game/enemy/paratroopa.c normalizedSHA256:196079ff98a92c5d4ea1096967dbd96a1e4dc5bde0a706a6f64f76f438f43fa2.
+
+Current src/game/enemy/green_paratroopa.c normalizedSHA256:1b50e002a6b6bb61325aebda687ff7ad62f2f184a358f28806dd2469c9815de8.
+
+Current src/game/enemy/x_counter.c normalizedSHA256:1b86c0b889312c32ba47d38fdec90a5cce7ca51892a290d1f50b047b53aff9ae.

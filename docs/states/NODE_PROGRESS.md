@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P65 paratroopa/counter chains](../proposals/m2/t70-final-current-certification.md#s17-p65-checkpoint---paratroopa-movement-and-shared-x-counters-reconciled).
+S17 P65:14paratroopa/counter labels,70instructions/30RAM joined6boundedclauses;393216actualroots eachwidth0diff/all70PC/11branchpairs,5tests each. Scope901/fresh0;4791instruction/1690RAM receipts,5900instruction/2083RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
+
 [P64 normal enemy movement](../proposals/m2/t70-final-current-certification.md#s17-p64-checkpoint---normal-defeated-and-jumping-enemy-movement-reconciled).
 S17 P64:12movementlabels,69instructions/16RAM joined6boundedclauses;196608actualroots eachwidth0diff/all69PC/14branchpairs,384erasecalls,1falseexactfallthrough correctedinfeasible,5tests each. Scope887/fresh0;4721instruction/1660RAM receipts,5970instruction/2113RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 

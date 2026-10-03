@@ -767309,7 +767309,21 @@
         "MoveDefeatedEnemy",
         "ChkKillGoomba",
         "NKGmba",
-        "MoveJumpingEnemy"
+        "MoveJumpingEnemy",
+        "ProcMoveRedPTroopa",
+        "NoIncPT",
+        "MoveRedPTUpOrDown",
+        "MovPTDwn",
+        "MoveFlyGreenPTroopa",
+        "YSway",
+        "NoMGPT",
+        "XMoveCntr_GreenPTroopa",
+        "XMoveCntr_Platform",
+        "NoIncXM",
+        "IncPXM",
+        "DecSeXM",
+        "MoveWithXMCntrs",
+        "XMRight"
       ],
       "baseline": 1992,
       "incomingComplete": [

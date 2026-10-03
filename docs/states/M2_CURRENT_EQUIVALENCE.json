@@ -45485,11 +45485,13 @@
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "When both vertical speed and force are zero, clears Y dummy, returns after a fourth-frame downward correction below original height; otherwise selects red vertical direction from center height.",
       "currentSourcePaths": [
@@ -45505,10 +45507,12 @@
       "currentCounterpart": "shared jumping and red paratroopa slot paths",
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction."
+        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns after the optional frame-gated one-pixel downward correction.",
       "currentSourcePaths": [
@@ -45525,11 +45529,13 @@
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Compares current Y with center Y and tail-selects red down below center or red up at/above center.",
       "currentSourcePaths": [
@@ -45545,10 +45551,12 @@
       "currentCounterpart": "shared jumping and red paratroopa slot paths",
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction."
+        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Tail-jumps to red paratroopa downward movement.",
       "currentSourcePaths": [
@@ -45564,10 +45572,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Calls green counter update then counter-driven horizontal movement; every fourth frame applies +1 with frame bit six set or -1 otherwise to Y.",
       "currentSourcePaths": [
@@ -45583,10 +45593,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Stores the selected +/-1 Y adder and updates green paratroopa Y before falling through return.",
       "currentSourcePaths": [
@@ -45602,10 +45614,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns after either frame-gated no-sway branch or completed Y sway.",
       "currentSourcePaths": [
@@ -45621,10 +45635,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Supplies maximum secondary counter $13 and falls through shared counter update.",
       "currentSourcePaths": [
@@ -45640,10 +45656,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Every fourth frame increments/decrements secondary counter or advances primary counter at the two endpoints using the supplied maximum.",
       "currentSourcePaths": [
@@ -45659,10 +45677,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns on a non-fourth frame or after secondary increment.",
       "currentSourcePaths": [
@@ -45678,10 +45698,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Increments primary counter and returns.",
       "currentSourcePaths": [
@@ -45697,10 +45719,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "At nonzero secondary decrements and returns; at zero branches to primary increment.",
       "currentSourcePaths": [
@@ -45716,10 +45740,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Saves secondary X counter, mirrors it when primary bit one is clear, chooses direction, calls horizontal movement, saves returned A to scratch and restores secondary counter.",
       "currentSourcePaths": [
@@ -45735,10 +45761,12 @@
       "currentCounterpart": "shared green paratroopa and X-counter paths",
       "semanticEvidence": [
         "Td S9 B15g green-paratroopa/X-counter node-semantics and independent integration audit: SMB1 lines 9427-9489 compared with shared enemy/green_paratroopa.c and x_counter.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway."
+        "M2 T63 S7 static audit: SMB1 $CB25-$CB59 against shared enemy/green_paratroopa.c and enemy/x_counter.c preserves four-frame counter gates, primary/secondary rollover, sign/direction selection, child return storage/restoration and vertical sway.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S7 current-source original-ROM/x86/x64 evidence: 576 controlled green/counter route comparisons (288 per width), exhaustive counter contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all70PC/11branchpairs/actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Stores chosen direction, calls horizontal movement, then restores the saved secondary counter.",
       "currentSourcePaths": [
@@ -168457,16 +168485,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4721,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5970,
+        "localInstructionReceiptSites": 4791,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5900,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1660,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2113,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1690,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2083,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168513,7 +168542,6 @@
           "shared game core: oam/bowser_flame_gfx.c": 22,
           "src/game/world/geometry.c": 22,
           "src/game/entry.c shared C90 entry owner": 21,
-          "src/game/enemy/{green_paratroopa,x_counter}.c": 21,
           "src/game/world/fireball_hit.c": 21,
           "shared game core: oam/bowser_gfx.c": 19,
           "shared game core: enemy/actor_slots.c": 19,
@@ -168538,7 +168566,6 @@
           "src/game/world/hammer_collision.c": 10,
           "src/game/world/powerup_collision.c": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
-          "src/game/enemy/{movement,paratroopa}.c": 9,
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
           "src/game/enemy/flying_cheep.c": 7,
