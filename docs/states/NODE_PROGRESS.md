@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P87 bootstrap uses](../proposals/m2/t70-final-current-certification.md#s17-p87-checkpoint---reset-sprite-nametable-ppu-control-uses-reconciled).
+S17 P87:15bootstrap labels/83instructions/14RAM joined9boundedclauses;3600actualroots eachwidth0diff/all83PC/9branchpairs,4tests each. Scope1462/fresh0;9059/10691instruction receipts,3203/3773RAM receipts;1632instructions/570RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P86 sprite child uses](../proposals/m2/t70-final-current-certification.md#s17-p86-checkpoint---sprite-drawing-child-retained-route-uses-reconciled).
 S17 P86:3sprite child labels/36instructions/19RAM joined3boundedclauses;reuse823296parentroots eachwidth0diff/all36PC/onebranchpair plusmandatoryF294,5tests each. Scope1457/fresh0;8976/10691instruction receipts,3189/3773RAM receipts;1715instructions/584RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

@@ -767950,7 +767950,12 @@
         "ExDivPD",
         "DrawSpriteObject",
         "NoHFlip",
-        "SetHFAt"
+        "SetHFAt",
+        "WBootCheck",
+        "EndlessLoop",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
       ],
       "baseline": 1992,
       "incomingComplete": [
