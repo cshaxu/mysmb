@@ -2740,3 +2740,73 @@ only. No final bindings closure while any executable-use domain is pending.
 P2 registry,existing S16 node-admission,documentation/ledger and diff-whitespace
 checks pass. All three current products match their committed P1 bytes and
 SHA256 values. No new compile or gameplay run is represented by those checks.
+
+## S16 P3 checkpoint - dynamic header and stream address domains
+
+Audit-only continuation of bindings,no new global review. S16 remains open.
+No new product source diff;three products remain P1 bytes. Historical mapping
+1992/1992;local scoped nodes1992/1992,controls4275/4275(raw4342,infeasible67),
+material625 partial,total unknown. No new node/control/material credit.
+
+Original source comparison confirms FindAreaPointer's8-bit ADC/TAY before
+AreaAddrOffsets;GetAreaDataAddrs derives type/low from AreaPointer,loads enemy
+and area split-pointer bytes,then reads the two-byte header and advances only
+the area pointer. StoreFore and StoreStyle preserve conditional RAM stores.
+All eight C bases match original symbols. All34 area and34 enemy low/high
+entries agree with their original symbolic target expressions. The34 normal
+table slots,including their68 native high-bit aliases,produce PRG pointers
+whose complete8-bit enemy offsets and post-header area offsets remain in PRG.
+Area INY wraps to8 bits before pointer addition;enemy offsets likewise use
+captured8-bit values. Checked8704 enemy address cases and17408 area first/
+next-byte address cases. This is pointer/address algebra,not new CPU execution
+or a new full state-machine certificate. Arbitrarily corrupted pointers or
+out-of-table selectors are outside this declared pointer-domain proof.
+
+LoadHeader's original f6f5-f73a path reads MusicHeaderOffsetData,Y,then six
+MusicHeaderData fields at the selected8-bit offset. Short5-byte headers still
+read the adjacent sixth original byte;there is no invented structure bound.
+Reused the reviewed original probe mode27 for all256 selector values with
+current x86/x64 C90 checker builds. A local strict checker compares all2048
+RAM bytes for this entry,removing the old broad scratch/stack exclusions;
+source instructions have no stack writes before the f73a stopping boundary.
+Both widths report256 roots/zero differences. All seven original table-read
+operands observed256 times,including all256 selector indices. Existing APU
+field/write-order comparisons pass. An injected expected-RAM difference at
+01f0 is rejected by both strict checkers,confirming the old broad exclusion
+is absent;negative raw records are removed. This controlled leaf entry does not prove
+full music/frame reachability,CPU register-return ABI or timing equivalence.
+Raw1.05MiB record is removed after comparison;logs/neutral summaries remain
+in ignored build/m2-t70-s16 within the admitted128MiB/120second budgets.
+
+All21 actual audio reader calls have address-domain dispositions:12 absolute
+table readers,seven stream readers and two frequency reads. All256 byte
+indices for their absolute/frequency bases land in PRG or low RAM after
+16-bit wrap;the shared reader supports both. In particular ff01+ff reads
+RAM0000. Stream consumers reconstruct the little-endian RAMf5/f6 pointer,
+capture the8-bit channel offset and store its increment before the fetch,
+as the original LDA(MusicData),Y paths do. All22 original header pointers
+bind symbolic targets or the explicitly original residual interior literal;
+their256 stream offsets stay in PRG. Header selection and channel control
+flow retain the scoped T68/T69 receipts;this address proof does not broaden
+those cases or certify arbitrary corrupted pointer inputs.
+
+The use manifest now records address-domain evidence for19 of93 direct reads
+(area selection/header tables,enemy stream,LoadHeader and shared audio read),
+leaving74 direct read clauses.21 of134 caller address clauses are reconciled,
+leaving113. These overlapping use counts are not graph-edge counts. Remaining
+bindings are the already admitted scenery/metatile/text/palette,object/OAM,
+collision/read-helper,title/CHR origins and coverage/applicability clauses;
+no successor or new gap package. Existing original parser/enemy receipts keep
+their explicit scratch/stack/call exclusions;no broad proof by byte equality.
+
+Operational:current area-pointer-header smoke passes both widths,covering
+2048 synthetic world/area lookup cases,all256 area-type values,all65536 header
+byte pairs,256 pointer-carry cases and68 owner-ROM normal/high-bit slot cases.
+Those native expectations supplement the source proof;they are not new
+original executions. No DOS rebuild is required for this audit/test-evidence
+part. Node admission,registry,documentation/ledger and whitespace gates pass;
+they verify accounting only. Three committed product identities unchanged.
+Local reproducible producers are run-header-bindings.py,pointer-domain-bindings.py
+and music-reader-domains.py beneath the S16 build directory. The original
+reference probe and product sources remain unmodified;unrelated owner work
+is preserved,no ROM/data import and no push.
