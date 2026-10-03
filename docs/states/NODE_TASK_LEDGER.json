@@ -766274,7 +766274,17 @@
         "Squ2LengthHandler",
         "FetchSqu1MusicData",
         "HandleTriangleMusic",
-        "FetchNoiseBeatData"
+        "FetchNoiseBeatData",
+        "GetAreaDataAddrs",
+        "ProcessEnemyData",
+        "CheckEndofBuffer",
+        "CheckRightBounds",
+        "CheckPageCtrlRow",
+        "PositionEnemyObj",
+        "CheckRightExtBounds",
+        "CheckForEnemyGroup",
+        "ParseRow0e",
+        "CheckThreeBytes"
       ],
       "baseline": 1992,
       "incomingComplete": [

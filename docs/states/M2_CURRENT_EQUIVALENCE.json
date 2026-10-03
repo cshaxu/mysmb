@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 673,
+    "enumeratedCount": 682,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -9886,7 +9886,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=8243; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -9908,7 +9908,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=204; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -9930,7 +9930,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=1031; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -9952,7 +9952,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=339; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -9974,7 +9974,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=84; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -9996,7 +9996,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=2591; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10018,7 +10018,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=671; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10040,7 +10040,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=1377; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10062,7 +10062,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=2842; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10084,7 +10084,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=6300; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10106,7 +10106,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=7342; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10128,7 +10128,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=1297; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10150,7 +10150,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=12533; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10172,7 +10172,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=41; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10194,7 +10194,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=32; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10216,7 +10216,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=17; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10238,7 +10238,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=69; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10260,7 +10260,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=63; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10282,7 +10282,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=522; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10304,7 +10304,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=60; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10326,7 +10326,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=42; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10348,7 +10348,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=36; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10370,7 +10370,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S3 P2 region observations=12306; each byte observed, native output equality after real original header consumer and stream handoff."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10392,7 +10392,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S5 P2 declared-consumer original reads=519;2304 roots both widths full RAM/APU/order/returned A equal."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10414,7 +10414,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S5 P2 declared-consumer original reads=48;2304 roots both widths full RAM/APU/order/returned A equal."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10436,7 +10436,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S5 P2 declared-consumer original reads=4;2304 roots both widths full RAM/APU/order/returned A equal."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10458,7 +10458,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S5 P2 declared-consumer original reads=8;2304 roots both widths full RAM/APU/order/returned A equal."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10480,7 +10480,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S5 P2 declared-consumer original reads=188;2304 roots both widths full RAM/APU/order/returned A equal."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10504,7 +10504,7 @@
         "M2 T53 S2 world-select B route: original ROM, x86 and x64 match for 600 frames after WorldSelectEnableFlag=1 and B at frame 100, including the six VRAM-buffer bytes and final world digit.",
         "docs/proposals/m2/t70-final-current-certification.md S10 P1:8704 original menu roots and1120 persistent complete-demo calls each width zero RAM/ingress diff after32 Start roots exposed wrong clear interval;only case-observed physical CPU-stack writes1fa-1fd excluded;7 focused checks each,6x600 frame routes,native/OpenNT builds and3 refreshed EXEs pass."
       ],
-      "cohort": "A",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/frame_root.c",
@@ -10526,7 +10526,7 @@
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -10547,7 +10547,7 @@
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -10568,7 +10568,7 @@
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -10589,7 +10589,7 @@
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -10610,7 +10610,7 @@
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -10631,7 +10631,7 @@
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
@@ -10653,7 +10653,7 @@
       "operationalEvidence": [
         "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -10674,7 +10674,7 @@
       "operationalEvidence": [
         "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -10695,7 +10695,7 @@
       "operationalEvidence": [
         "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -10716,7 +10716,7 @@
       "operationalEvidence": [
         "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/player/climbing.c"
@@ -10737,7 +10737,7 @@
       "operationalEvidence": [
         "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/collision.c",
@@ -10759,7 +10759,7 @@
       "operationalEvidence": [
         "M2 T64 S37 tools/reference_terrain_connection_probe.c: 32 actual PlayerBGCollision roots exercise all size/crouch/swim combinations and empty/5f/60/61 block buffers; original DC B7 head branch is 16 taken/16 fallthrough, DD9C side-hidden call and DEC3-to-DD9F actual return each observed 24 times. 768 direct original solid/climb/hidden predicate entries cover every tile byte per owner. Fresh test/terrain_connection_route_check.c executes real native roots/children without substituted return state on x86/x64: each 800/800 zero differences. Roots compare all 1784 persistent RAM bytes, with head-X and side-Z seams checked; volatile query scratch $00-$07 and CPU stack excluded. Pure predicates compare all 1792 non-stack RAM bytes plus unchanged metatile A, group X/Y and carry/Z-equivalent return. Bound-ROM and resource-free threshold paths both match. Focused terrain, metatile and platform-purity tests pass on both widths; unchanged core builds/links with original OpenNT DOS16 toolchain (existing OLDNAMES.LIB warning)."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/metatiles.c"
@@ -10781,7 +10781,7 @@
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -10803,7 +10803,7 @@
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
       ],
-      "cohort": "J",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/enemy/background.c"
@@ -10824,7 +10824,7 @@
       "operationalEvidence": [
         "M2 T65 S1 current x86/x64 each replay 800 original-ROM selector/predicate roots with zero differences. PlayerBGCollision 32 roots compare 1784 persistent RAM bytes (scratch $00-$07 and CPU stack excluded); 768 predicate roots compare 1792 non-stack bytes. Base-table reads indices 0/1/2 = 4/4/24. docs/history/M2-T65-block-query-object-output-current-proof.md"
       ],
-      "cohort": "K",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/player/terrain.c"
@@ -10845,7 +10845,7 @@
       "operationalEvidence": [
         "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
       ],
-      "cohort": "K",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/block_buffer.c"
@@ -10866,7 +10866,7 @@
       "operationalEvidence": [
         "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
       ],
-      "cohort": "K",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/world/block_buffer.c"
@@ -10887,7 +10887,7 @@
       "operationalEvidence": [
         "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
       ],
-      "cohort": "K",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c",
@@ -10909,7 +10909,7 @@
       "operationalEvidence": [
         "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
       ],
-      "cohort": "K",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/oam/vine_gfx.c",
@@ -10931,7 +10931,7 @@
       "operationalEvidence": [
         "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Block65536 roots include32768 inputs whose valid incoming block slot differs from valid ObjectOffset; source second coordinate/scratch consumption matches after correction."
       ],
-      "cohort": "L",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/oam/object_position.c"
@@ -10952,7 +10952,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=280;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10973,7 +10973,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=212;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -10994,7 +10994,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=194;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11015,7 +11015,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=372;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11036,7 +11036,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=793;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11057,7 +11057,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=29;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11078,7 +11078,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=499;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11099,7 +11099,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=793;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11120,7 +11120,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=440;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11141,7 +11141,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=340;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11162,7 +11162,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=296;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11183,7 +11183,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=196;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11204,7 +11204,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=134;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11225,7 +11225,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=160;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11246,7 +11246,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=124;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11267,7 +11267,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=86;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11288,7 +11288,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=136;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11309,7 +11309,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=1849;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11330,7 +11330,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=464;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11351,7 +11351,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=260;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11372,7 +11372,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=188;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11393,7 +11393,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=102;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11414,7 +11414,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=432;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11435,7 +11435,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=229;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11456,7 +11456,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=140;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11477,7 +11477,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=212;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11498,7 +11498,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=600;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11519,7 +11519,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=608;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11540,7 +11540,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=304;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11561,7 +11561,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=526;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11582,7 +11582,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=279;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11603,7 +11603,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=186;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11624,7 +11624,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=258;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11645,7 +11645,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=2;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11666,7 +11666,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=269;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11687,7 +11687,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=211;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11708,7 +11708,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=268;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11729,7 +11729,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=676;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11750,7 +11750,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=210;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11771,7 +11771,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=105;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11792,7 +11792,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=30;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11813,7 +11813,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=40;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11834,7 +11834,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=20;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11855,7 +11855,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=30;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11876,7 +11876,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=24;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11897,7 +11897,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=15;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11918,7 +11918,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=23;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11939,7 +11939,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=33;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11960,7 +11960,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=27;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -11981,7 +11981,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=36;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12002,7 +12002,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=90;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12023,7 +12023,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=89;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12044,7 +12044,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=141;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12065,7 +12065,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=69;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12086,7 +12086,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=123;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12107,7 +12107,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=169;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12128,7 +12128,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=36;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12149,7 +12149,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=40;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12170,7 +12170,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=43;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12191,7 +12191,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=54;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12212,7 +12212,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=44;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12233,7 +12233,7 @@
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S4 P2 original reads=46;51201 actual original/current roots x86/x64 persistent/output equality."
       ],
-      "cohort": "N",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
@@ -12254,7 +12254,7 @@
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
-      "cohort": "I",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c",
@@ -12276,7 +12276,7 @@
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
-      "cohort": "I",
+      "cohort": "D",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/enemy/init_targets.c",
@@ -14799,6 +14799,213 @@
       "cohortBasis": "music header producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-00674",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "ProcessEnemyData",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc147",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00675",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "CheckEndofBuffer",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc15b",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00676",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "CheckRightBounds",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc179",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00677",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "CheckPageCtrlRow",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc18a,c198",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00678",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "PositionEnemyObj",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc1b0,c1c0",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00679",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "CheckRightExtBounds",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc1d9,c1e6",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00680",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "CheckForEnemyGroup",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc1f1",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00681",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "ParseRow0e",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc233,c240,c246",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00682",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "CheckThreeBytes",
+      "storage": "E9/EA EnemyData pointer",
+      "feasiblePath": "Original header9c3c/9c41 and consumer indirect readsc253",
+      "status": "exact",
+      "currentCounterpart": "shared area header and enemy stream/loop owners",
+      "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "source header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/stream.c",
+        "src/game/enemy/loop.c",
+        "src/game/area/area_data.c"
       ]
     }
   ],
@@ -24562,10 +24769,12 @@
       "currentOwner": "src/game/area/area_data.c",
       "currentCounterpart": "mysmb_area_get_data_addresses",
       "semanticEvidence": [
-        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -32672,11 +32881,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Reads current enemy record, routes end marker to fallback, protects sixth slot except power-up and otherwise enters right-bound processing.",
       "currentSourcePaths": [
@@ -32693,10 +32904,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Distinguishes row-$0e, ordinary available slots and the source sixth-slot power-up exception before range setup.",
       "currentSourcePaths": [
@@ -32713,10 +32926,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Builds extended right boundary with original carry, applies one-time page control, then handles row-$0f control records.",
       "currentSourcePaths": [
@@ -32734,11 +32949,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Processes row-$0f page-control records only before page selection is set; advances two bytes and tail-reenters loop processing.",
       "currentSourcePaths": [
@@ -32755,10 +32972,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Copies object page/X, tests normal right boundary, and routes behind-screen records to row-$0e or record advancement.",
       "currentSourcePaths": [
@@ -32775,10 +32994,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Tests extended right boundary, initializes visible object Y, applies row-$0e and hard-mode gates, then selects group or individual ID.",
       "currentSourcePaths": [
@@ -32795,10 +33016,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Classifies IDs below $37, group range $37-$3e and residual IDs at/above $3f.",
       "currentSourcePaths": [
@@ -32959,10 +33182,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Reads the third record byte; only matching world writes AreaPointer and EntrancePage before three-byte advancement.",
       "currentSourcePaths": [
@@ -32999,10 +33224,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
       ],
       "semanticContract": "Selects two- versus three-byte advance based solely on current record row.",
       "currentSourcePaths": [
@@ -158428,7 +158655,17 @@
         "Squ2LengthHandler",
         "FetchSqu1MusicData",
         "HandleTriangleMusic",
-        "FetchNoiseBeatData"
+        "FetchNoiseBeatData",
+        "GetAreaDataAddrs",
+        "ProcessEnemyData",
+        "CheckEndofBuffer",
+        "CheckRightBounds",
+        "CheckPageCtrlRow",
+        "PositionEnemyObj",
+        "CheckRightExtBounds",
+        "CheckForEnemyGroup",
+        "ParseRow0e",
+        "CheckThreeBytes"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -158444,7 +158681,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 corrective scope amendment - complete parser output chain",
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair",
         "docs/proposals/m2/t70-final-current-certification.md S17 P7 bounded scope amendment - music pointer lifetimes",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 bounded scope amendment - enemy pointer handoff",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

@@ -3447,3 +3447,63 @@ total unknown. Six admitted labels retain their previous local contracts.
 S17 remains open for remaining indirect/mutable/hardware/register/flag/stack/
 inter-frame use joins;pixels,routes,snapshot are still pending. This checkpoint
 does not close the entire61-site indirect inventory or the material package.
+
+## S17 P8 bounded scope amendment - enemy pointer handoff
+
+Receive ten accepted labels as overlapping audit participation:
+`GetAreaDataAddrs`, `ProcessEnemyData`, `CheckEndofBuffer`, `CheckRightBounds`, `CheckPageCtrlRow`, `PositionEnemyObj`, `CheckRightExtBounds`, `CheckForEnemyGroup`, `ParseRow0e`, `CheckThreeBytes`.
+Expected fresh0,baseline/max1992,no custody transfer. Audit original E9/EA
+header stores and14 indirect enemy-read sites/nine consumers. Whole retained
+stream/loop/header owners must match accepted snapshots. Loopback resets
+cursor/page,not pointer;row0e supplies future AreaPointer/entrance without
+an immediate header reload. Every reentry fetch reloads the current pointer.
+Retain T69 S11's actual65536 root/read/control receipts only in their declared
+domains. Add bounded original/native composition:call9c22 header,then C144
+enemy parser with the actual produced RAM,explicit C ABI register/stack reset
+between calls. Both stages compare RAM with only observed physical pushes
+excluded. This is a composed caller contract,not continuous whole-game PC
+execution or all intermediate-frame overwrite proof. Inputs cover34 original
+table slots/high-bit aliases,slots0..5,hard flags and neutral RAM seeds.
+All artifacts stay under ignored build;four current focused checks each width.
+No source edit/EXE refresh unless an observed mismatch receives corrective
+custody here. Material/global alias denominator remains unresolved.
+
+## S17 P8 checkpoint - enemy pointer handoff
+
+Original GetAreaDataAddrs writes E9/EA at9c3c/9c41. Its nine enemy parser
+consumers contain14 indirect reads. Whole current stream/loop owners equal
+accepted T69 S11 P2;header owner equals accepted T57 S4. Each native stream
+fetch reloads E9/EA. Cached first/second bytes come from immutable PRG.
+Castle loopback resets cursor/page,not the pointer;row0e writes the future
+AreaPointer/entrance,not a new active stream. Initializers follow the last
+stream fetch;the next parser entry reads the pointer again. This corrects
+P5's overly broad wording that a loop child may replace the active stream.
+
+Fresh original9c22 header and C144 parser compositions use actual produced
+RAM across the two calls. 34 source table slots,two high-bit aliases,six
+enemy slots,two hard flags and two neutral seeds give1632 compositions and
+3264 returning roots each width. Both stage snapshots compare all2048 RAM
+bytes,including zero-page;only accumulated actually observed physical stack
+push locations are excluded. Both widths have zero differences. Registers
+and return stack are reset at each C ABI boundary;this is a composed caller
+contract,not continuous whole-game PC/frame execution. Raw snapshots deleted.
+
+Retained T69 S11's65536 original roots each width actually observe all14
+indirect PCs,with zero scoped RAM/APU/ordered-write differences. Source
+identity permits receipt reuse in those original fixture domains;it does
+not prove every intervening game frame lacks an aliasing overwrite. Four
+current checks each width pass:enemy loop,stream boundaries,local consumer,
+area header. Three negative inventory probes reject missing,duplicate and
+unobserved sites. No production/test change;three EXEs remain P6.
+
+Material674-682 add nine header-to-consumer paths. Historical1992/1992;
+local scoped nodes1992/1992,controls4274/4274(raw4342,infeasible68).
+Material682 is partial,global denominator unknown. No fresh node/control
+credit or custody transfer. S17 remains open for area/RAM/VRAM/dispatch,
+mutable/register/flag/stack/inter-frame joins;pixels,routes,snapshot pending.
+
+Source binding src/game/enemy/stream.c 57c1fed6:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+Source binding src/game/enemy/loop.c 57c1fed6:a9619ed5b897c07732fc6a6f104823fd3ba4ebc17fdad244b6a2dcd71c7caf92.
+
+Source binding src/game/area/area_data.c b3efab21a125ca22b062f126c1b94191f34c6235:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
