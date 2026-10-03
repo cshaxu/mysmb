@@ -16,9 +16,8 @@ void mysmb_game_submit_oam(struct mysmb_game *game);
  * no host or platform policy: every target enters the same CPU RAM and PPU
  * state before the shared NMI frame root begins. */
 
-/* ROM $8000-$8035 Start/WBootCheck/ColdBoot, excluding the two hardware
- * vblank waits and the final endless loop.  The host owns neither branch: this
- * shared state transition is used identically by every target. */
+/* ROM $8014-$8056 warm/cold reset continuation. Start and its two hardware
+ * polling barriers are represented by the shared startup continuation below. */
 void mysmb_game_reset(struct mysmb_game *game)
 {
     mysmb_u8 index;
@@ -36,7 +35,8 @@ void mysmb_game_reset(struct mysmb_game *game)
         }
         index = (mysmb_u8)(index - 1U);
     } while (index != 0xffU);
-    if (game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] != 0xa5U)
+    if (warm_boot != 0U &&
+        game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] != 0xa5U)
         warm_boot = 0U;
     mysmb_game_initialize_memory(game, warm_boot != 0U ? 0xd6U : 0xfeU);
     /* ColdBoot returns from InitializeMemory with A == 0, then writes that
@@ -59,20 +59,43 @@ void mysmb_game_reset(struct mysmb_game *game)
     game->ram[0x0774U]++;
     /* The final WritePPUReg1 restores the $2000 mirror with NMI enabled.
      * CPU OAM is first transferred by the following shared NMI frame. */
-    game->ppu_control_0 =
-        (mysmb_u8)(game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x80U);
-    game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] = game->ppu_control_0;
-    game->visible_ppu_control_0 = game->ppu_control_0;
+    mysmb_game_write_ppu_control(game,
+        (mysmb_u8)(game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x80U));
     game->oam_dma_primed = 1U;
+    game->startup_phase = 4U;
 }
 
 void mysmb_game_power_on(struct mysmb_game *game)
 {
-    /* Start clears the CPU-only state and writes $10 to physical $2000 before
-     * it polls VBlank1 and VBlank2.  The mirror remains zero until ColdBoot's
-     * InitializeNameTables path writes it. */
+    /* Construction is not an instruction in Start. Source startup itself
+     * preserves warm RAM and the attached immutable resources. */
     memset(game, 0, sizeof(*game));
+    mysmb_game_begin_startup(game);
+}
+
+/* ROM $8000-$8013 Start/VBlank1/VBlank2. CPU flags/stack and polling cycles
+ * are hardware ABI; each supplied event represents an observed VBlank. */
+void mysmb_game_begin_startup(struct mysmb_game *game)
+{
+    game->ppu_control_0 = 0x10U;
     game->visible_ppu_control_0 = 0x10U;
+    game->visible_ppu_name_table = 0U;
+    game->startup_phase = 1U;
+}
+
+mysmb_u8 mysmb_game_startup_step(struct mysmb_game *game,
+                               mysmb_u8 vblank_available)
+{
+    if (game->startup_phase == 1U || game->startup_phase == 2U) {
+        if (vblank_available != 0U) {
+            game->startup_phase++;
+            /* VBlank2 falls straight into warm/cold initialization; it does
+             * not wait for a third boundary. The next boundary owns NMI. */
+            if (game->startup_phase == 3U) mysmb_game_reset(game);
+        }
+        return 0U;
+    }
+    return game->startup_phase == 4U ? 1U : 0U;
 }
 
 void mysmb_game_initialize(struct mysmb_game *game)
@@ -157,50 +180,49 @@ void mysmb_game_submit_oam(struct mysmb_game *game)
         game->visible_oam[offset] = game->ram[(mysmb_u16)(MYSMB_BOOT_OAM + offset)];
 }
 
-/* Translation of ROM $8e19-$8e5b (InitializeNameTables). */
-void mysmb_game_initialize_name_tables(struct mysmb_game *game)
+/* ROM $8eed-$8ef3 WritePPUReg1: physical register before RAM mirror. */
+void mysmb_game_write_ppu_control(struct mysmb_game *game, mysmb_u8 value)
 {
-    mysmb_u8 table;
-    mysmb_u8 control;
+    game->ppu_control_0 = value;
+    game->visible_ppu_control_0 = value;
+    game->visible_ppu_name_table = (mysmb_u8)(value & 3U);
+    game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] = value;
+}
+
+/* ROM $8ee6-$8eec InitScroll: incoming A is written twice, then returns. */
+void mysmb_game_init_scroll(struct mysmb_game *game, mysmb_u8 value)
+{
+    game->visible_scroll_x = value;
+    game->visible_scroll_y = value;
+}
+
+/* ROM $8e2d-$8e5a WriteNTAddr through the shared InitScroll tail. */
+static void mysmb_game_write_name_table(struct mysmb_game *game,
+                                      mysmb_u8 table)
+{
     mysmb_u16 offset;
 
-    /* WriteNTAddr receives $24 before $20: PPU name table 1 is cleared
-     * before name table 0.  Preserve that observable PPU write order. */
-    table = 1U;
-    do {
-        for (offset = 0U; offset < 0x03c0U; ++offset) {
-            game->name_table[table][offset] = 0x24U;
-        }
-        for (offset = 0x03c0U; offset < 0x0400U; ++offset) {
-            game->name_table[table][offset] = 0U;
-        }
-        if (table == 0U) break;
-        table = 0U;
-    } while (1);
+    for (offset = 0U; offset < 0x03c0U; ++offset)
+        game->name_table[table][offset] = 0x24U;
     game->ram[0x0300U] = 0U;
     game->ram[0x0301U] = 0U;
+    for (offset = 0x03c0U; offset < 0x0400U; ++offset)
+        game->name_table[table][offset] = 0U;
     game->ram[0x073fU] = 0U;
     game->ram[0x0740U] = 0U;
-    /* InitializeNameTables sets the PPU pattern-table arrangement then
-     * InitScroll commits zero scroll.  Palette values remain the domain of
-     * ScreenRoutines/ColorRotation and are initialized separately by T10. */
-    /* InitializeNameTables performs ORA #$10 / AND #$f0 before
-     * WritePPUReg1.  The upper nibble (notably the NMI-enable bit) is an
-     * input from the caller and must survive this name-table reset. */
-    control = (mysmb_u8)((game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x10U) &
-        0xf0U);
-    game->ppu_control_0 = control;
-    game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] = control;
-    game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
-    /* Unlike the usual mirror changes made by OperModeExecutionTree, the
-     * source routine ends by writing $2005 twice (InitScroll) while this
-     * NMI is still active.  Publish that physical transfer now so the
-     * current output frame agrees with the ROM at InitScreen/GameOver. */
-    game->visible_ppu_control_0 = control;
-    game->visible_ppu_name_table = 0U;
-    game->visible_scroll_x = 0U;
-    game->visible_scroll_y = 0U;
+    mysmb_game_init_scroll(game, 0U);
+}
+
+/* ROM $8e19-$8e5b InitializeNameTables. Status read resets the hardware
+ * address latch; direct name-table storage does not retain that latch. */
+void mysmb_game_initialize_name_tables(struct mysmb_game *game)
+{
+    mysmb_game_write_ppu_control(game,
+        (mysmb_u8)((game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x10U) & 0xf0U));
+    game->ppu_name_table = 0U;
+    mysmb_game_write_name_table(game, 1U);
+    mysmb_game_write_name_table(game, 0U);
 }
 

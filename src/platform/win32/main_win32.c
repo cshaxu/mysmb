@@ -3,7 +3,6 @@
 #include "game/area.h"
 #include "game/game.h"
 #include "game/ppu_frame.h"
-#include "platform/startup_timing.h"
 #include "platform/win32/audio_output.h"
 #include "platform/win32/focus_pause.h"
 
@@ -30,7 +29,6 @@ static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
-static mysmb_u8 g_startup_vblank_waits;
 static mysmb_u8 g_game_started;
 static mysmb_u8 g_audio_available;
 static mysmb_u8 g_title_paused;
@@ -119,6 +117,7 @@ static void mysmb_win32_build_frame(void)
 static void mysmb_win32_power_on(void)
 {
     mysmb_game_power_on(&g_game);
+    mysmb_game_frame_initialize(&g_frame);
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_chr_source(&g_game, mysmb_local_chr, MYSMB_LOCAL_CHR_SIZE);
@@ -127,26 +126,6 @@ static void mysmb_win32_power_on(void)
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
 #endif
-}
-
-static int mysmb_win32_start_game(void)
-{
-    if (g_game_started != 0U) return 1;
-    mysmb_game_reset(&g_game);
-    ZeroMemory(&g_frame, sizeof(g_frame));
-    g_game_started = 1U;
-    /* ColdBoot reaches EndlessLoop.  The next host timing boundary carries
-     * the first shared NMI tick. */
-    return 0;
-}
-
-/* Consume only the two source Start polling boundaries.  No translated game
- * state is examined or modified until the existing shared tick follows. */
-static int mysmb_win32_consume_startup_vblank(void)
-{
-    if (g_startup_vblank_waits == 0U) return 0;
-    g_startup_vblank_waits--;
-    return 1;
 }
 
 static int mysmb_win32_argument_is_self_test(const char *command)
@@ -174,10 +153,6 @@ static int mysmb_win32_run_self_test(void)
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_SELECT) != MYSMB_BUTTON_SELECT) return 19;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_B) != MYSMB_BUTTON_B) return 20;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_A) != MYSMB_BUTTON_A) return 21;
-    g_startup_vblank_waits = MYSMB_PLATFORM_STARTUP_VBLANK_COUNT;
-    if (mysmb_win32_consume_startup_vblank() == 0) return 22;
-    if (mysmb_win32_consume_startup_vblank() == 0) return 23;
-    if (mysmb_win32_consume_startup_vblank() != 0) return 24;
     return 0;
 }
 #endif
@@ -207,11 +182,11 @@ static void mysmb_win32_step(HWND window)
     frame_period = g_frequency.QuadPart / 60;
     if (elapsed < frame_period) return;
 
-    if (mysmb_win32_consume_startup_vblank() != 0) {
+    if (mysmb_game_startup_step(&g_game, 1U) == 0U) {
         g_last_tick.QuadPart += frame_period;
         return;
     }
-    if (mysmb_win32_start_game() == 0) return;
+    g_game_started = 1U;
 
     if (g_focus_pause.focused != 0U && GetForegroundWindow() != window)
         mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
@@ -294,7 +269,6 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_bitmap_info.bmiHeader.biCompression = BI_RGB;
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
-    g_startup_vblank_waits = MYSMB_PLATFORM_STARTUP_VBLANK_COUNT;
     g_game_started = 0U;
     mysmb_win32_focus_pause_initialize(&g_focus_pause);
     mysmb_win32_power_on();

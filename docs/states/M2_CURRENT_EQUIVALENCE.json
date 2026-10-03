@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 617,
+    "enumeratedCount": 625,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -13562,6 +13562,174 @@
         "src/game/game.c",
         "src/game/score.c"
       ]
+    },
+    {
+      "id": "material-00618",
+      "producer": "WBootCheck",
+      "consumer": "ColdBoot",
+      "storage": "RAM07d7-07dc and07ff to initial memory Y",
+      "feasiblePath": "Descending comparison exits at first digit>=10 without marker read;all valid digits consult markerA5 and select Yd6,otherwise Yfe.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "Descending comparison exits at first digit>=10 without marker read;all valid digits consult markerA5 and select Yd6,otherwise Yfe.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00619",
+      "producer": "InitializeMemory",
+      "consumer": "InitByteLoop",
+      "storage": "RAM06/07 effective clear pointer",
+      "feasiblePath": "Low pointer06=0;07 stores current page before each loop;stack page skips60-ff. Zero-page self-clears preserve low0 and high0 when page0 reaches07.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "Low pointer06=0;07 stores current page before each loop;stack page skips60-ff. Zero-page self-clears preserve low0 and high0 when page0 reaches07.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00620",
+      "producer": "InitByte",
+      "consumer": "SkipByte",
+      "storage": "effective RAM address to byte-index continuation",
+      "feasiblePath": "Byte index decrements modulo256 untilff;page decrements7..0. Direct C page*256+offset equals indirect source address throughout this domain.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "Byte index decrements modulo256 untilff;page decrements7..0. Direct C page*256+offset equals indirect source address throughout this domain.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00621",
+      "producer": "InitializeMemory",
+      "consumer": "ColdBoot",
+      "storage": "original accumulator0 to4011/0770",
+      "feasiblePath": "Original A remains0 throughout clear and returns0;shared reset writes exactly0 to DMC load and operating mode before marker/seed stores.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "Original A remains0 throughout clear and returns0;shared reset writes exactly0 to DMC load and operating mode before marker/seed stores.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00622",
+      "producer": "WritePPUReg1",
+      "consumer": "InitializeNameTables",
+      "storage": "physical2000 and mirror0778",
+      "feasiblePath": "Control argument (mirror|10)&f0 writes physical state before mirror,then name-table1 and0 are cleared;reset final call rereads mirror and ORs80.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "Control argument (mirror|10)&f0 writes physical state before mirror,then name-table1 and0 are cleared;reset final call rereads mirror and ORs80.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00623",
+      "producer": "InitNTLoop",
+      "consumer": "InitATLoop",
+      "storage": "tile-loop zero counter to0300/0301 and attribute value",
+      "feasiblePath": "First192 tiles plus three256 passes produce960 tile24 writes;source X0/A0 resets buffer bytes before64 zero attributes.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "First192 tiles plus three256 passes produce960 tile24 writes;source X0/A0 resets buffer bytes before64 zero attributes.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00624",
+      "producer": "InitATLoop",
+      "consumer": "InitScroll",
+      "storage": "attribute completion to073f/0740 and physical2005",
+      "feasiblePath": "After64 zero attributes,source A0 clears scroll RAM then writes physical scroll twice;shared per-table child follows the same order.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "After64 zero attributes,source A0 clears scroll RAM then writes physical scroll twice;shared per-table child follows the same order.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00625",
+      "producer": "WriteNTAddr",
+      "consumer": "WriteNTAddr",
+      "storage": "table1 return state to table0 fallthrough call",
+      "feasiblePath": "First table fully clears tiles/buffer/attributes/scroll before second call repeats them;no merged two-table cleanup or delayed control publication.",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c shared startup children",
+      "semanticContract": "First table fully clears tiles/buffer/attributes/scroll before second call repeats them;no merged two-table cleanup or delayed control publication.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c"
+      ]
     }
   ],
   "cohorts": [
@@ -13637,13 +13805,10 @@
     }
   ],
   "nodeCounts": {
-    "needs-evidence": 1,
-    "mismatch": 8,
-    "exact": 1983
+    "exact": 1992
   },
   "controlEdgeCounts": {
-    "needs-evidence": 6,
-    "exact": 4269,
+    "exact": 4275,
     "infeasible": 67
   },
   "controlEdgeTypeCounts": {
@@ -13660,18 +13825,20 @@
       "label": "Start",
       "asmLine": 699,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_power_on",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_begin_startup",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 original Start does not clear RAM before warm inspection;C constructor memset currently shares its mapping. Need separate allocation/startup input-state contract;warm reset-only proof cannot certify full Start.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:SEI/CLD/LDXff/TXS and physical2000=10;no source RAM clear before warm inputs. Pending:Allocation memset is currently mapped as Start;separate constructor/input-state contract and source startup entry before final acceptance."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:SEI/CLD/LDXff/TXS and physical2000=10;no source RAM clear before warm inputs. Pending:Allocation memset is currently mapped as Start;separate constructor/input-state contract and source startup entry before final acceptance.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
-      "semanticContract": "Clears portable game container and publishes physical PPU control $10 before either VBlank timing gate; CPU interrupt/decimal/stack setup is an explicit nonportable ABI exclusion.",
+      "semanticContract": "Source entry preserves existing RAM/resources,publishes physical2000=10 and enters first shared VBlank barrier. Container allocation is separate;CPU flags/stack/poll cycles are explicit hardware ABI.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -13680,16 +13847,18 @@
       "label": "VBlank1",
       "asmLine": 706,
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_power_on (host timing boundary pending)",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_startup_step phase1",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Source progression rule resides in both platform startup counters.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Repeated2002 reads until bit7,then next barrier;reading status clears hardware VBlank. Pending:Source conditions observed;portable ownership is duplicated in platform counters;full shared-gate contract pending."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Repeated2002 reads until bit7,then next barrier;reading status clears hardware VBlank. Pending:Source conditions observed;portable ownership is duplicated in platform counters;full shared-gate contract pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "First PPU-status polling barrier has no shared mutable game-state write and must complete before VBlank2.",
       "currentSourcePaths": [
@@ -13700,18 +13869,20 @@
       "label": "VBlank2",
       "asmLine": 708,
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_power_on (host timing boundary pending)",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_startup_step phase2",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Source progression rule resides in both platform startup counters.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Second actual2002 wait precedes Yfe/X5 and warm-score check. Pending:Same platform ownership difference;hardware-cycle abstraction must be explicit,not claimed exact from literal2."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Second actual2002 wait precedes Yfe/X5 and warm-score check. Pending:Same platform ownership difference;hardware-cycle abstraction must be explicit,not claimed exact from literal2.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
-      "semanticContract": "Second PPU-status polling barrier has no shared mutable game-state write and must complete before WBootCheck.",
+      "semanticContract": "Second observed VBlank event falls directly into warm/cold reset initialization;no extra third wait or NMI is inserted. Subsequent event permits shared NMI.",
       "currentSourcePaths": [
         "src/game/boot.c"
       ]
@@ -13720,16 +13891,18 @@
       "label": "WBootCheck",
       "asmLine": 712,
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_reset",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Unexpected marker read after original invalid-digit early branch.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Read07dc down to07d7,any >=10 exits immediately without07ff read;only six valid digits permit marker compareA5;Yd6 if warm,otherwisefe. Pending:C unconditionally reads marker after invalid-score exit;all byte/position/marker domains need source compositional review and controlled batch."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Read07dc down to07d7,any >=10 exits immediately without07ff read;only six valid digits permit marker compareA5;Yd6 if warm,otherwisefe. Pending:C unconditionally reads marker after invalid-score exit;all byte/position/marker domains need source compositional review and controlled batch.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Reads TopScoreDisplay offsets 5 down through 0, cold-boots on any digit >= $0a, then accepts warm initialization only when $07ff equals $a5.",
       "currentSourcePaths": [
@@ -13740,16 +13913,18 @@
       "label": "ColdBoot",
       "asmLine": 721,
       "cohort": "A",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_reset",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Actual WritePPUReg1 child represented by duplicated inline stores.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Actual InitializeMemory(Y),4011=0,0770=0,07ff/07a7=A5,4015=0f,2001=06,sprite clear,name clear,INC0774,mirror OR80 and real WritePPUReg1. Pending:Real source children observed;canonical control child missing in C;ordered host-neutral APU/PPU output and original source range8000-8059 must be checked."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Actual InitializeMemory(Y),4011=0,0770=0,07ff/07a7=A5,4015=0f,2001=06,sprite clear,name clear,INC0774,mirror OR80 and real WritePPUReg1. Pending:Real source children observed;canonical control child missing in C;ordered host-neutral APU/PPU output and original source range8000-8059 must be checked.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Calls memory initialization with the selected Y origin, then writes DMC load/mode/marker/LFSR/APU/PPU state, initializes OAM/name tables, raises DisableScreenFlag and enables NMI in source order.",
       "currentSourcePaths": [
@@ -13762,13 +13937,15 @@
       "cohort": "A",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_reset -> shared NMI tick boundary",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_startup_step ready continuation",
       "semanticEvidence": [
         "Td S9 A1 static source audit: SMB1 lines 699-763 compared with current boot.c/frame_root.c; operational original-ROM replay pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:8057 JMP8057,no RAM/PPU write;independent NMI interrupt owns subsequent work. Pending:One real source loop iteration observed no writes;native reset-to-first-tick gate still platform-owned."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:8057 JMP8057,no RAM/PPU write;independent NMI interrupt owns subsequent work. Pending:One real source loop iteration observed no writes;native reset-to-first-tick gate still platform-owned.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical."
+        "Td S9 A1 reset-only proof: cold-marker, valid warm-marker and invalid-score preconditions were sampled at the first original NMI entry; current x86/x64 reset snapshots have zero persistent RAM/CIRAM/palette/OAM/audio/PPU differences and are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Performs no game-state write after ColdBoot; it waits for the independently scheduled first NMI boundary.",
       "currentSourcePaths": [
@@ -18009,16 +18186,18 @@
       "label": "InitializeNameTables",
       "asmLine": 2412,
       "cohort": "C",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables",
       "semanticEvidence": [
         "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Original control write precedes first table;current C publishes it after clearing both.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Read2002 reset latch;mirror OR10 ANDf0;real WritePPUReg1 before table24 then20. Pending:C publishes control after both name tables;canonical child order requires correction."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Read2002 reset latch;mirror OR10 ANDf0;real WritePPUReg1 before table24 then20. Pending:C publishes control after both name tables;canonical child order requires correction.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ROM $8e19: clears two nametables/attributes, resets Buffer1 and scroll, and establishes pattern-table control state.",
       "currentSourcePaths": [
@@ -18029,16 +18208,18 @@
       "label": "WriteNTAddr",
       "asmLine": 2421,
       "cohort": "C",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_write_name_table",
       "semanticEvidence": [
         "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Buffer/scroll resets and shared child are collapsed outside each source table call.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Set PPU addr(table high,0);X4/Yc0;960 tiles24;buffer0300/0301=0 before attributes;64 attributes0;scroll RAM073f/0740=0 and actual InitScroll per table. Pending:C has two-table flat loop and buffer/scroll only after both;restore shared per-table leaf/continuation."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Set PPU addr(table high,0);X4/Yc0;960 tiles24;buffer0300/0301=0 before attributes;64 attributes0;scroll RAM073f/0740=0 and actual InitScroll per table. Pending:C has two-table flat loop and buffer/scroll only after both;restore shared per-table leaf/continuation.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ROM $8e2a: writes one nametable PPU address then falls into tile clear loop.",
       "currentSourcePaths": [
@@ -18051,13 +18232,15 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_write_name_table tile loop",
       "semanticEvidence": [
         "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:First192 writes then three256 loops=960 tiles;Y/X byte wrap;PPU address increments. Pending:Final table fill C matches count,value,but entire ordered child needs new proof."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:First192 writes then three256 loops=960 tiles;Y/X byte wrap;PPU address increments. Pending:Final table fill C matches count,value,but entire ordered child needs new proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ROM $8e30: writes 768 blank tiles per nametable.",
       "currentSourcePaths": [
@@ -18070,13 +18253,15 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_write_name_table attribute loop",
       "semanticEvidence": [
         "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Exactly64 zero attributes after buffer resets;following scroll tail executes for each table. Pending:Final fill C matches but buffer/attribute/scroll order differs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Exactly64 zero attributes after buffer resets;following scroll tail executes for each table. Pending:Final fill C matches but buffer/attribute/scroll order differs.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ROM $8e39: clears 64 attributes and scroll bytes before InitScroll.",
       "currentSourcePaths": [
@@ -18286,16 +18471,18 @@
       "label": "InitScroll",
       "asmLine": 2527,
       "cohort": "C",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_init_scroll",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Canonical shared source child join is missing.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Two ordered physical2005 stores of incoming A,then original RTS. Pending:Canonical shared child missing;PPU latch/address exclusions require source-use proof."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Two ordered physical2005 stores of incoming A,then original RTS. Pending:Canonical shared child missing;PPU latch/address exclusions require source-use proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ROM $8ed6: writes zero/current accumulator to both scroll registers.",
       "currentSourcePaths": [
@@ -18307,16 +18494,18 @@
       "label": "WritePPUReg1",
       "asmLine": 2533,
       "cohort": "C",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/game.c",
-      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_write_ppu_control",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Canonical shared source child counterpart is missing.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Physical2000 store precedes mirror0778 store,then RTS to real caller. Pending:Duplicated inline writes in reset/name-table owner;shared counterpart and source order pending."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Physical2000 store precedes mirror0778 store,then RTS to real caller. Pending:Duplicated inline writes in reset/name-table owner;shared counterpart and source order pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ROM $8edb: writes PPU control register and its mirror.",
       "currentSourcePaths": [
@@ -19001,14 +19190,16 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_memory",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Set X7,A0,STA06 then STX07 per page;initial Y caller byte on page7 then FF for lower pages;skip160-1FF and return through actual stack.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:X7/A0;06=0;Y supplied by actual caller. Pending:C byte types and page loop match;full legal source input/alias contract not yet finally reviewed."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:X7/A0;06=0;Y supplied by actual caller. Pending:C byte types and page loop match;full legal source input/alias contract not yet finally reviewed.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Set X7,A0,STA06 then STX07 per page;initial Y caller byte on page7 then FF for lower pages;skip160-1FF and return through actual stack.",
       "currentSourcePaths": [
@@ -19021,14 +19212,16 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_memory page loop",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store actual page in scratch07 before each descending byte loop;seven-to-zero pages,original sign-tested termination.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Persist X in07 before each page;Y remainsff after prior page exit;page7 begins caller Y. Pending:C uses same byte page/index evolution;current-source proof reusable after complete domain check."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Persist X in07 before each page;Y remainsff after prior page exit;page7 begins caller Y. Pending:C uses same byte page/index evolution;current-source proof reusable after complete domain check.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Store actual page in scratch07 before each descending byte loop;seven-to-zero pages,original sign-tested termination.",
       "currentSourcePaths": [
@@ -19041,14 +19234,16 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_memory byte loop",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Check page1 and Y>=60 to retain stack;all other bytes enter indirect store,including100-15F.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:If X1 and Y>=60 skip;all other pages/indexes write through pointer06/07. Pending:Original stack exclusion is160 bytes0160-01ff,not exclusion of entire stack page;indirect pointer alias review pending."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:If X1 and Y>=60 skip;all other pages/indexes write through pointer06/07. Pending:Original stack exclusion is160 bytes0160-01ff,not exclusion of entire stack page;indirect pointer alias review pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Check page1 and Y>=60 to retain stack;all other bytes enter indirect store,including100-15F.",
       "currentSourcePaths": [
@@ -19061,14 +19256,16 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_memory effective-address write",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Actual indirect scratch06/07 plus byte Y writes zero;native address expression and scratch writes retained,including pointer self-clears on page0.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:STA(06),Y with06=0 and07 current page;zero-page self-clears must preserve effective pointer invariants. Pending:C direct page*256+offset needs compositional pointer-alias justification for original caller domains."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:STA(06),Y with06=0 and07 current page;zero-page self-clears must preserve effective pointer invariants. Pending:C direct page*256+offset needs compositional pointer-alias justification for original caller domains.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Actual indirect scratch06/07 plus byte Y writes zero;native address expression and scratch writes retained,including pointer self-clears on page0.",
       "currentSourcePaths": [
@@ -19081,14 +19278,16 @@
       "cohort": "C",
       "status": "exact",
       "currentOwner": "src/game/boot.c",
-      "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_memory decrement/skip",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Both store and retained-stack paths decrement byte Y;loop until FF then decrement page;final page sign ends routine.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:DEY untilff;DEX until negative;RTS with A0 and residual scratch06/07. Pending:Observed cold2047/warm2007 loop passes include skipped bytes;source return/physical-stack exclusions need comparison."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:DEY untilff;DEX until negative;RTS with A0 and residual scratch06/07. Pending:Observed cold2047/warm2007 loop passes include skipped bytes;source return/physical-stack exclusions need comparison.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Both store and retained-stack paths decrement byte Y;loop until FF then decrement page;final page sign ends routine.",
       "currentSourcePaths": [
@@ -52344,14 +52543,16 @@
       "instruction": "txs",
       "id": "control-00001",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:begin_startup/startup_step two event-conditioned continuations,reset on second success",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Start falls through to the first VBlank barrier after physical PPU setup.",
       "currentSourcePaths": [
@@ -52367,14 +52568,16 @@
       "instruction": "bpl",
       "id": "control-00002",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:begin_startup/startup_step two event-conditioned continuations,reset on second success",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "VBlank1 loops while PPU status bit seven is clear.",
       "currentSourcePaths": [
@@ -52390,14 +52593,16 @@
       "instruction": "bpl",
       "id": "control-00003",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:begin_startup/startup_step two event-conditioned continuations,reset on second success",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "VBlank1 falls through to VBlank2 only after its status condition succeeds.",
       "currentSourcePaths": [
@@ -52413,14 +52618,16 @@
       "instruction": "bpl",
       "id": "control-00004",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:begin_startup/startup_step two event-conditioned continuations,reset on second success",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "VBlank2 loops while PPU status bit seven is clear.",
       "currentSourcePaths": [
@@ -52436,14 +52643,16 @@
       "instruction": "ldx",
       "id": "control-00005",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:begin_startup/startup_step two event-conditioned continuations,reset on second success",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "VBlank2 falls through to warm-boot inspection only after its status condition succeeds.",
       "currentSourcePaths": [
@@ -52462,10 +52671,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "An invalid top-score digit branches directly to ColdBoot.",
       "currentSourcePaths": [
@@ -52484,10 +52695,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "A valid digit decrements X and loops while unchecked digits remain.",
       "currentSourcePaths": [
@@ -52506,10 +52719,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "A failed warm marker test branches to ColdBoot.",
       "currentSourcePaths": [
@@ -52528,10 +52743,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "A valid warm marker falls through to ColdBoot with the warm clear origin.",
       "currentSourcePaths": [
@@ -52550,10 +52767,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ColdBoot invokes InitializeMemory before any cold-state writes.",
       "currentSourcePaths": [
@@ -52572,10 +52791,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ColdBoot invokes the full OAM offscreen pass before name-table initialization.",
       "currentSourcePaths": [
@@ -52594,10 +52815,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ColdBoot invokes name-table initialization before setting DisableScreenFlag.",
       "currentSourcePaths": [
@@ -52613,14 +52836,16 @@
       "instruction": "jsr",
       "id": "control-00013",
       "cohort": "A",
-      "status": "needs-evidence",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
+      "status": "exact",
+      "currentCounterpart": "src/game/boot.c:mysmb_game_reset -> mysmb_game_write_ppu_control",
       "semanticEvidence": [
         "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 startup ownership/actual shared child counterpart requires repair and explicit source gate evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ColdBoot invokes the PPU-control write after setting the NMI-enable bit in the mirror.",
       "currentSourcePaths": [
@@ -52639,10 +52864,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "ColdBoot falls into the idle loop after its final PPU control write.",
       "currentSourcePaths": [
@@ -52661,10 +52888,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "EndlessLoop unconditionally repeats without game-state work.",
       "currentSourcePaths": [
@@ -59842,10 +60071,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitializeNameTables -> WritePPUReg1 call relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -59863,10 +60094,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitializeNameTables -> WriteNTAddr call relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -59884,10 +60117,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitializeNameTables -> WriteNTAddr fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -59905,10 +60140,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original WriteNTAddr -> InitNTLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -59926,10 +60163,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitNTLoop -> InitNTLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -59947,10 +60186,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitNTLoop -> InitNTLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -59968,10 +60209,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitNTLoop -> InitATLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -59989,10 +60232,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitATLoop -> InitATLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -60010,10 +60255,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitATLoop -> InitScroll jump relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -61743,10 +61990,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=1792;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=1792;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original fallthrough InitializeMemory -> InitPageLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -61765,10 +62014,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=14336;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=14336;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original fallthrough InitPageLoop -> InitByteLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -61787,10 +62038,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=2911360;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=2911360;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original branch InitByteLoop -> InitByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -61809,10 +62062,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=286720;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=286720;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original branch InitByteLoop -> SkipByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -61831,10 +62086,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=172032;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=172032;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original fallthrough InitByteLoop -> InitByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -61853,10 +62110,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=3083392;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=3083392;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original fallthrough InitByte -> SkipByte retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -61875,10 +62134,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=3355776;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=3355776;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original branch SkipByte -> InitByteLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -61897,10 +62158,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=12544;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=12544;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original branch SkipByte -> InitPageLoop retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -130386,10 +130649,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "InitializeMemory returns to the remaining ColdBoot writes.",
       "currentSourcePaths": [
@@ -130430,10 +130695,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "InitializeNameTables returns to ColdBoot before DisableScreenFlag increment.",
       "currentSourcePaths": [
@@ -130452,10 +130719,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared boot/NMI flow",
       "semanticEvidence": [
-        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending."
+        "Td S9 A1 static control audit: source fall-through/branch/call/return/vector relation compared with the boot.c/frame_root.c shared-flow counterpart; original-ROM route evidence pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary."
+        "Td S9 A1 reset-only proof: original PC coverage across cold-marker, warm-marker and invalid-score routes executed every listed reset/fall-through/branch/call/return/vector relation; current x86/x64 reset snapshots match at the first NMI boundary.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "WritePPUReg1 returns to the idle boundary.",
       "currentSourcePaths": [
@@ -130478,11 +130747,13 @@
         "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed.",
         "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order.",
         "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
         "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
@@ -131174,10 +131445,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original InitializeNameTables -> InitScreen returns before the OperMode branch.",
       "currentSourcePaths": [
@@ -131507,10 +131780,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original WritePPUReg1 -> InitializeNameTables return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -131528,10 +131803,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/boot.c:mysmb_game_initialize_name_tables ordered shared C chain",
       "semanticEvidence": [
-        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff."
+        "M2 T55 S6 P12 static audit: SMB1 lines 2412-2441 was compared instruction-order against shared src/game/boot.c. It preserves WritePPUReg1 control derivation, $2400 then $2000 WriteNTAddr order, the 4 x 192 InitNTLoop writes, 64 InitATLoop writes, Buffer1 reset and InitScroll handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths."
+        "M2 T55 S6 P12 controlled original-ROM/current x86/x64 t28-init-screen route: original PC coverage reaches $8e19, $8e2d, $8e3b, $8e4d, $8ee6 and $8eed; both CIRAM pages are byte-identical and contain 768 $24 tile bytes plus 64 zero attributes. x86/x64 traces agree; direct name-table and snapshot smoke tests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original WriteNTAddr -> InitializeNameTables return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -131573,10 +131850,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original WritePPUReg1 -> SetupWrites return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
@@ -131641,10 +131920,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=256;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=256;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original return InitializeMemory -> InitializeGame retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -131685,10 +131966,12 @@
       "currentCounterpart": "Shared initialization owners and actual child/fallthrough/return/loop branches;frame_root duplicate secondary call removed",
       "semanticEvidence": [
         "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 source/opcode/predicate and actual C child/caller/ABI audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=1280;5888 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original transition observations=1280;5888 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
       ],
       "semanticContract": "Original return InitializeMemory -> InitializeArea retains shared child/state predicate and source order.",
       "currentSourcePaths": [
@@ -150380,13 +150663,13 @@
     "infeasibleControls": 67,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
-    "reviewedMeaning": "Explicit final contract review:current source and data binding,complete source branch/alias domains,caller/callee/material obligations and reproducible scoped evidence. No promotion merely from existing exact status.",
+    "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
     "materialEnumeration": "partial",
     "materialTotal": null,
     "cohortReview": [
       {
         "cohort": "A",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "Start",
           "VBlank1",
@@ -150729,7 +151012,7 @@
       },
       {
         "cohort": "B",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "ScreenRoutines",
           "InitScreen",
@@ -150929,7 +151212,7 @@
       },
       {
         "cohort": "C",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "RenderAreaGraphics",
           "DrawMTLoop",
@@ -151719,7 +152002,7 @@
       },
       {
         "cohort": "D",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "FlagpoleObject",
           "EndlessRope",
@@ -151987,7 +152270,7 @@
       },
       {
         "cohort": "E",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "GameMode",
           "GameCoreRoutine",
@@ -152317,7 +152600,7 @@
       },
       {
         "cohort": "F",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "SetCrouch",
           "ProcMove",
@@ -152512,7 +152795,7 @@
       },
       {
         "cohort": "G",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "ProcFireball_Bubble",
           "ProcFireballs",
@@ -152705,7 +152988,7 @@
       },
       {
         "cohort": "H",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "VineObjectHandler",
           "RunVSubs",
@@ -153184,7 +153467,7 @@
       },
       {
         "cohort": "I",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "EnemiesAndLoopsCore",
           "ChkAreaTsk",
@@ -153772,7 +154055,7 @@
       },
       {
         "cohort": "J",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "RunFirebarObj",
           "RunSmallPlatform",
@@ -155537,7 +155820,7 @@
       },
       {
         "cohort": "K",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "BlockBufferChk_Enemy",
           "ResidualMiscObjectCode",
@@ -156009,7 +156292,7 @@
       },
       {
         "cohort": "L",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "PlayerGfxHandler",
           "CntPl",
@@ -156267,7 +156550,7 @@
       },
       {
         "cohort": "M",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "SoundEngine",
           "SndOn",
@@ -156670,7 +156953,7 @@
       },
       {
         "cohort": "N",
-        "status": "pending-final-contract-review",
+        "status": "superseded-restart-group-not-active-todo",
         "nodeLabels": [
           "NoDecEnv2",
           "DeathMAltReg",
@@ -156807,30 +157090,22 @@
       }
     ],
     "blockers": [
-      "Complete final node/control contract review",
-      "Complete feasible material enumeration",
-      "Reconcile all numeric data bindings",
-      "Prove shared per-pixel split output",
-      "Complete gameplay/death/restart/warp/end-world/end-game routes",
-      "Bind final evidence to one reviewed source/build snapshot"
+      "Reconcile outstanding original numeric data bindings",
+      "Complete feasible material-use enumeration",
+      "Prove outstanding shared per-pixel split alternatives",
+      "Complete declared gameplay/death/restart/warp/end-world/end-game routes",
+      "Bind retained and corrected evidence to final source/data/build snapshot"
     ],
-    "knownScopedDiscrepancies": [
-      "WBootCheck:Unexpected marker read after original invalid-digit early branch.",
-      "VBlank1:Source progression rule resides in both platform startup counters.",
-      "VBlank2:Source progression rule resides in both platform startup counters.",
-      "InitializeNameTables:Original control write precedes first table;current C publishes it after clearing both.",
-      "WriteNTAddr:Buffer/scroll resets and shared child are collapsed outside each source table call.",
-      "ColdBoot:Actual WritePPUReg1 child represented by duplicated inline stores.",
-      "WritePPUReg1:Canonical shared source child counterpart is missing.",
-      "InitScroll:Canonical shared source child join is missing.",
-      "Start:allocation/source-entry initial RAM domain requires explicit contract and proof."
-    ],
+    "knownScopedDiscrepancies": [],
     "evidence": [
-      "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract"
+      "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract",
+      "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract:owner rejects repeated audit rounds;named gap closure supersedes A-N restart."
     ],
     "resolvedScopedEvidence": [
       "docs/proposals/m2/t70-final-current-certification.md S14 P1 scoped source8652-86e5 and889d-88ad:fixed-X bottom status writes without invented buffer guard;canonical OutputInter and ResetScreenTimer;task advances before output enable;actual accepted text/status/OAM children. Final global contract review remains pending.",
-      "docs/proposals/m2/t70-final-current-certification.md S14 P1 scoped8192 original dispatches plus64 persistent protocols/448 records,both C90 widths zero full RAM diff except opcode-confirmed physical stack pushes01f7-01fd;12 entries/seven branch sites both outcomes,1468 ordered original output routes;5 focused tests each,six600-frame scoped regressions,original OpenNT link and3 EXEs. Not full-game/pixel certification."
+      "docs/proposals/m2/t70-final-current-certification.md S14 P1 scoped8192 original dispatches plus64 persistent protocols/448 records,both C90 widths zero full RAM diff except opcode-confirmed physical stack pushes01f7-01fd;12 entries/seven branch sites both outcomes,1468 ordered original output routes;5 focused tests each,six600-frame scoped regressions,original OpenNT link and3 EXEs. Not full-game/pixel certification.",
+      "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+      "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
     ],
     "activeReview": {
       "taskId": "M2 T70 S15",
@@ -156897,11 +157172,47 @@
         "control-03538",
         "control-03540"
       ],
-      "status": "in-progress",
+      "status": "closed-scoped-gaps",
       "evidence": [
         "docs/proposals/m2/t70-final-current-certification.md S15 P1",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source/actual startup observation checkpoint"
+        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source/actual startup observation checkpoint",
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps"
       ]
-    }
+    },
+    "executionMode": "bounded-gap-closure-no-new-audit-round",
+    "gapClosure": [
+      {
+        "key": "startup",
+        "status": "closed",
+        "evidence": [
+          "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps"
+        ]
+      },
+      {
+        "key": "bindings",
+        "status": "pending",
+        "evidence": []
+      },
+      {
+        "key": "material",
+        "status": "pending",
+        "evidence": []
+      },
+      {
+        "key": "pixels",
+        "status": "pending",
+        "evidence": []
+      },
+      {
+        "key": "routes",
+        "status": "pending",
+        "evidence": []
+      },
+      {
+        "key": "snapshot",
+        "status": "pending",
+        "evidence": []
+      }
+    ]
   }
 }

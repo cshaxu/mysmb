@@ -43,6 +43,8 @@ struct mysmb_apu_write {
 
 struct mysmb_game {
     mysmb_u32 frame_number;
+    /* Shared Start/VBlank/ColdBoot/EndlessLoop continuation, not host policy. */
+    mysmb_u8 startup_phase;
     /* Original CPU RAM $0000-$07ff; OAM is RAM[$0200-$02ff]. */
     mysmb_u8 ram[0x0800U];
     /* Original PPU name tables $2000-$23ff and $2400-$27ff. */
@@ -121,6 +123,9 @@ void mysmb_game_move_sprites_offscreen(struct mysmb_game *game);
 /* ROM $8e19-$8e5b: name tables and scroll variables.  Its InitScroll tail
  * writes physical PPU scroll during the current NMI. */
 void mysmb_game_initialize_name_tables(struct mysmb_game *game);
+/* Original shared physical-register children; control also writes $0778. */
+void mysmb_game_write_ppu_control(struct mysmb_game *game, mysmb_u8 value);
+void mysmb_game_init_scroll(struct mysmb_game *game, mysmb_u8 value);
 /* ROM $8e92-$8eec, portable execution of an admitted VRAM command stream. */
 mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
                                         const mysmb_u8 *commands,
@@ -142,10 +147,15 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game);
 /* ROM Start/WBootCheck/ColdBoot.  This performs the reset subtree against
  * existing CPU RAM, preserving only a valid six-digit warm-boot top score. */
 void mysmb_game_reset(struct mysmb_game *game);
-/* Enter translated Start state before the two host VBlank timing boundaries.
- * Resource attachment is inert; the caller enters translated ColdBoot with
- * mysmb_game_reset after those boundaries and before the first shared NMI. */
+/* Allocate a defined portable container, then enter Start. This constructor
+ * is distinct from the source entry which preserves an existing RAM image. */
 void mysmb_game_power_on(struct mysmb_game *game);
+/* ROM Start, preserving RAM/resources; physical $2000 receives $10. */
+void mysmb_game_begin_startup(struct mysmb_game *game);
+/* Advance source startup on a neutral VBlank event. Zero means startup still
+ * owns this step; one permits the subsequent NMI tick. No host game gates. */
+mysmb_u8 mysmb_game_startup_step(struct mysmb_game *game,
+                               mysmb_u8 vblank_available);
 /* Compatibility fixture constructor for focused tests.  Product roots use
  * mysmb_game_power_on so they cannot advance later ROM work before NMI. */
 void mysmb_game_initialize(struct mysmb_game *game);

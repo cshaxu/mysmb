@@ -6,21 +6,23 @@ See [CURRENT](CURRENT.md) for current counts and the
 [bounded final-audit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract)
 for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
-meaning;they are not full current-build certification. Final contract review
-has a separate registry with an explicit fixed1992-node/4275-control universe.
-Material617 is a partial enumerated set;its global denominator is unknown.
+meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
+scoped evidence and track only named unresolved/invalidated clauses.
+Material625 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
-## M2 T70 S15 - active reset/startup final-review scope
+## M2 T70 S15 - closed identified startup gaps
 
-[17-node/42-control source checkpoint](../proposals/m2/t70-final-current-certification.md#s15-p1-sourceactual-startup-observation-checkpoint).
-Full original Start runs confirm marker early exit and control/table/scroll
-ordering with actual children. Eight contracts mismatch;Start initial RAM
-domain needs evidence. Repairs and full source/native contract proof remain
-inside S15;no successor admitted. Historical1992/1992,local accepted1983
-nodes/4269 feasible controls,8 node mismatches/1 needs-evidence and6 control
-needs-evidence(raw4342,feasible4275,infeasible67). Final review0/1992 and0/4275;
-material617 partial,total unknown. Product sources and S14 EXEs unchanged.
+[Scoped closure and evidence limits](../proposals/m2/t70-final-current-certification.md#s15-p2-closure---identified-startup-gaps).
+17 named contracts/42 listed controls dispositioned;8 mismatches and1 entry
+contract repaired,6 reopened controls accepted. Source predicates/pointer
+invariants and16 original/native roots agree both widths;9 tests each,six
+600-frame regressions,OpenNT link and3 refreshed products pass. Startup no
+longer has platform-owned waits or an extra third wait. Historical1992/1992;
+local scoped accepted1992/1992 nodes and4275/4275 feasible controls(raw4342,
+infeasible67);material625 partial,total unknown. Fresh historical0,no deferred
+owned labels. T70 remains open for the five named remaining gap packages;
+whole-game certificate incomplete,no successor admitted or global restart.
 
 ## M2 T70 S14 - locally closed;global final certificate incomplete
 

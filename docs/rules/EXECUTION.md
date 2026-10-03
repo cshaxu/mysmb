@@ -195,3 +195,19 @@ or named pending clause. Unknown material totals remain explicitly unknown.
 CURRENT and the registry finalCertification section own this distinction;
 the active final-certification proposal owns the fixed remaining scope and
 exit contract. Prior closure counts remain historical rather than rewritten.
+
+## Evidence retention and bounded gap closure
+
+Owner direction supersedes the proposed zero-based final-review restart.
+Do not create another whole-project audit round from a newly found local gap.
+Retain accepted scoped evidence within its fixture/dependency/output limits.
+Reopening requires a named missing clause or concrete source/dependency diff,
+exact affected node/edge identities,the old receipt and why it missed the
+issue,and an explicit receiving S. Recheck that dependency set,not every
+unrelated accepted chain. CURRENT and the active proposal own the remaining
+gap register;new discoveries require visible scope/impact amendments.
+Reports give total/local dispositions and resolved/pending clauses,never a
+reset counter or aggregate exact count presented as whole-game correctness.
+Scope and operational proof remain separate;code repair requires the three
+product artifacts. No guarantee of bug absence or all-input equivalence is
+inferred from a finite test manifest.

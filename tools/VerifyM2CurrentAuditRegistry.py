@@ -117,9 +117,25 @@ def main():
             "final review groups must partition feasible controls exactly once")
     require(final["status"] in ("incomplete", "complete"),
             "unknown final-certificate status")
+    gap_mode = final.get("executionMode") == "bounded-gap-closure-no-new-audit-round"
+    gaps = final.get("gapClosure", [])
+    if gap_mode:
+        require(len(gaps) == 6 and {gap["key"] for gap in gaps} ==
+                {"startup", "bindings", "material", "pixels", "routes", "snapshot"},
+                "bounded gap register must retain all six unique work packages")
+        for gap in gaps:
+            require(gap["status"] in ("pending", "closed"),
+                    "unknown gap disposition")
+            require(gap["status"] != "closed" or gap.get("evidence"),
+                    "a closed gap needs scoped closure evidence")
     if final["status"] == "complete":
-        require(set(reviewed_nodes) == node_labels and
-                set(reviewed_edges) == feasible_ids and
+        coverage_complete = (
+            all(gap["status"] == "closed" for gap in gaps) and
+            bool(final.get("snapshotEvidence"))
+            if gap_mode else
+            set(reviewed_nodes) == node_labels and
+            set(reviewed_edges) == feasible_ids)
+        require(coverage_complete and
                 registry["dataEdges"]["status"] == "complete" and
                 final["materialTotal"] == len(material) and
                 not final["blockers"] and
@@ -134,8 +150,14 @@ def main():
                       "ledgerMeaning": "Scoped evidence dispositions, not full certification",
                       "metadataValidationOnly": True,
                       "finalCertificate": final["status"],
-                      "finalReviewedNodes": len(reviewed_nodes),
-                      "finalReviewedControls": len(reviewed_edges)},
+                      "executionMode": final.get("executionMode", "final-review"),
+                      "reviewAccounting": (
+                          "Superseded restart arrays;not active progress counters"
+                          if final.get("executionMode") ==
+                          "bounded-gap-closure-no-new-audit-round"
+                          else {"finalReviewedNodes": len(reviewed_nodes),
+                                "finalReviewedControls": len(reviewed_edges)}),
+                      "remainingWork": final["blockers"]},
                      indent=2))
 
 

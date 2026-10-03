@@ -483,10 +483,7 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
         /* WritePPUReg1 writes both physical $2000 and $0778 before every
          * packet.  Publish that physical state at this header; the NMI tail
          * later restores its saved d7-enabled control value. */
-        game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = game->ppu_control_0;
-        game->visible_ppu_control_0 = game->ppu_control_0;
-        game->visible_ppu_name_table =
-            (mysmb_u8)(game->ppu_control_0 & 3U);
+        mysmb_game_write_ppu_control(game, game->ppu_control_0);
         for (index = 0U; index < count; ++index) {
             if (address >= 0x3f00U) {
                 offset = (mysmb_u16)(address & 0x001fU);
@@ -512,8 +509,7 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
     }
     if (cursor >= command_size) return 0U;
     /* UpdateScreen reaches InitScroll with A=0 after the terminator. */
-    game->visible_scroll_x = 0U;
-    game->visible_scroll_y = 0U;
+    mysmb_game_init_scroll(game, 0U);
     return 1U;
 }
 

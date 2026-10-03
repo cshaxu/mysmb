@@ -29,20 +29,6 @@ static void mysmb_dos16_compose_and_present(struct mysmb_dos16_root *root)
     mysmb_vga_frame_build(&root->ppu_frame, &root->vga_frame);
 }
 
-/* The source enters ColdBoot only after Start has observed both vblanks.
- * The composition root invokes the shared C entry point and never writes
- * translated storage itself. */
-static mysmb_u8 mysmb_dos16_start_game(struct mysmb_dos16_root *root)
-{
-    if (root->game_started != 0U) return 0U;
-    mysmb_game_reset(&root->game);
-    mysmb_game_frame_initialize(&root->game_frame);
-    root->game_started = 1U;
-    /* ColdBoot returns to EndlessLoop; the following host timing boundary,
-     * not this one, owns the first shared NMI tick. */
-    return 1U;
-}
-
 void mysmb_dos16_root_initialize(struct mysmb_dos16_root *root, const struct mysmb_dos16_hooks *hooks, mysmb_u8 MYSMB_VGA_FAR *page0, mysmb_u8 MYSMB_VGA_FAR *page1, mysmb_u8 MYSMB_VGA_FAR *page2, mysmb_u8 MYSMB_VGA_FAR *page3)
 {
 #ifdef MYSMB_DOS16_TARGET
@@ -53,9 +39,8 @@ void mysmb_dos16_root_initialize(struct mysmb_dos16_root *root, const struct mys
     mysmb_ppu_frame_bind_pixels(&root->ppu_frame, mysmb_dos16_ppu_pixels);
 #endif
     root->hooks = *hooks;
-    root->startup_vblank_waits = MYSMB_PLATFORM_STARTUP_VBLANK_COUNT;
-    root->game_started = 0U;
     mysmb_game_power_on(&root->game);
+    mysmb_game_frame_initialize(&root->game_frame);
     mysmb_vga_frame_initialize(&root->vga_frame, page0, page1, page2, page3);
 }
 
@@ -63,11 +48,7 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
 {
     struct mysmb_input input;
 
-    if (root->startup_vblank_waits != 0U) {
-        root->startup_vblank_waits--;
-        return;
-    }
-    if (mysmb_dos16_start_game(root) != 0U) return;
+    if (mysmb_game_startup_step(&root->game, 1U) == 0U) return;
     input.buttons = root->hooks.read_buttons(root->hooks.context);
     input.buttons2 = 0U;
     mysmb_game_tick(&root->game, &input, &root->game_frame);

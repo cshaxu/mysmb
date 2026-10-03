@@ -1984,6 +1984,61 @@ but OutputInter source order/shared call still requires its admitted repair.
 
 ## Owner-directed bounded final-audit contract
 
+The owner rejects a third or subsequent whole-project audit round. This
+contract supersedes the restart plan retained below. Do not restart A-N,
+reset accepted scoped evidence to zero, or admit successor chains merely to
+repeat completed work. S15 remains active for its already identified repairs.
+The prepared expanded S15 matrix has not run and is not accepted evidence;
+do not expand it as a new global certification pass.
+
+Retain prior source/route proofs for their stated inputs, dependencies,
+compared fields and exclusions. After S15 closure,the local ledger accepts1992/1992 nodes and4275/4275
+feasible controls within retained scoped contracts;identified startup gaps
+are resolved. No global correctness certificate is inferred. Raw4342 includes67 source-infeasible controls.
+Historical1992/1992 records mapping. None of these counts certifies the whole
+game. Material625 is a partial enumeration with an unknown global total.
+
+### Remaining work register
+
+These six keys identify work packages, not new M/T/S identifiers or six
+individual defects. Their discovery boundaries and exit clauses are fixed;
+the material and route packages are not yet fully quantified. Do not promise
+a fixed effort or a proof of all possible executions from this register.
+
+| Key | Known scope / retained evidence | Required exit |
+| --- | --- | --- |
+| startup (closed) | S15's17 named nodes and42 listed controls;P1 original observations and retained reset proofs | Repair identified read/order/shared-owner differences;source-review changed clauses and affected joins;focused original/native and operational checks;no scoped unresolved diff;refresh three products for product-code changes. |
+| bindings | T70 S3 outstanding original numeric table/pointer uses | Reconcile executable uses against original listing/bytes;record exact unresolved uses and their consumer labels;zero unresolved bindings within the enumerated use manifest. |
+| material | Existing617 accepted paths;source consumed-value uses not yet fully enumerated | Finish the use census with producer/lifetime/overwrite/alias disposition;freeze the denominator only after zero unresolved uses;prove added paths without repeating unrelated accepted contracts. |
+| pixels | T70 S6 outstanding within-scanline sprite-zero/fine-X split output | Original/shared completed-pixel comparison of the named split alternatives;fix and recheck any diff;palette/OAM metadata equality alone cannot close this. |
+| routes | Missing gameplay/death/restart/pipe/vine/warp/end-world/final-completion routes;existing six600-frame routes remain scoped regressions | Publish a finite route manifest and terminal checkpoints before execution;source/branch-based coverage and explicit exclusions;zero unexplained diff on that manifest,not a claim of all possible input sequences. |
+| snapshot | Existing chain receipts and current source/data/build identities | Reconcile receipts to final dependencies;rerun only invalidated contracts plus integrated operational regression/purity;three target identities recorded;no open M2 clause. DOS graphical/hardware qualification stays M3/M4. |
+
+### Evidence reuse and discovery discipline
+
+Before re-opening any accepted contract, identify a concrete source diff,
+dependency change or missing clause. Record exact labels/control IDs/material
+uses, the old receipt and its limit, why it missed the issue, and the affected
+closure conclusion. Re-open only that affected dependency set. No global
+zero counter, automatic cohort restart or silent scope growth is permitted.
+New source-proven issues are appended as explicit amendments to this register
+with receiving ownership and impact;do not hide them or promise no future bug.
+
+Every package reports its exact resolved/pending clauses and evidence. A
+repair stays in its receiving S through source comparison and operational
+recheck. S15 P2 supplies the scoped repair and three products;its receipt below defines the proof limits.
+Before later implementation, quantify that receiving chain's labels/edges and
+verification limits;this register is not permission to bypass MTSP admission.
+
+T70/M2 closes when these named clauses have evidence-backed closure,all
+concrete node/control/material differences are resolved,retained contracts
+are applicable to the final snapshot,and the declared route/output and
+operational matrix passes. Report conformance to those explicit contracts,
+not mathematical equivalence over unbounded executions. The old final-review
+arrays/cohort copy are archived accounting,not a second To-Do inventory.
+
+## Superseded final-review restart plan
+
 This section corrects the interpretation of prior aggregate exact reports.
 It does not rewrite historical closure evidence. CURRENT is the sole current
 dashboard;the registry finalCertification section records final-review work
@@ -2348,3 +2403,133 @@ S15 stays active for repair and dual verification;no successor admitted.
 | src/platform/dos16/dos16_root.c | cf2bde3bd8e62a763e920a535ed83384b57158e09904131df9190a82af09207f |
 | src/platform/dos16/dos16_root.h | 17cf1887ae24302cb8e1c1241354e247611d8e3bb1bd2110fc39989376587d79 |
 | src/platform/startup_timing.h | 6ac5277d76ae0f0b4a535d646602342ddc513c0808fecd6602cb961f1afea5a8 |
+
+## S15 P2 corrective source receipt
+
+P1 findings remain the same17-node/42-control scope. Product changes restore
+source-preserving begin_startup separately from container construction,and
+one game-owned startup_step receives neutral VBlank events. Platforms own no
+wait counts/reset gates;source polling cycles remain hardware ABI,not virtual
+CPU emulation. Reset initialization is distinct from subsequent first NMI.
+Full Start initial RAM inputs can now be supplied before this shared entry.
+WBootCheck marker read short-circuits after any invalid digit.
+
+Canonical shared WritePPUReg1 and InitScroll are used by reset/name-table and
+existing VRAM-stream callers;game.c changes only those accepted primitive
+call sites. Name-table control is published before table1 then table0,each
+real shared table child resets buffer before attributes and ends with its
+scroll tail. All original memory-clear page/index/scratch semantics remain.
+Affected root tests exercise preserved RAM,failed/successful polling barriers,
+no NMI during initialization and actual first shared frame. Two host adapters
+use the same entry. Original-bound probes will compare full RAM and portable
+output with explicit hardware/physical-stack exclusions;no node promotion
+until scoped contracts and separate operational checks pass. Three EXEs must
+refresh for this P. No unrelated I/O/presentation changes or platform game
+logic introduced;standing delivery/commit approval,no push.
+
+## S15 P2 closure - identified startup gaps
+
+All17 admitted labels retain accepted scoped contracts;the exact labels and42
+listed controls are those in S15 admission. Repaired8 mismatches and supplied
+the separate Start input contract;6 reopened controls accepted. Historical
+expected/actual fresh0,max/result1992. No deferred owned labels,no successor
+admitted. T70/M2 remains open for the other five named gap packages.
+
+The shared entry preserves RAM and immutable resource attachments while the
+constructor defines a fresh container separately. First failed VBlank event
+stays in barrier1;first success enters barrier2. Failed events there preserve
+RAM. Second success executes warm/cold reset immediately,returning without
+NMI;the following boundary permits the first NMI. Removed the extra waiting
+boundary found during P2 source review. Original status reads consume VBlank;
+portable neutral events are consumed once. CPU interrupt/decimal/physical
+stack setup and polling cycles are hardware ABI,not runtime CPU emulation or
+cycle equality. EndlessLoop becomes readiness without RAM/PPU writes;only
+the independently called shared NMI tick advances gameplay.
+
+Byte-domain source proof:every score byte partitions into0-9 and10-255 under
+the same comparison;descending index5..0 stops at the first invalid byte and
+does not evaluate07ff. Only six valid digits compare markerA5;every other
+marker chooses cold Yfe,valid marker chooses warm Yd6. Native short-circuit
+and unsigned byte arithmetic preserve these predicates. The focused matrix
+samples boundaries/positions;it does not exhaust every score combination.
+
+Memory proof:06 is set0;07 is set to page7..0 before each page. Effective
+address is page*256+Y;skip exactly page1 offsets60-ff. During zero-page
+self-clears,06 remains0 and07 remains0 after its own clear,so the indirect
+address invariant survives. Y decrements modulo256 untilff then the next
+page startsff;the source and C loops match for every initial byte Y. Source A
+stays0 until return. These are compositional source proofs;the focused matrix
+samples initial0/ff and actual cold/warm callers,not256 separately run cases.
+
+Name-table proof:control physical store precedes mirror and both tables;
+table1 then0 each writes192+3*256=960 tile24 bytes,then resets0300/0301,
+writes64 zero attributes,resets073f/0740 and calls actual shared InitScroll.
+The old retained768-tile annotation is incorrect;960 is established by loop
+semantics and P1 original trace. WritePPUReg1 stores physical then mirror;
+InitScroll writes supplied A twice without changing logical scene-scroll RAM.
+Both primitives preserve their full byte argument domain by direct stores.
+ColdBoot invokes actual shared control child after DisableScreen increment.
+
+Eight internal consumed-value paths are now material00618-00625,each recorded
+with producer,consumer,storage,path and source invariant. External first-NMI
+consumers retain their unchanged accepted contracts;global lifetime/alias
+enumeration remains the named material package,not claimed closed here.
+Of42 controls,the unchanged external return/caller clauses to ScreenOff,
+InitScreen,SetupWrites,InitializeGame and InitializeArea retain their earlier
+scope-specific receipts. The modified helper joins were source-reviewed;
+memory-clear body/arguments are unchanged. Full source root does not execute
+those external callers,so no fresh standalone coverage is inferred for them.
+
+Original/native evidence:16 targeted roots,including full unmodified Start
+for the eight reset cases,two memory entries,two name-table controls,two
+control-byte and two scroll-byte entries. Both actual C90 widths have zero
+diff over full RAM,CIRAM,palette,OAM,24 APU registers and control/mask/scroll.
+Only actual opcode-observed JSR stack writes01fa-01fd are excluded per case;
+there is no whole-stack or zero-page exclusion in these roots. The three
+retained P1 original full Start observations prove actual entries and
+control/table/scroll order;native order is independently reviewed from the
+canonical source calls. Final-state equality alone is not order evidence.
+
+Operational evidence:9 focused tests each width pass after the final timing
+correction;targeted products/recorder/tests built successfully. Six retained
+600-frame routes have zero scoped diff each width and byte-identical native
+records. Frame ABI compares0200-07ff except0778/0779 plus CIRAM/palette/OAM/
+audio/PPU fields;zero-page/stack and ordinal are outside that separate frame
+ABI. They are smoke regressions,not full-game or completed-pixel proof.
+Original OpenNT DOS16 compile/link passes with existing integral-conversion
+warnings and optional OLDNAMES.LIB warning;this is not a DOS gameplay result.
+The final three MZ products are refreshed and their identities follow below.
+
+Similar-issue sweep finds no platform startup counters/reset calls remaining;
+both roots invoke the same game-owned startup continuation. game.c uses the
+canonical control/scroll children for affected VRAM paths. Focus readiness
+remains Win32 adapter metadata. Prepared3072-case expansion was not executed;
+one shell quoting attempt failed before editing the probe and was replaced by
+a direct patch. Neither is accepted evidence. No source edit occurred during
+the final builds;raw focused/frame outputs were deleted after comparison.
+
+Result:historical mapping1992/1992;local scoped accepted1992/1992 nodes and
+4275/4275 feasible controls(raw4342,infeasible67);material625 partial,total
+unknown. No new global audit round or zero-counter certification. S15 closes,
+T70 remains open. Unrelated I/O/presentation/terrain changes preserved;three
+EXE commit authorization retained,no ROM import or push.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258847 | 382bcd7dfa2bb47e54e43b30a34b917dc7315e5e1844b7fc20f59cde47897659 |
+| mysmb32.exe | 373258 | aa65f9009415b3bc05915b2462dd04380e1dcafbb5d08cceeee4f37fcd62a23b |
+| mysmb64.exe | 379773 | 7cdcf0f42882159aba40dcb3a061b0c2ea6edc19098799723b32d9b8ddb66b97 |
+
+Reporting metadata gate accepts the incomplete certificate and rejects four
+negative fixtures:false completion,missing package,duplicate package,and
+closed package without evidence. This checks accounting only. Final source
+identities below supersede P1 hashes for the changed startup owners.
+
+| Source | SHA256 |
+| --- | --- |
+| src/game/boot.c | fc5ffb8efbdd7ac12e2e500fd103117d5ea05871adfbec1e31038ea1a0e5bfdb |
+| src/game/game.c | def79c13b528e579772a93db4882f2061d076b3e120b4f66faaf3c28bc451555 |
+| src/game/game.h | 7ce8d1dcfc3b6e7adbc91e9394d2915d4816e6df64f20c4f67d040eb6dcd10e6 |
+| src/platform/dos16/dos16_root.c | 19347e4b6c8c8f9aa34aeba43a1b4591be15983cf626a07418a846cea9f66a29 |
+| src/platform/dos16/dos16_root.h | 677d62738870aa34706c3dc3567a0016af84c0b1b30008c7b7da625aea0629ba |
+| src/platform/win32/main_win32.c | ddfba265920b3d237affe55e659b773060910868499ce9cbdfba3d75438ba773 |
