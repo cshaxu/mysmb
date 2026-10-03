@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 705,
+    "enumeratedCount": 710,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -15516,6 +15516,116 @@
         "src/game/world/block_buffer.c",
         "src/game/area/block_buffer.c"
       ]
+    },
+    {
+      "id": "material-00706",
+      "producer": "StoreMT",
+      "consumer": "TerrBChk",
+      "storage": "07 terrain metatile",
+      "feasiblePath": "Original StoreMT writes selected metatile07 before terrain bit scan;underground row11 overrides07 before subsequent rows.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Columns0..31,types0..3,terrain0..15,world0/7,cloud0/3,pages0..5,bounded scenery0..3,current-column0..15;actual FD parser child. This primitive contract does not establish every caller/gameplay reachability.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-00707",
+      "producer": "TerrLoop",
+      "consumer": "TerrBChk",
+      "storage": "00 terrain bitmap",
+      "feasiblePath": "Original load/mask publishes00 before Bitmasks BIT consumption;ceiling/full and cloud ground/masked phases retained.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Columns0..31,types0..3,terrain0..15,world0/7,cloud0/3,pages0..5,bounded scenery0..3,current-column0..15;actual FD parser child. This primitive contract does not establish every caller/gameplay reachability.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-00708",
+      "producer": "TerrLoop",
+      "consumer": "TerrLoop",
+      "storage": "01 next terrain bitmap index",
+      "feasiblePath": "Original INY/STY01 precedes bit scan and LDY01 reload at EndUChk;indices1..31 never zero in admitted16 terrain controls.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Columns0..31,types0..3,terrain0..15,world0/7,cloud0/3,pages0..5,bounded scenery0..3,current-column0..15;actual FD parser child. This primitive contract does not establish every caller/gameplay reachability.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-00709",
+      "producer": "ChkMTLow",
+      "consumer": "StrBlock",
+      "storage": "00 collision-buffer row offset",
+      "feasiblePath": "Each original STY00 precedes palette/threshold work;StrBlock reloads00 for indirect write,final00=C0.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Columns0..31,types0..3,terrain0..15,world0/7,cloud0/3,pages0..5,bounded scenery0..3,current-column0..15;actual FD parser child. This primitive contract does not establish every caller/gameplay reachability.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-00710",
+      "producer": "GetBlockBufferAddr",
+      "consumer": "StrBlock",
+      "storage": "06/07 block buffer pointer",
+      "feasiblePath": "Actual parser child completes before pointer producer;13 row writes at base0500/05d0+column cannot alias06/07 or staging06a1-06ad.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Columns0..31,types0..3,terrain0..15,world0/7,cloud0/3,pages0..5,bounded scenery0..3,current-column0..15;actual FD parser child. This primitive contract does not establish every caller/gameplay reachability.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/block_buffer.c"
+      ]
     }
   ],
   "cohorts": [
@@ -22074,12 +22184,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Builds one staged 13-row column, processes area objects, collision-qualifies resulting rows, then writes the physical block-buffer column.",
+      "semanticContract": "Builds one staged 13-row column, processes area objects, collision-qualifies resulting rows, then writes the physical block-buffer column. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22092,12 +22205,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Clears all thirteen staged rows before scenery overlays.",
+      "semanticContract": "Clears all thirteen staged rows before scenery overlays. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22110,12 +22226,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Reduces CurrentPageLoc modulo three by repeated subtraction.",
+      "semanticContract": "Reduces CurrentPageLoc modulo three by repeated subtraction. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22128,12 +22247,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Combines page phase, background-family offset and column to select one packed background entry.",
+      "semanticContract": "Combines page phase, background-family offset and column to select one packed background entry. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22146,12 +22268,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Overlays no more than three selected background metatiles without crossing staged row eleven.",
+      "semanticContract": "Overlays no more than three selected background metatiles without crossing staged row eleven. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22164,12 +22289,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Gates the thirteen-row foreground overlay by ForegroundScenery.",
+      "semanticContract": "Gates the thirteen-row foreground overlay by ForegroundScenery. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22182,12 +22310,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Reads exactly thirteen foreground entries and conditionally overwrites staged rows.",
+      "semanticContract": "Reads exactly thirteen foreground entries and conditionally overwrites staged rows. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22200,12 +22331,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Preserves staged rows for zero foreground entries and advances the foreground loop.",
+      "semanticContract": "Preserves staged rows for zero foreground entries and advances the foreground loop. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22218,12 +22352,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Applies the World 8 water castle-wall terrain exception only in its source conditions.",
+      "semanticContract": "Applies the World 8 water castle-wall terrain exception only in its source conditions. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22236,12 +22373,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Selects AreaType terrain and then applies the cloud override.",
+      "semanticContract": "Selects AreaType terrain and then applies the cloud override. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22254,12 +22394,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Stores terrain value and initializes the two-byte terrain-mask scan.",
+      "semanticContract": "Stores terrain value and initializes the two-byte terrain-mask scan. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22272,12 +22415,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Loads each terrain mask byte and applies cloud masking only to the second byte.",
+      "semanticContract": "Loads each terrain mask byte and applies cloud masking only to the second byte. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22290,12 +22436,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Enters the least-significant-bit-first terrain bit scan.",
+      "semanticContract": "Enters the least-significant-bit-first terrain bit scan. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22308,12 +22457,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Writes selected terrain only for a set source bitmask.",
+      "semanticContract": "Writes selected terrain only for a set source bitmask. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22326,12 +22478,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Advances the staged row and applies only the underground bottom-row terrain substitution.",
+      "semanticContract": "Advances the staged row and applies only the underground bottom-row terrain substitution. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22344,12 +22499,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Continues the current byte scan or switches to the saved second-byte index.",
+      "semanticContract": "Continues the current byte scan or switches to the saved second-byte index. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22362,12 +22520,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Processes objects before resolving and writing the physical block-buffer column.",
+      "semanticContract": "Processes objects before resolving and writing the physical block-buffer column. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22380,12 +22541,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Selects collision bound from metatile high bits and replaces only below-bound values with zero.",
+      "semanticContract": "Selects collision bound from metatile high bits and replaces only below-bound values with zero. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22398,12 +22562,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
       "semanticEvidence": [
-        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths."
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "S17 P13 reopened missing scenery00/01/07 before actual parser child,00 before StrBlock and source water/world8 StoreMT bypass priority.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:source9404-9507 clear/stage actual RAM in order;SceLoop1 counter00,StoreMT07,TerrLoop00/01,ChkMTLow00 restored;world8 water jumps past cloud override. Actual parser child precedes qualification. Declared buffer columns0..31 cannot alias scratch or staging."
       ],
       "operationalEvidence": [
-        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass."
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair:8192 original9404 roots each width;20802 baseline RAM differences repaired to zero,all2048 RAM except observed physical pushes. All19 labels/21 of23 predicates both outcomes;two remaining directions source-bound.9 current checks each width,six600-frame routes,3 products pass."
       ],
-      "semanticContract": "Stores qualified values at row stride sixteen through all thirteen physical rows.",
+      "semanticContract": "Stores qualified values at row stride sixteen through all thirteen physical rows. Source-ordered00/01/07 and staging outputs included in bounded P13 scenery primitive contract;not full gameplay reachability.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -159297,7 +159464,25 @@
         "SkipByte",
         "BlockBufferCollision",
         "RetXC",
-        "RetYC"
+        "RetYC",
+        "RenderSceneryTerrain",
+        "ClrMTBuf",
+        "ThirdP",
+        "RendBack",
+        "SceLoop1",
+        "RendFore",
+        "SceLoop2",
+        "NoFore",
+        "RendTerr",
+        "TerMTile",
+        "StoreMT",
+        "TerrLoop",
+        "NoCloud2",
+        "NextTBit",
+        "EndUChk",
+        "RendBBuf",
+        "ChkMTLow",
+        "StrBlock"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -159324,7 +159509,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P11 bounded admission - VRAM pointer and packet handoff",
         "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths",
         "docs/proposals/m2/t70-final-current-certification.md S17 P12 bounded admission - reset and collision RAM pointer lifetimes",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 corrective admission - complete scenery/buffer scratch chain",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

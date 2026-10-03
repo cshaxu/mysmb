@@ -37,7 +37,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T29 S3 | 11 | `PlayerStarting_X_Pos`, `AltYPosOffset`, `PlayerStarting_Y_Pos`, `PlayerBGPriorityData`, `GameTimerData`, `Entrance_GameTimerSetup`, `ChkStPos`, `SetStPos`, `ChkOverR`, `ChkSwimE`, `SetPESub` |
 | M2 T29 S4 | 16 | `HalfwayPageNybbles`, `PlayerLoseLife`, `StillInGame`, `GetHalfway`, `MaskHPNyb`, `SetHalfway`, `GameOverMode`, `SetupGameOver`, `RunGameOver`, `ContinueGame`, `GameIsOn`, `TransposePlayers`, `TransLoop`, `ExTrans`, `DoNothing1`, `DoNothing2` |
 | M2 T29 S5 | 14 | `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `AreaParserTasks`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore` |
-| M2 T29 S6 | 20 | `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `BlockBuffLowBounds` |
+| M2 T29 S6 | 1 | `BlockBuffLowBounds` |
 | M2 T29 S8 | 21 | `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit` |
 | M2 T29 S9 | 9 | `CastleMetatiles`, `WaterPipe`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `GetPipeHeight` |
 | M2 T30 S1 | 3 | `EndlessRope`, `BalancePlatRope`, `DrawRope` |
@@ -204,7 +204,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S13 | 19 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 58 | `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart` |
+| M2 T70 S17 | 77 | `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
 | M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
@@ -547,25 +547,25 @@ transfer existing ownership or allocate a numeric T.
 | 3158 | `TerrainMetatiles` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
 | 3161 | `TerrainRenderBits` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
 | 3179 | `AreaParserCore` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3184 | `RenderSceneryTerrain` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3187 | `ClrMTBuf` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3193 | `ThirdP` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3198 | `RendBack` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3223 | `SceLoop1` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3231 | `RendFore` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3235 | `SceLoop2` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3238 | `NoFore` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3242 | `RendTerr` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3249 | `TerMTile` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3253 | `StoreMT` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3258 | `TerrLoop` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3269 | `NoCloud2` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3270 | `TerrBChk` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3275 | `NextTBit` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3285 | `EndUChk` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3290 | `RendBBuf` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3295 | `ChkMTLow` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3306 | `StrBlock` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
+| 3184 | `RenderSceneryTerrain` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3187 | `ClrMTBuf` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3193 | `ThirdP` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3198 | `RendBack` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3223 | `SceLoop1` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3231 | `RendFore` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3235 | `SceLoop2` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3238 | `NoFore` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3242 | `RendTerr` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3249 | `TerMTile` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3253 | `StoreMT` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3258 | `TerrLoop` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3269 | `NoCloud2` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3270 | `TerrBChk` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3275 | `NextTBit` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3285 | `EndUChk` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3290 | `RendBBuf` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3295 | `ChkMTLow` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
+| 3306 | `StrBlock` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
 | 3319 | `BlockBuffLowBounds` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
 | 3326 | `ProcessAreaData` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
 | 3328 | `ProcADLoop` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
@@ -2379,7 +2379,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T29 S3 | 0 | 11 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S4 | 0 | 16 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S5 | 0 | 14 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S6 | 0 | 20 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S6 | 0 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S7 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S8 | 0 | 21 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S9 | 22 | 9 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
@@ -2827,7 +2827,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 58 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 77 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3213,6 +3213,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s17-parser-output-2 | M2 T29 S7 | M2 T70 S17 | 3 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-castle-counter-1 | M2 T29 S9 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-pipe-scratch-1 | M2 T29 S9 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-scenery-output-1 | M2 T29 S6 | M2 T70 S17 | 19 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3716,4 +3717,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 128 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 146 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

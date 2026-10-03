@@ -71,7 +71,8 @@ static void expected_column(mysmb_u8 staged[13], mysmb_u8 expected[13],
 
     terrain = mysmb_local_prg[(mysmb_u16)(TERRAIN_METATILES + area_type)];
     if (area_type == 0U && world == 7U) terrain = 0x62U;
-    if (cloud != 0U) terrain = 0x88U;
+    /* Original water/world8 jumps directly to StoreMT before cloud testing. */
+    if (cloud != 0U && !(area_type == 0U && world == 7U)) terrain = 0x88U;
     for (row = 0U; row < 13U; ++row) {
         bits = mysmb_local_prg[(mysmb_u16)(TERRAIN_RENDER_BITS +
             (mysmb_u16)terrain_control * 2U + (row >> 3U))];

@@ -8,10 +8,16 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material705 is a partial enumerated set;its global denominator is unknown.
+Material710 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P13 scenery repair](../proposals/m2/t70-final-current-certification.md#s17-p13-checkpoint---scenery-staging-and-scratch-repair).
+19 scoped labels restored;8192 original roots each width zero full-RAM
+differences after20802 baseline differences.9 checks each/six600-frame
+routes/3 products pass. Material710 partial,total unknown;9 RAM/3 dispatch
+sites and four existing packages pending. Local contracts are not certification.
 
 [P12 RAM pointers](../proposals/m2/t70-final-current-certification.md#s17-p12-checkpoint---resetcollision-pointer-lifetimes).
 9728 original roots each width zero RAM/metatile diff;reset self-alias and

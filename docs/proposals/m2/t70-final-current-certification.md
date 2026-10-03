@@ -3826,3 +3826,86 @@ global total unknown. No source or product change;EXEs remain P10. Two RAM
 indirect sites discharged in named domains;10 RAM/3 dispatch indirect sites
 and other mutable/register/flag/stack/inter-frame clauses remain in S17.
 Pixels,routes,snapshot packages are still pending. No full certification.
+
+## S17 P13 corrective admission - complete scenery/buffer scratch chain
+
+The remaining StrBlock RAM writer review identifies concrete source clauses
+missing in the retained state-only renderer:TerrLoop publishes00/01 and
+StoreMT publishes07 before ProcessAreaData;ChkMTLow publishes00 row offsets
+before indirect stores. Current C keeps those only in locals. Source water
+world8 branches directly to StoreMT,whereas C incorrectly applies the cloud
+terrain override afterward. Old retained scenery/table clauses did not
+prove these scratch outputs or this priority branch. Correct in this S,
+without restarting unrelated accepted chains.
+
+Corrective source9404-9507,shared area.c render_scenery_terrain_column only;
+19 labels in source order:
+`RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`.
+Fresh0,historical1992/1992,current scoped1973/1992 pending repair,max1992.
+Actual ProcessAreaData successor retains P6/P9/P10 contracts;GetBlockBufferAddr
+retains P12. Source table bindings remain immutable predecessors. Do not
+alter parser/objects/platform code while replacing this complete renderer
+with source-ordered staging/scratch writes and original branch priority.
+
+8192 original9404 returning roots each width:32 buffer columns,four area
+types,16 terrain controls,world0/7,cloud0/3,all four background/foreground
+controls across columns,current pages0..5/current columns0..15. Existing
+original stream pointer/current FD offset and inactive slots make the actual
+parser child return without manufacturing ROM data. All2048 RAM compare;
+only observed physical pushes excluded. This is an admitted primitive input
+domain,not a claim every water/cloud/world combination is gameplay reachable.
+Source predicates/scratch order reviewed before writing C,then baseline and
+postrepair roots. Three products rebuilt,focused renderer/parser regressions
+and short routes required. Same-class area06/07/00/01 store sweep recorded.
+4096 roots/batch within32MiB raw/120sec;raw cleanup after comparisons.
+
+## S17 P13 checkpoint - scenery staging and scratch repair
+
+Shared area renderer9404-9507 now clears/stages actual MetatileBuffer RAM
+in source order before the actual ProcessAreaData child. Background counter00,
+StoreMT terrain07,TerrLoop bitmap00/next index01 and ChkMTLow row00 stores
+are explicit. Original water/world8 jumps directly to StoreMT and bypasses
+cloud override;the former C priority was wrong. Source ADC carry and byte
+index wrapping are preserved;source SceLoop1 writes before row11 exit.
+Only this function changed in production;parser/platform/objects unchanged.
+
+8192 original9404 returning roots each width compare all2048 RAM,zero-page
+included,excluding only actually observed physical pushes.32 buffer columns,
+four types,16 terrain controls,world0/7,cloud0/3,scenery controls0..3,pages0..5,
+current columns0..15;original stream pointer/FD terminal and inactive slots
+allow the actual parser child. Before20802 differing bytes per width;after0.
+All19 labels observed;21/23 predicates both outcomes observed. ThirdP BPL
+fallthrough is excluded by source bounded pages0..5,subtract after CMP>=3;
+EndUChk BNE fallthrough is excluded by next bitmap indices1..31 in this
+terrain domain. These are local input-contract proofs,not new global
+infeasible-edge reclassifications. Water/cloud combinations are primitive
+entry fixtures,not a claim every combination is gameplay reachable.
+Raw records deleted;two4096-case batches within32MiB/120sec process bounds.
+
+Same-class review covers every explicit00/01/06/07 store in this complete
+renderer and its direct child boundary. ProcessAreaData owns its overwrites;
+GetBlockBufferAddr subsequently owns06/07. StrBlock addresses0500-069f
+cannot alias CPU scratch or MetatileBuffer06a1-06ad;row00 is reloaded for
+each original store. The known area parser/castle/pipe scratch clauses have
+their P6/P9/P10 contracts;this is not a blanket claim about other owners.
+Neutral regression checks final00/01/pointer and water/world8 cloud bypass.
+The old data smoke expected model repeated the same priority defect and is
+corrected using original StoreMT control flow. Nine current focused checks
+each width pass;zero-test/misnamed-target attempts were rejected and rerun.
+Six600-frame scoped routes pass with byte-identical native widths;frame ABI
+still excludes zero-page/physical stack and0778/0779. Local full-RAM roots
+cover the declared chain instead. All three products rebuilt/refreshed;
+DOS16 original OpenNT compile/link only,no DOS runtime qualification.
+
+Nineteen corrective labels restore scoped contracts;fresh node/control0.
+Material706-710 add five scratch/pointer/bitmap paths. Historical1992/1992;
+local scoped nodes1992/1992,controls4274/4274(raw4342,infeasible68).
+Material710 partial,global denominator unknown. Nine RAM/three dispatch
+indirect sites and other mutable/register/flag/stack/inter-frame clauses
+remain;material/pixels/routes/snapshot packages open. No full certification.
+
+mysmb16.exe:258955 bytes,SHA256 0dec8182ad5c4fd282ad66f70dbcf8cda499092fa3db4124912d2bf1ce79fdc4.
+
+mysmb32.exe:373107 bytes,SHA256 84eba060c0ee2d79371ff326e763973b673ea4f77464b4a221bd70880bc46891.
+
+mysmb64.exe:379113 bytes,SHA256 c6b74f0d08a50469d0eab8d32e86f3e73128fdd68e07e29f517d0b426cf144c8.

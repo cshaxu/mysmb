@@ -52,7 +52,9 @@ int main(void)
         game.ram[0x0530U] != 0x10U || game.ram[0x0540U] != 0x55U ||
         game.ram[0x0550U] != 0x12U || game.ram[0x0560U] != 0U ||
         game.ram[0x0570U] != 0x51U || game.ram[0x05b0U] != 0x54U ||
-        game.ram[0x05c0U] != 0x54U) return 1;
+        game.ram[0x05c0U] != 0x54U || game.ram[0U] != 0xc0U ||
+        game.ram[1U] != 4U || game.ram[6U] != 0U ||
+        game.ram[7U] != 5U) return 1;
 
     /* AreaParserCore processes the admitted object stream after terrain and
      * before block-buffer commit, so a row object changes collision output. */
@@ -81,6 +83,15 @@ int main(void)
     game.ram[0x0743U] = 3U;
     if (mysmb_area_render_scenery_terrain_column(&game) == 0U ||
         game.ram[0x05b1U] != 0x88U || game.ram[0x05c1U] != 0U) return 1;
+
+    /* World8 water bypasses the cloud terrain override at original StoreMT. */
+    game.ram[0x074eU] = 0U;
+    game.ram[0x075fU] = 7U;
+    if (mysmb_area_render_scenery_terrain_column(&game) == 0U ||
+        game.ram[0x06acU] != 0x62U || game.ram[0x05b1U] != 0x62U ||
+        game.ram[0U] != 0xc0U || game.ram[1U] != 4U) return 1;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x075fU] = 0U;
 
     /* Same-page InitRear first ends backloading without running row14.
      * RenderSceneryTerrain stages the old terrain, then ProcessAreaData
