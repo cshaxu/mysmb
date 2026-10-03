@@ -1,6 +1,7 @@
 #include "game/enemy/platform.h"
 #include "game/objects.h"
 #include "game/world/world.h"
+#include "game/oam/oam.h"
 
 enum {
     MYSMB_SCREEN_LEFT_X = 0x071cU,
@@ -158,7 +159,10 @@ void mysmb_platform_box_large(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u16 address;
     address = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (enemy_x_offscreen_raw(game, slot) >= 0xfeU) {
+    /* The original child publishes $04-$07 as well as its table byte. */
+    if (mysmb_oam_get_x_offscreen_bits(game, (mysmb_u8)(slot + 1U),
+            game->ram[MYSMB_ENEMY_PAGE + slot],
+            game->ram[MYSMB_ENEMY_X + slot]) >= 0xfeU) {
         game->ram[address] = 0xffU;
         game->ram[address + 1U] = 0xffU;
         game->ram[address + 2U] = 0xffU;

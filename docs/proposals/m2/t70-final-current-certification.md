@@ -8400,3 +8400,43 @@ Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b4
 Current src/game/world/collision.c normalizedSHA256:bba94e507941430689f6a41ee4364f117f72348552a16b52aa144ac92dc70b40.
 
 Current src/game/world/metatiles.c normalizedSHA256:ac63586a18634f2989709c1a1762b85d52401bc45bebef73e94889c4540fda17.
+
+## S17 P79 admission - bounding box offsets masks and clipping
+
+Existing E22A-E324 gap:125 instructions/48 direct RAM sites/17 labels: GetFireballBoundBox,GetMiscBoundBox,FBallB,GetEnemyBoundBox,SmallPlatformBoundBox,GetMaskedOffScrBits,CMBits,LargePlatformBoundBox,SetupEOffsetFBBox,MoveBoundBoxOffscreen,BoundingBoxCore,CheckRightScreenBBox,SORte,NoOfs,CheckLeftScreenBBox,SOLft,NoOfs2. Shared world/bounding_box.c,enemy_bounds.c,world/collision.c,objects.c and original GetXOffscreenBits child in oam/object_position.c. Fireball slots0-1,misc0-8,enemy0-5;control0-11 legal table domain,raw domain separately investigated without claiming producer reachability. Actual canonical roots and isolated core/clip source entries compare all RAM outside actual CPU stack,APU and writes. Require each scoped PC and feasible branch side before receipts;midpoint page wrap,corner sign/clamp,mask selection and raw horizontal offscreen child scratch are explicit clauses. Fresh0/max1992;local1991/1992 nodes,4261/4262 controls retained. ROM/ASM owner-local read-only nonredistributable;4096-record batches128MiB/120seconds,raw removed below ignored build. Differences remain S17;accepted exact custody before repairs and three products after source changes. Producer/inter-frame/final-package obligations remain open.
+
+### P79 corrective amendment - large platform original child scratch
+
+Original E273 calls GetXOffscreenBits with SprObject slot+1 before clipping. Current const value-only helper preserves returned byte but omits04/05/06/07 scratch writes. Baseline4096 roots produced13582 RAM differences at exactly04-07 in x86;entry outputs/other RAM did not differ. Accept LargePlatformBoundBox custody for S17,replace only its child call with existing mutable oam/object_position.c original helper. Other const graphics/offscreen entry families retain their named obligations. Re-audit same original roots plus focused platform/bounding-box tests;all three product artifacts required. This is a missing child-output contract,not a new whole-project round or demonstrated visible game failure.
+
+## S17 P79 checkpoint - bounding box original child outputs restored
+
+S17 P79:17bounding box labels/125instructions/48RAM joined7boundedclauses;90112actualroots eachwidth0diff/all125PC/10branchpairs plusmandatoryE234,5tests each. Scope1258/fresh0;7480/10691instruction receipts,2649/3773RAM receipts;3211instructions/1124RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;LargePlatformBoundBox childscratch repaired,threeEXEs refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| B1 | GetFireballBoundBox,GetMiscBoundBox,FBallB | Fireball slot+7 andrelative pair02;misc slot+9 andpair06. Actual BoundingBoxCore thenclip;misc clipping uses world+9,not motion+13. Original returnedX restored toObjectOffset afterclip. LDY02 establishesZclear andE234 alwaysbranches,retainedcontrol02708 infeasible,not missing branch coverage. |
+| B2 | GetEnemyBoundBox,SmallPlatformBoundBox,GetMaskedOffScrBits,CMBits | Enemy masks48/44 andsmall08/04. Publishrightmask00 before worlddifference01. Original SBCpage signednegative usesleftmask;page/lowORzero alsoleft;otherwise right. Mask fixedcurrentEnemyOffscreenBits03D1,write per-slot03D8;nonzero hidesfourbytes,zeroactualbuild/clip. Rawpage/mask andexactleftboundary fixtures retain byteborrow. |
+| B3 | LargePlatformBoundBox | Call actualGetXOffscreenBits with slot+1 beforeCMPFE;raw tablebyte FE/FF hides,partialF0/F8/FC stillbuilds. Value-only const helper omitted04-07 writes;repaired to existing shared originalmutable helper. Actualchild scratch survives build/clip00-02 overwrites. Baseline13582 diffs at04-07,postrepair4096same roots zero,regression rejectsoldowner at4 eachwidth. |
+| B4 | SetupEOffsetFBBox,MoveBoundBoxOffscreen | Enemybuild offsetslot+1,relativegroup1 thenclip. HidebyteoffsetslotASLtwice andfourFF writes without publishingBoundingBoxCore scratch. Caller slot0-5 only;no hostworldrange test substituted foroffscreenmask. |
+| B5 | BoundingBoxCore | Publish00SprObjectoffset,02relativeY,01relativeX,thenmultiplycontrolbyteby4 andoutputbyteoffsetby4. Fourcorners wrapbyteaddition,orderULX/LRX/ULY/LRY. Current admittedcontrol0-11 uses original48bytes;originalCPU X/Yreturn checked. Nativecontrol>=12 clamp is outside this receipt:producer/alias proof remains pending,no all-input equivalenceclaim or inventedfixture normalization. |
+| B6 | CheckRightScreenBBox,SORte,NoOfs | Midpoint ScreenLeftX+80 publishes02,carry+page wrapsbyteandpublishes01. ObjectlowCMP/middle followedbySBCpage carry unsigned16classifies side. Righthalf rightcornernegative retainsbox;otherwiseleftpositive becomesFF andrightFF. Original restoresObjectOffsetX;nativevoidABI excludesregister/flags butcompares scratch andallboxbytes. |
+| B7 | CheckLeftScreenBBox,SOLft,NoOfs2 | Lefthalf leftcornerpositive exits;negative80-9F remainsnearwrap;A0-FF clearsleft0 andonlynegative rightcorner0. Verticalcorners unchanged. Independent all256corner values/screenpage andlowbyte fixtures cover all10 feasible two-sidedbranches across canonicalentries anddirectclip;sourceentryYboxoffset0-68,object0-17. |
+
+Same4096 large-platform roots re-run after repair;all90112 canonical/core/clip roots compare all RAM exceptper-root actualCPUstack,24APU andorderedwrites. OriginalX/Yreturn assertions passed;voidCPU A/flags excluded. Smalltablelegalcontrol0-11 is an explicitentrydomain,rawcontrol clamp/producer/alias is not globally accepted bythisreceipt. Fournegativeaccountingmutants rejected;newfocusedregression fails againstpre-repair owner (exit4) eachwidth. Similarclasssweep:enemy_bounds.c const helper remains forpublic const APIs;onlymutablelarge-platformentry changed. Remainingconstcallers in oam/hammer_gfx.c,hammer_bro_gfx.c,spiny_gfx.c,bullet_bill_gfx.c andenemyoffscreenconstAPI retain theirnamedpendinginstruction/output obligations;do notinherit repairedreceipt. Shared oam/object_position.c helper notmodified. DOS originalOpenNT compiled/linked (existingOLDNAMES warning);noDOSruntimeproof. ProductMZ/x86PE/x64PE validation passed;localprotectedEXEs notcommitted. Existing material/pixels/routes/snapshot packages andwhole-programlifetime remainopen.
+
+Current src/game/world/bounding_box.c normalizedSHA256:709d3acfbae67935aff24865393f0ddb0bcf173a70a57601f7d6a59f4a6459c0.
+
+Current src/game/enemy_bounds.c normalizedSHA256:04d3cffd2090478f92d282b03241d608f6051e63ede184b4a8370b002375db22.
+
+Current src/game/world/collision.c normalizedSHA256:bba94e507941430689f6a41ee4364f117f72348552a16b52aa144ac92dc70b40.
+
+Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+Current src/game/oam/object_position.c normalizedSHA256:1fdb3149c5d4ca6159550a0ed9e13247734987199343ecb1c90aa77d3cf39225.
+
+Local product mysmb16.exe:259803bytes,SHA256:0f3a6d18d5e151db5274ff6d982779b24743fb158ad0d52038389156cef089b1.
+
+Local product mysmb32.exe:374219bytes,SHA256:8469bf6a926d5b6faabe63ca3382b5d9fcc56bc6c7900d8c4125b50c85d039b5.
+
+Local product mysmb64.exe:380216bytes,SHA256:284a214c34ce113b2d478f3e461722e200240c3d8ffc63181b27cd9ac1779f5d.

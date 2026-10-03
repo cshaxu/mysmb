@@ -48200,8 +48200,8 @@
     {
       "label": "LargePlatformBoundBox",
       "line": 12850,
-      "receiver": "M2 T43 S13",
-      "receivingBasis": "M2 T43 S13 accepted source-order object bounding-box entry chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P79 accepted original GetXOffscreenBits scratch publication repair.",
       "futurePackage": null,
       "history": [
         {
@@ -69852,6 +69852,17 @@
         "FlameTimerData",
         "SetFlameTimer",
         "ExFl"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-bbox-scratch-1",
+      "type": "transfer",
+      "from": "M2 T43 S13",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "LargePlatformBoundBox"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -767692,7 +767703,24 @@
         "ChkUnderEnemy",
         "ChkForNonSolids",
         "NSFnd",
-        "ClearBounceFlag"
+        "ClearBounceFlag",
+        "GetFireballBoundBox",
+        "GetMiscBoundBox",
+        "FBallB",
+        "GetEnemyBoundBox",
+        "SmallPlatformBoundBox",
+        "GetMaskedOffScrBits",
+        "CMBits",
+        "LargePlatformBoundBox",
+        "SetupEOffsetFBBox",
+        "MoveBoundBoxOffscreen",
+        "BoundingBoxCore",
+        "CheckRightScreenBBox",
+        "SORte",
+        "NoOfs",
+        "CheckLeftScreenBBox",
+        "SOLft",
+        "NoOfs2"
       ],
       "baseline": 1992,
       "incomingComplete": [

@@ -54748,11 +54748,13 @@
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Offsets fireball slot by seven, selects relative-coordinate pair two and builds/clips its source bounding box.",
       "currentSourcePaths": [
@@ -54769,11 +54771,13 @@
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Offsets misc slot by nine, selects relative-coordinate pair six and joins the shared build/clip path.",
       "currentSourcePaths": [
@@ -54790,11 +54794,13 @@
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Calls BoundingBoxCore then unconditionally applies right/left screen clipping.",
       "currentSourcePaths": [
@@ -54815,13 +54821,15 @@
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Selects enemy offscreen masks $48/$44 and transfers to masked enemy-box routing.",
       "currentSourcePaths": [
@@ -54838,11 +54846,13 @@
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Selects small-platform masks $08/$04 then shares masked routing.",
       "currentSourcePaths": [
@@ -54859,11 +54869,13 @@
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Computes enemy position relative to screen-left with borrow, selects source mask by left/edge status, stores masked offscreen bits and chooses build or full-offscreen box.",
       "currentSourcePaths": [
@@ -54879,10 +54891,12 @@
       "currentCounterpart": "enemy_masked_box offscreen mask write and hide/build fork",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Applies selected offscreen mask and branches on nonzero result.",
       "currentSourcePaths": [
@@ -54898,10 +54912,13 @@
       "currentCounterpart": "mysmb_platform_box_large raw horizontal threshold",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t70-final-current-certification.md P79 corrective amendment - original child scratch04-07 omitted by const helper.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Temporarily increments slot to query X offscreen, restores it and sends fully offscreen platforms to all-$ff box path.",
       "currentSourcePaths": [
@@ -54917,10 +54934,12 @@
       "currentCounterpart": "enemy_masked_box / mysmb_platform_box_large build then clip tails",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Offsets enemy slot by one, selects relative pair one, builds box and clips it.",
       "currentSourcePaths": [
@@ -54937,10 +54956,12 @@
       "currentCounterpart": "enemy_masked_box / mysmb_platform_box_large four FF box writes",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Writes $ff to all four selected enemy bounding-box coordinates and returns.",
       "currentSourcePaths": [
@@ -54956,11 +54977,13 @@
       "currentCounterpart": "mysmb_world_set_bounding_box",
       "semanticEvidence": [
         "M2 T64 S34 static $E29C-$E2DD audit: four CLC/ADC pairs become independent unsigned-byte additions; table indexing and UL-X/LR-X/UL-Y/LR-Y write order agree. Source caller/domain sweep covers PlayerCtrl, enemy initializers, cannon, hammer, power-up, fireball and Bowser control writers; all initialized values are 0..11. Defensive C >=12 fallback is unreachable in this source domain, not a ROM contract for corrupted RAM. CPU stack/flags are ABI-only; scratch $00/$01/$02 becomes object/relative-X/relative-Y arguments, with no persistent consumer omitted. S33 and T58 prove caller selection/continuation.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S34 tools/reference_bounding_box_core_probe.c runs 3072 original-ROM direct $E29C entries, with a restored boot machine per fixture (no accumulated NMI interference, no ROM modification), each completing in 36 instructions. All twelve controls exercise every X and Y byte (Y=255-X), all eighteen object offsets and seven relative indices. test/bounding_box_core_actual_check.c on fresh x86/x64 compares every 1784 persistent RAM byte unconditionally, and separately checks restored X, Y=object*4, scratch $00-$02 and unchanged $03-$07. Both widths: 3072/3072, zero differences. Focused core smoke and platform-purity checks pass on both widths. Original OpenNT DOS16 shared-core build/link succeeds; the existing OLDNAMES.LIB warning remains.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "For source-reachable controls 0..11 and object offsets 0..17, independently add table UL-X/LR-X/UL-Y/LR-Y to byte-relative coordinates, storing at $04ac+4*object; restored X and box-offset Y are represented by explicit C address/coordinate arguments.",
       "currentSourcePaths": [
@@ -54976,11 +54999,13 @@
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
         "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Compares object world coordinate with screen middle and clips right-side box edges to $ff only when their signed relation requires it.",
       "currentSourcePaths": [
@@ -54995,10 +55020,12 @@
       "currentOwner": "src/game/world/bounding_box.c",
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Writes right edge $ff and left edge when required, then restores ObjectOffset.",
       "currentSourcePaths": [
@@ -55013,10 +55040,12 @@
       "currentOwner": "src/game/world/bounding_box.c",
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Restores ObjectOffset and returns from right-side clip path.",
       "currentSourcePaths": [
@@ -55032,11 +55061,13 @@
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
         "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
         "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Leaves $80-$9f wrapped near-left boxes visible, but changes $a0-$ff offscreen left edges and applicable right edge to zero.",
       "currentSourcePaths": [
@@ -55051,10 +55082,12 @@
       "currentOwner": "src/game/world/bounding_box.c",
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Writes left edge zero and conditionally right edge zero before restoring ObjectOffset.",
       "currentSourcePaths": [
@@ -55069,10 +55102,12 @@
       "currentOwner": "src/game/world/bounding_box.c",
       "currentCounterpart": "mysmb_world_clip_bounding_box_to_screen",
       "semanticEvidence": [
-        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions."
+        "M2 T64 S35 static $E2DE-$E324 audit: ScreenLeft low+$80 carry feeds byte-wrapped middle page; object-low CMP carry feeds page SBC, equivalent to unsigned comparison of the two composed 16-bit coordinates. Right DR sign then UL sign select independent $ff stores; left UL sign and $a0 threshold select $00 stores and conditional DR sign branch. Each path restores ObjectOffset, preserving Y box offset. Scratch $01/$02 is the computed middle argument seam, other scratch remains unchanged; CPU flags/stack are explicit ABI exclusions.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "operationalEvidence": [
-        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning."
+        "M2 T64 S35 tools/reference_bounding_box_clip_probe.c: 4096 direct original-ROM $E2DE entries, restored boot baseline per fixture, no ROM patch, maximum 23 instructions. Every screen-X/object-X/UL-X/DR-X byte, 18 object offsets, all eight side/corner-sign families, 12 exact-midpoint ties and 512 screen-page wraps are present. All six conditional branches have taken/fallthrough coverage: E2F5 2426/1670, E2FA 836/834, E301 414/420, E30F 1217/1209, E313 314/895, E31A 449/446. Fresh test/bounding_box_clip_actual_check.c x86/x64 each compare all 1784 persistent RAM bytes unconditionally plus restored X/Y and middle scratch seam: 4096/4096 zero differences per width. Core smoke/platform purity pass on both widths, original OpenNT DOS16 build/link succeeds with the existing OLDNAMES.LIB warning.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:90112actualoriginal roots eachwidthallnonstackRAM/APU/writes0diff,all125PC/10branchpairs plusretainedE234mandatorybranch,5tests eachpass,oldownerregressionfails4 eachwidth;Win32/x64 build,originalOpenNT16link,threeEXEsrefreshed."
       ],
       "semanticContract": "Restores ObjectOffset and returns from left-side clip path.",
       "currentSourcePaths": [
@@ -169276,16 +169311,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P75 checkpoint - enemy pair and platform contact uses reconciled:28labels/234instructions/82RAM joined11boundedclauses;stackbox/live01/08,moving-shell/score/dedup/turnaround,paired platform/small-box/top/side carry. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 7355,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3336,
+        "localInstructionReceiptSites": 7480,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3211,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2601,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1172,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2649,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1124,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169302,7 +169338,6 @@
           "src/game/player_control.c shared C90 player-control owner": 39,
           "src/game/oam/object_position.c": 35,
           "src/game/area/block_metatile.c": 34,
-          "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,
           "src/game/player.c": 28,
@@ -169319,7 +169354,6 @@
           "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/oam/hammer_gfx.c": 17,
           "src/game/area.c": 15,
-          "src/game/enemy_bounds.c": 15,
           "src/game/world/block_buffer.c": 15,
           "src/game/oam/fireworks_gfx.c": 15,
           "src/game/boot.c": 13,
