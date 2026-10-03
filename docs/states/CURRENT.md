@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P75 pair/platform contact checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P76 platform positioning/geometry checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -13,7 +13,7 @@
 | Files And ABI Surface | P46 sharedfireball/fireball_core.c originalbyte-indexed boundPRG speed lookup;P45 sharedwhirlpool.c RAM00/01/02 publication andtest/engine_environment_smoke.c originalgravityentry observer;S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 1134 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 1148 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -107,7 +107,6 @@
 
 
 
-S17 P68:28Firebar labels/205instructions/79RAM joined8boundedclauses;raw palette indexing repaired in sharedarea.c/sixtransferrednodes. 327680originalroots eachwidth0diff/all205PC/26branchpairs,1falseexactfallthrough corrected infeasible,8tests each. Scope950/fresh0;5155/10691 instruction receipts,1839/3773 RAM receipts;5536instructions/1934RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;threeproducts refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P69:31actor/bridge/Bowser labels/249instructions/95RAM joined11clauses;rawtimer array overrun repaired in sharedfrenzy.c/3transferrednodes. 459008originalroots eachwidth0diff/all249PC/36branchpairs,10tests each. Scope979/fresh0;5404/10691instruction receipts,1934/3773RAM receipts;5287instructions/1839RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;3EXEs refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 
@@ -122,3 +121,5 @@ S17 P73:16fireball scan/hit labels/118instructions/34RAM joined9boundedclauses;1
 S17 P74:37player contact/injury/stomp labels/275instructions/92RAM joined13boundedclauses;532480actualroots eachwidth0diff/all275PC/49branchpairs/one mandatorybranch,5tests each. Scope1106/fresh0;6379/10691instruction receipts,2300/3773RAM receipts;4312instructions/1473RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P75:28enemy pair/platform contact labels/234instructions/82RAM joined11boundedclauses;295424actualroots eachwidth0diff/all234PC/47branchpairs,4tests each. Scope1134/fresh0;6613/10691instruction receipts,2382/3773RAM receipts;4078instructions/1391RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+S17 P76:14platform positioning/geometry labels/86instructions/35RAM joined7boundedclauses;466944actualroots eachwidth0diff/all86PC/18branchpairs,4tests each. Scope1148/fresh0;6699/10691instruction receipts,2417/3773RAM receipts;3992instructions/1356RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.

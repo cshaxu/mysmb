@@ -767585,7 +767585,21 @@
         "SetCollisionFlag",
         "PlatformSideCollisions",
         "SideC",
-        "NoSideC"
+        "NoSideC",
+        "PositionPlayerOnS_Plat",
+        "PositionPlayerOnVPlat",
+        "ExPlPos",
+        "CheckPlayerVertical",
+        "ExCPV",
+        "GetEnemyBoundBoxOfs",
+        "GetEnemyBoundBoxOfsArg",
+        "PlayerCollisionCore",
+        "SprObjectCollisionCore",
+        "CollisionCoreLoop",
+        "SecondBoxVerticalChk",
+        "FirstBoxGreater",
+        "NoCollisionFound",
+        "CollisionFound"
       ],
       "baseline": 1992,
       "incomingComplete": [

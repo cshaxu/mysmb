@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P76 positioning/geometry uses](../proposals/m2/t70-final-current-certification.md#s17-p76-checkpoint---platform-positioning-and-geometry-uses-reconciled).
+S17 P76:14platform positioning/geometry labels/86instructions/35RAM joined7boundedclauses;466944actualroots eachwidth0diff/all86PC/18branchpairs,4tests each. Scope1148/fresh0;6699/10691instruction receipts,2417/3773RAM receipts;3992instructions/1356RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P75 pair/platform contact uses](../proposals/m2/t70-final-current-certification.md#s17-p75-checkpoint---enemy-pair-and-platform-contact-uses-reconciled).
 S17 P75:28enemy pair/platform contact labels/234instructions/82RAM joined11boundedclauses;295424actualroots eachwidth0diff/all234PC/47branchpairs,4tests each. Scope1134/fresh0;6613/10691instruction receipts,2382/3773RAM receipts;4078instructions/1391RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
