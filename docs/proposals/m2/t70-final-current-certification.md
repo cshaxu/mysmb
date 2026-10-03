@@ -9112,3 +9112,32 @@ Current src/game/score.c normalizedSHA256:90ad2d2c11708edcc6326fb190b253d9e32e2c
 Current src/game/status.c normalizedSHA256:afc46297e447ad911458c1e234497fff708a73a51c9f8d47e499103d956e95ef.
 
 Current src/game/oam/sprite_dump.c normalizedSHA256:a269d505b932e0c1f8735536be7ebfd1512e9351f1b06289eecc8b40422fe3fa.
+
+## S17 P103 admission - block metatile output and bridge rows
+
+Existing8A4D-8B07blockoutput91instructions/34RAM/10labels RemoveCoin_Axe,WriteBlankMT,ReplaceBlockMetatile,DestroyBlockMetatile,WriteBlockMetatile,UseBOffset,MoveVOffset,PutBlockMetatile,SaveHAdder,RemBridge. Sharedarea/block_metatile.c RemoveCoin_Axe/ReplaceBlockMetatile/DestroyBlockMetatile/PutBlockMetatile/RemBridge/MoveVOffset,actualboundBlockGfxData. Four65536rootfamilies actual8A4D/8A61/8A6B/8ACD withrawcoordinate/vertical/buffer/metatile/counter bytes,legalreplaceSlot0-1andRemBridgegraphics0/4/8/12/16. Sourcecallerinputs06/02/AequivalenttoReplacearraysmustbedeclared,rawbufferoutputaliasing03E4-03F0andpreservedYwraprequired. Sourcehorizontalnametablechoice/ADCbytewrap-ASL-ROLcarry/VRAMrowaddresses/gfxselection/address-storecommutation/tablebinding/INC-DECafterchild reviewed. Fullnonphysical-stackRAM/APU/orderedwrites,CPUvoidunused;RAMwriteorderonlycommutesifdisjointandnointerveningread,notclaimedfromendpointmatch. ROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992;P98productsunchangedunlessmismatch;wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P103 checkpoint - block metatile output and bridge rows reconciled
+
+S17 P103:10block-output labels/91instructions/34RAM joined4boundedclauses;262144actualroots eachwidth0diff/all91PC/7branchpairs,5tests each. Scope1619/fresh0;10291/10691instruction receipts,3673/3773RAM receipts;400instructions/100RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;provenance corrected,preprocessed behavior/productsP98unchanged;producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| B1 | RemoveCoin_Axe,WriteBlankMT | AreaType0 selects graphics4, other liveAreaType selects3; fixedbufferY41 and PutBlock publishes original AreaTypeX to00. After child0773=6. Legalgraphics0-4 from actualcallers. |
+| B2 | ReplaceBlockMetatile,DestroyBlockMetatile,WriteBlockMetatile,UseBOffset,MoveVOffset | ActualReplacecaller A=03E8+slot,06=03E6+slot,02=03E4+slot,slot0-1; C wrapper reads same inputs before child. Destroy8A6B forces0. Metatile0 selects3,58/51 selects0,5D/52 selects1,other selects2. Y=byte(old0300+1) preserved through output,DEY/+10 bytewrap; do not reread overwritten0300. Replace INC live03F0 then DEC live03EC+slot after child; rawVRAMoutput may alias03E4-03F0 and both implementations use postchild values. |
+| B3 | PutBlockMetatile,SaveHAdder | Scratch00 control/01 bufferY/02 vertical/06 blocklow. Graphicsindex4*set; high20 ifblocklow<D0 else24. Horizontal2*lowNibble; verticalbyte(02+20),twoASL/ROL discardADCcarry; composite4*byte(02+20)+2*(low&0F) reproduces04/05. RestoreY01 before RemBridge; scratch addresses cannot alias0300-0409 output. |
+| B4 | RemBridge | BoundPRGtable8A39 length20; every originalcaller graphics offsets0/4/8/12/16 (PutBlock set0-4,BridgeCollapse12); no rawFF graphics equivalence claim. Eleven VRAMdestinations0300+Y+0..10 distinct through0409: twoheaders high05/low04 and byte(low04+20),length2,fourtiles,terminator0. C reorderedheader/tile stores commute because interveningreads only immutablePRG andscratch04/05/00, noalias/callback/interrupt observer in local nonreentrant contract. Endpointmatches do not prove storeorder trace. OriginalfinalX=RAM00,A0; voidAPIunused,Replacecontrol-slot same,Bridge reloads08,other parents reload before use. Wholeproducer/interframe/PPUoutput not proved. |
+
+Actual roots8A4D/8A61/8A6B/8ACD,65536profiles each. LegalReplaceSlot0-1 and RemBridge graphics0/4/8/12/16 from caller source; rawcoordinate/vertical/buffer/metatile/counters include output alias03E4-03F0. Controlled/coupled inputs, not allRAMcartesian or naturalgame reachability proof. Full2048RAM except observed physicalCPUstackpushspan plus24APU/orderedwrites. All91PC and7branchpairs reached. InitialDestroy8A69 fixture trapped; no credit, corrected to instruction-bound8A6B then actual routes passed. Source provenance ranges corrected Destroy8A6B-8A6C andReplace8A61-8A6A; no logic change, identical old/current preprocessed C SHA256 df8b0cae9007c4b32dadb91669f8884df09770e4a9220e456282c0ed11db379e. Storecommutation is source-justified, not inferred from endpoint match. Four partitionclauses and four negativeaccountingmutants pass; five focused tests eachwidth pass. ThreeP98producthashes unchanged, DOScompile/link only. Wholeproducer/inter-frame/material/pixels/routes/snapshot remain open.
+
+Current src/game/area/block_metatile.c normalizedSHA256:30692c3edf8bcf1bed926b259a4a871a40134f5539ee9482d24b2d40c1597cff.
+
+Current src/game/bridge.c normalizedSHA256:be8fa73292a152412cc60794a3d802d513876a782561ef2de437b1b679c9905f.
+
+Current src/game/blocks/replacement.c normalizedSHA256:f16380414f2200b6883b2f8ca36597ab9d7f7e6eefb5d584dfcd244e5d86089b.
+
+Current src/game/blocks/head.c normalizedSHA256:271d3edde9187d57173da627ba372ced4053b38f9fbd3884cd1b85c5fdcf462e.
+
+Current src/game/blocks/chunks.c normalizedSHA256:4fe6d4df9b7fe20f39e36051a7ddbc15359fe580a31016515b01e0ce1437291f.
+
+Current src/game/player/terrain_metatiles.c normalizedSHA256:cabc254bb597eb3156a68e0cc18e7d687a6c7d51820b24730f1a8d282fc509a0.

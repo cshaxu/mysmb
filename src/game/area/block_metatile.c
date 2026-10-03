@@ -105,7 +105,7 @@ void mysmb_area_remove_coin_axe(struct mysmb_game *game, mysmb_u8 block_low,
     game->ram[0x0773U] = 6U;
 }
 
-/* ROM $8a69-$8a6c DestroyBlockMetatile. */
+/* ROM $8a6b-$8a6c DestroyBlockMetatile. */
 void mysmb_area_destroy_block_metatile(struct mysmb_game *game,
                                        mysmb_u8 control, mysmb_u8 block_low,
                                        mysmb_u8 vertical_high)
@@ -113,7 +113,7 @@ void mysmb_area_destroy_block_metatile(struct mysmb_game *game,
     mysmb_area_write_block_metatile(game, 0U, control, block_low, vertical_high);
 }
 
-/* ROM $8a61-$8a68 ReplaceBlockMetatile. */
+/* ROM $8a61-$8a6a ReplaceBlockMetatile. */
 void mysmb_area_replace_block_metatile(struct mysmb_game *game,
                                               mysmb_u8 slot)
 {

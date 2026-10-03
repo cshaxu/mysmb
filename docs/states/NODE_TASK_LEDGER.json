@@ -768102,7 +768102,17 @@
         "ChkTallEnemy",
         "GetAltOffset",
         "FloateyPart",
-        "SetupNumSpr"
+        "SetupNumSpr",
+        "RemoveCoin_Axe",
+        "WriteBlankMT",
+        "ReplaceBlockMetatile",
+        "DestroyBlockMetatile",
+        "WriteBlockMetatile",
+        "UseBOffset",
+        "MoveVOffset",
+        "PutBlockMetatile",
+        "SaveHAdder",
+        "RemBridge"
       ],
       "baseline": 1992,
       "incomingComplete": [

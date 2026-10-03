@@ -26777,10 +26777,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_remove_coin_axe",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8a4d: selects water/non-water blank graphic set, writes at Buffer2 offset $41 and selects VRAM control six.",
       "currentSourcePaths": [
@@ -26795,10 +26797,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_remove_coin_axe put-block call",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8a58: enters common PutBlockMetatile with selected blank graphics.",
       "currentSourcePaths": [
@@ -26813,10 +26817,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_replace_block_metatile",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8a61: writes replacement graphic then increments residual counter and decrements replace flag.",
       "currentSourcePaths": [
@@ -26831,12 +26837,14 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_destroy_block_metatile",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
-      "semanticContract": "ROM $8a69: forces zero metatile before common block graphic selection.",
+      "semanticContract": "ROM $8a6b: forces zero metatile before common block graphic selection.",
       "currentSourcePaths": [
         "src/game/area/block_metatile.c"
       ]
@@ -26849,10 +26857,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_write_block_metatile",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8a6d: selects blank, line-brick, plain-brick or empty-block graphic set by metatile value.",
       "currentSourcePaths": [
@@ -26867,10 +26877,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_write_block_metatile selected set handoff",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8a80: preserves selected graphics set, derives Buffer1 offset and invokes PutBlockMetatile.",
       "currentSourcePaths": [
@@ -26885,10 +26897,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_move_v_offset",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8a8f: changes preserved Buffer1 offset by ten then reaches SetVRAMOffset.",
       "currentSourcePaths": [
@@ -26903,10 +26917,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_put_block_metatile",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8ab1: derives two nametable tile commands from block-buffer location and vertical high nibble.",
       "currentSourcePaths": [
@@ -26921,10 +26937,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_put_block_metatile address calculation",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8ac2: saves nametable high adder before vertical address calculation.",
       "currentSourcePaths": [
@@ -26939,10 +26957,12 @@
       "currentOwner": "src/game/area/block_metatile.c",
       "currentCounterpart": "mysmb_area_rem_bridge",
       "semanticEvidence": [
-        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners."
+        "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset."
+        "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8ad0: writes two length-two nametable commands, four graphic bytes and terminator.",
       "currentSourcePaths": [
@@ -170158,22 +170178,22 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10200,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 491,
+        "localInstructionReceiptSites": 10291,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 400,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3639,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 134,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3673,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 100,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/area/block_metatile.c": 34,
           "src/game/game.c": 24,
           "src/game/frame_root.c": 22,
           "src/game/area.c": 15,
