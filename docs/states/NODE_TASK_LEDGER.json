@@ -767231,7 +767231,13 @@
         "CommonSmallLift",
         "PosPlatform",
         "EndOfEnemyInitCode",
-        "EraseEnemyObject"
+        "EraseEnemyObject",
+        "InitLongFirebar",
+        "InitShortFirebar",
+        "InitBowser",
+        "DuplicateEnemyObj",
+        "FSLoop",
+        "FlmEx"
       ],
       "baseline": 1992,
       "incomingComplete": [

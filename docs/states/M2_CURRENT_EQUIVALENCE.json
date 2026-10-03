@@ -42845,13 +42845,15 @@
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Calls DuplicateEnemyObj, then falls through into the short-firebar initialization body.",
       "currentSourcePaths": [
@@ -42870,12 +42872,14 @@
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Clears low spin state, selects speed/direction tables, adds four to Y and X with page carry, then tail-selects box-only TallBBox2.",
       "currentSourcePaths": [
@@ -43100,12 +43104,14 @@
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Calls DuplicateEnemyObj then writes front offset, body/bridge controls, origin X, breath/direction $df, paired $20 timers, hit points five and movement speed two.",
       "currentSourcePaths": [
@@ -43123,12 +43129,14 @@
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Wraps upward from Y=$ff until an inactive Enemy_Flag slot, records DuplicateObj_Offset and copies exactly the source fields in source order.",
       "currentSourcePaths": [
@@ -43144,10 +43152,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Increments the duplicate slot and loops while Enemy_Flag is nonzero; the first zero slot enters the copy sequence.",
       "currentSourcePaths": [
@@ -43163,10 +43173,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns after duplication or the upstream flame-timer early exit.",
       "currentSourcePaths": [
@@ -168286,16 +168298,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4142,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6549,
+        "localInstructionReceiptSites": 4200,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6491,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1438,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2335,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1470,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2303,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168312,7 +168325,6 @@
           "src/game/frame_root.c": 46,
           "src/game/title_modes.c": 46,
           "shared game core: enemy/bowser.c": 45,
-          "shared firebar and flying-Cheep initializer core": 44,
           "src/game/world/enemy_collision.c": 43,
           "src/game/oam/small_platform_gfx.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
@@ -168320,6 +168332,7 @@
           "src/game/enemy/bloober.c": 37,
           "src/game/oam/object_position.c": 35,
           "src/game/area/block_metatile.c": 34,
+          "shared firebar and flying-Cheep initializer core": 34,
           "src/game/enemy/{bullet_bill,swimming_cheep}.c": 33,
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
@@ -168342,7 +168355,6 @@
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/oam/flagpole_gfx.c": 24,
           "shared game core: enemy/piranha.c": 23,
-          "shared Bowser initializer and duplicate-object core": 22,
           "shared game core: bridge/area/enemy/OAM": 22,
           "shared game core: oam/bowser_flame_gfx.c": 22,
           "src/game/world/geometry.c": 22,
