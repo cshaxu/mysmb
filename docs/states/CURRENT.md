@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P90 pause checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P91 joypad checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -122,7 +122,6 @@
 
 
 
-S17 P83:27misc graphics labels/259instructions/112RAM joined10boundedclauses;249856actualroots eachwidth0diff/all259PC/19branchpairs,6tests each. Scope1383/fresh0;8530/10691instruction receipts,3054/3773RAM receipts;2161instructions/719RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P84:42player graphics labels/255instructions/81RAM joined14boundedclauses;286720actualroots eachwidth0diff/all255PC/41branchpairs,4tests each. Scope1424/fresh0;8785/10691instruction receipts,3135/3773RAM receipts;1906instructions/638RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
@@ -137,3 +136,5 @@ S17 P88:20title menu labels/112instructions/46RAM joined8boundedclauses;9824actu
 S17 P89:17status labels/94instructions/25RAM joined7boundedclauses;196608actualroots eachwidth0diff/all94PC/11branchpairs plusmandatory8F8C,4tests each. Scope1499/fresh0;9265/10691instruction receipts,3274/3773RAM receipts;1426instructions/499RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P90:6pause labels/31instructions/11RAM joined4boundedclauses;262144actualroots eachwidth0diff/all31PC/6branchpairs plusmandatory81BB,4tests each. Scope1503/fresh0;9296/10691instruction receipts,3285/3773RAM receipts;1395instructions/488RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+S17 P91:4joypad labels/30instructions/6RAM joined3boundedclauses;262144actualroots eachwidth0diff/all30PC/2branchpairs,4tests each. Scope1503/fresh0;9326/10691instruction receipts,3291/3773RAM receipts;1365instructions/482RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.

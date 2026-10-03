@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P91 joypad uses](../proposals/m2/t70-final-current-certification.md#s17-p91-checkpoint---two-port-serial-sampling-and-debounce-uses-reconciled).
+S17 P91:4joypad labels/30instructions/6RAM joined3boundedclauses;262144actualroots eachwidth0diff/all30PC/2branchpairs,4tests each. Scope1503/fresh0;9326/10691instruction receipts,3291/3773RAM receipts;1365instructions/482RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P90 pause uses](../proposals/m2/t70-final-current-certification.md#s17-p90-checkpoint---pause-gates-timer-and-sound-queue-uses-reconciled).
 S17 P90:6pause labels/31instructions/11RAM joined4boundedclauses;262144actualroots eachwidth0diff/all31PC/6branchpairs plusmandatory81BB,4tests each. Scope1503/fresh0;9296/10691instruction receipts,3285/3773RAM receipts;1395instructions/488RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
