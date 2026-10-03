@@ -3755,3 +3755,74 @@ indirect sites and mutable/register/flag/stack/inter-frame path clauses.
 The46 other indirect sites now have named scoped contracts,not a global
 absence-of-alias or full material completeness conclusion. Pixels,routes,
 snapshot packages remain pending.
+
+## S17 P12 bounded admission - reset and collision RAM pointer lifetimes
+
+Audit nine accepted labels: `InitializeMemory`, `InitPageLoop`, `InitByteLoop`,
+`InitByte`, `SkipByte`, `GetBlockBufferAddr`, `BlockBufferCollision`, `RetXC`,
+`RetYC`. Expected fresh0,baseline/max1992;overlap audit until a named diff.
+Shared boot.c/area/block_buffer.c/world/block_buffer.c owners. Original
+90cc InitializeMemory and e3f0 BlockBufferCollision roots;no CPU/ROM patch.
+
+Reset proof distinguishes pointer06/07 page publication,all initial Y byte
+values,two neutral RAM patterns,page1 skip0160-01ff and zero-page self-clear
+alias invariants. Collision proof binds page parity/X carry,column0..31,
+row byte wrap,28 original adder entries and source sprite offsets;public
+player/enemy/fireball/misc query helpers execute actual current shared core.
+All RAM and returned metatile compare;only observed physical stack pushes
+excluded. Source arithmetic review is separate from sampled input routes.
+512 reset roots plus18 object-slot profiles x256 X values x2 RAM seeds.
+Each profile's Y permutation covers every byte;player/enemy table selectors
+cover0..27,fireball26/misc27. Pages0/255 distinguish carry/wrap domains.
+These profiles are not every Cartesian coordinate/adder/page combination.
+
+Allow4096 roots per batch for these small primitives,at most32MiB raw and
+120sec/process;raw inputs/reference/native files deleted after each batch.
+This raises prior1024 batch size within the existing128MiB containment bound,
+reducing process launches without changing comparison scope. Focused reset,
+buffer/address/terrain tests each width;no EXE refresh for audit only. Any
+named diff stays S17 and receives corrective scope before code changes.
+
+## S17 P12 checkpoint - reset/collision pointer lifetimes
+
+9728 current original/native returning roots per width have zero RAM and
+returned-A/metatile differences.512 reset cases cover all initialY byte
+values/two RAM patterns;actual InitByte901376 indirect writes.9216 collision
+cases cover18 public query profiles(player,6 enemies,2 fireballs,9 misc),
+256 X values,two RAM seeds/permutedY values,player/enemy selectors0..27,
+fireball26/misc27,pages0/255,normal horizontal flags0/1. Each profile Y
+permutation covers all byte values;these are not all Cartesian combinations.
+All2048 RAM compare,zero-page included;only observed physical pushes excluded.
+The reset root contains no push and preserves source page1 skip0160-01ff.
+Raw records deleted;4096 roots/batch stays below32MiB raw/120sec processes.
+
+Reset publishes06=0 and07=page7..0 before indirect stores. The only writes
+that can hit06/07 are on page0,when06 and07 are already0;A=0 self-clearing
+therefore preserves the effective pointer. Other pages cannot alias zero-page.
+Page1 Y>=60 skips writes exactly;page7 starts at inputY,remaining pages atFF.
+This strengthens existing material619 without inventing a duplicate path.
+
+Collision source ADC produces wrapped X/carry to page;LSR page bit,ORA X,
+ROR then three LSRs gives exactly the native parity/high-nibble column.
+Independent encoded rotate versus native formula arithmetic check covers
+all X bytes,unique original X adders and four page boundary/parity values.
+Row ADC byte wrap/mask/subtract20 agrees with the C expression for all Y
+bytes/unique Y adders.32 columns/16 row offsets yield addresses0500-06cf;
+query stores02-07 cannot alias the target buffer or cached coordinates.
+GetBlockBufferAddr publishes06/07 only. Source PHA/PLA keeps orientation
+while the native parameter does likewise;03 preserves metatile through
+vertical/horizontal nibble selection. Public helper coordinate offsets
+match source generic sprite positions in the admitted18 slot profiles.
+Whole current world block-buffer owner equals accepted T69 S8 P2;actual
+bound original table readers are used in this fresh native run,no fallback
+or resource replacement. Four negatives validate alias/index contract checks,
+not independently prove game behavior. Six focused current checks each width
+pass(reset,address,buffer,player terrain,enemy terrain,metatile chain).
+
+Material703-705 add three pointer/read/selector lifetime paths;619 receives
+stronger reset evidence. Fresh node/control0;historical1992/1992,local scoped
+nodes1992/1992,controls4274/4274(raw4342,infeasible68);material705 partial,
+global total unknown. No source or product change;EXEs remain P10. Two RAM
+indirect sites discharged in named domains;10 RAM/3 dispatch indirect sites
+and other mutable/register/flag/stack/inter-frame clauses remain in S17.
+Pixels,routes,snapshot packages are still pending. No full certification.

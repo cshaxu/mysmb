@@ -766335,7 +766335,15 @@
         "RepeatByte",
         "UpdateScreen",
         "InitScroll",
-        "WritePPUReg1"
+        "WritePPUReg1",
+        "InitializeMemory",
+        "InitPageLoop",
+        "InitByteLoop",
+        "InitByte",
+        "SkipByte",
+        "BlockBufferCollision",
+        "RetXC",
+        "RetYC"
       ],
       "baseline": 1992,
       "incomingComplete": [

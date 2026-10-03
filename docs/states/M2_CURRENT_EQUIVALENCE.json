@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 702,
+    "enumeratedCount": 705,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -13592,12 +13592,14 @@
       "feasiblePath": "Low pointer06=0;07 stores current page before each loop;stack page skips60-ff. Zero-page self-clears preserve low0 and high0 when page0 reaches07.",
       "status": "exact",
       "currentCounterpart": "src/game/boot.c shared startup children",
-      "semanticContract": "Low pointer06=0;07 stores current page before each loop;stack page skips60-ff. Zero-page self-clears preserve low0 and high0 when page0 reaches07.",
+      "semanticContract": "Low pointer06=0;07 stores current page before each loop;stack page skips60-ff. Zero-page self-clears preserve low0 and high0 when page0 reaches07. All initialY byte values and zero-page self-clear pointer alias invariant now covered;source page1 stack skip retained.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "cohort": "C",
       "cohortBasis": "producer original inventory label",
@@ -15447,6 +15449,72 @@
         "src/game/game.c",
         "src/game/boot.c",
         "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00703",
+      "producer": "GetBlockBufferAddr",
+      "consumer": "BlockBufferCollision",
+      "storage": "06/07 buffer pointer plus02 byte row",
+      "feasiblePath": "Original table-selected0500/05d0 low base,02 row offset and e41b indirect read;range0500-06cf excludes scratch/object coordinate aliases.",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c query kernel and area/block_buffer.c primitive",
+      "semanticContract": "18 declared native query profiles;all byte X/per-profile permutedY,player/enemy selectors0..27,fireball26/misc27,pages0/255,normal horizontal flag0/1. Source arithmetic/alias proof plus sampled roots;not all Cartesian coordinates/callers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "original pointer/query producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-00704",
+      "producer": "BlockBufferCollision",
+      "consumer": "RetYC",
+      "storage": "03 metatile and saved A vertical selector",
+      "feasiblePath": "e41b reads actual buffer before03 publication;source PLA restores0 and vertical contact nibble then returns03. Native parameter/query lifetime unchanged through pointer helper.",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c query kernel and area/block_buffer.c primitive",
+      "semanticContract": "18 declared native query profiles;all byte X/per-profile permutedY,player/enemy selectors0..27,fireball26/misc27,pages0/255,normal horizontal flag0/1. Source arithmetic/alias proof plus sampled roots;not all Cartesian coordinates/callers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
+      ],
+      "cohort": "K",
+      "cohortBasis": "original pointer/query producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-00705",
+      "producer": "BlockBufferCollision",
+      "consumer": "RetXC",
+      "storage": "saved A horizontal selector and cached object X",
+      "feasiblePath": "Source PHA/PLA preserves nonzero selector across GetBlockBufferAddr;C horizontal parameter does likewise. The pointer helper writes06/07 only,not cached object coordinates;horizontal nibble then03 returned.",
+      "status": "exact",
+      "currentCounterpart": "shared world/block_buffer.c query kernel and area/block_buffer.c primitive",
+      "semanticContract": "18 declared native query profiles;all byte X/per-profile permutedY,player/enemy selectors0..27,fireball26/misc27,pages0/255,normal horizontal flag0/1. Source arithmetic/alias proof plus sampled roots;not all Cartesian coordinates/callers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
+      ],
+      "cohort": "K",
+      "cohortBasis": "original pointer/query producer inventory label",
+      "currentSourcePaths": [
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_buffer.c"
       ]
     }
   ],
@@ -20978,11 +21046,13 @@
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Set X7,A0,STA06 then STX07 per page;initial Y caller byte on page7 then FF for lower pages;skip160-1FF and return through actual stack.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:X7/A0;06=0;Y supplied by actual caller. Pending:C byte types and page loop match;full legal source input/alias contract not yet finally reviewed.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Set X7,A0,STA06 then STX07 per page;initial Y caller byte on page7 then FF for lower pages;skip160-1FF and return through actual stack.",
       "currentSourcePaths": [
@@ -21000,11 +21070,13 @@
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store actual page in scratch07 before each descending byte loop;seven-to-zero pages,original sign-tested termination.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Persist X in07 before each page;Y remainsff after prior page exit;page7 begins caller Y. Pending:C uses same byte page/index evolution;current-source proof reusable after complete domain check.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Store actual page in scratch07 before each descending byte loop;seven-to-zero pages,original sign-tested termination.",
       "currentSourcePaths": [
@@ -21022,11 +21094,13 @@
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Check page1 and Y>=60 to retain stack;all other bytes enter indirect store,including100-15F.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:If X1 and Y>=60 skip;all other pages/indexes write through pointer06/07. Pending:Original stack exclusion is160 bytes0160-01ff,not exclusion of entire stack page;indirect pointer alias review pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Check page1 and Y>=60 to retain stack;all other bytes enter indirect store,including100-15F.",
       "currentSourcePaths": [
@@ -21044,11 +21118,13 @@
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Actual indirect scratch06/07 plus byte Y writes zero;native address expression and scratch writes retained,including pointer self-clears on page0.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:STA(06),Y with06=0 and07 current page;zero-page self-clears must preserve effective pointer invariants. Pending:C direct page*256+offset needs compositional pointer-alias justification for original caller domains.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Actual indirect scratch06/07 plus byte Y writes zero;native address expression and scratch writes retained,including pointer self-clears on page0.",
       "currentSourcePaths": [
@@ -21066,11 +21142,13 @@
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Both store and retained-stack paths decrement byte Y;loop until FF then decrement page;final page sign ends routine.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:DEY untilff;DEX until negative;RTS with A0 and residual scratch06/07. Pending:Observed cold2047/warm2007 loop passes include skipped bytes;source return/physical-stack exclusions need comparison.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Both store and retained-stack paths decrement byte Y;loop until FF then decrement page;final page sign ends routine.",
       "currentSourcePaths": [
@@ -25194,10 +25272,12 @@
       "currentCounterpart": "shared area parser/render helper",
       "semanticEvidence": [
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
       "currentSourcePaths": [
@@ -46188,11 +46268,13 @@
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
         "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A.",
       "currentSourcePaths": [
@@ -46209,10 +46291,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; A nonzero source selector chooses original object X for the low-nibble return."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; A nonzero source selector chooses original object X for the low-nibble return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "A nonzero source selector chooses original object X for the low-nibble return.",
       "currentSourcePaths": [
@@ -46229,10 +46313,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
       ],
       "semanticContract": "Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns.",
       "currentSourcePaths": [
@@ -159203,7 +159289,15 @@
         "RepeatByte",
         "UpdateScreen",
         "InitScroll",
-        "WritePPUReg1"
+        "WritePPUReg1",
+        "InitializeMemory",
+        "InitPageLoop",
+        "InitByteLoop",
+        "InitByte",
+        "SkipByte",
+        "BlockBufferCollision",
+        "RetXC",
+        "RetYC"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -159228,7 +159322,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P10 corrective admission - sideways pipe scratch outputs",
         "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair",
         "docs/proposals/m2/t70-final-current-certification.md S17 P11 bounded admission - VRAM pointer and packet handoff",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 bounded admission - reset and collision RAM pointer lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
