@@ -90,12 +90,14 @@ int main(void)
         game.ram[0x712U]=(mysmb_u8)(flag&4U);
         game.ram[0x7b1U]=(mysmb_u8)music;
         game.ram[0xeU]=mode ? 11U:8U;game.ram[0x758U]=0xa5U;
+        game.ram[7U]=0xa5U;
         entered=((high+254U)&255U)<128U;
         death=(flag&2U)!=0U || (flag&1U)==0U;
         threshold=death && !mode ? 6U:4U;
         should_transition=entered && ((high+256U-threshold)&255U)<128U;
         mysmb_player_step(&game,0U);
         check(stage==6U && game.ram[0x723U]==entered);
+        check(game.ram[7U]==(entered ? threshold:0xa5U));
         check(transition==(should_transition && !death));
         if(transition) check(game.ram[0x752U]==0xffU);
         check(game.ram[0xfcU]==(entered && death && !mode && !(flag&4U) ? 1U:0U));

@@ -8,10 +8,16 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material879 is a partial enumerated set;its global denominator is unknown.
+Material881 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P23 PlayerHole correction](../proposals/m2/t70-final-current-certification.md#s17-p23-checkpoint---playerhole-original-scratch-repair).
+Original07=4/6 publications restored;two reopened local nodes repaired.
+18432 roots each width zero differences,12 checks each/six600-frame routes/
+three products pass.48 direct queue PCs observed in declared domains;
+material881 partial,total unknown and four final packages remain open.
 
 [P19 sound lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p19-checkpoint---sound-chain-mutable-and-cross-frame-lifetimes).
 681 sound instruction sites/174 direct RAM sites,24064 original returning

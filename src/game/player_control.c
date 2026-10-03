@@ -47,6 +47,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     if (((mysmb_u8)(high_y - 2U) & 0x80U) != 0U) return;
     game->ram[0x0723U] = 1U;
     threshold = 4U;
+    game->ram[0x0007U] = threshold;
     death_route = 0U;
     if (game->ram[0x0759U] != 0U || game->ram[0x0743U] == 0U) {
         death_route = 1U;
@@ -56,6 +57,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
                 game->ram[0x0712U] = 1U;
             }
             threshold = 6U;
+            game->ram[0x0007U] = threshold;
         }
     }
     if (((mysmb_u8)(high_y - threshold) & 0x80U) != 0U) return;

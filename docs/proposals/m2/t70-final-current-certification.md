@@ -4730,3 +4730,104 @@ unchanged product owners,not re-described as new runs. No product/source
 changes or EXE refresh. Historical1992/1992,local nodes1992/1992 and controls
 4274/4274(raw4342,infeasible68),material879 partial,total unknown. S17 and
 material/pixels/routes/snapshot final packages remain open.
+
+## S17 P23 admission - player terrain and exit queue roots
+
+Complete the direct-store coverage census for remaining11 P22 queue PCs
+through original entriesb0e9,b2a4,b2ca,b315,dc64,de2e,dee8,dfa1,e124;labels:`PlayerCtrlRoutine`,`FlagpoleSlide`,`PlayerEndLevel`,`NextArea`,`PlayerBGCollision`,`HandleClimbing`,`HandlePipeEntry`,`CheckForCoinMTiles`,`ChkForBump_HammerBroJ`.
+Original PlayerBGCollision is the full head/foot/side root,not its falling
+through labels interpreted as independent C calls. Climbing receives the
+actual A/RAM04/RAM06 metadata;pipe receives RAM01/RAM00 foot results;coin
+predicate consumes A. Other roots retain slot/ObjectOffset/facing and legal
+world/area inputs. Fixture guards and actual observed write PCs are explicit.
+Pre/post SoundEngine full RAM/APU/ordered-command protocol remains P20's,
+actual physical pushes only. Eight low-byte samples by256 patterns,batches
+1024,max128MiB/120sec,cleanup. Fresh0,max1992. No source repair or global
+material denominator claim;actual differences first audited against entry
+ABI,then bounded product amendment and three EXEs if a product repair exists.
+
+## S17 P23 corrective amendment - PlayerHole RAM07 threshold
+
+Original139 parent probes have2048 byte differences per1024 roots in each
+width,all RAM07 pre/post SoundEngine:original threshold4/6 versus native
+prior BoundingBox scratch. Product owner player_control.c omitted STY07
+while retaining the local predicate value. Admit its complete bounded source
+control chain:`PlayerCtrlRoutine`,`DisJoyp`,`SaveJoyp`,`SizeChk`,`ChkMoveDir`,`SetMoveDir`,`PlayerSubs`,`PlayerHole`,`HoleDie`,`HoleBottom`,`ChkHoleX`,`ExitCtrl`,`CloudExit`.
+Restore original PlayerHole default07=4 and HoleBottom07=6 writes at their
+source positions;no invented game rule. Sweep this owner's source stores,
+locals and exits for the same scratch-output omission;other output fields
+remain independently compared. Re-run identical original/native fixtures,
+focused player/root/audio regressions,integrated frame routes,platform purity,
+both native products and original OpenNT16 compile/link,refresh three assets
+EXEs. Existing terrain.c line-ending-only work and unrelated proposals remain
+untouched. No fresh node/control/material credit,baseline/max1992. Original
+ROM/source remain local read-only;all probe/build/log/intermediate below build.
+
+## S17 P23 checkpoint - PlayerHole original scratch repair
+
+Restore two original STY07 side effects in shared player_control.c:PlayerHole
+b186 publishes4 before the death/cloud partition;HoleBottom b1a8 publishes6
+after death-sound latch handling. Previously the native branch used a correct
+local threshold but left BoundingBox scratch in07. The first1024 original
+PlayerCtrl roots yielded2048 pre/post byte differences per width,all07.
+The same fixtures after repair have zero differences. No platform game logic
+or altered death threshold introduced. Similar-class sweep covers this
+owner's17 direct store/RMW sites:the two07 stores were omitted;the15 remaining
+stores keep their original values/positions/predicates,with existing source
+clause contracts and current full-state comparisons. All13 owner labels are
+explicit in custody/audit scope;PlayerHole/HoleBottom maintenance custody
+transferred and their contradicted exact rows reopened before closure.
+
+Material880/881 record PlayerHole/HoleBottom->ChkHoleX07 threshold use.
+Source stores reach CMP07 atb1aa without another07 writer. Current threshold
+local publishes the same byte and is consumed before any callback/alias write;
+bit7 of wrapped high_y-threshold equals original CMP/BMI. This is a cache-use
+proof,not an invented native physical RAM-read event. The focused parent test
+now asserts07 under all256 high bytes/eight gate patterns/two modes/two music
+states,including unchanged07 when PlayerHole is not entered. Its child seams
+do not prove child internals;original returning roots use real children.
+
+Nine unchanged original player/terrain/exit families,18432 roots each width,
+compare all2048 RAM pre/post SoundEngine,24 APU bytes and ordered commands,
+zero diff. Actual physical pushes only are excluded. PlayerBGCollision is
+the complete head/foot/side root;Climbing consumes A/04/06 metadata,pipe the
+actual01/00 pair,coin predicate A. Facing1/2,legal world/area/actor slots and
+declared sampled fixtures are explicit input boundaries,not all-input proof.
+
+| Newly observed queue writer | PC | Queue | Visits | Modes |
+| --- | --- | --- | --- | --- |
+| HoleDie | b1a1 | 00fc | 768 | 139 |
+| FlagpoleSlide | b2ad | 00ff | 2048 | 140 |
+| PlayerEndLevel | b2dc | 00fc | 512 | 141 |
+| NextArea | b326 | 00fc | 3072 | 141,142 |
+| SolidOrClimb | dcf0 | 00ff | 192 | 143 |
+| PipeDwnS | ddd5 | 00ff | 160 | 143 |
+| FlagpoleCollision | de5b | 00fc | 320 | 143,144 |
+| HandlePipeEntry | df05 | 00ff | 1024 | 145 |
+| GetWNum | df34 | 00fc | 1024 | 145 |
+| CoinSd | dfad | 00fe | 2560 | 143,146 |
+| ChkForBump_HammerBroJ | e12f | 00ff | 856 | 147 |
+
+P20-P23 now observe all48 direct external queue-store PCs in declared parent
+domains. This closes that direct-store coverage census,not every gameplay
+overwrite/cross-frame/alias relation. Native producer/consumer event joins
+and those remaining material clauses stay explicit. 12 focused checks each
+width,platform purity and six600-frame scoped integration routes pass;native
+frame records byte-identical. Integration compares0200-07FF except0778/0779,
+CIRAM/palette/OAM/audio/PPU scalars;zero-page/physical stack remain outside
+that frame ABI and are tested separately by the returning roots. Eighteen
+batches below7MiB raw/120sec,records removed. Win32 x86/x64 product builds
+and original OpenNT16 compile/link pass;optional OLDNAMES warning retained,
+no DOS runtime qualification. Three products refreshed. Current owner SHA256:
+750be06040838c76fcee09fbb13dd4cee7069b456bd6808bd383ea44053a0347.
+
+Local nodes restored1992/1992,controls4274/4274(raw4342,infeasible68),historical
+1992/1992 unchanged;material881 partial,total unknown. Two reopened local
+nodes repaired,not fresh global credit. Material/pixels/routes/snapshot final
+packages remain open;S17 and M2 are not certified complete.
+
+mysmb16.exe:259211 bytes,SHA256 dc54df59a802c1550e11b46525cb77559652d7a5e31abc29ba00df2f8acf3dda.
+
+mysmb32.exe:373619 bytes,SHA256 bfbc4065a61241234aa763ac9de254e9318c08fb787ca11d1196b53d3f3916a1.
+
+mysmb64.exe:379625 bytes,SHA256 d9c8ae62ac48a9ed5ceecdea782c0a1b4e446a15d5b708a7bee7847e9335e7c7.

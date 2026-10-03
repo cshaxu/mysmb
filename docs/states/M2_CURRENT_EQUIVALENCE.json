@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 879,
+    "enumeratedCount": 881,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -19658,6 +19658,50 @@
       "currentSourcePaths": [
         "src/game/audio.c"
       ]
+    },
+    {
+      "id": "material-00880",
+      "producer": "PlayerHole",
+      "consumer": "ChkHoleX",
+      "storage": "RAM$0007 PlayerHole threshold and corresponding C local cache",
+      "feasiblePath": "Original b186 publishes4 then ChkHoleX b1aa CMP$07/BMI tests wrapped high-Y difference;no intervening RAM07 writer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player_control.c:mysmb_player_step threshold publication and high_y-minus-threshold predicate",
+      "semanticContract": "Source phase publishes4 into07;native local threshold has identical value and no intervening callback or alias write. Source CMP/BMI equals bit7 of wrapped byte subtraction. Local cache consumption is semantic counterpart,not a native physical RAM-read claim. Retained predecessor contracts bound this local chain;arbitrary caller coverage not inferred.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts.",
+        "Both actual source store PCs and following CMP observed in original returning parent fixtures;all256 high bytes/two modes/eight gate states/two music flags checked in focused control test."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only."
+      ],
+      "cohort": "E",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player_control.c"
+      ]
+    },
+    {
+      "id": "material-00881",
+      "producer": "HoleBottom",
+      "consumer": "ChkHoleX",
+      "storage": "RAM$0007 PlayerHole threshold and corresponding C local cache",
+      "feasiblePath": "Original b1a8 publishes6 then ChkHoleX b1aa CMP$07/BMI tests wrapped high-Y difference;no intervening RAM07 writer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player_control.c:mysmb_player_step threshold publication and high_y-minus-threshold predicate",
+      "semanticContract": "Source phase publishes6 into07;native local threshold has identical value and no intervening callback or alias write. Source CMP/BMI equals bit7 of wrapped byte subtraction. Local cache consumption is semantic counterpart,not a native physical RAM-read claim. Retained predecessor contracts bound this local chain;arbitrary caller coverage not inferred.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts.",
+        "Both actual source store PCs and following CMP observed in original returning parent fixtures;all256 high bytes/two modes/eight gate states/two music flags checked in focused control test."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only."
+      ],
+      "cohort": "E",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player_control.c"
+      ]
     }
   ],
   "cohorts": [
@@ -31940,12 +31984,15 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 corrective amendment - PlayerHole RAM07 threshold:original4/6 publication absent from native owner;matching local predicate alone fails RAM output contract. Same-S custody accepted.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only."
       ],
-      "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
+      "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract. P23 includes original RAM07 threshold publication4/6 before ChkHoleX;current local output/cache contract restored.",
       "currentSourcePaths": [
         "src/game/player_control.c"
       ]
@@ -31961,7 +32008,8 @@
         "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -31976,12 +32024,15 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 corrective amendment - PlayerHole RAM07 threshold:original4/6 publication absent from native owner;matching local predicate alone fails RAM output contract. Same-S custody accepted.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only."
       ],
-      "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
+      "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract. P23 includes original RAM07 threshold publication4/6 before ChkHoleX;current local output/cache contract restored.",
       "currentSourcePaths": [
         "src/game/player_control.c"
       ]
@@ -32501,7 +32552,8 @@
         "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -32573,7 +32625,8 @@
         "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -32645,7 +32698,8 @@
         "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -47637,7 +47691,8 @@
         "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "Suppresses bump sound for climbing tile; otherwise queues bump before vertical-speed nullification.",
       "currentSourcePaths": [
@@ -47923,7 +47978,8 @@
         "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "Queues pipe sound only before priority bit is already set.",
       "currentSourcePaths": [
@@ -48222,7 +48278,8 @@
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "Locks scroll, silences/kills enemies, starts flag music and finds score-height index before slide routine.",
       "currentSourcePaths": [
@@ -48506,7 +48563,8 @@
         "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "Requires Down and exact two-foot pipe tiles; starts vertical entry and optionally executes warp-zone world/area selection/reset.",
       "currentSourcePaths": [
@@ -48525,7 +48583,8 @@
         "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "Selects warp pipe world by zone and player X region, then maps it to area offset and resets entry state.",
       "currentSourcePaths": [
@@ -48754,7 +48813,8 @@
         "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
       ],
       "operationalEvidence": [
-        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "Queues coin-grab sound and returns match carry.",
       "currentSourcePaths": [
@@ -49508,7 +49568,8 @@
         "M2 T64 S21 static audit: SMB1 $E124-$E131 and src/game/objects.c:mysmb_objects_bump_enemy preserve slot-five sound suppression, state-d7 bump-sound gate, Hammer ID fork, $00 clear, Y=$fa SetHJ handoff and ordinary inversion successor."
       ],
       "operationalEvidence": [
-        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences."
+        "M2 T64 S21 controlled original-ROM bump probe: five $E124 entries cover slot-five BEQ, state-clear BCC, sound-write fallthrough, normal BNE to InvEnemyDir/RXSpd and Hammer JMP to SetHJ; the same five records pass current x86 and x64 checkers with zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred."
       ],
       "semanticContract": "Slot-five and state-d7 sound gating, followed by Hammer $00/Y handoff or ordinary inversion tail.",
       "currentSourcePaths": [
@@ -164187,7 +164248,22 @@
         "BridgeCollapse",
         "RunFireworks",
         "RunStarFlagObj",
-        "HandleEnemyFBallCol"
+        "HandleEnemyFBallCol",
+        "PlayerCtrlRoutine",
+        "PlayerBGCollision",
+        "HandleClimbing",
+        "CheckForCoinMTiles",
+        "DisJoyp",
+        "SaveJoyp",
+        "SizeChk",
+        "ChkMoveDir",
+        "SetMoveDir",
+        "PlayerSubs",
+        "PlayerHole",
+        "HoleBottom",
+        "ChkHoleX",
+        "ExitCtrl",
+        "CloudExit"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -164232,7 +164308,10 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 admission - missing queue producer root domains",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 admission - actor and terminal queue roots",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 admission - player terrain and exit queue roots",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 corrective amendment - PlayerHole RAM07 threshold",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

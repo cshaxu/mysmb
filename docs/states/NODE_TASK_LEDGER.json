@@ -26893,8 +26893,8 @@
     {
       "label": "PlayerHole",
       "line": 5649,
-      "receiver": "M2 T32 S1",
-      "receivingBasis": "Accepted transfer-134, source-order player control chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P23 accepted bounded original RAM07 threshold correction.",
       "futurePackage": null,
       "history": [
         {
@@ -26923,8 +26923,8 @@
     {
       "label": "HoleBottom",
       "line": 5670,
-      "receiver": "M2 T32 S1",
-      "receivingBasis": "Accepted transfer-134, source-order player control chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P23 accepted bounded original RAM07 threshold correction.",
       "futurePackage": null,
       "history": [
         {
@@ -69733,6 +69733,18 @@
       "to": "M2 T70 S17",
       "nodes": [
         "MoveSubs"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-hole-threshold-1",
+      "type": "transfer",
+      "from": "M2 T32 S1",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "PlayerHole",
+        "HoleBottom"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -766711,7 +766723,22 @@
         "BridgeCollapse",
         "RunFireworks",
         "RunStarFlagObj",
-        "HandleEnemyFBallCol"
+        "HandleEnemyFBallCol",
+        "PlayerCtrlRoutine",
+        "PlayerBGCollision",
+        "HandleClimbing",
+        "CheckForCoinMTiles",
+        "DisJoyp",
+        "SaveJoyp",
+        "SizeChk",
+        "ChkMoveDir",
+        "SetMoveDir",
+        "PlayerSubs",
+        "PlayerHole",
+        "HoleBottom",
+        "ChkHoleX",
+        "ExitCtrl",
+        "CloudExit"
       ],
       "baseline": 1992,
       "incomingComplete": [
