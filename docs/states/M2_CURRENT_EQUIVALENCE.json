@@ -43616,12 +43616,14 @@
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Derives group code, classifies enemy ID with hard-mode Goomba/Buzzy substitution and preserves source stack-selected group bits.",
       "currentSourcePaths": [
@@ -43637,10 +43639,12 @@
       "currentCounterpart": "enemy/group.c",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Restores group code after hard-mode ID selection.",
       "currentSourcePaths": [
@@ -43656,10 +43660,12 @@
       "currentCounterpart": "enemy/group.c",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Stores selected enemy ID and chooses group Y $b0/$70 from d1.",
       "currentSourcePaths": [
@@ -43675,10 +43681,12 @@
       "currentCounterpart": "enemy/group.c",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Captures screen-right page/X and selects two or three members from d0.",
       "currentSourcePaths": [
@@ -43694,10 +43702,12 @@
       "currentCounterpart": "enemy/group.c",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Stores member count before group allocation loop.",
       "currentSourcePaths": [
@@ -43713,10 +43723,12 @@
       "currentCounterpart": "enemy/group.c",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Resets regular-slot scan from -1 before each member.",
       "currentSourcePaths": [
@@ -43733,11 +43745,13 @@
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Scans slots 0..4, fills one inactive slot with current page/X/Y, advances X by $18 with page carry, initializes it and decrements remaining count.",
       "currentSourcePaths": [
@@ -43754,11 +43768,13 @@
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged."
       ],
       "semanticContract": "Tail-jumps the common two-byte record advance after group completion or no free slot.",
       "currentSourcePaths": [
@@ -168130,16 +168146,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:34 streams/536 boundary states/1540 overapproximated cursor transitions preserve record alignment;no ID3F at ordinary record boundaries. Pointer table and caller/alias applicability remain explicit prerequisites;no exact promotion.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 3808,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6883,
+        "localInstructionReceiptSites": 3863,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6828,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1312,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2461,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1335,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2438,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168187,7 +168204,6 @@
           "src/game/oam/power_up_gfx.c": 25,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/oam/flagpole_gfx.c": 24,
-          "shared group-enemy stream core": 23,
           "shared game core: enemy/piranha.c": 23,
           "src/game shared dispatcher/engine/scroll owners": 22,
           "shared Bowser initializer and duplicate-object core": 22,

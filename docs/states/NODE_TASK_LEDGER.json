@@ -767146,7 +767146,15 @@
         "LoadAreaPointer",
         "GetAreaType",
         "FindAreaPointer",
-        "StoreStyle"
+        "StoreStyle",
+        "HandleGroupEnemies",
+        "PullID",
+        "SnglID",
+        "SetYGp",
+        "CntGrp",
+        "GrLoop",
+        "GSltLp",
+        "NextED"
       ],
       "baseline": 1992,
       "incomingComplete": [

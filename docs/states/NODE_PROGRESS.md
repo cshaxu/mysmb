@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P55 group caller return](../proposals/m2/t70-final-current-certification.md#s17-p55-checkpoint---group-slot-allocation-and-caller-return).
+S17 P55:55groupinstructions/23RAM bounded joins,69632actualroots eachwidth0diff/all55PC/7branchpairs,6tests each. Allocation0-4/realinit0,2,6 preserves08;originalreturnX==input08 inallroots,group caller joinqualified;17direct08writers enumerated,otherspending. Scope746/fresh0;3863instruction/1335RAM receipts,6828instruction/2438RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP46unchanged,M2 incomplete.
+
 [P54 pointer target closure](../proposals/m2/t70-final-current-certification.md#s17-p54-checkpoint---area-pointer-producers-and-stream-target-closure).
 S17 P54:94area-pointer instructions/26RAM joined7clauses,139264actualroots eachwidth0diff/all94PC/two branchpairs,3tests each.36world records/50row0E destinations close28initial streams to34 over41model links,no graph credit. Scope738/fresh0;3808instruction/1312RAM receipts,6883instruction/2461RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;caller/alias prerequisites pending,source/productsP46unchanged,M2 incomplete.
 

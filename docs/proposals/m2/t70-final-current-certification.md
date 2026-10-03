@@ -7538,3 +7538,62 @@ Material993partial,global totalunknown. All whole-program lifetime fields
 pending;four final packages remain open,M2 NOT COMPLETE.
 
 Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+## S17 P55 admission - group allocation and ObjectOffset return domain
+
+Existing slot/caller gap,55 pending instructions/23RAM,eight labels:HandleGroupEnemies,PullID,SnglID,SetYGp,CntGrp,GrLoop,GSltLp,NextED. Scope746,fresh0/max1992. Shared enemy/group.c andengine_slots.c:allocate0-4,normal initializer IDs0/2/6,Inc2B returns CPU X from08;caller enemy loop0-5 onlymatches native local loop if08 preserved. Actual group rootC71B andoriginal-group-record parserC144;instrument original returnedX equality to08 andinput08 preservation. PrimaryHard valid0/1;32occupancy masks/nonzero flags;no new global round. OwnerROM/ASM readonly,raw ignoredbuild128MiB/120seconds per process. Other362 caller-conditional alias sites remain separate,no fabricated parent execution credit.
+
+## S17 P55 checkpoint - group slot allocation and caller return
+
+Existing S17 ObjectOffset/index producer gap;eight group labels,55instructions/
+23RAM,scope746/fresh0. Group allocation is source-localX0-4 anddoes not write08.
+Source/native full current clause:
+
+Group entryC71B subtracts37;IDs37-3A chooseGoomba6 orBuzzy2 by validPrimaryHard0/1,3B-3E chooseKoopa0;bit1 YB0/70,bit0count2/3. Source GrLoop resetsXFF andINX beforeCPX5/BCC writes,so every allocatedslot0-4. Scratch00/01/02/03 survives real checkpoint initializer0/2/6;X24pixel carry advancesbytepage. No direct08 writes ingroup/normal initializer;tailInc2B advances2,clears73B,reloadsX08. Native bounded scan/realcheckpoint/advance preserves sameRAM andcaller slot. Root actor-loop sourceX0-5/native local slot agree across thisgroup return,not everyotheractor child.
+
+Original roots167:65536 valid groupIDs37-3E,all32 five-slot occupancy masks,
+nonzero rawflag values,screen X/page byte wraps,caller08slots0-5 andvalid
+PrimaryHard0/1. Root168:4096 actual originalgroup-record parser entries
+(57 original base/cursor views),caller slots0-4,page-select1,in-window right
+boundary,SecondaryHard1. Every parser root actually entersC71B. Some controlled
+states are not claimed gameplay-reachable. Unrestricted PrimaryHard values
+are not silently accepted because the normal speed table has its0/1 contract.
+
+Total69632 eachwidth,zero2032RAM/24APU/orderedhardware writes differences.
+All55instruction PCs/seven conditional branch pairs observed. Original harness
+explicitly asserts returnedCPU X equalsRAM08 andinitialRAM08 for every root;
+native fullRAM comparison proves matching saved08. This establishes thegroup
+child return contract needed by native engine_slots.c'slocalcounter;it does
+not execute thewhole actor loop or prove every other child return. Only
+physical1F0-1FF excluded,minSP>=EF. CPU registers otherwise outsidevoidAPI.
+Sixfocusedtests eachwidth pass(engine slots,group chain,enemy stream and
+localconsumer,platform purity). No product or test source changes;strictC90
+checkers linkunchanged libraries,threeEXEs remainP46,DOSruntimeunqualified.
+
+RAM08 direct-write census has17 sites:
+8395:VictoryMode,950a:ProcADLoop,9643:InitRear,af03:ProcELoop,af1e:ProcELoop,af24:ProcELoop,b675:BublLoop,b689:FireballObjCore,b857:FlagpoleRoutine,b9c3:ThreeSChk,bb7b:JCoinC,bb98:MiscLoop,bc87:PowerUpObjHandler,bed6:UpdateLoop,cff5:BridgeCollapse,d1a9:CopyFToR,d1b3:CopyFToR.
+
+This enumeration is not proof of every writer's allowed input. InitRear's
+reset2,root actor/block/misc counters andBowser/vine/coin transitions retain
+their independent source/caller receipts andnamed pending constraints.
+No aggregate alias or CheckForEnemyGroup/control01480 promotion. Source
+similar-class sweep includes childscratch00-03,JumpEngine04-07,08preservation,
+slot exhaustion,bytepage carry andtailcursor/page-select reset. Four negative
+accounting mutations rejected. RawROM/records remainignored andread-only;
+rawoutput batches deleted. No new originalmaterial/graph edge from harness.
+
+Historical1992/1992,currentlocal1991/1992nodes,4269/4270controls(raw4342/
+infeasible72).3863/10691instruction and1335/3773RAM boundedreceipts;6828
+instructions/2438RAM stilllackcomplete localreceipts. Material993partial,
+globaltotalunknown;whole-program lifetime fields pending,fourfinalpackages
+open,M2 incomplete. CheckForEnemyGroup/control01480 stillneeds evidence.
+
+Current src/game/enemy/group.c normalizedSHA256:c6ebdf6d65eee53c092b80cae412cdae76ff3a20fa93e07c00d8cf3fd7abeed2.
+
+Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.
+
+Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.
+
+Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+Current src/game/engine_slots.c normalizedSHA256:8cb4682243253529fb2514b3a50670d838cb056d62faffbf621b1b492a048d25.
