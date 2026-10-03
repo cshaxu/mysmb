@@ -36145,11 +36145,13 @@
       "currentCounterpart": "mysmb_player_movement_subs",
       "semanticEvidence": [
         "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S1 preserves this original movement dispatch branch, crouch write and child-order contract.",
       "currentSourcePaths": [
@@ -36164,10 +36166,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs",
       "semanticEvidence": [
-        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics."
+        "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain."
+        "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S1 preserves this original movement dispatch branch, crouch write and child-order contract.",
       "currentSourcePaths": [
@@ -36183,11 +36187,13 @@
       "currentCounterpart": "mysmb_player_movement_subs",
       "semanticEvidence": [
         "M2 T59 S1 static audit: SMB1 PlayerMovementSubs through ProcMove (lines 5899-5915) compared with shared src/game/player_movement.c; size/state gates, down-button mask, crouch write and Physics/JumpEngine dispatch order preserve source semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T59 S1 controlled caller replay: 37 original movement snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 74 caller comparisons pass over 1,784 persistent bytes with CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused smoke, platform-purity and unchanged shared DOS16 link pass. Unmocked child output remains outside this chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S1 preserves this original movement dispatch branch, crouch write and child-order contract.",
       "currentSourcePaths": [
@@ -36205,12 +36211,14 @@
         "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
         "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -36226,11 +36234,13 @@
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
         "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36285,10 +36295,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36303,10 +36315,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36321,10 +36335,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36339,10 +36355,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36357,10 +36375,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36375,10 +36395,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36393,10 +36415,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -36411,10 +36435,12 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:reuse143872P95actualparentroots plus65536originalB329roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all56PC/12branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
       "currentSourcePaths": [
@@ -169969,16 +169995,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P93 checkpoint - victory messages counters and world completion uses reconciled:16labels/84instructions/29RAM joined7boundedclauses;sourcemessageSBC/carry/queue/counter/timer/Bexit order reviewed;8421falsecontrol00153 reclassifiedinfeasible,oldscopedframeproofdidnotobserveit;wholeproducer/inter-frame pending,no newnodecredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9628,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1063,
+        "localInstructionReceiptSites": 9684,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1007,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3407,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 366,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3433,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 340,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169989,7 +170016,6 @@
           "src/game/enemy/hammer_bro.c": 30,
           "src/game/player.c": 28,
           "src/game/objects.c": 26,
-          "src/game/player_movement.c shared C90 movement owner": 26,
           "src/game/game.c": 24,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/frame_root.c": 22,

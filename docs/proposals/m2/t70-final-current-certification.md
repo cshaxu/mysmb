@@ -8907,3 +8907,31 @@ Current src/game/oam/object_position.c normalizedSHA256:1fdb3149c5d4ca6159550a0e
 Current src/game/world/bounding_box.c normalizedSHA256:709d3acfbae67935aff24865393f0ddb0bcf173a70a57601f7d6a59f4a6459c0.
 
 Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.
+
+## S17 P96 admission - player movement state dispatch jump and swim uses
+
+Existingmovement56instructions/26RAM/13labels PlayerMovementSubs,SetCrouch,ProcMove,MoveSubs,NoMoveSub,FallingSub,JumpSwimSub,DumpFall,ProcSwim,LRWater,LRAir,JSMove,ExitMov1. Sharedplayer_movement.c originalB329entry/state0-3,actualphysics/friction/animation/horizontal/vertical children. Reuse143872P95actualparentrootrecords,add65536directB329profiles Swim0/1/heldA/PreviousA/signedspeed/rawY/jumpOrigin/haltDiff/GameSub8or11. InitialP95coverage lackedswim11PC andheldA/0B verticalforcebranches;noautomaticchildreceipt fromparentpass. Sourcecrouchpreservation/physicsbeforefreeze/readliveState/ClimbTimer/JumpEngine/non-swimfallingdirectLRAir/movementreturnscroll byteandforce28 required. Allnonphysical-stackRAM/APU/orderedwritescompared;CPUvoidreturnunusedatparentreload. ProtectedROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992/sourceP81productsunchangedunlessscopedmismatch;wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled
+
+S17 P96:13player movement labels/56instructions/26RAM joined5boundedclauses;reuse143872parent plus65536actualleafroots eachwidth0diff/all56PC/12branchpairs,4tests each. Scope1539/fresh0;9684/10691instruction receipts,3433/3773RAM receipts;1007instructions/340RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| M1 | PlayerMovementSubs,SetCrouch | A0/smallPlayerSize nonzero resetsCrouch;largeState0 writesUpDownAND4;largeairborne preservesoldCrouch bypassstore. ActualPhysicsSubbeforeChangeSizefreeze andstate read;childcanchangePlayer_State andsettings,so CreadsreturnedliveRAM notcachedselector. |
+| M2 | ProcMove,MoveSubs,NoMoveSub | ChangeSize nonzero returnsafterphysics. State3climbing leavesClimbSideTimer unchanged;otherstateswrite18. ActualsourceJumpEngineB350publishes04-07 andselectsstate0-3;Csamecapabilityandactualground/jump/fall/climb functions. Ground/climb childinternals retaintheirindependentreviewreceipts,notnewcredit. |
+| M3 | FallingSub,JumpSwimSub,DumpFall | Falling writesForceDown070AtoForce0709 thenjumpsLRAir skippingallswimlogic. JumpstateYSpeedbit7clear alsoDumpFall;negativeYspeedheldA&PreviousA skipsheighttest,elseSEC/SBCOriginY-currentY byte thenunsignedCMPDiffToHalt determinesDumpFall vsProcSwim. Nativeheightbyte cache stablewithnochildbetweenreads/predicate. |
+| M4 | ProcSwim,LRWater | Swimming0skipsanimation/force/facingwaterbranch. Swimmingnonzero actualGetPlayerAnimSpeedthenliveYlow<14writesForce18,elsepreservesforce. LiveLRnonzero setsFacing33 otherwisepreserves. Sourceanimationchildoutputcomparedinactualparent/leaf roots,notassumedconststate. |
+| M5 | LRAir,JSMove,ExitMov1 | LiveLR0skipfriction,nonzeroactualfriction. AlwaysactualMovePlayerHorizontally andstoreitsA-capability inScroll06FF. GameSub0B overridesForce28beforeactualMovePlayerVertically tail,otherGameSubpreservesforce. CPUvoidA/X/Y/flagsnotclaimed;parentSizeChkreloadsY/A afterreturn. Childrenkeepbytecarry/page/signedspeedmeaning fromretainedoriginalproofs. |
+
+ReuseP95threeactualparentfamilies143872roots eachwidth againstunchangedcurrentdependencies,add65536actualB329rootprofiles forlegalState0-3/Swim0-1/rawbuttons/signedspeed/Y/jumporigin/haltdiff/GameSub8or11. Combined209408rootrecords0diff/all56PC/12two-sidedbranchsites. Before supplement11swiminstructionsandheldA/force28branches missing;newprofiles observeeachwithoutweakeningassertions. Compareall2048RAMexceptobservedactualphysicalCPUstackpushrange,24APU/orderedwrites;CPUvoidA/X/Y/Cunexposed. NoROMpatch/childreplacement. Source56instructionuseclausescheckedagainstASM/canonicalowner;producer/inter-frameglobalconditionsstillpending. Fourfreshfocusedtests eachwidthpass/fournegativeaccountingmutantsrejected. Firsttestregex selectedthreebecauseanimationnamewrong;correctedselectionwithphysics-chain andverifiedactualfourtests beforecredit. No source/productchange;P81hashesunchanged,DOScompile/linkonly. Wholematerial/pixels/routes/snapshotremainopen.
+
+Current src/game/player_movement.c normalizedSHA256:ce7cea88da5e76af3a7916fc64e44343cd04b39fcb65af3715064e2f8ab9d5d7.
+
+Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.
+
+Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
+
+Current src/game/world/movement.c normalizedSHA256:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
+
+Current src/game/world/gravity.c normalizedSHA256:4213b8f264e8794ba761d6f791bea7a89cd69add3605d97d43b66de48a95b0a7.

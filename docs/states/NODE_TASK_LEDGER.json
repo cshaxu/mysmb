@@ -768023,7 +768023,16 @@
         "EndExitTwo",
         "NoDecTimers",
         "PauseSkip",
-        "RotPRandomBit"
+        "RotPRandomBit",
+        "SetCrouch",
+        "FallingSub",
+        "JumpSwimSub",
+        "DumpFall",
+        "ProcSwim",
+        "LRWater",
+        "LRAir",
+        "JSMove",
+        "ExitMov1"
       ],
       "baseline": 1992,
       "incomingComplete": [
