@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P104 area callback uses](../proposals/m2/t70-final-current-certification.md#s17-p104-checkpoint---area-callback-uses-reconciled-and-underpart-tails-repaired).
+S17 P104:16area-callback labels/70instructions/15RAM joined7boundedclauses;bridge/water originalUnderPart tails repaired. 65536actualroots eachwidth0diff/all70PC/6branchpairs,7tests each;threeEXEsP104refreshed. Scope1633/fresh0;10361/10691instruction receipts,3688/3773RAM receipts;330instructions/85RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P103 block output uses](../proposals/m2/t70-final-current-certification.md#s17-p103-checkpoint---block-metatile-output-and-bridge-rows-reconciled).
 S17 P103:10block-output labels/91instructions/34RAM joined4boundedclauses;262144actualroots eachwidth0diff/all91PC/7branchpairs,5tests each. Scope1619/fresh0;10291/10691instruction receipts,3673/3773RAM receipts;400instructions/100RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;provenance corrected,preprocessed behavior/productsP98unchanged;producer/inter-frame/finalpackages pending,M2 incomplete.
 

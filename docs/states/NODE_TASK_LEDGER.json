@@ -768112,7 +768112,21 @@
         "MoveVOffset",
         "PutBlockMetatile",
         "SaveHAdder",
-        "RemBridge"
+        "RemBridge",
+        "ScrollLockObject_Warp",
+        "WarpNum",
+        "ScrollLockObject",
+        "KillEnemies",
+        "KillELoop",
+        "NoKillE",
+        "AreaFrenzy",
+        "FreCompLoop",
+        "ExitAFrenzy",
+        "Hole_Water",
+        "QuestionBlockRow_High",
+        "Bridge_High",
+        "Bridge_Middle",
+        "FlagBalls_Residual"
       ],
       "baseline": 1992,
       "incomingComplete": [

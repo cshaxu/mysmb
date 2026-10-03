@@ -28,7 +28,35 @@ int main(void)
 {
     struct mysmb_game game;
     static mysmb_u8 prg[0x100U];
-    mysmb_u8 row;
+    static const mysmb_u8 backgrounds[6] = {
+        0U, 0x17U, 0x1aU, 0xc0U, 0xc4U, 0x54U
+    };
+    static const mysmb_u8 objects[4] = {0x20U, 0x30U, 0x40U, 0x50U};
+    static const mysmb_u8 top_rows[4] = {6U, 7U, 9U, 10U};
+    mysmb_u8 row, object, background, expected;
+
+    /* The rail/wave STA is unconditional. Its UnderPart tail preserves
+     * ledge centers and palette-three foreground, and publishes height even
+     * when every destination is retained. */
+    for (object = 0U; object < 4U; ++object)
+    for (background = 0U; background < 6U; ++background) {
+        set_object(&game, prg, 0x0cU, objects[object]);
+        memset(&game.ram[0x06a1U], backgrounds[background], 13U);
+        game.ram[0x0735U] = 0xa5U;
+        if (!mysmb_area_process_object_state(&game)) return 24;
+        if (game.ram[0x0735U] != 0U) return 25;
+        for (row = 0U; row < 13U; ++row) {
+            expected = backgrounds[background];
+            if (row == top_rows[object])
+                expected = object == 3U ? 0x86U : 0x0bU;
+            else if (row == (mysmb_u8)(top_rows[object] + 1U) ||
+                     (object == 3U && row == 12U)) {
+                if (background == 0U || background == 3U || background == 5U)
+                    expected = object == 3U ? 0x87U : 0x63U;
+            }
+            if (game.ram[0x06a1U + row] != expected) return 26;
+        }
+    }
 
     /* ScrollLockObject_Warp: selector, text call, Piranha clear, then lock. */
     set_object(&game, prg, 0x0dU, 0x45U);

@@ -30754,10 +30754,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Selects warp-zone text control, writes text, kills piranhas, then toggles scroll lock.",
       "currentSourcePaths": [
@@ -30773,10 +30775,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Queues selected game text and invokes enemy removal before the common scroll-lock tail.",
       "currentSourcePaths": [
@@ -30792,10 +30796,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Inverts the one-bit scroll lock state.",
       "currentSourcePaths": [
@@ -30811,10 +30817,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Scans regular enemy slots four down through zero and clears flags matching selected ID.",
       "currentSourcePaths": [
@@ -30830,10 +30838,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Compares one enemy ID and delegates match/nonmatch to common descending tail.",
       "currentSourcePaths": [
@@ -30849,10 +30859,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Decrements enemy slot and repeats until all five regular slots are checked.",
       "currentSourcePaths": [
@@ -30887,10 +30899,12 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Selects FrenzyIDData by row-13 selector and queues it only when absent from regular enemy slots.",
       "currentSourcePaths": [
@@ -30906,10 +30920,12 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Scans regular enemy IDs from slot four down through zero.",
       "currentSourcePaths": [
@@ -30925,10 +30941,12 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Stores selected ID or zero in EnemyFrenzyQueue.",
       "currentSourcePaths": [
@@ -31750,10 +31768,12 @@
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Decodes the persistent large-object length, writes wave at row 10, then renders water metatile $87 from row 11 for one row.",
       "currentSourcePaths": [
@@ -31770,10 +31790,12 @@
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Uses the source BIT-opcode fall-through to select row 3, then shares low-row length decode and coin-question write.",
       "currentSourcePaths": [
@@ -31790,11 +31812,13 @@
       "semanticEvidence": [
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
         "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Selects row 7, preserves it across large-length decode, and writes metatile $c0 at the selected buffer row.",
       "currentSourcePaths": [
@@ -31810,10 +31834,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
-        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Uses the two source fall-through selectors to choose bridge row 6, then shares the low bridge renderer.",
       "currentSourcePaths": [
@@ -31829,10 +31855,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
-        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Uses the source fall-through selector to choose bridge row 7, then shares the low bridge renderer.",
       "currentSourcePaths": [
@@ -31849,11 +31877,13 @@
       "semanticEvidence": [
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
         "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Selects row 9, preserves it across large-length decode, writes rail $0b, then renders bridge metatile $63 below it.",
       "currentSourcePaths": [
@@ -31869,10 +31899,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object and shared area helpers",
       "semanticEvidence": [
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
-        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match."
+        "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement."
+        "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed."
       ],
       "semanticContract": "Decodes the low-nibble vertical extent, then renders flag balls metatile $6d from fixed row 2.",
       "currentSourcePaths": [
@@ -170179,16 +170211,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10291,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 400,
+        "localInstructionReceiptSites": 10361,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 330,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3673,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 100,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3688,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 85,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -170196,7 +170229,6 @@
         "pendingDirectRamOwners": {
           "src/game/game.c": 24,
           "src/game/frame_root.c": 22,
-          "src/game/area.c": 15,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,

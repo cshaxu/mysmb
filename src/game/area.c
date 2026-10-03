@@ -1558,15 +1558,14 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     if (row == 12U && kind == 5U) {
         (void)mysmb_area_check_large_length(game, slot, &height);
         game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x86U;
-        game->ram[MYSMB_AREA_METATILE_BUFFER + 11U] = 0x87U;
-        game->ram[MYSMB_AREA_METATILE_BUFFER + 12U] = 0x87U;
+        mysmb_area_render_under_part(game, 11U, 1U, 0x87U);
         return;
     }
     if (row == 12U && (kind == 2U || kind == 3U || kind == 4U)) {
         (void)mysmb_area_check_large_length(game, slot, &height);
         row = kind == 2U ? 6U : (kind == 3U ? 7U : 9U);
         game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x0bU;
-        if (row < 12U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x63U;
+        mysmb_area_render_under_part(game, (mysmb_u8)(row + 1U), 0U, 0x63U);
         return;
     }
     if (row == 12U && (kind == 6U || kind == 7U)) {

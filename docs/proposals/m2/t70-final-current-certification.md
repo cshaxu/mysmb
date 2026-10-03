@@ -9141,3 +9141,41 @@ Current src/game/blocks/head.c normalizedSHA256:271d3edde9187d57173da627ba372ced
 Current src/game/blocks/chunks.c normalizedSHA256:4fe6d4df9b7fe20f39e36051a7ddbc15359fe580a31016515b01e0ce1437291f.
 
 Current src/game/player/terrain_metatiles.c normalizedSHA256:cabc254bb597eb3156a68e0cc18e7d687a6c7d51820b24730f1a8d282fc509a0.
+
+## S17 P104 admission - remaining area object callback uses
+
+Existing area.c70instructions/15RAM/16labels ScrollLockObject_Warp,WarpNum,ScrollLockObject,KillEnemies,KillELoop,NoKillE,AreaFrenzy,FreCompLoop,ExitAFrenzy,Hole_Water,QuestionBlockRow_High,QuestionBlockRow_Low,Bridge_High,Bridge_Middle,Bridge_Low,FlagBalls_Residual. Actual9508 ProcessAreaData vector through immutable owner-PRG pairs; controlled resident three parser slots,raw lengths/column terrain/buffer/scroll-lock/VRAMoffset/EnemyID/Flag and legalWorld0-7/AreaType0-3/player0-1. Original warp text child,KillEnemies and frenzy loops, preserved row through length child, underpart overlay and byte wrapping require source review. Pair selection is controlled,not full natural stream reachability. Fullnonphysical-stackRAM/APU/orderedwrites; ROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992;P98productsunchanged unless mismatch;wholeproducer/inter-frame/finalpackages pending.
+
+### P104 bounded corrective amendment - bridge and water UnderPart tails
+
+Source audit of Hole_Water/Bridge_High/Bridge_Middle/Bridge_Low found direct fills bypassing original RenderUnderPart. Initial coupled405 profiles happened to allow every overlay and seed0735=0;zero endpoint differences were insufficient and receive no final receipt. Extended actual9508 routes with foreground17/1A/C4 and raw0735 reproduced2329 field differences in first4096 x86 roots across06A8/06A9/06AB/06AC/06AD/0735. Shared area.c delegates water rows11-12 and bridge lower row to original UnderPart;top wave/railing remain unconditional. Same-S coordinator amendment under existing repair mandate;source-equivalence/replay must pass before progression,threeEXEs refresh required. Similar-issue sweep:all area.c UnderPart consumers/direct fills;other direct writes are original STA paths (question rows,WaterPipe,cannon top/middle,castle explicit loop);previous translated tails already use helper. No platform change.
+
+## S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired
+
+S17 P104:16area-callback labels/70instructions/15RAM joined7boundedclauses;bridge/water originalUnderPart tails repaired. 65536actualroots eachwidth0diff/all70PC/6branchpairs,7tests each;threeEXEsP104refreshed. Scope1633/fresh0;10361/10691instruction receipts,3688/3773RAM receipts;330instructions/85RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| A1 | ScrollLockObject_Warp,WarpNum,ScrollLockObject | World0 selector4; otherWorld increments5, AreaType1 increments6. Publish06D6 before actualWriteGameText, then A13 actualKillEnemies and liveScrollLock XOR1. Text child writesVRAM0300-0409/scratch but notEnemyID16-1A/Flag0F-13/ScrollLock0723; native reads postchild IDs and lock. Selectorregister dead after publishedtext call; original control00 overwritten13 byKillEnemies. Final parent ChkLength reloads08; no voidregister claim. |
+| A2 | KillEnemies,KillELoop,NoKillE | Publish inputA to00, A0, slots4down0 only. Compare liveEnemyIDslot againststable00; clearFlag onlymatchingID. Native cacheid stable: flags0F-13 do notalias00 or IDs16-1A. Slot5 intentionally untouched. All ID/table values are bytes;loop no children or callback. ExitXFF unused; parent restores08. |
+| A3 | AreaFrenzy,FreCompLoop,ExitAFrenzy | Decode publishes selector8-10 to00; bound FrenzyIDData three entries20/23/24. Original scans liveID4down0; firstmatchA0 then06CDqueue0 else immutableID. Native same reverse scan, no child/nointerveningwrite andstablecachedselector/id. Preserve00originalselector and slot5 excluded. RawEnemyIDs include match/no-match and loop early/exhausted branches; tabledomain follows original vector selector8-10. |
+| A4 | Hole_Water | ActualChkLrgObjLength reads immutablepair andwrites07row/conditionally0730+slot before rendering. Wave06AB=86 unconditional; tail RenderUnderPart row11,height1,A87 preserves17/1A/palette3exceptC0, overwrites54 becauseA!=50; final0735=0 evenifallcells preserved. Old C direct rows omitted overlay/height. Repaired shared originalhelper; lengthchildcannotalias6A1-6AD,0735 or immutablePRG; parent reloads08 and decrementsliveLength. |
+| A5 | QuestionBlockRow_High,QuestionBlockRow_Low | HighLDA3 skips LowLDA7 through BIT opcode; lowstarts7. PHA/PLA preserves selectedrow across actualChkLength childwriting07 and lengthslot. Native fixedrow3/7 after child equivalent, unconditionalC0store at6A1+row. No RenderUnderPart here in original; no0735store expected. Offset/lengthslot0-2 does notaliasdestination; final parent usesliveLength. |
+| A6 | Bridge_High,Bridge_Middle,Bridge_Low | BIT entryskip chooses6/7/9 preserved across actualChkLength using PHA/PLA. RailSTA0B unconditional; body originalUnderPart(row+1,height0,A63) honors17/1A/palette3exceptC0 and publishes0735=0. Old directbody skippedoverlay/height; repaired sharedhelper. Row6/7/9 constants stable and no childwrites scratchsaved nativevalue; metatilewrite noaliasparser offset/length; parent restores08. |
+| A7 | FlagBalls_Residual | ActualGetLrgObjAttrib writes07firstlowNibble andreturnsYsecondlowNibble0-15. RenderUnderPart fixedrow2,A6D inclusiveextent respectingforegroundandrow13cutoff, actualhelper publishes eachdecrementheight; native uses same helper. Immutablepair/slot0-2 readbeforehelper, helperbuffer6A1-6AD andheight0735 do notaliaspointerE7/E8 oroffset72D-72F. No rawoutofdomain directvector claim. |
+
+Actual9508ProcessAreaData roots with11unchangedPRGpairselections; pointerconditioncontrolled,notnaturalstreamreachabilityproof. Three residents slots;slot2rawlength,otherresidentlength0,bufferoffsets0,currentcolumnmatchedfirstnibble. LegalWorld0-7/AreaType0-3/player0-1;rawscrolllock/VRAMoffset/EnemyID/Flag/initial0735 andsixforegroundclasses. All70PC/6branchpairs;65536roots eachwidth0diffafterrepair, full2048RAMexceptobservedCPUstackpushspan+24APU+orderedwrites. Initialmanifestzero differences missed17/1A/C4overlay/nonzeroheight;sourceaudit found omission andexpandedmanifest first4096produced2329fielddifferences. Old-code24case regression fails25bothwidths;fixedregression andsevenfocusedtests pass. Similarissue sweep:allarea.cdirectwrites vsoriginalSTA/tail;water/bridge only two deficient tail sites in scopedremainingcallbacks,othernamedtailowners alreadyhelper,originalunconditionalquestion/WaterPipe/cannon/castle writes retained. Fournegativeaccountingmutants pass;sevenpartitionclauses. Sourceidentitydependency amendment is limited to repaired tails;other current area consumers retained within priordomains,not wholeproducer/interframe/pixelclaim. Threeproducts rebuiltP104(originalOpenNTDOS16 retainedOLDNAMES warning,compile/link not gameplay),packageMZ/PEmachinecheckpasses. No protecteddata/outputcommitted.
+
+Current src/game/area.c normalizedSHA256:4f82e262ae480e1c8f5581fabf0490d9754be85855e1d6b893e6ec6081cd511a.
+
+Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
+
+Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+P104 local build artifacts (not committed or release evidence):
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 259803 | ba55d5e93dc2bab2d54b7fffd87636425fd7c9572acdb134eaab9ae1a9a6e547 |
+| mysmb32.exe | 374219 | 6b5c5af6267afac3aa53c1c5e5923d6f782c829b7abe4492b97abd94c91516bb |
+| mysmb64.exe | 380216 | f728ecbd9ebf0cb7d3b220cbb330f3df362a0074a7f98c18409b004c0cf49245 |
