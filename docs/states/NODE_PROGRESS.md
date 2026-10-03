@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P121 byte buffer offsets](../proposals/m2/t70-final-current-certification.md#s17-p121-checkpoint---original-buffer-byte-offsets-repaired).
+S17 P121:11 graphics/attribute labels,133 original instructions and7 branch pairs; two synthetic high-offset exits removed, graphics byte cursor and attribute command-before-INY order corrected. Two65536-root families,131072 original roots each width0 scoped RAM/APU/order diff;all133PC/14branch sides. New boundary regression rejects predecessor exit2;7 focused tests each width pass. Three EXEs refreshed via modern targets/original OpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81); material993 partial,total unknown. M2 incomplete.
+
 [P120 buffer phases](../proposals/m2/t70-final-current-certification.md#s17-p120-checkpoint---column-buffers-and-setup-clearing-verified).
 S17 P120:15 buffer-phase participants; two2048-root actual original/native manifests (4096 roots each width) pass full scoped RAM/APU/write comparison. Eight-task column set ends at offset144;03EE/06CF preserved. Sequential actual9071 setup clears0340/0368/03EE and preserves06CF. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls (raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
 

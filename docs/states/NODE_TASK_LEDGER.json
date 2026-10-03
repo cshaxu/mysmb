@@ -15688,7 +15688,7 @@
       "label": "RenderAreaGraphics",
       "line": 1825,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15717,7 +15717,7 @@
       "label": "DrawMTLoop",
       "line": 1840,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15738,7 +15738,7 @@
       "label": "RightCheck",
       "line": 1878,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15759,7 +15759,7 @@
       "label": "LLeft",
       "line": 1886,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15780,7 +15780,7 @@
       "label": "NextMTRow",
       "line": 1888,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15801,7 +15801,7 @@
       "label": "SetAttrib",
       "line": 1889,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15822,7 +15822,7 @@
       "label": "ExitDrawM",
       "line": 1914,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15843,7 +15843,7 @@
       "label": "RenderAttributeTables",
       "line": 1920,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15872,7 +15872,7 @@
       "label": "SetATHigh",
       "line": 1930,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {
@@ -15893,7 +15893,7 @@
       "label": "AttribLoop",
       "line": 1940,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
+      "receivingBasis": "S17 P121 original byte VRAM offset addressing correction.",
       "futurePackage": null,
       "history": [
         {

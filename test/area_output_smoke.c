@@ -88,6 +88,8 @@ static int verify_renderer(mysmb_u8 parser_task, mysmb_u8 column)
 int main(void)
 {
     struct mysmb_game game;
+    mysmb_u8 row;
+    mysmb_u16 graphics;
     if (verify_renderer(0U, 0U) != 0) return 1;
     if (verify_renderer(1U, 1U) != 0) return 1;
     /* Controlled alias from the original $896a entry: an early payload
@@ -100,5 +102,36 @@ int main(void)
     game.ram[0x03f9U] = 0x5aU;
     if (mysmb_area_render_attribute_tables(&game) == 0U ||
         game.ram[0x040eU] != 0x5aU) return 1;
+    /* Original DrawMTLoop wraps its byte X cursor, while absolute-X
+     * displacements remain outside the wrap. Row eight resumes at $0344,
+     * not $0444; the header itself still uses the incoming $f0 offset. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    game.ram[0x0340U] = 0xf0U;
+    game.ram[0x0720U] = 0x20U;
+    game.ram[0x0721U] = 0x80U;
+    game.ram[0x0444U] = 0xa5U;
+    for (row = 0U; row < 13U; ++row) game.ram[0x06a1U + row] = 0U;
+    graphics = (mysmb_u16)(mysmb_local_prg[0x0b08U] |
+        ((mysmb_u16)mysmb_local_prg[0x0b0cU] << 8U));
+    if (mysmb_area_render_graphics(&game) == 0U ||
+        game.ram[0x0340U] != 0x0dU || game.ram[0x034eU] != 0U ||
+        game.ram[0x0431U] != 0x20U || game.ram[0x0433U] != 0x9aU ||
+        game.ram[0x0344U] != mysmb_local_prg[graphics - 0x8000U + 2U] ||
+        game.ram[0x0444U] != 0xa5U) return 2;
+    /* AttribLoop uses absolute-Y displacements before incrementing Y.
+     * At Y=$ff, the low/length/payload remain at $0441-$0443. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0340U] = 0xffU;
+    game.ram[0x0720U] = 0x20U;
+    game.ram[0x0721U] = 0x80U;
+    game.ram[0x0341U] = 0xa5U;
+    for (row = 0U; row < 7U; ++row)
+        game.ram[0x03f9U + row] = (mysmb_u8)(row + 1U);
+    if (mysmb_area_render_attribute_tables(&game) == 0U ||
+        game.ram[0x0340U] != 0x1bU || game.ram[0x035cU] != 0U ||
+        game.ram[0x0441U] != 0xcfU || game.ram[0x0442U] != 1U ||
+        game.ram[0x0443U] != 1U || game.ram[0x0347U] != 2U ||
+        game.ram[0x0341U] != 0xa5U) return 3;
     return 0;
 }

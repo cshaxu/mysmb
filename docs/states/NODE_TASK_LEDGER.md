@@ -388,16 +388,16 @@ transfer existing ownership or allocate a numeric T.
 | 1804 | `ResetSpritesAndScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
 | 1809 | `ResetScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
 | 1813 | `NoReset` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1825 | `RenderAreaGraphics` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 1840 | `DrawMTLoop` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1878 | `RightCheck` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1886 | `LLeft` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1888 | `NextMTRow` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1889 | `SetAttrib` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1914 | `ExitDrawM` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1920 | `RenderAttributeTables` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 1930 | `SetATHigh` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1940 | `AttribLoop` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1825 | `RenderAreaGraphics` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 1840 | `DrawMTLoop` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
+| 1878 | `RightCheck` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
+| 1886 | `LLeft` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
+| 1888 | `NextMTRow` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
+| 1889 | `SetAttrib` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
+| 1914 | `ExitDrawM` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
+| 1920 | `RenderAttributeTables` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 1930 | `SetATHigh` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
+| 1940 | `AttribLoop` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
 | 1962 | `SetVRAMCtrl` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
 | 1970 | `ColorRotatePalette` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 1973 | `BlankPalette` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |

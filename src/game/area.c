@@ -715,7 +715,6 @@ mysmb_u8 mysmb_area_render_graphics(struct mysmb_game *game)
     if (game->area_prg == 0 || game->area_prg_size <= MYSMB_AREA_METATILE_HIGH + 3U)
         return 0U;
     buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET];
-    if (buffer_offset > 0xd6U) return 0U;
     side = (game->ram[MYSMB_AREA_PARSER_TASK] & 1U) != 0U ? 0U : 2U;
     game->ram[5U] = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] & 1U);
     game->ram[0U] = buffer_offset;
@@ -737,10 +736,12 @@ mysmb_u8 mysmb_area_render_graphics(struct mysmb_game *game)
         source = (mysmb_u16)(graphics - 0x8000U +
             game->ram[2U] + side);
         if ((mysmb_u16)(source + 1U) >= game->area_prg_size) return 0U;
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 3U +
-            (mysmb_u16)row * 2U)] = game->area_prg[source];
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 4U +
-            (mysmb_u16)row * 2U)] = game->area_prg[(mysmb_u16)(source + 1U)];
+        /* DrawMTLoop reloads the wrapping byte cursor $00 into X. The
+         * absolute-X operand still adds its displacement after that wrap. */
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + 3U +
+            game->ram[0U])] = game->area_prg[source];
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + 4U +
+            game->ram[0U])] = game->area_prg[(mysmb_u16)(source + 1U)];
         attribute_shift = (mysmb_u8)(((row & 1U) << 2U) |
             (game->ram[5U] << 1U));
         game->ram[3U] = (mysmb_u8)(palette << attribute_shift);
@@ -762,7 +763,7 @@ mysmb_u8 mysmb_area_render_graphics(struct mysmb_game *game)
     return 1U;
 }
 
-/* ROM $896a-$89a6 RenderAttributeTables. */
+/* ROM $896a-$89c2 RenderAttributeTables through SetVRAMCtrl. */
 mysmb_u8 mysmb_area_render_attribute_tables(struct mysmb_game *game)
 {
     mysmb_u8 buffer_offset;
@@ -772,7 +773,6 @@ mysmb_u8 mysmb_area_render_attribute_tables(struct mysmb_game *game)
     mysmb_u8 borrow;
 
     buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET];
-    if (buffer_offset > 0xdeU) return 0U;
     low = (mysmb_u8)(game->ram[MYSMB_AREA_NT_LOW] & 0x1fU);
     borrow = low < 4U ? 1U : 0U;
     low = (mysmb_u8)((low - 4U) & 0x1fU);
@@ -790,16 +790,18 @@ mysmb_u8 mysmb_area_render_attribute_tables(struct mysmb_game *game)
          * attribute table; advancing by one misaddresses rows two through
          * seven while leaving the first command deceptively correct. */
         low = (mysmb_u8)(low + 8U);
-        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = high;
-        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = low;
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = high;
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 1U] = low;
         game->ram[1U] = low;
         /* AttribLoop reads/stores the payload before writing its length.
          * Keep that order when the packet aliases AttributeBuffer. */
-        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 1U] =
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 3U] =
             game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row];
-        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = 1U;
-        buffer_offset++;
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 2U] = 1U;
         game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row] = 0U;
+        /* AttribLoop adds operand displacements to the original byte Y,
+         * then executes four INY instructions after all command writes. */
+        buffer_offset = (mysmb_u8)(buffer_offset + 4U);
     }
     game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = 0U;
     game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET] = buffer_offset;

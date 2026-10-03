@@ -26469,12 +26469,14 @@
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $88ae: stages a 13-metatile vertical Buffer2 command, accumulates attributes, advances name-table address and selects control six. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26492,12 +26494,14 @@
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $88c7: selects metatile graphics half by parser-task parity and emits two vertical tile bytes for each of 13 rows. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26514,11 +26518,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8901: selects top/right attribute-bit placement. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26535,11 +26541,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8910: selects lower-left attribute-bit placement. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26556,11 +26564,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8916: advances attribute row for lower quadrants. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26577,11 +26587,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8917: merges selected palette bits and advances two tile-byte output positions. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26598,11 +26610,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8933: terminates Buffer2, advances name-table low byte and toggles nametable at the status-bar boundary. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26620,12 +26634,14 @@
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8940: appends seven one-byte attribute commands derived from the just-rendered column. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26642,11 +26658,13 @@
       "semanticEvidence": [
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8956: builds $23c0-family attribute-table address after borrow/nametable adjustment. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26664,12 +26682,14 @@
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $8962: emits one attribute byte every eight address bytes and clears its source entry. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -26687,12 +26707,14 @@
         "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
         "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified: fixed8-slot/four29-byte/seven4-byte source schedule; conditional incoming offset0; full phase dispatch lifetime remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:allbyte offset address/order repair,133PC/7branch pairs reviewed;global lifetimes pending."
       ],
       "operationalEvidence": [
         "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified:4096 original roots each width0diff, actual sequential setup boundary and7focused tests; products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired:131072 roots eachwidth0diff/all133PC/14sides,7focused tests eachwidth,oldregression red,threeproducts refreshed."
       ],
       "semanticContract": "ROM $899f: writes VRAM_Buffer_AddrCtrl six and returns. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
@@ -170529,7 +170551,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix",
         "docs/proposals/m2/t70-final-current-certification.md S17 P118 checkpoint - qualified loop child returns verified",
         "docs/proposals/m2/t70-final-current-certification.md S17 P119 checkpoint - slot-storage bounds and remaining lifetimes",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P120 checkpoint - column buffers and setup clearing verified",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P121 checkpoint - original buffer byte offsets repaired"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
