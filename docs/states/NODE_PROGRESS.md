@@ -13,6 +13,12 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P27 consumed-use index](../proposals/m2/t70-final-current-certification.md#s17-p27-checkpoint---current-consumed-use-obligation-index).
+774 instruction/221 direct RAM sites have complete local-owner/core receipts;
+3552 other direct RAM sites need exact retained receipt joins or missing proof.
+This does not invalidate retained node evidence or define a new exact fraction.
+Material946 partial,total unknown;four final packages remain open.
+
 [P26 shared motion](../proposals/m2/t70-final-current-certification.md#s17-p26-checkpoint---shared-motion-value-lifetimes).
 93 core instruction clauses/47 RAM sites,4096 original roots each width zero
 differences,all8 branch pairs/5 tests each pass.11 paths936-946;material946

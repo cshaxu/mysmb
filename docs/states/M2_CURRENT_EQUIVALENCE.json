@@ -166014,8 +166014,29 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P25 admission - indexed memory clear to sound queues",
         "docs/proposals/m2/t70-final-current-certification.md S17 P25 checkpoint - indexed clear queue consumers",
         "docs/proposals/m2/t70-final-current-certification.md S17 P26 admission - shared motion carry and value lifetimes",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes"
-      ]
+        "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P27 admission - consolidate existing consumed-use evidence",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P27 checkpoint - current consumed-use obligation index"
+      ],
+      "consumedUseAccounting": {
+        "originalInstructionSites": 10691,
+        "localInstructionReceiptSites": 774,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9917,
+        "explicitMemorySites": 4171,
+        "directRamSites": 3773,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 221,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3552,
+        "immutableRomSiteOnlyReceipts": 250,
+        "indirectDomainSiteOnlyReceipts": 61,
+        "hardwareCommandSiteOnlyReceipts": 87,
+        "directExternalQueueWriterPaths": 48,
+        "materialPathsEnumerated": 946,
+        "globalMaterialPathDenominator": "unknown",
+        "nodeOrControlPromotion": 0,
+        "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator.",
+        "authority": "docs/proposals/m2/t70-final-current-certification.md S17 P27 checkpoint - current consumed-use obligation index",
+        "limits": "Conservative reconciliation index,not invalidation of retained scoped evidence or whole-program certification. Other3552 direct RAM/9917 instruction sites need exact clause receipt joins;not all untested or mismatching."
+      }
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
     "gapClosure": [

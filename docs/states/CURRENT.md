@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P27 active;P26 motion lifetime checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P28 active;P27 consumed-use index checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -54,7 +54,6 @@
 
 
 
-S17 P19:sound681 sites/174 direct RAM sites reconciled in declared47-sequence domain;24064 original roots each width zero RAM/commands,independent persistent C state and259 observed native RAM/local joins plus1 pure-fold proof pass.153 new paths727-879;material879 partial,total unknown.8 tests each pass;no source/products change. Other owners/external producers and four final packages remain open.
 
 S17 P20:30720 sampled original parent-to-SoundEngine roots each width zero full-RAM pre/post/APU/ordered-command diff;13/48 direct external queue-write PCs observed,35 named pending.8 checks each pass;no source/products/node/control/material credit. Local1992/1992,controls4274/4274,material879 partial,total unknown;S17 and four final packages open.
 
@@ -70,3 +69,5 @@ S17 P24:90112 actual original parent/sound roots each width zero full pre/post R
 S17 P25:2048 real initialization-parent/sound roots each width zero full pre/post RAM/APU/commands;six90dc read pairs independently match current indexed-clear/native sound events. Six paths930-935;no source/products/node/control changes. Historical/local1992/1992,controls4274/4274,material935 partial,total unknown;other lifetimes/four final packages open.
 
 S17 P26:8 motion labels/93 instructions/47 RAM sites reconciled within core X0-22 domains;4096 original roots each width zero full pre/post RAM/APU/commands and horizontal return diff;all PCs/eight branch pairs observed,5 checks each pass.147 actual semantic address joins yield11 paths936-946;STA/RTS dummy bus reads excluded. No source/products/fresh nodes/controls;local1992/1992,controls4274/4274,material946 partial,total unknown;other lifetimes/final packages open.
+
+S17 P27:10691-use/4171-memory index complete and four negative checks pass;774 instruction/221 direct RAM sites have bounded complete-owner/core receipts,3552 other direct RAM sites still require exact existing receipt joins or missing-clause proof.250 ROM/61 indirect/87 hardware site-only dimensions remain distinct;no credit/re-audit/product refresh. Retained scoped nodes1992/1992,controls4274/4274,material946 partial,total unknown;four final packages open.

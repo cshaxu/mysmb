@@ -5101,3 +5101,202 @@ infeasible68);material946 partial,total unknown. Current S17 audit scope402
 labels,fresh0/max1992;8 added participants already exact with existing
 maintenance receivers. Other owner lifetimes/full-game aliases and final
 pixels/routes/snapshot remain open. S17 and M2 are not certified complete.
+
+## S17 P27 admission - consolidate existing consumed-use evidence
+
+Complete the existing S17 completeness index,using the original P1 consumed-
+use census and P2/P3-P18/P19/P24-P26 receipts. No new original-node audit,
+owner custody transfer,product change,test matrix expansion or path credit.
+Distinguish complete local owner instruction/use receipts from site-only
+binding/address/hardware receipts and limited queue producer joins. Keep all
+older node/path evidence as retained candidates;do not invalidate it merely
+because it has not yet been reconciled into this index. Original PC/use IDs
+must be unique/complete;current recorded source identities checked;reject
+missing/duplicate rows and false whole-program/local-proof promotions.
+Fresh0/max1992,scope402 unchanged,all index/log/research output below build.
+
+## S17 P27 checkpoint - current consumed-use obligation index
+
+Original P1 inventory contains10691 unique instruction/use IDs and4171
+explicit memory sites:3773 direct RAM,250 direct ROM,87 hardware-base and61
+indirect sites. Current index accounts for each once while permitting
+overlapping proof dimensions. It does not turn address/binding/site checks
+into whole-lifetime equivalence or use old nearest-label receipts as proof.
+
+| Evidence dimension | Sites | Meaning and remaining boundary |
+| --- | --- | --- |
+| Sound complete local owner clauses | 681 instructions /174 direct RAM | P19 declared persistent sequence/cache/stack contracts;external game producer lifetimes separate. |
+| Motion complete local core clauses | 93 instructions /47 direct RAM | P26 stable X0-22 scalar/cache/stack contracts;external caller/inter-frame lifetimes separate. |
+| Immutable direct-ROM site joins | 250 | P2 retained producer/read clauses and S16 index/address bindings;does not settle all subsequent register/state lifetimes. |
+| Indirect site domain dispositions | 61 | P3-P15 bounded pointer/index/alias/root clauses;does not settle every surrounding owner use. |
+| Hardware command/input site dispositions | 87 | P16-P18 bounded commands/controller contracts;pixels/timing remain separate. |
+| Direct external queue producer joins | 48 writers | P24 actual sampled consumed paths;whole-frame overwritten/cross-frame values remain separate. |
+
+The two complete local-owner/core receipts contain774 instruction sites and
+221 direct RAM sites. Other9917 instruction sites and3552 direct RAM sites
+have not been fully reconciled into an equivalent instruction/use index.
+This is **not** a claim that those nodes were never checked or that all3552
+sites are mismatches:many retain current scoped node/routes/material proofs,
+including earlier S17 repairs. Their exact IDs retain candidate references
+in the index;these must be joined to the specific value/alias/lifetime clause
+or supplemented only where missing. No accepted node/edge counter is reset.
+The full whole-program lifetime column remains pending for every site,
+including the774 locally reconciled sites,because inter-owner/inter-frame
+composition and complete feasible-material denominator remain unresolved.
+
+Direct-RAM sites not yet fully reconciled into a complete owner use index:
+
+| Current recorded owner | RAM sites |
+| --- | --- |
+| src/game/area.c | 402 |
+| src/game/player.c | 138 |
+| src/game/oam/normal_enemy_gfx.c | 128 |
+| src/game/terminal_modes.c | 81 |
+| src/game/oam/player_gfx.c | 81 |
+| src/game/enemy/firebar.c | 79 |
+| shared game core: enemy/balance_platform.c | 78 |
+| src/game/world/player_enemy_collision.c | 72 |
+| src/game/game.c | 67 |
+| src/game/frame_root.c | 66 |
+| src/game/oam/block_gfx.c | 54 |
+| shared coin, misc, score, world and OAM core | 51 |
+| src/game/objects.c | 48 |
+| shared enemy stream and initializer core | 48 |
+| src/game/title_modes.c | 46 |
+| shared game core: enemy/bowser.c | 45 |
+| shared blocks, area, world and OAM core | 44 |
+| shared firebar and flying-Cheep initializer core | 44 |
+| src/game/world/enemy_collision.c | 43 |
+| shared player-terrain, block and area core | 42 |
+| src/game/oam/small_platform_gfx.c | 40 |
+| src/game/player_control.c shared C90 player-control owner | 39 |
+| shared game whirlpool/world gravity | 39 |
+| shared enemy core and loop-command core | 39 |
+| src/game/enemy/background.c | 38 |
+| src/game/enemy/bloober.c | 37 |
+| src/game/scroll.c shared C90 scroll owner | 36 |
+| src/game/oam/object_position.c | 35 |
+| src/game/area/block_metatile.c | 34 |
+| shared cannon, world, enemy and OAM core | 33 |
+| src/game/enemy/{bullet_bill,swimming_cheep}.c | 33 |
+| src/game/world/bounding_box.c | 33 |
+| src/game/enemy/lakitu.c | 32 |
+| shared Bowser flame frenzy core | 31 |
+| shared game core: enemy/star_flag.c | 31 |
+| shared hammer, world and OAM core | 30 |
+| shared Lakitu/Spiny initializer and frenzy core | 30 |
+| src/game/enemy/hammer_bro.c | 30 |
+| shared game core: enemy/platform.c | 30 |
+| src/game/player/terrain.c and terrain children | 30 |
+| src/game/player/pipe_entry.c and terrain children | 30 |
+| src/game/player_movement.c shared C90 movement owner | 29 |
+| shared power-up and game-object core | 29 |
+| src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c | 28 |
+| shared enemy initializer target core | 27 |
+| src/game/area/area_data.c | 26 |
+| src/game/oam/vine_gfx.c | 26 |
+| src/game/status.c | 25 |
+| src/game/player/terrain.c | 25 |
+| src/game/oam/power_up_gfx.c | 25 |
+| src/game/player_end_level.c shared C90 end-level owner | 24 |
+| src/game/oam/flagpole_gfx.c | 24 |
+| shared group-enemy stream core | 23 |
+| shared game core: enemy/piranha.c | 23 |
+| src/game shared dispatcher/engine/scroll owners | 22 |
+| shared Bowser initializer and duplicate-object core | 22 |
+| shared game core: bridge/area/enemy/OAM | 22 |
+| shared game core: oam/bowser_flame_gfx.c | 22 |
+| src/game/world/geometry.c | 22 |
+| src/game/entry.c shared C90 entry owner | 21 |
+| src/game/enemy/{green_paratroopa,x_counter}.c | 21 |
+| src/game/world/fireball_hit.c | 21 |
+| shared fireball core owner | 20 |
+| shared game timer/enemy core | 20 |
+| shared game fireball/bubble core | 19 |
+| shared world movement/gravity and actor core | 19 |
+| shared game core: oam/bowser_gfx.c | 19 |
+| shared game core: enemy/actor_slots.c | 19 |
+| src/game/enemy/platform_collision.c | 19 |
+| src/game/player/climbing.c and terrain_metatiles.c | 19 |
+| src/game/oam/sprite_row.c | 19 |
+| src/game/player_modes.c shared C90 player-mode owner | 18 |
+| src/game/player_transition.c shared C90 transition owner | 17 |
+| shared flagpole/OAM core | 17 |
+| shared fireworks frenzy core | 17 |
+| src/game/oam/hammer_gfx.c | 17 |
+| shared fireball dispatch owner | 16 |
+| shared platform initializer core | 16 |
+| src/game/enemy/movement.c | 16 |
+| src/game/boot.c | 15 |
+| shared vine, world and OAM core | 15 |
+| shared Bullet Bill/Cheep frenzy core | 15 |
+| src/game/world/collision.c | 15 |
+| src/game/player/terrain_metatiles.c and climbing.c | 15 |
+| src/game/enemy_bounds.c | 15 |
+| src/game/world/block_buffer.c | 15 |
+| src/game/oam/fireworks_gfx.c | 15 |
+| shared game core: enemy/bowser_flame.c | 14 |
+| shared vine core | 13 |
+| src/game/enemy/{lifecycle,podoboo}.c | 13 |
+| shared game core: enemy/fireworks.c | 13 |
+| shared game core: world/fireball_enemy.c | 13 |
+| shared Piranha and frenzy-dispatch core | 12 |
+| shared timer, enemy, world, flagpole and jumpspring core | 10 |
+| shared game core: enemy/firebar_children.c | 10 |
+| src/game/world/hammer_collision.c | 10 |
+| src/game/world/powerup_collision.c | 10 |
+| src/game/area.c plus src/game/oam/flagpole_gfx.c | 9 |
+| src/game/enemy/init_targets.c | 9 |
+| src/game/enemy/{movement,paratroopa}.c | 9 |
+| src/game/oam/fireball_gfx.c | 9 |
+| src/game/fireball/bubble.c | 9 |
+| src/game/jumpspring.c | 8 |
+| src/game/enemy/flying_cheep.c | 7 |
+| src/game/oam/sprite_dump.c | 6 |
+| src/game/enemy/{core,normal,dispatch_targets,special_callers}.c | 5 |
+| src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side | 5 |
+| src/game/enemy/distance.c:mysmb_enemy_player_difference | 5 |
+| src/game/objects.c:mysmb_objects_step_hammer_terrain | 5 |
+| src/game/dispatcher.c | 4 |
+| shared game core: enemy/frenzy.c | 4 |
+| src/game/objects.c:mysmb_objects_bump_enemy | 4 |
+| src/game/oam/sprite_row.c and src/game/oam/enemy_offscreen.c | 4 |
+| shared box-only initializer tail | 3 |
+| src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain | 3 |
+| src/game/oam/enemy_offscreen.c and src/game/oam/sprite_dump.c | 3 |
+| src/game/oam/firebar_gfx.c | 3 |
+| src/game/frame_root.c and src/game/terminal_modes.c | 2 |
+| src/game/enemy/frenzy.c | 2 |
+| src/game/enemy/platform_callers.c | 2 |
+| shared game core: enemy/loop.c | 2 |
+| src/game/world/collision.c:mysmb_world_land_enemy | 2 |
+| src/game/oam/sprite_stacker.c | 2 |
+| src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c | 2 |
+| src/game/frame_root.c and src/game/title_modes.c | 1 |
+| src/game/world/metatiles.c | 1 |
+| src/game/objects.c:mysmb_objects_kill_enemy_above_block | 1 |
+| src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c | 1 |
+| src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c | 1 |
+
+Owner strings are retained source-census descriptors,some span multiple
+current files;they are grouping hints,not ownership transfers or new tasks.
+The next largest concrete chain is existing area/parser/scenery/column work.
+Reuse its P3-P15 returning roots and repaired source clauses;join every
+specific site before designing additional routes. Do not repeat the whole
+project or label every site untested based on this conservative index.
+
+Current identity prerequisites pass for audio,motion,boot/frame-root/game,
+enemy-stream,area-data and block-buffer owners. P2 immutable and indirect
+site-only receipts retain their own clause/dependency limits;this indexing
+does not silently re-certify changed caller contexts. Four negative checks
+reject missing/duplicate PCs,false whole-program closure and nearest-label
+local promotion. An initial temporary controller filename lookup was wrong;
+the actual P17 owner is frame_root.c and its recorded hash passes. No product
+defect or source edit resulted. Indexer/current-use-obligations.json and
+p27-use-index.log remain ignored local evidence below the S17 build tree.
+
+No new ROM execution,native test,product build,EXE refresh,node/control/path
+credit. Historical1992/1992;local scoped1992/1992 nodes,4274/4274 feasible
+controls(raw4342,infeasible68);material946 partial,total unknown. Counts in
+this index are **use obligations**,not a material-edge denominator or a new
+global exact fraction. S17/material,pixels,routes,snapshot remain open.
