@@ -4050,3 +4050,115 @@ mysmb16.exe:259179 bytes,SHA256 6b994a6197ffb580c15a26a69fc26c975d1b0115ad56ae54
 mysmb32.exe:373619 bytes,SHA256 5fa678c28a237b4899dd81938134b3541903b586f9bf49266269cb49b03a45fc.
 
 mysmb64.exe:379625 bytes,SHA256 1c8ad80d559e0feb2736f8f99f51f8c190e9a426edd87c335adfba65f3486064.
+
+## S17 P16 admission - direct sound hardware commands
+
+Continue the existing direct hardware family,no new whole-project audit.
+SoundEngineF2D0 root/shared audio owner,45 direct hardware-write instructions;
+audit participation labels:
+`SoundEngine`, `SndOn`, `InPause`, `DecPauC`, `StrWave`, `Dump_Squ1_Regs`, `Dump_Freq_Regs`, `Dump_Sq2_Regs`, `ContinueBumpThrow`, `ContinueSwimStomp`, `ContinueSmackEnemy`, `SmTick`, `StopSquare1Sfx`, `ContinueCGrabTTick`, `StopSquare2Sfx`, `GrowItemRegs`, `ContinueGrowItems`, `PlayNoiseSfx`, `DecrementSfx3Length`, `LoadHeader`, `NotTRO`, `NoDecEnv1`, `FetchSqu1MusicData`, `NoDecEnv2`, `DoAltLoad`, `HandleTriangleMusic`, `LoadTriCtrlReg`, `PlayBeat`.
+Fresh node/control/material0,incoming local1992/1992,max1992. No product
+repair admitted;current whole audio owner retains P7 source identity and
+S16 resource/selector domains. Review source hardware address/index/write
+order and native command fields before interpreting fresh original roots.
+45 queue/mute/pause/resume/music/effect combinations,512 live calls each;
+unmodified owner ROM persists original sound RAM between calls,reference
+input/output replayed to current native SoundEngine. All2048 RAM compare
+except actually observed physical pushes;24-register write shadow,ordered
+write count/index/value compare. Reference write shadow comes from CPU bus
+events,not assumed register readback or waveform. Two widths,2048-root
+batches below32MiB raw/120sec process;raw cleanup after comparisons.
+Whole-game timing/waveforms and the other42 hardware sites remain distinct.
+Current focused audio/host-output checks required;no three-product refresh
+without source change. This audits command consumers,not the final complete
+material denominator or every caller/input domain.
+
+## S17 P16 checkpoint - direct sound hardware commands
+
+45 direct hardware stores in SoundEngine and its channel/music/SFX children
+have current shared audio counterparts. Current whole audio source is
+unchanged from accepted1face800 and P7,normalized SHA256:
+b02bed93dffecc3c205b04801abe85054af28dab7fc83518205915befd43b1b4.
+Fixed address stores retain indices00/01/02/04/05/06/08/0c/0e/0f/11/15/17.
+Dump_Freq_Regs source X0/4/8 and native corresponding callers produce
+4002/4003,4006/4007,400a/400b;these cannot alias4016 input strobe. Source
+register index width is byte;no arbitrary external X domain is certified.
+Native shim writes the24-byte shadow,then appends bounded ordered commands,
+and mirrors17/21/23 to DAC/channel-enable/frame-counter fields. Explicit
+assignments checked;commands remain shared game business logic,host adapters
+consume them. No platform branch introduced.
+
+23040 current unmodified original SoundEngineF2D0 roots per width from45
+512-call sequences:8 square1 effects,8 square2 effects,2 noise,8 area music,
+8 event music,title mute,2 pause/resume/music scenarios,8 mixed effects/music.
+Original RAM persists between calls,frame counter supplied,initial queues
+set once,pause transitions at named64/96 frames. Every native invocation
+receives that actual original entry RAM and inherited write shadow. Complete
+2048 RAM comparison,zero-page included;only actual observed physical pushes
+excluded. All24 shadow bytes,ordered write count and64 bounded index/value
+slots compare zero;overflow is rejected. The shadow is reconstructed from
+actual original CPU bus writes and represents command history,not simulated
+APU register readback,analog waveform or cycle accuracy. Eight current
+audio/music/pause/Win32 output checks each width pass. Source unchanged,
+three EXEs remain P15. Raw files deleted after each2048-root batch;aggregate
+raw below32MiB,each process below120sec. No runtime emulator introduced.
+
+Every one of the45 source hardware PCs was actually observed;use ID,owner,
+address and count are recorded below. This is the admitted effect/music/
+pause domain,not every Cartesian RAM state or whole-game caller coverage.
+
+| Use | PC | Owner | Hardware operand | Actual visits |
+| --- | --- | --- | --- | --- |
+| use-10013 | f2d5 | SoundEngine | SND_MASTERCTRL_REG | 512 |
+| use-10016 | f2db | SndOn | JOYPAD_PORT2 | 22528 |
+| use-10018 | f2e0 | SndOn | SND_MASTERCTRL_REG | 22528 |
+| use-10031 | f2ff | InPause | SND_MASTERCTRL_REG | 3 |
+| use-10036 | f30a | InPause | SND_MASTERCTRL_REG | 3 |
+| use-10055 | f335 | DecPauC | SND_MASTERCTRL_REG | 3 |
+| use-10086 | f37d | StrWave | SND_DELTA_REG+1 | 22528 |
+| use-10088 | f381 | Dump_Squ1_Regs | SND_SQUARE1_REG+1 | 604 |
+| use-10089 | f384 | Dump_Squ1_Regs | SND_SQUARE1_REG | 604 |
+| use-10096 | f393 | Dump_Freq_Regs | SND_REGISTER+2,x | 1823 |
+| use-10099 | f39b | Dump_Freq_Regs | SND_REGISTER+3,x | 1823 |
+| use-10101 | f39f | Dump_Sq2_Regs | SND_SQUARE2_REG | 779 |
+| use-10102 | f3a2 | Dump_Sq2_Regs | SND_SQUARE2_REG+1 | 779 |
+| use-10148 | f416 | ContinueBumpThrow | SND_SQUARE1_REG+1 | 2 |
+| use-10194 | f46f | ContinueSwimStomp | SND_SQUARE1_REG | 15 |
+| use-10198 | f478 | ContinueSwimStomp | SND_SQUARE1_REG+2 | 1 |
+| use-10211 | f496 | ContinueSmackEnemy | SND_SQUARE1_REG+2 | 2 |
+| use-10215 | f49f | SmTick | SND_SQUARE1_REG | 26 |
+| use-10221 | f4ad | StopSquare1Sfx | SND_MASTERCTRL_REG | 18 |
+| use-10223 | f4b2 | StopSquare1Sfx | SND_MASTERCTRL_REG | 18 |
+| use-10252 | f535 | ContinueCGrabTTick | SND_SQUARE2_REG+2 | 2 |
+| use-10280 | f573 | StopSquare2Sfx | SND_MASTERCTRL_REG | 17 |
+| use-10282 | f578 | StopSquare2Sfx | SND_MASTERCTRL_REG | 17 |
+| use-10355 | f607 | GrowItemRegs | SND_SQUARE2_REG+1 | 4 |
+| use-10365 | f61e | ContinueGrowItems | SND_SQUARE2_REG | 188 |
+| use-10378 | f64d | PlayNoiseSfx | SND_NOISE_REG | 400 |
+| use-10379 | f650 | PlayNoiseSfx | SND_NOISE_REG+2 | 400 |
+| use-10381 | f655 | PlayNoiseSfx | SND_NOISE_REG+3 | 400 |
+| use-10385 | f65f | DecrementSfx3Length | SND_NOISE_REG | 10 |
+| use-10480 | f732 | LoadHeader | SND_MASTERCTRL_REG | 40 |
+| use-10482 | f737 | LoadHeader | SND_MASTERCTRL_REG | 40 |
+| use-10504 | f768 | NotTRO | SND_TRIANGLE_REG | 11 |
+| use-10506 | f76d | NotTRO | SND_SQUARE1_REG | 11 |
+| use-10507 | f770 | NotTRO | SND_SQUARE2_REG | 11 |
+| use-10534 | f7b4 | NoDecEnv1 | SND_SQUARE2_REG | 7798 |
+| use-10536 | f7b9 | NoDecEnv1 | SND_SQUARE2_REG+1 | 7798 |
+| use-10546 | f7cf | FetchSqu1MusicData | SND_SQUARE1_REG | 1 |
+| use-10548 | f7d4 | FetchSqu1MusicData | SND_SQUARE1_REG+1 | 1 |
+| use-10571 | f80d | NoDecEnv2 | SND_SQUARE1_REG | 6882 |
+| use-10575 | f817 | DoAltLoad | SND_SQUARE1_REG+1 | 7278 |
+| use-10587 | f833 | HandleTriangleMusic | SND_TRIANGLE_REG | 184 |
+| use-10612 | f86a | LoadTriCtrlReg | SND_TRIANGLE_REG | 177 |
+| use-10649 | f8bb | PlayBeat | SND_NOISE_REG | 541 |
+| use-10650 | f8be | PlayBeat | SND_NOISE_REG+2 | 541 |
+| use-10651 | f8c1 | PlayBeat | SND_NOISE_REG+3 | 541 |
+
+All45 sound-command uses receive scoped dispositions;42 other hardware sites
+remain(reset2 sound stores,37 PPU sites,3 controller sites). This checkpoint
+adds no fictitious ROM node consumer for host hardware and no material count.
+Historical1992/1992,local scoped nodes1992/1992,controls4274/4274
+(raw4342,infeasible68),material726 partial,total unknown. S17 remains open
+for other hardware and mutable/register/flag/stack/inter-frame clauses;
+material/pixels/routes/snapshot packages still pending. No full certification.

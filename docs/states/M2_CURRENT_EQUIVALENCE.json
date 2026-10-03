@@ -51300,11 +51300,13 @@
       "semanticEvidence": [
         "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
         "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Title OperMode=0 writes only master disable, returns without clearing queues or touching DAC; non-title enters normal/pause control.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
         "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Title OperMode=0 writes only master disable, returns without clearing queues or touching DAC; non-title enters normal/pause control.",
       "currentSourcePaths": [
@@ -51320,10 +51322,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
         "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Ordered4017=FF then4015=0F; PauseMode!=0 wins; otherwise PauseQueue==1 enters pause, other queues enter normal dispatch."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Ordered4017=FF then4015=0F; PauseMode!=0 wins; otherwise PauseQueue==1 enters pause, other queues enter normal dispatch.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Ordered4017=FF then4015=0F; PauseMode!=0 wins; otherwise PauseQueue==1 enters pause, other queues enter normal dispatch.",
       "currentSourcePaths": [
@@ -51339,10 +51343,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
         "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Existing pause buffer continues; empty buffer/empty queue skips; nonzero queue copies both flags, disables, clears three effect buffers, enables, length2A."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Existing pause buffer continues; empty buffer/empty queue skips; nonzero queue copies both flags, disables, clears three effect buffers, enables, length2A.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Existing pause buffer continues; empty buffer/empty queue skips; nonzero queue copies both flags, disables, clears three effect buffers, enables, length2A.",
       "currentSourcePaths": [
@@ -51434,10 +51440,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
         "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Decrement modulo256; zero disables; saved buffer2 clears pause flag, other buffers retain it; pause buffer clears."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Decrement modulo256; zero disables; saved buffer2 clears pause flag, other buffers retain it; pause buffer clears.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Decrement modulo256; zero disables; saved buffer2 clears pause flag, other buffers retain it; pause buffer clears.",
       "currentSourcePaths": [
@@ -51529,10 +51537,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
         "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write old DAC, never post-update counter, as final command."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write old DAC, never post-update counter, as final command.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Write old DAC, never post-update counter, as final command.",
       "currentSourcePaths": [
@@ -51548,10 +51558,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_dump_squ1_regs",
       "semanticEvidence": [
         "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write Y to4001 then X to4000, retaining same-value writes."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write Y to4001 then X to4000, retaining same-value writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Write Y to4001 then X to4000, retaining same-value writes.",
       "currentSourcePaths": [
@@ -51605,10 +51617,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_dump_freq_regs",
       "semanticEvidence": [
         "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Y=A; low CPU FF01+Y wrapped16 first; zero returns A0 without writes; otherwise low to4002+X then (FF00+Y|08) to4003+X, returned high A."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Y=A; low CPU FF01+Y wrapped16 first; zero returns A0 without writes; otherwise low to4002+X then (FF00+Y|08) to4003+X, returned high A.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Y=A; low CPU FF01+Y wrapped16 first; zero returns A0 without writes; otherwise low to4002+X then (FF00+Y|08) to4003+X, returned high A.",
       "currentSourcePaths": [
@@ -51643,10 +51657,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_dump_sq2_regs",
       "semanticEvidence": [
         "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write X to4004 then Y to4005, preserving order difference from Square1."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Write X to4004 then Y to4005, preserving order difference from Square1.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Write X to4004 then Y to4005, preserving order difference from Square1.",
       "currentSourcePaths": [
@@ -51947,10 +51963,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_square1_continue_throw",
       "semanticEvidence": [
         "Td S9 K26 square-one basic SFX node-semantics and independent control/material-edge audit: SMB1 lines 15194-15253 compared with shared src/game/audio.c square-one helpers; controlled original-ROM/x86/x64 small/big jump, flagpole, bump and fireball-throw timing routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Only length06 writes4001=BB, then decrement once."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Only length06 writes4001=BB, then decrement once.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Only length06 writes4001=BB, then decrement once.",
       "currentSourcePaths": [
@@ -52061,10 +52079,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect04 continuation",
       "semanticEvidence": [
         "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Read envelope using old remaining length before4000 write; length06 additionally writes4002=9E before decrement."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Read envelope using old remaining length before4000 write; length06 additionally writes4002=9E before decrement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Read envelope using old remaining length before4000 write; length06 additionally writes4002=9E before decrement.",
       "currentSourcePaths": [
@@ -52118,10 +52138,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 effect08 queue==0",
       "semanticEvidence": [
         "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length08 writes4002=A0 then4000=9F; other lengths write4000=90; one decrement."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Length08 writes4002=A0 then4000=9F; other lengths write4000=90; one decrement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Length08 writes4002=A0 then4000=9F; other lengths write4000=90; one decrement.",
       "currentSourcePaths": [
@@ -52156,10 +52178,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 smack4000 write",
       "semanticEvidence": [
         "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Writes chosen90/9F before shared decrement."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Writes chosen90/9F before shared decrement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Writes chosen90/9F before shared decrement.",
       "currentSourcePaths": [
@@ -52194,10 +52218,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1 terminal branch",
       "semanticEvidence": [
         "Td S9 K27 square-one queue/swim/smack/pipe SFX node-semantics and independent control-edge audit: SMB1 lines 15256-15365 compared with shared src/game/audio.c mysmb_audio_step_square1 and helpers; controlled original-ROM/x86/x64 queue-priority, active-buffer, swim/stomp, smack and pipe/injury timing routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Clear only F1 then ordered4015=0E,4015=0F; terminal mute does not reorder same-value/retrigger commands."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 source15194-15365/current portable-C per-node audit: Clear only F1 then ordered4015=0E,4015=0F; terminal mute does not reorder same-value/retrigger commands.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S2 P2 unchanged original69,632 complete SoundEngine roots; actual scoped transfers/returns/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each and original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Clear only F1 then ordered4015=0E,4015=0F; terminal mute does not reorder same-value/retrigger commands.",
       "currentSourcePaths": [
@@ -52403,10 +52429,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_square2_continue_coin_timer",
       "semanticEvidence": [
         "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Length30 writes4006=54; other lengths skip tone; one decrement."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Length30 writes4006=54; other lengths skip tone; one decrement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Length30 writes4006=54; other lengths skip tone; one decrement.",
       "currentSourcePaths": [
@@ -52593,10 +52621,12 @@
       "currentCounterpart": "src/game/audio.c shared audio terminal writers; mysmb_audio_stop_square2_sfx for later callers",
       "semanticEvidence": [
         "Td S9 K28 square-two tables, effects and queue node-semantics and independent control/material-edge audit: SMB1 lines 15369-15502 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 coin/timer/blast/power-up/grow/vine/1-up priority and timing routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Ordered4015=0D then0F; this entry itself does not clear F2, whereas preceding EmptySfx2Buffer does. Later music calls uncredited."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Ordered4015=0D then0F; this entry itself does not clear F2, whereas preceding EmptySfx2Buffer does. Later music calls uncredited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Ordered4015=0D then0F; this entry itself does not clear F2, whereas preceding EmptySfx2Buffer does. Later music calls uncredited.",
       "currentSourcePaths": [
@@ -52916,10 +52946,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_square2_play_grow_item",
       "semanticEvidence": [
         "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Save primary length, write4005=7F, secondary0; fall into exactly one increment phase."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Save primary length, write4005=7F, secondary0; fall into exactly one increment phase.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Save primary length, write4005=7F, secondary0; fall into exactly one increment phase.",
       "currentSourcePaths": [
@@ -52935,10 +52967,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_square2_continue_grow_item",
       "semanticEvidence": [
         "Td S9 K29 square-two Bowser/one-up/grow-vine node-semantics and independent control-edge audit: SMB1 lines 15504-15565 compared with shared src/game/audio.c square-two helpers; controlled original-ROM/x86/x64 Bowser threshold, one-up divisible-by-eight and grow/vine secondary-counter termination routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Increment secondary modulo256, index=secondary>>1; equality to unchanged primary stops, else4004=9D and actual SetFreq_Squ2(table[index]); never decrement primary."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 source15369-15564/current per-node audit: Increment secondary modulo256, index=secondary>>1; equality to unchanged primary stops, else4004=9D and actual SetFreq_Squ2(table[index]); never decrement primary.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S3 P2 unchanged original135,168 complete SoundEngine roots; scoped actual transitions/table reads, full1841 RAM/24 APU/ordered writes match x86/x64;7 tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Increment secondary modulo256, index=secondary>>1; equality to unchanged primary stops, else4004=9D and actual SetFreq_Squ2(table[index]); never decrement primary.",
       "currentSourcePaths": [
@@ -53030,10 +53064,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_play_noise_sfx",
       "semanticEvidence": [
         "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Ordered400C=A,400E=X,400F=18; continues to noise length tail. Brick X is frequency-table result, flame X0F."
+        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Ordered400C=A,400E=X,400F=18; continues to noise length tail. Brick X is frequency-table result, flame X0F.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Ordered400C=A,400E=X,400F=18; continues to noise length tail. Brick X is frequency-table result, flame X0F.",
       "currentSourcePaths": [
@@ -53049,10 +53085,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_decrement_noise_length",
       "semanticEvidence": [
         "Td S9 K30 noise SFX node-semantics and independent control/material-edge audit: SMB1 lines 15569-15628 compared with shared src/game/audio.c noise helpers; controlled original-ROM/x86/x64 brick, Bowser-flame, active-buffer, terminal mute and envelope-boundary routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Unsigned byte decrement0->FF/1->0; nonzero returns; zero writes400C=F0 then clears F3, without own queue clear."
+        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 source15569-15629/current manual audit: Unsigned byte decrement0->FF/1->0; nonzero returns; zero writes400C=F0 then clears F3, without own queue clear.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S4 P2 actual unchanged69760 SoundEngine roots; full1841 RAM/24 APU/ordered commands x86/x64 zero diff, all scoped transitions and noise indexed reads;248 tests each plus7 updated focused tests/original DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Unsigned byte decrement0->FF/1->0; nonzero returns; zero writes400C=F0 then clears F3, without own queue clear.",
       "currentSourcePaths": [
@@ -53373,11 +53411,13 @@
       "semanticEvidence": [
         "Td S9 K31 music dispatcher/header node-semantics and independent control-edge audit: SMB1 lines 15632-15718 compared with shared src/game/audio.c music selection, event/area load and header helpers; controlled original-ROM/x86/x64 queue-priority, death, time-running-out, ground-loop and header-init routes remain required.",
         "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
         "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "All256 byte selectors read F90C+Y then six bytes F90D+offset; exact RAM field/counter/reset/master0B->0F order. Missing/short owner binding guards are outside admitted complete-ROM ABI.",
       "currentSourcePaths": [
@@ -53435,10 +53475,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_end_square2_music",
       "semanticEvidence": [
         "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: AND4 result, not unmasked original event, becomes A for victory tail load; event40 with zero saved area leaves zero A at this test."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: AND4 result, not unmasked original event, becomes A for victory tail load; event40 with zero saved area leaves zero A at this test.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "AND4 result, not unmasked original event, becomes A for victory tail load; event40 with zero saved area leaves zero A at this test.",
       "currentSourcePaths": [
@@ -53589,10 +53631,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music / load_music_envelope",
       "semanticEvidence": [
         "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Zero index is still read; actual helper then4004 envelope/4005 7F, actual Square1 handoff."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Zero index is still read; actual helper then4004 envelope/4005 7F, actual Square1 handoff.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Zero index is still read; actual helper then4004 envelope/4005 7F, actual Square1 handoff.",
       "currentSourcePaths": [
@@ -53630,11 +53674,13 @@
       "semanticEvidence": [
         "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
         "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
         "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Increment offset and read CPU stream. Each zero writes4000=83/4001=94/saves alt94, then loops; first nonzero note goes note handler.",
       "currentSourcePaths": [
@@ -53709,10 +53755,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music / load_music_envelope",
       "semanticEvidence": [
         "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Actual envelope helper indexes old Y after conditional RAM decrement; returned envelope writes4000 before alternate tail."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Actual envelope helper indexes old Y after conditional RAM decrement; returned envelope writes4000 before alternate tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Actual envelope helper indexes old Y after conditional RAM decrement; returned envelope writes4000 before alternate tail.",
       "currentSourcePaths": [
@@ -53747,10 +53795,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music",
       "semanticEvidence": [
         "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Write4001 with selected alternate A, then actual triangle continuation in the same stream invocation."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Write4001 with selected alternate A, then actual triangle continuation in the same stream invocation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Write4001 with selected alternate A, then actual triangle continuation in the same stream invocation.",
       "currentSourcePaths": [
@@ -53767,11 +53817,13 @@
       "semanticEvidence": [
         "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required.",
         "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Byte counter decrement wraps0 toFF; nonzero goes noise. Fetch stores incremented F9 before indirect read with old Y. First zero writes triangle0; negative byte calls real ProcessLengthData, saves length, writes1F, then second fetch with original write/read order; second zero writes0.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:whole audio.c unchanged from accepted1face800;LoadHeader is sole localF5/F6 writer;all scalar RAM write indices/callee closures checked. Square2 reloads after header-changing end path;length helper and other three channel closures do not write pointer bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
         "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths:retain original50176 live header/channel calls each width,actualF701/F706 and all six indirect PCs observed,zero scoped RAM/APU/ordered-write diff. S16 binds22 header/all byte-offset domains;four current native checks each pass,five negative probes reject invalid joins/clobbers. No new original trace.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Byte counter decrement wraps0 toFF; nonzero goes noise. Fetch stores incremented F9 before indirect read with old Y. First zero writes triangle0; negative byte calls real ProcessLengthData, saves length, writes1F, then second fetch with original write/read order; second zero writes0.",
       "currentSourcePaths": [
@@ -53863,10 +53915,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_triangle_music",
       "semanticEvidence": [
         "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required.",
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Write4008 with branch-selected A: zero for either rest,0F/1F/FF for gated note; actual noise follows."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Write4008 with branch-selected A: zero for either rest,0F/1F/FF for gated note; actual noise follows.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Write4008 with branch-selected A: zero for either rest,0F/1F/FF for gated note; actual noise follows.",
       "currentSourcePaths": [
@@ -53998,10 +54052,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_noise_music",
       "semanticEvidence": [
         "Td S9 K34 triangle/noise music and shared length node-semantics and independent control-edge audit: SMB1 lines 15835-15947 compared with shared src/game/audio.c triangle/noise music helpers; controlled original-ROM/x86/x64 stream, loopback, beat and length routes remain required.",
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Ordered400C control,400E X,400F Y writes for short/strong/long/silent; no host branch."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 source15828-15931 manual node contract: Ordered400C control,400E X,400F Y writes for short/strong/long/silent; no host branch.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:45 direct hardware stores map to shared audio APU command shim;fixed register indices and frequency X0/4/8 produce4002/4003,4006/4007,400a/400b,never input4016. Source order/current stable owner retained;APU17/21/23 derived fields match24-byte shadow by explicit assignments."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link."
+        "docs/history/M2-T68-music-data-current-proof.md S1 P2 final unchanged-ROM200961 roots each width, full1841 RAM/24 APU/ordered writes, all scoped feasible transitions;248 tests each/purity/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands:23040 new original SoundEngine returning roots each width from45 live512-call sequences,all45 hardware PCs observed,zero2048-RAM/24-register-shadow/ordered-write-count/index/value differences;observed pushes only excluded.8 current audio/host checks each pass;no waveform/cycle/whole-game claim."
       ],
       "semanticContract": "Ordered400C control,400E X,400F Y writes for short/strong/long/silent; no host branch.",
       "currentSourcePaths": [
@@ -159910,7 +159966,32 @@
         "GameMode",
         "GameRoutines",
         "MoveSubs",
-        "JumpEngine"
+        "JumpEngine",
+        "SoundEngine",
+        "SndOn",
+        "InPause",
+        "DecPauC",
+        "StrWave",
+        "Dump_Squ1_Regs",
+        "Dump_Freq_Regs",
+        "Dump_Sq2_Regs",
+        "ContinueBumpThrow",
+        "ContinueSwimStomp",
+        "ContinueSmackEnemy",
+        "SmTick",
+        "StopSquare1Sfx",
+        "ContinueCGrabTTick",
+        "StopSquare2Sfx",
+        "GrowItemRegs",
+        "ContinueGrowItems",
+        "PlayNoiseSfx",
+        "DecrementSfx3Length",
+        "NotTRO",
+        "NoDecEnv1",
+        "NoDecEnv2",
+        "DoAltLoad",
+        "LoadTriCtrlReg",
+        "PlayBeat"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -159943,7 +160024,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 admission - remaining mutable buffer pointers",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers",
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 admission - dispatch caller scratch correction",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 admission - direct sound hardware commands",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P16 active;P15 dispatch caller checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P17 active;P16 sound command checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -13,7 +13,7 @@
 | Files And ABI Surface | S17 bounded corrective game.c/area.c,title-bootstrap/area-output tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1:10691 textual instructions/4171 memory sites,10 encoded overlaps discharged;9003 consuming sites awaiting joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 166 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 191 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -40,7 +40,6 @@
 
 
 
-S17 P8:14 enemy indirect sites/nine pointer paths reconciled;1632 new header/parser compositions each width zero RAM diff,retained65536 roots observe all sites.4 checks each width/3 negatives pass. No source/products/node/control change;material682 partial,total unknown,S17 open.
 
 
 S17 P9:castle06 counter repaired;4288 composed roots/27139 parser roots each width zero RAM diff,11 tests each/six600-frame routes/3 products pass. Same-class side-pipe05/06 omission reopened6 labels;local1986/1992,controls4274/4274,material696 partial,total unknown. P10 stays S17 for pipe repair.
@@ -58,3 +57,5 @@ S17 P14:remaining9 RAM indirect sites reconciled;4992 current original roots eac
 
 
 S17 P15:eight omitted dispatch04-07 calls restored;9216 kernel/512 real caller roots each width zero diff,27139 parser rechecks/14 focused checks each/six600-frame routes/3 products pass. Local1992/1992,controls4274/4274;material726 partial,total unknown.61 indirect sites dispositioned in local domains;other material uses/four packages pending.
+
+S17 P16:45 direct sound hardware sites reconciled;23040 original live roots each width zero full-RAM/APU-shadow/ordered-write differences,all45 PCs observed,8 current checks each pass. No source/products/graph credit.42 other hardware sites/other material uses pending;local1992/1992,controls4274/4274,material726 partial,total unknown,S17 open.

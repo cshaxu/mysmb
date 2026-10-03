@@ -13,6 +13,11 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P16 sound hardware](../proposals/m2/t70-final-current-certification.md#s17-p16-checkpoint---direct-sound-hardware-commands).
+23040 original live roots each width zero full-RAM/APU-shadow/ordered-write
+differences;all45 PCs observed,8 current checks each pass. No source/products/
+graph credit.42 hardware sites/other material uses/four packages remain open.
+
 [P15 dispatch repair](../proposals/m2/t70-final-current-certification.md#s17-p15-checkpoint---dispatch-caller-scratch-repair).
 Eight omitted04-07 caller publications restored.9216 kernel/512 real caller
 roots per width zero diff;27139 parser rechecks/14 checks each/six600-frame
