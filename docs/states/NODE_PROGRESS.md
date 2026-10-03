@@ -13,6 +13,14 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P50 block source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p50-checkpoint---block-head-contents-chunks-and-replacement-source-use-joins).
+240instructions/87RAM joined16bounded clauses,430080actualroots each width
+zero scoped differences;allPC/conditional sides except proved impossible
+BEB1fallthrough.3367instruction/1171RAM receipts,2602otherRAMjoins remain.
+Control-01371 old exact receipt invalidated;currentlocalcontrols4272/4272,
+raw4342/infeasible70. Localnodes1992/1992,material993partial,totalunknown;
+source/products unchanged,whole M2 incomplete.
+
 [P49 hammer/misc/coin/powerup joins](../proposals/m2/t70-final-current-certification.md#s17-p49-checkpoint---hammer-misc-coin-score-and-powerup-source-use-joins).
 273instructions/110RAM joined21boundedclauses,471040currentroots eachwidth
 zero scoped differences,allPC/27branchpairs/oneconstantbranch.3127instruction/

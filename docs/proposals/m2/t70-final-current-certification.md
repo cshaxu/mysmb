@@ -7122,3 +7122,85 @@ Current src/game/power_up.c normalizedSHA256:4df8f451bb25eedfeb5e6ab85dde4dce82f
 Current src/game/power_up_init.c normalizedSHA256:a7ed5f66137abe0b588e27e290a8bf54aca8446b25141f7b07e40221a55f3a80.
 
 Historical/local1992/1992,controls4273/4273(raw4342,infeasible69);material993partial,totalunknown.3127instruction/1084RAM boundedreceipts,7564otherinstructions/2689otherRAMjoins remain,not new discoveredbugs.Fourfinalpackages open,M2 NOT COMPLETE.
+
+## S17 P50 admission - block head contents chunks and replacement source-use joins
+
+Existing census BCED-BF06:240instructions/87RAM,35labels;participants:PlayerHeadCollision,DBlockSte,ChkBrick,StartBTmr,ContBTmr,PutOldMT,PutMTileB,SmallBP,BigBP,Unbreak,InvOBit,InitBlock_XY_Pos,BumpBlock,BlockCode,MushFlowerBlock,StarBlock,ExtraLifeMushBlock,VineBlock,ExitBlockChk,BlockBumpedChk,BumpChkLoop,MatchBump,BrickShatter,CheckTopOfBlock,TopEx,SpawnBrickChunks,BlockObjectsCore,ChkTop,BouncingBlockHandler,KillBlock,UpdSte,BlockObjMT_Updater,UpdateLoop,NextBUpd,MoveEnemyHorizontally. Scope679,fresh0/max1992. Shared blocks/head,bump,chunks,lifetime,replacement and world/movement owners. Audit original pointer06/07/row02,ADC carry,stacked metatile/state,JumpEngine and content children,gravity/draw order,0301 busy gate and reverse replacement order. Real original roots83/84/85 and paired protocols87/88/89;pairing is harness composition,not original call-edge credit. Additional actual leaves only for missing coverage. Original ROM/ASM read-only;raw below ignored build,128MiB/120s per process. Product mismatch stays S17 for repair;code changes require three products. Local1992/1992,feasible controls4273/4273(raw4342/infeasible69),material993partial,totalunknown;whole M2 incomplete.
+
+## S17 P50 checkpoint - block head contents chunks and replacement source-use joins
+
+Existing census BCED-BF06:240 instructions/87 direct RAM sites,35 labels,scope679;fresh0/max1992. Six source owners unchanged. Source-derived clauses inspected before route acceptance;no product/native/platform edit. Castle bridge is outside this source fragment and receives no coverage credit here.
+
+Participants: PlayerHeadCollision,DBlockSte,ChkBrick,StartBTmr,ContBTmr,PutOldMT,PutMTileB,SmallBP,BigBP,Unbreak,InvOBit,InitBlock_XY_Pos,BumpBlock,BlockCode,MushFlowerBlock,StarBlock,ExtraLifeMushBlock,VineBlock,ExitBlockChk,BlockBumpedChk,BumpChkLoop,MatchBump,BrickShatter,CheckTopOfBlock,TopEx,SpawnBrickChunks,BlockObjectsCore,ChkTop,BouncingBlockHandler,KillBlock,UpdSte,BlockObjMT_Updater,UpdateLoop,NextBUpd,MoveEnemyHorizontally.
+
+| Clause | Original PCs | Source-use/lifetime/alias disposition |
+| --- | --- | --- |
+| B1 | bced-bd19 | Incoming metatile is saved before DestroyBlockMetatile; block slot reloads03EE after child;02 and06 become original row/column; full06/07 pointer plus row is dereferenced. State12 for big else11. BlockBumpedChk preserves metatile A and supplies carry, not a replacement tile. |
+| B2 | bd1a-bd40 | Unmatched big stores zero, unmatched small preserves tile; matched sets state11 and C4. Only58/5D coin bricks start timer0B if06BC zero, then increment flag; existing flag/nonzero timer keeps old tile; expired timer selectsC4. No new timer rule. |
+| B3 | bd41-bd60 | Replacement3E8 stored before actual InitBlock_XY_Pos; child does not write06/07/02 for valid block slots0/1, so native saved pointer equals subsequent original dereference. Blank23 written, timer10 set, original stacked metatile restored to05; crouch or small selects adder12, big standing04. |
+| B4 | bd61-bd83 | PlayerY plus immutable BCEB/BCEC adder byte wraps and alignsF0; state11 selects BumpBlock otherwise BrickShatter; only after child returns03EE XOR1. Scratch05 contains incoming tile rather than replaced block buffer tile. |
+| B5 | bd84-bd9a | PlayerX+8 carry survives AND F0 and feeds page ADC0; same page saved76/3EA, player highY copiedBE. For valid block0/1 these outputs do not alias06/07/02 or PlayerX/page. |
+| B6 | bd9b-bdbb | CheckTopOfBlock first reloads03EE and may decrement02/remove coin; BumpBlock then queueFF2,Xspeed60zero,Ymoveforce43Czero,playerYspeed9Fzero,blockYspeedA8FE. Original05 reloaded after child; unmatched exits; matched index9..13 subtract5 with CMP carry set. |
+| B7 | bdbd-bde7 | Actual JumpEngine return-siteBDBF/selected vector publishes04-07 before nine content handlers. Cases0/4 type0;1/2/7 coin;3/8 type3;5 Setup_Vine slot5/current03EE;6 type2. Overlapping BIT bytes skip subsequent LDA immediates preserving chosen A, then common39 store/SetupPowerUp tail. CPU flags beyond exported API not asserted. |
+| B8 | bdf6-be01 | Descending table search13..0 uses CMP carry; match returns index and set carry without changing A; no match returnsFF and cleared carry. Native index result encodes same choice. Original fourteen immutable bytes and all-byte input checked through actual head/content parents. |
+| B9 | be02-be1e | Shatter calls CheckTop before RepFlag1/noiseFD1, real chunks then playerYspeedFE/digitmodifier139=5/realAddToScore; child reload03EE reflected in native slot. Square bump sound is absent on this path. |
+| B10 | be1f-be40 | Top check reloads03EE, zero row returns untouched. Nonzero02 SEC minus10 publishes byte row even on miss; full06/07 pointer with new row read, onlyC2 is removed. Real RemoveCoin_Axe precedes slot reload and SetupJumpCoin; child scratch writes compared, not replaced by synthetic state. |
+| B11 | be41-be6f | Chunks save originalX3F1 then both XspeedsF0/YspeedsFA andFC/forces0, copy page/X to second pair, byte Y+8 for second, redundant firstYspeedFA preserved. No highY copy belongs to this routine; drawing/gravity effects occur later. |
+| B12 | be70-bea8 | Zero state still reaches original state store. Active state low nibble held across all real children. Nibble1 bounce; others gravity/horizontal first chunk then second chunk, restore08 before relative/offscreen/draw. After drawing highY0 preserves saved state despite misleading ASM comment; highY nonzero clamps lower chunkY aboveF0. |
+| B13 | beaa-beb1 | Top chunkY CMP F0 carry survives PLA; belowF0 saves stacked low-nibble state, >=F0 kills. ConditionalBCC false implies following BCS necessarily taken; observations alone are not proof of impossible fallthrough. |
+| B14 | beb3-bed3 | Bounce gravity then restore08/relative/offscreen/DrawBlock; Ylow nibble CMP5 carry survives PLA. >=5 saves low-nibble state; <5 RepFlag1 then state0. No TimerControl gate is invented here; child owners preserve original own rules. |
+| B15 | bed4-bf01 | Replacement descends1 to0, publishing08 even if0301 busy or rep flag zero. Only0301 first command tests busy,0300 offset separate. Writes06 low/07=5/02 row then replacement via full pointer; actual ReplaceBlockMetatile child before flag clear. Busy first replacement naturally prevents second command, not unconditional clearing. |
+| B16 | bf02-bf06 | Enemy horizontal entry increments supplied X to shared object offset, actual MoveObjectHorizontally returns displacement A, original restores CPU X from08. Native byte return compared directly; CPU X not native exported API; shared motion owner receipt reused rather than a new emulator/platform branch. |
+
+Actual original modes83/84/85 test Head/BlockObjectsCore/Replacement;
+87/88/89 test Shatter->Replacement/Chunks->Core/Core->Replacement.
+Each65536roots. These pairs are declared harness composition using original
+RAM/registers,not fabricated original call-edge coverage. Additional140head
+16384 roots vary crouch,coin-brick flag/timer;141block16384roots vary all256
+state bytes,highY0/1 and chunkY;142enemy horizontal4096roots compares actual
+returned A displacement. Total430080 each width,zero2032RAM/24APU/ordered
+write differences. Only physical1F0-1FF excluded,minSP>=EF. CPU registers
+are not exported by void native APIs;142 displacement is explicitly checked.
+Pointer fixtures use page5,columns0-15,rows0-12;block0/1/enemy0-5. This does
+not qualify arbitrary pointer aliases or invalid object slots as gameplay.
+
+All240instruction PCs observed;conditional sides observed except impossible
+BEB1 fallthrough. Initial extra head fixture correlated timer with brick
+selection and missed expired-timer BD3E. That coverage was rejected;fixture
+separates58/5D from flag/timer before rerun. No equivalence conclusion from
+the initially missing branch. Six owners' normalized identities below;
+eight rebuilt focused tests each width pass(head,bump,chunks,lifetime,
+replacement,OAM,graphics,platform purity). Physical stack exclusion justified
+by observed minimum stack. Four negative accounting mutations rejected.
+
+Control-01371 ChkTop->BouncingBlockHandler was falsely exact. Original
+BEAC CMP F0 sets carry;BEAE PLA preserves carry;BEAF BCC reaches BEB1 only
+when carry set;BEB1 BCS must jump KillBlock. Original opcode identity and
+instruction flag semantics establish infeasibility;absence of observed
+fallthrough is corroboration only. Native chunk branch already has no such
+fallthrough. No gameplay repair or new audit round. Historical receipts are
+retained and explicitly invalidated for this relation. Current raw4342,
+infeasible70,feasible/local exact4272/4272;old counts are closure-time facts.
+
+Similar-class sweep within this chain:AND/PLA preserving carry,coin timer
+expiry branches,full06/07 pointer and decremented02,slot reload after child,
+stacked state vs misleading highY comment,JumpEngine scratch04-07 andBIT
+overlap,reverse replacement and0301 busy gate. Existing material108-112/
+714/715/905/906 receipts reused;no new material path from artificial pair
+alone. General aliases/inter-frame producers,full gameplay routes and output
+packages remain pending. No source/product edit,three EXEs remain P46;
+DOS runtime remains unqualified. No ROM/program data committed.
+
+Current src/game/blocks/head.c normalizedSHA256:271d3edde9187d57173da627ba372ced4053b38f9fbd3884cd1b85c5fdcf462e.
+
+Current src/game/blocks/bump.c normalizedSHA256:65675f35d76b34f8f6621b4614844540cdfa090ab60f4c2b64852f2b4b176df9.
+
+Current src/game/blocks/chunks.c normalizedSHA256:4fe6d4df9b7fe20f39e36051a7ddbc15359fe580a31016515b01e0ce1437291f.
+
+Current src/game/blocks/lifetime.c normalizedSHA256:d957366c487f5acfcbd4194a4d8e4b227d6cba74930aec65f208ce2f7316a640.
+
+Current src/game/blocks/replacement.c normalizedSHA256:f16380414f2200b6883b2f8ca36597ab9d7f7e6eefb5d584dfcd244e5d86089b.
+
+Current src/game/world/movement.c normalizedSHA256:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
+
+Historical/local1992/1992,controls4272/4272(raw4342,infeasible70);material993partial,totalunknown.3367instruction/1171RAM bounded receipts;7324otherinstructions/2602otherRAMjoins remain,not new discovered bugs. All whole-program lifetime fields pending;four final packages open,M2 NOT COMPLETE.
