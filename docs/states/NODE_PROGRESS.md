@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P122 parser commit chain](../proposals/m2/t70-final-current-certification.md#s17-p122-checkpoint---parser-to-nmi-commit-joins-verified).
+S17 P122:16 parser/commit participants;2048 eight-turn original chains eachwidth zero scoped RAM/APU/order diff. ActualAF6F and80B6-80E4 command/header phase alternate without RAM/PPU reseeding;task7..0,buffer2<=29,selected-header clear/other-buffer preservation and0368/03EE/06CF sentinels asserted. Eight focused tests eachwidth pass; 123 source identities/P121 threeproducts unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. Active-object writers and global lifetimes pending,M2 incomplete.
+
 [P121 byte buffer offsets](../proposals/m2/t70-final-current-certification.md#s17-p121-checkpoint---original-buffer-byte-offsets-repaired).
 S17 P121:11 graphics/attribute labels,133 original instructions and7 branch pairs; two synthetic high-offset exits removed, graphics byte cursor and attribute command-before-INY order corrected. Two65536-root families,131072 original roots each width0 scoped RAM/APU/order diff;all133PC/14branch sides. New boundary regression rejects predecessor exit2;7 focused tests each width pass. Three EXEs refreshed via modern targets/original OpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81); material993 partial,total unknown. M2 incomplete.
 

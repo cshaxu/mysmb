@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P121 buffer offset checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P122 parser commit checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -153,7 +153,6 @@
 
 
 
-S17 P114:DuplicateEnemyObj/FSLoop/FlmEx18 instructions reviewed;four zero-page-X address expressions repaired. 65536 actual original roots eachwidth0diff/all18PC/bothC57Bbranches;5 focused tests eachwidthpass,new boundary regression failsoldsource. Three localEXEs rebuilt/refreshed;originalOpenNT16 compile/link only. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),instruction10690/10691,RAM3773/3773 scoped receipts;indexed caller conditions359,material993partial,totalunknown;M2 incomplete.
 
 S17 P115:18 initializer/platform labels,75 original instructions and5 conditionalbranch pairs reviewed;14 zero-page-X C expressions corrected across7bodies. EightactualreturningROM families,524288roots eachwidth0scopedRAM/APU/orderedwrite diff/all75PC/10branchsides;5focusedtests eachwidthpass. ThreeEXEs refreshed(originalOpenNT16 compile/linkonly). Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81),material993partial/totalunknown;M2 incomplete.
 
@@ -168,3 +167,5 @@ S17 P119:19 storage/probe labels;3 direct publishers and189 indexed alias candid
 S17 P120:15 buffer-phase participants; two2048-root actual original/native manifests (4096 roots each width) pass full scoped RAM/APU/write comparison. Eight-task column set ends at offset144;03EE/06CF preserved. Sequential actual9071 setup clears0340/0368/03EE and preserves06CF. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls (raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
 
 S17 P121:11 graphics/attribute labels,133 original instructions and7 branch pairs; two synthetic high-offset exits removed, graphics byte cursor and attribute command-before-INY order corrected. Two65536-root families,131072 original roots each width0 scoped RAM/APU/order diff;all133PC/14branch sides. New boundary regression rejects predecessor exit2;7 focused tests each width pass. Three EXEs refreshed via modern targets/original OpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81); material993 partial,total unknown. M2 incomplete.
+
+S17 P122:16 parser/commit participants;2048 eight-turn original chains eachwidth zero scoped RAM/APU/order diff. ActualAF6F and80B6-80E4 command/header phase alternate without RAM/PPU reseeding;task7..0,buffer2<=29,selected-header clear/other-buffer preservation and0368/03EE/06CF sentinels asserted. Eight focused tests eachwidth pass; 123 source identities/P121 threeproducts unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. Active-object writers and global lifetimes pending,M2 incomplete.
