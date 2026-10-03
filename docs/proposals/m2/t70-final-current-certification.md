@@ -5636,3 +5636,94 @@ controls4274/4274(raw4342,infeasible68),material947 partial,total unknown.
 S17 and material/pixels/routes/snapshot packages remain open,M2 uncertified.
 
 Current scenery owner body SHA256:edda364a02e75ec7937d39afbb3ed72df476307367a3bce84f93dd464e3ef725.
+
+## S17 P32 scope amendment - parser schedule consumed-value handoffs
+
+Named missing clauses in retained T54 S6/T56 S1 receipts:`AreaParserTaskControl`,`TaskLoop`,`OutputCol`,`AreaParserTaskHandler`,`DoAPTasks`,`SkipATRender`,`AreaParserTasks`,`IncrementColumnPos`,`NoColWrap`,`AreaParserCore`.
+Old receipts prove cadence/persistent subset and exclude transient07;they
+remain valid for that scope,but do not complete local call-crossing/cache/
+overwrite clauses in the consumed-use index. Receive these36 instructions/
+16 direct RAM sites into existing S17 audit participation under owner final
+closing mandate,no new node re-audit or implementation custody transfer.
+Source86e6-86fe and92b0-92f6/93fc-9403;entry task control/one-step dispatch,
+exit output control/child return. Dependencies are P29 parser/P30 graphics/
+attribute/P31 scenery,all actual shared-C children. Inspect counter caches
+over child calls,column/page wrapping and backloading call order. Original
+ROM/ASM read-only local;bounded actual parent roots,128MiB/120seconds per
+process,raw cleanup below build. Current source only;source diff requires
+corrective amendment and3 products before repair. Expected fresh0/max1992.
+
+## S17 P32 checkpoint - parser schedule and counter handoffs reconciled
+
+36 instructions/16 direct RAM sites assigned to9 manually reviewed local
+clauses. Existing Task54/56 scoped evidence retained;new missing call/cache
+clauses are within existing S17 only. Its audit scope411 includes9 added
+participants plus already admitted AreaParserTasks;expected fresh0/max1992.
+No implementation custody transfer or node/control promotion.
+
+Actual original92b0 one-step roots416 and86e6 complete-set roots3008 EACH
+current x86/x64:3424 total perwidth,zero complete2048-RAM differences. Only
+actually pushed physical stack bytes excluded. Original real children run;
+no ROM hook,child mock or between-call statepatch. All36 scope instruction
+PCs actually observed,including9401 backloading pre-parsercall. Inputscover
+tasks0-8,columns0-31,columnsets0/1/127/128/255,screen-disable0/FF,NTwrap and
+128 originalrow14 nonterminal backload entries perparentkind. Entryarray
+and header/style/pointer bounds are controlled contracts,not all gameplay.
+
+The initial nonterminal fixture left AreaStyle randomly filled. One whole-
+set original run trapped before native comparison:corruptstyle dispatch was
+outside original header preconditions. Corrected AreaStyle0 before entry,
+then reran ALL3424 original/current roots;no program patch or changedROM.
+Style remains0-2 after original LoadAreaHeader's cloud-style transform;
+this fixture chooses0. Preliminary results are not accepted proof. The
+temporary table checker also initially used savedJSR return92CA as data
+start;corrected actual table92CB (return+1) agrees with all8 originaltargets.
+These are probe errors,not product defects. Numeric77-series checks below
+and accounting tools do not prove manually reviewed clause text.
+
+| Clause | Original instructions | Counter/child/lifetime disposition |
+| --- | --- | --- |
+| T1 | 86e6-86e6 | DisableScreenFlag actual byte increment wrapsFF->0 before any parser child. Native same actualRAM INC,not host focus/presentation state. |
+| T2 | 86e9-86ef | One-or-more real handler calls until actual RAM071F zero. Native do/while rereads071F AFTER child,does not cache a pre-call flag. Real source3424 parent roots include both complete-set and one-step entry,not mocked delegates. |
+| T3 | 86f1-86fe | ColumnSets actual byte decrement,BPL tests resultbit7;only negative increments ScreenRoutineTask,then actual VRAMCtrl6. Native same wrappeddec andbit7 predicate/order;no child between final counter andoutput. Task0 means8 complete steps,other1..8 may start partly throughset. |
+| H1 | 92b0-92b7 | Read071F;zero source sets8,else retainsprior. Native extra identical-value store on nonzero path is idempotent:single shared-C frame has no concurrent game-state observer/callback between load anddispatch. Values/consumer phases preserved,not promised identical native/6502 bus storecount. Domain0..8 retained. |
+| H2 | 92ba-92c4 | Source DEY/transferA gives taskminus1,actual child dispatch BEFORE DEC071F;attributes run iff actual decremented071F0. Native caches taskminus1 across child thenpublishes it. Original direct071F writer census contains only92b7/92bf;valid column/graphics/scenery/parser child arrays cannot alias071F in stateddomains anddo notcall initialization. P29-31 child contracts andcurrent real parents support stability;no arbitrary invalidvector/index claim. |
+| H3 | 92c7-92c8 | SkipATRender returns afterconditionalattribute;AreaParserTasks calls actualJumpEngine return-address92CA/table92CB. Current state helper uses same table/address/selector andselected shared-C child. No first child RAM scratch value is silently reset afterreturn;attributes retain its own overwritecontract. Final CPU registers/physicalreturn-stack are outside nativeABI,actualstackmask only. |
+| C1 | 92db-92e8 | CurrentColumn byte increment/AND0F testswrap;nonzero retainsallhighbits,zero resetsactualcolumn0 andincrementsactualpage. Native same maskpredicate andbytewrites,including oldcolumnFF/pageFF. No source carry borrowed from earlierchild. |
+| C2 | 92eb-92f6 | BlockBufferColumn actualINC thenmask1F/store gives byte(old+1)&1F. Native combinedassignment equal consumedfinal column with no intermediate observer/callback;not anassertion ofphysical bus writecount. Selector/domain0-31 maintained forlaterrealpointerhelper. |
+| B1 | 93fc-9401 | Backloading actualread determines pre-scenery ProcessAreaData call. Native samebeforeRenderSceneryTerrain;inside scenery anotheractualparsercall occurs beforebuffercommit. Native rereads all laterstate afterfirstchild,doesnotcacheBackloading acrossit. New128 nonterminal row14 backload parents perentry show actual9401 executes;AreaStyle0 legalheaderprecondition preventscorruptstylevector dispatch. |
+
+777 scalar assertions support byte/BPL/column equations andall8 source
+JumpEngine targets. Only direct original071F writers92b7/92bf;valid declared
+child arrays andno initialization call exclude indirectalias. Current task
+cache thus remains equal actualcounter across child;control rereadsafter
+return. Native duplicate equal-value assignment and folded columnINC/mask
+are accepted consumed-value equivalents with no intermediate observer in
+these shared-C frame domains,not identical native/6502 physical buscounts.
+P28 raw00/07 node publications retain their explicitly stricter local phase
+contract;no phase obligation silently dropped or assumed whole-program.
+
+Four material paths948-951 are source interval/writer-exclusion plusactual
+parent proofs,not fabricated last-writer eventcounts orcartesian pairs:
+
+948:DoAPTasks -> TaskLoop;RAM071F decremented task counter. 92bf DEC071F ->handlerreturn ->86ec actualLDA071F determines loop continuation. Native step publishes cachedtaskminus1 after actualchild,no validchild counterwriter;control do/while rereadsactualRAM.
+
+949:DoAPTasks -> AreaParserTaskHandler;RAM071F next descending task selector. 92bf DEC071F ->86ef nonzero loop ->next92b0 LDY071F;nonzero handler doesnot replace it with8. Native initial identical-value assignment is idempotent;taskread selects same nextchild.
+
+950:DoAPTasks -> DrawMTLoop;RAM071F current tile half during next graphics task. Starting complete-set task8:scene7 returns,counter becomes7;next handler selector6 enters graphics,88ee reads still7 before counterdecrement to6. Native side reads taskbit before finalstep publication;no valid child071F writer.
+
+951:NoColWrap -> RendBBuf;RAM06A0 advanced physical collision-buffer column. Selector4 IncrementColumnPos92eb/92f3 publishes masked column;next selector3 scenery returnsactualparser then94d6 loads06A0 beforeGetBlockBufferAddr. Native column read after child matches source;blockstore0500-069F cannot alias06A0. Controlled parent roots include31->0 wrap.
+
+No source change,new product build ortest-source change;P28 all3 product
+hashes verified and10 focused checks each/six600-frame routes retained.
+DOS original OpenNT compile/link only. Each bounded512-root batchbelow
+128MiB/120seconds,raw inputs/outputs deleted;only ignored neutral summaries
+and logs remain. Four index rejection checks/ledger admission gates pass.
+
+Complete bounded local1265/10691 instruction and392/3773 direct RAM receipts;
+remaining9426 instruction/3381 RAM clauses require exact retained receipt
+joins ormissingclauses,not asserted new mismatches. Historical/local1992/1992,
+controls4274/4274(raw4342,infeasible68),material951 partial,totalunknown.
+S17/material/pixels/routes/snapshot remain open;M2 notfully certified.
+
+Current area.c normalized SHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.

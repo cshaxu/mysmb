@@ -766746,7 +766746,16 @@
         "ImposeGravity",
         "AlterYP",
         "ChkUpM",
-        "ExVMove"
+        "ExVMove",
+        "AreaParserTaskControl",
+        "TaskLoop",
+        "OutputCol",
+        "AreaParserTaskHandler",
+        "DoAPTasks",
+        "SkipATRender",
+        "IncrementColumnPos",
+        "NoColWrap",
+        "AreaParserCore"
       ],
       "baseline": 1992,
       "incomingComplete": [

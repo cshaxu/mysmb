@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 947,
+    "enumeratedCount": 951,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -21268,6 +21268,94 @@
       "operationalEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:27139 original parents each width zero complete RAM/ordered00/07 source-core write differences;baseline874/1024 phase differences despite zero RAM. Independently instrumented native statement sites,not injected source IDs. Only actual physical pushes excluded,children execute real current/original code.10 checks each,six600-frame scoped routes,Win32 x86/x64 products and original OpenNT16 compile/link pass;three assets refreshed,DOS runtime unqualified.",
         "Actual ordered source writer PCs/values and independent native statement values match27139 controlled parent fixtures;scalar mask/warp/shift algebra covers256 input bytes,not all external renderer callers."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00948",
+      "producer": "DoAPTasks",
+      "consumer": "TaskLoop",
+      "storage": "RAM071F decremented task counter",
+      "feasiblePath": "92bf DEC071F ->handlerreturn ->86ec actualLDA071F determines loop continuation. Native step publishes cachedtaskminus1 after actualchild,no validchild counterwriter;control do/while rereadsactualRAM.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_step/control and actual graphics/scenery children",
+      "semanticContract": "Declared task0-8/validchildarray/returning parent domains;source interval and writer exclusion proof,not all inter-frame callers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled",
+        "92bf DEC071F ->handlerreturn ->86ec actualLDA071F determines loop continuation. Native step publishes cachedtaskminus1 after actualchild,no validchild counterwriter;control do/while rereadsactualRAM."
+      ],
+      "operationalEvidence": [
+        "3424 actual original parents each current x86/x64 with zero fullRAM differences;all36 schedule sourceinstructionPC observed. Child P29-31 source/lifetime contracts retained. Paths are source-interval/actual-parent proofs,not a new recorded last-writer eventcount."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00949",
+      "producer": "DoAPTasks",
+      "consumer": "AreaParserTaskHandler",
+      "storage": "RAM071F next descending task selector",
+      "feasiblePath": "92bf DEC071F ->86ef nonzero loop ->next92b0 LDY071F;nonzero handler doesnot replace it with8. Native initial identical-value assignment is idempotent;taskread selects same nextchild.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_step/control and actual graphics/scenery children",
+      "semanticContract": "Declared task0-8/validchildarray/returning parent domains;source interval and writer exclusion proof,not all inter-frame callers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled",
+        "92bf DEC071F ->86ef nonzero loop ->next92b0 LDY071F;nonzero handler doesnot replace it with8. Native initial identical-value assignment is idempotent;taskread selects same nextchild."
+      ],
+      "operationalEvidence": [
+        "3424 actual original parents each current x86/x64 with zero fullRAM differences;all36 schedule sourceinstructionPC observed. Child P29-31 source/lifetime contracts retained. Paths are source-interval/actual-parent proofs,not a new recorded last-writer eventcount."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00950",
+      "producer": "DoAPTasks",
+      "consumer": "DrawMTLoop",
+      "storage": "RAM071F current tile half during next graphics task",
+      "feasiblePath": "Starting complete-set task8:scene7 returns,counter becomes7;next handler selector6 enters graphics,88ee reads still7 before counterdecrement to6. Native side reads taskbit before finalstep publication;no valid child071F writer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_step/control and actual graphics/scenery children",
+      "semanticContract": "Declared task0-8/validchildarray/returning parent domains;source interval and writer exclusion proof,not all inter-frame callers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled",
+        "Starting complete-set task8:scene7 returns,counter becomes7;next handler selector6 enters graphics,88ee reads still7 before counterdecrement to6. Native side reads taskbit before finalstep publication;no valid child071F writer."
+      ],
+      "operationalEvidence": [
+        "3424 actual original parents each current x86/x64 with zero fullRAM differences;all36 schedule sourceinstructionPC observed. Child P29-31 source/lifetime contracts retained. Paths are source-interval/actual-parent proofs,not a new recorded last-writer eventcount."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00951",
+      "producer": "NoColWrap",
+      "consumer": "RendBBuf",
+      "storage": "RAM06A0 advanced physical collision-buffer column",
+      "feasiblePath": "Selector4 IncrementColumnPos92eb/92f3 publishes masked column;next selector3 scenery returnsactualparser then94d6 loads06A0 beforeGetBlockBufferAddr. Native column read after child matches source;blockstore0500-069F cannot alias06A0. Controlled parent roots include31->0 wrap.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_parser_task_step/control and actual graphics/scenery children",
+      "semanticContract": "Declared task0-8/validchildarray/returning parent domains;source interval and writer exclusion proof,not all inter-frame callers.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled",
+        "Selector4 IncrementColumnPos92eb/92f3 publishes masked column;next selector3 scenery returnsactualparser then94d6 loads06A0 beforeGetBlockBufferAddr. Native column read after child matches source;blockstore0500-069F cannot alias06A0. Controlled parent roots include31->0 wrap."
+      ],
+      "operationalEvidence": [
+        "3424 actual original parents each current x86/x64 with zero fullRAM differences;all36 schedule sourceinstructionPC observed. Child P29-31 source/lifetime contracts retained. Paths are source-interval/actual-parent proofs,not a new recorded last-writer eventcount."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -166056,22 +166144,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored",
         "docs/proposals/m2/t70-final-current-certification.md S17 P29 checkpoint - parser consumed-value clauses reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P30 checkpoint - retained column and attribute lifetimes reconciled",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P31 checkpoint - scenery terrain and block-buffer handoffs reconciled"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P31 checkpoint - scenery terrain and block-buffer handoffs reconciled",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P32 checkpoint - parser schedule and counter handoffs reconciled"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 1229,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9462,
+        "localInstructionReceiptSites": 1265,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9426,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 376,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3397,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 392,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3381,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/area.c": 247,
+          "src/game/area.c": 231,
           "src/game/player.c": 138,
           "src/game/oam/normal_enemy_gfx.c": 128,
           "src/game/terminal_modes.c": 81,
@@ -166201,7 +166290,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 947,
+        "materialPathsEnumerated": 951,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."

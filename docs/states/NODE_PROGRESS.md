@@ -8,10 +8,15 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material947 is a partial enumerated set;its global denominator is unknown.
+Material951 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P32 scheduler handoffs](../proposals/m2/t70-final-current-certification.md#s17-p32-checkpoint---parser-schedule-and-counter-handoffs-reconciled).
+36 instructions/16 RAM sites,3424 actual parents each width zero fullRAMdiff;
+1265 instruction/392 RAM receipts,3381 other RAM clauses pending. Four
+materialpaths948-951 added,951 partial,total unknown;no node/controlcredit.
 
 [P31 scenery and buffer handoffs](../proposals/m2/t70-final-current-certification.md#s17-p31-checkpoint---scenery-terrain-and-block-buffer-handoffs-reconciled).
 131 instructions/32 RAM sites reconciled,current8192 original roots each
