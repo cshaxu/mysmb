@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P74 player contact uses](../proposals/m2/t70-final-current-certification.md#s17-p74-checkpoint---player-contact-injury-stomp-uses-reconciled).
+S17 P74:37player contact/injury/stomp labels/275instructions/92RAM joined13boundedclauses;532480actualroots eachwidth0diff/all275PC/49branchpairs/one mandatorybranch,5tests each. Scope1106/fresh0;6379/10691instruction receipts,2300/3773RAM receipts;4312instructions/1473RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P73 fireball scan/hit uses](../proposals/m2/t70-final-current-certification.md#s17-p73-checkpoint---fireball-scan-and-hit-uses-reconciled).
 S17 P73:16fireball scan/hit labels/118instructions/34RAM joined9boundedclauses;199680actualroots eachwidth0diff/all118PC/24branchpairs/one mandatorybranch,4tests each. Scope1076/fresh0;6104/10691instruction receipts,2208/3773RAM receipts;4587instructions/1565RAM pending. Local1991/1992nodes,4262/4263controls(raw4342/infeasible79),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

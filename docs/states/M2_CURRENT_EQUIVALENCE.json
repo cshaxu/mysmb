@@ -22653,8 +22653,8 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4262,
-    "infeasible": 79,
+    "exact": 4261,
+    "infeasible": 80,
     "needs-evidence": 1
   },
   "controlEdgeTypeCounts": {
@@ -50453,12 +50453,14 @@
       "semanticEvidence": [
         "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S4 static $D7C4-$D7FF audit plus 288 retained controlled original-ROM hammer-contact records replayed in one x86 and one x64 native process with full compared RAM and recorded geometry/injury child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Runs only on odd frame-counter values with TimerControl and hammer offscreen bits both clear; selects misc box slot*4+$24, reloads ObjectOffset after geometry, latches/reverses only a new hit, and tails to guarded injury unless StarInvincibleTimer is set.",
       "currentSourcePaths": [
@@ -50474,11 +50476,13 @@
       "currentCounterpart": "src/game/world/hammer_collision.c:mysmb_objects_check_hammer_collision",
       "semanticEvidence": [
         "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S4 static $D7C4-$D7FF audit plus 288 retained controlled original-ROM hammer-contact records replayed in one x86 and one x64 native process with full compared RAM and recorded geometry/injury child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Clears the current hammer collision latch on a carry-clear player/hammer box result before common return.",
       "currentSourcePaths": [
@@ -50493,10 +50497,12 @@
       "currentOwner": "src/game/world/hammer_collision.c",
       "currentCounterpart": "src/game/world/hammer_collision.c:mysmb_objects_check_hammer_collision",
       "semanticEvidence": [
-        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S4 static $D7C4-$D7FF audit plus 288 retained controlled original-ROM hammer-contact records replayed in one x86 and one x64 native process with full compared RAM and recorded geometry/injury child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S4 static $D7C4-$D7FF audit plus 288 retained controlled original-ROM hammer-contact records replayed in one x86 and one x64 native process with full compared RAM and recorded geometry/injury child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after every frame/timer/offscreen gate, already-latched hit, star-invincibility path or collision-latch clear without changing an unrelated misc slot.",
       "currentSourcePaths": [
@@ -50512,12 +50518,14 @@
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Erases the power-up, initializes modifier six and PowerUpGrab sound before type dispatch; types 0/1 go to status logic, type 3 overwrites the floatey modifier with eleven, and other types set star timer $23 and StarPower music.",
       "currentSourcePaths": [
@@ -50532,10 +50540,12 @@
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes small Mario to super, only super Mario to fiery, and leaves any other status unchanged; fiery conversion changes palette before the routine/state tail.",
       "currentSourcePaths": [
@@ -50550,10 +50560,12 @@
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Overwrites the already-initialized floatey-number control for the active ObjectOffset with eleven and returns without changing player status.",
       "currentSourcePaths": [
@@ -50568,10 +50580,12 @@
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes player status one and falls through with routine value nine into the common player-routine setter.",
       "currentSourcePaths": [
@@ -50586,10 +50600,12 @@
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Supplies player state zero and the caller-selected routine value to SetPRout, which halts the source timers and initializes scroll state.",
       "currentSourcePaths": [
@@ -50604,10 +50620,12 @@
       "currentOwner": "src/game/world/powerup_collision.c",
       "currentCounterpart": "src/game/world/powerup_collision.c:mysmb_objects_collect_power_up",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns from every terminal power-up type/status path after preserving the resulting score, sound, status and routine changes.",
       "currentSourcePaths": [
@@ -50678,12 +50696,14 @@
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "On even frames only, rejects off-vertical/offscreen/non-control/d5 enemies, uses prepared enemy box and PlayerCollisionCore, reloads ObjectOffset, clears collision d0 on a miss and dispatches a hit by power-up ID or star timer.",
       "currentSourcePaths": [
@@ -50698,10 +50718,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after a gated or miss contact; a miss has cleared only collision-bit d0 for the reloaded current enemy slot.",
       "currentSourcePaths": [
@@ -50716,10 +50738,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Reads enemy ID into Y and transfers PowerUpObject to the pickup chain; every other ID falls through with Y preserved for contact handling.",
       "currentSourcePaths": [
@@ -50734,10 +50758,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes star-invincible contact to ShellOrBlockDefeat and routes a zero StarInvincibleTimer to ordinary player/enemy response.",
       "currentSourcePaths": [
@@ -50771,12 +50797,14 @@
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Latches a first on-screen contact, applies source ID/area/state eligibility ordering, sends injury/stomp cases to their owners, and turns a qualifying non-Goomba defeated shell into a player-facing moving shell with source score selection.",
       "currentSourcePaths": [
@@ -50791,10 +50819,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses timer-indexed kick points for intervals below three, otherwise retains StompChainCounter plus three, then initializes the floatey number.",
       "currentSourcePaths": [
@@ -50809,10 +50839,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_player_enemy_current / mysmb_objects_handle_player_enemy_contact",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after contact suppression, Goomba defeated exclusion, injury/stomp delegation or completed shell-kick response while retaining the active ObjectOffset semantics.",
       "currentSourcePaths": [
@@ -50827,10 +50859,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses signed player Y speed to choose upward/neutral versus downward stomp logic; delegates nonzero positive speed to EnemyStomped and otherwise enters the ID/vertical overlap path.",
       "currentSourcePaths": [
@@ -50845,10 +50879,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "For IDs below Bloober, skips adjusted-Y comparison; for IDs at/above Bloober, only adjusted player Y strictly above the enemy produces the stomp path.",
       "currentSourcePaths": [
@@ -50863,10 +50899,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "StompTimer forces stomp; InjuryTimer suppresses response; otherwise compares relative X and selects the matching facing/turnaround injury tail.",
       "currentSourcePaths": [
@@ -50881,10 +50919,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "When player is left of enemy, an enemy not moving right goes directly to injury; a right-moving enemy is turned before injury.",
       "currentSourcePaths": [
@@ -50899,10 +50939,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Guards ForceInjury with a second zero-InjuryTimer test, preserving the active ObjectOffset on suppression.",
       "currentSourcePaths": [
@@ -50918,12 +50960,14 @@
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses PlayerStatus: small Mario takes KillPlayer; other status consumes input A as new small status, sets InjuryTimer eight, queues injury sound, updates palette and selects subroutine ten/state one.",
       "currentSourcePaths": [
@@ -50938,10 +50982,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Supplies player state one to the shared routine setter for injury and death tails.",
       "currentSourcePaths": [
@@ -50956,10 +51002,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes selected GameEngineSubroutine and Player_State, then sets TimerControl $ff and clears ScrollAmount before restoring ObjectOffset and returning.",
       "currentSourcePaths": [
@@ -50974,10 +51022,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Reloads ObjectOffset and returns from injury, transformation and death response tails.",
       "currentSourcePaths": [
@@ -50993,12 +51043,14 @@
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Clears player horizontal speed through X=PlayerStatus zero, queues death event music one, writes vertical speed $fc and selects subroutine eleven/state one.",
       "currentSourcePaths": [
@@ -51032,12 +51084,14 @@
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes Spiny to guarded injury; otherwise queues EnemyStomp, selects the four-entry stomp-point class by ID and sends remaining enemies to paratroopa demotion or shell handling.",
       "currentSourcePaths": [
@@ -51052,10 +51106,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects point table entry, preserves Enemy_MovingDir across SetStun, writes defeat state d5, zeros motion through InitVStf and applies player bounce speed $fd.",
       "currentSourcePaths": [
@@ -51070,10 +51126,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "IDs at or above nine become ordinary Koopa ID low-bit/state zero, award modifier three, initialize motion, face player and use direction-indexed demoted speed before bounce.",
       "currentSourcePaths": [
@@ -51106,10 +51164,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes shell defeated state four, increments StompChainCounter, scores counter plus StompTimer, increments StompTimer, selects hard-mode revival rate and then bounces player.",
       "currentSourcePaths": [
@@ -51124,10 +51184,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes player vertical speed $fc and returns from both paratroopa-demotion and shell-stomp paths.",
       "currentSourcePaths": [
@@ -51142,10 +51204,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Turns a right-moving enemy before injury; other directions fall to the common turnaround tail.",
       "currentSourcePaths": [
@@ -51160,10 +51224,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls EnemyTurnAround when needed, then unconditionally routes to guarded InjuryPlayer.",
       "currentSourcePaths": [
@@ -51178,10 +51244,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses PlayerEnemyDiff sign to write movement direction one/right or two/left and returns zero/one speed-table index.",
       "currentSourcePaths": [
@@ -51196,10 +51264,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores selected direction, decrements it to the source speed-table index and returns.",
       "currentSourcePaths": [
@@ -51214,10 +51284,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes score control, timer $30, enemy Y and relative X to the current enemy floatey-number slot.",
       "currentSourcePaths": [
@@ -51232,10 +51304,12 @@
       "currentOwner": "src/game/world/player_enemy_collision.c",
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
-        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after the complete four-field floatey-number write.",
       "currentSourcePaths": [
@@ -115174,15 +115248,17 @@
       "instruction": "bne",
       "id": "control-02304",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; shared C preserves death state tail",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
-      "semanticContract": "Preserves original fallthrough relation KillPlayer -> StompedEnemyPtsData with source signed/timer/status predicate and current-slot state handoff ordering.",
+      "semanticContract": "Original D961 LDA #0B sets Z0;D963 BNE SetKRout consumes unchanged Z and must branch. Extracted KillPlayer -> StompedEnemyPtsData fallthrough is infeasible;no interior incoming original reference.",
       "currentSourcePaths": [
         "src/game/world/player_enemy_collision.c"
       ]
@@ -161886,6 +161962,7 @@
     "control-02036",
     "control-02100",
     "control-02222",
+    "control-02304",
     "control-02708",
     "control-02757",
     "control-02778",
@@ -161937,16 +162014,16 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 79,
-  "feasibleControlEdgeTotal": 4263,
+  "infeasibleControlEdgeTotal": 80,
+  "feasibleControlEdgeTotal": 4262,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4263,
+    "feasibleControlUniverse": 4262,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 79,
+    "infeasibleControls": 80,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -166442,7 +166519,6 @@
           "control-02301",
           "control-02302",
           "control-02303",
-          "control-02304",
           "control-02305",
           "control-02306",
           "control-02307",
@@ -168891,16 +168967,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 6104,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 4587,
+        "localInstructionReceiptSites": 6379,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 4312,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2208,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1565,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2300,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1473,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168909,7 +168986,6 @@
           "src/game/oam/normal_enemy_gfx.c": 127,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
-          "src/game/world/player_enemy_collision.c": 72,
           "src/game/oam/block_gfx.c": 54,
           "src/game/objects.c": 48,
           "src/game/frame_root.c": 46,
@@ -168951,8 +169027,6 @@
           "src/game/oam/fireworks_gfx.c": 15,
           "src/game/boot.c": 13,
           "src/game shared dispatcher/engine/scroll owners": 10,
-          "src/game/world/hammer_collision.c": 10,
-          "src/game/world/powerup_collision.c": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
