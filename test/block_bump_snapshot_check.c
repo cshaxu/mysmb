@@ -1,5 +1,6 @@
 #include "game/blocks/bump.h"
 #include "game/objects.h"
+#include "game/frame_root.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>
@@ -16,6 +17,16 @@ static void compare(const unsigned char *actual,const unsigned char *expected)
     }
 }
 #ifdef MYSMB_CALLER_CHECK
+/* Caller-only boundary; real-child ROM proof uses the shared route checker. */
+void mysmb_game_jump_engine_state(struct mysmb_game *g,mysmb_u16 ret,
+                                  mysmb_u8 selector)
+{
+    unsigned int offset;
+    if(ret!=0xbdbfU || selector>=9U) {++failures;return;}
+    offset=(unsigned int)(ret-0x8000U)+1U+2U*selector;
+    g->ram[4U]=(mysmb_u8)ret;g->ram[5U]=(mysmb_u8)(ret>>8U);
+    g->ram[6U]=g->area_prg[offset];g->ram[7U]=g->area_prg[offset+1U];
+}
 static unsigned char children[16][4098];
 static unsigned int child_count,child_calls;
 static unsigned char *child(struct mysmb_game *g,unsigned int id)

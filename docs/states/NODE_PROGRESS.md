@@ -1,11 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S12 - active initializer/consumer audit
+## M2 T69 S12 - closed flying initializer/consumer audit
 
-[Exact27 existing labels/17 controls/3 material](../proposals/m2/t69-cross-cohort-current-proof.md).
-Expected fresh0,max1992/1992;current1992/1992 scoped-exact nodes,
-4239/4277 controls(raw4342,infeasible65),543/555 material partial.
-Historical1992/1992 separate;both tracks required,S13 unadmitted.
+[All27 existing labels/17 controls/3 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+accepted;zero fresh nodes.Current1992/1992 scoped-exact nodes,
+4256/4277 controls(raw4342,infeasible65),546/555 material partial.
+Historical1992/1992 separate;131072 original roots each width zero diff,
+17 actual controls/3 material consumptions observed;8 tests each/purity/
+current builds/OpenNT link pass.No product repair,3 EXEs retained byte-identical.
+T69 open,S13 next unadmitted;21 controls/9 material,M alias and integrated proof remain.
 
 ## M2 T69 S11 - closed enemy stream/init joins
 

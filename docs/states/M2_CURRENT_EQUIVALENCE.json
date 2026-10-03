@@ -2776,38 +2776,46 @@
       "consumer": "MoveRedPTUpOrDown",
       "storage": "RedPTroopaOrigXPos and RedPTroopaCenterYPos",
       "feasiblePath": "The initializer writes the original and center Y values later compared by the red-paratroopa movement path.",
-      "status": "needs-evidence",
-      "currentCounterpart": "0x0401 and 0x0058 RAM aliases written by mysmb_enemy_init_red_ptroopa",
+      "status": "exact",
+      "currentCounterpart": "Sequential original C34A carry0 initializer then CAFF actual movement,all persistent state preserved;0401/0058 reads each16384,original signed Y adder and center comparison match.",
       "semanticContract": "Preserves source table/RAM value, consumer predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Sequential original C34A carry0 initializer then CAFF actual movement,all persistent state preserved;0401/0058 reads each16384,original signed Y adder and center comparison match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
-        "src/game/enemy/init_targets.c"
+        "src/game/enemy/init_targets.c",
+        "src/game/enemy/paratroopa.c"
       ]
     },
     {
       "id": "material-00127",
       "producer": "InitCheepCheep",
-      "consumer": "SlowSwimCC",
+      "consumer": "MoveSwimmingCheepCheep",
       "storage": "CheepCheepMoveMFlag and CheepCheepOrigYPos",
       "feasiblePath": "The initializer writes random movement d4 and original Y that the Cheep Cheep swim path later consumes.",
-      "status": "needs-evidence",
-      "currentCounterpart": "0x0058 and 0x0434 RAM aliases written by mysmb_enemy_init_cheep_cheep",
+      "status": "exact",
+      "currentCounterpart": "Corrected nonexistent legacy SlowSwimCC to actual MoveSwimmingCheepCheep(CCSwim/ChkSwimYPos);sequential C375->CC4A consumes0058/0434 each10752;slots0/1 skip vertical by source predicate;d4 random,original Y,carry and reversal compare match.",
       "semanticContract": "Preserves source table/RAM value, consumer predicate and feasible producer-to-consumer handoff order.",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Corrected nonexistent legacy SlowSwimCC to actual MoveSwimmingCheepCheep(CCSwim/ChkSwimYPos);sequential C375->CC4A consumes0058/0434 each10752;slots0/1 skip vertical by source predicate;d4 random,original Y,carry and reversal compare match."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
-        "src/game/enemy/init_targets.c"
+        "src/game/enemy/init_targets.c",
+        "src/game/enemy/swimming_cheep.c"
       ]
     },
     {
@@ -3989,18 +3997,22 @@
       "consumer": "MovePodoboo",
       "storage": "reset Podoboo Y/page/state/interval/box and LFSR byte $07a8+slot",
       "feasiblePath": "Podoboo caller reads random source only after initialization returns.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_init_podoboo then slot caller",
+      "status": "exact",
+      "currentCounterpart": "Actual C9B0 caller invokes C2F7 InitPodoboo before LFSR07a8+slot fetch;8192 post-child random reads,reset state/height/box consumed by actual gravity on both interval paths.",
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Actual C9B0 caller invokes C2F7 InitPodoboo before LFSR07a8+slot fetch;8192 post-child random reads,reset state/height/box consumed by actual gravity on both interval paths."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
-        "src/game/enemy/init_targets.c"
+        "src/game/enemy/init_targets.c",
+        "src/game/enemy/podoboo.c"
       ]
     },
     {
@@ -30027,10 +30039,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Sets both Y coordinates to two, interval timer to one and state to zero before tail-selecting the small box.",
       "currentSourcePaths": [
@@ -30207,10 +30221,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Supplies zero X speed to the shared SetESpd tail.",
       "currentSourcePaths": [
@@ -30247,10 +30263,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Loads box control $09 and takes the always-true BNE branch to SetBBox.",
       "currentSourcePaths": [
@@ -30267,10 +30285,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Stores original Y, chooses central-Y addend $30 or $e0 by Y sign, retains dispatch carry, then enters tall-box setup.",
       "currentSourcePaths": [
@@ -30390,11 +30410,13 @@
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Calls small-box setup, copies random bit d4 into CheepCheepMoveMFlag and preserves original Y in CheepCheepOrigYPos.",
       "currentSourcePaths": [
@@ -30412,11 +30434,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Branches to erase the Lakitu only when EnemyFrenzyBuffer is occupied; otherwise falls through to setup.",
       "currentSourcePaths": [
@@ -30434,10 +30458,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Clears LakituReappearTimer, calls zero-speed horizontal/flying setup, then tail-selects the box-only tall setup.",
       "currentSourcePaths": [
@@ -30455,10 +30481,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Tail-jumps to EraseEnemyObject without additional writes.",
       "currentSourcePaths": [
@@ -30497,10 +30525,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Gates on frenzy timer and controller slot, arms timer $80, then reverse-searches Lakitu or begins reappearance handling.",
       "currentSourcePaths": [
@@ -30560,10 +30590,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Initializes the selected Lakitu slot, calls setup and right-extent positioning, then restores the caller object offset.",
       "currentSourcePaths": [
@@ -30644,10 +30676,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Copies one value from each four-byte PRDiffAdjustData band into scratch $03/$02/$01, calls PlayerLakituDiff and selects speed sign path.",
       "currentSourcePaths": [
@@ -30686,10 +30720,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Calls SmallBBox, intentionally loses the computed A value to the common tail, writes zero X speed and selects right-moving direction.",
       "currentSourcePaths": [
@@ -30728,10 +30764,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Returns after a completed Spiny egg setup or upstream early exit.",
       "currentSourcePaths": [
@@ -30790,11 +30828,13 @@
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Calls DuplicateEnemyObj, then falls through into the short-firebar initialization body.",
       "currentSourcePaths": [
@@ -30812,11 +30852,13 @@
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Clears low spin state, selects speed/direction tables, adds four to Y and X with page carry, then tail-selects box-only TallBBox2.",
       "currentSourcePaths": [
@@ -30893,10 +30935,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Gates on frenzy timer, initializes small box and timer, applies hard-mode slot limit and begins random/player-speed selection.",
       "currentSourcePaths": [
@@ -31054,10 +31098,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Wraps upward from Y=$ff until an inactive Enemy_Flag slot, records DuplicateObj_Offset and copies exactly the source fields in source order.",
       "currentSourcePaths": [
@@ -31186,10 +31232,12 @@
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Stores supplied Y, adds $20 to screen-right X with page carry and tail-jumps FinishFlame.",
       "currentSourcePaths": [
@@ -31902,10 +31950,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Loads box control $03 and falls through SetBBox2.",
       "currentSourcePaths": [
@@ -32620,11 +32670,13 @@
       "semanticEvidence": [
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
         "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Clears exactly Enemy_Flag, Enemy_ID, Enemy_State, FloateyNum_Control, EnemyIntervalTimer, ShellChainCounter, Enemy_SprAttrib and EnemyFrameTimer for the current slot, then returns.",
       "currentSourcePaths": [
@@ -32644,10 +32696,12 @@
       "currentCounterpart": "shared lifecycle and Podoboo slot path",
       "semanticEvidence": [
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "When interval timer is zero, calls InitPodoboo, reads LFSR byte, sets Y force bit seven, derives interval (low nibble OR six), writes Y speed $f9; both paths tail-jump to vertical gravity.",
       "currentSourcePaths": [
@@ -33165,10 +33219,12 @@
       "currentCounterpart": "shared jumping and red paratroopa slot paths",
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction."
+        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "When both vertical speed and force are zero, clears Y dummy, returns after a fourth-frame downward correction below original height; otherwise selects red vertical direction from center height.",
       "currentSourcePaths": [
@@ -33203,10 +33259,12 @@
       "currentCounterpart": "shared jumping and red paratroopa slot paths",
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction."
+        "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass."
+        "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Compares current Y with center Y and tail-selects red down below center or red up at/above center.",
       "currentSourcePaths": [
@@ -33792,10 +33850,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Routes defeated state to slow vertical movement; otherwise enters Cheep swim movement.",
       "currentSourcePaths": [
@@ -33811,10 +33871,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Selects type force table, subtracts it from X force then propagates successive borrows through X/page; high slots select vertical direction/update path.",
       "currentSourcePaths": [
@@ -33849,10 +33911,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Compares current Y with origin Y, computes magnitude/direction and selects movement flag reversal threshold.",
       "currentSourcePaths": [
@@ -34789,10 +34853,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
       ],
       "semanticContract": "Derives signed player difference, saturates magnitude at $3c, applies Lakitu turn/slowdown rules, selects adjustment index from player movement/scroll/enemy state, and subtracts once per distance pixel.",
       "currentSourcePaths": [
@@ -83910,12 +83976,15 @@
       "instruction": "jsr",
       "id": "control-01521",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c375->c346,call target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c375-c346': 16384},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation InitCheepCheep -> SmallBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -83978,12 +84047,15 @@
       "instruction": "jsr",
       "id": "control-01524",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c38f->c33d,call target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c38f-c33d': 9216},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation SetupLakitu -> InitHorizFlySwimEnemy with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84000,12 +84072,15 @@
       "instruction": "jmp",
       "id": "control-01525",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c392->c7d9,jump target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c392-c7d9': 9216},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump relation SetupLakitu -> TallBBox2 with exact limited write footprint.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84021,12 +84096,15 @@
       "instruction": "jmp",
       "id": "control-01526",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c395->c998,jump target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c395-c998': 8192},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump relation KillLakitu -> EraseEnemyObject with current slot, timer predicate and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84330,12 +84408,15 @@
       "instruction": "jsr",
       "id": "control-01539",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c3e0->c5d8,call target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c3e0-c5d8': 1024},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation CreateL -> PutAtRightExtent with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84495,12 +84576,15 @@
       "instruction": "jsr",
       "id": "control-01546",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c41d->cf6c,call target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c41d-cf6c': 1272},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation DifLoop -> PlayerLakituDiff with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84612,12 +84696,15 @@
       "instruction": "jsr",
       "id": "control-01551",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c434->c346,call target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c434-c346': 1272},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation SetSpSpd -> SmallBBox with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84706,12 +84793,15 @@
       "instruction": "jsr",
       "id": "control-01555",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c459->c575,call target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c459-c575': 16384},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation InitLongFirebar -> DuplicateEnemyObj with selected-slot, copied-field and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84749,12 +84839,15 @@
       "instruction": "jmp",
       "id": "control-01557",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared box-only call, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c485->c7d9,jump target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c485-c7d9': 32768},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump relation InitShortFirebar -> TallBBox2 with exact limited write footprint.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84769,12 +84862,15 @@
       "instruction": "bne",
       "id": "control-01558",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c4ab->c44e,branch target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c4ab-c44e': 8192},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original branch relation InitFlyingCheepCheep -> ChpChpEx with exact table index, timer/slot predicate, carry/borrow and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -84790,12 +84886,15 @@
       "instruction": "jsr",
       "id": "control-01559",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c4ad->c346,call target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c4ad-c346': 8192},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation InitFlyingCheepCheep -> SmallBBox with exact table index, timer/slot predicate, carry/borrow and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -134600,12 +134699,15 @@
       "instruction": "rts/rti",
       "id": "control-03772",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c375->c346,return target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c36a-c378': 16384},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original return relation SmallBBox -> InitCheepCheep with its mode/slot predicate, exact write ordering and call/tail/return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/init.c",
@@ -134620,12 +134722,15 @@
       "instruction": "rts/rti",
       "id": "control-03773",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c38f->c33d,return target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c36a-c392': 9216},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original return relation InitHorizFlySwimEnemy -> SetupLakitu with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -134666,12 +134771,15 @@
       "instruction": "rts/rti",
       "id": "control-03775",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c3e0->c5d8,return target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c630-c3e3': 1024},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original return relation PutAtRightExtent -> CreateL with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -134711,12 +134819,15 @@
       "instruction": "rts/rti",
       "id": "control-03777",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c434->c346,return target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c36a-c437': 1272},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original return relation SmallBBox -> SetSpSpd with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -134733,12 +134844,15 @@
       "instruction": "rts/rti",
       "id": "control-03778",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c459->c575,return target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c59c-c45c': 16384},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original return relation DuplicateEnemyObj -> InitLongFirebar with selected-slot, copied-field and return ordering.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -134753,12 +134867,15 @@
       "instruction": "rts/rti",
       "id": "control-03779",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Shared enemy/init_targets.c,frenzy.c,lakitu.c with real helper/erase/duplicate/box children and original tail order.",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 original opcode/site c4ad->c346,return target independently bound;Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 actual transitions {'c36a-c4b0': 8192},return filtered original RTS opcode60;131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original return relation SmallBBox -> InitFlyingCheepCheep with exact table index, timer/slot predicate, carry/borrow and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",

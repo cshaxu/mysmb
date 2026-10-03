@@ -487,3 +487,14 @@ controls/all55 vector pairs observed/equal,13 tests each/purity/current builds/
 OpenNT link pass.No product repair,3 S10 products retained byte-identical.
 T69 open,S12 next unadmitted;38 controls/12 material and earlier M alias
 scope plus integrated proof remain.
+
+## Current checkpoint after T69 S12
+
+[T69 S12](t69-cross-cohort-current-proof.md) closes17 controls/3 material,
+27 existing labels rechecked,zero fresh nodes.Current1992/1992 scoped-exact
+nodes,4256/4277 controls(raw4342,infeasible65),546/555 material partial;
+historical1992/1992 separate.131072 original roots each width zero diff,
+17 controls/3 actual material consumptions observed;8 tests each/purity/
+current builds/OpenNT link pass.No product repair,3 products byte-identical.
+T69 open,S13 next unadmitted;21 controls/9 material,M alias scope and
+integrated proof remain.No all-state/whole-game certification.

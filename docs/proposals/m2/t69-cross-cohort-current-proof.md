@@ -1760,3 +1760,97 @@ rebuild actual targets and existing smoke. This caller fixture is operational
 only,never a substitute for the real-child original-ROM/current route proof.
 Source/product are unchanged;three EXEs retained. S12 stays active until build
 and dual-track closure gates pass;no scoped mismatch transferred forward.
+
+## S12 P3 closure - actual flying initializer and movement consumption
+
+All27 existing labels rechecked:InitPodoboo; InitHorizFlySwimEnemy; SmallBBox; InitRedPTroopa; InitCheepCheep; SetupLakitu; KillLakitu; CreateL; DifLoop; SetSpSpd; ChpChpEx; InitLongFirebar; InitShortFirebar; InitFlyingCheepCheep; DuplicateEnemyObj; PutAtRightExtent; TallBBox2; EraseEnemyObject; MovePodoboo; MoveRedPTUpOrDown; PlayerLakituDiff; InitLakitu; LakituAndSpinyHandler; ProcMoveRedPTroopa; MoveSwimmingCheepCheep; CCSwim; ChkSwimYPos.
+Zero fresh nodes,no scoped deferral.All17 controls and3 material exact.
+Current1992/1992 scoped-exact nodes,4239->4256/4277 feasible controls
+(raw4342,infeasible65),543->546/555 material partial;historical1992/1992
+separate.T69 open,S13 next unadmitted;21 controls/9 material and earlier M
+alias scope/integrated proof remain.No whole-game/all-state certification.
+
+Original ASM reviewed first against actual shared initializer/frenzy/Lakitu,
+Podoboo/red/swimming movement owners and erase/gravity children. SmallBBox
+retains box9,direction2 and zero speed/force;horizontal initializer box3 tail.
+InitLakitu buffer predicate preserves erase versus setup/reappearance reset;
+erase clears exactly eight original fields including078A frame timer.
+Respawn scans4..0 and reloads ObjectOffset;Spiny copies parent coordinates,
+subtracts8,loads three PR adjusters in original order and reloads slot before
+PlayerLakituDiff. SmallBBox's returned A0 intentionally destroys calculated
+Spiny speed,leaving direction1,Y speedFD,flag1,state5. No replacement physics.
+Firebar long initializer calls real unsigned-byte duplicate allocation then
+short fallthrough;preserves copied fields,low spin reset,ID table selector,
+Y/X+4 and X carry into page;TallBBox2 is box-only. Runtime RunFirebarObj
+remains S13's separately planned route,including prior deferred offscreen call.
+Flying Cheep preserves timer gate,SmallBBox before hard/slot limit,timer and
+three LFSR selectors,player speed biases,stationary-player Y reload,negation
+and position add/sub page carry. Six native PR/firebar/flying arrays(54 bytes)
+independently equal unchanged owner ROM;no copied source bytes added.
+
+Three actual material paths independently checked. Red C34A initializer
+enters with carry0 as supplied by declared initializer vector;original-height
+0401 and center0058 consumed by actual CAFF movement,each16384 reads.
+Swimming C375 writes random d4 and originalY;actual CC4A consumer reads0058
+and0434 each10752,with source slots0/1 skip. Legacy nonexistent SlowSwimCC
+consumer corrected to MoveSwimmingCheepCheep(CCSwim/ChkSwimYPos);same relation
+ID and denominator retained. Podoboo C9B0 calls real initialization before
+8192 LFSR07A8+slot reads,then gravity;nonexpired interval retains source skip.
+
+Eight original/current route families,16384 each,131072 roots each width,
+zero diffs. Fixtures cover six slots,full byte coordinates,page carry/borrow,
+random bits,player speed0/7/20,scroll0..2,timer gates,hard mode,Lakitu presence/
+state/free-slot scans and full-byte initial Y. Sequential red/swimming roots
+preserve all persistent RAM/registers/hardware;only declared return stack/
+sentinel restored before actual consumer. No child mocks or ROM patches.
+Compared2032 RAM,24 APU,ordered writes/count;only01F0-01FF physical stack/
+sentinel excluded,minSP F9,CPU return registers/flags outside native ABI.
+These controlled routes do not imply all possible states/gameplay reachability.
+
+Retained test ABI repair:all-target builds exposed missing frame-root
+JumpEngine boundary in block_bump_snapshot_check.c caller-only target. Added
+the declared signature and explicit unchanged-PRG vector/scratch boundary;
+not gameplay code or ROM evidence. Actual route checker uses real children.
+Both all-target builds pass after repair;additional block-bump smoke passes
+each width. No product change or EXE refresh.
+
+Similar-issue sweep:real parent slot reload,SmallBBox A destruction,LFSR
+fetch order,table selector/tail stores,page carry/borrow,byte duplicate scan,
+height aliases and movement flag consumption reviewed. No scoped product
+difference found,no game/platform edits;separate later runtime/frenzy/audio/
+integrated scopes retain obligations and receive no admission credit.
+
+| ID | Original/shared join | Type | Original observations |
+| --- | --- | --- | --- |
+| `control-01521` | InitCheepCheep -> SmallBBox | call | 16384 |
+| `control-01524` | SetupLakitu -> InitHorizFlySwimEnemy | call | 9216 |
+| `control-01525` | SetupLakitu -> TallBBox2 | jump | 9216 |
+| `control-01526` | KillLakitu -> EraseEnemyObject | jump | 8192 |
+| `control-01539` | CreateL -> PutAtRightExtent | call | 1024 |
+| `control-01546` | DifLoop -> PlayerLakituDiff | call | 1272 |
+| `control-01551` | SetSpSpd -> SmallBBox | call | 1272 |
+| `control-01555` | InitLongFirebar -> DuplicateEnemyObj | call | 16384 |
+| `control-01557` | InitShortFirebar -> TallBBox2 | jump | 32768 |
+| `control-01558` | InitFlyingCheepCheep -> ChpChpEx | branch | 8192 |
+| `control-01559` | InitFlyingCheepCheep -> SmallBBox | call | 8192 |
+| `control-03772` | SmallBBox -> InitCheepCheep | return | 16384 |
+| `control-03773` | InitHorizFlySwimEnemy -> SetupLakitu | return | 9216 |
+| `control-03775` | PutAtRightExtent -> CreateL | return | 1024 |
+| `control-03777` | SmallBBox -> SetSpSpd | return | 1272 |
+| `control-03778` | DuplicateEnemyObj -> InitLongFirebar | return | 16384 |
+| `control-03779` | SmallBBox -> InitFlyingCheepCheep | return | 8192 |
+
+Operational:8 focused tests each width pass(Podoboo,red/swimming movement,
+Lakitu distance,Spiny chain,small initializer/frenzy,gravity,purity);current
+x86/x64 builds and original OpenNT DOS16 link pass.Inherited OLDNAMES.LIB
+warning remains,no interactive DOS claim.No product code change;all3 current
+outputs equal committed S10 products,retained byte-identical:
+
+- `mysmb16.exe`: 261399 bytes,SHA256 `b73e6cbb6e54f81b115f37686e12cc2eb97a6d2df6ebeefd563576e4ea7bf955`;S10 product retained byte-identical.
+- `mysmb32.exe`: 374811 bytes,SHA256 `d37925f435091faa8fb16789701b8bd0aa151c670eaba2e90aea206ab1ad7f57`;S10 product retained byte-identical.
+- `mysmb64.exe`: 382348 bytes,SHA256 `c07d686b1d3a137cf2cce0b85749465bdb8d8ffc796f2fab6afa7d3af85d093b`;S10 product retained byte-identical.
+
+Neutral route/table/control summaries/logs retained under ignored build;
+raw1024 batch/128MiB/120seconds process/524288steps root/deleted per batch.
+Probe deleted at closure.Registry/ledger/progress/docs/diff gates required
+before local P3 commit;unrelated owner work preserved,no push.
