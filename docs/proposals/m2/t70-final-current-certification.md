@@ -7293,3 +7293,67 @@ Current src/game/enemy/core.c normalizedSHA256:d568c921de10cba733e2124bdfc1575f3
 Current src/game/enemy/loop.c normalizedSHA256:a9619ed5b897c07732fc6a6f104823fd3ba4ebc17fdad244b6a2dcd71c7caf92.
 
 Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+## S17 P52 checkpoint - enemy stream cursor boundary invariant
+
+Continuation of the named P51 CheckForEnemyGroup/control-01480 gap within
+existing S17 scope724. No new S or audit round,no exact/material/use credit.
+Audit admission:existing readonly original ROM/ASM and unchanged shared owners;
+resolve the legal record-cursor invariant and enumerate all possible alias
+writers before interpreting the previously missing C1FB outcome.
+
+ROM EnemyDataAddrLow/High has34 original streams. Grammar inspection yields
+535 unique record addresses,536 per-stream boundary states(shared tail reuse),
+maximum cursor57. Model conservatively allows staying at any record,advancing
+two bytes or three for row0E,and loopback to zero at any time. FF does not
+advance. All1540 transitions preserve a boundary. No non-row0E/non-FF record
+has residual ID3F. This is a conditional inductive invariant,not merely a
+sample replay. No claim that all overapproximated transitions are feasible
+original edges or new material paths.
+
+Source pointer/cursor producers:9C3C/9C41 set E9/EA from the selected tables;
+the only GetAreaDataAddrs call is inside InitializeArea after InitializeMemory
+with Y4B,which clears739 before installing the pointer. C0BF loopback resets
+739;C19F/C1A2 advance page-control records;C25B/C25E/C261 advance ordinary or
+row0E records. Remaining production alias applicability is not inferred from
+symbol-name searches. Byte-bound full instruction census finds8 direct writer
+sites,374 unrestricted-index alias candidates and9 indirect writer sites
+for E9/EA/739,including RAM mirrors below2000 only. Existing338 candidate
+domain exclusions are conditional;36 additional cursor candidates are named
+below. All are candidate addresses,not discovered gameplay defects.
+
+Four negative models reject fixed2/fixed3 lengths,initial offset1,and advancing
+afterFF. Deliberately misaligned cursor values produce28 ID3F witnesses.
+This establishes that the legal-cursor assumption matters;it does not show
+these witness states are gameplay-reachable. Original34-table membership,
+caller-index domains and indirect pointer exclusions must be linked to their
+accepted producer receipts before control-01480 can be reclassified.
+
+Additional unrestricted-index candidates:
+81e2:SprDataOffset,x,81fc:Misc_SprDataOffset-2,x,8202:Misc_SprDataOffset-1,x,8208:Misc_SprDataOffset,x,8e7b:SavedJoypadBits,x,8e89:SavedJoypadBits,x,90ae:SprDataOffset,x,9408:MetatileBuffer,x,9448:MetatileBuffer,y,9464:MetatileBuffer,x,94b3:MetatileBuffer,x,9578:AreaObjectLength,x,9659:AreaObjOffsetBuffer,x,9757:AreaObjectLength,x,976b:MetatileBuffer,x,9783:MushroomLedgeHalfLen,x,979b:MetatileBuffer,x,97a5:MetatileBuffer,x,981e:MetatileBuffer,x,9879:MetatileBuffer,x,987e:MetatileBuffer+1,x,9892:MetatileBuffer,x,98d3:MetatileBuffer,x,98d9:MetatileBuffer+1,x,992c:MetatileBuffer,x,9975:MetatileBuffer,x,9989:MetatileBuffer,x,9a70:MetatileBuffer,x,9a79:MetatileBuffer,x,9af8:MetatileBuffer,x,9afd:MetatileBuffer+1,x,9b9d:MetatileBuffer,x,9bb6:AreaObjectLength,x,bab0:HammerEnemyOffset,y,d7e6:Misc_Collision_Flag,x,d7fc:Misc_Collision_Flag,x.
+
+Indirect writer sites: 871c:OutputTScr,90dc:InitByte,94f7:StrBlock,b9b5:WrCMTile,bd4b:PutMTileB,be35:CheckTopOfBlock,bef4:UpdateLoop,de20:ErACM,e007:HandleEToBGCollision.
+
+
+Similar-class check covers pointer/cursor aliases,CPU RAM mirroring,shared-tail
+records,three-byte row0E,FF stopping and loopback reset. Bound target candidates
+are not marked impossible merely because typical slots are small. No product
+or test-source edits,no EXE refresh required;all three remain P46,DOS runtime
+unqualified. Five current normalized source identities below. Original ROM
+bytes/raw records remain ignored and are not copied into tracked evidence.
+
+Historical mapping1992/1992;current local nodes1991/1992 and controls4269/4270
+(raw4342,infeasible72). Complete bounded receipts remain3676/10691 instructions
+and1272/3773 RAM;material993partial/global totalunknown. Whole-program lifetime,
+pixel output,full declared routes and final snapshot packages remain open.
+CheckForEnemyGroup/control-01480 stays needs-evidence;M2 NOT COMPLETE.
+
+Current src/game/area.c normalizedSHA256:9e482d3c43db74d1b338726e5c4e9f69721e27b931f3fd6ac6c55ea5d48c24f3.
+
+Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+Current src/game/enemy/loop.c normalizedSHA256:a9619ed5b897c07732fc6a6f104823fd3ba4ebc17fdad244b6a2dcd71c7caf92.
+
+Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.

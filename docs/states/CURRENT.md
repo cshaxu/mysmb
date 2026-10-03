@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P51 motion/loop/stream source-use checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P52 cursor invariant checkpoint;P51 source-use retained,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -82,7 +82,6 @@
 
 
 
-S17 P44:138fireball/bubbleinstructions/55RAM joined8manualclauses,3owners/boxunchanged45b802b4;262144actualroots eachwidth2032RAM/APU/order0diff,all138PC/17branchpairs/sixbytes observed. B624realparentpluscore/bubblechildren;11tests each/productsP39unchanged.Scope570/fresh0;2445instruction/805RAM boundedreceipts,2968otherRAMjoins.Local1992/1992,controls4274/4274,material986partial,totalunknown,fourfinalpackages open.
 
 
 S17 P45:117timer/warp/whirlpoolinstructions/59RAM joined10clauses;threecontracts restored,2048baseline eachwidth3373RAMdiff->0.212992currentroots eachwidth2032RAM/APU/order0diff/all117PC/19branchpairs;5tests each/six600frames pass/3products refreshed,DOSlinkonly.Paths987-993,scope582/fresh0;2562instruction/864RAM receipts,2909otherRAMjoins.Local1992/1992,controls4274/4274,material993partial,totalunknown,fourfinalpackages open.
@@ -98,3 +97,5 @@ S17 P49:36hammer/misc/coin/score/poweruplabels,273instructions/110RAM joined21bo
 S17 P50:35block/head/content/chunk/replacement/movement labels,240instructions/87RAM joined16 bounded clauses,6 owners unchanged.430080actual roots each width2032RAM/APU/order0diff,all240PC/conditional sides except impossibleBEB1;8tests each/productsP46unchanged.Scope679/fresh0;3367instruction/1171RAM receipts,2602otherRAMjoins. Control-01371 correctedexact->infeasible;localcontrols4272/4272,raw4342/infeasible70;localnodes1992/1992,material993partial,totalunknown,four final packages open.
 
 S17 P51:55 motion/loop/stream labels,310PC inspected/observed;309 instruction/101RAM bounded joins,408380 roots each width0diff,7tests each. Scope724/fresh0;3676instruction/1272RAM receipts,7015instruction/2501RAM remaining. Two controls exact->infeasible;CheckForEnemyGroup/control-01480 exact->needs-evidence for residualID3F producer constraint. Currentlocal1991/1992nodes,4269/4270controls(raw4342,infeasible72);material993partial,totalunknown;source/productsP46unchanged,M2 incomplete.
+
+S17 P52:CheckForEnemyGroup/control-01480 cursor lemma;34streams/536boundary states/1540transitions preserve alignment,max57/no ordinaryID3F. Four negative models rejected;28 misalignedID3F witnesses. Writer census8direct/374indexed/9indirect;caller/alias applicability pending,no credit. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72);3676instruction/1272RAM receipts,material993partial,totalunknown;productsP46unchanged,M2 incomplete.
