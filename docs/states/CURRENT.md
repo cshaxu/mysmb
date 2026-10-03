@@ -4,11 +4,11 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P66 swimming partial checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P67 swimming checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
-| Reference Baseline | Historical1992/1992;local scoped1991/1992 nodes,4266/4267 controls(raw4342,infeasible75);material993 partial,total unknown. |
+| Reference Baseline | Historical1992/1992;local scoped1991/1992 nodes,4265/4266 controls(raw4342,infeasible76);material993 partial,total unknown. |
 | Candidate Proposal | [S17 material completeness](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
 | Files And ABI Surface | P46 sharedfireball/fireball_core.c originalbyte-indexed boundPRG speed lookup;P45 sharedwhirlpool.c RAM00/01/02 publication andtest/engine_environment_smoke.c originalgravityentry observer;S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
@@ -26,8 +26,8 @@
 - Full M2 certification: **NOT COMPLETE**;prior exact rows are local contracts.
 - Historical mapping1992/1992;no new global audit round or zero-based progress denominator.
 - S15 closed its17-node/42-control startup scope;identified8 mismatches and1 input-contract gap resolved.
-- Local ledger1991/1992 accepted scoped nodes and4266/4267 feasible controls
-  (raw4342,infeasible75);CheckForEnemyGroup/control-01480 needs evidence;these are scoped dispositions,not whole-game certification.
+- Local ledger1991/1992 accepted scoped nodes and4265/4266 feasible controls
+  (raw4342,infeasible76);CheckForEnemyGroup/control-01480 needs evidence;these are scoped dispositions,not whole-game certification.
 - Material993 partial;global denominator unknown. Startup package closed;
   material/pixels/routes/snapshot packages remain;bindings closes in S16. A-N restart is superseded.
 - S16 P1 removed an uncalled synthetic terrain helper with one mismatching table byte;active original owners unchanged.
@@ -98,7 +98,6 @@
 
 
 
-S17 P59:47initializer/erasurelabels,186instructions/75RAM joined12boundedclauses;65536actualroots eachwidth0diff/all186PC/ninebranchpairs,actualX==input08,799erasurecalls,7tests each. Scope809/fresh0;4142instruction/1438RAM receipts,6549instruction/2335RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,otherchild/caller/inter-frame domains pending,M2 incomplete.
 
 S17 P60:6initializerlabels,58instructions/32RAM joined5boundedclauses;262144actualroots eachwidth0diff/all58PC/bothscanbranches,actualX==input08,6tests each. Scope815/fresh0;4200instruction/1470RAM receipts,6491instruction/2303RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
@@ -113,3 +112,5 @@ S17 P64:12movementlabels,69instructions/16RAM joined6boundedclauses;196608actual
 S17 P65:14paratroopa/counter labels,70instructions/30RAM joined6boundedclauses;393216actualroots eachwidth0diff/all70PC/11branchpairs,5tests each. Scope901/fresh0;4791instruction/1690RAM receipts,5900instruction/2083RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
 S17 P66 partial checkpoint:23 swimming-actor labels/159 instructions admitted,scope924/fresh0. Three controlled original roots,total196608 eachwidth,2032RAM/24APU/orderedwrites0diff;6 focused tests eachwidth pass. Only153/159 scope PCs observed;CCB8/CCBA/CCBC/CCBD/CCC3/CCC4 remain uncovered,swimming-height fixture couples current/anchor Y. CBA0 fallthrough control-01795 also requires independent feasibility disposition. No new node/control/use credit;local1991/1992nodes,4266/4267controls(raw4342/infeasible75),4791/10691 instruction receipts,1690/3773 directRAM receipts. Caller/producer/inter-frame lifetimes and material/pixels/routes/snapshot packages remain open;material total unknown,M2 incomplete. Product source/threeEXEs unchanged.
+
+S17 P67:23swimming labels/159instructions/70RAM joined8boundedclauses;262144actualroots eachwidth0diff/all159PC/21branchpairs,onefalseexactfallthrough corrected infeasible,6tests each. Scope924/fresh0;4950/10691 instruction receipts,1760/3773 RAM receipts;5741instructions/2013RAM pending. Local1991/1992nodes,4265/4266controls(raw4342/infeasible76),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame and finalpackages pending,M2 incomplete.

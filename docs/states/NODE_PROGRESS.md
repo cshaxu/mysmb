@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P67 swimming paths](../proposals/m2/t70-final-current-certification.md#s17-p67-checkpoint---swimming-state-and-height-paths-reconciled).
+S17 P67:23swimming labels/159instructions/70RAM joined8boundedclauses;262144actualroots eachwidth0diff/all159PC/21branchpairs,onefalseexactfallthrough corrected infeasible,6tests each. Scope924/fresh0;4950/10691 instruction receipts,1760/3773 RAM receipts;5741instructions/2013RAM pending. Local1991/1992nodes,4265/4266controls(raw4342/infeasible76),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame and finalpackages pending,M2 incomplete.
+
 [P66 partial coverage](../proposals/m2/t70-final-current-certification.md#s17-p66-partial-checkpoint---swimming-coverage-gaps-retained).
 S17 P66 partial checkpoint:23 swimming-actor labels/159 instructions admitted,scope924/fresh0. Three controlled original roots,total196608 eachwidth,2032RAM/24APU/orderedwrites0diff;6 focused tests eachwidth pass. Only153/159 scope PCs observed;CCB8/CCBA/CCBC/CCBD/CCC3/CCC4 remain uncovered,swimming-height fixture couples current/anchor Y. CBA0 fallthrough control-01795 also requires independent feasibility disposition. No new node/control/use credit;local1991/1992nodes,4266/4267controls(raw4342/infeasible75),4791/10691 instruction receipts,1690/3773 directRAM receipts. Caller/producer/inter-frame lifetimes and material/pixels/routes/snapshot packages remain open;material total unknown,M2 incomplete. Product source/threeEXEs unchanged.
 

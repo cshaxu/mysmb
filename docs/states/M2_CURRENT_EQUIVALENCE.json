@@ -22653,8 +22653,8 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4266,
-    "infeasible": 75,
+    "exact": 4265,
+    "infeasible": 76,
     "needs-evidence": 1
   },
   "controlEdgeTypeCounts": {
@@ -45801,10 +45801,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Routes defeated state to slow vertical movement; otherwise applies difficulty mask and chooses direction from odd-slot player direction or even-slot player difference before swimming.",
       "currentSourcePaths": [
@@ -45820,10 +45822,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Uses player/enemy difference to choose left by default or right when enemy is left of player, while preserving source carry for downstream swim logic.",
       "currentSourcePaths": [
@@ -45839,10 +45843,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores selected Bloober direction then falls through swimming.",
       "currentSourcePaths": [
@@ -45858,10 +45864,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls swimming state progression, applies upward movement-force subtraction only if result stays at or below Y=$20 boundary, then chooses horizontal direction.",
       "currentSourcePaths": [
@@ -45877,10 +45885,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "For direction right, adds BlooberMoveSpeed to X and propagates carry to page before return.",
       "currentSourcePaths": [
@@ -45896,10 +45906,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "For direction left, subtracts BlooberMoveSpeed from X and propagates borrow to page before return.",
       "currentSourcePaths": [
@@ -45915,10 +45927,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Tail-jumps to slow vertical downward movement.",
       "currentSourcePaths": [
@@ -45934,10 +45948,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Selects acceleration, deceleration, floating or near-player branches from movement counter and timer state.",
       "currentSourcePaths": [
@@ -45953,10 +45969,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns after acceleration branch work or its every-eighth-frame gate.",
       "currentSourcePaths": [
@@ -45972,10 +45990,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Every eighth frame decrements swim force/speed; when reaching zero advances movement state and assigns interval timer two.",
       "currentSourcePaths": [
@@ -45991,10 +46011,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns after slow-swim frame gate or state update.",
       "currentSourcePaths": [
@@ -46010,10 +46032,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Selects near-player test when interval timer is zero; otherwise falls through alternating float-down.",
       "currentSourcePaths": [
@@ -46029,10 +46053,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "On alternate frames increments Y; otherwise returns.",
       "currentSourcePaths": [
@@ -46048,10 +46074,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns after float-down cadence decision.",
       "currentSourcePaths": [
@@ -46067,10 +46095,12 @@
       "currentCounterpart": "shared Bloober slot state machine",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Adds sixteen plus inherited carry to Y; if still above player returns to float-down, otherwise clears movement counter and returns.",
       "currentSourcePaths": [
@@ -46086,10 +46116,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "For defeated state tail-jumps to jumping vertical gravity; otherwise writes X speed $e8 and tail-jumps to horizontal movement.",
       "currentSourcePaths": [
@@ -46105,10 +46137,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Writes frenzy Bullet Bill X speed $e8 and tail-jumps to horizontal movement.",
       "currentSourcePaths": [
@@ -46144,11 +46178,13 @@
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
         "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Routes defeated state to slow vertical movement; otherwise enters Cheep swim movement.",
       "currentSourcePaths": [
@@ -46165,11 +46201,13 @@
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
         "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Selects type force table, subtracts it from X force then propagates successive borrows through X/page; high slots select vertical direction/update path.",
       "currentSourcePaths": [
@@ -46185,10 +46223,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Subtracts vertical dummy force and propagates borrow through Y/page before falling through Y-position check.",
       "currentSourcePaths": [
@@ -46205,11 +46245,13 @@
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
         "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Compares current Y with origin Y, computes magnitude/direction and selects movement flag reversal threshold.",
       "currentSourcePaths": [
@@ -46225,10 +46267,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "For a negative Y difference selects downward flag and two's-complement magnitude before threshold check.",
       "currentSourcePaths": [
@@ -46244,10 +46288,12 @@
       "currentCounterpart": "shared Bullet Bill and swimming Cheep slot paths",
       "semanticEvidence": [
         "Td S9 B15i Bullet Bill/swimming-Cheep node-semantics and independent integration audit: SMB1 lines 9603-9687 compared with shared enemy/bullet_bill.c and swimming_cheep.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c."
+        "M2 T63 S9 static $CC36-$CCC6 audit: exact defeated tails, fixed Bullet Bill speed, Cheep force table/index, borrow/carry movement, slot gate, vertical direction and 15-pixel threshold match shared enemy/bullet_bill.c and enemy/swimming_cheep.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass."
+        "M2 T63 S9 current-source original-ROM routes: 128 Bullet Bill and 512 Cheep-Cheep controlled records per x86/x64 (1,280 comparisons), focused C90 contracts, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns after horizontal/optional vertical Cheep movement.",
       "currentSourcePaths": [
@@ -103454,16 +103500,18 @@
       "instruction": "bcs",
       "id": "control-01795",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared Bloober branch, table, child-call, fall-through, tail-jump and return counterpart",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; shared C preserves feasible direction path",
       "semanticEvidence": [
         "Td S9 B15h Bloober node-semantics and independent integration audit: SMB1 lines 9490-9602 compared with shared enemy/bloober.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c."
+        "M2 T63 S8 static $CB87-$CC35 audit: exact mask bytes, defeated priority, direction/carry, swim counter/force/timer, vertical threshold and page-aware horizontal paths match shared enemy/bloober.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass."
+        "M2 T63 S8 current-source original-ROM route: 512 controlled Bloober records per x86/x64 (1,024 comparisons) plus focused C90 contract, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:262144actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all159PC/21branchpairs/oneproveninfeasible side;actualX==08,6focusedtests eachpass,source/productsP57unchanged."
       ],
-      "semanticContract": "Preserves original fallthrough relation MoveBloober -> FBLeft with Bloober state, timer, direction/carry and source call/return ordering.",
+      "semanticContract": "State20 takes real slow-gravity tail. Otherwise mask3F/03 uses SecondaryHard0/1; random masked nonzero retains movement-vector ID7 ASL carry0. Maskzero TXA/LSR makes odd-slot C1: BCC not taken, LDY Player_MovingDir preserves carry, BCS must branch. Even slots call actual PlayerEnemyDiff; signed difference selects left2/right1 while final page-SBC carry is independently derived from low-X borrow and page operands. RAM00 child publication retained. No other original branch or label reference enters the interior CBA0 instruction; control-01795 false fallthrough is infeasible.",
       "currentSourcePaths": [
         "src/game/enemy/bloober.c"
       ]
@@ -161481,6 +161529,7 @@
     "control-01632",
     "control-01711",
     "control-01752",
+    "control-01795",
     "control-01904",
     "control-01929",
     "control-02036",
@@ -161535,16 +161584,16 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 75,
-  "feasibleControlEdgeTotal": 4267,
+  "infeasibleControlEdgeTotal": 76,
+  "feasibleControlEdgeTotal": 4266,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4267,
+    "feasibleControlUniverse": 4266,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 75,
+    "infeasibleControls": 76,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -165538,7 +165587,6 @@
           "control-01792",
           "control-01793",
           "control-01794",
-          "control-01795",
           "control-01796",
           "control-01797",
           "control-01798",
@@ -168486,16 +168534,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4791,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5900,
+        "localInstructionReceiptSites": 4950,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5741,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1690,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2083,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1760,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2013,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168516,10 +168565,8 @@
           "src/game/oam/small_platform_gfx.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
           "src/game/enemy/background.c": 38,
-          "src/game/enemy/bloober.c": 37,
           "src/game/oam/object_position.c": 35,
           "src/game/area/block_metatile.c": 34,
-          "src/game/enemy/{bullet_bill,swimming_cheep}.c": 33,
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "shared game core: enemy/star_flag.c": 31,
