@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P109 enemy caller uses](../proposals/m2/t70-final-current-certification.md#s17-p109-checkpoint---enemy-dispatch-and-caller-uses-reconciled).
+S17 P109:10enemy-caller labels/36instructions/5RAM joined4boundedclauses;65536actualC882parents+3072actualC905roots eachwidth0diff/all36PC/2branchpairs,5tests each. Scope1662/fresh0;10623/10691instruction receipts,3748/3773RAM receipts;68instructions/25RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
 [P108 platform/Podoboo uses](../proposals/m2/t70-final-current-certification.md#s17-p108-checkpoint---platform-and-podoboo-caller-uses-reconciled).
 S17 P108:6platform/Podoboo labels/34instructions/7RAM joined3boundedclauses;102400actualcallerroots eachwidth0diff/all34PC/2branchpairs,5tests each. Scope1652/fresh0;10587/10691instruction receipts,3743/3773RAM receipts;104instructions/30RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 

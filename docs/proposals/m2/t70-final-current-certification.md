@@ -9283,3 +9283,38 @@ Current src/game/enemy/platform.c normalizedSHA256:11e69399cbb0c1aa350c023ed42f4
 Current src/game/enemy/balance_platform.c normalizedSHA256:b909fe2b1013a543290979c97840f7f2cf3f170630ea13a90aab871bf763637f.
 
 Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+## S17 P109 admission - enemy dispatch and caller lifetime joins
+
+Existing36instructions/5RAM/10labels RunEnemyObjectsCore,JmpEO,NoRunCode,RunRetainerObj,RunNormalEnemies,SkipMove,EnemyMovementSubs,NoMoveCode,RunBowserFlame,RunFirebarObj. Core/normal/dispatch_targets/special_callers currentshared owners. RealoriginalC882controlledparent65536roots; allnormalIDs00-14 andselected15flame/17NoRun/1Bfirebar/35retainer,all sixslots,TimerControlzero/nonzero,rawcoordinates/attributes. VerifyCPYcarry/defaultselector,sourcevectorpublication,normaloffscreen-relative-gfx-box-background-enemy-player-liveTimer-movement-bounds order andspecialtails. RetainS16fulltablebindings/P108platformchild receipts;not allactorparents/interframe producers. FullRAMexceptactualobservedphysicalstack/APU/orderedwrites,voidCPUregistersoutsideABI. Currentownerscompiled directly,fivefocusedtests eachwidth;fresh0/max1992,scope1662;ROMreadonly/raw4096batch128MiB/120sec/deletebelowbuild. Source/P104productsunchangedunlessmismatch;wholeproducer/finalpackagespending.
+
+S17 P109 route amendment: initial65536C882parent profiles returned0RAM/APU/writesdifferences butobservedonly35/36scopedPC;NoMoveCodeC934unobserved andnotcredited. Add3072controlledactualC905EnemyMovementSubs roots,IDs9/19/all sixslots,byte RAM seeds,sameABI/realJumpEngine/RTS toexercisealreadyadmittedNoMoveCode. Do notassertinitialparentreachesNoMoveCode orfullproducerreachability; branch/target usejoins requirebothretainedparent andfreshentrydomains. No sourcechange/scopegrowth.
+
+## S17 P109 checkpoint - enemy dispatch and caller uses reconciled
+
+S17 P109:10enemy-caller labels/36instructions/5RAM joined4boundedclauses;65536actualC882parents+3072actualC905roots eachwidth0diff/all36PC/2branchpairs,5tests each. Scope1662/fresh0;10623/10691instruction receipts,3748/3773RAM receipts;68instructions/25RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
+| Clause | Labels | Source disposition |
+| --- | --- | --- |
+| E1 | RunEnemyObjectsCore,JmpEO,NoRunCode | OriginalC882reloadsXObjectOffset,defaultsA0,loadsYID,CPY15;below15 uses0,elseCPYcarry1 survivesTYA andSBC14 producesID-14. NativebyteID selector same,immutable34targetwords matchoriginalC892,04/05C891 and06/07 publishedbeforechild. KernelP107carry/index/stack scratchcontract retained; allnormalIDs0-14 andspecial15/17/1B/35 exercised inactualparent,otherlegalactorvectors retainS16/currentchildreceipts. NoRunCodeC8D6 originalRTS/nativebreak hasnosideeffects beyondpreviousdispatchscratch. NeitherrawinvalidID norallproducerreachability claimed. |
+| E2 | RunRetainerObj | OriginalC8D7realGetEnemyOffscreenBits/RelativeEnemyPosition/EnemyGfxHandler tail. Nativeidenticalorderedchildren,graphicscompatibilityreturn ignored,voidcaller. Offscreen/relative fields read aftertheirproducers,06/07 incomingtargetscratch maybeoverwritten bychildren asoriginal. SelectedID35/sixslots actualC882 parents verify finalRAM/OAM with no normalenemycollision/movement/bounds inserted. |
+| E3 | RunNormalEnemies,SkipMove,EnemyMovementSubs,NoMoveCode | OriginalC8E0setsSpriteAttrib0 thenrealOffscreen/Relative/Gfx/BoundBox/BackgroundCollision/EnemiesCollision/PlayerEnemyCollision. Native sameorder,keepsoriginalplayerboxes via preserve_collision_boxes1;ignoresGfxcompatibilityreturn anddoesnotshortcircuitcollisionresponses. Timer747 readliveafterallchildren;zero runsMovementSubs,nonzero skipsmovement only. Bounds alwaysruns. MovementreloadsIDaftercollisions,immutable21targetwords matchC90A,04/05C909 and06/07 setbeforechild,legalID0-14. NoMoveCodeIDs9/19 originalRTS/nativebreak preserveRAM; initialparentcoverage35/36notcrediteduntil3072actualC905roots allsixslots/IDs9-19/byteRAMseeds verifiedthetail. Parent-to-NoMoveCode reachabilitynotinferred fromtheseentryroots. Legaltypedslot equalsObjectOffset,childrenpreserve08/restoreX; originalmutations fromcollisions arevisibletomovement. Actualparent all21normalIDs/Timerzero-nonzero/rawattributescoordinates andrealchildren fullRAM0diff;scopeTimerbranchbothways,allmovementcasefixtures present,childinterior branchcertificates retained. |
+| E4 | RunBowserFlame,RunFirebarObj | OriginalC935ProcFlame thenrealOffscreen/Relative/Box/PlayerCollision/Bounds; nativeidentical,playerboxpreservation1,processorreturn doesnotelidetail. C947ProcFirebar thenBounds unconditional; originalJMP/nativecall returnsvoidtomainactor,legacyinjurysignal ignoredatC882 parent. Statefulchildren finishbeforelatertail reads, no cachedoffscreen/box data movedbeforeprocessor. ActualC882 ID15/1B parents exercise realchildren/allscopedPC fullRAM/APU/orderedwrites0diff;separate injury/collision childdomains retained,not inferredfrom theseprofiles. |
+
+FreshC882controlledroots65536eachwidth/all21normalIDsandspecial15/17/1B/35/all6slots/liveTimerzero-nonzero plus3072C905NoMoveCodeentryroots;initial35/36PCcoverage gapexplicitlyfilled,no parentreachabilityclaim;RAMexceptonlyactualobservedphysicalstackspan+24APU+orderedwrites,voidCPUregisters outsideABI. Actualcurrentcore/normal/dispatch_targets/special_callers owners compiled directly,realchildren fromcurrentgame library. All36PC/two branchpairs;fivefocusedtests eachwidthandfouraccountingmutants pass. ThreeP104producthashes unchanged;DOSlinkretained,no newruntimeclaim. Scope1662/fresh0/no graphpromotion;wholeproducer/inter-frame/material/pixels/routes/snapshot pending.
+
+Current src/game/enemy/core.c normalizedSHA256:d568c921de10cba733e2124bdfc1575f3c28b67f7d446af348f73435ebf52a27.
+
+Current src/game/enemy/normal.c normalizedSHA256:eb8b9c48d2105d3d42cac7ef1ca1e1b760e9e9e16a942d17162cab23d85be6e4.
+
+Current src/game/enemy/dispatch_targets.c normalizedSHA256:c9767d6f584ba03a279a32107c168e038e89dbbdb3d07e5445fe9044835ac2e2.
+
+Current src/game/enemy/special_callers.c normalizedSHA256:3218498c4702f66dc40e8fcdbb54bfa5296f77b17efc85dbd751205a5fff9640.
+
+Current src/game/enemy/platform_callers.c normalizedSHA256:919e45219610499099dabca2bb6da6df5904f9488cc6fc573139c13368a8f8c0.
+
+Current src/game/enemy/podoboo.c normalizedSHA256:72d85e484ad3bc0d4f5c7d7a8d855c3160f563299ca6ff74047aca06d2702b89.
+
+Current src/game/enemy/movement.c normalizedSHA256:7ca92616e9557096e30833bbfb6ab2e06d907f6fdffc67f8406a72d3ed9b7c28.
+
+Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.

@@ -45122,11 +45122,13 @@
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Reloads ObjectOffset, derives selector zero for IDs below $15 or ID-$14 otherwise, preserves JumpEngine scratch, then dispatches the original actor vector.",
       "currentSourcePaths": [
@@ -45143,10 +45145,12 @@
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Invokes JumpEngine on the actor target vector; selector and target scratch are already established by the source predecessor.",
       "currentSourcePaths": [
@@ -45162,10 +45166,12 @@
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Returns with no actor work for each vector alias that selects this terminal entry.",
       "currentSourcePaths": [
@@ -45182,11 +45188,13 @@
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Calls enemy offscreen calculation, relative position, then tail-jumps to the retainer graphics handler in that order.",
       "currentSourcePaths": [
@@ -45205,11 +45213,13 @@
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Clears sprite attributes, then executes offscreen, relative position, graphics, box, terrain, enemy collision, player collision, timer-gated movement and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -45230,10 +45240,12 @@
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Tail-jumps to terminal enemy offscreen bounds after the timer-gated movement decision.",
       "currentSourcePaths": [
@@ -45249,10 +45261,12 @@
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Dispatches IDs $00-$14 through the original movement vector and preserves JumpEngine scratch before the selected movement child.",
       "currentSourcePaths": [
@@ -45268,10 +45282,12 @@
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Returns with no movement for the original dummy movement-vector entries.",
       "currentSourcePaths": [
@@ -45289,11 +45305,13 @@
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Runs Bowser flame processing before offscreen, relative position, box, player collision and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -45310,11 +45328,13 @@
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S1 static original-ROM audit: SMB1 lines 9150-9152 and current src/game/enemy/special_callers.c preserve the unconditional ProcFirebar call followed by unconditional OffscreenBoundsCheck tail, with slot and child-result preservation.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S1 current-source original-ROM caller replay: 32 Firebar actor fixtures per x86 and x64 (64 comparisons) match at both recorded child boundaries; focused 3,072 caller-order footprints per width, platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:68608actualroots eachwidth/all36PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Runs firebar processing and always tail-jumps to terminal offscreen bounds.",
       "currentSourcePaths": [
@@ -170290,16 +170310,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10587,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 104,
+        "localInstructionReceiptSites": 10623,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 68,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3743,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 30,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3748,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 25,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -170307,7 +170328,6 @@
         "pendingDirectRamOwners": {
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
-          "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/frame_root.c": 2,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1,

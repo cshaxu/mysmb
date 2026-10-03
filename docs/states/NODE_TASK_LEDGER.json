@@ -768145,7 +768145,17 @@
         "SkipPT",
         "LargePlatformSubroutines",
         "MovePodoboo",
-        "PdbM"
+        "PdbM",
+        "RunEnemyObjectsCore",
+        "JmpEO",
+        "NoRunCode",
+        "RunRetainerObj",
+        "RunNormalEnemies",
+        "SkipMove",
+        "EnemyMovementSubs",
+        "NoMoveCode",
+        "RunBowserFlame",
+        "RunFirebarObj"
       ],
       "baseline": 1992,
       "incomingComplete": [
