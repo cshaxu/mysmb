@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T69 S15 Packet
+## M2 T69 S16 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T69 S15 P3 closed;T69 open for final cross-S review,T70 unadmitted. |
-| Admission And Approval | Owner approved continuation;coordinator extends S15 to22 existing labels and24 controls,including8 reopened nodes/16 reopened caller controls. |
-| Objective | Prove/repair remaining NMI/screen/audio call-return,physical vector and mode dispatch joins plus integrated frame matrix. |
+| Identifier Mode | Continuation: M2 T69 S16 P1 closed;T69 closed,T70 next unadmitted. |
+| Admission And Approval | Owner ongoing M2 mandate;coordinator admits empty-node infrastructure cross-S closure audit after all15 preceding runs closed. |
+| Objective | Consolidate T69 cross-chain proofs and final integrated regression;retain task history and define remaining certification obligations. |
 | Non-goals | Zero fresh nodes;no unobserved control/material credit or premature M2 certification. |
 | Reference Baseline | Historical1992/1992;current exact1992/1992 nodes,4276/4276 feasible controls(raw4342,infeasible66),557/557 material partial. |
-| Candidate Proposal | [T69 residual plan](../proposals/m2/t69-cross-cohort-current-proof.md),S15 exact22 labels/24 controls and actual offscreen child/integrated matrix. |
-| Files And ABI Surface | Shared frame_root/game/boot/area/status/terminal_modes/audio plus jumpspring/enemy caller and flagpole/flame OAM owners;neutral NMI/screen/frame/actual-child harnesses. |
+| Candidate Proposal | [T69 plan](../history/M2-T69-cross-cohort-current-proof.md#s16-p1-admission---final-cross-s-evidence-and-artifact-review). |
+| Files And ABI Surface | Governance/evidence registry,ledger,progress,history and neutral summaries;no product source or ABI change. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
-| Verification | 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass. |
-| Expected Markers | Met:22 existing labels/24 controls,8 repaired nodes/16 restored plus8 proven controls;fresh0,expected/actualMatches empty. |
+| Verification | Review each S closure/route summary and source dependency validity,actual current statuses and S15 integrated three-target regression/artifact hashes;focused product self-tests/purity. |
+| Expected Markers | Empty node scope/expectedMatches/actualMatches;fresh0,max1992;no control/material promotion. |
 | Asset Needs | Owner-local ROM/reviewed ASM nonredistributable;ignored build output,128MiB raw/1024 batch/120seconds process/524288steps root and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | Any scoped diff,unobserved feasible control or missing operational/integration proof keeps S15 active. |
-| Exit Criteria | Met:24 actual original transitions and real child pre/post proved;controlled/integrated routes zero diff,248 tests each/current builds/purity/OpenNT link;all3 EXEs refreshed. |
+| Stop Conditions | Missing or contradicted accepted chain proof,unresolved T69 mismatch or product identity prevents task closure. |
+| Exit Criteria | Met:cross-chain matrix and remaining certification duties recorded;all T69 runs closed,history retained,products unchanged and governance gates pass. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Actual caller returns,physical vector/dispatch,frame order,PPU/OAM timing,screen post-child state and deferred value-query caller contracts. |
+| Similar-Issue Sweep | Stale cached counters,open runs,source-invalidated proofs,unresolved debt,artifact identity and scope limits. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **4276/4276** (raw4342,infeasible66).
 - Exact material relations: **557/557**, enumeration partial.
 - Latest three products are T69 S15 P3 builds restoring8 actual offscreen caller sites in shared game code.
-- T69 S15 closed:22 scoped labels/24 controls proved;T69 cross-S closure review remains,T70 unadmitted,M2 not certified.
+- T69 closed:all16 S runs closed,73 planned pending nodes/315 controls/55 material resolved;T70 next unadmitted,M2 not certified.

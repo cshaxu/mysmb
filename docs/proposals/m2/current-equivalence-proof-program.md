@@ -373,7 +373,7 @@ remain before final certification. M2 remains open.
 
 ## Current checkpoint after T69 S1
 
-[T69 S1](t69-cross-cohort-current-proof.md) closes19 status nodes/29 feasible
+[T69 S1](../../history/M2-T69-cross-cohort-current-proof.md) closes19 status nodes/29 feasible
 controls/2 material,1 impossible retained. Current1938/1992 nodes,3993/4278
 controls(raw4342,infeasible64),502/555 material partial;historical1992/1992
 separate.196608 final original roots each width zero diff after source repairs;
@@ -383,7 +383,7 @@ rows plus explicit M alias debt remain before certification.
 
 ## Current checkpoint after T69 S2
 
-[T69 S2](t69-cross-cohort-current-proof.md) closes21 initialization nodes,
+[T69 S2](../../history/M2-T69-cross-cohort-current-proof.md) closes21 initialization nodes,
 42 controls/2 material after original task/mirror/call/write-order repairs.
 Current1959/1992 nodes,4035/4278 feasible controls(raw4342,infeasible64),
 504/555 material partial;historical1992/1992 separate.5888 original returning
@@ -394,7 +394,7 @@ remain before certification.
 
 ## Current checkpoint after T69 S3
 
-[T69 S3](t69-cross-cohort-current-proof.md) closes5 area-music nodes/8 controls/
+[T69 S3](../../history/M2-T69-cross-cohort-current-proof.md) closes5 area-music nodes/8 controls/
 1 material without product repairs. Current1964/1992 nodes,4043/4278 feasible
 controls(raw4342,infeasible64),505/555 material partial;historical1992/1992
 separate.8192 original returning roots each width zero diff;3 focused tests
@@ -404,7 +404,7 @@ earlier M alias debt remain before certification.
 
 ## Current checkpoint after T69 S4
 
-[T69 S4](t69-cross-cohort-current-proof.md) closes11 entry nodes/17 controls/
+[T69 S4](../../history/M2-T69-cross-cohort-current-proof.md) closes11 entry nodes/17 controls/
 5 material after original X/zero-page/table alias/palette-order repairs.
 Current1975/1992 nodes,4060/4278 feasible controls(raw4342,infeasible64),
 510/555 material partial;historical1992/1992 separate.65536 final original
@@ -414,7 +414,7 @@ link pass,3 EXEs refreshed. T69 open,S5 next unadmitted;17 nodes/218 controls/
 
 ## Current checkpoint after T69 S5
 
-[T69 S5](t69-cross-cohort-current-proof.md) closes17 nodes/27 feasible controls/
+[T69 S5](../../history/M2-T69-cross-cohort-current-proof.md) closes17 nodes/27 feasible controls/
 2 material,1 impossible retained. Current1992/1992 scoped-exact nodes,
 4087/4277 feasible controls(raw4342,infeasible65),512/555 material partial;
 historical1992/1992 separate.82176 original returning roots each width zero
@@ -426,7 +426,7 @@ numerator alone cannot close M2 or assert whole-game/all-state equivalence.
 
 ## Current checkpoint after T69 S6
 
-[T69 S6](t69-cross-cohort-current-proof.md) closes9 material relations,18
+[T69 S6](../../history/M2-T69-cross-cohort-current-proof.md) closes9 material relations,18
 existing nodes rechecked with zero fresh node/control credit.Current1992/1992
 scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),521/555 material
 partial;historical1992/1992 separate.67584 original roots per width equal,
@@ -436,7 +436,7 @@ shared text and parser-vector-state repair.T69 open,S7 next unadmitted;
 
 ## Current checkpoint after T69 S7
 
-[T69 S7](t69-cross-cohort-current-proof.md) closes15 material relations,32
+[T69 S7](../../history/M2-T69-cross-cohort-current-proof.md) closes15 material relations,32
 existing labels rechecked with zero fresh node/control credit.Current1992/1992
 scoped-exact nodes,4087/4277 controls(raw4342,infeasible65),536/555 material
 partial;historical1992/1992 separate.458752 original roots per width equal,
@@ -446,7 +446,7 @@ shared player/canonical box scratch repair.T69 open,S8 next unadmitted;
 
 ## Current checkpoint after T69 S8
 
-[T69 S8](t69-cross-cohort-current-proof.md) closes29 control relations/1
+[T69 S8](../../history/M2-T69-cross-cohort-current-proof.md) closes29 control relations/1
 material,26 existing labels rechecked with zero fresh node credit.Current
 1992/1992 scoped-exact nodes,4116/4277 controls(raw4342,infeasible65),537/555
 material partial;historical1992/1992 separate.196608 original roots each
@@ -457,7 +457,7 @@ M alias scope plus integrated proof remain.
 
 ## Current checkpoint after T69 S9
 
-[T69 S9](t69-cross-cohort-current-proof.md) closes36 controls/3 material,29
+[T69 S9](../../history/M2-T69-cross-cohort-current-proof.md) closes36 controls/3 material,29
 existing labels rechecked with zero fresh node credit.Current1992/1992
 scoped-exact nodes,4152/4277 controls(raw4342,infeasible65),540/555 material
 partial;historical1992/1992 separate.393216 original roots each width equal,
@@ -468,7 +468,7 @@ integrated proof remain.
 
 ## Current checkpoint after T69 S10
 
-[T69 S10](t69-cross-cohort-current-proof.md) closes49 controls/3 material,36
+[T69 S10](../../history/M2-T69-cross-cohort-current-proof.md) closes49 controls/3 material,36
 existing labels rechecked with zero fresh nodes.Current1992/1992 scoped-exact
 nodes,4201/4277 controls(raw4342,infeasible65),543/555 material partial;
 historical1992/1992 separate.532480 original roots each width equal,all49
@@ -479,7 +479,7 @@ material and earlier M alias scope plus integrated proof remain.
 
 ## Current checkpoint after T69 S11
 
-[T69 S11](t69-cross-cohort-current-proof.md) closes38 controls,34 existing
+[T69 S11](../../history/M2-T69-cross-cohort-current-proof.md) closes38 controls,34 existing
 labels rechecked with zero fresh nodes.Current1992/1992 scoped-exact nodes,
 4239/4277 controls(raw4342,infeasible65),543/555 material partial unchanged;
 historical1992/1992 separate.65536 original roots each width equal,all38
@@ -490,7 +490,7 @@ scope plus integrated proof remain.
 
 ## Current checkpoint after T69 S12
 
-[T69 S12](t69-cross-cohort-current-proof.md) closes17 controls/3 material,
+[T69 S12](../../history/M2-T69-cross-cohort-current-proof.md) closes17 controls/3 material,
 27 existing labels rechecked,zero fresh nodes.Current1992/1992 scoped-exact
 nodes,4256/4277 controls(raw4342,infeasible65),546/555 material partial;
 historical1992/1992 separate.131072 original roots each width zero diff,
@@ -501,7 +501,7 @@ integrated proof remain.No all-state/whole-game certification.
 
 ## Current checkpoint after T69 S13
 
-[T69 S13](t69-cross-cohort-current-proof.md) accepts12 controls/11 material,
+[T69 S13](../../history/M2-T69-cross-cohort-current-proof.md) accepts12 controls/11 material,
 one raw constant-BNE fallthrough infeasible;35 existing labels,zero fresh.
 Current1992/1992 scoped-exact nodes,4268/4276 controls(raw4342,infeasible66),
 557/557 material partial enumeration;historical1992/1992 separate.
@@ -512,7 +512,7 @@ No whole-game/all-state certification from cumulative scoped results.
 
 ## Current checkpoint after T69 S14
 
-[T69 S14](t69-cross-cohort-current-proof.md) closes explicit square-music
+[T69 S14](../../history/M2-T69-cross-cohort-current-proof.md) closes explicit square-music
 RAM-alias debt by4 shared fetch operation-order repairs;3 existing labels,
 zero fresh/control/material credit.59394 original roots per width zero diff,
 10 tests each/purity/current builds/OpenNT link pass;3 products refreshed.
@@ -523,7 +523,7 @@ No all-state/whole-game certification from cumulative scoped results.
 
 ## Current checkpoint after T69 S15
 
-[T69 S15](t69-cross-cohort-current-proof.md) repairs8 actual shared offscreen
+[T69 S15](../../history/M2-T69-cross-cohort-current-proof.md) repairs8 actual shared offscreen
 caller sites and proves24 controls,including16 reopened relations and8 final
 pending joins.22 existing labels accepted,zero fresh credit. Current exact
 1992/1992 nodes,4276/4276 feasible controls(raw4342,infeasible66),557/557
@@ -533,3 +533,15 @@ routes zero scoped diff;248 tests per width,purity,full builds and original
 OpenNT DOS16 link pass;all3 EXEs refreshed. T69 remains open for final cross-S
 consolidation,T70 unadmitted. Scoped exact counters do not certify all states
 or complete material enumeration;final certification retains those duties.
+
+## Current checkpoint after T69 closure
+
+[T69 cross-chain matrix](../../history/M2-T69-cross-cohort-current-proof.md#s16-p1-and-t69-closure---cross-chain-evidence-matrix)
+accepts all15 member chains and empty-scope S16 review.73 original pending
+nodes and315 controls/55 material receive explicit dispositions;current exact
+1992/1992 nodes,4276/4276 feasible controls(raw4342,infeasible66),557/557
+material partial. Final S15 full builds,248 tests each,original OpenNT link
+and six600-frame matrix retained;all3 products unchanged. Historical1992/1992
+separate. T70 remains next unadmitted and must complete evidence freshness,
+feasible material enumeration,historical-debt reconciliation and end-to-end
+Win32/game route certification before any M2 completion claim.

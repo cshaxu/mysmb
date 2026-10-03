@@ -1,8 +1,19 @@
 # M2 ROM conformance node progress
 
+## M2 T69 - closed cross-cohort integration
+
+[Task matrix and exact scopes](../history/M2-T69-cross-cohort-current-proof.md#s16-p1-and-t69-closure---cross-chain-evidence-matrix).
+All73 planned pending nodes exact;315 controls exact/infeasible and55 planned
+material plus2 new paths accepted. Current1992/1992 nodes,4276/4276 feasible
+controls(raw4342,infeasible66),557/557 material partial;historical1992/1992
+separate. S16 empty-scope evidence review adds no credit. S15 final integrated
+three-target regression retained,3 products unchanged. T70 next unadmitted;
+material completeness,full evidence freshness and end-to-end certification
+remain required before M2 closure.
+
 ## M2 T69 S15 - closed real-child integration repair
 
-[All22 existing labels/24 controls](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All22 existing labels/24 controls](../history/M2-T69-cross-cohort-current-proof.md)
 accepted:8 actual shared caller sites restored,16 reopened call/return edges
 and8 remaining joins independently proven. Exact nodes1984->1992/1992,
 feasible controls4252->4276/4276(raw4342,infeasible66),material557/557 partial.
@@ -13,7 +24,7 @@ T69 cross-S closure review remains,T70 unadmitted;no M2 certification claim.
 
 ## M2 T69 S14 - closed square music alias repair
 
-[All3 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All3 existing labels](../history/M2-T69-cross-cohort-current-proof.md)
 rechecked;4 shared fetch sites restored,zero fresh/control/material credit.
 Current1992/1992 scoped-exact nodes,4268/4276 controls(raw4342,infeasible66),
 557/557 material partial;historical1992/1992 separate.59394 original roots
@@ -22,7 +33,7 @@ per width zero diff;10 tests each/purity/current builds/OpenNT link pass.
 
 ## M2 T69 S13 - closed frenzy/group/actor audit
 
-[All35 existing labels/12 controls/11 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All35 existing labels/12 controls/11 material](../history/M2-T69-cross-cohort-current-proof.md)
 accepted,one raw LDA08/BNE fallthrough infeasible;zero fresh nodes.
 Current1992/1992 scoped-exact nodes,4268/4276 controls(raw4342,infeasible66),
 557/557 material partial enumeration;historical1992/1992 separate.
@@ -32,7 +43,7 @@ T69 open,S14 next unadmitted;8 controls,M alias and integrated proof remain.
 
 ## M2 T69 S12 - closed flying initializer/consumer audit
 
-[All27 existing labels/17 controls/3 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All27 existing labels/17 controls/3 material](../history/M2-T69-cross-cohort-current-proof.md)
 accepted;zero fresh nodes.Current1992/1992 scoped-exact nodes,
 4256/4277 controls(raw4342,infeasible65),546/555 material partial.
 Historical1992/1992 separate;131072 original roots each width zero diff,
@@ -42,7 +53,7 @@ T69 open,S13 next unadmitted;21 controls/9 material,M alias and integrated proof
 
 ## M2 T69 S11 - closed enemy stream/init joins
 
-[All38 controls,34 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All38 controls,34 existing labels](../history/M2-T69-cross-cohort-current-proof.md)
 close with zero fresh nodes.Current1992/1992 scoped-exact nodes,
 4239/4277 controls(raw4342,infeasible65),543/555 material partial unchanged;
 historical1992/1992 separate.65536 original roots each width zero diff,
@@ -53,7 +64,7 @@ M alias scope/integrated proof remain.
 
 ## M2 T69 S10 - closed power-up/block/movement joins
 
-[All49 controls/3 material,36 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All49 controls/3 material,36 existing labels](../history/M2-T69-cross-cohort-current-proof.md)
 close with zero fresh node credit.Current1992/1992 scoped-exact nodes,
 4201/4277 controls(raw4342,infeasible65),543/555 material partial;
 historical1992/1992 separate.532480 original roots each width zero diff,
@@ -64,7 +75,7 @@ unadmitted;76 controls/12 material and M alias scope/integrated proof remain.
 
 ## M2 T69 S9 - closed hammer/coin/score joins
 
-[All36 controls/3 material,29 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All36 controls/3 material,29 existing labels](../history/M2-T69-cross-cohort-current-proof.md)
 close with zero fresh node credit.Current1992/1992 scoped-exact nodes,
 4152/4277 controls(raw4342,infeasible65),540/555 material partial;
 historical1992/1992 separate.393216 original roots each width zero diff,
@@ -75,7 +86,7 @@ all36 actual joins observed,6 score table bytes independently equal/read;
 
 ## M2 T69 S8 - closed vine/cannon cross-owner joins
 
-[All29 controls/1 material,26 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All29 controls/1 material,26 existing labels](../history/M2-T69-cross-cohort-current-proof.md)
 close with zero fresh node credit.Current1992/1992 scoped-exact nodes,
 4116/4277 controls(raw4342,infeasible65),537/555 material partial;
 historical1992/1992 separate.196608 original roots each width zero diff after
@@ -86,7 +97,7 @@ M alias scope plus integrated certification remain.
 
 ## M2 T69 S7 - closed physics/fireball/bubble consumer chain
 
-[All15 material relations/32 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All15 material relations/32 existing labels](../history/M2-T69-cross-cohort-current-proof.md)
 close with zero fresh nodes/controls.Current1992/1992 scoped-exact nodes,
 4087/4277 controls(raw4342,infeasible65),536/555 material partial;
 historical1992/1992 separate.458752 original roots each width zero diff after
@@ -97,7 +108,7 @@ certification remain.Node numerator alone cannot certify whole-game equivalence.
 
 ## M2 T69 S6 - closed text/scenery actual-consumer chain
 
-[All9 material relations/18 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All9 material relations/18 existing labels](../history/M2-T69-cross-cohort-current-proof.md)
 close with zero fresh nodes/controls.Current1992/1992 scoped-exact nodes,
 4087/4277 controls(raw4342,infeasible65),521/555 material partial;
 historical1992/1992 separate.67584 original roots each width zero diff after
@@ -108,7 +119,7 @@ certification remain.Node numerator alone cannot certify whole-game equivalence.
 
 ## M2 T69 S5 - closed life/game-over/player transpose chain
 
-[All17 intended labels/28 raw controls/2 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All17 intended labels/28 raw controls/2 material](../history/M2-T69-cross-cohort-current-proof.md)
 close17 nodes/27 feasible controls/2 material exact,1 source-proven impossible.
 Current1992/1992 nodes,4087/4277 controls(raw4342,infeasible65),512/555 material
 partial;historical1992/1992 separate.82176 original roots each width zero diff
@@ -121,7 +132,7 @@ scope remain before cross-chain/final integrated closure.
 
 ## M2 T69 S4 - closed player-entry initialization chain
 
-[All11 intended labels/17 controls/5 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All11 intended labels/17 controls/5 material](../history/M2-T69-cross-cohort-current-proof.md)
 exact after source entry/palette/bubble repairs and65536 original returning
 roots each width zero diff. Current1975/1992 nodes,4060/4278 controls
 (raw4342,infeasible64),510/555 material partial;historical1992/1992 separate.
@@ -132,7 +143,7 @@ transfer. T69 open,S5 next unadmitted. Remaining17 nodes/218 feasible controls/
 
 ## M2 T69 S3 - closed area-music selection chain
 
-[All5 labels/8 controls/1 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All5 labels/8 controls/1 material](../history/M2-T69-cross-cohort-current-proof.md)
 exact after source audit and8192 original returning roots each width zero diff.
 Current1964/1992 nodes,4043/4278 controls(raw4342,infeasible64),505/555 material
 partial;historical1992/1992 separate.3 focused tests each/purity/current builds/
@@ -142,7 +153,7 @@ No scoped deferral/transfer;T69 open,S4 next unadmitted. Remaining28 nodes/
 
 ## M2 T69 S2 - closed initialization chain
 
-[All21 intended labels/42 controls/2 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All21 intended labels/42 controls/2 material](../history/M2-T69-cross-cohort-current-proof.md)
 exact after source repairs and5888 unchanged original returning roots each
 width zero diff. Current1959/1992 nodes,4035/4278 controls(raw4342,infeasible64),
 504/555 material partial;historical1992/1992 separate.4 focused tests each,
@@ -153,7 +164,7 @@ controls/51 enumerated material and earlier M alias debt pending.
 
 ## M2 T69 S1 - closed status residual chain
 
-[All19 status labels/30 control dispositions/2 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+[All19 status labels/30 control dispositions/2 material](../history/M2-T69-cross-cohort-current-proof.md)
 close19 nodes/29 feasible controls/2 material exact,1 opcode-proven impossible.
 Current1938/1992 nodes,3993/4278 controls(raw4342,infeasible64),502/555 material
 partial;historical1992/1992 separate.196608 final original roots each width

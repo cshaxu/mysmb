@@ -7,7 +7,7 @@
   Four original alias families and retained music integration match current
   x86/x64. Earlier immutable-PRG proof is retained; broader whole-game and
   final integrated certification remain T69 S15/T70 obligations.
-  [S14 source and operational proof](../proposals/m2/t69-cross-cohort-current-proof.md#s14-p2-closure---original-square-music-alias-operation-order).
+  [S14 source and operational proof](../history/M2-T69-cross-cohort-current-proof.md#s14-p2-closure---original-square-music-alias-operation-order).
 
 - [ ] **Original dump-child graph fidelity (High):** T65 S3's similar-issue
   sweep found DrawBrickChunks and PlayerOffscreenChk duplicate original

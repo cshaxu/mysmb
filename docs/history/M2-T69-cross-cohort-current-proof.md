@@ -2192,3 +2192,87 @@ rows;no extra row or evidence credit inferred from those cached fields.
 Bounded ignored raw records deleted per batch/case;neutral summaries retained.
 Node/ledger/documentation/diff gates required before local P3 commit,no push.
 Unrelated presentation planning and terrain line-ending changes preserved.
+
+## S16 P1 admission - final cross-S evidence and artifact review
+
+Infrastructure audit scope empty;exact node targets none,expected fresh0,
+maximum1992/1992. Incoming current exact1992/1992 nodes,4276/4276 feasible
+controls(raw4342,infeasible66),557/557 partially enumerated material;
+historical1992/1992 remains separate. All15 preceding S runs closed.
+Concrete missing deliverable is the T-level cross-chain evidence matrix,
+final artifact identity and accepted remaining M2 certification obligations.
+Review original/actual-C proof summaries,scoped source changes and latest
+S15 three-target integrated regression. Reuse accepted member proofs except
+where a concrete source/dependency change invalidates them;no extra claims
+from cached counts. Same S records task closure and retains proposal in
+history. No product changes expected;all3 S15 products stay byte-identical.
+Neutral logs/work files only below ignored build. No ROM/raw import, no push.
+Owner ongoing mandate permits admission/closure review. Future T70 remains
+unadmitted until its exact bounded S plan,source dependencies and proof routes
+are written. Similar-issue sweep: stale cached totals,open runs,missing real
+child evidence,unresolved debt and final product/source identity.
+
+## S16 P1 and T69 closure - cross-chain evidence matrix
+
+S16 empty infrastructure scope accepted;expected/actual fresh0,no node/edge
+or material promotion. All preceding15 S runs are closed. Original T69
+planned73 pending C labels now exact;315 pending controls have source-owned
+exact/infeasible dispositions;55 planned material relations exact plus2
+explicitly enumerated/accepted paths. Current1919->1992/1992 exact nodes,
+3964->4276/4276 feasible controls(raw4342,infeasible63->66),500->557/557
+material. Historical1992/1992 unchanged;global material enumeration partial.
+No T69 scoped mismatch/deferred node remains. This closes T69,not M2.
+
+| S | Planned pending nodes | Controls | Material | Retained main route roots |
+| --- | ---: | ---: | ---: | ---: |
+| S1 | 19 | 30 | 2 | 196608 |
+| S2 | 21 | 42 | 2 | 5888 |
+| S3 | 5 | 8 | 1 | 8192 |
+| S4 | 11 | 17 | 5 | 65536 |
+| S5 | 17 | 28 | 2 | 82176 |
+| S6 | 0 | 0 | 9 | 2048 |
+| S7 | 0 | 0 | 15 | 65536 |
+| S8 | 0 | 29 | 1 | 196608 |
+| S9 | 0 | 36 | 3 | 393216 |
+| S10 | 0 | 49 | 3 | 204800 |
+| S11 | 0 | 38 | 0 | 65536 |
+| S12 | 0 | 17 | 3 | 49152 |
+| S13 | 0 | 13 | 9 | 16384 |
+| S14 | 0 | 0 | 0 | 59394 |
+| S15 | 0 | 8 | 0 | 14592 |
+
+The table counts retained main controlled manifests,not the complete case
+count in each accepted S closure. Alternative/final exhaustive manifests
+remain in their member evidence;counts are not summed as unique whole-game
+coverage. Exact labels and relation IDs remain in S1-S15 sections. Latest
+8 caller repairs were re-proven in S15 with real child input/return plus
+parent routes;earlier historical equality was explicitly reopened first.
+No node or graph credit comes from this catalog-only pass.
+
+Final integrated regression is S15 P3:14592 controlled roots per width,
+including12288 actual offscreen parent/child cases,all24 call/return/vector/
+dispatch joins independently observed;six600-frame bootstrap/start/pause/
+right/run-jump/Select routes zero scoped RAM/PPU/OAM/APU difference and
+byte-identical native widths. Current x86/x64 full builds and248 CTests each
+pass,purity and product self-tests included. Original OpenNT DOS16 link
+passes with inherited OLDNAMES.LIB warning;no DOS gameplay/performance claim.
+Products equal final build outputs and remain byte-identical:
+
+- mysmb16.exe: 261367 bytes, SHA256 2f795c10247fb8d0c0d24ab857701ca0bb76ae324d2f01e37b59d66cb43f2bd8; unchanged S15 product.
+- mysmb32.exe: 374811 bytes, SHA256 5bc1bbec450a484228f403a19af304204e344ce1853135c7bfbe1545c9928264; unchanged S15 product.
+- mysmb64.exe: 382348 bytes, SHA256 57004282536a7a355d48160ed005767d76931ca6719e28cf047e71907d44aeb3; unchanged S15 product.
+
+Remaining certification obligations are explicitly accepted by the next
+planned final-certification candidate:T70 must verify node and edge evidence
+freshness/coverage against current source,complete feasible material-path
+enumeration,reconcile open historical debts and inactive legacy owners,
+run the complete accepted route matrix and demonstrate the M2 end-to-end
+Win32 gameplay/death/warp/completion paths. A green248-test suite or all-exact
+cached rows cannot substitute for those obligations. DOS graphical operation
+and486 qualification retain later roadmap ownership. Maintenance custody
+unchanged;no silent transfer and no whole-game completion declaration.
+
+All traces/review output ignored below build;no new protected material.
+Node/admission/closure/ledger/documentation and diff checks required before
+local P1 commit. Proposal retained here in history;queue contains only future
+candidates,unrelated queued I/O work preserved. T70 remains unadmitted.
