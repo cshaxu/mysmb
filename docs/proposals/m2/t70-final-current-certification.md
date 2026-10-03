@@ -7357,3 +7357,117 @@ Current src/game/enemy/loop.c normalizedSHA256:a9619ed5b897c07732fc6a6f104823fd3
 Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
 
 Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.
+
+## S17 P53 admission - stream pointer and cursor alias producer constraints
+
+Existing P51/P52 residualID3F gap;41audit participants:StrSprOffset,SetMiscOffset,PortLoop,ShufAmtLoop,ClrMTBuf,SceLoop1,SceLoop2,TerrBChk,ChkLength,StrAObj,TreeLedge,MidTreeL,MushroomLedge,EndMushL,CRendLoop,WaterPipe,VPipeSectLoop,DrawSidePart,DrawPipe,QuestionBlockRow_Low,Bridge_Low,BulletBillCannon,Jumpspring,DrawThisRow,ChkLrgObjFixedLength,SetMOfs,PlayerHammerCollision,ClHCol,OutputTScr,InitByte,StrBlock,WrCMTile,PutMTileB,CheckTopOfBlock,UpdateLoop,ErACM,HandleEToBGCollision,SpriteShuffler,ShuffleLoop,NextSprOffset,SetAmtOffset. Scope734,fresh0/max1992. Check36 additional indexed candidates and9 indirect writers;reuse338 conditional index exclusions without assuming their caller domains. Source area-slot/row/misc-slot producers and fixed shuffle/joypad loops. Actual original81C6 SpriteShuffler roots plus source-derived byte address domain enumeration;C frame_root owner unchanged. OriginalROM/ASM read-only,raw ignoredbuild128MiB/120seconds per process;validation tools only. No whole-game credit without complete producer joins;CheckForEnemyGroup/control01480 stays pending until all prerequisites established.
+
+## S17 P53 checkpoint - stream alias index and indirect address exclusions
+
+Within existing S17 P51/P52 residualID3F gap,scope734/41 audit participants,
+fresh0/max1992. Source proofs inspect the writer index producer rather than
+assuming the address is safe because the operand has an object name.
+No game/platform edits;seven source owner identities unchanged.
+
+SpriteShuffler81C6-8211:38 instructions/14 directRAM sites complete bounded
+source receipt. Scratch00=28,raw shuffle-control index,ADC carry and second28
+adder,exact byte-control reset3,and reverse miscellaneous group write order
+all preserved in current frame_root.c. Actual original roots162:4096 each width,
+zero2032RAM/24APU/ordered hardware write differences. Physical1F0-1FF excluded,
+minimum stack>=EF;CPU register return excluded by void ABI. All38PC and five
+conditional branch pairs observed. Actual writer index traces:81E2 X0-14;
+81FC/8202/8208 X2/5/8. This validates the stated source loops,not whole-game
+input/caller coverage. Eight existing focused tests each width pass(sprite
+shuffle,area/parser/block-buffer/misc-OAM/platform purity);no unnecessary
+product rebuild for audit-only work.
+
+Twelve entry-local additional alias exclusions:fixed sprite shuffle/setup
+loops;ReadJoypads X0 then1 to its sole ReadPortBits source entry;metatile clear,
+foreground and terrain loops capped12;background Y=high nibble plus at most2;
+SpawnHammerObj Y produced by AND7 or AND8. Other24 additional candidates have
+arithmetic exclusions only under declared area slot0-2,row0-17 and misc slot0-8
+contracts. Their caller/child-preservation applicability remains pending rather
+than promoted from a typical slot value. Original338 conditional candidate
+receipts stay conditional. Site-by-site results:
+
+| PC | Operand | Maximum index | Disposition |
+| --- | --- | --- | --- |
+| 81e2 | SprDataOffset,x | 14 | source-local exclusion |
+| 81fc | Misc_SprDataOffset-2,x | 8 | source-local exclusion |
+| 8202 | Misc_SprDataOffset-1,x | 8 | source-local exclusion |
+| 8208 | Misc_SprDataOffset,x | 8 | source-local exclusion |
+| 8e7b | SavedJoypadBits,x | 1 | source-local exclusion |
+| 8e89 | SavedJoypadBits,x | 1 | source-local exclusion |
+| 90ae | SprDataOffset,x | 14 | source-local exclusion |
+| 9408 | MetatileBuffer,x | 17 | source-local exclusion |
+| 9448 | MetatileBuffer,y | 17 | source-local exclusion |
+| 9464 | MetatileBuffer,x | 17 | source-local exclusion |
+| 94b3 | MetatileBuffer,x | 17 | source-local exclusion |
+| 9578 | AreaObjectLength,x | 2 | arithmetic exclusion conditional on source caller domain |
+| 9659 | AreaObjOffsetBuffer,x | 2 | arithmetic exclusion conditional on source caller domain |
+| 9757 | AreaObjectLength,x | 2 | arithmetic exclusion conditional on source caller domain |
+| 976b | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9783 | MushroomLedgeHalfLen,x | 2 | arithmetic exclusion conditional on source caller domain |
+| 979b | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 97a5 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 981e | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9879 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 987e | MetatileBuffer+1,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9892 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 98d3 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 98d9 | MetatileBuffer+1,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 992c | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9975 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9989 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9a70 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9a79 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9af8 | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9afd | MetatileBuffer+1,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9b9d | MetatileBuffer,x | 17 | arithmetic exclusion conditional on source caller domain |
+| 9bb6 | AreaObjectLength,x | 2 | arithmetic exclusion conditional on source caller domain |
+| bab0 | HammerEnemyOffset,y | 8 | source-local exclusion |
+| d7e6 | Misc_Collision_Flag,x | 8 | arithmetic exclusion conditional on source caller domain |
+| d7fc | Misc_Collision_Flag,x | 8 | arithmetic exclusion conditional on source caller domain |
+
+Indirect address envelope:high05 plus any low byte and any Y byte is500-6FE,
+so all65536 pairs exclude E9/EA/739 without a restricted collision row.
+Original GetBlockBufferAddr's two high bytes are05;collision constructs its
+column from parity/high nibble and area column producer masks1F. Replacement
+UpdateLoop explicitly reloads high05. Seven block indirect stores therefore
+have a safe envelope when the declared pointer lifetime holds;child/scratch
+applicability is not silently inferred. Title copy300-439 has314 output cells,
+disjoint targets. InitializeArea reset with Y4B zeroes739 before installing
+E9/EA;this is an allowed reset producer,not an excluded writer.
+
+Invalid index witnesses show why bounded-domain receipts matter:MushroomLedge
+index3 and AreaObjectLength index9 hit739;misc Y index14 hitsE9;metatile row152
+hits739. These are controlled bad-domain witnesses,not gameplay failures.
+Four accounting mutations reject missing/duplicate/false-full/false-local
+receipts. Similar-class sweep covers fixed vs memory-loaded counters,index
+wrap,CPU mirroring below2000,raw shuffle control and block pointer reload.
+
+CheckForEnemyGroup/control-01480 remains needs-evidence. Remaining constraint:
+bind338 retained plus24 additional caller-conditional exclusions and relevant
+pointer lifetimes/table domain to accepted producer receipts. No ROM bytes,
+records or raw traces tracked;temporary validation below ignored build.
+Three EXEs remain P46,DOS runtime unqualified. Historical1992/1992;current
+local1991/1992 nodes,4269/4270 feasible controls(raw4342/infeasible72).
+3714/10691 instruction and1286/3773RAM bounded receipts;6977 instructions/
+2487RAM remain without complete local receipts. Material993partial,totalunknown;
+all whole-program lifetime fields pending,four final packages open,M2 incomplete.
+
+Source contract: ROM81C6-8211 publishes00=28,walksX14->0;offset below28 skips store;otherwise adds raw6E1+control,then adds28 only for ADC carry. Increments byte shuffle control and resets only exact3. SetMiscOffset usesX8/5/2,Y2/1/0;stores base/base+8/base+16 in original reverse-group order. No interposed child,all source inputs and writes map to unchanged frame_root owner;CPU register return is outside void API.
+
+Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
+
+Current src/game/area.c normalizedSHA256:9e482d3c43db74d1b338726e5c4e9f69721e27b931f3fd6ac6c55ea5d48c24f3.
+
+Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+Current src/game/area/block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
+
+Current src/game/world/block_buffer.c normalizedSHA256:5bbbbc0fdf2431d1d913149eec6b734dcdab36e0c7ba12b32b24a4b2b99257b7.
+
+Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+Current src/game/blocks/replacement.c normalizedSHA256:f16380414f2200b6883b2f8ca36597ab9d7f7e6eefb5d584dfcd244e5d86089b.

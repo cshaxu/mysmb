@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P53 alias exclusions](../proposals/m2/t70-final-current-certification.md#s17-p53-checkpoint---stream-alias-index-and-indirect-address-exclusions).
+S17 P53:38shuffleinstructions/14RAM bounded joins;4096actualroots eachwidth0diff/all38PC/5branchpairs,8tests each.12entry-local alias exclusions/24additional caller-conditional;338prior conditional retained;65536high05 pairs safe envelope. Scope734/fresh0;3714instruction/1286RAM receipts,6977instruction/2487RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;ID3F caller/pointer prerequisite pending,source/productsP46unchanged,M2 incomplete.
+
 [P52 cursor invariant](../proposals/m2/t70-final-current-certification.md#s17-p52-checkpoint---enemy-stream-cursor-boundary-invariant).
 S17 P52:CheckForEnemyGroup/control-01480 cursor lemma;34streams/536boundary states/1540transitions preserve alignment,max57/no ordinaryID3F. Four negative models rejected;28 misalignedID3F witnesses. Writer census8direct/374indexed/9indirect;caller/alias applicability pending,no credit. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72);3676instruction/1272RAM receipts,material993partial,totalunknown;productsP46unchanged,M2 incomplete.
 

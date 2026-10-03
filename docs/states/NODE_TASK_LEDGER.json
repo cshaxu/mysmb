@@ -767132,7 +767132,17 @@
         "DoGroup",
         "NotUse",
         "Inc3B",
-        "Inc2B"
+        "Inc2B",
+        "StrSprOffset",
+        "SetMiscOffset",
+        "QuestionBlockRow_Low",
+        "Bridge_Low",
+        "PlayerHammerCollision",
+        "ClHCol",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "NextSprOffset",
+        "SetAmtOffset"
       ],
       "baseline": 1992,
       "incomingComplete": [
