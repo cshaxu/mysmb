@@ -8,10 +8,17 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material726 is a partial enumerated set;its global denominator is unknown.
+Material879 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P19 sound lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p19-checkpoint---sound-chain-mutable-and-cross-frame-lifetimes).
+681 sound instruction sites/174 direct RAM sites,24064 original returning
+roots each width zero diff;independent persistent C and259 actual RAM/local
+counterparts plus1 pure-fold proof.153 paths727-879 accepted in declared
+domain;material879 partial,total unknown.8 checks each pass,no products
+change. External queue producers/other owners/four packages remain pending.
 
 [P18 retained hardware contracts](../proposals/m2/t70-final-current-certification.md#s17-p18-admission-and-checkpoint---retained-hardware-command-contracts).
 39 hardware sites mapped to retained scoped receipts/current source identities;

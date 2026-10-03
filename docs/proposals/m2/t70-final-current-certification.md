@@ -4285,3 +4285,248 @@ closes only the missing hardware-use lookup,not unresolved timing/pixel or
 mutable/register/flag/stack/inter-frame obligations. Historical1992/1992,
 local nodes1992/1992,controls4274/4274(raw4342,infeasible68),material726
 partial,total unknown. S17 remains open;full M2 certification incomplete.
+
+## S17 P19 admission - complete sound-chain mutable use census
+
+SoundEngineF2D0 through its complete shared audio call closure:681
+instructions,174 RAM-base sites,544 instructions with consumed inputs.
+Retain accepted node clauses and unchanged audio source;augment the45
+512-call original sequences with actual read/last-write/cross-frame metadata.
+No coverage or C equivalence inferred for an unobserved instruction.
+Compare every root full RAM and ordered commands as in P16;review source
+call closure/static write addresses and cross-call scratch/queue lifetimes.
+No new source repair admitted,fresh node/control0,material enumeration
+still partial.128MiB raw cap/120sec process,2048-root batches,raw cleanup.
+Exact audit participation labels:
+`SoundEngine`, `SndOn`, `InPause`, `PTone1F`, `ContPau`, `PTone2F`, `PTRegC`, `DecPauC`, `SkipPIn`, `RunSoundSubroutines`, `SkipSoundSubroutines`, `NoIncDAC`, `StrWave`, `Dump_Squ1_Regs`, `PlaySqu1Sfx`, `SetFreq_Squ1`, `Dump_Freq_Regs`, `NoTone`, `Dump_Sq2_Regs`, `PlaySqu2Sfx`, `SetFreq_Squ2`, `SetFreq_Tri`, `PlayFlagpoleSlide`, `PlaySmallJump`, `PlayBigJump`, `JumpRegContents`, `ContinueSndJump`, `N2Prt`, `FPS2nd`, `DmpJpFPS`, `PlayFireballThrow`, `PlayBump`, `Fthrow`, `ContinueBumpThrow`, `DecJpFPS`, `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`, `PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`, `PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`, `DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`, `ContinuePipeDownInj`, `NoPDwnL`, `PlayCoinGrab`, `PlayTimerTick`, `CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`, `ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`, `LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`, `StopSquare2Sfx`, `ExSfx2`, `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, `Cont_CGrab_TTick`, `JumpToDecLength2`, `PlayBowserFall`, `BlstSJp`, `ContinueBowserFall`, `PBFRegs`, `EL_LRegs`, `PlayExtraLife`, `ContinueExtraLife`, `DivLLoop`, `PlayGrowPowerUp`, `PlayGrowVine`, `GrowItemRegs`, `ContinueGrowItems`, `StopGrowItems`, `PlayBrickShatter`, `ContinueBrickShatter`, `PlayNoiseSfx`, `DecrementSfx3Length`, `ExSfx3`, `NoiseSfxHandler`, `CheckNoiseBuffer`, `ExNH`, `PlayBowserFlame`, `ContinueBowserFlame`, `ContinueMusic`, `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, `LoadHeader`, `HandleSquare2Music`, `EndOfMusicData`, `NotTRO`, `MusicLoopBack`, `VictoryMLoopBack`, `Squ2LengthHandler`, `Squ2NoteHandler`, `Rest`, `SkipFqL1`, `MiscSqu2MusicTasks`, `NoDecEnv1`, `HandleSquare1Music`, `FetchSqu1MusicData`, `Squ1NoteHandler`, `SkipCtrlL`, `MiscSqu1MusicTasks`, `NoDecEnv2`, `DeathMAltReg`, `DoAltLoad`, `HandleTriangleMusic`, `TriNoteHandler`, `NotDOrD4`, `MediN`, `LongN`, `LoadTriCtrlReg`, `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler`, `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData`.
+
+## S17 P19 checkpoint - sound-chain mutable and cross-frame lifetimes
+
+SoundEngine's complete current shared owner retains accepted1face800 source,
+SHA256:b02bed93dffecc3c205b04801abe85054af28dab7fc83518205915befd43b1b4.
+681 instruction sites/147 instruction labels,544 consuming instruction sites.
+174 direct RAM sites all have absolute/zero-page addresses;39 state locations
+and38 written locations match current C direct access/write sets. All69 C
+function call closures stay in the same file,no external callback. Native
+write scan now includes shift assignments;the earlier P7 scanner missed
+Square1 queueFF >>= while its pointer-clobber conclusion remains valid:
+the missed address isFF,not F5/F6. No source change or product defect found.
+
+47 controlled512-call sequences include the P16 scenarios plus an initialized
+extra-life buffer and controlled ground-header31 injection at frame64. That
+injection is a declared RAM fixture,not ordinary gameplay reachability.
+24064 returning original roots each width compare complete2048 RAM,24 APU
+shadow bytes and ordered write count/index/value slots with zero difference.
+Independent native continuous execution initializes once per scenario,then
+retains RAM/APU across calls and applies only declared frame/queue/ground
+fixture inputs. It asserts inherited non-stack RAM/APU equals next original
+entry and has zero output diff;original physical stack pushes are excluded
+only at cumulative actually observed push addresses. Entry assertions omit
+the stack page separately;output comparison has the narrower observed mask.
+Audio direct state addresses never enter stack page;header streams retain
+22 ROM-bound domains and wrapped helper reads end belowF0,not in page1.
+The53 stack instructions are33 JSR/20 RTS,with no PHA/PLA/data stack use.
+
+679 original instructions are observed,including all174 direct RAM sites.
+UnobservedF5BE/F5BF are unreachable from SoundEngine's Square2 handler:
+existing buffer bit40 branches before queue lookup;nonzero queue leaves at
+one of its eight bit handlers. Zero queue preserves buffer,then zero/bit7
+or any bit0-5 leaves;the sole remaining nonzero byte40 was already excluded.
+This is proven for65536 buffer/queue pairs within that root,not a new global
+infeasible-control promotion or standalone CheckSfx2Buffer claim.
+
+Actual original memory bus events record313 read/last-write joins,162 across
+calls.260 have actual sound-internal writers;53 retain external controlled
+entry/input origins and do not establish gameplay queue producers. Every
+internal writer/consumer has a direct current C function/address binding.
+Independent instrumentation of an ignored copy of current C logs actual
+last writer/consumer/lifetime and preserves all compared outputs.259 paths
+are observed in both widths;seven are local queue consumers whose value is
+asserted equal to the published RAM byte before their actual predicate.
+Square2 shifts retain queue locally while publishing FE each step;Noise
+similarly publishes FD. There is no callback/alias write between publication
+and those uses. Their diagnostic reads are instrumented cache checks,not
+claims that the uninstrumented product issues physical RAM reads.
+
+One remaining source readF69F consumes pure F4 in EventBuffer OR AreaBuffer.
+C's double-zero short-circuit gate has the same predicate for all65536 byte
+pairs. Both original HandleSquare2Music paths overwrite A before its first
+input,so the intermediate OR result is dead;F4 is pure RAM without MMIO.
+The branch counterpart is proven,not recorded as an actual native read.
+HeaderF5/F6 joins refine existing material669-673 without duplicate credit.
+Other internal joins group by producer/consumer/RAM address,retaining exact
+PC/lifetime subsets below:153 new scoped material paths727-879.
+
+Current clause review retains source node branch/value/call contracts;address
+set equality or event presence alone is not their semantic proof. Queue
+buffers are copied before live shifts,buffer guards retain priority;offset
+locals preserve pre-increment Y,envelope locals preserve pre-decrement Y;
+P7 proves cached pointers survive helpers or are reloaded after header calls.
+DAC old byte survives local increment/decrement before the command write.
+Frame-to-frame persistence above proves these declared sequence joins,not
+every arbitrary initial state or whole-game upstream caller.
+
+Eight current music/effect/pause/host-audio checks each width pass. Existing
+five music-pointer negative checks reject missing/duplicate/unobserved and
+clobbered joins. All raw2048-root batches deleted,below32MiB aggregate,
+120sec/process. No source/test/product code change;three EXEs remain P15.
+Historical1992/1992,local nodes1992/1992,controls4274/4274(raw4342,
+infeasible68);material879 partial,total unknown. Sound-internal scoped use
+reconciliation does not close other owners' RAM/register/flag/stack or
+inter-frame joins. Material/pixels/routes/snapshot packages remain open.
+
+| Material | Producer | Consumer | RAM | Original writer/read PCs | Lifetime | Source visits | Native x86/x64 visits |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| material-00727 | InPause | InPause | 07b2 | f2f7>f2ee | cross-frame | 123 | 1170/1170 |
+| material-00728 | InPause | DecPauC | 07b2 | f2f7>f338 | cross-frame | 3 | 1170/1170 |
+| material-00729 | InPause | SndOn | 07c6 | f2fa>f2e3 | cross-frame | 584 | 958/958 |
+| material-00730 | InPause | CheckSfx1Buffer | 00f1 | f302>f43f | cross-frame | 374 | 374/374 |
+| material-00731 | InPause | Square2SfxHandler | 00f2 | f304>f57c | cross-frame | 374 | 748/748 |
+| material-00732 | InPause | CheckSfx2Buffer | 00f2 | f304>f5a6 | cross-frame | 374 | 748/748 |
+| material-00733 | InPause | CheckNoiseBuffer | 00f3 | f306>f675 | cross-frame | 374 | 374/374 |
+| material-00734 | InPause | DecPauC | 07bb | f30f>f32e | same-call | 3 | 132/132 |
+| material-00735 | DecPauC | ContPau | 07bb | f32e>f316 | cross-frame | 123 | 246/246 |
+| material-00736 | DecPauC | DecPauC | 07bb | f32e>f32e | cross-frame | 123 | 246/246 |
+| material-00737 | DecPauC | SndOn | 07c6 | f341>f2e3 | cross-frame | 374 | 958/958 |
+| material-00738 | SkipPIn | InPause | 07b2 | f346>f2ee | cross-frame | 461 | 1170/1170 |
+| material-00739 | RunSoundSubroutines | MusicHandler | 00fb | f359>f698 | cross-frame | 22920 | 22920/22920 |
+| material-00740 | RunSoundSubroutines | MusicHandler | 00fc | f35b>f694 | cross-frame | 22920 | 22920/22920 |
+| material-00741 | SkipSoundSubroutines | Square1SfxHandler | 00ff | f35f>f41b | cross-frame | 22921 | 22921/22921 |
+| material-00742 | SkipSoundSubroutines | Square2SfxHandler | 00fe | f361>f582 | cross-frame | 22780 | 22780/22780 |
+| material-00743 | SkipSoundSubroutines | NoiseSfxHandler | 00fd | f363>f667 | cross-frame | 22921 | 22921/22921 |
+| material-00744 | SkipSoundSubroutines | SndOn | 00fa | f365>f2e8 | cross-frame | 22921 | 23381/23381 |
+| material-00745 | SkipSoundSubroutines | InPause | 00fa | f365>f2f3 | cross-frame | 460 | 23381/23381 |
+| material-00746 | SkipSoundSubroutines | SkipSoundSubroutines | 07c0 | f370>f367,f370>f370 | cross-frame | 576 | 12264/12264 |
+| material-00747 | SkipSoundSubroutines | NoIncDAC | 07c0 | f370>f37a | same-call | 2784 | 2784/2784 |
+| material-00748 | NoIncDAC | SkipSoundSubroutines | 07c0 | f37a>f367,f37a>f370 | cross-frame | 5556 | 12264/12264 |
+| material-00749 | PlayFlagpoleSlide | DecrementSfx1Length | 07bb | f3c1>f4a2 | same-call | 2 | 2/2 |
+| material-00750 | JumpRegContents | ContinueSndJump | 07bb | f3dc>f3df | same-call | 4 | 4/4 |
+| material-00751 | JumpRegContents | DecrementSfx1Length | 07bb | f3dc>f4a2 | same-call | 4 | 4/4 |
+| material-00752 | Fthrow | ContinueBumpThrow | 07bb | f405>f40d | same-call | 4 | 4/4 |
+| material-00753 | Fthrow | DecrementSfx1Length | 07bb | f405>f4a2 | same-call | 4 | 4/4 |
+| material-00754 | Square1SfxHandler | CheckSfx1Buffer | 00f1 | f41f>f43f | cross-frame | 439 | 8104/8104 |
+| material-00755 | Square1SfxHandler | Squ1NoteHandler | 00f1 | f41f>f7e2 | cross-frame,same-call | 18 | 2920/2920 |
+| material-00756 | Square1SfxHandler | MiscSqu1MusicTasks | 00f1 | f41f>f7f7 | cross-frame | 156 | 2902/2902 |
+| material-00757 | Square1SfxHandler | Square1SfxHandler | 00ff | f423>f427,f427>f42b,f42b>f42f,f42f>f433,f433>f437,f437>f43b | same-call | 42 | 252/252 |
+| material-00758 | PlaySwimStomp | ContinueSwimStomp | 07bb | f45d>f469 | same-call | 2 | 465/465 |
+| material-00759 | PlaySwimStomp | DecrementSfx1Length | 07bb | f45d>f4a2 | same-call | 2 | 465/465 |
+| material-00760 | PlaySmackEnemy | DecrementSfx1Length | 07bb | f483>f4a2 | same-call | 2 | 465/465 |
+| material-00761 | DecrementSfx1Length | ContinueSndJump | 07bb | f4a2>f3df | cross-frame | 156 | 156/156 |
+| material-00762 | DecrementSfx1Length | DecrementSfx1Length | 07bb | f4a2>f4a2 | cross-frame | 439 | 570/570 |
+| material-00763 | DecrementSfx1Length | ContinueBumpThrow | 07bb | f4a2>f40d | cross-frame | 26 | 26/26 |
+| material-00764 | DecrementSfx1Length | ContinueSwimStomp | 07bb | f4a2>f469 | cross-frame | 13 | 570/570 |
+| material-00765 | DecrementSfx1Length | ContinueSmackEnemy | 07bb | f4a2>f48d | cross-frame | 26 | 570/570 |
+| material-00766 | DecrementSfx1Length | ContinuePipeDownInj | 07bb | f4a2>f4bb | cross-frame | 92 | 570/570 |
+| material-00767 | StopSquare1Sfx | CheckSfx1Buffer | 00f1 | f4a9>f43f | cross-frame | 8759 | 8104/8104 |
+| material-00768 | StopSquare1Sfx | Squ1NoteHandler | 00f1 | f4a9>f7e2 | cross-frame,same-call | 212 | 2920/2920 |
+| material-00769 | StopSquare1Sfx | MiscSqu1MusicTasks | 00f1 | f4a9>f7f7 | cross-frame,same-call | 2710 | 2920/2920 |
+| material-00770 | PlayPipeDownInj | ContinuePipeDownInj | 07bb | f4b8>f4bb | same-call | 2 | 465/465 |
+| material-00771 | PlayPipeDownInj | DecrementSfx1Length | 07bb | f4b8>f4a2 | same-call | 2 | 465/465 |
+| material-00772 | CGrab_TTickRegL | ContinueCGrabTTick | 07bd | f522>f52c | same-call | 4 | 4/4 |
+| material-00773 | CGrab_TTickRegL | DecrementSfx2Length | 07bd | f522>f568 | same-call | 4 | 4/4 |
+| material-00774 | PlayBlast | DecrementSfx2Length | 07bd | f53c>f568 | same-call | 2 | 2/2 |
+| material-00775 | PlayPowerUpGrab | ContinuePowerUpGrab | 07bd | f554>f557 | same-call | 2 | 2/2 |
+| material-00776 | PlayPowerUpGrab | DecrementSfx2Length | 07bd | f554>f568 | same-call | 2 | 2/2 |
+| material-00777 | DecrementSfx2Length | ContinueCGrabTTick | 07bd | f568>f52c | cross-frame | 114 | 114/114 |
+| material-00778 | DecrementSfx2Length | DecrementSfx2Length | 07bd | f568>f568 | cross-frame | 533 | 533/533 |
+| material-00779 | DecrementSfx2Length | ContinueBlast | 07bd | f568>f545 | cross-frame | 62 | 62/62 |
+| material-00780 | DecrementSfx2Length | ContinuePowerUpGrab | 07bd | f568>f557 | cross-frame | 106 | 106/106 |
+| material-00781 | DecrementSfx2Length | ContinueExtraLife | 07bd | f568>f5e7 | cross-frame | 141 | 141/141 |
+| material-00782 | DecrementSfx2Length | ContinueBowserFall | 07bd | f568>f5d3 | cross-frame | 110 | 110/110 |
+| material-00783 | EmptySfx2Buffer | Square2SfxHandler | 00f2 | f56f>f57c | cross-frame | 7966 | 12220/12220 |
+| material-00784 | EmptySfx2Buffer | CheckSfx2Buffer | 00f2 | f56f>f5a6 | cross-frame | 7966 | 12220/12220 |
+| material-00785 | EmptySfx2Buffer | MiscSqu2MusicTasks | 00f2 | f56f>f79e | cross-frame,same-call | 2934 | 2218/2218 |
+| material-00786 | EmptySfx2Buffer | Squ2NoteHandler | 00f2 | f56f>f786 | cross-frame | 268 | 2213/2213 |
+| material-00787 | Square2SfxHandler | Square2SfxHandler | 00f2 | f586>f57c | cross-frame | 674 | 1254/1254 |
+| material-00788 | Square2SfxHandler | CheckSfx2Buffer | 00f2 | f586>f5a6 | cross-frame | 580 | 1254/1254 |
+| material-00789 | Square2SfxHandler | Squ2NoteHandler | 00f2 | f586>f786 | cross-frame,same-call | 30 | 312/312 |
+| material-00790 | Square2SfxHandler | MiscSqu2MusicTasks | 00f2 | f586>f79e | cross-frame,same-call | 282 | 312/312 |
+| material-00791 | Square2SfxHandler | Square2SfxHandler | 00fe | f58a>f58e,f58e>f592,f592>f596,f596>f59a,f59a>f59e,f59e>f5a2 | same-call | 42 | 252/252 |
+| material-00792 | PlayBowserFall | DecrementSfx2Length | 07bd | f5ca>f568 | same-call | 2 | 2/2 |
+| material-00793 | PlayExtraLife | ContinueExtraLife | 07bd | f5e4>f5e7 | same-call | 2 | 2/2 |
+| material-00794 | PlayExtraLife | DecrementSfx2Length | 07bd | f5e4>f568 | same-call | 2 | 2/2 |
+| material-00795 | GrowItemRegs | ContinueGrowItems | 07bd | f602>f617 | cross-frame,same-call | 192 | 192/192 |
+| material-00796 | GrowItemRegs | ContinueGrowItems | 07be | f60c>f60f | same-call | 4 | 4/4 |
+| material-00797 | ContinueGrowItems | ContinueGrowItems | 07be | f60f>f60f,f60f>f612 | cross-frame,same-call | 380 | 380/380 |
+| material-00798 | PlayBrickShatter | ContinueBrickShatter | 07bf | f63d>f640 | same-call | 5 | 5/5 |
+| material-00799 | PlayBrickShatter | DecrementSfx3Length | 07bf | f63d>f658 | same-call | 5 | 5/5 |
+| material-00800 | DecrementSfx3Length | ContinueBrickShatter | 07bf | f658>f640 | cross-frame | 155 | 155/155 |
+| material-00801 | DecrementSfx3Length | DecrementSfx3Length | 07bf | f658>f658 | cross-frame | 470 | 470/470 |
+| material-00802 | DecrementSfx3Length | ContinueBowserFlame | 07bf | f658>f685 | cross-frame | 315 | 315/315 |
+| material-00803 | DecrementSfx3Length | CheckNoiseBuffer | 00f3 | f664>f675 | cross-frame | 4640 | 4640/4640 |
+| material-00804 | NoiseSfxHandler | CheckNoiseBuffer | 00f3 | f66b>f675 | cross-frame | 470 | 470/470 |
+| material-00805 | NoiseSfxHandler | NoiseSfxHandler | 00fd | f66d>f671 | same-call | 5 | 5/5 |
+| material-00806 | PlayBowserFlame | ContinueBowserFlame | 07bf | f682>f685 | same-call | 5 | 5/5 |
+| material-00807 | PlayBowserFlame | DecrementSfx3Length | 07bf | f682>f658 | same-call | 5 | 5/5 |
+| material-00808 | LoadEventMusic | MiscSqu2MusicTasks | 07b1 | f6a4>f7a2 | cross-frame,same-call | 1980 | 1980/1980 |
+| material-00809 | LoadEventMusic | LoadControlRegs | 07b1 | f6a4>f8d8 | cross-frame,same-call | 237 | 237/237 |
+| material-00810 | LoadEventMusic | MiscSqu1MusicTasks | 07b1 | f6a4>f7fb | cross-frame,same-call | 1980 | 1980/1980 |
+| material-00811 | LoadEventMusic | TriNoteHandler | 07b1 | f6a4>f847 | cross-frame,same-call | 126 | 197/197 |
+| material-00812 | LoadEventMusic | MusicHandler | 07b1 | f6a4>f69c | cross-frame | 1979 | 1979/1979 |
+| material-00813 | LoadEventMusic | EndOfMusicData | 07b1 | f6a4>f74b | cross-frame,same-call | 8 | 8/8 |
+| material-00814 | LoadEventMusic | LoadEnvelopeData | 07b1 | f6a4>f8f4 | cross-frame,same-call | 3168 | 3168/3168 |
+| material-00815 | LoadEventMusic | NotDOrD4 | 07b1 | f6a4>f859 | cross-frame,same-call | 71 | 197/197 |
+| material-00816 | NoStopSfx | EndOfMusicData | 07c5 | f6b3>f752 | cross-frame | 1 | 1/1 |
+| material-00817 | NoStopSfx | ProcessLengthData | 07c4 | f6b8>f8d0,f6c3>f8d0 | cross-frame,same-call | 224 | 448/448 |
+| material-00818 | NoStopSfx | NotECstlM | 00f4 | f6bb>f8e3 | cross-frame,same-call | 172 | 172/172 |
+| material-00819 | NoStopSfx | TriNoteHandler | 00f4 | f6bb>f84e | cross-frame,same-call | 19 | 19/19 |
+| material-00820 | NoStopSfx | HandleNoiseMusic | 00f4 | f6bb>f86d | cross-frame,same-call | 1980 | 1980/1980 |
+| material-00821 | NoStopSfx | SkipSoundSubroutines | 00f4 | f6bb>f36a | cross-frame,same-call | 1980 | 1980/1980 |
+| material-00822 | NoStopSfx | MusicHandler | 00f4 | f6bb>f69f | cross-frame | 1979 | 0/0 folded |
+| material-00823 | NoStopSfx | NotTRO | 00f4 | f6bb>f75b | cross-frame,same-call | 7 | 7/7 |
+| material-00824 | NoStopSfx | LoadUsualEnvData | 00f4 | f6bb>f8ff | cross-frame,same-call | 2440 | 2440/2440 |
+| material-00825 | NoStopSfx | NoStopSfx | 00f4 | f6bb>f6b1 | cross-frame | 1 | 1/1 |
+| material-00826 | GMLoopB | HandleAreaMusicLoopB | 07c7 | f6d1>f6df | same-call | 5 | 22/22 |
+| material-00827 | HandleAreaMusicLoopB | LoadControlRegs | 07b1 | f6d6>f8d8 | cross-frame,same-call | 970 | 970/970 |
+| material-00828 | HandleAreaMusicLoopB | MiscSqu2MusicTasks | 07b1 | f6d6>f7a2 | cross-frame,same-call | 6726 | 6726/6726 |
+| material-00829 | HandleAreaMusicLoopB | LoadEnvelopeData | 07b1 | f6d6>f8f4 | cross-frame,same-call | 12536 | 12536/12536 |
+| material-00830 | HandleAreaMusicLoopB | MiscSqu1MusicTasks | 07b1 | f6d6>f7fb | cross-frame,same-call | 5810 | 5810/5810 |
+| material-00831 | HandleAreaMusicLoopB | TriNoteHandler | 07b1 | f6d6>f847 | cross-frame,same-call | 388 | 430/430 |
+| material-00832 | HandleAreaMusicLoopB | MusicHandler | 07b1 | f6d6>f69c | cross-frame | 6994 | 6994/6994 |
+| material-00833 | HandleAreaMusicLoopB | EndOfMusicData | 07b1 | f6d6>f74b | cross-frame,same-call | 20 | 20/20 |
+| material-00834 | HandleAreaMusicLoopB | NotDOrD4 | 07b1 | f6d6>f859 | cross-frame | 42 | 398/398 |
+| material-00835 | HandleAreaMusicLoopB | NotECstlM | 00f4 | f6d9>f8e3 | cross-frame,same-call | 970 | 970/970 |
+| material-00836 | HandleAreaMusicLoopB | LoadUsualEnvData | 00f4 | f6d9>f8ff | cross-frame,same-call | 12536 | 12536/12536 |
+| material-00837 | HandleAreaMusicLoopB | TriNoteHandler | 00f4 | f6d9>f84e | cross-frame,same-call | 388 | 388/388 |
+| material-00838 | HandleAreaMusicLoopB | HandleNoiseMusic | 00f4 | f6d9>f86d | cross-frame,same-call | 7008 | 7008/7008 |
+| material-00839 | HandleAreaMusicLoopB | SkipSoundSubroutines | 00f4 | f6d9>f36a | cross-frame,same-call | 7456 | 7456/7456 |
+| material-00840 | HandleAreaMusicLoopB | MusicHandler | 00f4 | f6d9>f69f | cross-frame | 6994 | 6994/6994 |
+| material-00841 | HandleAreaMusicLoopB | NotTRO | 00f4 | f6d9>f75b | cross-frame,same-call | 20 | 20/20 |
+| material-00842 | HandleAreaMusicLoopB | HandleAreaMusicLoopB | 07c7 | f6df>f6df,f6df>f6e2 | cross-frame,same-call | 16 | 27/27 |
+| material-00843 | LoadHeader | ProcessLengthData | 00f0 | f6fc>f8ce | cross-frame,same-call | 1603 | 1603/1603 |
+| material-00844 | LoadHeader | HandleTriangleMusic | 00f9 | f70b>f81a,f70b>f821,f70b>f823 | same-call | 120 | 240/240 |
+| material-00845 | LoadHeader | HandleSquare1Music | 00f8 | f710>f7bc | cross-frame,same-call | 1062 | 1138/1138 |
+| material-00846 | LoadHeader | FetchSqu1MusicData | 00f8 | f710>f7c5,f710>f7c7 | same-call | 76 | 232/232 |
+| material-00847 | LoadHeader | FetchNoiseBeatData | 07b0 | f715>f878,f715>f87b | same-call | 52 | 104/104 |
+| material-00848 | LoadHeader | FetchNoiseBeatData | 07c1 | f718>f882 | cross-frame | 54 | 54/54 |
+| material-00849 | LoadHeader | HandleSquare2Music | 07b4 | f71d>f73a | same-call | 43 | 43/43 |
+| material-00850 | LoadHeader | HandleSquare1Music | 07b6 | f720>f7c0 | same-call | 38 | 38/38 |
+| material-00851 | LoadHeader | HandleTriangleMusic | 07b9 | f723>f81c | same-call | 40 | 40/40 |
+| material-00852 | LoadHeader | HandleNoiseMusic | 07ba | f726>f873 | same-call | 26 | 26/26 |
+| material-00853 | LoadHeader | HandleSquare2Music | 00f7 | f72b>f73f,f72b>f741 | same-call | 86 | 172/172 |
+| material-00854 | LoadHeader | DeathMAltReg | 07ca | f72d>f810 | cross-frame,same-call | 7610 | 7610/7610 |
+| material-00855 | HandleSquare2Music | HandleSquare2Music | 07b4 | f73a>f73a | cross-frame | 8213 | 8973/8973 |
+| material-00856 | HandleSquare2Music | Squ2LengthHandler | 00f7 | f741>f780,f741>f782 | same-call | 424 | 848/848 |
+| material-00857 | HandleSquare2Music | HandleSquare2Music | 00f7 | f741>f73f,f741>f741 | cross-frame | 1074 | 2980/2980 |
+| material-00858 | NotTRO | SkipSoundSubroutines | 00f4 | f763>f36a | cross-frame,same-call | 3876 | 3876/3876 |
+| material-00859 | NotTRO | MusicHandler | 00f4 | f763>f69f | cross-frame | 3865 | 3865/3865 |
+| material-00860 | NotTRO | MusicHandler | 07b1 | f765>f69c | cross-frame | 3865 | 3865/3865 |
+| material-00861 | Squ2LengthHandler | SkipFqL1 | 07b3 | f77d>f798 | cross-frame,same-call | 760 | 760/760 |
+| material-00862 | Squ2LengthHandler | HandleSquare2Music | 00f7 | f782>f73f,f782>f741 | cross-frame | 416 | 2980/2980 |
+| material-00863 | Rest | MiscSqu2MusicTasks | 07b5 | f792>f7a9,f792>f7ae | cross-frame,same-call | 2328 | 14834/14834 |
+| material-00864 | SkipFqL1 | HandleSquare2Music | 07b4 | f79b>f73a | cross-frame | 760 | 8973/8973 |
+| material-00865 | MiscSqu2MusicTasks | MiscSqu2MusicTasks | 07b5 | f7ae>f7a9,f7ae>f7ae | cross-frame | 11176 | 24348/24348 |
+| material-00866 | HandleSquare1Music | HandleSquare1Music | 07b6 | f7c0>f7c0 | cross-frame | 7322 | 7926/7926 |
+| material-00867 | FetchSqu1MusicData | HandleSquare1Music | 00f8 | f7c7>f7bc | cross-frame | 7926 | 9058/9058 |
+| material-00868 | FetchSqu1MusicData | FetchSqu1MusicData | 00f8 | f7c7>f7c5,f7c7>f7c7 | cross-frame,same-call | 1134 | 18120/18120 |
+| material-00869 | FetchSqu1MusicData | DeathMAltReg | 07ca | f7d7>f810 | cross-frame,same-call | 180 | 180/180 |
+| material-00870 | Squ1NoteHandler | HandleSquare1Music | 07b6 | f7df>f7c0 | cross-frame | 604 | 7926/7926 |
+| material-00871 | SkipCtrlL | MiscSqu1MusicTasks | 07b7 | f7f1>f802,f7f1>f807 | cross-frame,same-call | 1365 | 13574/13574 |
+| material-00872 | MiscSqu1MusicTasks | MiscSqu1MusicTasks | 07b7 | f807>f802,f807>f807 | cross-frame | 11102 | 22720/22720 |
+| material-00873 | HandleTriangleMusic | HandleTriangleMusic | 07b9 | f81c>f81c | cross-frame | 8435 | 8948/8948 |
+| material-00874 | HandleTriangleMusic | HandleTriangleMusic | 00f9 | f823>f81a,f823>f821,f823>f823,f823>f836,f823>f838,f838>f81a,f838>f821,f838>f823 | cross-frame,same-call | 10286 | 6468/6468 |
+| material-00875 | HandleTriangleMusic | TriNoteHandler | 07b8 | f82e>f841 | cross-frame,same-call | 514 | 691/691 |
+| material-00876 | TriNoteHandler | HandleTriangleMusic | 07b9 | f844>f81c | cross-frame | 513 | 8948/8948 |
+| material-00877 | HandleNoiseMusic | HandleNoiseMusic | 07ba | f873>f873 | cross-frame | 4342 | 4934/4934 |
+| material-00878 | FetchNoiseBeatData | FetchNoiseBeatData | 07b0 | f87b>f878,f87b>f87b,f885>f878,f885>f87b | cross-frame,same-call | 1240 | 2588/2588 |
+| material-00879 | NoiseBeatHandler | HandleNoiseMusic | 07ba | f88d>f873 | cross-frame | 592 | 4934/4934 |
