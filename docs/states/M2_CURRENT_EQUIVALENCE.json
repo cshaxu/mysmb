@@ -1713,10 +1713,12 @@
       "semanticContract": "Every source jump/swim selector supplies the same upward force byte before later vertical movement.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1735,10 +1737,12 @@
       "semanticContract": "Every source jump/swim selector supplies the same downward force byte.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1757,10 +1761,12 @@
       "semanticContract": "Every source jump/swim selector supplies the same initial vertical fractional force byte.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1779,10 +1785,12 @@
       "semanticContract": "Every source jump/swim selector supplies the same initial vertical speed byte.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1801,10 +1809,12 @@
       "semanticContract": "Ground, water, air and fast selections preserve the source maximum-left table index.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1823,10 +1833,12 @@
       "semanticContract": "Only entrance routine seven selects the fourth maximum-right entry.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1845,10 +1857,12 @@
       "semanticContract": "The selected friction byte and facing/moving mismatch shift are preserved in order.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1867,10 +1881,12 @@
       "semanticContract": "Absolute-speed and controller branches select the same animation timer byte.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1889,10 +1905,12 @@
       "semanticContract": "All four direction/facing combinations retain the source low-byte displacement.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1911,10 +1929,12 @@
       "semanticContract": "All four direction/facing combinations retain the source page delta and carry handoff.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1933,10 +1953,12 @@
       "semanticContract": "Neutral, up and down retain the source vertical force entries.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -1955,10 +1977,12 @@
       "semanticContract": "Neutral, up and down retain the source vertical speed entries and animation timing consequence.",
       "semanticEvidence": [
         "Td S9 B12e node-semantics and independent integration audit: SMB1 lines 6159-6297 compared with the shared player and player-movement owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 actual original table binding/selector/consumer/carry/read-write sequence audit;12 tables/55 bytes independently equal;original00 handoffs restored.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original/current roots per width zero persistent RAM/APU/ordered-output diff;all source-valid table indices observed;9 focused tests each and original OpenNT link/current3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "cohort": "F",
       "cohortBasis": "producer inventory label",
@@ -35820,11 +35844,13 @@
       "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
         "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "ClimbingSub stores Y-speed sign extension in00 before vertical ADCs,then filtered direction/timer/facing select ClimbAdderLow/High with byte carry and facing XOR3.",
       "currentSourcePaths": [
@@ -35839,10 +35865,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
@@ -35857,10 +35885,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
@@ -35876,11 +35906,13 @@
       "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
         "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "ClimbingSub stores Y-speed sign extension in00 before vertical ADCs,then filtered direction/timer/facing select ClimbAdderLow/High with byte carry and facing XOR3.",
       "currentSourcePaths": [
@@ -35895,10 +35927,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
@@ -35913,10 +35947,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S3 shared C90 climb or vertical-force-table counterpart.",
       "semanticEvidence": [
-        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings."
+        "M2 T59 S3 static audit: SMB1 ClimbAdderLow through InitMForceData compared with shared src/game/player.c; exact side tables, fractional and page carries, timer gates, direction/facing selectors and force-table bindings.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S3 controlled climbing replay: 72 original entries per fresh C90 x86/x64 owner pass, for 144 entry-return comparisons over 1,784 persistent bytes; five branches exercise both outcomes and all four side indices. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S3 preserves this source climb/force-table state and control contract.",
       "currentSourcePaths": [
@@ -36112,11 +36148,13 @@
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
         "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Original climb/jump/swim gates and source X-physics selector order;00 is initialized/incremented RAM friction index,not a private local;entrance7 overrides only right limit and mismatch doubles friction through carry.",
       "currentSourcePaths": [
@@ -36132,11 +36170,13 @@
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
         "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36151,10 +36191,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36169,10 +36211,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36187,10 +36231,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36205,10 +36251,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36223,10 +36271,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36241,10 +36291,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36261,13 +36313,15 @@
       "semanticEvidence": [
         "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36282,10 +36336,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36301,12 +36357,14 @@
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
         "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36321,10 +36379,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36339,10 +36399,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36357,10 +36419,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36375,10 +36439,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36393,10 +36459,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36412,11 +36480,13 @@
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
         "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Original climb/jump/swim gates and source X-physics selector order;00 is initialized/incremented RAM friction index,not a private local;entrance7 overrides only right limit and mismatch doubles friction through carry.",
       "currentSourcePaths": [
@@ -36432,11 +36502,13 @@
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
         "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Original climb/jump/swim gates and source X-physics selector order;00 is initialized/incremented RAM friction index,not a private local;entrance7 overrides only right limit and mismatch doubles friction through carry.",
       "currentSourcePaths": [
@@ -36451,10 +36523,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S4 shared C90 physics, jump or horizontal-parameter counterpart.",
       "semanticEvidence": [
-        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
+        "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -36490,11 +36564,13 @@
       "currentCounterpart": "M2 T59 S5 shared C90 animation-speed and skid counterpart.",
       "semanticEvidence": [
         "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S5 preserves this source animation-speed, skid and timer-table contract.",
       "currentSourcePaths": [
@@ -36509,10 +36585,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S5 shared C90 animation-speed and skid counterpart.",
       "semanticEvidence": [
-        "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics."
+        "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S5 preserves this source animation-speed, skid and timer-table contract.",
       "currentSourcePaths": [
@@ -36527,10 +36605,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S5 shared C90 animation-speed and skid counterpart.",
       "semanticEvidence": [
-        "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics."
+        "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S5 preserves this source animation-speed, skid and timer-table contract.",
       "currentSourcePaths": [
@@ -36545,10 +36625,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S5 shared C90 animation-speed and skid counterpart.",
       "semanticEvidence": [
-        "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics."
+        "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S5 preserves this source animation-speed, skid and timer-table contract.",
       "currentSourcePaths": [
@@ -36564,11 +36646,13 @@
       "currentCounterpart": "M2 T59 S5 shared C90 animation-speed and skid counterpart.",
       "semanticEvidence": [
         "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
         "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S5 preserves this source animation-speed, skid and timer-table contract.",
       "currentSourcePaths": [
@@ -36583,10 +36667,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
@@ -36601,10 +36687,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
@@ -36619,10 +36707,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
@@ -36637,10 +36727,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
@@ -36655,10 +36747,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
@@ -36673,10 +36767,12 @@
       "currentOwner": "src/game/player.c",
       "currentCounterpart": "M2 T59 S6 shared C90 friction and signed-speed counterpart.",
       "semanticEvidence": [
-        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics."
+        "M2 T59 S6 static audit: SMB1 ImposeFriction through SetAbsSpd compared with shared src/game/player.c; collision filtering, released-input sign split, direction priority, fractional carry/borrow, wrapped clamps and absolute-speed store preserve source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
       ],
       "operationalEvidence": [
-        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S6 controlled original-ROM replay: 64 movement child-call streams each replay friction through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive friction smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "M2 T59 S6 preserves this source friction and signed-speed contract.",
       "currentSourcePaths": [
@@ -167221,22 +167317,22 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired",
         "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses",
         "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 2057,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8634,
+        "localInstructionReceiptSites": 2307,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8384,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 640,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3133,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 750,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3023,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/player.c": 138,
           "src/game/oam/normal_enemy_gfx.c": 128,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
@@ -167278,6 +167374,7 @@
           "src/game/player/pipe_entry.c and terrain children": 30,
           "src/game/player_movement.c shared C90 movement owner": 29,
           "shared power-up and game-object core": 29,
+          "src/game/player.c": 28,
           "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c": 28,
           "shared enemy initializer target core": 27,
           "src/game/area/area_data.c": 26,

@@ -6601,3 +6601,62 @@ Current src/game/area.c normalizedSHA256:9e482d3c43db74d1b338726e5c4e9f69721e27b
 Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
 
 Current src/game/score.c normalizedSHA256:90ad2d2c11708edcc6326fb190b253d9e32e2cc51885a531a5d1182654f3b341.
+
+## S17 P43 scope amendment - retained player physics climb animation and friction joins
+
+Exact participants:ClimbingSub,MoveOnVine,ClimbFD,CSetFDir,ExitCSub,InitCSTimer,PlayerPhysicsSub,ProcClimb,SetCAnim,CheckForJumping,NoJump,ProcJumping,InitJS,ChkWtr,GetYPhy,PJumpSnd,SJumpSnd,X_Physics,ProcPRun,ChkRFast,FastXSp,SetRTmr,GetXPhy,GetXPhy2,ExitPhy,GetPlayerAnimSpeed,ChkSkid,SetRunSpd,ProcSkid,SetAnimSpd,ImposeFriction,JoypFrict,LeftFrict,RghtFrict,XSpdSign,SetAbsSpd.
+
+250 instructions/110 RAM accesses in shared player.c. Existing physics/climb/animation source identity versus fad46182;rerun modes66-69 current x86/x64,262144 roots per width,2032 RAM plusAPU/order;physical1F0-1FF excluded with minSP. Friction B5CC entry separately comparesall2048 RAM withinputA=Left_Right_Buttons callercontract. No newcredit/source/product edit unless explicitrepair. Scope555,fresh0/max1992;originalROM/localprobes ignored/bounded1024 batches,120s/process. Producerinter-frame andfinalpackages remainopen.
+
+## S17 P43 checkpoint - retained player physics climb animation and friction joins
+
+250instructions/110RAM,36existinglabels,sharedplayer.c unchangedfromaccepted
+fad46182. Scope555,fresh0/max1992;34newauditparticipants,nocustodychange.
+OriginalROM/sourceauditedbeforeactualruns. No source/productedit. Existing
+material77-88 refreshed;no newnode/control/materialcredit orCartesianpairs.
+
+Currentoriginalmodes66-69:262144roots eachwidth,C90nativeactualowner,zero
+2032RAM/24APU/orderedwrite diffs;01F0-01FF excluded,minSP>=EF. 12tables/55
+bytes immutableequalandactuallyread. Fourmodescovernewjump/swim/climb,
+climblateralmotion/bytecarry,animation/skid,heldA/B/springgates. Theseare
+controlledentrydomains,notexhaustivegamereachable/fullframeproof. Older
+coveragehelper pending89-91 washistorical;currentregistry alreadyexact,
+no falsepending ornewcredit carriedforward.
+
+SeparateoriginalB5CC frictionleaf:65536speed/forcepairs,cyclingdirection/
+collision/friction/limitprofiles,eachwidth zeroall2048RAM/noexcludedbytes.
+All39instructions observed,nophysicalpushopcodeexecuted. OriginalinputA
+mustequalLeft_Right_Buttons000C perrealcaller;CvoidAPIdoesnotexport CPUA/
+flags. FixtureSPFD/rootreturn bytes01FE-01FFsamebothsides. Thisisnot a
+Cartesianproofof every possibleRAMvector. CompareactualRAMoutputs,not
+onlymodel-to-modelarithmetic. Rawfilesdeletedafter1024-rootbatches.
+
+| Clause | Original owner labels | Source-use disposition |
+| --- | --- | --- |
+| C1 | ClimbingSub,MoveOnVine | Climb:dummy416 plusforce433 publisheslowcarry; LDY/LDA/BPL/DEY preservecarry;sign extension(speed9F>=80?FF:0) stored00 beforeY CE ADC,then B5 highADC. Nativeu16 sum/sign local matchesactual00 publication. No writes alias416/433/9F/CE/B5/00. |
+| C2 | ClimbFD,CSetFDir,ExitCSub,InitCSTimer | MoveOnVine later mask000C&0490 beforetimer789;zero stores0;nonzero timer skips;expired stores18 beforelateralmove. Directionbit0 andfacing33==1 independentlychoosefourtableentries B3C7/B3CB. X86 byteaddcarry flowsinto6D page;raw000C XOR3 published33 aftercoordinateupdates. Tablesimmutable,all4entries andbytecarry observed;no childbetweenoutputs. |
+| C3 | PlayerPhysicsSub,ProcClimb,SetCAnim | State1D==3 exitsafterverticalconfigure,doesnotrun X_Physics. Mask000B&0490 selectsY0/1(upbit8)/2(othernonzero);tables force433/speed9F,negativeBMI keepsanimation8 elseLSR4 stored70C. Validindex0-2 provenbybranchconstruction,notfixtureclamp. |
+| C4 | CheckForJumping,NoJump,ProcJumping | Jumpgates jumpspring70E==0 andnewA in000A absent000D;ground1D0 starts,air requires704 swimming and782timer nonzero or9F signnonnegative. Samepurebranchpredicate inC beforeactualstartjump. Nojump-tail X_Physics sharedonce;climb exitsbeforejump. Mode69 heldinput/spring branches supplement mode66. |
+| C5 | InitJS,ChkWtr | InitJS78220,416/433zero, B5/CE copied707/708,1D1;abs700 thresholds09/10/19/1C yield0-4,704 swimoverrides5/6 using47Dwhirlpool;7061 always. C movespurethresholdcalculation butreadsnonalias700/704/47D;sourcewritten782/416/433/707/708/1D cannotaliasinputs, nochildobserver;outputorder of706 vs1D/others preserved. |
+| C6 | GetYPhy,PJumpSnd,SJumpSnd | Fourimmutable7entrytables B424/B42B/B432/B439 supply709/70A/433/9F. Sourceorder force/fall/initforce/speed preserved. SwimqueuesFF04 beforeCE<14 clears9F;drysize754 zeroFF01/nonzeroFF80. Soundconsumerlaterframe, noSoundEngine childinterposed. Sharedactualphysics returnsintoX_Physics,notreplaystub. |
+| C7 | X_Physics,ProcPRun,ChkRFast,FastXSp,SetRTmr | 00 initialized0. Airabs>=19 jumpsdirectGetXPhy Y0;airslow Y1/00INC,groundwaterY2/00INC;drygroundY0when000C==45 andB or783timer. B reload7830A;runningtimer nonzero leaves00zero. Fastfriction00INC onlyChkRFast RunningSpeed703 orabs>=21. Original00 actualproducer remainsRAM;indices0-2 branchbounded. |
+| C8 | GetXPhy,GetXPhy2,ExitPhy | B440 maxleftY stored450 beforemode0E==7 replacesY3 solelymaxrightB443->456. FrictionB447[RAM00] ->702 then7010,33!=45 doubles702/rotatespriorbit7into701. ByteLSR/ASL localfold same,all3friction/3left/4right bytesread. Noobservingcallback between702low/high writes. Laterfrictionreloads actualRAM702/701/450/456. |
+| C9 | GetPlayerAnimSpeed,ChkSkid,SetRunSpd,ProcSkid,SetAnimSpd | Abs700>=1C stores703=abs andtimerindex0;elsethreshold0E picks1/2. SavedJoypadBits callerparameter correct retainedentry,mask7F suppressA;0003bits equal45 stores7030;differentdirection andabs<0B copies33->45 then570/7050. Noinput leaves703/speed/force;timerB58C[index]->70C. ScopeSetAnimSpd load only,alreadyjoinedstore/return retained;puretableindex bounded0-2. |
+| F1 | ImposeFriction,JoypFrict | B5CC inputA actualcaller000C and0490 mask;noinput57==0 stores7000withoutforcewrite,positive choosesRghtsubtract,negativeLeftadd;heldbit0 selectsLeftaddbeforebit1,includingbothbits. C localbuttons/mask same;RAM00 untouched. DoesnotclaimA!=000C artificialentry. |
+| F2 | LeftFrict | CLC addition705+702 bytecarry survivesSTA/LDA intoADC57+701. Wrapped CMP(speed-456) bit7,not signedoverflow compare, selectsclamp;clampMaximumRight456 stores57 andjumpsSetAbs withoutabsoluteconversion. C retains samebranch andstores700rawlimit onthispath evennegative limit. |
+| F3 | RghtFrict,XSpdSign,SetAbsSpd | SEC subtraction705-702 carry/no-borrow survivesSTA/LDA intoSBC57-701-borrow. Wrapped CMP(speed-450) bit7 picksleftclamp. Unclamped/additive andsubtractclamp feedCMP0 sign,negative EORFF CLC ADC1 givesbyte0-speed->700. CPUfinalA/flagsoutsidevoidAPI;2048RAMallcompared,physicalstacknopushes inthisleaf. Nochildorqueue/hardwareeffects. |
+
+196864 supplementalarithmeticchecks,fournegativeaccountingchecks;five
+focused tests eachwidth pass(climbing,physics,animation-friction,friction,
+platformpurity). Three P39producthashesunchanged;DOSoriginalcompile/link
+retained,runtimeunqualified. Sourceidentity establishesinstructionclauses
+remaincurrent;entryruns donotpretendtocertifyunobservedinter-frameproducers.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68),material986
+partial,totalunknown.2307instruction/750RAM boundedreceipts;8384other
+instructions/3023otherRAMjoins remain,not3023newbugs. Wholeprogramlifetime
+clausesandfourfinalpackages remainopen,M2 NOT COMPLETE.No newauditround.
+
+Participants:ClimbingSub,MoveOnVine,ClimbFD,CSetFDir,ExitCSub,InitCSTimer,PlayerPhysicsSub,ProcClimb,SetCAnim,CheckForJumping,NoJump,ProcJumping,InitJS,ChkWtr,GetYPhy,PJumpSnd,SJumpSnd,X_Physics,ProcPRun,ChkRFast,FastXSp,SetRTmr,GetXPhy,GetXPhy2,ExitPhy,GetPlayerAnimSpeed,ChkSkid,SetRunSpd,ProcSkid,SetAnimSpd,ImposeFriction,JoypFrict,LeftFrict,RghtFrict,XSpdSign,SetAbsSpd.
+
+Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.

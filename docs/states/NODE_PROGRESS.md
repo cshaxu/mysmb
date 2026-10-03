@@ -13,6 +13,12 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P43 player physics/climb/animation/friction joins](../proposals/m2/t70-final-current-certification.md#s17-p43-checkpoint---retained-player-physics-climb-animation-and-friction-joins).
+250instructions/110RAM;262144currentroots2032RAM/APU/order0diff plus65536
+frictionroots all2048RAM/noexclusion0diff eachwidth;fullplayer.c unchanged.
+2307instruction/750RAM boundedreceipts,3023otherRAMjoins remain;material986
+partial,totalunknown;P39products unchanged,wholeM2 stillincomplete.
+
 [P42 retainedHUD/text/timer source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p42-checkpoint---retained-hud-timer-and-text-source-use-joins).
 146instructions/39RAM,current8192roots+64protocols/448records allRAM/ABI0diff;
 65536textroots2032RAM/APU/order0diff eachwidth,sixsource segmentsunchanged.
