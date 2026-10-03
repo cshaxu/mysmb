@@ -106,8 +106,11 @@ static void enemy_masked_box(struct mysmb_game *game, mysmb_u8 slot,
     mysmb_u8 masked;
     mysmb_u16 address;
 
+    /* Original mask entry and relative-X stores precede the offscreen exit. */
+    game->ram[0U] = right_mask;
     x_difference = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
                                game->ram[MYSMB_SCREEN_LEFT_X]);
+    game->ram[1U] = x_difference;
     borrow = 0U;
     if (game->ram[MYSMB_ENEMY_X + slot] < game->ram[MYSMB_SCREEN_LEFT_X]) {
         borrow = 1U;

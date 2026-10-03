@@ -3055,19 +3055,24 @@
       "id": "material-00138",
       "producer": "InitBowser",
       "consumer": "BowserGfxHandler",
-      "storage": "BowserFront_Offset, BowserBodyControls and timers",
-      "feasiblePath": "The initializer writes persistent Bowser fields later consumed by graphics and body control.",
-      "status": "needs-evidence",
-      "currentCounterpart": "Bowser RAM aliases established in mysmb_enemy_init_bowser",
+      "storage": "BowserBodyControls",
+      "feasiblePath": "Original initializer body control bits are consumed by front/rear graphics selection within actual RunBowser->BowserGfxHandler.",
+      "status": "exact",
+      "currentCounterpart": "BowserGfxHandler consumes BowserBodyControls in front/rear selection;actual C549->D065->D17B route reads0363 40960 times. Earlier broad front/timer wording separated into two newly enumerated actual consumers.",
       "semanticContract": "Preserves exact source producer write, later consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 BowserGfxHandler consumes BowserBodyControls in front/rear selection;actual C549->D065->D17B route reads0363 40960 times. Earlier broad front/timer wording separated into two newly enumerated actual consumers."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/enemy/init_targets.c"
+        "src/game/enemy/init_targets.c",
+        "src/game/enemy/bowser.c",
+        "src/game/oam/bowser_gfx.c"
       ]
     },
     {
@@ -3076,17 +3081,23 @@
       "consumer": "RunFirebarObj",
       "storage": "DuplicateObj_Offset and copied rear coordinates",
       "feasiblePath": "Long-firebar and Bowser actor paths consume the recorded duplicate slot and copied coordinate state.",
-      "status": "needs-evidence",
-      "currentCounterpart": "0x06cf and copied flag/page/X/Y fields in mysmb_enemy_duplicate_object",
+      "status": "exact",
+      "currentCounterpart": "Actual long initializer/duplicate->C947->ProcFirebar:valid screen fixture observes06CF16384 times and original rear OAM switch;copied coordinates/OAM agree. Prior offscreen-only fixture not used as consumer proof.",
       "semanticContract": "Preserves exact source producer write, later consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Actual long initializer/duplicate->C947->ProcFirebar:valid screen fixture observes06CF16384 times and original rear OAM switch;copied coordinates/OAM agree. Prior offscreen-only fixture not used as consumer proof."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
-        "src/game/enemy/init_targets.c"
+        "src/game/enemy/init_targets.c",
+        "src/game/enemy/firebar.c",
+        "src/game/enemy/firebar_children.c",
+        "src/game/enemy/special_callers.c"
       ]
     },
     {
@@ -3117,13 +3128,16 @@
       "consumer": "SpawnFromMouth",
       "storage": "FlameYPosData[random&3]",
       "feasiblePath": "Mouth path compares exact target Y against the copied Bowser-relative flame Y.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_flame_y_positions[random]",
+      "status": "exact",
+      "currentCounterpart": "Unchanged FlameYPosData four bytes independently equal;actual C7A0 selector3 mouth route reaches SpawnFromMouth target-Y comparison,all random&3/full byte Y paths retained.",
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Unchanged FlameYPosData four bytes independently equal;actual C7A0 selector3 mouth route reaches SpawnFromMouth target-Y comparison,all random&3/full byte Y paths retained."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3136,13 +3150,16 @@
       "consumer": "SetMF",
       "storage": "FlameYMFAdderData[comparison result]",
       "feasiblePath": "Mouth path uses the target/current-Y comparison to select force $ff or $01.",
-      "status": "needs-evidence",
-      "currentCounterpart": "y_force[condition]",
+      "status": "exact",
+      "currentCounterpart": "Original FlameYMFAdderData two bytes independently equal;actual mouth target/current-Y comparison selectsFF/01,including equality,with complete persistent state equal.",
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original FlameYMFAdderData two bytes independently equal;actual mouth target/current-Y comparison selectsFF/01,including equality,with complete persistent state equal."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3155,13 +3172,16 @@
       "consumer": "PutAtRightExtent",
       "storage": "FrenzyEnemyTimer and selected random Y",
       "feasiblePath": "Right-extent setup retains timer/random selection before positional carry and FinishFlame.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_init_bowser_flame_frenzy else path",
+      "status": "exact",
+      "currentCounterpart": "Actual right-extent alternative follows SetFrT into positional carry/FinishFlame;timer/hard/random selection and source fallthrough observed.",
       "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Actual right-extent alternative follows SetFrT into positional carry/FinishFlame;timer/hard/random selection and source fallthrough observed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3300,13 +3320,16 @@
       "consumer": "CheckpointEnemyID",
       "storage": "BitMFilter, actor ID/position and timer",
       "feasiblePath": "After positioning, source clears dummy, arms timer and tail-enters initializer.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_checkpoint_loaded after shared fields",
+      "status": "exact",
+      "currentCounterpart": "Actual AddFBit sets filter/ID/coordinates,FinishFlame returned A0 clears dummy,arms20 timer then tail-enters checkpoint;control01606 observed.",
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Actual AddFBit sets filter/ID/coordinates,FinishFlame returned A0 clears dummy,arms20 timer then tail-enters checkpoint;control01606 observed."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3365,13 +3388,16 @@
       "consumer": "CheckpointEnemyID",
       "storage": "per-member ID/page/X/Y/flag",
       "feasiblePath": "Every allocated member is initialized before count decrement.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_checkpoint_loaded",
+      "status": "exact",
+      "currentCounterpart": "Actual group allocation writes each ID/page/X/Y/flag,checkpoint initializer call/RTS observed before decrement/next member and Inc2B offset advance.",
       "semanticContract": "Preserves source RAM/table selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Actual group allocation writes each ID/page/X/Y/flag,checkpoint initializer call/RTS observed before decrement/next member and Inc2B offset advance."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3431,13 +3457,16 @@
       "consumer": "InitBowserFlame",
       "storage": "EnemyFrenzyBuffer and ID-$12 vector selector",
       "feasiblePath": "Frenzy ID is buffered before dispatch selects one of six targets.",
-      "status": "needs-evidence",
-      "currentCounterpart": "frenzy_targets and native switch",
+      "status": "exact",
+      "currentCounterpart": "Actual frenzy buffer store precedes six-selector dispatch;all6 vector pairs independently equal/read,including BowserFlame selector3 and source clearing buffer in mouth path.",
       "semanticContract": "Preserves source RAM/vector selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Actual frenzy buffer store precedes six-selector dispatch;all6 vector pairs independently equal/read,including BowserFlame selector3 and source clearing buffer in mouth path."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -3451,13 +3480,16 @@
       "consumer": "LakituAndSpinyHandler",
       "storage": "all Lakitu states plus cleared frenzy buffer",
       "feasiblePath": "End path disables frenzy and changes all Lakitu entries before next handler turn.",
-      "status": "needs-evidence",
-      "currentCounterpart": "mysmb_enemy_end_frenzy writes",
+      "status": "exact",
+      "currentCounterpart": "Sequential original C7B8->C3A4 preserves all persistent RAM;EndFrenzy sets every Lakitu state1 and clears buffer/own flag,next actual handler consumes retained state and source spawn gate.",
       "semanticContract": "Preserves source RAM/vector selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Sequential original C7B8->C3A4 preserves all persistent RAM;EndFrenzy sets every Lakitu state1 and clears buffer/own flag,next actual handler consumes retained state and source spawn gate."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "cohort": "I",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
@@ -12191,6 +12223,50 @@
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/audio.c"
+      ]
+    },
+    {
+      "id": "material-t69-s13-bowser-timers",
+      "producer": "InitBowser",
+      "consumer": "RunBowser",
+      "storage": "BowserFeetCounter,frame/breath timers and movement state",
+      "feasiblePath": "Sequential C549->D065 actual body/timer read-modify-write and source branch predicates;0364 DEC is a consuming read/write,078A reads observed;full state matches.",
+      "status": "exact",
+      "currentCounterpart": "Sequential C549->D065 actual body/timer read-modify-write and source branch predicates;0364 DEC is a consuming read/write,078A reads observed;full state matches.",
+      "semanticContract": "Original producer fields are consumed in actual source order and source predicates without an invented combined consumer.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Sequential C549->D065 actual body/timer read-modify-write and source branch predicates;0364 DEC is a consuming read/write,078A reads observed;full state matches."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
+      "cohort": "I",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/init_targets.c",
+        "src/game/enemy/bowser.c"
+      ]
+    },
+    {
+      "id": "material-t69-s13-bowser-front",
+      "producer": "InitBowser",
+      "consumer": "InitBowserFlame",
+      "storage": "BowserFront_Offset",
+      "feasiblePath": "Sequential C549->C5A3 preserves initializer front index;declared second-entry X selects separate flame slot,all persistent RAM/registers otherwise preserved;8192 exact absolute0368 reads before parent coordinate/ID consumption.",
+      "status": "exact",
+      "currentCounterpart": "Sequential C549->C5A3 preserves initializer front index;declared second-entry X selects separate flame slot,all persistent RAM/registers otherwise preserved;8192 exact absolute0368 reads before parent coordinate/ID consumption.",
+      "semanticContract": "Original producer fields are consumed in actual source order and source predicates without an invented combined consumer.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Sequential C549->C5A3 preserves initializer front index;declared second-entry X selects separate flame slot,all persistent RAM/registers otherwise preserved;8192 exact absolute0368 reads before parent coordinate/ID consumption."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
+      "cohort": "I",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/init_targets.c",
+        "src/game/enemy/frenzy.c"
       ]
     }
   ],
@@ -29935,10 +30011,12 @@
       "currentCounterpart": "enemy/stream.c and enemy/init.c with named group/loop/frenzy children",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence."
+        "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass."
+        "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Advances two bytes, clears enemy page select, restores ObjectOffset and returns.",
       "currentSourcePaths": [
@@ -29956,11 +30034,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "For IDs below $15 adds eight to Y and sets masked offscreen bit, then enters initializer vector dispatch.",
       "currentSourcePaths": [
@@ -30526,11 +30606,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Gates on frenzy timer and controller slot, arms timer $80, then reverse-searches Lakitu or begins reappearance handling.",
       "currentSourcePaths": [
@@ -30765,11 +30847,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Returns after a completed Spiny egg setup or upstream early exit.",
       "currentSourcePaths": [
@@ -30829,12 +30913,14 @@
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Calls DuplicateEnemyObj, then falls through into the short-firebar initialization body.",
       "currentSourcePaths": [
@@ -30936,11 +31022,13 @@
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Gates on frenzy timer, initializes small box and timer, applies hard-mode slot limit and begins random/player-speed selection.",
       "currentSourcePaths": [
@@ -30957,10 +31045,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Stores the three/four enemy limit, rejects slots at or beyond it, then selects player-speed bias zero, four or eight.",
       "currentSourcePaths": [
@@ -31078,11 +31168,13 @@
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Calls DuplicateEnemyObj then writes front offset, body/bridge controls, origin X, breath/direction $df, paired $20 timers, hit points five and movement speed two.",
       "currentSourcePaths": [
@@ -31099,11 +31191,13 @@
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Wraps upward from Y=$ff until an inactive Enemy_Flag slot, records DuplicateObj_Offset and copies exactly the source fields in source order.",
       "currentSourcePaths": [
@@ -31157,10 +31251,12 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Binds the four exact Bowser flame vertical target values $90,$80,$70,$90.",
       "currentSourcePaths": [
@@ -31176,10 +31272,12 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Binds the exact two signed vertical-force values $ff and $01.",
       "currentSourcePaths": [
@@ -31195,10 +31293,12 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Gates timer, clears Y force, queues flame sound, then selects mouth or right-extent generation by Bowser front object ID.",
       "currentSourcePaths": [
@@ -31214,10 +31314,12 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Stores SetFlameTimer plus $20, subtracting $10 only in secondary hard mode, then selects random flame height.",
       "currentSourcePaths": [
@@ -31233,11 +31335,13 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Stores supplied Y, adds $20 to screen-right X with page carry and tail-jumps FinishFlame.",
       "currentSourcePaths": [
@@ -31252,10 +31356,12 @@
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Copies Bowser-relative X/page/Y, selects random force direction against target Y and clears the frenzy buffer.",
       "currentSourcePaths": [
@@ -31270,10 +31376,12 @@
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Stores the selected FlameYMFAdderData value before falling through to FinishFlame.",
       "currentSourcePaths": [
@@ -31342,10 +31450,12 @@
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Gates frenzy timer, resets it to $20, decrements FireworksCounter and begins star-flag lookup.",
       "currentSourcePaths": [
@@ -31450,10 +31560,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Gates frenzy timer then selects water Cheep or land Bullet Bill path.",
       "currentSourcePaths": [
@@ -31558,10 +31670,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Sets selected filter bit, positions/activates actor, clears dummy, arms timer and tail-initializes actor.",
       "currentSourcePaths": [
@@ -31630,10 +31744,12 @@
       "currentOwner": "src/game/enemy/frenzy.c",
       "currentCounterpart": "mysmb_enemy_step_bullet_bill_cheep_frenzy land branch",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "ORs blast SFX bit and assigns Bullet Bill frenzy ID before common actor setup.",
       "currentSourcePaths": [
@@ -31650,11 +31766,13 @@
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Derives group code, classifies enemy ID with hard-mode Goomba/Buzzy substitution and preserves source stack-selected group bits.",
       "currentSourcePaths": [
@@ -31765,10 +31883,12 @@
       "currentCounterpart": "enemy/group.c",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Scans slots 0..4, fills one inactive slot with current page/X/Y, advances X by $18 with page carry, initializes it and decrements remaining count.",
       "currentSourcePaths": [
@@ -31784,10 +31904,12 @@
       "currentCounterpart": "enemy/group.c",
       "semanticEvidence": [
         "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Tail-jumps the common two-byte record advance after group completion or no free slot.",
       "currentSourcePaths": [
@@ -31826,11 +31948,13 @@
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Stores current ID in frenzy buffer, subtracts $12 and dispatches exactly six frenzy targets through JumpEngine.",
       "currentSourcePaths": [
@@ -31868,11 +31992,13 @@
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Scans all six slots, sets every Lakitu state to one, clears frenzy buffer and only controller flag.",
       "currentSourcePaths": [
@@ -32448,10 +32574,12 @@
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path."
+        "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Calls enemy offscreen calculation, relative position, then tail-jumps to the retainer graphics handler in that order.",
       "currentSourcePaths": [
@@ -32568,10 +32696,12 @@
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S1 static original-ROM audit: SMB1 lines 9150-9152 and current src/game/enemy/special_callers.c preserve the unconditional ProcFirebar call followed by unconditional OffscreenBoundsCheck tail, with slot and child-result preservation."
+        "M2 T63 S1 static original-ROM audit: SMB1 lines 9150-9152 and current src/game/enemy/special_callers.c preserve the unconditional ProcFirebar call followed by unconditional OffscreenBoundsCheck tail, with slot and child-result preservation.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T63 S1 current-source original-ROM caller replay: 32 Firebar actor fixtures per x86 and x64 (64 comparisons) match at both recorded child boundaries; focused 3,072 caller-order footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S1 current-source original-ROM caller replay: 32 Firebar actor fixtures per x86 and x64 (64 comparisons) match at both recorded child boundaries; focused 3,072 caller-order footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Runs firebar processing and always tail-jumps to terminal offscreen bounds.",
       "currentSourcePaths": [
@@ -34046,10 +34176,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Gets offscreen bits; returns on bit three; otherwise timer-gates spin update, applies short-firebar axis skip, prepares anchor sprite/collision and drives the part loop.",
       "currentSourcePaths": [
@@ -35160,10 +35292,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser defeated-state front gate",
       "semanticEvidence": [
         "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly."
+        "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Tests d5 first; the defeated Y<$e0 path moves/draws Bowser while Y>=$e0 clears enemies, and only d5-clear enters BowserControl without an accidental bridge-collapse or normal-control path.",
       "currentSourcePaths": [
@@ -35504,10 +35638,12 @@
       "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree."
+        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass."
+        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Processes the front half first, selects rear X delta $10 or $f0 from direction bit zero, then processes the rear and clears the front/rear graphics flag after restoring the original ObjectOffset.",
       "currentSourcePaths": [
@@ -35561,10 +35697,12 @@
       "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree."
+        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass."
+        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Increments BowserGfxFlag, performs the retainer relative/offscreen/draw child, and only for normal state writes bounding box control $0a before bound-box generation and player collision tail.",
       "currentSourcePaths": [
@@ -41632,12 +41770,14 @@
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Selects enemy offscreen masks $48/$44 and transfers to masked enemy-box routing.",
       "currentSourcePaths": [
@@ -41653,10 +41793,12 @@
       "currentCounterpart": "mysmb_platform_box_small -> enemy_masked_box",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Selects small-platform masks $08/$04 then shares masked routing.",
       "currentSourcePaths": [
@@ -41672,10 +41814,12 @@
       "currentCounterpart": "enemy_masked_box signed page/zero mask selection",
       "semanticEvidence": [
         "Td S9 B16t bounding-box generation and screen-clip node-semantics and independent integration audit: SMB1 lines 12805-12949 compared with shared world/collision.c, world/bounding_box.c and named misc/enemy owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f."
+        "M2 T64 S33 static $E22D-$E29B audit and controlled original-ROM entry matrix prove slot additions +7/+9/+1, fixed relative inputs, signed-page/zero mask choice, hide/build tails and raw FE large-platform threshold. Misc C clip reads corrected to source +9 addresses $76/$8f.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
-        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump."
+        "M2 T64 S33: 60 original-ROM cases replayed on x86/x64 plus 12 hammer counterparts per width; all 1784 persistent RAM bytes per execution agree unconditionally. Scratch $00-$07 and CPU stack/registers are excluded child ABI. Branch counts prove both outcomes at E25F/E263/E26E/E27A and mandatory E234 jump.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Computes enemy position relative to screen-left with borrow, selects source mask by left/edge status, stores masked offscreen bits and chooses build or full-offscreen box.",
       "currentSourcePaths": [
@@ -46234,12 +46378,14 @@
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/history/M2-T66-player-relative-offscreen-current-proof.md Selects enemy array displacement and enemy offscreen destination before common calculation.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
       "operationalEvidence": [
         "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entry/tablef1af, observations65536.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
       ],
       "semanticContract": "Selects enemy array displacement and enemy offscreen destination before common calculation.",
       "currentSourcePaths": [
@@ -84956,12 +85102,15 @@
       "instruction": "bcs",
       "id": "control-01562",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared firebar/flying-Cheep call, branch, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec4c8->c44e,branch opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'c4c8-c44e': 383},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original branch relation MaxCC -> ChpChpEx with exact table index, timer/slot predicate, carry/borrow and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -85341,12 +85490,15 @@
       "instruction": "beq",
       "id": "control-01579",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec5b9->c5ec,branch opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'c5b9-c5ec': 8874},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original branch relation InitBowserFlame -> SpawnFromMouth with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -85428,12 +85580,15 @@
       "instruction": "lda",
       "id": "control-01583",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec5d5->c5d8,fallthrough opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'c5d5-c5d8': 683},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original fallthrough relation SetFrT -> PutAtRightExtent with timer, front-slot, random/table, carry and activation handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c"
@@ -85909,12 +86064,15 @@
       "instruction": "jmp",
       "id": "control-01606",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec6fa->c26c,jump opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'c6fa-c26c': 1152},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump relation AddFBit -> CheckpointEnemyID with area/slot predicate, random/world selection, filter state and actor handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -86056,13 +86214,14 @@
       "instruction": "bne",
       "id": "control-01613",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "status": "infeasible",
+      "currentCounterpart": "Shared frenzy.c FireBulletBill sets ID8 and enters Set17ID directly;no HandleGroupEnemies fallthrough.",
       "semanticEvidence": [
-        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec719:LDA immediate08 sets Z0;following BNE always taken,no flag-writing instruction intervenes;next HandleGroupEnemies cannot fall through."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation FireBulletBill -> HandleGroupEnemies with group-code, slot/page state and record-advance handoff.",
+      "semanticContract": "LDA immediate08 sets Z0;following BNE always taken,no flag-writing instruction intervenes;next HandleGroupEnemies cannot fall through.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
         "src/game/enemy/group.c"
@@ -86340,12 +86499,15 @@
       "instruction": "jsr",
       "id": "control-01626",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec77c->c26c,call opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'c77c-c26c': 31744},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original call relation GSltLp -> CheckpointEnemyID with group-code, slot/page state and record-advance handoff.",
       "currentSourcePaths": [
         "src/game/enemy/group.c",
@@ -86405,12 +86567,15 @@
       "instruction": "jmp",
       "id": "control-01629",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec784->c25e,jump opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'c784-c25e': 16384},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump relation NextED -> Inc2B with group-code, slot/page state and record-advance handoff.",
       "currentSourcePaths": [
         "src/game/enemy/group.c",
@@ -134958,12 +135123,15 @@
       "instruction": "rts/rti",
       "id": "control-03783",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared group branch, loop, call, tail or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14r group-enemy node-semantics and independent integration audit: SMB1 lines 8780-8835 compared with shared enemy/group.c and stream/init successors; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec77c->c26c,return opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'c36a-c77f': 31744},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original return relation CheckpointEnemyID -> GSltLp with group-code, slot/page state and record-advance handoff.",
       "currentSourcePaths": [
         "src/game/enemy/group.c",
@@ -146368,12 +146536,15 @@
       "selector": 0,
       "id": "control-04270",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec7a8->c3a4,jump-engine-dispatch opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'8e16-c3a4': 2731},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> LakituAndSpinyHandler with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -146414,12 +146585,15 @@
       "selector": 2,
       "id": "control-04272",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec7a8->c4a8,jump-engine-dispatch opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'8e16-c4a8': 2731},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFlyingCheepCheep with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -146435,12 +146609,15 @@
       "selector": 3,
       "id": "control-04273",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec7a8->c5a3,jump-engine-dispatch opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'8e16-c5a3': 2731},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitBowserFlame with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -146456,12 +146633,15 @@
       "selector": 4,
       "id": "control-04274",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec7a8->c63d,jump-engine-dispatch opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'8e16-c63d': 2730},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitFireworks with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -146477,12 +146657,15 @@
       "selector": 5,
       "id": "control-04275",
       "cohort": "I",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared Piranha/frenzy branch, tail, dispatch or return counterpart",
+      "status": "exact",
+      "currentCounterpart": "Actual shared frenzy/group/init/checkpoint/stream children in source order;no fabricated vector or return.",
       "semanticEvidence": [
-        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 original sitec7a8->c69c,jump-engine-dispatch opcode/target independently bound;Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 observed{'8e16-c69c': 2730},RTS filtered opcode60,vector reads independent by selector;114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+      ],
       "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> BulletBillCheepCheep with slot/ID state, vector selector and return handoff.",
       "currentSourcePaths": [
         "src/game/enemy/frenzy.c",
@@ -148118,8 +148301,9 @@
     "control-03743",
     "control-03769",
     "control-03784",
-    "control-03868"
+    "control-03868",
+    "control-01613"
   ],
-  "infeasibleControlEdgeTotal": 65,
-  "feasibleControlEdgeTotal": 4277
+  "infeasibleControlEdgeTotal": 66,
+  "feasibleControlEdgeTotal": 4276
 }

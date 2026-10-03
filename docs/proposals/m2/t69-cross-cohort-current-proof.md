@@ -1904,3 +1904,90 @@ zero fresh credit. Repair shared mask owner and audit both ordinary/small
 mask entries;audit canonical offscreen handoff in planned firebar caller.
 No platform change. Re-run original/current chains and focused bounds/offscreen
 checks;product repairs refresh3 EXEs before commit. S13 remains active.
+
+## S13 P3 closure - real frenzy/group/actor consumers and shared repairs
+
+All35 existing labels rechecked:Inc2B; CheckpointEnemyID; LakituAndSpinyHandler; ChpChpEx; InitFlyingCheepCheep; MaxCC; InitBowser; DuplicateEnemyObj; FlameYPosData; FlameYMFAdderData; InitBowserFlame; SetFrT; PutAtRightExtent; SpawnFromMouth; SetMF; InitFireworks; BulletBillCheepCheep; AddFBit; FireBulletBill; HandleGroupEnemies; GSltLp; NextED; InitEnemyFrenzy; EndFrenzy; RunFirebarObj; BowserGfxHandler; InitLongFirebar; ProcFirebar; RunBowser; RunRetainerObj; ProcessBowserHalf; GetEnemyBoundBox; GetMaskedOffScrBits; SmallPlatformBoundBox; GetEnemyOffscreenBits.Zero fresh nodes,
+no scoped deferral.12 controls exact;control-01613 raw fallthrough infeasible:
+original LDA immediate08 sets Z0,following BNE Set17ID always taken,no flag
+writer intervenes.No fabricated branch/ROM patch. Raw4342 retained,
+infeasible65->66,feasible4277->4276;exact4256->4268,remaining8.
+Nine planned material rows exact. material-00138's old combined graphics/
+front/timer description corrected to actual graphics body-control edge;
+two distinct existing-source consumers explicitly enumerated/accepted:
+`material-t69-s13-bowser-timers` and `material-t69-s13-bowser-front`. Same admitted Bowser initializer/consumer scope,
+no invented nodes. Material546/555->557/557,enumeration remains partial.
+Current scoped-exact nodes1992/1992;historical1992/1992 separate.T69 open,
+S14 next unadmitted;audio alias order and final integration remain.M2 not certified.
+
+Source-first actual frenzy vector,flame mouth/right extent,fireworks,
+Bullet/CC filter,group checkpoint/stream and EndFrenzy state semantics compared
+with shared owners. All6 source/native frenzy vector pairs independently
+bound and actually read at indirect sites;five planned dispatches observed.
+Seven native flame/firework/Bullet/CC table bindings(36 bytes) independently
+equal unchanged owner PRG. Timers,slot bounds,random masks,filter wrap,
+world/hard selection,spawn mouth's original page-copy footprint,byte carries,
+checkpoint returned A0/group count/Inc2B and live slot restoration retained.
+
+Two actual product mismatches repaired in shared game only:
+
+- enemy_bounds.c GetEnemyBoundBox/SmallPlatformBoundBox writes right mask
+  to00 and relative X difference to01 before masked early exit,as original.
+  Visible path still executes original box/clip children overwriting scratch.
+- firebar_children.c uses actual shared GetEnemyOffscreenBits owner including
+ 04-07 scratch,instead of the value-only query. Spin/movement unchanged.
+
+Seven original/current families,16384 each,114688 roots per width zero diffs:
+C7A0 frenzy six selectors,C71B groups,C7B8->C3A4 end/handler,C549->D065
+Bowser body/graphics,C459->C947 long firebar,E24C small mask and
+C549->C5A3 front-index flame consumer. Sequential routes preserve persistent
+RAM/registers/hardware;only physical return stack/sentinel restored,with
+explicit second-entry X selecting the flame slot in the last family.
+Compare2032 RAM,24 APU,ordered writes/count;only01F0-01FF physical stack/
+sentinel excluded,minSP EF(lowest pushed byte01F0),CPU returns outside C ABI.
+Controlled profiles cover full byte coordinates,slot/free flags,hard/world,
+timer gates,randoms/all6 selectors,filter bits,all8 groups,page carry,
+mask early/visible paths and real actor output. No child mocks or ROM patches;
+not an all-state/gameplay reachability claim. Offscreen-only earlier firebar
+fixture was insufficient;valid screen fixture observes16384 duplicate reads,
+180224 DrawFirebar_Collision entries and8192 front-index reads in flame family.
+
+Similar-issue sweep:shared ordinary/small mask owner repaired together;
+canonical offscreen caller repaired only at admitted firebar site. Value-only
+jumpspring.c,enemy/normal.c,platform_callers.c,special_callers.c remain named
+caller/integration obligations for later scope,not mechanically replaced.
+OAM bloober/bowser_flame/cheep/podoboo/piranha/goomba/normal_enemy/flagpole
+value queries retain separately owned pure graphics contracts. Actual Bowser
+retainer already canonical. Test firebar_spin uncalled sibling ABI updated;
+vector scratch/fetch,slot reload,timer/filter/mouth/group/duplicate paths
+re-audited after fixes.No scoped diff remains or is passed to successor.
+
+| ID | Original/shared join | Type | Original observations |
+| --- | --- | --- | --- |
+| `control-01562` | MaxCC -> ChpChpEx | branch | 383 |
+| `control-01579` | InitBowserFlame -> SpawnFromMouth | branch | 8874 |
+| `control-01583` | SetFrT -> PutAtRightExtent | fallthrough | 683 |
+| `control-01606` | AddFBit -> CheckpointEnemyID | jump | 1152 |
+| `control-01613` | FireBulletBill -> HandleGroupEnemies | fallthrough | infeasible: LDA08/BNE |
+| `control-01626` | GSltLp -> CheckpointEnemyID | call | 31744 |
+| `control-01629` | NextED -> Inc2B | jump | 16384 |
+| `control-03783` | CheckpointEnemyID -> GSltLp | return | 31744 |
+| `control-04270` | InitEnemyFrenzy -> LakituAndSpinyHandler | jump-engine-dispatch | 2731 |
+| `control-04272` | InitEnemyFrenzy -> InitFlyingCheepCheep | jump-engine-dispatch | 2731 |
+| `control-04273` | InitEnemyFrenzy -> InitBowserFlame | jump-engine-dispatch | 2731 |
+| `control-04274` | InitEnemyFrenzy -> InitFireworks | jump-engine-dispatch | 2730 |
+| `control-04275` | InitEnemyFrenzy -> BulletBillCheepCheep | jump-engine-dispatch | 2730 |
+
+Operational:15 focused tests each width pass,frenzy/group/flame/fireworks/
+Bowser/firebar/retainer/bounding/purity;current x86/x64 builds and original
+OpenNT DOS16 link pass.Inherited OLDNAMES.LIB warning remains,no interactive
+DOS claim. All3 artifacts refreshed together:
+
+- `mysmb16.exe`: 261415 bytes,SHA256 `6e93cbc020b270b9e35ec2f700bf811ea14d9c2c566c3a42bccd8241c31b9185`;refreshed together from current target.
+- `mysmb32.exe`: 374811 bytes,SHA256 `3fdc77e573e4d40d21ec06b86ef0e830d4e9bafc9ad6ea470ab1bc87cba55278`;refreshed together from current target.
+- `mysmb64.exe`: 382348 bytes,SHA256 `d66798501b37a04798c3118dcb1b503a45f536b33c6b26c1da17ac3d46d84c42`;refreshed together from current target.
+
+Raw bounded1024 batch/128MiB/120seconds process/524288steps root and deleted
+per batch;probe deleted at closure.Neutral ignored summaries/logs retained.
+Registry/ledger/progress/docs/diff gates required before local P3 commit;
+unrelated owner work preserved,no push,no S14 pre-credit.

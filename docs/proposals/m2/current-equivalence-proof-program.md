@@ -498,3 +498,14 @@ historical1992/1992 separate.131072 original roots each width zero diff,
 current builds/OpenNT link pass.No product repair,3 products byte-identical.
 T69 open,S13 next unadmitted;21 controls/9 material,M alias scope and
 integrated proof remain.No all-state/whole-game certification.
+
+## Current checkpoint after T69 S13
+
+[T69 S13](t69-cross-cohort-current-proof.md) accepts12 controls/11 material,
+one raw constant-BNE fallthrough infeasible;35 existing labels,zero fresh.
+Current1992/1992 scoped-exact nodes,4268/4276 controls(raw4342,infeasible66),
+557/557 material partial enumeration;historical1992/1992 separate.
+114688 original roots each width zero diff,15 tests each/purity/current
+builds/OpenNT link pass.Shared bounds/offscreen repairs,3 products refreshed.
+T69 open,S14 next unadmitted;8 controls,M alias and integrated proof remain.
+No whole-game/all-state certification from cumulative scoped results.

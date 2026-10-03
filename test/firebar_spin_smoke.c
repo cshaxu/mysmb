@@ -5,8 +5,8 @@
 #include <string.h>
 
 /* Uncalled sibling seams; this executable links the spin owner only. */
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 s)
-{ (void)g;(void)s;return 0U; }
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 s)
+{ (void)g;(void)s; }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 s)
 { (void)g;(void)s; }
 int main(void)

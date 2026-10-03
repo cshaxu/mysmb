@@ -8,6 +8,8 @@
 #include "game/enemy/init_targets.h"
 #include "game/enemy/frenzy.h"
 #include "game/enemy/actor_slots.h"
+#include "game/enemy/group.h"
+#include "game/enemy/platform.h"
 #include "game/objects.h"
 #include "game/dispatcher.h"
 #include "game/status.h"
@@ -42,6 +44,11 @@ int main(int argc,char **argv)
         game.title_icon_data=prg;game.title_icon_data_size=1U;
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
+        case 0xe24cU:mysmb_platform_box_small(&game,record[3]);break;
+        case 0xc7a0U:mysmb_enemy_init_frenzy(&game,record[3]);break;
+        case 0xc71bU:mysmb_enemy_stream_handle_group(&game,record[2]);break;
+        case 0xc7b8U:mysmb_enemy_end_frenzy(&game,record[3]);break;
+        case 0xc549U:mysmb_enemy_init_bowser(&game,record[3]);break;
         case 0xc385U:mysmb_enemy_init_lakitu(&game,record[3]);break;
         case 0xc3a4U:mysmb_enemy_init_lakitu_spiny_frenzy(&game,record[3]);break;
         case 0xc459U:mysmb_enemy_init_firebar_entry(&game,record[3],1U);break;
@@ -110,11 +117,15 @@ int main(int argc,char **argv)
             else if(pc==0xbe02U||pc==0xbe70U)mysmb_area_apply_block_replacements(&game);
             else if(record[8]==2U&&pc==0xc34aU)mysmb_objects_step_red_paratroopas_slot(&game,record[3]);
             else if(record[8]==2U&&pc==0xc375U)mysmb_objects_step_swimming_cheep_cheeps_slot(&game,record[3]);
+            else if(record[8]==3U&&pc==0xc7b8U)mysmb_enemy_init_lakitu_spiny_frenzy(&game,record[3]);
+            else if(record[8]==3U&&pc==0xc549U)mysmb_enemy_run_bowser(&game,record[3]);
+            else if(record[8]==3U&&pc==0xc459U)(void)mysmb_objects_step_firebars_slot(&game,record[3]);
+            else if(record[8]==4U&&pc==0xc549U)mysmb_enemy_init_bowser_flame_frenzy(&game,record[10]);
             else return 66;
         }
-        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&pc!=0xb689U&&pc!=0xb6f9U&&pc!=0xb70bU&&pc!=0xb94bU&&pc!=0xba33U&&pc!=0xb9bcU&&pc!=0xbac3U&&pc!=0xbb96U&&pc!=0xbb38U&&pc!=0xbb51U&&pc!=0xbbfeU&&pc!=0xbc27U&&pc!=0xbc85U&&pc!=0xbcedU&&pc!=0xbe70U&&pc!=0xbed4U&&pc!=0xbf4dU&&pc!=0xbe02U&&pc!=0xbe41U&&pc!=0xc26cU&&pc!=0xc047U&&pc!=0xc0ccU&&pc!=0xc144U&&pc!=0xc385U&&pc!=0xc3a4U&&pc!=0xc459U&&pc!=0xc45cU&&pc!=0xc4a8U&&pc!=0xc9b0U&&pc!=0xc34aU&&pc!=0xc375U&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&pc!=0xb689U&&pc!=0xb6f9U&&pc!=0xb70bU&&pc!=0xb94bU&&pc!=0xba33U&&pc!=0xb9bcU&&pc!=0xbac3U&&pc!=0xbb96U&&pc!=0xbb38U&&pc!=0xbb51U&&pc!=0xbbfeU&&pc!=0xbc27U&&pc!=0xbc85U&&pc!=0xbcedU&&pc!=0xbe70U&&pc!=0xbed4U&&pc!=0xbf4dU&&pc!=0xbe02U&&pc!=0xbe41U&&pc!=0xc26cU&&pc!=0xc047U&&pc!=0xc0ccU&&pc!=0xc144U&&pc!=0xc385U&&pc!=0xc3a4U&&pc!=0xc459U&&pc!=0xc45cU&&pc!=0xc4a8U&&pc!=0xc9b0U&&pc!=0xc34aU&&pc!=0xc375U&&pc!=0xc7a0U&&pc!=0xc71bU&&pc!=0xc7b8U&&pc!=0xc549U&&pc!=0xe24cU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
-            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU||pc==0x9131U||pc==0x91cdU||pc==0x9218U||pc==0x8808U||pc==0x9508U||pc==0xb450U||pc==0xb3cfU||pc==0xb58fU||pc==0xb689U||pc==0xb6f9U||pc==0xb70bU||pc==0xb94bU||pc==0xba33U||pc==0xb9bcU||pc==0xbac3U||pc==0xbb96U||pc==0xbb38U||pc==0xbb51U||pc==0xbbfeU||pc==0xbc27U||pc==0xbc85U||pc==0xbcedU||pc==0xbe70U||pc==0xbed4U||pc==0xbf4dU||pc==0xbe02U||pc==0xbe41U||pc==0xc26cU||pc==0xc047U||pc==0xc0ccU||pc==0xc144U||pc==0xc385U||pc==0xc3a4U||pc==0xc459U||pc==0xc45cU||pc==0xc4a8U||pc==0xc9b0U||pc==0xc34aU||pc==0xc375U){
+            if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU||pc==0x9131U||pc==0x91cdU||pc==0x9218U||pc==0x8808U||pc==0x9508U||pc==0xb450U||pc==0xb3cfU||pc==0xb58fU||pc==0xb689U||pc==0xb6f9U||pc==0xb70bU||pc==0xb94bU||pc==0xba33U||pc==0xb9bcU||pc==0xbac3U||pc==0xbb96U||pc==0xbb38U||pc==0xbb51U||pc==0xbbfeU||pc==0xbc27U||pc==0xbc85U||pc==0xbcedU||pc==0xbe70U||pc==0xbed4U||pc==0xbf4dU||pc==0xbe02U||pc==0xbe41U||pc==0xc26cU||pc==0xc047U||pc==0xc0ccU||pc==0xc144U||pc==0xc385U||pc==0xc3a4U||pc==0xc459U||pc==0xc45cU||pc==0xc4a8U||pc==0xc9b0U||pc==0xc34aU||pc==0xc375U||pc==0xc7a0U||pc==0xc71bU||pc==0xc7b8U||pc==0xc549U||pc==0xe24cU){
                 if(i>=0x1f0U&&i<=0x1ffU)continue;
             }else if((i>=0x100U&&i<=0x108U)||(i>=0x13aU&&i<=0x1ffU))continue;
             if(game.ram[i]!=record[2088U+i]){++ram_failures[i];if(failures<10U)printf("root=%u RAM=%04x ROM=%02x C=%02x\n",n,i,record[2088U+i],game.ram[i]);++failures;}

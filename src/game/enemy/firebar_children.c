@@ -2,11 +2,10 @@
 #include "game/objects.h"
 #include "game/oam/oam.h"
 
-/* Existing offscreen/relative owners remain dependencies, including their
- * separately recorded missing scratch effects. No caller-side output patch. */
+/* Actual original GetEnemyOffscreenBits child owns output and scratch. */
 void mysmb_firebar_offscreen(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
 }
 mysmb_u8 mysmb_firebar_relative(struct mysmb_game *game, mysmb_u8 slot)
 {

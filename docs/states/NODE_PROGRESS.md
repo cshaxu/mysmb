@@ -1,11 +1,14 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S13 - active frenzy/group/actor audit
+## M2 T69 S13 - closed frenzy/group/actor audit
 
-[Exact35 existing labels/13 controls/9 material](../proposals/m2/t69-cross-cohort-current-proof.md).
-Expected fresh0,max1992/1992;current1992/1992 scoped-exact nodes,
-4256/4277 controls(raw4342,infeasible65),546/555 material partial.
-Historical1992/1992 separate;both tracks required,S14 unadmitted.
+[All35 existing labels/12 controls/11 material](../proposals/m2/t69-cross-cohort-current-proof.md)
+accepted,one raw LDA08/BNE fallthrough infeasible;zero fresh nodes.
+Current1992/1992 scoped-exact nodes,4268/4276 controls(raw4342,infeasible66),
+557/557 material partial enumeration;historical1992/1992 separate.
+114688 original roots each width zero diff,15 tests each/purity/current
+builds/OpenNT link pass.Shared bounds/offscreen repairs,3 EXEs refreshed.
+T69 open,S14 next unadmitted;8 controls,M alias and integrated proof remain.
 
 ## M2 T69 S12 - closed flying initializer/consumer audit
 
