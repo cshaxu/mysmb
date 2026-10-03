@@ -5300,3 +5300,115 @@ credit. Historical1992/1992;local scoped1992/1992 nodes,4274/4274 feasible
 controls(raw4342,infeasible68);material946 partial,total unknown. Counts in
 this index are **use obligations**,not a material-edge denominator or a new
 global exact fraction. S17/material,pixels,routes,snapshot remain open.
+
+## S17 P28 admission - parser source phases and value lifetimes
+
+Existing32-label audit scope:`ProcessAreaData`,`ProcADLoop`,`Chk1Row13`,`Chk1Row14`,`CheckRear`,`RdyDecode`,`SetBehind`,`NextAObj`,`ChkLength`,`ProcLoopb`,`EndAParse`,`IncAreaObjOffset`,`DecodeAreaData`,`Chk1stB`,`ChkRow14`,`ChkRow13`,`Mask2MSB`,`ChkSRows`,`LrgObj`,`NotWPipe`,`SpecObj`,`MoveAOId`,`NormObj`,`LeavePar`,`InitRear`,`LoopCmdE`,`BackColC`,`StrAObj`,`RunAObj`,`AlterAreaAttributes`,`Alter2`,`SetFore`.
+ProcessAreaData9508 through parser/decoder/AlterAreaAttributes96f1;
+191 instructions/69 memory sites,shared area.c controller and attribute leaf.
+Retain P6/P15 current original returning roots and exact predicate domains.
+Check intermediate00/07 publications,source register/cache/slot/read lifetimes
+and actual write order;end-return RAM alone cannot prove a transient source
+node write. Independent original PC/value events and current native statement
+events must not share injected source IDs. Initial probe uses existing first
+1024 fixtures,then entire27139 manifest after scoped reconciliation. Full RAM
+and actual-push exclusions remain;1024 batches/120seconds/128MiB/raw cleanup.
+Fresh0/max1992,scope402 unchanged,no custody transfer at audit admission.
+A contradiction requires bounded corrective amendment before code edit and
+three refreshed EXEs;otherwise no product refresh. Other area leaf callees
+and whole-game inter-frame uses retain their separate scoped receipts.
+
+## S17 P28 corrective amendment - original parser intermediate publications
+
+Independent original/current probes find874 of1024 parent roots per width
+with00/07 ordered-write differences despite zero final-RAM differences.
+ChkRow14 originally publishes row15/12/default offsets10/08/00 before
+row13 later publishes22,and row14 explicitly republishes00. LrgObj publishes
+raw second-byte70 mask in00,may replace it with0 for warp pipe,then NotWPipe
+reloads that raw value before MoveAOId/NormObj publishes normalized ID.
+Current C instead publishes22 early and omits raw00 publications. Earlier
+P6/P15 returning RAM receipts missed transient overwritten states and remain
+valid only as final-output evidence,not these source-node phase contracts.
+
+Reopen ChkRow14,ChkRow13,LrgObj,NotWPipe local phase contracts and accept
+their maintenance custody in S17 before changing area.c. Repair only
+mysmb_area_process_object_state source phases/read path,then repeat original
+ordered00/07 events and complete RAM for all27139 declared fixture roots.
+Similar-class sweep covers all seven original00/07 source stores in this
+191-instruction parser/attribute scope. Compare actual original writer
+PCs/values against independently numbered C statement writes,no source-ID
+injection. No visible final-state bug claimed;this is source-node publication
+fidelity. Current focused checks/six existing integration routes and three
+Win32/OpenNT16 products required before closure. No platform logic change,
+global audit restart,ROM import,push or unrelated source edits.
+
+## S17 P28 checkpoint - parser original phase publications restored
+
+Repair shared mysmb_area_process_object_state only. ChkRow14 publishes its
+original initial07 before ChkRow13's22 override;row14 explicitly republishes0.
+Normal-row large objects publish second&70 into00,optionally replace it with0
+for warp pipes,then reload00 before normalization. Special rows keep original
+SpecObj behavior without an extra raw00 write. The source loop/return/delegate
+order and all other decoder predicates retain P6/P15 scoped contracts.
+This repairs logical node publication fidelity;no known visible final-state
+defect is claimed. It does not require physical6502 bus stores in optimized
+native machine code:the C abstract source phases are the review contract.
+
+Similar-class sweep reconciles all seven00/07 source stores in this admitted
+191-instruction/69-memory-site scope. Independent native statement IDs0-6
+are grouped by actual current lvalue/RHS/condition,no source PC injection:
+
+| Native site | Source PC | Logical phase |
+| --- | --- | --- |
+| 0 | 95b3 | ChkRow14 initial10/08/00 |
+| 1 | 95c9 | ChkRow13 override22 |
+| 2 | 95bd | Row14 explicit07=0 |
+| 3 | 95ef | Small-object07=16 |
+| 4 | 95f8 | LrgObj raw00=second&70 |
+| 5 | 9606 | Warp-pipe00=0 |
+| 6 | 9616 | NormObj normalized00 |
+
+Before repair,874/1024 first-batch roots per width had phase differences
+while every final RAM byte matched. After repair,all27139 declared real ROM
+parent fixtures each width have zero complete RAM and ordered source-core
+00/07 write-address/value/count differences. Original trace filters actual
+stores at9508-9665;child/JumpEngine scratch stores are outside this event
+scope,not silently merged with parser events. All real children still execute
+and their final RAM is compared. Only actually pushed physical-stack bytes
+are excluded. No original source/ROM hook or between-node RAM patch is used.
+The initial temporary matcher confused a C == comparison with assignment;
+it failed compilation and was corrected with an explicit assignment guard
+before any post-fix evidence was accepted. Probe mistakes are not product fixes.
+
+The existing nine fixture families/34 original pointer views/eight-bit
+cursor wrap and controlled behind-columnFF limits remain P6/P15's. They
+do not prove arbitrary corrupted pointers,all area leaf renderers or whole
+gameplay paths. Source-local raw-mask/warp/shift values additionally match
+all256 second bytes;three fixed normal-row classifications remain unsigned
+byte operations. One source-consumed path947 LrgObj->NotWPipe00 added;
+07 overwrite-only phases receive no fabricated producer-consumer edge.
+Other parser register/cache/interface lifetime clauses are still being
+reconciled:191/69 admission is scope,not an automatic whole-owner closure.
+
+10 current focused parser/output/title/purity checks each width pass;
+six600-frame scoped original/native routes pass and native frame bytes are
+identical. That frame ABI compares0200-07FF except0778/0779,CIRAM/palette/OAM/
+audio/PPU scalars;zero-page/physical stack are checked by these roots instead.
+Win32 x86/x64 builds and original OpenNT16 compile/link pass;OLDNAMES optional
+warning retained,no DOS runtime claim. All3 products refreshed. All raw
+inputs/state/write streams deleted after each bounded batch. No platform
+business logic or unrelated terrain/proposal change,no push.
+
+Current area.c normalized SHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+
+Four reopened local phase nodes repaired and restored1992/1992,not fresh
+global credit. Historical1992/1992;controls4274/4274(raw4342,infeasible68);
+material947 partial,total unknown. Local consumed-use index774/221 and3552
+unreconciled direct RAM sites is unchanged by this limited phase fix. S17
+and material/pixels/routes/snapshot final packages remain open,M2 uncertified.
+
+mysmb16.exe:259275 bytes,SHA256 2a6850ecc639f2a052941967c90529fdae777016a381d260dc8e9a93b709331a.
+
+mysmb32.exe:373619 bytes,SHA256 47fb669139d1d22f1748cffd6a45a47b09b7a7db90f5d3f39cded04efa570161.
+
+mysmb64.exe:379625 bytes,SHA256 bd9c78504e7d62be3e078d664b2b362dd5e433197c6383e63381520c522cc9af.

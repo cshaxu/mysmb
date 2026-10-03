@@ -1759,10 +1759,16 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                      * Row13's LeavePar retains this write but preserves00. */
                     dispatch_offset = row == 0x0fU ? 0x10U :
                         (row == 0x0cU ? 0x08U : 0U);
-                    if (row == 0x0dU) dispatch_offset = 0x22U;
                     game->ram[7U] = dispatch_offset;
+                    if (row == 0x0dU) {
+                        dispatch_offset = 0x22U;
+                        game->ram[7U] = dispatch_offset;
+                    }
                     if (row != 0x0dU || (second & 0x40U) != 0U) {
-                        if (row == 0x0eU) object_id = 0x2eU;
+                        if (row == 0x0eU) {
+                            game->ram[7U] = 0U;
+                            object_id = 0x2eU;
+                        }
                         else if (row == 0x0dU) {
                             if ((second & 0x7fU) == 0x4bU)
                                 game->ram[MYSMB_AREA_LOOP_COMMAND]++;
@@ -1774,9 +1780,13 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                             object_id = (mysmb_u8)(second & 0x0fU);
                         }
                         else {
-                            object_id = (mysmb_u8)((second & 0x70U) >> 4U);
-                            if (row < 0x0cU && object_id == 7U && (second & 8U) != 0U)
-                                object_id = 0U;
+                            if (row < 0x0cU) {
+                                game->ram[0U] = (mysmb_u8)(second & 0x70U);
+                                if (game->ram[0U] == 0x70U && (second & 8U) != 0U)
+                                    game->ram[0U] = 0U;
+                                object_id = (mysmb_u8)(game->ram[0U] >> 4U);
+                            }
+                            else object_id = (mysmb_u8)((second & 0x70U) >> 4U);
                         }
                         game->ram[0U] = object_id;
                         if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U) {

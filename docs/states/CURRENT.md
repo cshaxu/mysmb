@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P28 active;P27 consumed-use index checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P29 active;P28 parser phase correction checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
-| Reference Baseline | Historical1992/1992;local scoped1992/1992 nodes,4274/4274 controls(raw4342,infeasible68);material946 partial,total unknown. |
+| Reference Baseline | Historical1992/1992;local scoped1992/1992 nodes,4274/4274 controls(raw4342,infeasible68);material947 partial,total unknown. |
 | Candidate Proposal | [S17 material completeness](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
-| Files And ABI Surface | S17 bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
+| Files And ABI Surface | S17 P28 area.c parser00/07 phase repair;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
 | Expected Markers | 402 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
@@ -28,7 +28,7 @@
 - S15 closed its17-node/42-control startup scope;identified8 mismatches and1 input-contract gap resolved.
 - Local ledger1992/1992 accepted scoped nodes and4274/4274 feasible controls
   (raw4342,infeasible68);these are scoped dispositions,not whole-game certification.
-- Material946 partial;global denominator unknown. Startup package closed;
+- Material947 partial;global denominator unknown. Startup package closed;
   material/pixels/routes/snapshot packages remain;bindings closes in S16. A-N restart is superseded.
 - S16 P1 removed an uncalled synthetic terrain helper with one mismatching table byte;active original owners unchanged.
 - S16 P2 reconciles177 table locations/266 candidate categories and17 low bases;93 direct reads/134 calls are an explicit pending-domain inventory,not new node/edge credit.
@@ -55,7 +55,6 @@
 
 
 
-S17 P20:30720 sampled original parent-to-SoundEngine roots each width zero full-RAM pre/post/APU/ordered-command diff;13/48 direct external queue-write PCs observed,35 named pending.8 checks each pass;no source/products/node/control/material credit. Local1992/1992,controls4274/4274,material879 partial,total unknown;S17 and four final packages open.
 
 S17 P21:14336 controlled original parent-to-SoundEngine roots each width zero pre/post RAM/APU/ordered commands;7 new queue PCs,union20/48,28 named pending. Two invalid preliminary fixtures corrected with source caller preconditions,not product patches. No source/products/node/control/material credit. Local1992/1992,controls4274/4274,material879 partial,total unknown;S17/four packages open.
 
@@ -71,3 +70,6 @@ S17 P25:2048 real initialization-parent/sound roots each width zero full pre/pos
 S17 P26:8 motion labels/93 instructions/47 RAM sites reconciled within core X0-22 domains;4096 original roots each width zero full pre/post RAM/APU/commands and horizontal return diff;all PCs/eight branch pairs observed,5 checks each pass.147 actual semantic address joins yield11 paths936-946;STA/RTS dummy bus reads excluded. No source/products/fresh nodes/controls;local1992/1992,controls4274/4274,material946 partial,total unknown;other lifetimes/final packages open.
 
 S17 P27:10691-use/4171-memory index complete and four negative checks pass;774 instruction/221 direct RAM sites have bounded complete-owner/core receipts,3552 other direct RAM sites still require exact existing receipt joins or missing-clause proof.250 ROM/61 indirect/87 hardware site-only dimensions remain distinct;no credit/re-audit/product refresh. Retained scoped nodes1992/1992,controls4274/4274,material946 partial,total unknown;four final packages open.
+
+
+S17 P28:original parser00/07 phases restored;27139 real original roots each width zero complete RAM/ordered-write differences after874/1024 baseline phase failures despite final-RAM equality. Seven stores reconciled;four local nodes restored1992/1992,one raw00 path947 added.10 checks each/six600-frame routes/three products pass,DOS compile/link only. Controls4274/4274,material947 partial,total unknown;other parser lifetimes/3552 direct RAM index clauses/four final packages remain open.

@@ -8,10 +8,15 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material946 is a partial enumerated set;its global denominator is unknown.
+Material947 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P28 parser phase repair](../proposals/m2/t70-final-current-certification.md#s17-p28-checkpoint---parser-original-phase-publications-restored).
+Four reopened local nodes repaired;27139 roots each width zero RAM/write
+sequence diff,10 checks each/six scoped routes/three products pass.
+Material947 partial,total unknown;other parser/use/final package clauses open.
 
 [P27 consumed-use index](../proposals/m2/t70-final-current-certification.md#s17-p27-checkpoint---current-consumed-use-obligation-index).
 774 instruction/221 direct RAM sites have complete local-owner/core receipts;

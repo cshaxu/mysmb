@@ -579,12 +579,12 @@ transfer existing ownership or allocate a numeric T.
 | 3386 | `IncAreaObjOffset` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
 | 3393 | `DecodeAreaData` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1; M2 T3 / S not recorded; M2 T30 S11 |
 | 3397 | `Chk1stB` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3408 | `ChkRow14` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3416 | `ChkRow13` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
+| 3408 | `ChkRow14` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1 |
+| 3416 | `ChkRow13` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
 | 3429 | `Mask2MSB` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
 | 3431 | `ChkSRows` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3442 | `LrgObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3450 | `NotWPipe` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3442 | `LrgObj` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1 |
+| 3450 | `NotWPipe` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1 |
 | 3452 | `SpecObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
 | 3455 | `MoveAOId` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
 | 3459 | `NormObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |

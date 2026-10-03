@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 946,
+    "enumeratedCount": 947,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -21251,6 +21251,29 @@
       "currentSourcePaths": [
         "src/game/world/gravity.c"
       ]
+    },
+    {
+      "id": "material-00947",
+      "producer": "LrgObj",
+      "consumer": "NotWPipe",
+      "storage": "RAM$0000 raw large-object mask before normalized ID",
+      "feasiblePath": "95f8 or9606 writes00 ->9608 LDA00 ->MoveAOId/NormObj;normal-row nonzero70 mask,optional warp bit3.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state normal-row large-object raw00 publication/reload",
+      "semanticContract": "Original LrgObj95f8/9606 publish masked raw object/warp0 in00,NotWPipe9608 reloads it before four LSRs and NormObj final normalized00 store. No callback/intervening00 writer or mutable PRG read in this interval. Current normal-row large-object branch publishes and actually reloads game RAM00 before >>4;all256 second bytes/fixed normal row0-11 preserve mask/warp/shift values. SpecObj special rows do not receive an invented raw00 store. Final RAM equality alone did not establish this source-node phase.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:ChkRow14 first publishes10/08/00 at95b3,row14 republishes0 at95bd,row13 later publishes22 at95c9. LrgObj95f8 publishes raw70 mask,warp9606 optionally publishes0,NotWPipe9608 reloads raw00 before shift/final NormObj9616. Shared area.c now preserves these original logical node phases rather than only final RAM equality.",
+        "Original LrgObj95f8/9606 publish masked raw object/warp0 in00,NotWPipe9608 reloads it before four LSRs and NormObj final normalized00 store. No callback/intervening00 writer or mutable PRG read in this interval. Current normal-row large-object branch publishes and actually reloads game RAM00 before >>4;all256 second bytes/fixed normal row0-11 preserve mask/warp/shift values. SpecObj special rows do not receive an invented raw00 store. Final RAM equality alone did not establish this source-node phase."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:27139 original parents each width zero complete RAM/ordered00/07 source-core write differences;baseline874/1024 phase differences despite zero RAM. Independently instrumented native statement sites,not injected source IDs. Only actual physical pushes excluded,children execute real current/original code.10 checks each,six600-frame scoped routes,Win32 x86/x64 products and original OpenNT16 compile/link pass;three assets refreshed,DOS runtime unqualified.",
+        "Actual ordered source writer PCs/values and independent native statement values match27139 controlled parent fixtures;scalar mask/warp/shift algebra covers256 input bytes,not all external renderer callers."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     }
   ],
   "cohorts": [
@@ -28606,13 +28629,16 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 corrective amendment - original parser intermediate publications:ordered original00/07 source-node phases contradict current publication placement;final-output receipt cannot settle transient stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:ChkRow14 first publishes10/08/00 at95b3,row14 republishes0 at95bd,row13 later publishes22 at95c9. LrgObj95f8 publishes raw70 mask,warp9606 optionally publishes0,NotWPipe9608 reloads raw00 before shift/final NormObj9616. Shared area.c now preserves these original logical node phases rather than only final RAM equality."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:27139 original parents each width zero complete RAM/ordered00/07 source-core write differences;baseline874/1024 phase differences despite zero RAM. Independently instrumented native statement sites,not injected source IDs. Only actual physical pushes excluded,children execute real current/original code.10 checks each,six600-frame scoped routes,Win32 x86/x64 products and original OpenNT16 compile/link pass;three assets refreshed,DOS runtime unqualified."
       ],
-      "semanticContract": "Maps row 14 to $2e identity with zero addend, otherwise proceeds to row 13 classification. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
+      "semanticContract": "Maps row 14 to $2e identity with zero addend, otherwise proceeds to row 13 classification. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains. P28 preserves original intermediate00/07 publications and raw LrgObj00 reload;return-only evidence is insufficient for these phase contracts.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -28629,14 +28655,17 @@
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 corrective amendment - original parser intermediate publications:ordered original00/07 source-node phases contradict current publication placement;final-output receipt cannot settle transient stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:ChkRow14 first publishes10/08/00 at95b3,row14 republishes0 at95bd,row13 later publishes22 at95c9. LrgObj95f8 publishes raw70 mask,warp9606 optionally publishes0,NotWPipe9608 reloads raw00 before shift/final NormObj9616. Shared area.c now preserves these original logical node phases rather than only final RAM equality."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:27139 original parents each width zero complete RAM/ordered00/07 source-core write differences;baseline874/1024 phase differences despite zero RAM. Independently instrumented native statement sites,not injected source IDs. Only actual physical pushes excluded,children execute real current/original code.10 checks each,six600-frame scoped routes,Win32 x86/x64 products and original OpenNT16 compile/link pass;three assets refreshed,DOS runtime unqualified."
       ],
-      "semanticContract": "Maps row-13 object/control records, loop command and page-control return behavior. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
+      "semanticContract": "Maps row-13 object/control records, loop command and page-control return behavior. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains. P28 preserves original intermediate00/07 publications and raw LrgObj00 reload;return-only evidence is insufficient for these phase contracts.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -28699,14 +28728,17 @@
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 corrective amendment - original parser intermediate publications:ordered original00/07 source-node phases contradict current publication placement;final-output receipt cannot settle transient stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:ChkRow14 first publishes10/08/00 at95b3,row14 republishes0 at95bd,row13 later publishes22 at95c9. LrgObj95f8 publishes raw70 mask,warp9606 optionally publishes0,NotWPipe9608 reloads raw00 before shift/final NormObj9616. Shared area.c now preserves these original logical node phases rather than only final RAM equality."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:27139 original parents each width zero complete RAM/ordered00/07 source-core write differences;baseline874/1024 phase differences despite zero RAM. Independently instrumented native statement sites,not injected source IDs. Only actual physical pushes excluded,children execute real current/original code.10 checks each,six600-frame scoped routes,Win32 x86/x64 products and original OpenNT16 compile/link pass;three assets refreshed,DOS runtime unqualified."
       ],
-      "semanticContract": "Applies the vertical-pipe warp d3 override before object-id normalization. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
+      "semanticContract": "Applies the vertical-pipe warp d3 override before object-id normalization. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains. P28 preserves original intermediate00/07 publications and raw LrgObj00 reload;return-only evidence is insufficient for these phase contracts.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -28722,13 +28754,16 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 corrective amendment - original parser intermediate publications:ordered original00/07 source-node phases contradict current publication placement;final-output receipt cannot settle transient stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:ChkRow14 first publishes10/08/00 at95b3,row14 republishes0 at95bd,row13 later publishes22 at95c9. LrgObj95f8 publishes raw70 mask,warp9606 optionally publishes0,NotWPipe9608 reloads raw00 before shift/final NormObj9616. Shared area.c now preserves these original logical node phases rather than only final RAM equality."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored:27139 original parents each width zero complete RAM/ordered00/07 source-core write differences;baseline874/1024 phase differences despite zero RAM. Independently instrumented native statement sites,not injected source IDs. Only actual physical pushes excluded,children execute real current/original code.10 checks each,six600-frame scoped routes,Win32 x86/x64 products and original OpenNT16 compile/link pass;three assets refreshed,DOS runtime unqualified."
       ],
-      "semanticContract": "Transfers normalized large-object class into common four-bit move. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
+      "semanticContract": "Transfers normalized large-object class into common four-bit move. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains. P28 preserves original intermediate00/07 publications and raw LrgObj00 reload;return-only evidence is insufficient for these phase contracts.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -166016,7 +166051,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P26 admission - shared motion carry and value lifetimes",
         "docs/proposals/m2/t70-final-current-certification.md S17 P26 checkpoint - shared motion value lifetimes",
         "docs/proposals/m2/t70-final-current-certification.md S17 P27 admission - consolidate existing consumed-use evidence",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P27 checkpoint - current consumed-use obligation index"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P27 checkpoint - current consumed-use obligation index",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 admission - parser source phases and value lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P28 checkpoint - parser original phase publications restored"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -166030,7 +166067,7 @@
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
-        "materialPathsEnumerated": 946,
+        "materialPathsEnumerated": 947,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator.",
