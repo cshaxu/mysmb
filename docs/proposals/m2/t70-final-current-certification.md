@@ -4530,3 +4530,78 @@ inter-frame joins. Material/pixels/routes/snapshot packages remain open.
 | material-00877 | HandleNoiseMusic | HandleNoiseMusic | 07ba | f873>f873 | cross-frame | 4342 | 4934/4934 |
 | material-00878 | FetchNoiseBeatData | FetchNoiseBeatData | 07b0 | f87b>f878,f87b>f87b,f885>f878,f885>f87b | cross-frame,same-call | 1240 | 2588/2588 |
 | material-00879 | NoiseBeatHandler | HandleNoiseMusic | 07ba | f88d>f873 | cross-frame | 592 | 4934/4934 |
+
+## S17 P20 admission - external audio queue writer and consumer boundary
+
+Audit48 direct non-audio queue writes,source order labels:
+`ChkStart`, `SetupVictoryMode`, `EvalForMusic`, `DecNumTimer`, `DoneInitArea`, `StoreMusic`, `PlayerLoseLife`, `SetupGameOver`, `TerminateGame`, `HoleDie`, `FlagpoleSlide`, `PlayerEndLevel`, `NextArea`, `GetYPhy`, `SJumpSnd`, `ProcFireball_Bubble`, `RunGameTimer`, `NextVO`, `SetupBB`, `JCoinC`, `GiveOneCoin`, `PutBehind`, `BumpBlock`, `BrickShatter`, `InitBowserFlame`, `FireBulletBill`, `SetM2`, `RemoveBridge`, `FireworksSoundScore`, `AwardGameTimerPoints`, `SetDBSte`, `EnemySmackScore`, `HandlePowerUpCollision`, `HandlePECollisions`, `ForceInjury`, `KillPlayer`, `EnemyStomped`, `SolidOrClimb`, `PipeDwnS`, `FlagpoleCollision`, `HandlePipeEntry`, `GetWNum`, `CoinSd`, `ChkForBump_HammerBroJ`, `InitFireballExplode`.
+Fresh node/control0,baseline/max1992. Compare each source value/guard/store
+with named current C producer;use retained node contracts only within stable
+source/dependency boundaries. Current independent producer-to-SoundEngine
+routes add full-RAM pre-consumer and post-consumer boundaries and observed
+push masks. Existing original fixture roots cover initialization/music/life/
+game-over/jump/cannon/coin/block/frenzy chains;coverage is recorded by actual
+queue-write PC,not inferred for all48. Incomplete parent domains remain named
+pending within S17. No source repair or broadened gameplay claim admitted.
+The composition represents the next sound phase with no intervening game
+write;it does not certify every intervening gameplay overwrite order.
+1024-root batches,128MiB raw cap/120sec process,ignored build-only copies,
+raw cleanup after both widths compare. No product refresh without source
+change. All bulk/indirect/indexed aliases remain separate pending clauses.
+
+## S17 P20 checkpoint - sampled producer to sound handoffs
+
+Fifteen unchanged-original parent-root families,2048 sampled fixtures each,
+produce30720 returning roots per native width. Sampling crosses256 high-byte
+fixture patterns with eight low-byte values(0,1,7,16,48,127,128,255);this is
+not an exhaustive byte/cartesian input proof. Each original parent completes
+its real calls,then enters SoundEngine with resulting game RAM unchanged.
+Only CPU return ABI is installed;no game RAM,ROM or child implementation is
+replaced between producer and consumer. Native executes corresponding current
+shared-game parent and mysmb_audio_step. Complete2048 RAM is compared before
+and after sound,plus24 APU shadow bytes and ordered command count/index/value.
+Both widths have zero differences. Before-consumer stack exclusions are only
+actual producer physical pushes;after-consumer exclusions add actual sound
+physical pushes. No whole stack-page or scratch-RAM exclusion.
+
+The trace observes13 of48 direct queue-write PCs. Zero differences across a
+family never infer the35 unobserved sites. The table is source-PC coverage,
+not proof of all callers,producer overwrite order,or arbitrary queue states.
+Fixture roots include memory initialization,area music,life/game-over,jump,
+cannon/coin/head-block,brick/frenzy/Bowser-flame and fireball movement. Fireball
+movement did not reach its explosion write and coin roots did not reach the
+hundred-coin extra-life write;those clauses explicitly remain pending.
+
+| Original writer | PC | Queue | Actual visits | Fixture modes |
+| --- | --- | --- | --- | --- |
+| DoneInitArea | 9056 | 00fb | 2048 | 58 |
+| StoreMusic | 9113 | 00fb | 1024 | 60 |
+| PlayerLoseLife | 91d7 | 00fc | 2048 | 62 |
+| SetupGameOver | 922e | 00fc | 683 | 63 |
+| TerminateGame | 924a | 00fc | 511 | 63 |
+| GetYPhy | b502 | 00ff | 640 | 66 |
+| SJumpSnd | b51a | 00ff | 256 | 66 |
+| SetupBB | ba68 | 00fe | 136 | 74,75 |
+| JCoinC | bb79 | 00fe | 5984 | 78,79,83,87 |
+| BumpBlock | bda0 | 00ff | 1920 | 83 |
+| BrickShatter | be0a | 00fd | 2176 | 83,87 |
+| InitBowserFlame | c5af | 00fd | 1193 | 102,108 |
+| FireBulletBill | c715 | 00fe | 84 | 102 |
+
+Pending original write PCs: ChkStart@81b5, SetupVictoryMode@83b8, EvalForMusic@843a, DecNumTimer@84eb, HoleDie@b1a1, FlagpoleSlide@b2ad, PlayerEndLevel@b2dc, NextArea@b326, ProcFireball_Bubble@b651, RunGameTimer@b784, NextVO@b946, GiveOneCoin@bc20, PutBehind@bc82, SetM2@d007, RemoveBridge@d043, RemoveBridge@d047, RemoveBridge@d05c, FireworksSoundScore@d2c3, AwardGameTimerPoints@d325, SetDBSte@d781, EnemySmackScore@d7c1, HandlePowerUpCollision@d80a, HandlePowerUpCollision@d81d, HandlePECollisions@d8d5, ForceInjury@d93f, KillPlayer@d95b, EnemyStomped@d971, SolidOrClimb@dcf0, PipeDwnS@ddd5, FlagpoleCollision@de5b, HandlePipeEntry@df05, GetWNum@df34, CoinSd@dfad, ChkForBump_HammerBroJ@e12f, InitFireballExplode@e1fa.
+
+No product/source repair or new node/control/material credit. In particular,
+observed writes without independently joined native material-consumer events
+do not add to the material denominator. Thirty1024-root batches stay below
+7MiB raw each and120sec per process;raw records removed after both widths.
+Ignored probe copies are derived from the existing project-owned reference
+sound runner and current native route checker;current C implementation is
+linked rather than copied into the checker. Eight focused checks per width
+pass. Product EXEs remain P15. Historical1992/1992;local nodes1992/1992,
+controls4274/4274(raw4342,infeasible68);material879 partial,total unknown.
+S17 and material/pixels/routes/snapshot remain open.
+
+Evidence metadata correction:SetupVictoryMode's retained semantic clause
+named ROM8493 in error. Its actual queue-write instruction is83b8;the value,
+destination-page calculation and mode-task increment remain the same clause.
+This corrects a citation,not a new execution or whole-node promotion.

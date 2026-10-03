@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P20 active;P19 sound lifetime checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P21 active;P20 sampled queue handoff checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -13,7 +13,7 @@
 | Files And ABI Surface | S17 bounded corrective game.c/area.c,title-bootstrap/area-output tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 326 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 370 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -45,7 +45,6 @@
 
 
 
-S17 P12:reset/collision2 indirect sites reconciled;9728 current original roots each width zero full-RAM/metatile diff,6 checks each/alias arithmetic checks pass. Material705 partial,total unknown;10 RAM/3 dispatch indirect sites pending,S17 open. No source/products/graph credit.
 
 
 S17 P13:19 scenery labels repaired;8192 original roots each width zero full-RAM diff after20802 baseline differences,all19 labels observed.9 checks each/six600-frame routes/3 products pass. Local1992/1992,controls4274/4274,material710 partial,total unknown;9 RAM/3 dispatch sites pending,S17 open.
@@ -62,3 +61,5 @@ S17 P17:3 controller hardware sites reconciled in single-controller domain;4096 
 S17 P18:39 remaining hardware command-use sites linked to retained startup/NMI/title/VRAM/split receipts and current unchanged function identities;all87 hardware sites have bounded dispositions. No new execution/source/products/graph credit. Pixel timing and other material lifetime clauses remain;local1992/1992,controls4274/4274,material726 partial,total unknown,S17 open.
 
 S17 P19:sound681 sites/174 direct RAM sites reconciled in declared47-sequence domain;24064 original roots each width zero RAM/commands,independent persistent C state and259 observed native RAM/local joins plus1 pure-fold proof pass.153 new paths727-879;material879 partial,total unknown.8 tests each pass;no source/products change. Other owners/external producers and four final packages remain open.
+
+S17 P20:30720 sampled original parent-to-SoundEngine roots each width zero full-RAM pre/post/APU/ordered-command diff;13/48 direct external queue-write PCs observed,35 named pending.8 checks each pass;no source/products/node/control/material credit. Local1992/1992,controls4274/4274,material879 partial,total unknown;S17 and four final packages open.

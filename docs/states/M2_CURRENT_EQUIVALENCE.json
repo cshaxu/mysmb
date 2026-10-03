@@ -21252,7 +21252,7 @@
       "operationalEvidence": [
         "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
       ],
-      "semanticContract": "ROM $8493: writes DestinationPageLoc as ScreenRight_PageLoc+1, queues EndOfCastleMusic ($08), then tail-enters IncModeTask_B to advance OperMode_Task exactly once.",
+      "semanticContract": "ROM queue-write PC $83b8: writes DestinationPageLoc as ScreenRight_PageLoc+1, queues EndOfCastleMusic ($08), then tail-enters IncModeTask_B to advance OperMode_Task exactly once.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -25094,7 +25094,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store Silence80 area queue;DisableScreen1;byte INC OperMode_Task;return after actual header and overrides."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Store Silence80 area queue;DisableScreen1;byte INC OperMode_Task;return after actual header and overrides.",
       "currentSourcePaths": [
@@ -25385,7 +25386,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Read exactly selected original table byte and store only AreaMusicQueue FB;shared C uses existing equal table and same selector."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Read exactly selected original table byte and store only AreaMusicQueue FB;shared C uses existing equal table and same selector.",
       "currentSourcePaths": [
@@ -25651,7 +25653,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: INC disable;hit0;event Silence80;DEC lives as byte;negative sets task0/mode3,nonnegative follows exact checkpoint/transpose/restart children."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "INC disable;hit0;event Silence80;DEC lives as byte;negative sets task0/mode3,nonnegative follows exact checkpoint/transpose/restart children.",
       "currentSourcePaths": [
@@ -25767,7 +25770,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Screen task0/hit0/event game-over2;INC disable and mode-task bytes,not fixed1 assignment."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Screen task0/hit0/event game-over2;INC disable and mode-task bytes,not fixed1 assignment.",
       "currentSourcePaths": [
@@ -25807,7 +25811,8 @@
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
-        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title.",
       "currentSourcePaths": [
@@ -33427,7 +33432,8 @@
       ],
       "operationalEvidence": [
         "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -33463,7 +33469,8 @@
         "M2 T59 S4 static audit: SMB1 MaxLeftXSpdData through ExitPhy compared with shared src/game/player.c; exact tables, physics dispatch, jump/swim gates, sound queue, running timer, speed-limit and friction writes."
       ],
       "operationalEvidence": [
-        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass."
+        "M2 T59 S4 controlled physics replay: 73 original entries per fresh C90 x86/x64 owner pass, for 146 entry-return comparisons over 1,784 persistent bytes; all reachable branch outcomes pass, with B52B fallthrough instruction-infeasible after B529 BCS. Focused smoke, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "M2 T59 S4 preserves this source physics state, table and control contract.",
       "currentSourcePaths": [
@@ -35126,7 +35133,8 @@
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Writes selected direction/speed and kills only within the source $50 proximity test.",
       "currentSourcePaths": [
@@ -35475,7 +35483,8 @@
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally.",
       "currentSourcePaths": [
@@ -36318,7 +36327,8 @@
         "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Checks the cell above, initializes bump motion/audio/player vertical speed, classifies original metatile and dispatches its content action.",
       "currentSourcePaths": [
@@ -36535,7 +36545,8 @@
       ],
       "operationalEvidence": [
         "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Checks the cell above, sets immediate replacement/noise, creates chunks, forces player Y speed, writes 50-point modifier, then adds score.",
       "currentSourcePaths": [
@@ -39401,7 +39412,8 @@
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "Gates timer, clears Y force, queues flame sound, then selects mouth or right-extent generation by Bowser front object ID.",
       "currentSourcePaths": [
@@ -39852,7 +39864,8 @@
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes."
       ],
       "semanticContract": "ORs blast SFX bit and assigns Bullet Bill frenzy ID before common actor setup.",
       "currentSourcePaths": [
@@ -164100,7 +164113,51 @@
         "AllMus",
         "LoadEnvelopeData",
         "LoadUsualEnvData",
-        "LoadWaterEventMusEnvData"
+        "LoadWaterEventMusEnvData",
+        "ChkStart",
+        "SetupVictoryMode",
+        "EvalForMusic",
+        "DecNumTimer",
+        "DoneInitArea",
+        "StoreMusic",
+        "PlayerLoseLife",
+        "SetupGameOver",
+        "TerminateGame",
+        "HoleDie",
+        "FlagpoleSlide",
+        "PlayerEndLevel",
+        "NextArea",
+        "GetYPhy",
+        "SJumpSnd",
+        "ProcFireball_Bubble",
+        "RunGameTimer",
+        "NextVO",
+        "SetupBB",
+        "JCoinC",
+        "GiveOneCoin",
+        "PutBehind",
+        "BumpBlock",
+        "BrickShatter",
+        "InitBowserFlame",
+        "FireBulletBill",
+        "SetM2",
+        "RemoveBridge",
+        "FireworksSoundScore",
+        "AwardGameTimerPoints",
+        "SetDBSte",
+        "EnemySmackScore",
+        "HandlePowerUpCollision",
+        "HandlePECollisions",
+        "ForceInjury",
+        "KillPlayer",
+        "EnemyStomped",
+        "SolidOrClimb",
+        "PipeDwnS",
+        "FlagpoleCollision",
+        "HandlePipeEntry",
+        "CoinSd",
+        "ChkForBump_HammerBroJ",
+        "InitFireballExplode"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -164139,7 +164196,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P17 checkpoint - controller hardware boundary",
         "docs/proposals/m2/t70-final-current-certification.md S17 P18 admission and checkpoint - retained hardware command contracts",
         "docs/proposals/m2/t70-final-current-certification.md S17 P19 admission - complete sound-chain mutable use census",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P19 checkpoint - sound-chain mutable and cross-frame lifetimes"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P19 checkpoint - sound-chain mutable and cross-frame lifetimes",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 admission - external audio queue writer and consumer boundary",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
