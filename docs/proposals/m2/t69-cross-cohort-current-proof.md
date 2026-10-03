@@ -1991,3 +1991,27 @@ Raw bounded1024 batch/128MiB/120seconds process/524288steps root and deleted
 per batch;probe deleted at closure.Neutral ignored summaries/logs retained.
 Registry/ledger/progress/docs/diff gates required before local P3 commit;
 unrelated owner work preserved,no push,no S14 pre-credit.
+
+## S14 P1 admission - square music RAM aliases
+
+Scope3 existing exact labels: HandleSquare2Music; HandleSquare1Music; Squ1NoteHandler. Zero fresh nodes,
+expectedMatches empty, maximum1992/1992. Incoming1992/1992 scoped-exact
+nodes,4268/4276 feasible controls(raw4342,infeasible66),557/557 material
+partial enumeration;historical1992/1992 separate. No pending control/material
+credit. Explicit T68 debt broadens the earlier immutable-PRG fetch proof.
+Entry: actual SoundEngine/MusicHandler already-accepted ancestors; chain
+HandleSquare2Music through length/note and Square1 null-refetch exits into
+accepted triangle/noise children. Shared owner audio.c;no platform gameplay.
+Source audit: old Y is retained,offset INC precedes each indirect read,
+including length-second and null-refetch sites; pointer reads and wrapping
+follow original. Operational: focused music/audio/pause/focus tests, x86/x64
+builds, original OpenNT DOS16 link,purity and all3 refreshed EXEs if repaired.
+Standing owner authorization permits local EXE commits;no push. Existing
+maintenance custody retained. S13 closed;S15 remains unadmitted.
+ROM track: Original SoundEngine through actual music children: controlled Square2 first/length-second fetch and Square1 first/null-refetch RAM-offset aliases; original INC-before-indirect-read with old Y, full persistent RAM/APU/ordered writes versus actual shared C x86/x64; retained PRG music integration..
+Similar-issue sweep covers every indirect music fetch in shared audio.c;
+triangle/noise previously restored, no mechanical unrelated changes.
+Owner-local ROM and reviewed ASM nonredistributable, no import/raw fixture.
+Ignored build/m2-t69-s14 only;1024 roots/batch,128MiB raw,120seconds/process,
+524288steps/root;coordinator deletes raw per batch and probe at closure.
+Any scoped diff keeps S14 active until repaired and both audits repeated.

@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T69 S13 Packet
+## M2 T69 S14 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M2 T69 S13 P3 closed;T69 open,S14 next unadmitted. |
-| Admission And Approval | Owner approved planned continuation;coordinator admits35 existing labels,13 controls/9 material and actual actor dependencies. |
-| Objective | Audit/repair frenzy/flame/group joins and actual Bowser/firebar initializer-to-consumer chains. |
-| Non-goals | Zero fresh nodes;no audio alias/integration or unrelated work promotion. |
+| Identifier Mode | Continuation: M2 T69 S14 P1 active;S13 closed,S15 unadmitted. |
+| Admission And Approval | Owner approved continuation;coordinator admits3 existing square-music labels and explicit T68 RAM-alias debt. |
+| Objective | Restore original Square1/Square2 music fetch operation order and prove actual alias and retained PRG routes. |
+| Non-goals | Zero fresh nodes/control/material credit;no final integration or unrelated work promotion. |
 | Reference Baseline | Historical1992/1992; current exact1992/1992 nodes,4268/4276 feasible controls(raw4342,infeasible66),557/557 material partial. |
-| Candidate Proposal | [T69 residual plan](../proposals/m2/t69-cross-cohort-current-proof.md),S13 all35 labels/12 feasible controls/9 planned plus2 refined material accepted;one raw edge infeasible. |
-| Files And ABI Surface | Shared enemy frenzy/group/init/stream/Bowser/firebar and actual OAM/relative/offscreen/bounds/collision children;enemy_bounds shared mask scratch and canonical offscreen handoff;neutral probes/governance. |
+| Candidate Proposal | [T69 residual plan](../proposals/m2/t69-cross-cohort-current-proof.md),S14 exact3 labels and explicit fetch-order debt. |
+| Files And ABI Surface | Shared audio.c and neutral original/current music route harnesses;platform adapters excluded. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
-| Verification | 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass. |
-| Expected Markers | Met:35 existing nodes,zero fresh;12 controls exact/one infeasible;11 material accepted;expected/actualMatches empty. |
+| Verification | Original SoundEngine through actual music children: controlled Square2 first/length-second fetch and Square1 first/null-refetch RAM-offset aliases; original INC-before-indirect-read with old Y, full persistent RAM/APU/ordered writes versus actual shared C x86/x64; retained PRG music integration. |
+| Expected Markers | 3 existing labels,expected fresh0/max1992;no pending control/material credit;expected/actualMatches empty. |
 | Asset Needs | Owner-local ROM/reviewed ASM nonredistributable;ignored build output,128MiB raw/1024 batch/120seconds process/524288steps root and cleanup. |
 | Reporting Requirements | Report exact nodes/1992, feasible controls/total and material/partial total; distinguish historical1992; no promotion before both proof tracks. |
-| Stop Conditions | Any scoped diff,missing actual control/material read or source/operational proof keeps S13 active. |
-| Exit Criteria | Met:source/original/current actual consumer proof,15 tests each/purity/builds/OpenNT link;2 shared repairs and3 EXEs refreshed. |
+| Stop Conditions | Any scoped alias/PRG difference or missing operational proof keeps S14 active. |
+| Exit Criteria | Source audit and original/current alias plus PRG routes zero diff;focused tests/purity/current builds/OpenNT link;product repair refreshes3 EXEs. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Vector scratch/order,timer/slot gates,live slot,counters,filter masks,page carry,duplicate consumers,offscreen scratch and graphics/collision ordering. |
+| Similar-Issue Sweep | All shared music indirect fetch sites,old offset retention,INC/read ordering,length-second and null-refetch,wrap and pointer alias. |
 
 ## Current Technical Baseline
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **4268/4276** (raw4342,infeasible66).
 - Exact material relations: **557/557**, enumeration partial.
 - Latest three products are T69 S13 P3 builds restoring shared masked bounding scratch and actual firebar offscreen child writes.
-- T69 S13 closed:35 labels,12 feasible controls/one infeasible,11 material accepted;S14 next unadmitted.Remaining8 controls,M alias and integrated proof;M2 not certified.
+- T69 S14 active:3 existing labels,zero fresh credit;explicit audio alias debt.8 controls and integrated proof remain;M2 not certified.
